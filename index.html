@@ -5,20 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>1494 Labs · Fund accounting that proves itself</title>
-<meta name="description" content="Fund accounting where the general ledger and every investor's capital account are the same fact. Fifty-seven invariants check the books continuously, on live funds.">
+<meta name="description" content="ABOR and IBOR on one ledger. Every vehicle type, every asset class, ILPA-native reporting and an API-first platform. Fifty-seven invariants check the books daily.">
 <link rel="canonical" href="https://1494labs.com/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://1494labs.com/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="1494 Labs · Fund accounting that proves itself">
-<meta property="og:description" content="The general ledger and every investor's capital account, reconciled by construction. Fifty-seven invariants, checked continuously on live funds.">
+<meta property="og:description" content="ABOR and IBOR on one ledger. Every vehicle type, every asset class, ILPA-native, API-first.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="1494 Labs · Fund accounting that proves itself">
-<meta name="twitter:description" content="The general ledger and every investor's capital account, reconciled by construction.">
+<meta name="twitter:description" content="ABOR and IBOR on one ledger. Every vehicle, every asset class, ILPA-native.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -35,7 +35,7 @@
   "name": "1494 Labs",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web",
-  "description": "Fund accounting and fund administration software. The general ledger and investor capital accounts are reconciled by construction, with continuous invariant checking across multi-asset, multi-currency books.",
+  "description": "Fund accounting and fund administration software. The accounting book of record and the investment book of record share one ledger, across pooled funds, funds-of-one, SMAs, trusts, family partnerships and SPVs, with ILPA-native reporting and an API-first platform.",
   "url": "https://1494labs.com/",
   "publisher": { "@type": "Organization", "name": "1494 Labs", "url": "https://1494labs.com/" }
 }
@@ -184,10 +184,10 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
 
   <section class="hero">
     <p class="eyebrow">Fund accounting &amp; administration</p>
-    <h1>Two books.<br><em>One truth.</em></h1>
+    <h1>ABOR and IBOR.<br><em>One ledger.</em></h1>
     <p class="standfirst">
-      The general ledger and every investor's capital account are the same fact,
-      reconciled by construction. Not by a nightly job that someone has to trust.
+      The accounting book and the investment book are the same ledger. There is no
+      overnight reconciliation between them, because there is nothing to reconcile.
     </p>
     <hr class="herorule">
   </section>
@@ -213,56 +213,156 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
           <span class="l">invariants, checked<br>daily on live books</span>
         </div>
         <ul class="checks">
-          <li><span class="tick">✓</span><span>Capital accounts reconcile to the ledger, per fund, per period</span></li>
-          <li><span class="tick">✓</span><span>Allocations sum to the pool, so no rounding leaks into someone's balance</span></li>
-          <li><span class="tick">✓</span><span>No lot outlives the position it belongs to</span></li>
-          <li><span class="tick">✓</span><span>Every high-water mark survives redemption, transfer and restatement</span></li>
-          <li><span class="tick">✓</span><span>Ownership is <code>derived</code> from capital, never asserted alongside it</span></li>
+          <li><span class="tick">&#10003;</span><span>Capital accounts reconcile to the ledger, per fund, per period</span></li>
+          <li><span class="tick">&#10003;</span><span>Allocations sum to the pool, so no rounding leaks into someone's balance</span></li>
+          <li><span class="tick">&#10003;</span><span>No lot outlives the position it belongs to</span></li>
+          <li><span class="tick">&#10003;</span><span>Every high-water mark survives redemption, transfer and restatement</span></li>
+          <li><span class="tick">&#10003;</span><span>Ownership is <code>derived</code> from capital, never asserted alongside it</span></li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section id="what">
-    <p class="kicker">What it does</p>
-    <h2>One book. Every asset. Every currency.</h2>
+  <section id="structures">
+    <p class="kicker">Structures</p>
+    <h2>Every vehicle you actually run.</h2>
     <p class="lead">
-      Not five subsystems with a reconciliation problem between them.
+      Pooled funds, funds-of-one, SMAs, trusts and GRATs, family partnerships and
+      asset SPVs. Open-end and closed-end. Unitized and capital-based. One platform,
+      not four products with an integration story between them.
     </p>
-
     <div class="grid">
       <div class="cell">
-        <h3>Consequence before commit</h3>
-        <p>See exactly what a posting does to the ledger, to capital accounts, and to
-           every downstream balance, before it posts. Nothing enters the book blind.</p>
+        <h3>Master-feeder and beyond</h3>
+        <p>Feeders pick up master P&amp;L through real internal positions. Ownership
+           edges are derived from capital across the whole graph, not asserted fund
+           by fund, so consolidation is a read rather than a rebuild.</p>
       </div>
       <div class="cell">
-        <h3>Multi-asset on a shared ledger</h3>
-        <p>Securities, private markets, real assets, digital assets and derivatives
-           post to the same book, under the same rules, with the same audit trail.</p>
+        <h3>Share classes, series, sleeves</h3>
+        <p>Per-series high-water marks and equalization. Sleeves as a first-class
+           ledger dimension. Side pockets that ring-fence frozen participation and
+           split dealing NAV from total NAV.</p>
       </div>
+      <div class="cell">
+        <h3>Closed-end, end to end</h3>
+        <p>Commitments, capital calls, drawdowns, recallable distributions,
+           waterfalls in European and American form, GP clawback, per-principal
+           carry vesting and LP givebacks.</p>
+      </div>
+      <div class="cell">
+        <h3>Registered vehicles</h3>
+        <p>RIC and BDC support, including repurchase offers with carry-forward,
+           Section 19a notices, financial highlights and the asset-coverage
+           mechanics those structures require.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="coverage">
+    <p class="kicker">Coverage</p>
+    <h2>One book. Every asset class.</h2>
+    <p class="lead">
+      Equity, fixed income, cash, fund interests, derivatives, loans, real assets
+      and digital assets post to the same ledger, under the same rules, with the
+      same audit trail. Not five subsystems and a reconciliation problem.
+    </p>
+    <div class="grid">
       <div class="cell">
         <h3>Currency as an obligation</h3>
         <p>A EUR commitment is EUR. The base amount is a dated valuation of it,
-           struck at each event's own date and never quietly retranslated later.</p>
+           struck at each event's own date and never quietly retranslated. Missing
+           a rate is a refusal, not a guess.</p>
       </div>
       <div class="cell">
-        <h3>Fees, waterfalls, equalization</h3>
-        <p>Management and incentive fees, European and American waterfalls, clawback,
-           series accounting and equalization, all configured per fund rather than
-           hard-coded.</p>
+        <h3>Fees that match the LPA</h3>
+        <p>Tiered schedules, modifiers, offsets, MFN, expense caps, manager-borne
+           splits and four-way settlement. Configured per fund, because no two
+           limited partnership agreements agree.</p>
       </div>
       <div class="cell">
-        <h3>Start from the mess you have</h3>
-        <p>Upload the spreadsheet, the CSV, the PDF. It proposes a mapping, you review
-           what it got wrong, and only what you approve is committed.</p>
+        <h3>Look-through that terminates</h3>
+        <p>Fund-of-funds exposure, acquired-fee disclosure and per-manager
+           performance records, computed through the ownership graph rather than
+           collected by email.</p>
       </div>
       <div class="cell">
         <h3>Period close that holds</h3>
-        <p>A closed period is sealed and its trial balance frozen as an artifact, so a
-           statement produced today still ties to what was reported then.</p>
+        <p>A closed period is sealed and its trial balance frozen as an artifact,
+           so a statement produced today still ties to what was reported then.</p>
       </div>
     </div>
+  </section>
+
+  <section id="ilpa">
+    <div class="split">
+      <div>
+        <p class="kicker">Reporting</p>
+        <h2>ILPA, in the ledger rather than in a spreadsheet.</h2>
+        <p class="lead">
+          Capital call and distribution notices carry ILPA CC&amp;D component codes.
+          Expense lines carry ILPA line-item codes at the point of posting, not
+          reverse-engineered at quarter end.
+        </p>
+        <p class="lead" style="margin-bottom:0">
+          Every row in a reporting template maps back to the ledger entry that
+          produced it. Where a concept genuinely has no source, the template says
+          so rather than quietly reporting a zero.
+        </p>
+      </div>
+      <div class="figure">
+        <div class="stat">
+          <span class="n">27</span>
+          <span class="l">ILPA CC&amp;D codes,<br>live vocabulary</span>
+        </div>
+        <ul class="checks">
+          <li><span class="tick">&#10003;</span><span>Call and distribution component breakdowns</span></li>
+          <li><span class="tick">&#10003;</span><span>Line-item codes carried on expense postings</span></li>
+          <li><span class="tick">&#10003;</span><span>Row-level provenance, or an honest gap marker</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="platform">
+    <p class="kicker">Platform</p>
+    <h2>API-first, and honest about AI.</h2>
+    <div class="grid">
+      <div class="cell">
+        <h3>Every screen runs on the public API</h3>
+        <p>More than 800 endpoints under one OpenAPI spec. There is no private
+           back channel: the product's own interface is built on exactly the API
+           you get, which is the only real guarantee that it is complete.</p>
+      </div>
+      <div class="cell">
+        <h3>Integrate with anything</h3>
+        <p>Custodians, administrators, banks, portals, data vendors, your own
+           warehouse. REST in, REST out, plus bulk CSV loaders for the systems
+           that will never have an API.</p>
+      </div>
+      <div class="cell">
+        <h3>Onboarding from the mess you have</h3>
+        <p>Upload the spreadsheet, the CSV, the PDF. A model proposes the mapping,
+           you review what it got wrong, and only what you approve is committed.
+           Nothing posts because a model was confident.</p>
+      </div>
+      <div class="cell">
+        <h3>Terms read from the document</h3>
+        <p>Upload an LPA and get suggested fee terms prefilled into the builder,
+           with the clause it came from attached. A human confirms every one before
+           it becomes a fund term.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="preview">
+    <p class="kicker">Before it posts</p>
+    <h2>Consequence before commit.</h2>
+    <p class="lead">
+      See exactly what an entry does to the ledger, to capital accounts, and to
+      every downstream balance, before it posts. Nothing enters the book blind, and
+      anything in an open period can be corrected without a journal of apologies.
+    </p>
   </section>
 
 </div>
@@ -298,8 +398,8 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
 
   <footer class="site">
     <div class="footrow">
-      <span class="fine">© 2026 1494 Labs</span>
-      <span class="fine"><a href="/brand/" style="color:inherit">Brand</a> · Named for the year double entry was written down</span>
+      <span class="fine">&copy; 2026 1494 Labs</span>
+      <span class="fine"><a href="/brand/" style="color:inherit">Brand</a> &middot; Named for the year double entry was written down</span>
     </div>
   </footer>
 </div>
