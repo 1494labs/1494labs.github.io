@@ -154,6 +154,22 @@ p{max-width:var(--measure)}
 .btn:focus-visible,a:focus-visible{outline:2px solid var(--claret);outline-offset:3px}
 .cta-note{font-size:14.5px;color:var(--muted);margin-top:16px}
 
+/* ── form ───────────────────────────────────────────────── */
+.signup{margin-top:26px;max-width:31rem}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:13.5px;color:var(--ink-2);margin-bottom:6px;font-weight:600}
+.fg input,.fg select,.fg textarea{
+  width:100%;font:inherit;font-size:16px;color:var(--ink);
+  background:var(--surface);border:1px solid var(--rule-2);border-radius:3px;
+  padding:11px 13px;
+}
+.fg textarea{min-height:86px;resize:vertical}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+  outline:2px solid var(--teal);outline-offset:0;border-color:var(--teal);
+}
+.fg .hint{font-size:12.5px;color:var(--muted);margin-top:5px}
+button.btn{cursor:pointer;font-family:inherit}
+
 /* ── footer ─────────────────────────────────────────────── */
 footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clamp(40px,6vw,72px)}
 .footrow{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
@@ -392,8 +408,44 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
       system prove the books than merely store them. If that is your problem,
       we would like to hear how you have it.
     </p>
-    <p><a class="btn" href="mailto:hello@1494labs.com?subject=1494%20Labs%20early%20access">Request early access</a></p>
-    <p class="cta-note">Or write directly: <a href="mailto:hello@1494labs.com">hello@1494labs.com</a></p>
+
+    <!-- Formspree: replace FORM_ID below with the endpoint from
+         formspree.io once the 1494 Labs form is created. Until then this
+         form will not deliver. -->
+    <form class="signup" action="https://formspree.io/f/FORM_ID" method="POST">
+      <input type="hidden" name="_subject" value="1494 Labs early access request">
+      <div class="fg">
+        <label for="email">Work email</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+      </div>
+      <div class="fg">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required autocomplete="name">
+      </div>
+      <div class="fg">
+        <label for="firm">Firm</label>
+        <input type="text" id="firm" name="firm" required autocomplete="organization">
+      </div>
+      <div class="fg">
+        <label for="runs">What do you run?</label>
+        <select id="runs" name="runs" required>
+          <option value="">Select...</option>
+          <option value="hedge">Hedge fund or multi-strategy</option>
+          <option value="pevc">Private equity or venture</option>
+          <option value="fof">Fund of funds</option>
+          <option value="family-office">Family office</option>
+          <option value="administrator">Fund administrator</option>
+          <option value="registered">Registered fund (RIC or BDC)</option>
+          <option value="other">Something else</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label for="setup">What are you running on today?</label>
+        <textarea id="setup" name="setup" placeholder="Optional. The more specific the better."></textarea>
+        <p class="hint">Spreadsheets, an administrator, a platform you have outgrown. Whatever it is.</p>
+      </div>
+      <button class="btn" type="submit">Request early access</button>
+    </form>
   </section>
 
   <footer class="site">

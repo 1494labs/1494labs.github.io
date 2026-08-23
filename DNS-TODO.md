@@ -1,4 +1,12 @@
-# Custom domain: re-enable when DNS is ready
+# Pre-launch TODO
+
+## 1. Formspree endpoint
+
+`index.html` posts to `https://formspree.io/f/FORM_ID`. Create the 1494 Labs
+form at formspree.io and replace `FORM_ID` with the real endpoint. Until then
+the early-access form will not deliver. Same setup as the LadderOps site.
+
+## 2. Custom domain: re-enable when DNS is ready
 
 The `CNAME` file was removed so `1494labs.github.io` serves directly during
 pre-launch iteration. With `CNAME` present, GitHub 301-redirects the
