@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand · 1494 Labs</title>
+<meta name="description" content="The 1494 Labs brand: the T-account mark, palette, typography and voice. How to use them, and what not to do.">
+<link rel="canonical" href="https://1494labs.com/brand/">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+
+<style>
+:root{
+  --paper:#F7F4ED; --surface:#FCFAF6; --ink:#221F1B; --ink-2:#524B42;
+  --muted:#8A8175; --rule:#E2DBCE; --rule-2:#CFC6B5;
+  --teal:#176B75; --teal-deep:#0F4F57; --claret:#94263C;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,"Cascadia Code",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#14120F; --surface:#1B1815; --ink:#EDE8DF; --ink-2:#BDB4A6;
+    --muted:#8D8474; --rule:#2C2721; --rule-2:#3D362D;
+    --teal:#4FB3BC; --teal-deep:#7FD0D6; --claret:#E08095;
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+     font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:62rem;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+a{color:var(--teal)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--claret);outline-offset:3px}
+
+header.site{padding:26px 0 0}
+.brandbar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.lockup{display:inline-flex;align-items:center;gap:11px;text-decoration:none;color:inherit}
+.lockup svg{width:26px;height:26px;color:var(--teal);flex:none}
+.wordmark{font-family:var(--serif);font-size:21px;letter-spacing:-.01em;line-height:1}
+.wordmark span{font-family:var(--sans);font-size:12px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin-left:7px;vertical-align:1px}
+.navlink{font-size:14.5px;color:var(--ink-2);text-decoration:none;
+  border-bottom:1px solid var(--rule-2);padding-bottom:2px}
+.navlink:hover{color:var(--teal);border-color:var(--teal)}
+
+.hero{padding:clamp(52px,8vw,96px) 0 clamp(28px,4vw,44px)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(38px,6vw,64px);
+   line-height:1.04;letter-spacing:-.02em;margin:0 0 20px;text-wrap:balance}
+.standfirst{font-size:19px;line-height:1.55;color:var(--ink-2);max-width:36rem;margin:0}
+
+section{padding:clamp(44px,6vw,72px) 0;border-top:1px solid var(--rule)}
+.kicker{font-family:var(--mono);font-size:11.5px;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--teal);margin:0 0 16px}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(27px,3.6vw,38px);
+   line-height:1.12;letter-spacing:-.015em;margin:0 0 18px;text-wrap:balance}
+h3{font-family:var(--serif);font-weight:400;font-size:20px;margin:0 0 8px}
+p{max-width:34rem}
+.lead{font-size:18px;color:var(--ink-2)}
+.note{font-size:14.5px;color:var(--muted);max-width:34rem}
+
+/* mark specimens */
+.specimens{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;
+  overflow:hidden;margin:26px 0 10px}
+.spec{background:var(--paper);padding:26px 20px;text-align:center}
+.spec.dark{background:var(--teal)}
+.spec svg{color:var(--teal)}
+.spec.dark svg{color:var(--paper)}
+.spec .cap{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);margin-top:16px}
+.spec.dark .cap{color:rgba(247,244,237,.72)}
+
+.sizes{display:flex;align-items:flex-end;gap:26px;flex-wrap:wrap;margin:24px 0 8px}
+.sizes figure{margin:0;text-align:center}
+.sizes svg{color:var(--teal);display:block;margin:0 auto}
+.sizes figcaption{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:10px}
+
+/* clear space diagram */
+.clearspace{display:inline-block;padding:24px;background:var(--surface);
+  border:1px dashed var(--rule-2);border-radius:3px;margin:22px 0 6px}
+.clearspace .inner{display:inline-block;padding:22px;outline:1px solid var(--claret);outline-offset:0}
+.clearspace svg{width:56px;height:56px;color:var(--teal);display:block}
+
+/* do / don't */
+.rules{display:grid;grid-template-columns:1fr;gap:1px;background:var(--rule);
+  border:1px solid var(--rule);border-radius:3px;overflow:hidden;margin-top:22px}
+@media(min-width:760px){.rules{grid-template-columns:1fr 1fr}}
+.rule-cell{background:var(--paper);padding:22px 24px}
+.rule-cell h4{margin:0 0 12px;font-size:13px;font-family:var(--mono);
+  letter-spacing:.1em;text-transform:uppercase}
+.rule-cell.do h4{color:var(--teal)}
+.rule-cell.dont h4{color:var(--claret)}
+.rule-cell ul{margin:0;padding-left:18px}
+.rule-cell li{font-size:15.5px;color:var(--ink-2);margin-bottom:8px}
+
+/* palette */
+.palette{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));
+  gap:14px;margin-top:24px}
+.sw{border:1px solid var(--rule);border-radius:3px;overflow:hidden;background:var(--surface)}
+.sw .chip{height:74px}
+.sw .meta{padding:11px 13px}
+.sw .nm{font-size:14.5px;font-weight:600}
+.sw .hx{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:.02em}
+.sw .use{font-size:12.5px;color:var(--muted);margin-top:5px;line-height:1.4}
+
+/* type scale */
+.scale{border:1px solid var(--rule);border-radius:3px;overflow:hidden;margin-top:24px}
+.scale-row{display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:baseline;
+  padding:16px 20px;border-bottom:1px solid var(--rule)}
+.scale-row:last-child{border-bottom:0}
+.scale-row .tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted)}
+.s-display{font-family:var(--serif);font-size:40px;line-height:1.05;letter-spacing:-.02em}
+.s-h2{font-family:var(--serif);font-size:28px;line-height:1.15}
+.s-h3{font-family:var(--serif);font-size:20px}
+.s-body{font-size:17px;color:var(--ink-2)}
+.s-small{font-size:14.5px;color:var(--muted)}
+.s-mono{font-family:var(--mono);font-size:13px;letter-spacing:.03em;color:var(--ink-2)}
+.s-num{font-family:var(--serif);font-size:22px;font-variant-numeric:tabular-nums lining-nums}
+
+table.assets{width:100%;border-collapse:collapse;margin-top:22px;font-size:15px}
+table.assets th,table.assets td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--rule)}
+table.assets th{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);font-weight:400}
+table.assets code{font-family:var(--mono);font-size:13px}
+.tablewrap{overflow-x:auto}
+
+footer.site{border-top:1px solid var(--rule);padding:32px 0 56px}
+.fine{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+<header class="site">
+  <div class="brandbar">
+    <a class="lockup" href="/" aria-label="1494 Labs home">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/>
+        </g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+      <span class="wordmark">1494<span>Labs</span></span>
+    </a>
+    <a class="navlink" href="/">← Home</a>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>Brand</h1>
+  <p class="standfirst">
+    The mark, the palette, the type and the voice, with the reasoning attached so the
+    decisions survive contact with whoever builds the next thing.
+  </p>
+</div>
+
+<section>
+  <p class="kicker">The mark</p>
+  <h2>A T-account</h2>
+  <p class="lead">
+    The glyph every bookkeeper draws without thinking: a ruled head, a center stem
+    dividing debit from credit, and two entries of equal weight either side. It is
+    the balance itself, drawn.
+  </p>
+  <p class="note">
+    Abstract to a stranger, immediately legible to an accountant. The same logic as
+    the name. It carries meaning for the people who buy this, and reads as a clean
+    geometric mark to everyone else.
+  </p>
+
+  <div class="specimens">
+    <div class="spec">
+      <svg viewBox="0 0 32 32" width="52" height="52" aria-label="Mark, teal on paper">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/></g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+      <div class="cap">Primary</div>
+    </div>
+    <div class="spec dark">
+      <svg viewBox="0 0 32 32" width="52" height="52" aria-label="Mark reversed on teal">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/></g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+      <div class="cap">Reversed</div>
+    </div>
+    <div class="spec">
+      <svg viewBox="0 0 32 32" width="52" height="52" style="color:var(--ink)" aria-label="Mark in ink">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/></g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+      <div class="cap">Single color</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:34px">Clear space</h3>
+  <p class="note">
+    Keep free space around the mark equal to the height of its head stroke on every
+    side. Nothing sits inside that boundary: not type, not a rule, not a photograph edge.
+  </p>
+  <div class="clearspace">
+    <div class="inner">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/></g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+    </div>
+  </div>
+
+  <h3 style="margin-top:34px">Minimum size</h3>
+  <p class="note">
+    16px is the floor on screen, 6mm in print. Below 20px the secondary entries
+    (the lighter pair) stop resolving. Use the solid favicon tile instead, which is
+    drawn for exactly that case.
+  </p>
+  <div class="sizes">
+    <figure>
+      <svg viewBox="0 0 32 32" width="16" height="16" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/></g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+      </svg>
+      <figcaption>16px min</figcaption>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/></g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+      <figcaption>26px header</figcaption>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 32 32" width="64" height="64" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/></g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+      <figcaption>64px</figcaption>
+    </figure>
+  </div>
+
+  <div class="rules">
+    <div class="rule-cell do">
+      <h4>Do</h4>
+      <ul>
+        <li>Teal on paper, paper on teal, or a single flat color</li>
+        <li>Keep the two entry marks at their given weights. The lighter pair is deliberate</li>
+        <li>Scale proportionally, always</li>
+        <li>Use the solid tile (favicon) wherever the mark would sit below 20px</li>
+      </ul>
+    </div>
+    <div class="rule-cell dont">
+      <h4>Don't</h4>
+      <ul>
+        <li>Rotate, skew, or stretch it. A T-account that isn't square isn't a T-account</li>
+        <li>Add shadows, gradients, glows or outlines</li>
+        <li>Recolor into anything outside the palette, and never into claret</li>
+        <li>Place it over photography or any busy ground</li>
+        <li>Redraw the stem off-center. The division is the whole point</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="kicker">The lockup</p>
+  <h2>Mark, numerals, label</h2>
+  <p class="lead">
+    <strong>1494</strong> is set in the display serif at full weight; <strong>LABS</strong>
+    follows in the sans, uppercase, letterspaced, in muted gray. The label is
+    subordinate: it names the company, and the numerals are the brand.
+  </p>
+  <div class="clearspace" style="padding:30px 34px">
+    <span class="lockup" style="pointer-events:none">
+      <svg viewBox="0 0 32 32" style="width:34px;height:34px" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/></g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+      <span class="wordmark" style="font-size:28px">1494<span style="font-size:14px">Labs</span></span>
+    </span>
+  </div>
+  <p class="note" style="margin-top:14px">
+    In prose it is <strong>1494 Labs</strong>, with the space, both words capitalized.
+    <code style="font-family:var(--mono);font-size:13.5px">1494labs</code> appears only in
+    domains and handles. Said aloud: <em>fourteen ninety-four labs</em>.
+  </p>
+</section>
+
+<section>
+  <p class="kicker">Color</p>
+  <h2>Warm paper, slate teal, and one reserved red</h2>
+  <p class="lead">
+    A warm ground rather than white. It is kinder over the hundred-minute sessions this
+    software is actually used for, and it screenshots differently from a category
+    that is all blue-on-white.
+  </p>
+
+  <div class="palette">
+    <div class="sw"><div class="chip" style="background:#F7F4ED;border-bottom:1px solid var(--rule)"></div>
+      <div class="meta"><div class="nm">Paper</div><div class="hx">#F7F4ED</div>
+      <div class="use">Page ground</div></div></div>
+    <div class="sw"><div class="chip" style="background:#FCFAF6;border-bottom:1px solid var(--rule)"></div>
+      <div class="meta"><div class="nm">Surface</div><div class="hx">#FCFAF6</div>
+      <div class="use">Raised panels, cards</div></div></div>
+    <div class="sw"><div class="chip" style="background:#221F1B"></div>
+      <div class="meta"><div class="nm">Ink</div><div class="hx">#221F1B</div>
+      <div class="use">Headings, primary text</div></div></div>
+    <div class="sw"><div class="chip" style="background:#524B42"></div>
+      <div class="meta"><div class="nm">Ink 2</div><div class="hx">#524B42</div>
+      <div class="use">Body copy</div></div></div>
+    <div class="sw"><div class="chip" style="background:#8A8175"></div>
+      <div class="meta"><div class="nm">Muted</div><div class="hx">#8A8175</div>
+      <div class="use">Captions, labels</div></div></div>
+    <div class="sw"><div class="chip" style="background:#E2DBCE"></div>
+      <div class="meta"><div class="nm">Rule</div><div class="hx">#E2DBCE</div>
+      <div class="use">Borders, dividers</div></div></div>
+    <div class="sw"><div class="chip" style="background:#176B75"></div>
+      <div class="meta"><div class="nm">Teal</div><div class="hx">#176B75</div>
+      <div class="use">Primary. The mark, links, emphasis</div></div></div>
+    <div class="sw"><div class="chip" style="background:#0F4F57"></div>
+      <div class="meta"><div class="nm">Teal deep</div><div class="hx">#0F4F57</div>
+      <div class="use">Hover, pressed</div></div></div>
+    <div class="sw"><div class="chip" style="background:#94263C"></div>
+      <div class="meta"><div class="nm">Claret</div><div class="hx">#94263C</div>
+      <div class="use"><strong>Reserved.</strong> Money lost, and errors</div></div></div>
+  </div>
+
+  <h3 style="margin-top:34px">The one rule that matters</h3>
+  <p class="note">
+    <strong>Claret is never decoration.</strong> In the product it means a negative
+    number or a failure, and nothing else. A screen where everything is colored has
+    no emphasis left to spend on the number that is actually wrong. Color here is
+    information, and the red is spent only where it carries meaning. It follows that a
+    marketing page has almost no reason to use claret at all.
+  </p>
+  <p class="note">
+    Claret rather than a pure red because red on a warm ground is the same hue family
+    and blends; claret is darker and further from the paper, so a loss still jumps.
+  </p>
+</section>
+
+<section>
+  <p class="kicker">Typography</p>
+  <h2>A book serif and the system sans</h2>
+  <p class="lead">
+    Display type is a Palatino-class serif, a book face, which is the correct
+    register for a product named after a book. Everything else is the platform's own
+    sans. No webfonts, so pages carry zero external requests and never flash.
+  </p>
+
+  <div class="scale">
+    <div class="scale-row"><span class="tag">Display</span><span class="s-display">Two books. One truth.</span></div>
+    <div class="scale-row"><span class="tag">Heading</span><span class="s-h2">Most systems tell you what the books say.</span></div>
+    <div class="scale-row"><span class="tag">Subhead</span><span class="s-h3">Consequence before commit</span></div>
+    <div class="scale-row"><span class="tag">Body</span><span class="s-body">The general ledger and every investor's capital account are the same fact.</span></div>
+    <div class="scale-row"><span class="tag">Small</span><span class="s-small">Reserved for captions, notes and asides.</span></div>
+    <div class="scale-row"><span class="tag">Mono</span><span class="s-mono">EYEBROWS · LABELS · CODE · DATA</span></div>
+    <div class="scale-row"><span class="tag">Numerals</span><span class="s-num">1,204,997.38 &nbsp; 1494</span></div>
+  </div>
+
+  <h3 style="margin-top:34px">Numbers</h3>
+  <p class="note">
+    Anything columnar uses <strong>tabular lining numerals</strong>. Every number in
+    this product is compared to the one above it, and proportional digits make a money
+    column impossible to scan. This is not a preference.
+  </p>
+
+  <h3 style="margin-top:26px">Setting</h3>
+  <p class="note">
+    Running text stays near 65 characters. Headings get <code style="font-family:var(--mono);font-size:13px">text-wrap: balance</code>.
+    Uppercase mono labels take roughly 0.15em of letterspacing. They are signage, not prose.
+  </p>
+</section>
+
+<section>
+  <p class="kicker">Voice</p>
+  <h2>Say the thing plainly</h2>
+  <p class="lead">
+    The audience is fund CFOs, controllers and administrators. They are skeptical for
+    a living, they have been sold to before, and they can tell the difference between a
+    claim and a proof.
+  </p>
+  <div class="rules">
+    <div class="rule-cell do">
+      <h4>Do</h4>
+      <ul>
+        <li>State what the software does, in the words the reader already uses</li>
+        <li>Prefer a checkable number to an adjective: "57 invariants" over "rigorous"</li>
+        <li>Admit limits; an honest gap earns more trust than a smooth claim</li>
+        <li>Write complete sentences, in the active voice</li>
+      </ul>
+    </div>
+    <div class="rule-cell dont">
+      <h4>Don't</h4>
+      <ul>
+        <li>Use "revolutionary", "seamless", "leverage", "unlock", "game-changing"</li>
+        <li>Name a competitor, ever</li>
+        <li>Claim anything that cannot be demonstrated in a call</li>
+        <li>Use exclamation marks, or emoji as section markers</li>
+      </ul>
+    </div>
+  </div>
+    <p class="note" style="margin-top:20px">
+    <strong>No em-dashes.</strong> Anywhere, in any surface. Use a period, a colon,
+    a comma, or a middot separator instead. A sentence that needs an em-dash is
+    usually two sentences that have not been separated yet.
+  </p>
+  <p class="note">
+    <strong>American spelling throughout.</strong> Color, not colour. Center, not
+    centre. Recognize, not recognise. This applies to product copy, marketing, docs
+    and code comments alike.
+  </p>
+</section>
+
+<section>
+  <p class="kicker">The name</p>
+  <h2>1494</h2>
+  <p class="lead">
+    In 1494 Luca Pacioli published the <em>Summa de arithmetica</em>, codifying the
+    double-entry method Venetian merchants had already used for two centuries. Debits
+    and credits, a ledger that balances, books anyone who knows the rules can check.
+  </p>
+  <p class="note">
+    Opaque to most people, a handshake to an accountant. If someone asks, that is the
+    answer. One sentence, not a history lesson. The mark tells the same story in
+    geometry.
+  </p>
+</section>
+
+<section>
+  <p class="kicker">Assets</p>
+  <h2>Files</h2>
+  <div class="tablewrap">
+    <table class="assets">
+      <thead><tr><th>File</th><th>Use</th></tr></thead>
+      <tbody>
+        <tr><td><code>/assets/mark.svg</code></td><td>The mark, vector, inherits <code>currentColor</code></td></tr>
+        <tr><td><code>/assets/favicon.svg</code></td><td>Solid teal tile, reversed mark. Small sizes</td></tr>
+        <tr><td><code>/assets/favicon.ico</code></td><td>16 / 32 / 48 / 64, legacy browsers</td></tr>
+        <tr><td><code>/assets/apple-touch-icon.png</code></td><td>180px, iOS home screen</td></tr>
+        <tr><td><code>/assets/icon-192x192.png</code>, <code>icon-512x512.png</code></td><td>App icons, web manifest</td></tr>
+        <tr><td><code>/assets/og.png</code></td><td>1200 × 630 social card</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note" style="margin-top:18px">
+    The mark uses <code style="font-family:var(--mono);font-size:13px">currentColor</code>,
+    so inline SVG takes the color of its context. Set <code style="font-family:var(--mono);font-size:13px">color</code>
+    rather than editing the file.
+  </p>
+</section>
+
+<footer class="site">
+  <span class="fine">© 2026 1494 Labs · Named for the year double entry was written down</span>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>1494 Labs · Fund accounting that proves itself</title>
+<meta name="description" content="Fund accounting where the general ledger and every investor's capital account are the same fact. Fifty-seven invariants check the books continuously, on live funds.">
+<link rel="canonical" href="https://1494labs.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://1494labs.com/">
+<meta property="og:site_name" content="1494 Labs">
+<meta property="og:title" content="1494 Labs · Fund accounting that proves itself">
+<meta property="og:description" content="The general ledger and every investor's capital account, reconciled by construction. Fifty-seven invariants, checked continuously on live funds.">
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="1494 Labs · Fund accounting that proves itself">
+<meta name="twitter:description" content="The general ledger and every investor's capital account, reconciled by construction.">
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#176B75">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "1494 Labs",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "description": "Fund accounting and fund administration software. The general ledger and investor capital accounts are reconciled by construction, with continuous invariant checking across multi-asset, multi-currency books.",
+  "url": "https://1494labs.com/",
+  "publisher": { "@type": "Organization", "name": "1494 Labs", "url": "https://1494labs.com/" }
+}
+</script>
+
+<style>
+:root{
+  --paper:#F7F4ED; --surface:#FCFAF6; --ink:#221F1B; --ink-2:#524B42;
+  --muted:#8A8175; --rule:#E2DBCE; --rule-2:#CFC6B5;
+  --teal:#176B75; --teal-deep:#0F4F57; --claret:#94263C;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,"Cascadia Code",Menlo,Consolas,monospace;
+  --measure:34rem;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#14120F; --surface:#1B1815; --ink:#EDE8DF; --ink-2:#BDB4A6;
+    --muted:#8D8474; --rule:#2C2721; --rule-2:#3D362D;
+    --teal:#4FB3BC; --teal-deep:#7FD0D6; --claret:#E08095;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:70rem;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+a{color:inherit}
+
+/* ── header ─────────────────────────────────────────────── */
+header.site{padding:26px 0 0}
+.brandbar{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.lockup{display:inline-flex;align-items:center;gap:11px;text-decoration:none}
+.lockup svg{width:26px;height:26px;color:var(--teal);flex:none}
+.wordmark{font-family:var(--serif);font-size:21px;letter-spacing:-.01em;line-height:1}
+.wordmark b{font-weight:400}
+.wordmark span{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-left:7px;vertical-align:1px}
+.navlink{font-size:14.5px;color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule-2);padding-bottom:2px}
+.navlink:hover{color:var(--teal);border-color:var(--teal)}
+
+/* ── hero ───────────────────────────────────────────────── */
+.hero{padding:clamp(64px,11vw,130px) 0 clamp(48px,7vw,84px)}
+.eyebrow{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 26px;
+}
+h1{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(42px,7.4vw,80px);line-height:1.02;letter-spacing:-.02em;
+  margin:0 0 28px;text-wrap:balance;
+}
+h1 em{font-style:normal;color:var(--teal)}
+.standfirst{font-size:clamp(18px,2.2vw,21px);line-height:1.55;color:var(--ink-2);max-width:var(--measure);margin:0}
+.herorule{margin:clamp(40px,6vw,64px) 0 0;border:0;border-top:1px solid var(--rule)}
+
+/* ── proof ──────────────────────────────────────────────── */
+section{padding:clamp(56px,8vw,96px) 0}
+.kicker{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--teal);margin:0 0 18px;
+}
+h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(30px,4.4vw,46px);line-height:1.1;letter-spacing:-.015em;
+  margin:0 0 22px;text-wrap:balance;max-width:26ch;
+}
+p{max-width:var(--measure)}
+.lead{font-size:18.5px;color:var(--ink-2);margin:0 0 18px}
+.split{display:grid;grid-template-columns:1fr;gap:clamp(28px,5vw,64px)}
+@media (min-width:900px){.split{grid-template-columns:1.05fr .95fr;align-items:start}}
+
+.figure{
+  background:var(--surface);border:1px solid var(--rule);border-radius:3px;
+  padding:clamp(22px,3vw,32px);
+}
+.stat{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
+.stat .n{font-family:var(--serif);font-size:clamp(44px,6vw,64px);line-height:1;color:var(--teal);letter-spacing:-.02em}
+.stat .l{font-size:14.5px;color:var(--muted);line-height:1.35}
+.checks{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.checks li{
+  display:flex;gap:12px;align-items:baseline;
+  padding:11px 0;border-bottom:1px solid var(--rule);font-size:15px;color:var(--ink-2);
+}
+.checks li:last-child{border-bottom:0}
+.checks .tick{color:var(--teal);font-family:var(--mono);font-size:13px;flex:none}
+.checks code{font-family:var(--mono);font-size:13.5px;color:var(--ink)}
+
+/* ── capability grid ────────────────────────────────────── */
+.grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;margin-top:clamp(28px,4vw,44px)}
+@media (min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+.cell{background:var(--paper);padding:clamp(24px,3.2vw,34px)}
+.cell h3{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.25;margin:0 0 10px;letter-spacing:-.01em}
+.cell p{font-size:15.5px;color:var(--ink-2);margin:0;max-width:none}
+
+/* ── the name ───────────────────────────────────────────── */
+.name-section{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);background:var(--surface)}
+.year{
+  font-family:var(--serif);font-size:clamp(72px,15vw,168px);line-height:.86;
+  letter-spacing:-.035em;color:var(--teal);margin:0 0 6px;
+  font-variant-numeric:lining-nums tabular-nums;
+}
+.year-cap{font-family:var(--mono);font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin:0 0 30px}
+
+/* ── cta ────────────────────────────────────────────────── */
+.cta{text-align:left}
+.btn{
+  display:inline-block;background:var(--teal);color:var(--paper);
+  text-decoration:none;font-size:16px;font-weight:600;
+  padding:14px 26px;border-radius:3px;border:1px solid var(--teal);
+}
+.btn:hover{background:var(--teal-deep);border-color:var(--teal-deep)}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--claret);outline-offset:3px}
+.cta-note{font-size:14.5px;color:var(--muted);margin-top:16px}
+
+/* ── footer ─────────────────────────────────────────────── */
+footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clamp(40px,6vw,72px)}
+.footrow{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
+.fine{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="site">
+    <div class="brandbar">
+      <a class="lockup" href="/" aria-label="1494 Labs home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+            <path d="M5 9 H27"/><path d="M16 9 V26"/>
+          </g>
+          <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+          <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        </svg>
+        <span class="wordmark"><b>1494</b><span>Labs</span></span>
+      </a>
+      <a class="navlink" href="#contact">Get in touch</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <p class="eyebrow">Fund accounting &amp; administration</p>
+    <h1>Two books.<br><em>One truth.</em></h1>
+    <p class="standfirst">
+      The general ledger and every investor's capital account are the same fact,
+      reconciled by construction. Not by a nightly job that someone has to trust.
+    </p>
+    <hr class="herorule">
+  </section>
+
+  <section id="proof">
+    <div class="split">
+      <div>
+        <p class="kicker">Proof, not assertion</p>
+        <h2>Most systems tell you what the books say.</h2>
+        <p class="lead">
+          This one proves it. Fifty-seven invariants run continuously against live
+          funds. Not a test suite over fixtures, but arithmetic truths checked
+          against real money, every day.
+        </p>
+        <p class="lead" style="margin-bottom:0">
+          When something drifts, the sweep says so before it reaches a review,
+          an auditor, or an LP.
+        </p>
+      </div>
+      <div class="figure">
+        <div class="stat">
+          <span class="n">57</span>
+          <span class="l">invariants, checked<br>daily on live books</span>
+        </div>
+        <ul class="checks">
+          <li><span class="tick">✓</span><span>Capital accounts reconcile to the ledger, per fund, per period</span></li>
+          <li><span class="tick">✓</span><span>Allocations sum to the pool, so no rounding leaks into someone's balance</span></li>
+          <li><span class="tick">✓</span><span>No lot outlives the position it belongs to</span></li>
+          <li><span class="tick">✓</span><span>Every high-water mark survives redemption, transfer and restatement</span></li>
+          <li><span class="tick">✓</span><span>Ownership is <code>derived</code> from capital, never asserted alongside it</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="what">
+    <p class="kicker">What it does</p>
+    <h2>One book. Every asset. Every currency.</h2>
+    <p class="lead">
+      Not five subsystems with a reconciliation problem between them.
+    </p>
+
+    <div class="grid">
+      <div class="cell">
+        <h3>Consequence before commit</h3>
+        <p>See exactly what a posting does to the ledger, to capital accounts, and to
+           every downstream balance, before it posts. Nothing enters the book blind.</p>
+      </div>
+      <div class="cell">
+        <h3>Multi-asset on a shared ledger</h3>
+        <p>Securities, private markets, real assets, digital assets and derivatives
+           post to the same book, under the same rules, with the same audit trail.</p>
+      </div>
+      <div class="cell">
+        <h3>Currency as an obligation</h3>
+        <p>A EUR commitment is EUR. The base amount is a dated valuation of it,
+           struck at each event's own date and never quietly retranslated later.</p>
+      </div>
+      <div class="cell">
+        <h3>Fees, waterfalls, equalization</h3>
+        <p>Management and incentive fees, European and American waterfalls, clawback,
+           series accounting and equalization, all configured per fund rather than
+           hard-coded.</p>
+      </div>
+      <div class="cell">
+        <h3>Start from the mess you have</h3>
+        <p>Upload the spreadsheet, the CSV, the PDF. It proposes a mapping, you review
+           what it got wrong, and only what you approve is committed.</p>
+      </div>
+      <div class="cell">
+        <h3>Period close that holds</h3>
+        <p>A closed period is sealed and its trial balance frozen as an artifact, so a
+           statement produced today still ties to what was reported then.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<section class="name-section">
+  <div class="wrap">
+    <p class="year">1494</p>
+    <p class="year-cap">Why the name</p>
+    <p class="lead">
+      In 1494, Luca Pacioli published the <em>Summa de arithmetica</em>, codifying the
+      double-entry method Venetian merchants had already used for two centuries.
+      Debits and credits, a ledger that balances, books that can be checked by anyone
+      who knows the rules.
+    </p>
+    <p class="lead" style="margin-bottom:0">
+      Everything since has been an implementation detail. We took the year.
+    </p>
+  </div>
+</section>
+
+<div class="wrap">
+  <section id="contact" class="cta">
+    <p class="kicker">Early access</p>
+    <h2>Currently in private development.</h2>
+    <p class="lead">
+      Built for fund administrators, CFOs and controllers who would rather their
+      system prove the books than merely store them. If that is your problem,
+      we would like to hear how you have it.
+    </p>
+    <p><a class="btn" href="mailto:hello@1494labs.com?subject=1494%20Labs%20early%20access">Request early access</a></p>
+    <p class="cta-note">Or write directly: <a href="mailto:hello@1494labs.com">hello@1494labs.com</a></p>
+  </section>
+
+  <footer class="site">
+    <div class="footrow">
+      <span class="fine">© 2026 1494 Labs</span>
+      <span class="fine"><a href="/brand/" style="color:inherit">Brand</a> · Named for the year double entry was written down</span>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="1494 Labs">
+  <!-- The T-account: the universal glyph of double entry. A ruled head, a
+       centre stem dividing debit from credit, and two entries of equal
+       weight either side — the balance itself, drawn. -->
+  <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+    <path d="M5 9 H27" />
+    <path d="M16 9 V26" />
+  </g>
+  <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+  <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+  <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+  <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+</svg>
