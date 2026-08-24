@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="1494 Labs">
   <!-- The T-account: the universal glyph of double entry. A ruled head, a
-       centre stem dividing debit from credit, and two entries of equal
-       weight either side — the balance itself, drawn. -->
+       center stem dividing debit from credit, and two entries of equal
+       weight either side. The balance itself, drawn. -->
   <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
     <path d="M5 9 H27" />
     <path d="M16 9 V26" />
