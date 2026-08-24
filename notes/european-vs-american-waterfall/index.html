@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>European vs American waterfalls, with the numbers worked · 1494 Labs</title>
+<meta name="description" content="Whole-of-fund and deal-by-deal carry, run through the same two deals. Same fund, same total profit, and a six million dollar difference in what the GP is holding when the second deal disappoints.">
+<link rel="canonical" href="https://1494labs.com/notes/european-vs-american-waterfall/">
+<link rel="stylesheet" href="/assets/notes.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://1494labs.com/notes/european-vs-american-waterfall/">
+<meta property="og:site_name" content="1494 Labs">
+<meta property="og:title" content="European vs American waterfalls, with the numbers worked">
+<meta property="og:description" content="Same fund, same two deals, same total profit. A six million dollar difference in what the GP is holding when the second deal disappoints.">
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="European vs American waterfalls, with the numbers worked">
+<meta name="twitter:description" content="Same fund, same deals, same profit. Six million dollars of difference in timing.">
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "European vs American waterfalls, with the numbers worked",
+  "description": "Whole-of-fund and deal-by-deal carry, run through the same two deals. Same fund, same total profit, and a six million dollar difference in what the GP is holding when the second deal disappoints.",
+  "url": "https://1494labs.com/notes/european-vs-american-waterfall/",
+  "datePublished": "2026-08-24",
+  "dateModified": "2026-08-24",
+  "inLanguage": "en",
+  "author": { "@type": "Organization", "name": "1494 Labs", "url": "https://1494labs.com/" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "1494 Labs",
+    "url": "https://1494labs.com/",
+    "logo": "https://1494labs.com/assets/icon-512x512.png"
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://1494labs.com/notes/european-vs-american-waterfall/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "1494 Labs", "item": "https://1494labs.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Notes", "item": "https://1494labs.com/notes/" },
+    { "@type": "ListItem", "position": 3, "name": "European vs American waterfalls" }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a href="/">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="1494 Labs">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/>
+        </g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+      <span class="name">1494 Labs</span>
+    </a>
+    <span class="sep">&middot;</span>
+    <span class="sec">Notes</span>
+    <span class="spacer"></span>
+    <a class="back" href="/notes/">All notes</a>
+  </nav>
+
+  <h1>European vs American waterfalls, with the numbers worked</h1>
+  <p class="standfirst">
+    The difference is usually explained as "whole-of-fund versus deal-by-deal" and
+    then left there. Run the same two deals through both and the consequence shows
+    up as a specific number: six million dollars sitting in the wrong pocket.
+  </p>
+  <p class="byline">Private equity &middot; roughly 8 minutes</p>
+
+  <article>
+
+    <h2>The mechanism, briefly</h2>
+    <p>
+      Both structures distribute money through the same four tiers, in the same
+      order. What differs is <em>what the tiers are measured against</em>.
+    </p>
+    <ol>
+      <li><strong>Return of capital.</strong> Investors get their contributions back.</li>
+      <li><strong>Preferred return.</strong> Investors receive a hurdle, commonly 8%, before the manager participates in profit.</li>
+      <li><strong>Catch-up.</strong> The manager receives most or all of the next dollars until it holds its full percentage of profit, typically 20%.</li>
+      <li><strong>Split.</strong> Everything after that divides at the carry rate, commonly 80/20.</li>
+    </ol>
+    <p>
+      In a <strong>European</strong> waterfall, those tiers are measured across the
+      entire fund. No carry is paid until investors have received back
+      <em>all</em> contributed capital and their preferred return on it.
+    </p>
+    <p>
+      In an <strong>American</strong> waterfall, the tiers are measured deal by deal.
+      A profitable exit can pay carry while other investments are still outstanding,
+      and while the fund as a whole has returned nothing.
+    </p>
+
+    <h2>The same fund, both ways</h2>
+    <p>
+      Take a fund of $100M in commitments, 20% carry over an 8% preferred return. It
+      makes two investments and incurs $20M of fees and expenses across its life.
+    </p>
+
+    <div class="tablewrap">
+      <table>
+        <caption>The fund</caption>
+        <thead><tr><th>Item</th><th class="n">Amount</th><th>Timing</th></tr></thead>
+        <tbody>
+          <tr><td>Deal A invested</td><td class="n">$40M</td><td>Year 1</td></tr>
+          <tr><td>Deal B invested</td><td class="n">$40M</td><td>Year 1</td></tr>
+          <tr><td>Fees and expenses</td><td class="n">$20M</td><td>Across the life</td></tr>
+          <tr class="total"><td>Total contributed</td><td class="n">$100M</td><td></td></tr>
+          <tr><td>Deal A exits</td><td class="n">$100M</td><td>Year 3</td></tr>
+          <tr><td>Deal B exits</td><td class="n neg">$20M</td><td>Year 5</td></tr>
+          <tr class="total"><td>Total proceeds</td><td class="n">$120M</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Across the whole fund the arithmetic is simple. Investors put in $100M and
+      $120M comes back. <strong>Total profit is $20M, so carry at 20% should be
+      $4M.</strong> That figure is not in dispute under either structure. What
+      differs is when the manager gets paid, and what happens in between.
+    </p>
+
+    <div class="note">
+      <span class="tag">Simplification</span>
+      <p>
+        The preferred return below is shown as a simple, non-compounding figure to
+        keep the mechanism visible. Real agreements specify compounding, the base it
+        accrues on, and whether it is charged on fees as well as investments. Those
+        choices move the numbers, but not the shape of the result.
+      </p>
+    </div>
+
+    <h2>American: the manager is paid in year 3</h2>
+    <p>
+      Deal A exits for $100M on $40M invested. Under a deal-by-deal waterfall, the
+      tiers run against <em>that deal</em>.
+    </p>
+
+    <div class="tablewrap">
+      <table>
+        <caption>Year 3, Deal A proceeds of $100M</caption>
+        <thead><tr><th>Tier</th><th class="n">To investors</th><th class="n">To manager</th></tr></thead>
+        <tbody>
+          <tr><td>Return of Deal A capital</td><td class="n">$40M</td><td class="n">&mdash;</td></tr>
+          <tr><td>Preferred return on that capital</td><td class="n">$10M</td><td class="n">&mdash;</td></tr>
+          <tr><td>Remaining $50M, split 80/20</td><td class="n">$40M</td><td class="n">$10M</td></tr>
+          <tr class="total"><td>Distributed</td><td class="n">$90M</td><td class="n">$10M</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      The manager has now received <strong>$10M of carry</strong>, and on the evidence
+      available in year 3 that looks entirely earned. Deal A was excellent.
+    </p>
+    <p>
+      Then Deal B exits in year 5 for $20M against $40M invested. All $20M goes to
+      investors; there is no profit to share. The fund is over.
+    </p>
+
+    <div class="tablewrap">
+      <table>
+        <caption>Final position, American waterfall</caption>
+        <thead><tr><th>Party</th><th class="n">Contributed</th><th class="n">Received</th><th class="n">Net</th></tr></thead>
+        <tbody>
+          <tr><td>Investors</td><td class="n">$100M</td><td class="n">$110M</td><td class="n">$10M</td></tr>
+          <tr><td>Manager</td><td class="n">&mdash;</td><td class="n">$10M</td><td class="n">$10M</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      The manager took <strong>half</strong> of the fund's $20M profit, on a deal
+      structured to pay 20%. Investors are owed $6M back.
+    </p>
+
+    <h2>European: the manager is paid in year 5</h2>
+    <p>
+      Same deals, same order, tiers measured across the fund.
+    </p>
+    <p>
+      Deal A exits for $100M in year 3. Investors have contributed $100M, so the
+      entire distribution returns capital. Capital is now repaid in full, but the
+      preferred return has not been satisfied and no profit has been recognized.
+      <strong>The manager receives nothing.</strong>
+    </p>
+    <p>
+      Deal B exits for $20M in year 5. Capital is already back, so this is the first
+      money available for the later tiers.
+    </p>
+
+    <div class="tablewrap">
+      <table>
+        <caption>Year 5, remaining $20M</caption>
+        <thead><tr><th>Tier</th><th class="n">To investors</th><th class="n">To manager</th></tr></thead>
+        <tbody>
+          <tr><td>Preferred return</td><td class="n">$16M</td><td class="n">&mdash;</td></tr>
+          <tr><td>Catch-up to 20% of the $20M profit</td><td class="n">&mdash;</td><td class="n">$4M</td></tr>
+          <tr class="total"><td>Distributed</td><td class="n">$16M</td><td class="n">$4M</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <caption>Final position, European waterfall</caption>
+        <thead><tr><th>Party</th><th class="n">Contributed</th><th class="n">Received</th><th class="n">Net</th></tr></thead>
+        <tbody>
+          <tr><td>Investors</td><td class="n">$100M</td><td class="n">$116M</td><td class="n">$16M</td></tr>
+          <tr><td>Manager</td><td class="n">&mdash;</td><td class="n">$4M</td><td class="n">$4M</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      $4M of carry on $20M of profit. Exactly 20%, arrived at without anyone
+      needing to give money back.
+    </p>
+
+    <h2>The difference in one line</h2>
+
+    <div class="tablewrap">
+      <table>
+        <caption>Same deals, same total proceeds</caption>
+        <thead><tr><th>&nbsp;</th><th class="n">American</th><th class="n">European</th></tr></thead>
+        <tbody>
+          <tr><td>Carry paid</td><td class="n">$10M</td><td class="n">$4M</td></tr>
+          <tr><td>Carry earned</td><td class="n">$4M</td><td class="n">$4M</td></tr>
+          <tr><td>Owed back</td><td class="n neg">$6M</td><td class="n">$0</td></tr>
+          <tr><td>First payment</td><td class="n">Year 3</td><td class="n">Year 5</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      Neither structure changed what the manager <em>earned</em>. The American
+      waterfall changed <strong>when it was paid</strong>, and created a $6M
+      obligation that has to be honored years later.
+    </p>
+
+    <h2>Which brings us to clawback</h2>
+    <p>
+      Every American waterfall carries a clawback provision requiring the manager to
+      return excess carry at the end of the fund. On paper this makes the two
+      structures equivalent. In practice it is the weakest part of the arrangement,
+      for reasons that have nothing to do with anyone's good faith.
+    </p>
+    <ul>
+      <li>
+        <strong>The money was taxed on receipt.</strong> Carry distributed in year 3
+        was income in year 3. Returning the gross amount in year 5 means the manager
+        repays money it never fully kept, unless the agreement provides for after-tax
+        clawback, which shifts the shortfall to investors.
+      </li>
+      <li>
+        <strong>Carry is distributed to individuals.</strong> By year 5 some of those
+        people have left, retired, divorced, or died. The obligation may sit with the
+        management entity while the money sits with individuals, and collecting it is
+        a governance problem rather than an accounting one.
+      </li>
+      <li>
+        <strong>It arrives at the worst moment.</strong> A clawback is triggered by
+        the fund underperforming, which is the same condition under which the manager
+        is least able to pay.
+      </li>
+    </ul>
+    <p>
+      The standard mitigations are worth knowing because they are negotiable.
+      <strong>Escrow</strong> holds back a percentage of each carry distribution,
+      often 20% to 30%, until the fund is wound up. <strong>Interim clawback
+      tests</strong> run the whole-fund calculation periodically rather than only at
+      the end, so an overpayment surfaces in year 4 instead of year 8.
+      <strong>Guarantees</strong> from individual principals make the obligation
+      personal rather than corporate.
+    </p>
+
+    <div class="note warn">
+      <span class="tag">The accounting consequence</span>
+      <p>
+        An American waterfall means every carry figure in your books is provisional
+        until the fund closes. A system that records carry as settled fact, rather
+        than as an accrual subject to a whole-fund test, will report numbers it
+        cannot defend later. This is the specific reason interim clawback testing
+        belongs in the ledger rather than in a spreadsheet somebody maintains.
+      </p>
+    </div>
+
+    <h2>Most funds are neither, exactly</h2>
+    <p>
+      The two-way split is a teaching device. Real agreements sit on a spectrum, and
+      the interesting terms are the ones that move a fund along it.
+    </p>
+    <ul>
+      <li>
+        <strong>Deal-by-deal with a loss carryforward.</strong> American in timing,
+        but realized losses on other investments must be recovered before carry is
+        paid. Removes much of the exposure in our example.
+      </li>
+      <li>
+        <strong>Deal-by-deal with return of all invested capital first.</strong> Carry
+        waits until every dollar deployed to date has come back, not just the dollars
+        in the exiting deal.
+      </li>
+      <li>
+        <strong>Whole-of-fund with an early carry release.</strong> European by
+        default, but permitting carry once coverage tests are met, such as remaining
+        holdings being valued at some multiple of unreturned capital.
+      </li>
+      <li>
+        <strong>Catch-up rates that are not 100%.</strong> A 50% or 80% catch-up
+        changes the split materially and is easy to miss when reading quickly.
+      </li>
+    </ul>
+
+    <h2>What to check in the agreement</h2>
+    <p>
+      If you are modeling a fund and want to know which structure you actually have,
+      these determine it:
+    </p>
+    <ol>
+      <li>Are the tiers measured against the fund or against each investment?</li>
+      <li>Does the preferred return compound, and on what base? Does it accrue on fees as well as capital?</li>
+      <li>Is there a loss carryforward, and does it cover unrealized write-downs or only realized losses?</li>
+      <li>What is the catch-up rate, and is it 100%?</li>
+      <li>Is there an escrow, at what percentage, and when does it release?</li>
+      <li>Is clawback gross or after-tax, and is it guaranteed by individuals?</li>
+      <li>How often is the interim clawback test run?</li>
+    </ol>
+    <p>
+      Those seven answers reconstruct the waterfall. Everything else is detail
+      around them.
+    </p>
+
+    <div class="endcta">
+      <h2>How we think about this</h2>
+      <p>
+        1494 Labs models waterfalls as configurable tiers rather than as two presets,
+        because the agreements we read are rarely either textbook case. Carry is held
+        as an accrual subject to a whole-fund test, not as settled fact. It is in
+        private development.
+      </p>
+      <p><a class="btn" href="/#contact">Request early access</a></p>
+    </div>
+
+  </article>
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs</span>
+    <a href="/notes/">Notes</a>
+    <a href="/brand/">Brand</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+</body>
+</html>
