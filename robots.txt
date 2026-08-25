@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+# Internal brand guidelines - unlinked, and not for indexing.
+Disallow: /brand/
 
 Sitemap: https://1494labs.com/sitemap.xml
