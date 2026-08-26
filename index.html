@@ -259,9 +259,9 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     <h1>Everyone else stops at<br><em>&ldquo;complex fund structures&rdquo;.</em></h1>
     <p class="standfirst">
       Side pockets that split dealing NAV from total. High-water marks that
-      survive a redemption, per series. Equalization. Waterfall tiers with the
-      worked example behind each one. Your agreement is specific, and so is the
-      software that keeps its books.
+      survive a redemption, per series. Equalization. Waterfall tiers that move
+      at each hurdle. Every one is a term somebody negotiated, and every one
+      here is computed, with the worked example behind the number.
     </p>
     <p class="standfirst" style="margin-top:14px">
       One ledger under all of it, across hedge, fund-of-funds, closed-end,
@@ -279,10 +279,9 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
            alt="A fund dashboard showing NAV of $23,625,473.00 as of 2026-06-30, position value, fees accrued and operating cash against its configured floor.">
       <figcaption>
         <b>One fund, on the date you asked for.</b>
-        NAV as of the period actually selected, the positions behind it, fees
-        posted to date and the cash the fund can actually spend, with the floor
-        it is measured against. Every figure is a read of the ledger rather than
-        a cached summary of it.
+        NAV as of the period you selected, the positions behind it, fees posted
+        to date and the spendable cash against its configured floor. Every
+        figure is read from the ledger when you ask for it.
       </figcaption>
     </figure>
   </section>
@@ -302,8 +301,8 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
         <p class="lead" style="margin-bottom:0">
           So the platform re-proves the arithmetic of every fund it holds, every
           morning, and a failure opens a break carrying the fund, the period and
-          the difference. It is a control you inherit rather than a report you
-          have to commission. Today it runs against our own reference books,
+          the difference. The control comes with the book; there is nothing to
+          commission. Today it runs against our own reference books,
           because we have no clients yet. On day one it runs against yours.
         </p>
       </div>
@@ -351,8 +350,8 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
         what was decided about it is kept, so next month's break on the same
         account arrives with last month's reasoning attached. These are
         <em>internal</em> breaks, the book against itself. Reconciling against a
-        custodian or a bank file is the same worklist and is on the build list,
-        not in the product.
+        custodian or a bank file runs through the same worklist, and that
+        ingestion is what we are building next.
       </figcaption>
     </figure>
   </section>
@@ -369,25 +368,25 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     <p class="lead" style="margin-bottom:0">
       Here it is a run against the ledger, with each investor's capital
       roll-forward, the profit and loss attributed gross to net, and a rate of
-      return on both bases. The morning check confirms the parts still sum to the
-      pool, so no rounding leaks into somebody's balance.
+      return on both bases. The morning sweep re-adds every run: the parts must
+      equal the pool, exactly.
     </p>
 
     <figure class="shot">
       <img src="/assets/screens/allocation-per-investor.jpg" width="1485" height="610"
            loading="lazy" decoding="async" alt="A per-investor allocation run: six investor accounts with opening capital, flows, and a fund total reconciling to ending capital.">
-      <figcaption><b>Six accounts, one run, and a fund total that ties.</b> Opening $23,499,503.07, net profit and loss $125,969.93, ending $23,625,473.00, which is the NAV on the dashboard. Management fees and expenses are attributed per investor rather than netted at the fund and apportioned afterwards.</figcaption>
+      <figcaption><b>Six accounts, one run, and a fund total that ties.</b> Opening $23,499,503.07, net profit and loss $125,969.93, ending $23,625,473.00, which is the NAV on the dashboard. Management fees and expenses are attributed per investor, so a fee that reaches NAV reaches the capital account it belongs to.</figcaption>
     </figure>
   </section>
 
   <section id="books">
     <p class="kicker">The daily book</p>
-    <h2>Statements that are reads, not exports.</h2>
+    <h2>Four questions, one ledger.</h2>
     <p class="lead">
-      An income statement, a statement of changes and a cash blotter are three
-      questions put to one ledger. Nothing is assembled in a spreadsheet
-      afterwards, so the figures on one are derivable from the figures on
-      another.
+      An income statement, a statement of changes, a trial balance and a cash
+      blotter are four questions put to the same ledger. Nothing is assembled
+      in a spreadsheet afterwards, so the figures on one are derivable from the
+      figures on another.
     </p>
     <p class="lead" style="margin-bottom:0">
       Every screen in this section is the same fund on the same date: HEF-I at
@@ -396,8 +395,8 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
       $125,969.93 of investor profit and loss on the allocation run above, and
       the $19,314.66 between them is the management fee, which posts through the
       fee path rather than as an operating expense. That bridge is the point: a
-      statement you cannot walk to the next statement is a number you are
-      trusting rather than reading.
+      statement you cannot walk to the next one is a number you are taking on
+      trust.
     </p>
     <div class="shots">
       <figure class="shot">
@@ -405,8 +404,8 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
              loading="lazy" decoding="async"
              alt="An income statement with trading gains, administration fee expense and directors' fees, totalling net income of $145,284.59.">
         <figcaption>
-          <b>Income Statement.</b> Real operating expenses carrying their GL
-          codes, not a category total reverse-engineered at quarter end.
+          <b>Income Statement.</b> Real operating expenses, each carrying the GL
+          code it posted to.
         </figcaption>
       </figure>
       <figure class="shot">
@@ -438,8 +437,7 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
         <b>And the cash underneath them.</b>
         Every movement carries its source, its counterparty and its settlement
         status. Each portfolio transaction appears beside the GL-derived movement
-        it produced, which is what makes a cash break a comparison rather than an
-        investigation.
+        it produced, which turns a cash break into a comparison you can finish in a minute.
       </figcaption>
     </figure>
   </section>
@@ -520,7 +518,7 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
       <div class="cell">
         <h3>Look-through that terminates</h3>
         <p>Fund-of-funds exposure, acquired-fee disclosure and per-manager
-           performance records, computed through the ownership graph rather than
+           performance records, computed through the ownership graph instead of
            collected by email.</p>
       </div>
       <div class="cell">
@@ -536,8 +534,7 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
            alt="Portfolio holdings for a fund-of-funds: six named underlying managers with units, current value, cost basis and unrealized gain.">
       <figcaption>
         <b>Six managers, each with its own cost basis and unrealized position.</b>
-        A fund interest is a position with a valuation history, not a line item
-        typed into a summary. The date each was last revalued sits on the row,
+        A fund interest is a position with a valuation history behind it. The date each was last revalued sits on the row,
         because the age of an input is part of the number.
       </figcaption>
     </figure>
@@ -549,8 +546,7 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     <p class="lead">
       Commitments, calls, drawdowns and distributions are ledger events with
       their own state, and the capital account is derived from them rather than
-      maintained alongside them. Uncalled is what is left, not what somebody
-      remembered to decrement.
+      maintained alongside them. Uncalled is whatever the calls have not taken yet.
     </p>
 
     <figure class="shot">
@@ -560,9 +556,9 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
       <figcaption>
         <b>$46.5m committed, $37.2m called, $9.3m still uncalled.</b>
         Per LP and in total, with recallable capital and the fund's recycling
-        policy stated rather than assumed. The same screen is correctly all zeros
-        on an open-end fund, which is the point: the mechanics belong to the
-        vehicle, not to a product tier.
+        policy written down where you can see it. The same screen is correctly all zeros
+        on an open-end fund, because the mechanics belong to the vehicle, not
+        to a product tier.
       </figcaption>
     </figure>
 
@@ -608,7 +604,7 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
         <figcaption>
           <b>The dashboard knows which kind of fund it is.</b> Committed, called
           and distributed replace the open-end tiles, off the fund's own funding
-          model rather than a setting somebody has to remember.
+          model, so nobody has to remember to set it.
         </figcaption>
       </figure>
     </div>
@@ -631,10 +627,9 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
         </p>
       </div>
       <div class="figure">
-        <div class="stat">
-          <span class="n">27</span>
-          <span class="l">ILPA CC&amp;D codes,<br>live vocabulary</span>
-        </div>
+        <p style="margin:0 0 16px;font-size:14.5px;color:var(--muted);line-height:1.45">
+          What an ILPA pack from this book carries:
+        </p>
         <ul class="checks">
           <li><span class="tick">&#10003;</span><span>Call and distribution component breakdowns</span></li>
           <li><span class="tick">&#10003;</span><span>Line-item codes carried on expense postings</span></li>
@@ -652,7 +647,7 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     <figure class="shot">
       <img src="/assets/screens/fee-gross-to-net.jpg" width="1485" height="700"
            loading="lazy" decoding="async" alt="A gross-to-net fee disclosure: total gross, adjustments and net, with per-account management fee accruals beneath.">
-      <figcaption><b>Gross to net, per accrual.</b> Each posted fee keeps its own locked step sequence - gross, then offsets, waivers and rebates, then net - read back from the snapshot taken when it was calculated rather than recomputed on the way to the screen.</figcaption>
+      <figcaption><b>Gross to net, per accrual.</b> Each posted fee keeps its own locked step sequence - gross, then offsets, waivers and rebates, then net - read back from the snapshot taken when it was calculated, never recomputed on the way to the screen.</figcaption>
     </figure>
   </section>
 
@@ -681,8 +676,8 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
       <div class="cell">
         <h3>Integrate with what you already run</h3>
         <p>Custodians, administrators, banks, market data, your own warehouse.
-           REST in, REST out, plus bulk loaders for the systems that will never
-           have an API, because some of them never will.</p>
+           REST in, REST out, plus bulk loaders, because some systems are
+           never getting an API.</p>
       </div>
       <div class="cell">
         <h3>Your data leaves the way it came</h3>
@@ -703,7 +698,7 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
       account, and the little that does tends to boast about needing no human.
     </p>
     <p class="lead">
-      The rule here is the opposite, and it is a rule, not a caveat. A person
+      The rule here is the opposite, and it is a rule. A person
       confirms every figure that becomes a fund term or a journal entry. What
       the model read travels with the number afterwards: the clause, the
       document, the person who accepted it. That is only possible because the
@@ -723,14 +718,13 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
         <p>The spreadsheet, the CSV, the PDF the last administrator sent. A model
            proposes the mapping and shows you what it was unsure about first.
            Only what you approve is committed, and a partial commit is a normal
-           outcome rather than a failure.</p>
+           outcome.</p>
       </div>
       <div class="cell">
         <h3>Provenance is the point</h3>
         <p>An AI-derived number that cannot say where it came from is a guess
-           with good manners. Every one here carries its source into the ledger,
-           which is possible only because the thing reading the document and the
-           thing holding the book are not two vendors.</p>
+           with good manners. Every number here arrives with its source attached,
+           and keeps it after the person who confirmed it has moved on.</p>
       </div>
       <div class="cell">
         <h3>Where this goes</h3>
@@ -738,7 +732,7 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
            letters and their MFN terms, manager statements, capital call
            notices, custodian files. Each one gets read, mapped and put in
            front of a person with its source attached. We want the pattern to
-           cover more documents, not to need fewer people.</p>
+           cover more documents. Needing fewer people was never the goal.</p>
       </div>
     </div>
   </section>
@@ -818,7 +812,7 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     <p class="lead">
       Built for fund administrators, CFOs and controllers who would rather their
       system prove the books than merely store them. If that is your problem,
-      we would like to hear how you have it.
+      tell us what it looks like where you work.
     </p>
 
     <form class="signup" action="https://formspree.io/f/xwlejaqw" method="POST">

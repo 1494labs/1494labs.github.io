@@ -1,0 +1,4 @@
+
+# Never commit a mirror of this repo into itself. A mis-rooted rsync put a
+# full copy at /site/ once; it was 49 tracked files and a second CNAME.
+site/
