@@ -1,0 +1,196 @@
+/* 1494 Labs · notes section
+   Shared by /notes/ and every note page. The two original pages keep their
+   inline styles; this exists because the notes section grows and one stylesheet
+   beats N copies. Tokens are identical to the rest of the site. */
+
+:root{
+  --paper:#F7F4ED; --surface:#FCFAF6; --ink:#221F1B; --ink-2:#524B42;
+  --muted:#8A8175; --rule:#E2DBCE; --rule-2:#CFC6B5;
+  --teal:#176B75; --teal-deep:#0F4F57; --claret:#94263C;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,"Cascadia Code",Menlo,Consolas,monospace;
+  --measure:34rem;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#14120F; --surface:#1B1815; --ink:#EDE8DF; --ink-2:#BDB4A6;
+    --muted:#8D8474; --rule:#2C2721; --rule-2:#3D362D;
+    --teal:#4FB3BC; --teal-deep:#7FD0D6; --claret:#E08095;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#14120F; --surface:#1B1815; --ink:#EDE8DF; --ink-2:#BDB4A6;
+  --muted:#8D8474; --rule:#2C2721; --rule-2:#3D362D;
+  --teal:#4FB3BC; --teal-deep:#7FD0D6; --claret:#E08095;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-size:17px; line-height:1.65;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+
+.wrap{max-width:46rem;margin:0 auto;padding:clamp(24px,4vw,44px) clamp(20px,5vw,32px) 96px}
+.measure{max-width:var(--measure)}
+
+/* ── masthead ─────────────────────────────────────────── */
+.top{display:flex;align-items:center;gap:11px;padding-bottom:22px;border-bottom:1px solid var(--rule);margin-bottom:34px}
+.top a{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit}
+.top svg{width:24px;height:24px;color:var(--teal);flex:none}
+.top .name{font-family:var(--serif);font-weight:600;font-size:17px;letter-spacing:-.01em}
+.top .sep{color:var(--rule-2)}
+.top .sec{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.top .spacer{margin-left:auto}
+.top .back{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--teal);text-decoration:none}
+.top .back:hover{text-decoration:underline}
+
+/* ── typography ───────────────────────────────────────── */
+h1{
+  font-family:var(--serif);font-weight:600;font-size:clamp(29px,5vw,41px);
+  line-height:1.16;letter-spacing:-.013em;margin:0 0 16px;text-wrap:balance;max-width:30rem;
+}
+.standfirst{
+  font-family:var(--serif);font-size:clamp(17.5px,2.4vw,20px);line-height:1.5;
+  color:var(--ink-2);margin:0;max-width:var(--measure);
+}
+.byline{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--muted);
+  margin-top:24px;padding-top:14px;border-top:1px solid var(--rule);
+}
+article{margin-top:44px}
+article > *{max-width:var(--measure)}
+h2{
+  font-family:var(--serif);font-weight:600;font-size:clamp(22px,3.2vw,27px);
+  line-height:1.25;letter-spacing:-.008em;margin:46px 0 12px;text-wrap:balance;
+}
+h3{font-family:var(--sans);font-weight:650;font-size:17px;letter-spacing:-.003em;margin:32px 0 8px}
+p{margin:0 0 17px}
+strong{font-weight:650}
+em{font-style:italic}
+a{color:var(--teal);text-underline-offset:2px}
+a:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:2px}
+code{
+  font-family:var(--mono);font-size:.86em;background:var(--surface);
+  border:1px solid var(--rule);border-radius:3px;padding:1px 5px;
+}
+ul,ol{margin:0 0 17px;padding-left:22px}
+li{margin-bottom:8px}
+li::marker{color:var(--muted)}
+hr{border:0;border-top:1px solid var(--rule);margin:44px 0}
+
+/* ── tables: worked numbers are the point of these pages ─ */
+.tablewrap{overflow-x:auto;margin:24px 0;border:1px solid var(--rule);border-radius:3px;max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:24rem}
+caption{
+  caption-side:top;text-align:left;padding:11px 14px;background:var(--surface);
+  border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+}
+th,td{text-align:left;padding:9px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+thead th{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);font-weight:400;background:var(--surface);
+}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;font-family:var(--mono);font-size:13px;white-space:nowrap}
+tr.total td{border-top:1px solid var(--rule-2);font-weight:650}
+.neg{color:var(--claret)}
+
+/* ── callouts ─────────────────────────────────────────── */
+.note{
+  background:var(--surface);border:1px solid var(--rule);border-left:2px solid var(--teal);
+  border-radius:3px;padding:16px 18px;margin:26px 0;
+}
+.note.warn{border-left-color:var(--claret)}
+.note p:last-child{margin-bottom:0}
+.note .tag{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--teal);display:block;margin-bottom:7px;
+}
+.note.warn .tag{color:var(--claret)}
+
+/* ── notes index ──────────────────────────────────────── */
+.notelist{list-style:none;margin:34px 0 0;padding:0;max-width:var(--measure)}
+.notelist li{border-top:1px solid var(--rule);padding:22px 0}
+.notelist li:last-child{border-bottom:1px solid var(--rule)}
+.notelist a{text-decoration:none;color:inherit;display:block}
+.notelist a:hover h2{color:var(--teal)}
+.notelist h2{font-size:21px;margin:0 0 6px;line-height:1.3}
+.notelist p{color:var(--ink-2);font-size:15.5px;margin:0}
+.notelist .kicker{
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 7px;display:block;
+}
+
+/* ── end matter ───────────────────────────────────────── */
+.endcta{
+  margin-top:56px;padding:22px 24px;background:var(--surface);
+  border:1px solid var(--rule);border-radius:3px;max-width:var(--measure);
+}
+.endcta h2{font-size:19px;margin:0 0 8px}
+.endcta p{margin:0 0 14px;font-size:15.5px;color:var(--ink-2)}
+.btn{
+  display:inline-block;font-family:var(--sans);font-size:14.5px;font-weight:600;
+  background:var(--teal);color:var(--paper);text-decoration:none;
+  padding:9px 17px;border-radius:3px;
+}
+.btn:hover{background:var(--teal-deep)}
+:root[data-theme="dark"] .btn,
+:root:not([data-theme="light"]) .btn{color:#14120F}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .btn{color:var(--paper)}}
+
+footer.site{
+  margin-top:64px;padding-top:20px;border-top:1px solid var(--rule);
+  display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;
+}
+footer.site span,footer.site a{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--muted);
+}
+footer.site a{color:inherit}
+
+/* ── product screens ────────────────────────────────────── */
+.shot{margin:30px 0 0}
+.shot img{
+  display:block;width:100%;height:auto;
+  border:1px solid var(--rule-2);border-radius:3px;background:var(--surface);
+}
+.shot figcaption{font-size:14.5px;line-height:1.55;color:var(--muted);margin:13px 0 0}
+.shot figcaption b{color:var(--ink-2);font-weight:600}
+/* The product renders light: dropped a notch on a dark page so a screenshot
+   does not glare beside body text set two stops darker. */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .shot img{filter:brightness(.84) contrast(1.03)}
+}
+
+/* A figure is a full-width element on a text page: `article > *` clamps to the
+   reading measure, which would squeeze a screenshot into a column. */
+article > .shot{max-width:none}
+
+/* ── solution pages ───────────────────────────────────── */
+/* Same shell as a note, different job: these answer "does it do X for my kind
+   of fund", so they carry a summary list and a closing call rather than a
+   worked argument. */
+.keypoints{list-style:none;margin:30px 0 0;padding:0;border-top:1px solid var(--rule)}
+.keypoints li{
+  display:flex;gap:12px;align-items:baseline;margin:0;
+  padding:12px 0;border-bottom:1px solid var(--rule);font-size:15.5px;color:var(--ink-2);
+}
+.keypoints .tick{color:var(--teal);font-family:var(--mono);font-size:13px;flex:none}
+.pagelinks{list-style:none;margin:20px 0 0;padding:0}
+.pagelinks li{margin-bottom:9px;font-size:15.5px}
+.endcta h2{margin-top:0}
+
+/* A screenshot is evidence, and evidence has to be legible. At the reading
+   measure the product's own type renders at about 7px, so on a wide viewport
+   the figure breaks out of the column and centres on it. */
+@media (min-width:1180px){
+  article > .shot{width:58rem;margin-left:50%;transform:translateX(-50%)}
+  article > .shot figcaption{max-width:46rem;margin-left:auto;margin-right:auto}
+}
