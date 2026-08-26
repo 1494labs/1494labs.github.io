@@ -320,6 +320,29 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     </figure>
   </section>
 
+  <section id="allocation">
+    <p class="kicker">Allocation</p>
+    <h2>Whose gain is whose.</h2>
+    <p class="lead">
+      A fund earns one number. Splitting it across investors who arrived on
+      different days, hold different classes and pay different fees is the
+      calculation everything else depends on, and the one most often done in a
+      spreadsheet beside the accounting system.
+    </p>
+    <p class="lead" style="margin-bottom:0">
+      Here it is a run against the ledger, with each investor's capital
+      roll-forward, the profit and loss attributed gross to net, and a rate of
+      return on both bases. One of the daily invariants checks that the parts sum
+      to the pool, so no rounding leaks into somebody's balance.
+    </p>
+
+    <figure class="shot">
+      <img src="/assets/screens/allocation-per-investor.jpg" width="1485" height="610"
+           loading="lazy" decoding="async" alt="A per-investor allocation run: six investor accounts with opening capital, flows, and a fund total reconciling to ending capital.">
+      <figcaption><b>Six accounts, one run, and a fund total that ties.</b> Opening $23,499,503.07, net profit and loss $125,969.93, ending $23,625,473.00, which is the NAV on the dashboard. Management fees and expenses are attributed per investor rather than netted at the fund and apportioned afterwards.</figcaption>
+    </figure>
+  </section>
+
   <section id="books">
     <p class="kicker">The daily book</p>
     <h2>Statements that are reads, not exports.</h2>
@@ -346,6 +369,26 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
         <figcaption>
           <b>Statement of Changes in Partners' Capital.</b> Ending capital ties
           to the dashboard NAV to the cent. Same book, read a second way.
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="/assets/screens/balance-sheet.jpg" width="1485" height="690"
+             loading="lazy" decoding="async"
+             alt="A balance sheet with assets, liabilities and equity, and a footer reading total liabilities and equity equal to total assets, in balance.">
+        <figcaption>
+          <b>Balance Sheet.</b> $41,960,905.72 of assets against the same in
+          liabilities and equity, and the page says <em>in balance</em> rather
+          than leaving you to add it up.
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="/assets/screens/trial-balance.jpg" width="1485" height="670"
+             loading="lazy" decoding="async"
+             alt="A trial balance of thirteen accounts, marked Balanced, with a banner explaining that the period is open so the balance is derived live.">
+        <figcaption>
+          <b>Trial Balance.</b> Marked <em>balanced</em>, and honest about where
+          the number came from: this period is open, so it is derived now. Close
+          it and the artifact is frozen and read instead.
         </figcaption>
       </figure>
     </div>
@@ -498,6 +541,16 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
         </figcaption>
       </figure>
       <figure class="shot">
+        <img src="/assets/screens/commitments.jpg" width="1568" height="460"
+             loading="lazy" decoding="async"
+             alt="Five LP commitments struck at a first close, each ACTIVE, with commitment amounts and dates.">
+        <figcaption>
+          <b>Commitments.</b> Struck at the close they belong to, and the calls
+          that draw against them carry ILPA component codes at the point of
+          posting.
+        </figcaption>
+      </figure>
+      <figure class="shot">
         <img src="/assets/screens/dashboard-drawdown.jpg" width="1568" height="566"
              loading="lazy" decoding="async"
              alt="A drawdown fund dashboard showing NAV, committed, called, distributed, position value and fees accrued.">
@@ -540,15 +593,15 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     </div>
 
     <figure class="shot">
-      <img src="/assets/screens/commitments.jpg" width="1568" height="460"
-           loading="lazy" decoding="async"
-           alt="Five LP commitments struck at a first close, each ACTIVE, with commitment amounts and dates.">
-      <figcaption>
-        <b>Commitments, struck at the close they belong to.</b>
-        The notices that draw against them carry ILPA component codes at the
-        point of posting, so a breakdown is read off the call rather than
-        reconstructed from it afterwards.
-      </figcaption>
+      <img src="/assets/screens/ilpa-capital-account.jpg" width="1485" height="560"
+           loading="lazy" decoding="async" alt="The ILPA Capital Account statement, ILPA Reporting Template v2.0, with a panel of honest-gap notes explaining which rows cannot be sourced and why.">
+      <figcaption><b>The ILPA template, and a panel saying what it cannot source.</b> Carried interest accrued is zero because this fund has no active waterfall policy, so no hypothetical liquidation can be run, and the page says so. ILPA requires every field to be present; a row this book cannot produce is emitted as zero <em>and carries the note explaining it</em>, rather than passing as a real nil.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="/assets/screens/fee-gross-to-net.jpg" width="1485" height="700"
+           loading="lazy" decoding="async" alt="A gross-to-net fee disclosure: total gross, adjustments and net, with per-account management fee accruals beneath.">
+      <figcaption><b>Gross to net, per accrual.</b> Each posted fee keeps its own locked step sequence - gross, then offsets, waivers and rebates, then net - read back from the snapshot taken when it was calculated rather than recomputed on the way to the screen.</figcaption>
     </figure>
   </section>
 

@@ -179,6 +179,12 @@
       <figcaption><b>Real operating expenses carrying their GL codes.</b> Expenses post through the income and expense domain, which is also the only place the allocation engine can see them, so a cost that reaches NAV reaches capital accounts too.</figcaption>
     </figure>
 
+    <figure class="shot">
+      <img src="/assets/screens/allocation-per-investor.jpg" width="1485" height="610"
+           loading="lazy" decoding="async" alt="A per-investor allocation run with each investor's capital roll-forward and a fund total that reconciles.">
+      <figcaption><b>The period's profit and loss, split across investors.</b> Opening $23,499,503.07, net $125,969.93, ending $23,625,473.00 - which is the NAV on the dashboard above. Fees and expenses are attributed per investor rather than netted at the fund and apportioned afterwards.</figcaption>
+    </figure>
+
     <h2>Proof, not assertion</h2>
     <p>
       An accounting oracle runs fifty-seven invariants against every live fund,
@@ -198,6 +204,12 @@
       <img src="/assets/screens/nav-restatement.jpg" width="1568" height="630"
            loading="lazy" decoding="async" alt="A NAV restatement history listing every mutation to a fund's NAV with prior value, new value and delta.">
       <figcaption><b>Every change to a struck NAV keeps its own record.</b> The trail is a property of the ledger rather than a log somebody remembered to keep.</figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="/assets/screens/trial-balance.jpg" width="1485" height="670"
+           loading="lazy" decoding="async" alt="A trial balance of thirteen accounts marked Balanced, with a banner explaining the period is open so the balance is derived live.">
+      <figcaption><b>And the ledger those statements read.</b> Marked <em>balanced</em>, and honest about provenance: this period is open, so the figure is derived now across all periods. Close the period and the trial balance is frozen as an artifact, which is what a statement produced a year later reads from.</figcaption>
     </figure>
 
     <h2>Built for the vehicle you actually run</h2>
