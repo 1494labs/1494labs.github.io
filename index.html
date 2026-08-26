@@ -185,6 +185,24 @@ p{max-width:var(--measure)}
 .fg .hint{font-size:12.5px;color:var(--muted);margin-top:5px}
 button.btn{cursor:pointer;font-family:inherit}
 
+/* ── product screens ────────────────────────────────────── */
+.shot{margin:clamp(30px,4.4vw,48px) 0 0}
+.shot img{
+  display:block;width:100%;height:auto;
+  border:1px solid var(--rule-2);border-radius:3px;background:var(--surface);
+}
+.shot figcaption{
+  font-size:14.5px;line-height:1.55;color:var(--muted);
+  margin:13px 0 0;max-width:52rem;
+}
+.shot figcaption b{color:var(--ink-2);font-weight:600}
+.shot figcaption code{font-family:var(--mono);font-size:13px;color:var(--ink-2)}
+/* The product renders light. Dropped a notch on a dark page so a screenshot
+   does not glare beside body text set two stops darker. */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .shot img{filter:brightness(.84) contrast(1.03)}
+}
+
 /* ── footer ─────────────────────────────────────────────── */
 footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clamp(40px,6vw,72px)}
 .footrow{display:flex;flex-wrap:wrap;gap:16px 32px;align-items:center;justify-content:space-between}
@@ -252,6 +270,20 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
         </ul>
       </div>
     </div>
+
+    <figure class="shot">
+      <img src="/assets/screens/distribution-waterfall.jpg" width="1512" height="530"
+           loading="lazy" decoding="async"
+           alt="A distribution screen showing waterfall tiers, with GP carry received of $532,840.19 against $555,041.87 entitled.">
+      <figcaption>
+        <b>A distribution the platform computed, not one it was told.</b>
+        The tiers are the fund's own policy, and the split is derived from them:
+        GP carry received of $532,840.19 against $555,041.87 entitled, with the
+        difference explained rather than rounded away. The same screen accepts a
+        distribution the client modelled elsewhere, booked and allocated with no
+        waterfall policy at all.
+      </figcaption>
+    </figure>
   </section>
 
   <section id="structures">
@@ -288,6 +320,22 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
            mechanics those structures require.</p>
       </div>
     </div>
+
+    <figure class="shot">
+      <img src="/assets/screens/structure-flow.jpg" width="1568" height="646"
+           loading="lazy" decoding="async"
+           alt="An ownership structure drawn as a flow diagram: four family trusts converging on a holding company of $3.48bn, through a family partnership, out to six asset sleeves and a co-investment vehicle.">
+      <figcaption>
+        <b>Four trusts, one holding company, six sleeves, drawn from the capital
+        accounts themselves.</b>
+        Band width is the value that passes <em>through</em> each vehicle, so a
+        holding company carrying $63m of operating cash and controlling $3.48bn
+        reads as what it is. Nobody typed a percentage: the edges are derived from
+        capital, which is why the picture and the net worth statement cannot
+        disagree. The same graph draws as an org chart, top-down or
+        left-to-right, for any structure in the tenant.
+      </figcaption>
+    </figure>
   </section>
 
   <section id="coverage">
@@ -353,6 +401,18 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
         </ul>
       </div>
     </div>
+
+    <figure class="shot">
+      <img src="/assets/screens/statement-of-changes.jpg" width="1568" height="600"
+           loading="lazy" decoding="async"
+           alt="A Statement of Changes in Partners' Capital, with beginning capital, contributions, allocations and ending capital.">
+      <figcaption>
+        <b>Statement of Changes in Partners' Capital, generated from the ledger.</b>
+        Ending capital ties to the NAV on the fund dashboard to the cent, because
+        it is the same book read two ways rather than two reports built from two
+        extracts.
+      </figcaption>
+    </figure>
   </section>
 
   <section id="platform">
@@ -394,6 +454,19 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
       every downstream balance, before it posts. Nothing enters the book blind, and
       anything in an open period can be corrected without a journal of apologies.
     </p>
+
+    <figure class="shot">
+      <img src="/assets/screens/nav-restatement.jpg" width="1568" height="630"
+           loading="lazy" decoding="async"
+           alt="A NAV restatement history, listing every mutation to a fund's NAV with its prior value, new value and delta.">
+      <figcaption>
+        <b>And afterwards, every change to a struck NAV keeps its own record.</b>
+        Prior value, new value, the delta and the reason, per event. A correction
+        is a fact about the book rather than an embarrassment to be smoothed over,
+        so the trail is a feature of the ledger and not a log somebody remembered
+        to keep.
+      </figcaption>
+    </figure>
   </section>
 
 </div>
