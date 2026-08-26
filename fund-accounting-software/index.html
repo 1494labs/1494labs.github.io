@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fund accounting software &middot; 1494 Labs</title>
+<meta name="description" content="Fund accounting software where the accounting book and the investment book are one ledger. NAV, capital accounts, allocations, fees and statements for every vehicle type, with fifty-seven invariants checked daily against live funds.">
+<link rel="canonical" href="https://1494labs.com/fund-accounting-software/">
+<link rel="stylesheet" href="/assets/notes.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://1494labs.com/fund-accounting-software/">
+<meta property="og:site_name" content="1494 Labs">
+<meta property="og:title" content="Fund accounting software">
+<meta property="og:description" content="One ledger for ABOR and IBOR. NAV, capital accounts, allocations, fees and statements, with fifty-seven invariants checked daily against live funds.">
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fund accounting software">
+<meta name="twitter:description" content="One ledger for ABOR and IBOR. NAV, capital accounts, allocations, fees and statements, with fifty-seven invariants checked daily against live funds.">
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Fund accounting software",
+  "description": "Fund accounting software where the accounting book and the investment book are one ledger. NAV, capital accounts, allocations, fees and statements for every vehicle type, with fifty-seven invariants checked daily against live funds.",
+  "url": "https://1494labs.com/fund-accounting-software/",
+  "inLanguage": "en",
+  "isPartOf": { "@type": "WebSite", "name": "1494 Labs", "url": "https://1494labs.com/" },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "1494 Labs",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "url": "https://1494labs.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "1494 Labs",
+    "url": "https://1494labs.com/",
+    "logo": "https://1494labs.com/assets/icon-512x512.png"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "1494 Labs", "item": "https://1494labs.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Fund accounting software" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What does fund accounting software need to do?", "acceptedAnswer": { "@type": "Answer", "text": "At minimum: hold a general ledger, strike a NAV, keep a capital account per investor, allocate income and expense to those accounts, calculate management and incentive fees, and produce financial statements that tie to the ledger. Most of the difficulty is in the last word: producing a statement is easy, producing one that still reconciles to the ledger after a restatement is not." } },
+    { "@type": "Question", "name": "What is the difference between ABOR and IBOR?", "acceptedAnswer": { "@type": "Answer", "text": "The accounting book of record is the official set of books, on an accounting basis, respecting period boundaries. The investment book of record is the current position and exposure view, typically on trade date and intraday. Most platforms keep them in separate systems and reconcile overnight. 1494 Labs records each economic event once and treats the two as views over the same journal entries." } },
+    { "@type": "Question", "name": "Does it handle both open-end and closed-end funds?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Funding model is a property of the fund, not a product tier: an open-end fund gets subscriptions, redemptions and high-water marks, a closed-end fund gets commitments, capital calls, drawdowns and a waterfall, and both post to the same ledger." } }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a href="/">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="1494 Labs">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/>
+        </g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+      <span class="name">1494 Labs</span>
+    </a>
+    <span class="sep">&middot;</span>
+    <span class="sec">Platform</span>
+    <span class="spacer"></span>
+    <a class="back" href="/">Home</a>
+  </nav>
+
+  <h1>Fund accounting software that proves its own books</h1>
+  <p class="standfirst">Most systems tell you what the books say. The interesting question is whether anything checks that what they say is true.</p>
+  <p class="byline">Platform overview &middot; roughly 6 minutes</p>
+
+  <article>
+
+    <h2>The short version</h2>
+    <p>
+      Fund accounting software has one job that cannot be faked: at the end of a
+      period, the general ledger, the NAV, and every investor's capital account
+      have to agree with each other. Everything else on a feature list is in
+      service of that, and most of the pain in this industry comes from systems
+      where those three things are maintained separately and reconciled
+      afterwards.
+    </p>
+    <p>
+      1494 Labs is built the other way round. One ledger carries the accounting
+      book and the investment book. Capital accounts are derived from postings
+      rather than kept beside them. Ownership is derived from capital rather than
+      asserted alongside it. And a sweep of fifty-seven arithmetic invariants runs
+      against live funds every day, so a book that has drifted says so before an
+      auditor finds it.
+    </p>
+
+    <ul class="keypoints">
+      <li><span class="tick">&#10003;</span><span>One ledger for the accounting book and the investment book</span></li>
+      <li><span class="tick">&#10003;</span><span>Capital accounts derived from the ledger, per investor, per period</span></li>
+      <li><span class="tick">&#10003;</span><span>Fifty-seven invariants checked daily against live funds</span></li>
+      <li><span class="tick">&#10003;</span><span>Financial statements that are reads of the book, not exports from it</span></li>
+      <li><span class="tick">&#10003;</span><span>Every screen runs on the same public API you get</span></li>
+    </ul>
+
+    <h2>One ledger, two books</h2>
+    <p>
+      The <strong>accounting book of record</strong> and the <strong>investment
+      book of record</strong> answer different questions on different clocks, which
+      is why they usually end up in different systems with a reconciliation
+      between them. That reconciliation is somebody's job every morning, and it is
+      the source of a large share of the operational risk in fund administration.
+    </p>
+    <p>
+      Recording each economic event once, and treating trade date and settlement
+      date as lenses over the same journal entries, removes the reconciliation
+      rather than automating it. That is a stronger claim than "our reconciliation
+      is very good", and it is worth being precise about which one a vendor is
+      making. We wrote up the distinction, and how to test it, in
+      <a href="/notes/abor-and-ibor/">ABOR and IBOR, and why most systems keep them apart</a>.
+    </p>
+
+    <figure class="shot">
+      <img src="/assets/screens/fund-dashboard.jpg" width="1568" height="566"
+           loading="lazy" decoding="async" alt="A fund dashboard showing NAV as of a selected period, position value, fees accrued and operating cash against its floor.">
+      <figcaption><b>NAV as of the period you actually selected.</b> The positions behind it, the fees posted to date, and the cash the fund can spend, with the floor it is measured against.</figcaption>
+    </figure>
+
+    <h2>Every vehicle, not a product tier per vehicle</h2>
+    <p>
+      Pooled funds, funds-of-one, separately managed accounts, trusts, family
+      partnerships, holding companies and asset SPVs. Open-end and closed-end.
+      Unitized and capital-based. Master-feeder structures where the feeder picks
+      up master profit and loss through a real internal position rather than a
+      journal entry somebody types each month.
+    </p>
+    <p>
+      Funding model is a property of the fund. A closed-end fund gets commitments,
+      calls, drawdowns, recallable distributions and a waterfall; an open-end fund
+      gets subscriptions, redemptions, series and high-water marks. Both post to
+      the same ledger, and a fund that changes shape does not change systems.
+    </p>
+
+    <h2>The books, and everything that reads them</h2>
+    <p>
+      An income statement, a balance sheet, a statement of changes in partners'
+      capital and a schedule of investments are four questions put to one ledger.
+      Ending capital on one ties to NAV on another because it is the same book read
+      twice, not two reports assembled from two extracts.
+    </p>
+
+    <figure class="shot">
+      <img src="/assets/screens/income-statement.jpg" width="1568" height="530"
+           loading="lazy" decoding="async" alt="An income statement with trading gains, administration fee expense and directors' fees, totalling net income.">
+      <figcaption><b>Real operating expenses carrying their GL codes.</b> Expenses post through the income and expense domain, which is also the only place the allocation engine can see them, so a cost that reaches NAV reaches capital accounts too.</figcaption>
+    </figure>
+
+    <h2>Proof, not assertion</h2>
+    <p>
+      An accounting oracle runs fifty-seven invariants against every live fund,
+      every day. Not a test suite over fixtures: arithmetic truths checked against
+      real money. Capital accounts reconcile to the ledger per fund and per period.
+      Allocations sum to the pool, so no rounding leaks into somebody's balance. No
+      lot outlives the position it belongs to. Every high-water mark survives
+      redemption, transfer and restatement.
+    </p>
+    <p>
+      When a number does change, the change keeps its own record: prior value, new
+      value, delta and cause, per event. A correction is a fact about the book, not
+      an embarrassment to be smoothed over.
+    </p>
+
+    <figure class="shot">
+      <img src="/assets/screens/nav-restatement.jpg" width="1568" height="630"
+           loading="lazy" decoding="async" alt="A NAV restatement history listing every mutation to a fund's NAV with prior value, new value and delta.">
+      <figcaption><b>Every change to a struck NAV keeps its own record.</b> The trail is a property of the ledger rather than a log somebody remembered to keep.</figcaption>
+    </figure>
+
+    <h2>Built for the vehicle you actually run</h2>
+    <ul class="pagelinks">
+      <li><a href="/private-equity-fund-accounting/">Private equity and closed-end funds</a> &middot; commitments, calls, waterfalls, carry</li>
+      <li><a href="/hedge-fund-accounting/">Hedge funds and open-end vehicles</a> &middot; series, equalization, high-water marks</li>
+      <li><a href="/family-office-accounting/">Family offices</a> &middot; consolidated net worth across the whole structure</li>
+      <li><a href="/fund-administration-software/">Fund administrators</a> &middot; many clients, one platform</li>
+    </ul>
+
+    <div class="endcta">
+      <h2>Currently in private development</h2>
+      <p>
+        Built for the people who have to sign the books rather than only read
+        them. If this is your problem, we would like to hear how you have it.
+      </p>
+      <p><a class="btn" href="/#contact">Request early access</a></p>
+    </div>
+
+  </article>
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+</body>
+</html>

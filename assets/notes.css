@@ -168,3 +168,29 @@ footer.site a{color:inherit}
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]) .shot img{filter:brightness(.84) contrast(1.03)}
 }
+
+/* A figure is a full-width element on a text page: `article > *` clamps to the
+   reading measure, which would squeeze a screenshot into a column. */
+article > .shot{max-width:none}
+
+/* ── solution pages ───────────────────────────────────── */
+/* Same shell as a note, different job: these answer "does it do X for my kind
+   of fund", so they carry a summary list and a closing call rather than a
+   worked argument. */
+.keypoints{list-style:none;margin:30px 0 0;padding:0;border-top:1px solid var(--rule)}
+.keypoints li{
+  display:flex;gap:12px;align-items:baseline;margin:0;
+  padding:12px 0;border-bottom:1px solid var(--rule);font-size:15.5px;color:var(--ink-2);
+}
+.keypoints .tick{color:var(--teal);font-family:var(--mono);font-size:13px;flex:none}
+.pagelinks{list-style:none;margin:20px 0 0;padding:0}
+.pagelinks li{margin-bottom:9px;font-size:15.5px}
+.endcta h2{margin-top:0}
+
+/* A screenshot is evidence, and evidence has to be legible. At the reading
+   measure the product's own type renders at about 7px, so on a wide viewport
+   the figure breaks out of the column and centres on it. */
+@media (min-width:1180px){
+  article > .shot{width:58rem;margin-left:50%;transform:translateX(-50%)}
+  article > .shot figcaption{max-width:46rem;margin-left:auto;margin-right:auto}
+}

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fund administration software &middot; 1494 Labs</title>
+<meta name="description" content="Fund administration software: many client funds on one platform, isolated per tenant, with a two-axis period close, reconciliation breaks with a worklist, ILPA-native reporting and an API every screen already runs on.">
+<link rel="canonical" href="https://1494labs.com/fund-administration-software/">
+<link rel="stylesheet" href="/assets/notes.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://1494labs.com/fund-administration-software/">
+<meta property="og:site_name" content="1494 Labs">
+<meta property="og:title" content="Fund administration software">
+<meta property="og:description" content="Many clients on one platform, isolated per tenant, with a real period close, reconciliation breaks and an API every screen already runs on.">
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fund administration software">
+<meta name="twitter:description" content="Many clients on one platform, isolated per tenant, with a real period close, reconciliation breaks and an API every screen already runs on.">
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Fund administration software",
+  "description": "Fund administration software: many client funds on one platform, isolated per tenant, with a two-axis period close, reconciliation breaks with a worklist, ILPA-native reporting and an API every screen already runs on.",
+  "url": "https://1494labs.com/fund-administration-software/",
+  "inLanguage": "en",
+  "isPartOf": { "@type": "WebSite", "name": "1494 Labs", "url": "https://1494labs.com/" },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "1494 Labs",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "url": "https://1494labs.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "1494 Labs",
+    "url": "https://1494labs.com/",
+    "logo": "https://1494labs.com/assets/icon-512x512.png"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "1494 Labs", "item": "https://1494labs.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Fund administration software" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How are client funds kept separate?", "acceptedAnswer": { "@type": "Answer", "text": "Each client is a tenant with its own database schema. Isolation is structural rather than a filter applied at query time, so a missing WHERE clause cannot leak one client's book into another's." } },
+    { "@type": "Question", "name": "Can fee terms differ per fund?", "acceptedAnswer": { "@type": "Answer", "text": "They have to. Fee structures are composable: tiered schedules, modifiers, offsets, most-favoured-nation clauses, expense caps, manager-borne splits and four-way settlement, configured per fund. No two limited partnership agreements agree, so the engine does not assume a house convention." } },
+    { "@type": "Question", "name": "What happens when a closed period needs correcting?", "acceptedAnswer": { "@type": "Answer", "text": "A closed period is sealed and its trial balance frozen as an artifact, so a statement produced today still ties to what was reported then. A correction to a sealed period is a graded, audited revision rather than an in-place edit, and the frozen artifact is what closed-period statements read from." } }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a href="/">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="1494 Labs">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/>
+        </g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+      <span class="name">1494 Labs</span>
+    </a>
+    <span class="sep">&middot;</span>
+    <span class="sec">Solutions</span>
+    <span class="spacer"></span>
+    <a class="back" href="/">Home</a>
+  </nav>
+
+  <h1>Fund administration software for people who sign the books</h1>
+  <p class="standfirst">An administrator's problem is not one fund. It is forty of them, each with its own agreement, its own calendar and its own idea of what a management fee is.</p>
+  <p class="byline">Solutions &middot; roughly 6 minutes</p>
+
+  <article>
+
+    <h2>Forty funds, forty agreements</h2>
+    <p>
+      The administrator's difficulty is variety. One client's management fee is
+      charged on committed capital during the investment period and on invested
+      capital after it. Another's is on net asset value with a most-favoured-nation
+      clause. A third caps organizational expenses and makes the manager bear the
+      excess. A platform with a house convention makes all of them somebody's
+      manual adjustment.
+    </p>
+    <p>
+      Fee structures here are composable rather than parameterized: tiered
+      schedules, modifiers, offsets, expense caps and four-way settlement,
+      configured per fund. Terms can be read out of the limited partnership
+      agreement into a prefilled builder, with the clause attached, and a human
+      confirms every one before it becomes a fund term.
+    </p>
+
+    <ul class="keypoints">
+      <li><span class="tick">&#10003;</span><span>Schema-per-tenant isolation, not a filter on a shared table</span></li>
+      <li><span class="tick">&#10003;</span><span>Per-fund fiscal calendars, and a close that seals without freezing the current view</span></li>
+      <li><span class="tick">&#10003;</span><span>Two-axis review and close, with a checklist and a controller's dashboard</span></li>
+      <li><span class="tick">&#10003;</span><span>Reconciliation breaks with a worklist, not a report nobody reads</span></li>
+      <li><span class="tick">&#10003;</span><span>Bulk CSV loaders for the systems that will never have an API</span></li>
+      <li><span class="tick">&#10003;</span><span>More than 800 endpoints under one OpenAPI spec</span></li>
+    </ul>
+
+    <h2>A close that actually closes</h2>
+    <p>
+      Period close is a state machine, per fund and per period: open, soft closed,
+      hard closed. A hard-closed period freezes writes and its trial balance is
+      captured as an artifact, so a statement produced a year later still ties to
+      what was reported at the time. Guards are not advisory: a fund with negative
+      capital or a pending crystallization is reported and skipped rather than
+      forced through.
+    </p>
+    <p>
+      Corrections stay possible without pretending they did not happen. Anything
+      in an open period is editable; a sealed period takes a graded, audited
+      revision. The distinction matters because the alternative, in practice, is
+      an administrator keeping a private list of what the system says versus what
+      is true.
+    </p>
+
+    <figure class="shot">
+      <img src="/assets/screens/statement-of-changes.jpg" width="1568" height="596"
+           loading="lazy" decoding="async" alt="A Statement of Changes in Partners' Capital, from beginning capital through contributions, net income and fees to ending capital.">
+      <figcaption><b>Ending capital ties to the dashboard NAV to the cent.</b> Not because a reconciliation ran, but because both are reads of the same ledger.</figcaption>
+    </figure>
+
+    <h2>Breaks with somewhere to go</h2>
+    <p>
+      A reconciliation report that nobody works is a compliance artifact, not a
+      control. Breaks here are records with a lifecycle: detected, assigned,
+      explained, resolved, with the detectors that found them stated and an aged
+      worklist rather than a monthly PDF.
+    </p>
+
+    <h2>Every screen runs on the public API</h2>
+    <p>
+      There is no private back channel. The product's own interface is built on
+      exactly the API a client gets, which is the only real guarantee that the API
+      is complete. Custodians, banks, portals, data vendors and a client's own
+      warehouse all integrate against the same surface, and the systems that will
+      never have an API get bulk CSV loaders instead.
+    </p>
+
+    <figure class="shot">
+      <img src="/assets/screens/cash-movements.jpg" width="1568" height="650"
+           loading="lazy" decoding="async" alt="A cash movements blotter with settled movements, each portfolio transaction paired with its GL-derived counterpart.">
+      <figcaption><b>Cash movements, with their sources.</b> Bulk selection and row actions across the grids, because an administrator's day is spent on many rows at once rather than one.</figcaption>
+    </figure>
+
+    <h2>Related reading</h2>
+    <ul class="pagelinks">
+      <li><a href="/fund-accounting-software/">The platform overview</a></li>
+      <li><a href="/private-equity-fund-accounting/">Closed-end clients</a></li>
+      <li><a href="/hedge-fund-accounting/">Open-end clients</a></li>
+      <li><a href="/family-office-accounting/">Family office clients</a></li>
+    </ul>
+
+    <div class="endcta">
+      <h2>Currently in private development</h2>
+      <p>
+        Built for the people who have to sign the books rather than only read
+        them. If this is your problem, we would like to hear how you have it.
+      </p>
+      <p><a class="btn" href="/#contact">Request early access</a></p>
+    </div>
+
+  </article>
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+</body>
+</html>

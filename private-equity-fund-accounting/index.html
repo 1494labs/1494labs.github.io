@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Private equity fund accounting software &middot; 1494 Labs</title>
+<meta name="description" content="Private equity fund accounting software: commitments, capital calls, drawdowns, recallable distributions, European and American waterfalls, GP carry and clawback, ILPA-native call and distribution notices.">
+<link rel="canonical" href="https://1494labs.com/private-equity-fund-accounting/">
+<link rel="stylesheet" href="/assets/notes.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://1494labs.com/private-equity-fund-accounting/">
+<meta property="og:site_name" content="1494 Labs">
+<meta property="og:title" content="Private equity fund accounting software">
+<meta property="og:description" content="Commitments, calls, drawdowns, European and American waterfalls, GP carry and clawback, with ILPA-native notices.">
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Private equity fund accounting software">
+<meta name="twitter:description" content="Commitments, calls, drawdowns, European and American waterfalls, GP carry and clawback, with ILPA-native notices.">
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Private equity fund accounting software",
+  "description": "Private equity fund accounting software: commitments, capital calls, drawdowns, recallable distributions, European and American waterfalls, GP carry and clawback, ILPA-native call and distribution notices.",
+  "url": "https://1494labs.com/private-equity-fund-accounting/",
+  "inLanguage": "en",
+  "isPartOf": { "@type": "WebSite", "name": "1494 Labs", "url": "https://1494labs.com/" },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "1494 Labs",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "url": "https://1494labs.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "1494 Labs",
+    "url": "https://1494labs.com/",
+    "logo": "https://1494labs.com/assets/icon-512x512.png"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "1494 Labs", "item": "https://1494labs.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Private equity fund accounting" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is the difference between a European and an American waterfall?", "acceptedAnswer": { "@type": "Answer", "text": "A European, or whole-of-fund, waterfall returns all contributed capital and the preferred return across the entire fund before the general partner takes carry. An American, or deal-by-deal, waterfall tests each realization on its own, so carry can be paid years earlier. The same fund can pay the general partner in year three or year five depending only on which convention the agreement uses." } },
+    { "@type": "Question", "name": "What is GP clawback?", "acceptedAnswer": { "@type": "Answer", "text": "If a deal-by-deal waterfall paid carry early and the fund later underperforms, the general partner may have been paid more than the whole-fund test would allow. A clawback obliges them to return the excess. It is the structural consequence of paying carry before the fund's final result is known." } },
+    { "@type": "Question", "name": "Does it produce ILPA-compliant capital call and distribution notices?", "acceptedAnswer": { "@type": "Answer", "text": "Capital call and distribution notices carry ILPA CC&D component codes, and expense lines carry ILPA line-item codes at the point of posting rather than being reverse-engineered at quarter end. A component breakdown is read off the call rather than reconstructed from it." } }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a href="/">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="1494 Labs">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/>
+        </g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+      <span class="name">1494 Labs</span>
+    </a>
+    <span class="sep">&middot;</span>
+    <span class="sec">Solutions</span>
+    <span class="spacer"></span>
+    <a class="back" href="/">Home</a>
+  </nav>
+
+  <h1>Private equity fund accounting, waterfall included</h1>
+  <p class="standfirst">The capital account is the deliverable. Everything else in a closed-end fund exists to move it, and most of the errors come from moving it in a spreadsheet.</p>
+  <p class="byline">Solutions &middot; roughly 7 minutes</p>
+
+  <article>
+
+    <h2>Commitments are ledger events, not a side table</h2>
+    <p>
+      In most closed-end books the capital account lives in a spreadsheet
+      alongside the accounting system, because the accounting system was built for
+      open-end funds and does not know what uncalled capital is. That spreadsheet
+      is then the source of truth for the number limited partners care about most.
+    </p>
+    <p>
+      Here, a commitment, a call, a drawdown and a distribution are events on the
+      ledger with their own state. The capital account is derived from them.
+      Uncalled is what is left after the calls that happened, not what somebody
+      remembered to decrement.
+    </p>
+
+    <ul class="keypoints">
+      <li><span class="tick">&#10003;</span><span>Commitments, subsequent closes and equalization on late closers</span></li>
+      <li><span class="tick">&#10003;</span><span>Capital calls with purpose, notice and funding state</span></li>
+      <li><span class="tick">&#10003;</span><span>Recallable distributions and recycling policy, per fund</span></li>
+      <li><span class="tick">&#10003;</span><span>European and American waterfalls as configurable tiers</span></li>
+      <li><span class="tick">&#10003;</span><span>GP carry, per-principal vesting, clawback and LP givebacks</span></li>
+      <li><span class="tick">&#10003;</span><span>ILPA CC&amp;D component codes on calls and distributions</span></li>
+    </ul>
+
+    <figure class="shot">
+      <img src="/assets/screens/capital-accounts.jpg" width="1568" height="664"
+           loading="lazy" decoding="async" alt="Capital accounts for a drawdown fund: $46.5m committed, $37.2m called, $9.3m uncalled, with per-LP rows and a stated recycling policy.">
+      <figcaption><b>$46.5m committed, $37.2m called, $9.3m still uncalled.</b> Per limited partner and in total, with recallable capital and the fund's recycling policy stated rather than assumed.</figcaption>
+    </figure>
+
+    <h2>Waterfalls as tiers, not as two presets</h2>
+    <p>
+      Almost every platform offers "European" and "American" as a dropdown. Almost
+      no limited partnership agreement is either textbook case. Real agreements
+      have a preferred return with a compounding convention, a catch-up at some
+      rate to some target, a split that changes at a hurdle, and a whole-fund test
+      that may or may not apply to the catch-up.
+    </p>
+    <p>
+      So a waterfall here is an ordered set of tiers with their own parameters,
+      and the two named conventions are just two configurations of it. Carry is
+      held as an accrual subject to its test rather than as settled fact, which is
+      what makes clawback a calculation rather than a crisis. We worked the same
+      fund through both conventions, with the numbers, in
+      <a href="/notes/european-vs-american-waterfall/">European vs American waterfalls</a>.
+    </p>
+
+    <h2>Calls that move the account</h2>
+    <p>
+      A capital call is issued against commitments, noticed to the limited
+      partners it draws on, and funded. Each of those is a state the call actually
+      has, and the capital account moves because of the funding rather than
+      alongside it.
+    </p>
+
+    <figure class="shot">
+      <img src="/assets/screens/capital-calls.jpg" width="1568" height="508"
+           loading="lazy" decoding="async" alt="Eight quarterly capital calls of $4,650,000 each, every one marked FUNDED.">
+      <figcaption><b>Eight quarterly calls, each with its purpose and funding state.</b> The schedule is the audit trail: what was drawn, for what, and whether it arrived.</figcaption>
+    </figure>
+
+    <h2>The fund knows what kind of fund it is</h2>
+    <p>
+      Funding model is a property of the vehicle. A drawdown fund's dashboard
+      leads with committed, called and distributed; an open-end fund's leads with
+      subscriptions and redemptions. Neither is a setting somebody has to
+      remember, and a platform that runs both does not need two products to do it.
+    </p>
+
+    <figure class="shot">
+      <img src="/assets/screens/dashboard-drawdown.jpg" width="1568" height="566"
+           loading="lazy" decoding="async" alt="A drawdown fund dashboard showing NAV, committed, called, distributed, position value and fees accrued.">
+      <figcaption><b>Committed, called and distributed replace the open-end tiles.</b> Off the fund's own funding model, not a configuration flag.</figcaption>
+    </figure>
+
+    <h2>Related reading</h2>
+    <ul class="pagelinks">
+      <li><a href="/notes/european-vs-american-waterfall/">European vs American waterfalls, with the numbers worked</a></li>
+      <li><a href="/fund-accounting-software/">The platform overview</a></li>
+      <li><a href="/fund-administration-software/">For administrators running several closed-end clients</a></li>
+    </ul>
+
+    <div class="endcta">
+      <h2>Currently in private development</h2>
+      <p>
+        Built for the people who have to sign the books rather than only read
+        them. If this is your problem, we would like to hear how you have it.
+      </p>
+      <p><a class="btn" href="/#contact">Request early access</a></p>
+    </div>
+
+  </article>
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+</body>
+</html>

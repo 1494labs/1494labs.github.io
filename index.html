@@ -92,6 +92,7 @@ header.site{padding:26px 0 0}
 .wordmark{font-family:var(--serif);font-size:21px;letter-spacing:-.01em;line-height:1}
 .wordmark b{font-weight:400}
 .wordmark span{font-family:var(--sans);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-left:7px;vertical-align:1px}
+.navgroup{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:baseline}
 .navlink{font-size:14.5px;color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--rule-2);padding-bottom:2px}
 .navlink:hover{color:var(--teal);border-color:var(--teal)}
 
@@ -147,6 +148,11 @@ p{max-width:var(--measure)}
 @media (min-width:720px){.grid{grid-template-columns:1fr 1fr}}
 .cell{background:var(--paper);padding:clamp(24px,3.2vw,34px)}
 .cell h3{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.25;margin:0 0 10px;letter-spacing:-.01em}
+.cell h3 a{color:var(--teal);text-decoration:none;border-bottom:1px solid transparent}
+.cell h3 a:hover{border-bottom-color:var(--teal)}
+/* Reused on the solution pages, where a short link list closes a section. */
+.pagelinks{list-style:none;margin:0;padding:0;max-width:var(--measure)}
+.pagelinks li{margin-bottom:9px;font-size:15.5px;color:var(--ink-2)}
 .cell p{font-size:15.5px;color:var(--ink-2);margin:0;max-width:none}
 
 /* ── the name ───────────────────────────────────────────── */
@@ -187,6 +193,18 @@ button.btn{cursor:pointer;font-family:inherit}
 
 /* ── product screens ────────────────────────────────────── */
 .shot{margin:clamp(30px,4.4vw,48px) 0 0}
+/* The lead figure sits directly under the hero and is the one image that is
+   NOT lazy: it is what the page is judged on before anything is read. */
+.shot.lead{margin-top:clamp(24px,3vw,36px)}
+/* Two to a row where a pair reads better than either alone: a statement beside
+   the statement it ties to, a call schedule beside the accounts it drew on. */
+.shots{
+  display:grid;grid-template-columns:1fr;gap:clamp(24px,3vw,34px);
+  margin:clamp(30px,4.4vw,48px) 0 0;
+}
+@media (min-width:860px){.shots{grid-template-columns:1fr 1fr}}
+.shots .shot{margin:0}
+.shots figcaption{font-size:14px;max-width:none}
 .shot img{
   display:block;width:100%;height:auto;
   border:1px solid var(--rule-2);border-radius:3px;background:var(--surface);
@@ -227,7 +245,11 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
         </svg>
         <span class="wordmark"><b>1494</b><span>Labs</span></span>
       </a>
-      <a class="navlink" href="#contact">Get in touch</a>
+      <span class="navgroup">
+        <a class="navlink" href="/fund-accounting-software/">Platform</a>
+        <a class="navlink" href="/notes/">Notes</a>
+        <a class="navlink" href="#contact">Get in touch</a>
+      </span>
     </div>
   </header>
 
@@ -239,6 +261,19 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
       overnight reconciliation between them, because there is nothing to reconcile.
     </p>
     <hr class="herorule">
+
+    <figure class="shot lead">
+      <img src="/assets/screens/fund-dashboard.jpg" width="1568" height="566"
+           decoding="async"
+           alt="A fund dashboard showing NAV of $23,625,473.00 as of 2026-06-30, position value, fees accrued and operating cash against its configured floor.">
+      <figcaption>
+        <b>One fund, on the date you asked for.</b>
+        NAV as of the period actually selected, the positions behind it, fees
+        posted to date and the cash the fund can actually spend, with the floor
+        it is measured against. Every figure is a read of the ledger rather than
+        a cached summary of it.
+      </figcaption>
+    </figure>
   </section>
 
   <section id="proof">
@@ -272,16 +307,59 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     </div>
 
     <figure class="shot">
-      <img src="/assets/screens/distribution-waterfall.jpg" width="1512" height="530"
+      <img src="/assets/screens/nav-restatement.jpg" width="1568" height="630"
            loading="lazy" decoding="async"
-           alt="A distribution screen showing waterfall tiers, with GP carry received of $532,840.19 against $555,041.87 entitled.">
+           alt="A NAV restatement history listing every mutation to a fund's NAV with its prior value, new value and delta.">
       <figcaption>
-        <b>A distribution the platform computed, not one it was told.</b>
-        The tiers are the fund's own policy, and the split is derived from them:
-        GP carry received of $532,840.19 against $555,041.87 entitled, with the
-        difference explained rather than rounded away. The same screen accepts a
-        distribution the client modelled elsewhere, booked and allocated with no
-        waterfall policy at all.
+        <b>Every change to a struck NAV keeps its own record.</b>
+        Prior value, new value, the delta and what caused it, per event. A
+        correction is a fact about the book rather than an embarrassment to be
+        smoothed over, so the trail is a property of the ledger and not a log
+        somebody remembered to keep.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section id="books">
+    <p class="kicker">The daily book</p>
+    <h2>Statements that are reads, not exports.</h2>
+    <p class="lead">
+      An income statement, a statement of changes and a cash blotter are three
+      questions put to one ledger. Nothing is assembled in a spreadsheet
+      afterwards, which is why the ending capital on one ties to the NAV on
+      another without anybody checking.
+    </p>
+    <div class="shots">
+      <figure class="shot">
+        <img src="/assets/screens/income-statement.jpg" width="1568" height="530"
+             loading="lazy" decoding="async"
+             alt="An income statement with trading gains, administration fee expense and directors' fees, totalling net income of $145,284.59.">
+        <figcaption>
+          <b>Income Statement.</b> Real operating expenses carrying their GL
+          codes, not a category total reverse-engineered at quarter end.
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="/assets/screens/statement-of-changes.jpg" width="1568" height="596"
+             loading="lazy" decoding="async"
+             alt="A Statement of Changes in Partners' Capital, from beginning capital through contributions, net income and fees to ending capital.">
+        <figcaption>
+          <b>Statement of Changes in Partners' Capital.</b> Ending capital ties
+          to the dashboard NAV to the cent. Same book, read a second way.
+        </figcaption>
+      </figure>
+    </div>
+
+    <figure class="shot">
+      <img src="/assets/screens/cash-movements.jpg" width="1568" height="650"
+           loading="lazy" decoding="async"
+           alt="A cash movements blotter with 170 settled movements, each portfolio transaction paired with its GL-derived counterpart.">
+      <figcaption>
+        <b>And the cash underneath them.</b>
+        Every movement carries its source, its counterparty and its settlement
+        status. Each portfolio transaction appears beside the GL-derived movement
+        it produced, which is what makes a cash break a comparison rather than an
+        investigation.
       </figcaption>
     </figure>
   </section>
@@ -371,6 +449,65 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
            so a statement produced today still ties to what was reported then.</p>
       </div>
     </div>
+
+    <figure class="shot">
+      <img src="/assets/screens/portfolio-holdings.jpg" width="1568" height="430"
+           loading="lazy" decoding="async"
+           alt="Portfolio holdings for a fund-of-funds: six named underlying managers with units, current value, cost basis and unrealized gain.">
+      <figcaption>
+        <b>Six managers, each with its own cost basis and unrealized position.</b>
+        A fund interest is a position with a valuation history, not a line item
+        typed into a summary. The date each was last revalued sits on the row,
+        because the age of an input is part of the number.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section id="private-markets">
+    <p class="kicker">Private markets</p>
+    <h2>Closed-end mechanics, not a spreadsheet beside the ledger.</h2>
+    <p class="lead">
+      Commitments, calls, drawdowns and distributions are ledger events with
+      their own state, and the capital account is derived from them rather than
+      maintained alongside them. Uncalled is what is left, not what somebody
+      remembered to decrement.
+    </p>
+
+    <figure class="shot">
+      <img src="/assets/screens/capital-accounts.jpg" width="1568" height="664"
+           loading="lazy" decoding="async"
+           alt="Capital accounts for a drawdown fund: $46.5m committed, $37.2m called, $9.3m uncalled, with per-LP rows and a stated recycling policy.">
+      <figcaption>
+        <b>$46.5m committed, $37.2m called, $9.3m still uncalled.</b>
+        Per LP and in total, with recallable capital and the fund's recycling
+        policy stated rather than assumed. The same screen is correctly all zeros
+        on an open-end fund, which is the point: the mechanics belong to the
+        vehicle, not to a product tier.
+      </figcaption>
+    </figure>
+
+    <div class="shots">
+      <figure class="shot">
+        <img src="/assets/screens/capital-calls.jpg" width="1568" height="508"
+             loading="lazy" decoding="async"
+             alt="Eight quarterly capital calls of $4,650,000 each, every one marked FUNDED.">
+        <figcaption>
+          <b>Capital Calls.</b> Eight quarterly calls, each carrying its purpose
+          and its funding state. A call is issued, noticed and funded, and the
+          capital account moves because of it.
+        </figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="/assets/screens/dashboard-drawdown.jpg" width="1568" height="566"
+             loading="lazy" decoding="async"
+             alt="A drawdown fund dashboard showing NAV, committed, called, distributed, position value and fees accrued.">
+        <figcaption>
+          <b>The dashboard knows which kind of fund it is.</b> Committed, called
+          and distributed replace the open-end tiles, off the fund's own funding
+          model rather than a setting somebody has to remember.
+        </figcaption>
+      </figure>
+    </div>
   </section>
 
   <section id="ilpa">
@@ -403,14 +540,14 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     </div>
 
     <figure class="shot">
-      <img src="/assets/screens/statement-of-changes.jpg" width="1568" height="600"
+      <img src="/assets/screens/commitments.jpg" width="1568" height="460"
            loading="lazy" decoding="async"
-           alt="A Statement of Changes in Partners' Capital, with beginning capital, contributions, allocations and ending capital.">
+           alt="Five LP commitments struck at a first close, each ACTIVE, with commitment amounts and dates.">
       <figcaption>
-        <b>Statement of Changes in Partners' Capital, generated from the ledger.</b>
-        Ending capital ties to the NAV on the fund dashboard to the cent, because
-        it is the same book read two ways rather than two reports built from two
-        extracts.
+        <b>Commitments, struck at the close they belong to.</b>
+        The notices that draw against them carry ILPA component codes at the
+        point of posting, so a breakdown is read off the call rather than
+        reconstructed from it afterwards.
       </figcaption>
     </figure>
   </section>
@@ -446,6 +583,44 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     </div>
   </section>
 
+  <section id="solutions">
+    <p class="kicker">By vehicle</p>
+    <h2>Written up for the fund you actually run.</h2>
+    <p class="lead">
+      The same platform, described in the vocabulary of each kind of book, with
+      the screens that matter to it.
+    </p>
+    <div class="grid">
+      <div class="cell">
+        <h3><a href="/private-equity-fund-accounting/">Private equity and closed-end</a></h3>
+        <p>Commitments, capital calls, drawdowns, recallable distributions,
+           European and American waterfalls, GP carry and clawback, and
+           ILPA-native call and distribution notices.</p>
+      </div>
+      <div class="cell">
+        <h3><a href="/hedge-fund-accounting/">Hedge funds and open-end</a></h3>
+        <p>Series accounting and equalization, per-series high-water marks that
+           survive redemption and restatement, incentive fees or allocations,
+           side pockets and a fund-of-funds book that looks through.</p>
+      </div>
+      <div class="cell">
+        <h3><a href="/family-office-accounting/">Family offices</a></h3>
+        <p>Consolidated net worth across trusts, holding companies, partnerships
+           and SPVs, with intercompany interests eliminated and ownership derived
+           from the capital accounts rather than typed beside them.</p>
+      </div>
+      <div class="cell">
+        <h3><a href="/fund-administration-software/">Fund administrators</a></h3>
+        <p>Many clients on one platform, isolated per tenant, with a close that
+           seals, reconciliation breaks that have somewhere to go, and an API
+           every screen already runs on.</p>
+      </div>
+    </div>
+    <ul class="pagelinks" style="margin-top:22px">
+      <li><a href="/fund-accounting-software/">The full platform overview</a>, if you would rather start from the top.</li>
+    </ul>
+  </section>
+
   <section id="preview">
     <p class="kicker">Before it posts</p>
     <h2>Consequence before commit.</h2>
@@ -454,19 +629,6 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
       every downstream balance, before it posts. Nothing enters the book blind, and
       anything in an open period can be corrected without a journal of apologies.
     </p>
-
-    <figure class="shot">
-      <img src="/assets/screens/nav-restatement.jpg" width="1568" height="630"
-           loading="lazy" decoding="async"
-           alt="A NAV restatement history, listing every mutation to a fund's NAV with its prior value, new value and delta.">
-      <figcaption>
-        <b>And afterwards, every change to a struck NAV keeps its own record.</b>
-        Prior value, new value, the delta and the reason, per event. A correction
-        is a fact about the book rather than an embarrassment to be smoothed over,
-        so the trail is a feature of the ledger and not a log somebody remembered
-        to keep.
-      </figcaption>
-    </figure>
   </section>
 
 </div>
@@ -541,7 +703,14 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     <div class="footrow">
       <span class="fine">&copy; 2026 1494 Labs</span>
       <span class="fine"><a href="mailto:hello@1494labs.com" style="color:inherit">hello@1494labs.com</a></span>
-      <span class="fine"><a href="/notes/" style="color:inherit">Notes</a> &middot; Named for the year double entry was written down</span>
+      <span class="fine">
+        <a href="/fund-accounting-software/" style="color:inherit">Platform</a> &middot;
+        <a href="/private-equity-fund-accounting/" style="color:inherit">Private equity</a> &middot;
+        <a href="/hedge-fund-accounting/" style="color:inherit">Hedge funds</a> &middot;
+        <a href="/family-office-accounting/" style="color:inherit">Family offices</a> &middot;
+        <a href="/fund-administration-software/" style="color:inherit">Administrators</a> &middot;
+        <a href="/notes/" style="color:inherit">Notes</a>
+      </span>
     </div>
   </footer>
 </div>
