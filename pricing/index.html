@@ -45,7 +45,7 @@
     "offers": {
       "@type": "Offer",
       "name": "Emerging fund",
-      "description": "A single fund, with onboarding and conversion included and no implementation fee.",
+      "description": "A single fund, with onboarding included and no implementation fee. Converting an existing book is quoted separately.",
       "priceCurrency": "USD",
       "price": "500",
       "priceSpecification": {
@@ -100,7 +100,7 @@
       "name": "How much does fund accounting software cost for an emerging fund?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "At 1494 Labs the first fund is $500 a month and each standalone fund after it is $200 a month, with onboarding and conversion included and no implementation fee. Two funds is $700 a month, five is $1,300, ten is $2,300. That is deliberately below the segment: published starting prices from established vendors sit in the $24,000 to $36,000 a year range before implementation, which leaves an emerging manager running one or two funds with no option that is not a five-figure enterprise purchase. Linked structures such as master-feeder are quoted rather than counted, because a master and three feeders is four entities and one economic book."
+        "text": "At 1494 Labs the first fund is $500 a month and each standalone fund after it is $200 a month, with onboarding included and no implementation fee. Two funds is $700 a month, five is $1,300, ten is $2,300. That is deliberately below the segment: published starting prices from established vendors sit in the $24,000 to $36,000 a year range before implementation, which leaves an emerging manager running one or two funds with no option that is not a five-figure enterprise purchase. Linked structures such as master-feeder are quoted rather than counted, because a master and three feeders is four entities and one economic book."
       }
     },
     {
@@ -124,15 +124,15 @@
       "name": "What drives a fund accounting software quote up?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Standalone fund count is published rather than quoted. What a quote turns on is structural complexity, because a master-feeder with series accounting and side pockets carries more mechanism than a single closed-end vehicle and its entity count measures the work in neither direction; and conversion of an existing book, because migrating mid-life funds means carrying opening balances and fee-engine state such as high-water marks and loss carryforwards, which is more work than starting from inception."
+        "text": "Standalone fund count is published rather than quoted. What a quote turns on is structural complexity, because a master-feeder with series accounting and side pockets carries more mechanism than a single closed-end vehicle and its entity count measures the work in neither direction; and conversion of an existing book, because migrating a mid-life fund means bringing opening balances and fee-engine state across, with reconstructing history you do not have a further project on top of that."
       }
     },
     {
       "@type": "Question",
-      "name": "Is there an implementation fee?",
+      "name": "Is there an implementation or conversion fee?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Implementation fees are normal at the entity-count end of this market and often run to five or six figures. We do not charge one. Onboarding is part of the subscription."
+        "text": "There is no implementation fee, which is normal at the entity-count end of this market and often runs to five or six figures. Setting a new fund up here is part of the subscription. Converting an existing book is quoted separately, because it is different work and we have not yet done one for a customer. A conversion covers your opening position at a conversion date: balances, capital accounts, and the fee-engine state that makes the next incentive calculation correct, meaning high-water marks, loss carryforwards and equalization position. Periods before that date are carried as reporting-only history rather than re-derived, and reconstructing history you do not have is a larger project quoted on its own. Conversion is free for the five founding partners, which is what the founding discount is."
       }
     }
   ]
@@ -167,9 +167,8 @@
 
   <p class="standfirst">
     That is the axis: <b>$500 a month</b> for the first fund and <b>$200</b> for
-    each standalone fund after it, with onboarding included. Linked structures
-    and conversions are quoted, and the reason is on this page rather than
-    hidden. It also explains how the software is priced generally, because the
+    each standalone fund after it, with onboarding included. Linked structures and
+    conversions are quoted, and the reason is on this page rather than hidden. It also explains how the software is priced generally, because the
     segment publishes almost nothing on the subject and it is a fair thing to
     want to know before a call.
   </p>
@@ -222,6 +221,31 @@
     <p>
       Share classes, series and sleeves <em>within</em> a fund are not separate
       funds. A fund with seventeen series is one fund.
+    </p>
+  </div>
+
+  <div class="note">
+    <span class="tag">Converting an existing book</span>
+    <p>
+      <b>Quoted &mdash; and free for the five founding partners.</b> A new fund set
+      up here is part of the subscription. Bringing across a book that already
+      exists is different work, and it is the one thing we cannot price honestly
+      yet, because we have not done one for a customer.
+    </p>
+    <p>
+      What a conversion covers: your opening position at a conversion date &mdash;
+      balances, capital accounts, and the fee-engine state that makes the
+      <em>next</em> incentive calculation correct, which means high-water marks,
+      loss carryforwards and equalization position. Periods before that date are
+      carried as reporting-only history and marked pre-conversion, rather than
+      re-derived. <b>Reconstructing</b> history you do not have &mdash; re-deriving
+      prior periods so they compute rather than report &mdash; is a larger project
+      and quoted on its own.
+    </p>
+    <p>
+      There is still no <em>implementation</em> fee, for anyone. The distinction is
+      that setting the platform up is ours to absorb; carrying ten years of
+      somebody else's book across is work whose size we do not yet know.
     </p>
   </div>
 
@@ -288,9 +312,10 @@
         count is not a measure of the work in either direction. This is the one
         that makes a quote a conversation.</span></li>
     <li><span class="tick">&#10003;</span><span><b>Conversion of an existing
-        book.</b> Migrating mid-life funds means carrying opening balances and
-        fee-engine state &mdash; high-water marks, loss carryforwards,
-        equalization position &mdash; rather than starting from inception.</span></li>
+        book</b>, and separately whether you want history <em>reconstructed</em>
+        rather than carried. Migrating a mid-life fund means bringing opening
+        balances and fee-engine state across; re-deriving prior periods so they
+        compute rather than report is a project on top of that.</span></li>
   </ul>
 
   <p>
@@ -325,17 +350,17 @@
   </p>
 
   <p>
-    Two things a larger quote has to cover are still genuinely untested: how long
-    a real conversion takes on somebody's actual book rather than a seeded one,
-    and how many customers one person can carry well. We have views on both.
-    Neither is evidence yet, and a figure derived from them would be the same
-    kind of confident unsourced number this product exists to refuse.
+    Two things are still genuinely untested: how long a real conversion takes on
+    somebody's actual book rather than a seeded one, and how many customers one
+    person can carry well. We have views on both. Neither is evidence yet, and a
+    figure derived from them would be the same kind of confident unsourced number
+    this product exists to refuse.
   </p>
 
   <p>
     The axis will not change, and neither will the published scale. A quote is a
-    conversation about structure and whether you are converting &mdash; not about
-    how many funds you have, which is on this page.
+    conversation about structure, and about bringing an existing book across
+    &mdash; not about how many funds you have, which is on this page.
   </p>
 
   <h2>Founding partners</h2>
@@ -350,11 +375,14 @@
   <p>The exchange, in both directions:</p>
 
   <ul class="notelist">
-    <li><b>Onboarding is free, and that is the discount.</b> Not a percentage off
-        the recurring rate. A permanent discount creates a cohort that can never
-        be repriced and is also the reference customer, so the discount outlives
-        the reason for it. Waiving a five-to-six-figure implementation fee is a
-        real concession that does not damage the rate.</li>
+    <li><b>Conversion is free, and that is the discount.</b> Everyone gets
+        onboarding without a fee; founding partners get their existing book
+        brought across without one too, which is the part that is otherwise
+        quoted. Not a percentage off the recurring rate &mdash; a permanent
+        discount creates a cohort that can never be repriced and is also the
+        reference customer, so it outlives the reason for it. Waiving a
+        five-to-six-figure conversion is a real concession that leaves the rate
+        intact.</li>
     <li><b>A founding rate, time-boxed</b>, with the step to standard agreed at
         signature rather than negotiated later. The step being pre-agreed is the
         part that makes it survivable for both sides.</li>
