@@ -147,7 +147,7 @@ p{max-width:var(--measure)}
 /* ── capability grid ────────────────────────────────────── */
 .grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;margin-top:clamp(28px,4vw,44px)}
 @media (min-width:720px){.grid{grid-template-columns:1fr 1fr}
-/* an odd final cell spans rather than leaving the rule colour showing through */
+/* an odd final cell spans rather than leaving the rule color showing through */
 .grid>.cell:last-child:nth-child(odd){grid-column:1/-1}}
 .cell{background:var(--paper);padding:clamp(24px,3.2vw,34px)}
 .cell h3{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.25;margin:0 0 10px;letter-spacing:-.01em}
@@ -929,43 +929,36 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     <h2>A model can suggest a fee term. It cannot post one.</h2>
     <p class="lead">
       Most AI in this category is read-side: ask a question, extract a document,
-      normalise a feed. Very little of it goes near the number that ends up in a
-      capital account.
-    </p>
-    <p class="lead">
-      Here a person confirms every figure that becomes a fund term or a journal
-      entry. What the model read travels with the number afterwards: the clause,
-      the document, and who accepted it. That works because the thing reading the
-      document and the thing holding the book are the same system.
+      normalize a feed. Very little of it goes near the number that ends up in a
+      capital account. Here a person confirms every figure that becomes a fund
+      term or a journal entry &mdash; which only works because the thing reading
+      the document and the thing holding the book are one system.
     </p>
     <div class="grid">
       <div class="cell">
         <h3>Terms read from the agreement</h3>
         <p>Upload the LPA. The fee schedule comes back prefilled tier by tier,
            each one carrying the clause it was read from, so confirming a term
-           means reading one paragraph rather than the whole document. The
-           clause stays attached after you confirm.</p>
+           means reading one paragraph rather than the whole document.</p>
       </div>
       <div class="cell">
         <h3>Onboarding from the mess you have</h3>
         <p>The spreadsheet, the CSV, the PDF the last administrator sent. A model
-           proposes the mapping and shows you what it was unsure about first.
-           Only what you approve is committed, and a partial commit is a normal
-           outcome.</p>
+           proposes the mapping and surfaces what it was unsure about first. Only
+           what you approve is committed; a partial commit is a normal outcome.</p>
       </div>
       <div class="cell">
         <h3>Provenance is the point</h3>
-        <p>An AI-derived number that cannot say where it came from is a guess
-           with good manners. Every number here arrives with its source attached,
-           and keeps it after the person who confirmed it has moved on.</p>
+        <p>An AI-derived number that cannot say where it came from is a guess with
+           good manners. Every number here arrives with its source &mdash; the
+           clause, the document, who accepted it &mdash; and keeps it after that
+           person has moved on.</p>
       </div>
       <div class="cell">
         <h3>Where this goes</h3>
-        <p>The same pattern extends to every document that defines money: side
-           letters and their MFN terms, manager statements, capital call
-           notices, custodian files. Each one gets read, mapped and put in
-           front of a person with its source attached. We want the pattern to
-           cover more documents. Needing fewer people was never the goal.</p>
+        <p>The same pattern fits every document that defines money: side letters,
+           manager statements, custodian files. We want it to cover more of them.
+           Needing fewer people was never the goal.</p>
       </div>
     </div>
   </section>
