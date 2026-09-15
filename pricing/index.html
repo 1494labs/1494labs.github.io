@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fund accounting software pricing &middot; 1494 Labs</title>
+<meta name="description" content="How fund accounting software is priced, and how we price: per fund, with a platform minimum. What is included, what drives a quote up, and why we publish the axis rather than a number we have not tested yet.">
+<link rel="canonical" href="https://1494labs.com/pricing/">
+<link rel="stylesheet" href="/assets/notes.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://1494labs.com/pricing/">
+<meta property="og:site_name" content="1494 Labs">
+<meta property="og:title" content="Fund accounting software pricing">
+<meta property="og:description" content="Per fund, with a platform minimum. What is included, what drives a quote up, and why we publish the axis rather than a number we have not tested yet.">
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fund accounting software pricing">
+<meta name="twitter:description" content="Per fund, with a platform minimum. What is included, what drives a quote up, and why we publish the axis rather than a number.">
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Fund accounting software pricing",
+  "description": "How fund accounting software is priced, and how we price: per fund, with a platform minimum. What is included, what drives a quote up, and why we publish the axis rather than a number we have not tested yet.",
+  "url": "https://1494labs.com/pricing/",
+  "inLanguage": "en",
+  "isPartOf": { "@type": "WebSite", "name": "1494 Labs", "url": "https://1494labs.com/" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "1494 Labs",
+    "url": "https://1494labs.com/",
+    "logo": "https://1494labs.com/assets/icon-512x512.png"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "1494 Labs", "item": "https://1494labs.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Pricing" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is fund accounting software priced?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Four axes are in common use. Per AUM basis points is the fund administrator's model and follows the labor they carry. Per seat suits software whose value scales with headcount, which fund accounting does not. A flat platform fee is simple but ignores how much book a customer actually keeps. Per fund, usually with a platform minimum, tracks the unit of work most closely, because a fund is a book: it has its own calendar, its own terms and its own close. The self-serve end of the market publishes monthly prices; the entity-count end quotes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do fund administrators charge basis points when software does not?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An administrator's cost rises with the size and activity of the book because people do the work, and basis points track that. Software does not carry AUM-proportional labor, so a basis-point fee charges a growing customer more for no additional cost incurred, and charges a shrinking one less for the same service. It also punishes exactly the customer worth keeping."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What drives a fund accounting software quote up?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three things, in order. Fund count, because each fund is a separate book. Structural complexity, because a master-feeder with series accounting and side pockets carries more mechanism than a single closed-end vehicle. And conversion of an existing book, because migrating mid-life funds means carrying opening balances and fee-engine state such as high-water marks and loss carryforwards, which is more work than starting from inception."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there an implementation fee?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Implementation fees are normal at the entity-count end of this market and often run to five or six figures. We do not charge one. Onboarding is part of the subscription."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a href="/">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="1494 Labs">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/>
+        </g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+      <span class="name">1494 Labs</span>
+    </a>
+    <span class="sep">&middot;</span>
+    <span class="sec">Pricing</span>
+    <span class="spacer"></span>
+    <a class="back" href="/">Home</a>
+  </nav>
+
+  <article class="measure">
+
+  <h1>Per fund, with a platform minimum</h1>
+
+  <p class="standfirst">
+    That is the axis. We have not published a number against it yet, and the
+    reason is below rather than hidden. This page also explains how this
+    software is priced generally, because the segment publishes almost nothing
+    on the subject and the question is a fair one to ask before a call.
+  </p>
+
+  <h2>How fund accounting software is priced</h2>
+
+  <p>
+    Four axes are in common use. They are not interchangeable, and which one a
+    vendor picks tells you what they think they are selling.
+  </p>
+
+  <div class="tablewrap">
+  <table>
+    <thead>
+      <tr><th>Axis</th><th>Who uses it, and why it suits them</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>Per AUM basis points</b></td>
+        <td>The fund administrator's model. Their cost genuinely rises with the
+            size and activity of the book, because people do the work, and basis
+            points track that. Software does not carry that labor, so the same
+            fee charges a growing customer more for no extra cost incurred &mdash;
+            and punishes exactly the customer worth keeping.</td>
+      </tr>
+      <tr>
+        <td><b>Per seat</b></td>
+        <td>Suits software whose value scales with headcount. Fund accounting
+            does not. A two-person administrator running forty funds would pay
+            almost nothing, which is precisely backwards.</td>
+      </tr>
+      <tr>
+        <td><b>Flat platform fee</b></td>
+        <td>Simple, and honest about the cost of having a customer at all. Alone
+            it ignores how much book they actually keep, and treats five funds
+            and fifty as the same thing.</td>
+      </tr>
+      <tr>
+        <td><b>Per fund, with a platform minimum</b></td>
+        <td>What we use. A fund is a book: its own calendar, its own terms, its
+            own close. The per-fund component tracks the unit of work and the
+            unit of value; the minimum covers the cost of having a customer at
+            all, which is the cost that actually binds a small team.</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>
+    The market also splits on whether it publishes at all. The self-serve end,
+    aimed at emerging managers with one or two funds, posts a monthly price. The
+    entity-count end quotes, and usually adds an implementation fee. By segment
+    we sit on the quote side.
+  </p>
+
+  <h2>What drives a quote up</h2>
+
+  <ul class="keypoints">
+    <li><span class="tick">&#10003;</span><span><b>Fund count.</b> Each fund is a
+        separate book with its own calendar and its own close.</span></li>
+    <li><span class="tick">&#10003;</span><span><b>Structural complexity.</b> A
+        master-feeder with series accounting, equalization and side pockets
+        carries more mechanism than a single closed-end vehicle.</span></li>
+    <li><span class="tick">&#10003;</span><span><b>Conversion of an existing
+        book.</b> Migrating mid-life funds means carrying opening balances and
+        fee-engine state &mdash; high-water marks, loss carryforwards,
+        equalization position &mdash; rather than starting from inception.</span></li>
+  </ul>
+
+  <p>
+    Nothing else should move it much. Users do not, storage does not, and the
+    size of the AUM does not.
+  </p>
+
+  <h2>What is included</h2>
+
+  <ul class="notelist">
+    <li><b>Onboarding, at no separate fee.</b> Implementation fees are normal at
+        this end of the market and often run to five or six figures. We do not
+        charge one.</li>
+    <li><b>Every vehicle type on the same ledger.</b> Open-end and closed-end,
+        registered funds, family-office structures. Not separate products with an
+        integration story between them.</li>
+    <li><b>The morning sweep.</b> The invariant checks that re-prove every fund's
+        arithmetic daily, and the break worklist a failure lands in.</li>
+    <li><b>The public API.</b> The same one every screen in the product runs on.
+        There is no private back channel with more in it.</li>
+    <li><b>Support from the people who wrote it.</b> A consequence of being small
+        rather than a tier.</li>
+  </ul>
+
+  <h2>Why there is no number here yet</h2>
+
+  <p>
+    Because we have not onboarded a customer end to end, and a number published
+    before that is a number we would have to walk back.
+  </p>
+
+  <p>
+    Two of the things a price has to cover are still genuinely untested. How long
+    a real conversion takes, on somebody's actual book rather than a seeded one.
+    And how many customers one person can carry well, which is the assumption the
+    whole shape rests on. We have views on both. Neither is evidence yet, and
+    publishing a figure derived from them would be the same kind of confident
+    unsourced number this product exists to refuse.
+  </p>
+
+  <p>
+    The axis will not change. A quote is a conversation about fund count,
+    structure and whether you are converting.
+  </p>
+
+  <h2>Founding partners</h2>
+
+  <p>
+    The first cohort is capped at <b>five</b>, and the cap is real rather than
+    scarcity theatre: a founding partner takes the most hand-holding while paying
+    the least, and five is what a small team can carry without the service
+    degrading for everyone else.
+  </p>
+
+  <p>The exchange, in both directions:</p>
+
+  <ul class="notelist">
+    <li><b>Onboarding is free, and that is the discount.</b> Not a percentage off
+        the recurring rate. A permanent discount creates a cohort that can never
+        be repriced and is also the reference customer, so the discount outlives
+        the reason for it. Waiving a five-to-six-figure implementation fee is a
+        real concession that does not damage the rate.</li>
+    <li><b>A founding rate, time-boxed</b>, with the step to standard agreed at
+        signature rather than negotiated later. The step being pre-agreed is the
+        part that makes it survivable for both sides.</li>
+    <li><b>What you give:</b> a nameable reference and a case study, real books to
+        test against, design input while the product is still soft, and tolerance
+        for defects &mdash; against a stated response expectation, so it is not
+        open-ended in either direction.</li>
+  </ul>
+
+  <p>
+    For the right people, advisory involvement can stand in for some of the
+    money. That is often worth more to both sides.
+  </p>
+
+  <div class="note">
+    <span class="tag">What is not on this page</span>
+    <p>
+      The specific rate and term are a conversation, not a published figure
+      &mdash; for the same reason as above. The shape is here so you know what you
+      would be agreeing to before you spend a call finding out.
+    </p>
+  </div>
+
+  <h2>What we would rather compete on</h2>
+
+  <p>
+    Not price. Being the cheap option for software that touches money is a bad
+    position to hold, and the buyer's question in this market is not <em>will this
+    be expensive</em> but <em>will this be wrong about my books</em>.
+  </p>
+
+  <ul class="notelist">
+    <li><b>Onboarding measured in days.</b> Stated as an intention, not a fact:
+        against the six-to-eighteen-month implementations normal at this end, it
+        is the largest difference we expect to have, and it is exactly what the
+        founding cohort exists to test. We will say what it actually was.</li>
+    <li><b>No implementation fee.</b> A decision, so it is true today.</li>
+    <li><b>The morning sweep.</b> We have not found an equivalent in the segment.</li>
+    <li><b>Terms in public</b>, in a corner of the market that publishes nothing.
+        This page is the claim and the evidence at once.</li>
+  </ul>
+
+  <ul class="pagelinks">
+    <li><a href="/fund-accounting-software/">What the platform actually does</a></li>
+    <li><a href="/fund-administration-software/">For administrators</a> &middot; many clients, one platform</li>
+    <li><a href="/">The full walkthrough</a>, with screens</li>
+  </ul>
+
+  <div class="endcta">
+    <h2>Tell us what you run</h2>
+    <p>
+      Fund count, structures, and whether you are converting an existing book.
+      That is enough for a real number rather than a range, and enough for us to
+      say if we are the wrong fit.
+    </p>
+    <p><a class="btn" href="/#contact">Get in touch</a></p>
+  </div>
+
+  </article>
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+</body>
+</html>
