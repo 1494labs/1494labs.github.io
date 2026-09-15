@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fund accounting software pricing &middot; 1494 Labs</title>
-<meta name="description" content="How fund accounting software is priced, and how we price: per fund, with a platform minimum. What is included, what drives a quote up, and why we publish the axis rather than a number we have not tested yet.">
+<meta name="description" content="Fund accounting software from $500 a month for a single emerging fund, with onboarding included and no implementation fee. How the segment prices generally, what drives a quote up, and why everything above the entry point is quoted.">
 <link rel="canonical" href="https://1494labs.com/pricing/">
 <link rel="stylesheet" href="/assets/notes.css">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -16,14 +16,14 @@
 <meta property="og:url" content="https://1494labs.com/pricing/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="Fund accounting software pricing">
-<meta property="og:description" content="Per fund, with a platform minimum. What is included, what drives a quote up, and why we publish the axis rather than a number we have not tested yet.">
+<meta property="og:description" content="From $500 a month for a single emerging fund, onboarding included and no implementation fee. Per fund, with a platform minimum, above that.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Fund accounting software pricing">
-<meta name="twitter:description" content="Per fund, with a platform minimum. What is included, what drives a quote up, and why we publish the axis rather than a number.">
+<meta name="twitter:description" content="From $500 a month for a single emerging fund, onboarding included and no implementation fee.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 <meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
 
@@ -32,10 +32,33 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Fund accounting software pricing",
-  "description": "How fund accounting software is priced, and how we price: per fund, with a platform minimum. What is included, what drives a quote up, and why we publish the axis rather than a number we have not tested yet.",
+  "description": "Fund accounting software from $500 a month for a single emerging fund, with onboarding included and no implementation fee. How the segment prices generally, what drives a quote up, and why everything above the entry point is quoted.",
   "url": "https://1494labs.com/pricing/",
   "inLanguage": "en",
   "isPartOf": { "@type": "WebSite", "name": "1494 Labs", "url": "https://1494labs.com/" },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "1494 Labs",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "url": "https://1494labs.com/",
+    "offers": {
+      "@type": "Offer",
+      "name": "Emerging fund",
+      "description": "A single fund, with onboarding and conversion included and no implementation fee.",
+      "priceCurrency": "USD",
+      "price": "500",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "priceCurrency": "USD",
+        "price": "500",
+        "unitText": "MONTH",
+        "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitText": "fund" }
+      },
+      "availability": "https://schema.org/InStock",
+      "url": "https://1494labs.com/pricing/"
+    }
+  },
   "publisher": {
     "@type": "Organization",
     "name": "1494 Labs",
@@ -59,6 +82,14 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does fund accounting software cost for an emerging fund?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At 1494 Labs a single fund is $500 a month, with onboarding and conversion included and no implementation fee. That is deliberately below the segment: published starting prices from established vendors sit in the $24,000 to $36,000 a year range before implementation, which leaves an emerging manager running one or two funds with no option that is not a five-figure enterprise purchase. Above a single fund, pricing is per fund with a platform minimum and we quote."
+      }
+    },
     {
       "@type": "Question",
       "name": "How is fund accounting software priced?",
@@ -122,11 +153,28 @@
   <h1>Per fund, with a platform minimum</h1>
 
   <p class="standfirst">
-    That is the axis. We have not published a number against it yet, and the
-    reason is below rather than hidden. This page also explains how this
-    software is priced generally, because the segment publishes almost nothing
-    on the subject and the question is a fair one to ask before a call.
+    That is the axis, and a single fund is <b>$500 a month</b> with onboarding
+    included. Above one fund we quote, and the reason is on this page rather
+    than hidden. It also explains how the software is priced generally, because
+    the segment publishes almost nothing on the subject and it is a fair thing
+    to want to know before a call.
   </p>
+
+  <div class="note">
+    <span class="tag">Emerging funds</span>
+    <p>
+      <b>One fund, $500 a month.</b> $6,000 a year, onboarding and conversion
+      included, no implementation fee. Published because it is a decision rather
+      than an estimate &mdash; we are choosing what a single-fund manager pays,
+      and that does not depend on anything we have yet to measure.
+    </p>
+    <p>
+      For context: published starting prices elsewhere in this segment run
+      <b>$24,000 to $36,000 a year</b>, before implementation. A manager running
+      one fund currently has no option that is not a five-figure enterprise
+      purchase. That is the gap this is aimed at.
+    </p>
+  </div>
 
   <h2>How fund accounting software is priced</h2>
 
@@ -215,25 +263,26 @@
         rather than a tier.</li>
   </ul>
 
-  <h2>Why there is no number here yet</h2>
+  <h2>Why the entry price is published and the rest is quoted</h2>
 
   <p>
-    Because we have not onboarded a customer end to end, and a number published
-    before that is a number we would have to walk back.
+    Because they are different kinds of claim. What a single-fund manager pays is
+    a <em>decision</em> &mdash; we are choosing it, and nothing about it waits on
+    a measurement. What a twenty-fund conversion costs is a
+    <em>measurement</em>, and we have not taken it.
   </p>
 
   <p>
-    Two of the things a price has to cover are still genuinely untested. How long
-    a real conversion takes, on somebody's actual book rather than a seeded one.
-    And how many customers one person can carry well, which is the assumption the
-    whole shape rests on. We have views on both. Neither is evidence yet, and
-    publishing a figure derived from them would be the same kind of confident
-    unsourced number this product exists to refuse.
+    Two things a larger quote has to cover are still genuinely untested: how long
+    a real conversion takes on somebody's actual book rather than a seeded one,
+    and how many customers one person can carry well. We have views on both.
+    Neither is evidence yet, and a figure derived from them would be the same
+    kind of confident unsourced number this product exists to refuse.
   </p>
 
   <p>
-    The axis will not change. A quote is a conversation about fund count,
-    structure and whether you are converting.
+    The axis will not change. Above one fund, a quote is a conversation about
+    fund count, structure and whether you are converting.
   </p>
 
   <h2>Founding partners</h2>
@@ -276,12 +325,14 @@
     </p>
   </div>
 
-  <h2>What we would rather compete on</h2>
+  <h2>What else we compete on</h2>
 
   <p>
-    Not price. Being the cheap option for software that touches money is a bad
-    position to hold, and the buyer's question in this market is not <em>will this
-    be expensive</em> but <em>will this be wrong about my books</em>.
+    The entry price is low because nothing is currently aimed at a manager
+    running one fund &mdash; not because cheap is the position. For software that
+    touches money the buyer's question is not <em>will this be expensive</em> but
+    <em>will this be wrong about my books</em>, and that is what the rest of this
+    site is about.
   </p>
 
   <ul class="notelist">
