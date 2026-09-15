@@ -67,7 +67,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "What is series accounting in a hedge fund?", "acceptedAnswer": { "@type": "Answer", "text": "When investors subscribe at different times, a single share class cannot charge incentive fees fairly: a new investor would otherwise pay performance fees on gains that happened before they arrived. Series accounting issues each subscription cohort its own series with its own high-water mark, so each cohort accrues incentive fees against its own performance, and the series consolidate once they have equalized." } },
-    { "@type": "Question", "name": "How is a high-water mark maintained through a redemption?", "acceptedAnswer": { "@type": "Answer", "text": "Partially. A redemption reduces the balance the mark applies to, but must not reset the mark itself, or an investor could redeem and re-subscribe to erase a loss carryforward. The same applies to transfers and to restatements of a prior period, which is why the morning check confirms that every high-water mark survived all three." } },
+    { "@type": "Question", "name": "How is a high-water mark maintained through a redemption?", "acceptedAnswer": { "@type": "Answer", "text": "A redemption reduces the balance the mark applies to, but must not reset the mark itself, or an investor could redeem and re-subscribe to erase a loss carryforward. The same applies to transfers and to restatements of a prior period, which is why the morning check confirms that every high-water mark survived all three." } },
     { "@type": "Question", "name": "Can it run a fund of hedge funds?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Underlying fund positions carry cost basis, unrealized gain and a valuation date per manager, with manager marks and true-ups when an estimate is replaced by a final. Look-through exposure and acquired-fee disclosure are computed through the ownership graph rather than collected by email." } }
   ]
 }
@@ -101,7 +101,7 @@
 
   <article>
 
-    <h2>Fairness between cohorts is the whole game</h2>
+    <h2>Fairness between cohorts</h2>
     <p>
       Two investors in the same strategy, one who subscribed in January and one in
       July, should not pay the same incentive fee on the same year. Every mechanism
@@ -131,8 +131,8 @@
     <p>
       It is one of the checks the morning sweep runs on every fund it holds:
       each high-water mark must have survived its redemptions, its transfers
-      and any restatement of the period it was measured in. Today the sweep
-      runs against our own reference books; on day one it runs against yours.
+      and any restatement of the period it was measured in. The sweep
+      currently runs against our own reference funds.
     </p>
 
     <figure class="shot">
@@ -184,12 +184,13 @@
     </ul>
 
     <div class="endcta">
-      <h2>Currently in private development</h2>
+      <h2>Show us the fund that breaks your current system</h2>
       <p>
-        Built for the people who have to sign the books rather than only read
-        them. If this is your problem, we would like to hear how you have it.
+        Built for the people who have to sign the books, not only read them.
+        Tell us what you run and we will walk you through how it works here, on
+        real books rather than slides.
       </p>
-      <p><a class="btn" href="/#contact">Request early access</a></p>
+      <p><a class="btn" href="/#contact">Get in touch</a></p>
     </div>
 
   </article>
@@ -198,7 +199,6 @@
     <span>&copy; 2026 1494 Labs</span>
     <a href="/">Home</a>
     <a href="/notes/">Notes</a>
-    <a href="/privacy/">Privacy</a>
     <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
   </footer>
 

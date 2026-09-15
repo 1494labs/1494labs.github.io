@@ -37,7 +37,7 @@
   "name": "1494 Labs",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web",
-  "description": "Fund accounting and fund administration software. Equalization, per-series high-water marks, side pockets and configurable waterfall tiers computed on one ledger, across pooled funds, funds-of-one, SMAs, trusts, family partnerships and SPVs, with ILPA-native reporting and every screen running on the public API.",
+  "description": "Fund accounting and fund administration software for open-end and closed-end vehicles alike: hedge funds and funds of hedge funds, private equity and venture, registered funds (RICs and BDCs), and family offices. Series accounting, equalization, per-series high-water marks and side pockets for open-end books; commitments, capital calls, drawdowns, configurable waterfall tiers and ILPA-native reporting for closed-end. One ledger under all of it, with every screen running on the public API.",
   "url": "https://1494labs.com/",
   "publisher": {
     "@type": "Organization",
@@ -146,7 +146,9 @@ p{max-width:var(--measure)}
 
 /* ── capability grid ────────────────────────────────────── */
 .grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;margin-top:clamp(28px,4vw,44px)}
-@media (min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+@media (min-width:720px){.grid{grid-template-columns:1fr 1fr}
+/* an odd final cell spans rather than leaving the rule colour showing through */
+.grid>.cell:last-child:nth-child(odd){grid-column:1/-1}}
 .cell{background:var(--paper);padding:clamp(24px,3.2vw,34px)}
 .cell h3{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.25;margin:0 0 10px;letter-spacing:-.01em}
 .cell h3 a{color:var(--teal);text-decoration:none;border-bottom:1px solid transparent}
@@ -248,7 +250,6 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
       </a>
       <span class="navgroup">
         <a class="navlink" href="/fund-accounting-software/">Platform</a>
-        <a class="navlink" href="https://docs.1494labs.com">Documentation</a>
         <a class="navlink" href="/notes/">Notes</a>
         <a class="navlink" href="#contact">Get in touch</a>
       </span>
@@ -257,20 +258,22 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
 
   <section class="hero">
     <p class="eyebrow">Fund accounting &amp; administration</p>
-    <h1>Everyone else stops at<br><em>&ldquo;complex fund structures&rdquo;.</em></h1>
+    <h1>Fund accounting for funds whose<br><em>terms don&rsquo;t fit a template.</em></h1>
     <p class="standfirst">
-      Side pockets that split dealing NAV from total. High-water marks that
-      survive a redemption, per series. Equalization. Waterfall tiers that move
-      at each hurdle. Every one is a term somebody negotiated, and every one
-      here is computed, with the worked example behind the number.
+      Equalization. High-water marks per series, carried through redemptions.
+      Side pockets where the dealing NAV and the total NAV differ. Waterfall
+      tiers with their own hurdles. These are the parts of a fund&rsquo;s terms
+      that usually end up in a spreadsheet next to the accounting system.
     </p>
     <p class="standfirst" style="margin-top:14px">
-      One ledger under all of it, across hedge, fund-of-funds, closed-end,
-      registered and family-office books.
+      They are negotiated, and they differ fund to fund, so they are configured
+      per fund and the working is shown for each number. One ledger covers all
+      of it: hedge funds, funds of funds, closed-end vehicles, registered funds
+      and family office books.
     </p>
     <p class="herofoot">
-      If you use the terms: the accounting book of record and the investment book
-      of record are one ledger, read on two clocks.
+      The accounting and investment books of record read off that one ledger,
+      not two systems someone has to reconcile.
     </p>
     <hr class="herorule">
 
@@ -287,24 +290,68 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     </figure>
   </section>
 
+  <section id="solutions">
+    <p class="kicker">By vehicle</p>
+    <h2>Start with the kind of book you keep.</h2>
+    <p class="lead">
+      The same platform, in the vocabulary of each kind of book, with the
+      screens that matter to it.
+    </p>
+    <div class="grid">
+      <div class="cell">
+        <h3><a href="/private-equity-fund-accounting/">Private Equity and Closed-End</a></h3>
+        <p>Commitments, capital calls, drawdowns, recallable distributions,
+           European and American waterfalls, GP carry and clawback, and
+           ILPA-native call and distribution notices.</p>
+      </div>
+      <div class="cell">
+        <h3><a href="/hedge-fund-accounting/">Hedge Funds and Open-End</a></h3>
+        <p>Series accounting and equalization, per-series high-water marks that
+           survive redemption and restatement, incentive fees or allocations,
+           side pockets and a fund-of-funds book that looks through.</p>
+      </div>
+      <div class="cell">
+        <h3><a href="/family-office-accounting/">Family Offices</a></h3>
+        <p>Consolidated net worth across trusts, holding companies, partnerships
+           and SPVs, with intercompany interests eliminated and ownership derived
+           from the capital accounts rather than typed beside them.</p>
+      </div>
+      <div class="cell">
+        <h3><a href="#registered">Registered Funds</a></h3>
+        <p>Interval funds, RICs and BDCs: repurchase offers with proration and
+           carry-forward, &sect;19(a) notices sourced from the book, managed
+           distributions, and the asset-coverage gate those wrappers require.</p>
+      </div>
+      <div class="cell">
+        <h3><a href="/fund-administration-software/">Fund Administrators</a></h3>
+        <p>Many clients on one platform, isolated per tenant, with a close that
+           seals, reconciliation breaks that have somewhere to go, and an API
+           every screen already runs on.</p>
+      </div>
+    </div>
+    <ul class="pagelinks" style="margin-top:22px">
+      <li><a href="/fund-accounting-software/">The full platform overview</a>, if you would rather start from the top.</li>
+    </ul>
+  </section>
+
   <section id="proof">
     <div class="split">
       <div>
         <p class="kicker">The error that survives review</p>
-        <h2>Books drift quietly, and then it is a restatement.</h2>
+        <h2>The errors nobody goes looking for.</h2>
         <p class="lead">
-          A wrong price gets argued about. The dangerous errors are the ones
-          nobody looks for: a capital account that stopped tying to the ledger
+          A wrong price gets caught, because someone argues about it. The harder
+          ones are quiet: a capital account that stopped tying to the ledger
           three periods ago, an allocation that no longer sums to the pool, a
           high-water mark lost in a redemption. Nobody re-adds a fund by hand
-          every month, so these survive every review and surface at the audit.
+          each month, so these survive review and turn up at the audit.
         </p>
         <p class="lead" style="margin-bottom:0">
-          So the platform re-proves the arithmetic of every fund it holds, every
-          morning, and a failure opens a break carrying the fund, the period and
-          the difference. The control comes with the book; there is nothing to
-          commission. Today it runs against our own reference books,
-          because we have no clients yet. On day one it runs against yours.
+          Every morning the platform re-computes the figures that are supposed
+          to tie, for every fund it holds. Where something does not tie, it
+          opens a break naming the fund, the period and the amount. There is
+          nothing to set up. The check currently runs against our own reference
+          funds.
         </p>
       </div>
       <div class="figure">
@@ -332,10 +379,9 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
            alt="A NAV restatement history listing every mutation to a fund's NAV with its prior value, new value and delta.">
       <figcaption>
         <b>Every change to a struck NAV keeps its own record.</b>
-        Prior value, new value, the delta and what caused it, per event. A
-        correction is a fact about the book rather than an embarrassment to be
-        smoothed over, so the trail is a property of the ledger and not a log
-        somebody remembered to keep.
+        Prior value, new value, the delta and what caused it, for each event.
+        The trail is part of the ledger, so it is there whether or not anyone
+        thought to keep one.
       </figcaption>
     </figure>
 
@@ -346,15 +392,24 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
       <figcaption>
         <b>And a finding has somewhere to land.</b>
         Two checks disagreed about the same fund on the same day, each naming
-        itself and the difference it measured. A break is an object with a
-        lifecycle rather than a line in a report: it ages, it is assigned, and
-        what was decided about it is kept, so next month's break on the same
-        account arrives with last month's reasoning attached. These are
+        itself and the difference it measured. A break ages, gets assigned, and
+        keeps what was decided about it, so next month&rsquo;s break on the same
+        account arrives with last month&rsquo;s reasoning attached. These are
         <em>internal</em> breaks, the book against itself. Reconciling against a
         custodian or a bank file runs through the same worklist, and that
         ingestion is what we are building next.
       </figcaption>
     </figure>
+  </section>
+
+  <section id="preview">
+    <p class="kicker">Before it posts</p>
+    <h2>Consequence before commit.</h2>
+    <p class="lead">
+      See what an entry does to the ledger, to capital accounts and to every
+      downstream balance before it posts. Anything in an open period can be
+      corrected afterwards, and the correction keeps its own record.
+    </p>
   </section>
 
   <section id="allocation">
@@ -453,18 +508,17 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
       book moves.
     </p>
     <p class="lead">
-      The part that took real work is the arithmetic under the grouping. A
-      percentage keeps its true denominator however you slice it, a
-      point-in-time balance declines to be summed across periods, and a
-      subtotal that would be nonsense refuses to compute instead of computing
-      it confidently. Most reporting tools will happily average your averages.
-      This one knows which columns those are.
+      The arithmetic under the grouping is the part that took the work. A
+      percentage keeps its true denominator however you slice it, a point-in-time
+      balance is not summed across periods, and a subtotal that would be
+      meaningless is left blank with its reason rather than computed anyway.
+      Averaging an average is the common mistake, and the columns where that
+      applies are declared per column.
     </p>
     <p class="lead" style="margin-bottom:0">
-      And a saved analysis has an address. The cut a controller builds on
-      screen can be shared with the team, pulled through the API, and read by
-      an agent over MCP, so an analysis is built once and answers everywhere,
-      including places we have not built yet.
+      A saved analysis has an address. The cut a controller builds on screen can
+      be shared with the team, pulled through the API, and read by an agent over
+      MCP, so it is built once and read wherever it is needed.
     </p>
   </section>
 
@@ -562,6 +616,46 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
         <b>Six managers, each with its own cost basis and unrealized position.</b>
         A fund interest is a position with a valuation history behind it. The date each was last revalued sits on the row,
         because the age of an input is part of the number.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section id="open-end">
+    <p class="kicker">Open-end</p>
+    <h2>Open-end mechanics, down to the series.</h2>
+    <p class="lead">
+      Two investors in the same strategy who subscribed six months apart should
+      not pay the same incentive fee on the same year. Series accounting,
+      equalization and per-series high-water marks are the mechanisms that fix
+      that, and each is intricate enough that it is usually kept outside the
+      accounting system. Here they are ledger mechanics, and the morning check
+      re-proves them.
+    </p>
+
+    <figure class="shot">
+      <img src="/assets/screens/series.jpg" width="1568" height="900"
+           loading="lazy" decoding="async"
+           alt="Seventeen series across three share classes, each with its own inception period, inception NAV and lead-series flag, with a year-end consolidation action.">
+      <figcaption>
+        <b>Seventeen series, each with its own inception period.</b>
+        A series is an identity the ledger keeps rather than a label on a
+        report: its own inception NAV, its own high-water mark, and a year-end
+        consolidation that folds it back into the lead series when the terms
+        say so.
+      </figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img src="/assets/screens/crystallizations.jpg" width="1568" height="900"
+           loading="lazy" decoding="async"
+           alt="Incentive crystallizations listed by kind: scheduled, partial redemption, full redemption and transfer, each posted with the amount crystallized and one shown reversed.">
+      <figcaption>
+        <b>Crystallization is not only a year-end event.</b>
+        It happens on a schedule, and also on a partial redemption, a full
+        redemption and a transfer. The high-water mark has to survive all of
+        them without resetting, or an investor pays twice for the same gain or
+        never pays for it at all. Each event posts with what it crystallized,
+        and a reversal keeps its own row rather than editing the original.
       </figcaption>
     </figure>
   </section>
@@ -677,6 +771,122 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     </figure>
   </section>
 
+  <section id="registered">
+    <p class="kicker">Registered funds</p>
+    <h2>The obligations that come with a registered wrapper.</h2>
+    <p class="lead">
+      An interval fund, a RIC or a BDC is a normal book carrying a second set of
+      duties: tell shareholders what a distribution was actually paid out of,
+      repurchase up to a fixed share of the fund on a published clock, and stay
+      inside a coverage ratio. Those duties are usually met in a spreadsheet
+      beside the accounting system, a month after the fact. Here they are
+      computed from the same ledger that produces the NAV.
+    </p>
+
+    <figure class="shot">
+      <img src="/assets/screens/ric-19a-notice.jpg" width="1568" height="724"
+           loading="lazy" decoding="async"
+           alt="A Section 19(a) notice for a managed distribution: total amount, total shares and estimated-as-of date, with the payment split into nondividend distribution and ordinary income by amount, percent, per share and year to date.">
+      <figcaption>
+        <b>A &sect;19(a) notice, sourced rather than asserted.</b>
+        When a fund pays out more than it earned, it has to tell shareholders how
+        much of the check was return of capital &mdash; for this distribution,
+        $3,900 of $9,900, and 39.88% year to date. The split comes off the book,
+        the notice carries both the period and the year-to-date column the rule
+        requires, and it says plainly that an estimate is not final tax character.
+        A PDF falls out of the same numbers.
+      </figcaption>
+    </figure>
+
+    <div class="grid">
+      <div class="cell">
+        <h3>Repurchase offers on the clock</h3>
+        <p>Board approval, a request deadline that freezes the queue, pricing at a
+           named NAV version, and proration when requests exceed the offer. A
+           residual either cancels or carries forward to the next offer as a
+           standing claim on the ledger &mdash; whichever the fund's own terms say.</p>
+      </div>
+      <div class="cell">
+        <h3>Managed distributions</h3>
+        <p>A policy in the fund's own vocabulary &mdash; a NAV percentage or a fixed
+           amount, at a cadence, drawing on sources in a stated order &mdash; and a
+           declared-to-paid lifecycle with record-date shares and per-holder
+           characterization behind every declaration.</p>
+      </div>
+      <div class="cell">
+        <h3>Qualification and excise</h3>
+        <p>The distribution requirement and the excise calendar are assessed against
+           the book as it stands, on the fund's own tax year, rather than
+           reconstructed from statements at year end.</p>
+      </div>
+      <div class="cell">
+        <h3>BDC controls</h3>
+        <p>The asset-coverage ratio as a gate rather than a report, a two-part
+           incentive fee with an income hurdle, catch-up and a capital-gains part
+           on its own lookback, and the ten-year senior-securities table the
+           disclosure asks for.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="family-office">
+    <p class="kicker">Family offices</p>
+    <h2>Adding up the vehicles is not the net worth.</h2>
+    <p class="lead">
+      A family that holds a partnership through a holding company through four
+      trusts owns most of its assets several times over on paper. Getting from the
+      legal books to a number the family can act on means knowing the effective
+      ownership of every asset through every layer, and most offices do that once
+      a quarter, by hand, in a workbook nobody else can check.
+    </p>
+
+    <figure class="shot">
+      <img src="/assets/screens/look-through-consolidation.jpg" width="1568" height="802"
+           loading="lazy" decoding="async"
+           alt="A look-through consolidation showing legal books of $10.85bn against a consolidated $1.53bn, with a per-asset table giving legal owner, asset class, valuation basis, effective ownership, gross value and attributed value.">
+      <figcaption>
+        <b>$10.85bn of legal books, $1.53bn of it actually owned.</b>
+        The gap is the same dollar counted at each layer it passes through. Every
+        row carries the effective ownership that got it there &mdash; 40% of
+        $157.5m is $63.0m &mdash; computed from the capital accounts rather than
+        typed into a spreadsheet, so the consolidation and the ownership diagram
+        cannot disagree. The banner says the period has no struck NAV and what was
+        used instead.
+      </figcaption>
+    </figure>
+
+    <div class="grid">
+      <div class="cell">
+        <h3>Trusts, partnerships, GRATs</h3>
+        <p>The vehicles a family actually uses are first-class, not funds wearing a
+           different label, and a person is modeled as distinct from an entity
+           because generational transfers depend on the difference.</p>
+      </div>
+      <div class="cell">
+        <h3>Report from any node</h3>
+        <p>Scope a report to a branch, a vehicle or a family member and get their
+           view of the same books &mdash; rooted at that node and weighted by what
+           they actually own, rather than a filtered copy of the whole.</p>
+      </div>
+      <div class="cell">
+        <h3>Everything the family holds</h3>
+        <p>Marketable securities, direct investments, fund interests, real property
+           and digital assets on one chart of accounts, with allocation and
+           attribution over the taxonomy the family reports against.</p>
+      </div>
+      <div class="cell">
+        <h3>Look-through into the funds</h3>
+        <p>Manager fees the family pays twice &mdash; once to the fund, once inside
+           it &mdash; surface as a two-layer disclosure, per investor, instead of
+           disappearing into a net return.</p>
+      </div>
+    </div>
+    <ul class="pagelinks" style="margin-top:22px">
+      <li><a href="/family-office-accounting/">Family office accounting in more depth</a>,
+          including how consolidated net worth is derived.</li>
+    </ul>
+  </section>
+
   <section id="platform">
     <p class="kicker">Platform</p>
     <h2>There is no private back channel.</h2>
@@ -718,18 +928,15 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     <p class="kicker">AI</p>
     <h2>A model can suggest a fee term. It cannot post one.</h2>
     <p class="lead">
-      Every platform in this category now says AI. Read the claims and almost
-      all of them are read-side: ask a question, extract a document, normalise a
-      feed. Very little of it goes near the number that ends up in a capital
-      account, and the little that does tends to boast about needing no human.
+      Most AI in this category is read-side: ask a question, extract a document,
+      normalise a feed. Very little of it goes near the number that ends up in a
+      capital account.
     </p>
     <p class="lead">
-      The rule here is the opposite, and it is a rule. A person
-      confirms every figure that becomes a fund term or a journal entry. What
-      the model read travels with the number afterwards: the clause, the
-      document, the person who accepted it. That is only possible because the
-      thing reading the document and the thing holding the book are the same
-      system.
+      Here a person confirms every figure that becomes a fund term or a journal
+      entry. What the model read travels with the number afterwards: the clause,
+      the document, and who accepted it. That works because the thing reading the
+      document and the thing holding the book are the same system.
     </p>
     <div class="grid">
       <div class="cell">
@@ -763,53 +970,7 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     </div>
   </section>
 
-  <section id="solutions">
-    <p class="kicker">By vehicle</p>
-    <h2>Written up in your own vocabulary.</h2>
-    <p class="lead">
-      The same platform, described in the vocabulary of each kind of book, with
-      the screens that matter to it.
-    </p>
-    <div class="grid">
-      <div class="cell">
-        <h3><a href="/private-equity-fund-accounting/">Private Equity and Closed-End</a></h3>
-        <p>Commitments, capital calls, drawdowns, recallable distributions,
-           European and American waterfalls, GP carry and clawback, and
-           ILPA-native call and distribution notices.</p>
-      </div>
-      <div class="cell">
-        <h3><a href="/hedge-fund-accounting/">Hedge Funds and Open-End</a></h3>
-        <p>Series accounting and equalization, per-series high-water marks that
-           survive redemption and restatement, incentive fees or allocations,
-           side pockets and a fund-of-funds book that looks through.</p>
-      </div>
-      <div class="cell">
-        <h3><a href="/family-office-accounting/">Family Offices</a></h3>
-        <p>Consolidated net worth across trusts, holding companies, partnerships
-           and SPVs, with intercompany interests eliminated and ownership derived
-           from the capital accounts rather than typed beside them.</p>
-      </div>
-      <div class="cell">
-        <h3><a href="/fund-administration-software/">Fund Administrators</a></h3>
-        <p>Many clients on one platform, isolated per tenant, with a close that
-           seals, reconciliation breaks that have somewhere to go, and an API
-           every screen already runs on.</p>
-      </div>
-    </div>
-    <ul class="pagelinks" style="margin-top:22px">
-      <li><a href="/fund-accounting-software/">The full platform overview</a>, if you would rather start from the top.</li>
-    </ul>
-  </section>
 
-  <section id="preview">
-    <p class="kicker">Before it posts</p>
-    <h2>Consequence before commit.</h2>
-    <p class="lead">
-      See exactly what an entry does to the ledger, to capital accounts, and to
-      every downstream balance, before it posts. Nothing enters the book blind, and
-      anything in an open period can be corrected without a journal of apologies.
-    </p>
-  </section>
 
 </div>
 
@@ -833,16 +994,17 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
 
 <div class="wrap">
   <section id="contact" class="cta">
-    <p class="kicker">Early access</p>
-    <h2>Currently in private development.</h2>
+    <p class="kicker">Get in touch</p>
+    <h2>Show us the fund that breaks your current system.</h2>
     <p class="lead">
       Built for fund administrators, CFOs and controllers who would rather their
-      system prove the books than merely store them. If that is your problem,
-      tell us what it looks like where you work.
+      system prove the books than store them. Tell us what you run and we will
+      walk you through how it works here, on real books rather than slides. If
+      the answer is that we cannot do it yet, you will get that answer too.
     </p>
 
     <form class="signup" action="https://formspree.io/f/xwlejaqw" method="POST">
-      <input type="hidden" name="_subject" value="1494 Labs early access request">
+      <input type="hidden" name="_subject" value="1494 Labs enquiry">
       <div class="fg">
         <label for="email">Work email</label>
         <input type="email" id="email" name="email" required autocomplete="email">
@@ -873,7 +1035,7 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
         <textarea id="setup" name="setup" placeholder="Optional. The more specific the better."></textarea>
         <p class="hint">Spreadsheets, an administrator, a platform you have outgrown. Whatever it is.</p>
       </div>
-      <button class="btn" type="submit">Request early access</button>
+      <button class="btn" type="submit">Send it over</button>
     </form>
     <p class="cta-note">
       Prefer email? Write directly to
@@ -891,9 +1053,7 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
         <a href="/hedge-fund-accounting/" style="color:inherit">Hedge Funds</a> &middot;
         <a href="/family-office-accounting/" style="color:inherit">Family Offices</a> &middot;
         <a href="/fund-administration-software/" style="color:inherit">Administrators</a> &middot;
-        <a href="https://docs.1494labs.com" style="color:inherit">Documentation</a> &middot;
-        <a href="/notes/" style="color:inherit">Notes</a> &middot;
-        <a href="/privacy/" style="color:inherit">Privacy</a>
+        <a href="/notes/" style="color:inherit">Notes</a>
       </span>
     </div>
   </footer>
