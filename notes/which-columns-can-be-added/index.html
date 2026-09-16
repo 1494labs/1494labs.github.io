@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which columns can be added, and which cannot &middot; 1494 Labs</title>
+<meta name="description" content="Most reporting tools will total any column of numbers you point them at. Four classes of column behave differently under grouping, and only one of them is safe to add.">
+<link rel="canonical" href="https://1494labs.com/notes/which-columns-can-be-added/">
+<link rel="stylesheet" href="/assets/notes.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://1494labs.com/notes/which-columns-can-be-added/">
+<meta property="og:site_name" content="1494 Labs">
+<meta property="og:title" content="Which columns can be added, and which cannot">
+<meta property="og:description" content="Most reporting tools will total any column of numbers you point at them. Four classes of column behave differently under grouping, and only one is safe to add.">
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Which columns can be added, and which cannot">
+<meta name="twitter:description" content="A weighted average and an average of averages differ by $300,000 a year on a $100m fund. Both look like a subtotal.">
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Which columns can be added, and which cannot",
+  "description": "Most reporting tools will total any column of numbers you point them at. Four classes of column behave differently under grouping, and only one of them is safe to add.",
+  "url": "https://1494labs.com/notes/which-columns-can-be-added/",
+  "datePublished": "2026-09-15",
+  "dateModified": "2026-09-15",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "name": "1494 Labs",
+    "url": "https://1494labs.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "1494 Labs",
+    "url": "https://1494labs.com/",
+    "logo": "https://1494labs.com/assets/icon-512x512.png"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://1494labs.com/notes/which-columns-can-be-added/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "1494 Labs",
+      "item": "https://1494labs.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Notes",
+      "item": "https://1494labs.com/notes/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Adding up columns"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a href="/">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="1494 Labs">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/>
+        </g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+      <span class="name">1494 Labs</span>
+    </a>
+    <span class="sep">&middot;</span>
+    <span class="sec">Notes</span>
+    <span class="spacer"></span>
+    <a class="back" href="/notes/">All notes</a>
+  </nav>
+
+  <h1>Which columns can be added, and which cannot</h1>
+  <p class="standfirst">
+    A subtotal that is wrong looks exactly like a subtotal that is right. Every
+    reporting tool will happily add a column of percentages, and the resulting
+    number is not off by rounding, it is meaningless.
+  </p>
+  <p class="byline">Reporting &middot; roughly 5 minutes</p>
+
+  <article>
+
+    <h2>Four classes, three behaviours</h2>
+    <p>
+      Whether a column can be aggregated is a property of the column, not of the
+      grid it happens to be in. The same table routinely contains columns from
+      three of these classes at once.
+    </p>
+    <div class="tablewrap">
+    <table>
+      <thead>
+        <tr><th>Class</th><th>Examples</th><th>Across entities, one date</th><th>Across dates</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Flows</strong></td>
+          <td>Contributions, distributions, fees charged, realized gains</td>
+          <td>Add</td><td>Add</td>
+        </tr>
+        <tr>
+          <td><strong>Point-in-time balances</strong></td>
+          <td>NAV, cash, unfunded commitment, position value</td>
+          <td>Add</td><td><strong>Never</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Rates and per-unit values</strong></td>
+          <td>NAV per share, price, fee rate, ownership percentage</td>
+          <td><strong>Never</strong></td><td><strong>Never</strong></td>
+        </tr>
+        <tr>
+          <td><strong>Derived statistics</strong></td>
+          <td>IRR, time-weighted return, volatility, Sharpe</td>
+          <td colspan="2">Recomputed from the combined series, never combined from the members' own figures</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p>
+      A grid of capital accounts will carry contributions, a closing balance and
+      an ownership percentage side by side. One of those three sums down the
+      page, one sums across entities but not across periods, and one never sums at
+      all. A tool that treats a column as a column gets two of them wrong.
+    </p>
+
+    <h2>An average of averages, in money</h2>
+    <p>
+      A fund has two share classes. Class A holds $80m at a 1.0% management fee;
+      Class B holds $20m at 2.0%. What is the fund's management fee rate?
+    </p>
+    <div class="tablewrap">
+    <table>
+      <thead>
+        <tr><th>Method</th><th class="n">Rate</th><th class="n">Implied annual fee on $100m</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Average of the two class rates</td><td class="n">1.50%</td><td class="n">$1,500,000</td></tr>
+        <tr><td>Weighted by the capital each rate applies to</td><td class="n">1.20%</td><td class="n">$1,200,000</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>
+      $300,000 a year, and the wrong figure is the one a grid produces by default,
+      because averaging is what a column of percentages invites. The error also
+      moves with the mix, so it cannot be spotted as a constant bias: rebalance
+      the classes and the gap changes size without anything on screen changing
+      appearance.
+    </p>
+    <p>
+      The same trap sits one level deeper. A weighted average computed at a
+      subtotal must run over the leaf rows beneath it, not over the subtotals
+      below it. Averaging subtotals that are themselves averages compounds the
+      error at every level, and a deep grouping tree can be wrong by a great deal
+      more than this example.
+    </p>
+
+    <h2>The denominator that should not move</h2>
+    <p>
+      A holdings grid shows each position as a percentage of fund NAV. The fund is
+      $100m: $60m of equities, $40m of credit. Group the grid by asset class and
+      the percentage column has to decide what it is a percentage of.
+    </p>
+    <div class="tablewrap">
+    <table>
+      <thead>
+        <tr><th>&nbsp;</th><th class="n">Equities</th><th class="n">Credit</th><th class="n">Total</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Denominator stays fund NAV</td><td class="n">60%</td><td class="n">40%</td><td class="n">100%</td></tr>
+        <tr><td>Denominator becomes the group</td><td class="n">100%</td><td class="n">100%</td><td class="n">200%</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>
+      The second row is what a grid does if the percentage is treated as an
+      ordinary computed column, and it is worth noticing that it does not look
+      broken. Each group reads 100%, which is a plausible thing for a group to
+      read. Only the total gives it away, and totals of percentage columns are
+      frequently hidden precisely because they look odd.
+    </p>
+    <p>
+      For this to work the grid has to know that the denominator is external to
+      the rows on screen. That is a different kind of object from a column of
+      values, and most reporting layers have nowhere to put it.
+    </p>
+
+    <h2>Balances do not sum across time</h2>
+    <p>
+      Group a capital-account grid by month and the closing balance column will
+      offer a total. Twelve monthly NAVs added together is twelve times the
+      average NAV, a number with no referent: the fund never held it, and it is
+      not a cash flow either.
+    </p>
+    <p>
+      Contributions in the next column over do sum across those same twelve
+      months, correctly, because a flow is a quantity of money that moved. So the
+      rule cannot be applied to the grid, or to the grouping, only to the column.
+      A balance column under a date grouping should go blank at and above the date
+      level, while the flow column beside it keeps totalling.
+    </p>
+
+    <h2>Statistics have no shortcut</h2>
+    <p>
+      A group's volatility is the volatility of the group's composite return
+      series. It is not the average of its members' volatilities, and no weighting
+      makes it so, because the members' returns are correlated and the statistic
+      depends on that correlation. The same holds for Sharpe, beta and tracking
+      error. A group's IRR is the IRR of the combined cash flow stream, which
+      requires the streams, not the members' IRRs.
+    </p>
+    <p>
+      So the honest answer at a subtotal is either the recomputed statistic or
+      nothing. If the composite series has not been built, there is no correct
+      number available, and any figure in that cell is invented.
+    </p>
+
+    <h2>Blank, with a reason, is an answer</h2>
+    <div class="note">
+      <span class="tag">The whole argument</span>
+      <p>
+        An empty cell looks like something failed. A computed cell that should
+        have been empty looks like it worked. The second one is the expensive
+        mistake, and it is the one that reaches an investor, because nothing about
+        it invites a second look.
+      </p>
+    </div>
+    <p>
+      A cell that cannot be computed honestly should say so, and say why: no
+      composite series, denominator not resolvable at this level, not additive
+      across dates. That turns a silent wrong answer into a visible limitation,
+      which is a thing a controller can work with.
+    </p>
+
+    <h2>What to check</h2>
+    <ul class="keypoints">
+      <li><span class="tick">&#10003;</span><span><strong>Can you total a NAV-per-share column?</strong>
+        If the tool permits it, someone will do it eventually, and the first time
+        it matters will be in front of somebody's investor.</span></li>
+      <li><span class="tick">&#10003;</span><span><strong>Under grouping, does a percentage keep its denominator?</strong>
+        Group a holdings view by anything and look at the total.</span></li>
+      <li><span class="tick">&#10003;</span><span><strong>Does a balance column blank out on a date axis</strong>
+        while the flow column beside it keeps summing?</span></li>
+      <li><span class="tick">&#10003;</span><span><strong>What appears when a rollup cannot be computed?</strong>
+        A zero is the worst possible answer, because zero is a value.</span></li>
+      <li><span class="tick">&#10003;</span><span><strong>What survives an export?</strong>
+        Every one of these rules is enforced by the grid. A spreadsheet has no
+        idea which column is which, and will add all of them on request. If the
+        analysis only exists after an export, none of this protects it.</span></li>
+    </ul>
+
+    <ul class="pagelinks">
+      <li><a href="/fund-administration-software/">For administrators</a>, many clients on one platform</li>
+      <li><a href="/notes/">All notes</a></li>
+    </ul>
+
+    <div class="endcta">
+      <h2>How we handle it</h2>
+      <p>
+        In 1494 Labs the aggregation rule is declared per column rather than
+        inferred, denominators are registered objects that survive grouping, and a
+        subtotal that cannot be computed honestly renders blank with its reason
+        rather than a number. A saved analysis is addressable, so the cut a
+        controller builds on screen is also an API call, rather than an export
+        that leaves the rules behind.
+      </p>
+      <p><a class="btn" href="/#contact">Get in touch</a></p>
+    </div>
+
+  </article>
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+</body>
+</html>

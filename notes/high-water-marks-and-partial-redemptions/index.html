@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>High-water marks and the partial redemption &middot; 1494 Labs</title>
+<meta name="description" content="When an investor redeems half their holding, the loss carried forward against their remaining shares has to fall by half too. It usually does not, and the error only ever runs one way.">
+<link rel="canonical" href="https://1494labs.com/notes/high-water-marks-and-partial-redemptions/">
+<link rel="stylesheet" href="/assets/notes.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://1494labs.com/notes/high-water-marks-and-partial-redemptions/">
+<meta property="og:site_name" content="1494 Labs">
+<meta property="og:title" content="High-water marks and the partial redemption">
+<meta property="og:description" content="When an investor redeems half their holding, the loss carried forward has to fall by half too. It usually does not, nothing in the accounts breaks, and the error always favours the investor.">
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="High-water marks and the partial redemption">
+<meta name="twitter:description" content="Half the money leaves. What happens to the loss carryforward on the half that stayed?">
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "High-water marks and the partial redemption",
+  "description": "When an investor redeems half their holding, the loss carried forward against their remaining shares has to fall by half too. It usually does not, and the error only ever runs one way.",
+  "url": "https://1494labs.com/notes/high-water-marks-and-partial-redemptions/",
+  "datePublished": "2026-09-15",
+  "dateModified": "2026-09-15",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "name": "1494 Labs",
+    "url": "https://1494labs.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "1494 Labs",
+    "url": "https://1494labs.com/",
+    "logo": "https://1494labs.com/assets/icon-512x512.png"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://1494labs.com/notes/high-water-marks-and-partial-redemptions/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "1494 Labs",
+      "item": "https://1494labs.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Notes",
+      "item": "https://1494labs.com/notes/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "High-water marks"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a href="/">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="1494 Labs">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/>
+        </g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+      <span class="name">1494 Labs</span>
+    </a>
+    <span class="sep">&middot;</span>
+    <span class="sec">Notes</span>
+    <span class="spacer"></span>
+    <a class="back" href="/notes/">All notes</a>
+  </nav>
+
+  <h1>High-water marks and the partial redemption</h1>
+  <p class="standfirst">
+    A high-water mark is easy to get right while nothing moves. The mistakes
+    happen on the way out: a partial redemption that leaves a stale loss
+    carryforward behind, and a full redemption that walks past an accrued fee.
+    Neither one breaks anything that would tell you.
+  </p>
+  <p class="byline">Fees &middot; roughly 4 minutes</p>
+
+  <article>
+
+    <h2>The mark is a level, and it belongs to the holder</h2>
+    <p>
+      A high-water mark records the highest value on which an investor has
+      already been charged an incentive fee. Above it, profit is new and
+      chargeable. Below it, the shortfall is a loss carried forward, and the
+      manager works back through it for nothing.
+    </p>
+    <p>
+      The mark therefore belongs to a holder, not to a fund, and it is attached
+      to a quantity of shares. That second half is the part that gets lost: change
+      the quantity and the mark has to change with it.
+    </p>
+
+    <h2>What a partial redemption has to do</h2>
+    <p>
+      An investor holds 10,000 shares. The mark is $100 a share and the NAV has
+      fallen to $80, so $200,000 of loss is carried forward. The investor redeems
+      5,000 shares at $80, taking out $400,000, and leaves 5,000 shares behind.
+    </p>
+    <p>
+      The fund then recovers to $120 a share. Here is the same position under two
+      treatments of that carryforward.
+    </p>
+    <div class="tablewrap">
+    <table>
+      <caption>5,000 remaining shares, $80 to $120</caption>
+      <thead>
+        <tr><th>&nbsp;</th><th class="n">Carryforward left</th><th class="n">Gain on the remainder</th><th class="n">Chargeable</th><th class="n">Fee at 20%</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Carryforward left untouched</td><td class="n">$200,000</td><td class="n">$200,000</td><td class="n">$0</td><td class="n">$0</td></tr>
+        <tr><td>Carryforward released pro rata</td><td class="n">$100,000</td><td class="n">$200,000</td><td class="n">$100,000</td><td class="n">$20,000</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>
+      The second line is the right one, and it is easy to prove without reference
+      to any carryforward at all. The remaining 5,000 shares went from a mark of
+      $100 to a NAV of $120. That is $20 a share of genuinely new profit, $100,000,
+      and 20% of it is $20,000.
+    </p>
+    <p>
+      The first line shelters that profit behind a loss the investor took half of
+      out of the fund in cash. Redeeming released half the shares, and the loss
+      attached to them left with them.
+    </p>
+    <div class="note">
+      <span class="tag">Why it survives</span>
+      <p>
+        Nothing fails in the first line. The trial balance foots, the capital
+        accounts tie, the NAV is right, and the investor's statement is correct in
+        every figure it shows. The fee is simply smaller than it should be, and
+        there is no number anywhere that it disagrees with.
+      </p>
+    </div>
+    <p>
+      Note also the direction. The error never runs the other way. Skipping the
+      proration always shelters profit, which always favours the investor and
+      always costs the manager. A bug with a consistent sign is not noise, it is a
+      slow transfer, and it compounds every time an investor trims a position in a
+      drawdown.
+    </p>
+
+    <h2>The other direction: redeeming above the mark</h2>
+    <p>
+      The same investor, but the fund is at $120 against a mark of $100 and an
+      incentive fee is accruing. On 10,000 shares the accrual attributable to them
+      is 20% of $20 a share, or $40,000.
+    </p>
+    <p>
+      They redeem in full at $120. If the fee is only settled at period end, they
+      leave with $1,200,000 and the accrual they generated reverses across the
+      investors who stayed. The fee has to <strong>crystallize at the redemption
+      date</strong>: $40,000 is charged then, and the investor receives $1,160,000.
+    </p>
+    <p>
+      On a partial redemption the same thing happens proportionally. Redeem 40% and
+      40% of the accrual crystallizes, $16,000, while the remaining 60% keeps its
+      mark of $100 and carries on accruing.
+    </p>
+    <div class="note warn">
+      <span class="tag">The ordering matters</span>
+      <p>
+        Crystallize before striking the redemption price, not after. A fee
+        calculated on a NAV that has already had the redemption taken out of it is
+        a fee on the wrong base, and the difference is not rounding.
+      </p>
+    </div>
+
+    <h2>Transfers are not redemptions</h2>
+    <p>
+      When shares move between two investors, nothing has been realized and no
+      money has left the fund. The mark travels with the shares: the receiving
+      holder inherits it at the level the transferring holder carried, along with
+      any loss carried forward against them.
+    </p>
+    <p>
+      Treating a transfer as a redemption and a subscription resets the mark to the
+      current NAV. If the shares were underwater that quietly cancels a loss
+      carryforward the manager was still working through, and hands the incoming
+      holder a fee-free ride on the recovery.
+    </p>
+
+    <h2>What to check</h2>
+    <ul class="keypoints">
+      <li><span class="tick">&#10003;</span><span><strong>Is the mark stored as a level or as an amount?</strong>
+        A level per share prorates on its own when the share count changes. An
+        amount has to be adjusted explicitly on every partial redemption, and that
+        adjustment is what gets forgotten.</span></li>
+      <li><span class="tick">&#10003;</span><span><strong>Does a redemption crystallize, or wait for period end?</strong>
+        Waiting means a departing investor's fee is paid by the investors who
+        stayed.</span></li>
+      <li><span class="tick">&#10003;</span><span><strong>Does a transfer carry the mark?</strong>
+        Ask what happens to a loss carryforward when shares change hands.</span></li>
+      <li><span class="tick">&#10003;</span><span><strong>Can you produce the mark's history for one investor?</strong>
+        Set at subscription, reduced by each partial redemption, reset by each
+        crystallization. If that history cannot be reconstructed, the current
+        number cannot be checked by anyone, including an auditor.</span></li>
+    </ul>
+
+    <ul class="pagelinks">
+      <li><a href="/notes/equalization-and-the-mid-period-subscriber/">Equalization, and what a mid-period subscriber actually owes</a>, the same mark on the way in</li>
+      <li><a href="/hedge-fund-accounting/">Hedge fund accounting</a>, including crystallization and loss carryforwards</li>
+    </ul>
+
+    <div class="endcta">
+      <h2>How we handle it</h2>
+      <p>
+        1494 Labs holds the mark per capital account as a level, prorates it on
+        partial redemption, and crystallizes on the redemption rather than at
+        period end. Every change to a mark is an event with a source, so the
+        history can be read back for any investor on any date.
+      </p>
+      <p><a class="btn" href="/#contact">Get in touch</a></p>
+    </div>
+
+  </article>
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+</body>
+</html>

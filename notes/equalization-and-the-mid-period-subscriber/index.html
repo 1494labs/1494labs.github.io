@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equalization, and what a mid-period subscriber actually owes &middot; 1494 Labs</title>
+<meta name="description" content="A single NAV per share cannot be correct for two investors who bought at different points relative to the high-water mark. The two ways that breaks, with the numbers, and the two families of fix.">
+<link rel="canonical" href="https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/">
+<link rel="stylesheet" href="/assets/notes.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/">
+<meta property="og:site_name" content="1494 Labs">
+<meta property="og:title" content="Equalization, and what a mid-period subscriber actually owes">
+<meta property="og:description" content="A single NAV per share cannot be correct for two investors who bought at different points relative to the high-water mark. Where that breaks, and what series accounting and equalization each cost.">
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Equalization, and what a mid-period subscriber actually owes">
+<meta name="twitter:description" content="One NAV per share, two investors, two different high-water marks. Somebody is being charged the wrong fee.">
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Equalization, and what a mid-period subscriber actually owes",
+  "description": "A single NAV per share cannot be correct for two investors who bought at different points relative to the high-water mark. The two ways that breaks, with the numbers, and the two families of fix.",
+  "url": "https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/",
+  "datePublished": "2026-09-15",
+  "dateModified": "2026-09-15",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Organization",
+    "name": "1494 Labs",
+    "url": "https://1494labs.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "1494 Labs",
+    "url": "https://1494labs.com/",
+    "logo": "https://1494labs.com/assets/icon-512x512.png"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "1494 Labs",
+      "item": "https://1494labs.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Notes",
+      "item": "https://1494labs.com/notes/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Equalization"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a href="/">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="1494 Labs">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/>
+        </g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+      <span class="name">1494 Labs</span>
+    </a>
+    <span class="sep">&middot;</span>
+    <span class="sec">Notes</span>
+    <span class="spacer"></span>
+    <a class="back" href="/notes/">All notes</a>
+  </nav>
+
+  <h1>Equalization, and what a mid-period subscriber actually owes</h1>
+  <p class="standfirst">
+    An investor who subscribes after a drawdown can ride the recovery without
+    paying an incentive fee, because the loss being carried forward is somebody
+    else's. This is not an edge case, it is the normal consequence of running one
+    NAV per share, and there are only two ways out of it.
+  </p>
+  <p class="byline">Hedge Funds &middot; roughly 6 minutes</p>
+
+  <article>
+
+    <h2>The problem in one sentence</h2>
+    <p>
+      An incentive fee is charged on profit above a high-water mark. The mark
+      belongs to an investor, because it records what that investor has already
+      been charged on. A NAV per share belongs to the fund. Run a fund long
+      enough and those two facts collide: two investors holding identical shares
+      have different marks, and no single NAV per share can be correct for both.
+    </p>
+
+    <h2>The free ride, with the numbers</h2>
+    <p>
+      A fund launches at $100 a share with a 20% incentive fee over a high-water
+      mark. Investor A subscribes $1,000,000 and receives 10,000 shares.
+    </p>
+    <p>
+      Year one is bad. The fund loses 20% and the NAV per share ends at $80. No
+      incentive fee is payable, correctly, because the fund is below its mark.
+      The mark stays at $100 and the fund carries forward a loss of $20 a share.
+    </p>
+    <p>
+      In January of year two, Investor B subscribes $800,000 at $80 and receives
+      10,000 shares. Year two is good: the manager returns 25% and the NAV per
+      share is back to $100.
+    </p>
+    <div class="tablewrap">
+    <table>
+      <caption>End of year two, one NAV per share and one fund-level mark</caption>
+      <thead>
+        <tr><th>Investor</th><th class="n">Subscribed</th><th class="n">Now worth</th><th class="n">Gain</th><th class="n">Incentive fee paid</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A, in at $100</td><td class="n">$1,000,000</td><td class="n">$1,000,000</td><td class="n">$0</td><td class="n">$0</td></tr>
+        <tr><td>B, in at $80</td><td class="n">$800,000</td><td class="n">$1,000,000</td><td class="n">$200,000</td><td class="n">$0</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>
+      A is whole and owes nothing, which is right. B has made $200,000 and paid
+      nothing, which is not. The fund is exactly at its high-water mark, so at the
+      fund level no fee is due, and B's gain is sheltered by a loss B never
+      suffered. At 20% the manager has foregone <strong>$40,000</strong>, having
+      returned 25% to the investor who did not pay it.
+    </p>
+    <div class="note">
+      <span class="tag">Who pays</span>
+      <p>
+        Nothing in the fund's accounts is out of balance here. The money is not
+        missing, it was never charged. This is why the problem survives audits and
+        surfaces years later, usually when a manager finally reconstructs why a
+        strong year earned so little.
+      </p>
+    </div>
+
+    <h2>The mirror case: a rebate nobody paid for</h2>
+    <p>
+      The same defect runs the other way when an investor buys into an accrual.
+    </p>
+    <p>
+      A fund sits at its mark of $100 in January and rises to $120 gross by June.
+      The administrator strikes a 20% accrual of $4 a share, so the published NAV
+      is $116. Investor B subscribes in July at $116. By December the fund has
+      given it all back: gross is $100, the accrual reverses in full, and the
+      published NAV is $100.
+    </p>
+    <p>
+      A is flat on the year and pays nothing, which is right. B paid $116 and
+      holds $100, a loss of $16 a share, on a gross move that was $20 a share. B
+      has absorbed $4 a share less than the market delivered, because B captured
+      the reversal of an accrual struck on gains earned between January and June,
+      when B was not in the fund. That $4 came out of A's pocket.
+    </p>
+
+    <h2>Series accounting</h2>
+    <p>
+      Give each subscription date its own series of shares, with its own NAV and
+      its own high-water mark. In the first example B enters a second series at
+      $80, carrying a mark of $80 rather than $100.
+    </p>
+    <div class="tablewrap">
+    <table>
+      <caption>End of year two, under series accounting</caption>
+      <thead>
+        <tr><th>Series</th><th class="n">Own mark</th><th class="n">NAV before fee</th><th class="n">Gain above mark</th><th class="n">Fee at 20%</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1, Investor A</td><td class="n">$100</td><td class="n">$100</td><td class="n">$0</td><td class="n">$0</td></tr>
+        <tr><td>2, Investor B</td><td class="n">$80</td><td class="n">$100</td><td class="n">$200,000</td><td class="n">$40,000</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>
+      Both answers are now right, and neither investor subsidizes the other. The
+      cost is that the fund is no longer one book. A fund open for monthly
+      subscriptions creates twelve series in its first year, each needing its own
+      NAV, its own mark and its own fee calculation every period.
+    </p>
+    <p>
+      That count is usually managed by consolidating series into a lead series at
+      year end, once a series has crystallized and stands at its own mark. Series
+      still below their mark cannot be consolidated: they carry a loss
+      carryforward the lead series does not, and merging them would hand that
+      shelter to everyone. So the series that persist are precisely the ones
+      nobody wants to explain, and two investors a month apart will see different
+      NAVs per share for what they were sold as the same fund.
+    </p>
+
+    <h2>Equalization, on a single NAV</h2>
+    <p>
+      The alternative keeps one NAV per share and corrects each investor
+      individually at subscription. Two situations, two corrections, running in
+      opposite directions.
+    </p>
+    <div class="tablewrap">
+    <table>
+      <caption>What the correction has to undo</caption>
+      <thead>
+        <tr><th>Investor subscribes</th><th>Without a correction</th><th>The correction</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Below the fund's mark, while a loss is carried forward</td>
+          <td>Rides the recovery without paying, sheltered by someone else's loss</td>
+          <td>Charged on their own gain as the fund recovers, typically by redeeming shares from them</td>
+        </tr>
+        <tr>
+          <td>Above the mark mid-period, into an accrual already in the NAV</td>
+          <td>Captures a rebate if the accrual reverses, on a fee they never bore</td>
+          <td>Pays an additional amount alongside the subscription, returned to them to the extent the accrual reverses</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p>
+      One NAV per share survives, and every investor pays on their own profit
+      measured from their own entry. What it costs is that an investor's economics
+      no longer live entirely in their share count. A per-investor adjustment
+      account has to be carried, applied on the right events and shown on a
+      statement, and it moves for reasons the NAV per share does not explain.
+    </p>
+    <div class="note warn">
+      <span class="tag">Terminology</span>
+      <p>
+        These mechanisms travel under names that are not used consistently:
+        equalization credit, depreciation deposit, contingent redemption,
+        equalization factor. Two administrators will use the same word for
+        different mechanics, and the offering document will sometimes use a third.
+        When comparing two funds, compare the mechanism and the worked example,
+        never the label.
+      </p>
+    </div>
+
+    <h2>The problem is an artifact of shares</h2>
+    <p>
+      Everything above is a consequence of issuing units. A fund that allocates
+      profit to capital accounts instead never meets it. Each partner has an
+      account, each account carries its own high-water mark, and profit is
+      allocated to accounts rather than expressed as a price that all of them
+      share. Two partners who joined two years apart have two different marks and
+      nothing has to reconcile them, because there is no single per-unit number
+      trying to be correct for both.
+    </p>
+    <p>
+      That is why a US onshore limited partnership generally has no equalization
+      mechanism at all, and why the topic is barely mentioned in partnership
+      accounting. The offshore company issuing shares has the opposite
+      constraint: it needs one dealing NAV per share, quoted to investors and used
+      for subscriptions and redemptions, and that single number is exactly what
+      cannot be right for everybody.
+    </p>
+    <p>
+      The awkward case is the structure that has both. A master-feeder with an
+      onshore partnership feeder and an offshore corporate feeder runs
+      capital-account mechanics on one side and share mechanics on the other,
+      against the same underlying book. The two feeders are not doing the same
+      arithmetic, they should not produce the same per-investor answer, and a
+      system that models only one of the two will quietly force the other into its
+      shape.
+    </p>
+
+    <h2>What to check</h2>
+    <ul class="keypoints">
+      <li><span class="tick">&#10003;</span><span><strong>Is the high-water mark held per investor or per fund?</strong>
+        One mark for the whole fund is the tell. It cannot be simultaneously
+        correct for two investors who entered at different levels, and no amount
+        of reporting on top will fix it.</span></li>
+      <li><span class="tick">&#10003;</span><span><strong>What happens on a partial redemption?</strong>
+        A mark that is not reduced when half the money leaves shelters the
+        remainder against a loss it no longer carries. This has its own
+        arithmetic, covered in the note below.</span></li>
+      <li><span class="tick">&#10003;</span><span><strong>Does the statement show the adjustment?</strong>
+        An equalization amount buried inside a NAV per share is an amount the
+        investor cannot check, and it is the line they will eventually ask about.</span></li>
+      <li><span class="tick">&#10003;</span><span><strong>What happens to the series count at year end?</strong>
+        Ask which series consolidate, which cannot, and what the count looks like
+        in year three.</span></li>
+    </ul>
+
+    <ul class="pagelinks">
+      <li><a href="/notes/high-water-marks-and-partial-redemptions/">High-water marks and the partial redemption</a>, the same mark on the way out</li>
+      <li><a href="/hedge-fund-accounting/">Hedge fund accounting</a>, including series and crystallization</li>
+    </ul>
+
+    <div class="endcta">
+      <h2>How we handle it</h2>
+      <p>
+        1494 Labs carries the high-water mark per series and per capital account
+        rather than per fund, and supports both models: series accounting with
+        per-period series identity, and equalization on a single NAV. Which one a
+        fund uses is a setting on the fund, because the answer is in its offering
+        document rather than in our architecture.
+      </p>
+      <p><a class="btn" href="/#contact">Get in touch</a></p>
+    </div>
+
+  </article>
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+</body>
+</html>
