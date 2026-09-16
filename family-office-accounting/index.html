@@ -187,7 +187,31 @@
       at all.
     </p>
 
-    <h2>Related reading</h2>
+    <h2>If you already have a reporting layer</h2>
+  <p>
+    Most family offices we talk to are running two things: something that
+    aggregates and reports on the family's wealth, and something else keeping
+    the general ledger. The reporting layer is usually the one people are happy
+    with. The ledger underneath it is usually the one they are not.
+  </p>
+  <p>
+    This is the ledger. It is not a proposal to move off a reporting or
+    aggregation platform that is working, and the accounting book is what that
+    platform should be reading from in the first place. Every endpoint here is
+    public under one spec and a script authenticates the same way the
+    application does, so anything that speaks HTTP can read the book or write
+    to it.
+  </p>
+  <p>
+    What we do not do is publish a list of named integrations. There is no
+    connector catalogue, because we have not built one, and a logo on a page is
+    not an integration. Connecting this to what you run is real work that gets
+    scoped honestly. What the platform owes you is that nothing is hidden
+    behind a private interface, and for systems that will never have an API,
+    58 bulk-load endpoints take the file instead.
+  </p>
+
+  <h2>Related reading</h2>
     <ul class="pagelinks">
       <li><a href="/fund-accounting-software/">The platform overview</a></li>
       <li><a href="/notes/abor-and-ibor/">ABOR and IBOR, and why most systems keep them apart</a></li>

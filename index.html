@@ -921,16 +921,28 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
            script, and you can write it the same way.</p>
       </div>
       <div class="cell">
+        <h3>It sits under what you already have</h3>
+        <p>If your reporting or aggregation layer is working, this is not a
+           proposal to replace it. The accounting book is the thing underneath
+           it, and a layer that reads from an API can read from this one. The
+           integration is still work, and it is work to scope honestly rather
+           than something already done.</p>
+      </div>
+      <div class="cell">
         <h3>Open to agents, not just to code</h3>
         <p>The same surface is exposed over MCP, so an agent can answer a
            question about a fund the way an analyst would: by querying the
            ledger, not by scraping a report someone exported last Tuesday.</p>
       </div>
       <div class="cell">
-        <h3>Integrate with what you already run</h3>
-        <p>Custodians, administrators, banks, market data, your own warehouse.
-           REST in, REST out, plus bulk loaders, because some systems are
-           never getting an API.</p>
+        <h3>No connector catalogue, and no list of logos</h3>
+        <p>We have not built named integrations and we are not going to claim
+           a shelf of them. What is here is the ability: every endpoint public
+           under one spec, a script authenticating the same way the application
+           does, so anything that speaks HTTP can read the ledger or write to
+           it. Your reporting layer, your warehouse, a custodian extract, a
+           script somebody wrote in an afternoon. For systems that will never
+           have an API, 58 bulk-load endpoints take the file instead.</p>
       </div>
       <div class="cell">
         <h3>Your data leaves the way it came</h3>
