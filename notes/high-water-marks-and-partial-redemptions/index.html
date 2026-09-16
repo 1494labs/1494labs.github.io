@@ -171,9 +171,9 @@
     <p>
       Note also the direction. The error never runs the other way. Skipping the
       proration always shelters profit, which always favours the investor and
-      always costs the manager. A bug with a consistent sign is not noise, it is a
-      slow transfer, and it compounds every time an investor trims a position in a
-      drawdown.
+      always costs the manager. An error with a consistent sign accumulates rather
+      than averaging out, and it recurs every time an investor trims a position
+      during a drawdown.
     </p>
 
     <figure class="shot">
@@ -181,7 +181,7 @@
            loading="lazy" decoding="async"
            alt="A per-investor allocation grid with columns for opening capital, incentive accrued, incentive crystallized, net profit, ending capital and the high-water mark. Each account carries its own mark, and every mark is higher than that account's ending capital, so the incentive columns are empty.">
       <figcaption>
-        <b>One mark per account, not one per fund.</b>
+        <b>Each account carries its own mark.</b>
         Six accounts in the same fund, each carrying its own high-water mark. Every
         mark here sits above that account's ending capital, which is why the
         incentive columns are empty: these accounts are below their marks and the
