@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fund accounting software pricing &middot; 1494 Labs</title>
-<meta name="description" content="Fund accounting software from $500 a month for one fund and $200 for each standalone fund after it, with onboarding included and no implementation fee. Conversions and linked structures are quoted.">
+<meta name="description" content="Fund accounting software from $500 a month for one private fund and $200 for each standalone fund after it, with onboarding included and no implementation fee. Registered funds, conversions and linked structures are quoted.">
 <link rel="canonical" href="https://1494labs.com/pricing/">
 <link rel="stylesheet" href="/assets/notes.css">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Fund accounting software pricing",
-  "description": "Fund accounting software from $500 a month for one fund and $200 for each standalone fund after it, with onboarding included and no implementation fee. Conversions and linked structures are quoted.",
+  "description": "Fund accounting software from $500 a month for one private fund and $200 for each standalone fund after it, with onboarding included and no implementation fee. Registered funds, conversions and linked structures are quoted.",
   "url": "https://1494labs.com/pricing/",
   "inLanguage": "en",
   "isPartOf": { "@type": "WebSite", "name": "1494 Labs", "url": "https://1494labs.com/" },
@@ -45,7 +45,7 @@
     "offers": {
       "@type": "Offer",
       "name": "Emerging fund",
-      "description": "A single fund, with onboarding included and no implementation fee. Converting an existing book is quoted separately.",
+      "description": "A single private fund, with onboarding included and no implementation fee. Registered funds, linked structures and converting an existing book are quoted separately.",
       "priceCurrency": "USD",
       "price": "500",
       "priceSpecification": {
@@ -100,7 +100,7 @@
       "name": "How much does fund accounting software cost for an emerging fund?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "At 1494 Labs the first fund is $500 a month and each standalone fund after it is $200 a month, with onboarding included and no implementation fee. Two funds is $700 a month, five is $1,300, ten is $2,300. Linked structures such as master-feeder are quoted rather than counted, because a master and three feeders is four entities and one economic book."
+        "text": "At 1494 Labs the first fund is $500 a month and each standalone fund after it is $200 a month, with onboarding included and no implementation fee. Two funds is $700 a month, five is $1,300, ten is $2,300. Linked structures such as master-feeder are quoted rather than counted, because a master and three feeders is four entities and one economic book. Registered funds \u2014 interval funds, RICs and BDCs \u2014 are quoted rather than priced on this scale, because they strike daily, file, and characterize every distribution."
       }
     },
     {
@@ -157,7 +157,7 @@
   <div class="tablewrap">
   <table>
     <thead>
-      <tr><th>Standalone funds</th><th class="n">Per month</th><th class="n">Per year</th><th class="n">Effective, per fund</th></tr>
+      <tr><th>Standalone private funds</th><th class="n">Per month</th><th class="n">Per year</th><th class="n">Effective, per fund</th></tr>
     </thead>
     <tbody>
       <tr><td>1</td><td class="n">$500</td><td class="n">$6,000</td><td class="n">$6,000</td></tr>
@@ -172,10 +172,10 @@
   <h2>What counts as a fund</h2>
 
   <p>
-    A master and three feeders is four entities and one economic book, so billing
-    it as four funds would be wrong. Master-feeder, parallel funds, feeders, SPVs
-    and blockers are quoted rather than counted. Share classes, series and sleeves
-    inside a fund are not separate funds: a fund with seventeen series is one fund.
+    The scale above is for private funds. A master and three feeders is four
+    entities and one economic book, so billing it as four funds would be wrong.
+    Share classes, series and sleeves inside a fund are not separate funds: a fund
+    with seventeen series is one fund.
   </p>
 
   <h2>What is included</h2>
@@ -183,7 +183,7 @@
   <ul class="keypoints">
     <li><span class="tick">&#10003;</span><span><b>Onboarding</b>, at no separate fee.</span></li>
     <li><span class="tick">&#10003;</span><span><b>Every vehicle type on one ledger.</b>
-        Open-end and closed-end, registered funds, family-office structures.</span></li>
+        Open-end and closed-end, family-office structures, registered wrappers.</span></li>
     <li><span class="tick">&#10003;</span><span><b>The morning sweep</b>, and the break
         worklist a failure lands in.</span></li>
     <li><span class="tick">&#10003;</span><span><b>The public API</b>, the same one every
@@ -194,6 +194,12 @@
   <h2>What we quote separately</h2>
 
   <p>
+    <b>Registered funds.</b> An interval fund, a RIC or a BDC carries duties a
+    private fund does not: a daily strike, regulatory filings, and a characterization of
+    what each distribution was actually paid out of.
+  </p>
+
+  <p>
     <b>Converting an existing book.</b> A conversion carries your opening position
     at a conversion date: balances, capital accounts, and the fee-engine state that
     makes the next incentive calculation correct, meaning high-water marks, loss
@@ -202,7 +208,8 @@
   </p>
 
   <p>
-    <b>Linked structures.</b> Master-feeder, parallel funds, SPVs and blockers.
+    <b>Linked structures.</b> Master-feeder, parallel funds, feeders, SPVs and
+    blockers.
   </p>
 
   <h2>Early adopters</h2>
