@@ -2,8 +2,48 @@
 
 Marketing site for **1494 Labs**. Fund accounting that proves itself.
 
-Static HTML, no build step. Served by GitHub Pages from `main` at the repository
-root; `CNAME` points the apex domain here.
+Static HTML, no build step.
+
+## This directory is the SOURCE, not the deploy target
+
+Nothing here reaches 1494labs.com by being pushed to `janus`. The live site is
+GitHub Pages serving a **separate public repository**, `1494labs/1494labs.github.io`
+(local clone: `~/dev/1494labs.github.io`), and `CNAME` in *that* repo points the
+apex domain at it. `janus` is private; Pages serves the public mirror.
+
+On 2026-09-15 eight commits of site work - a full copy rewrite, a reordered
+landing page and three new sections - sat here for a day while the live site
+served the build from four days earlier, because this README used to say the
+site was served "from `main` at the repository root" and that reads as true
+when you are standing in `janus`.
+
+**To publish**, copy the pages and product screenshots into the clone, leave the
+things that live only there alone, and let its own generator write the sitemap:
+
+```bash
+SRC=~/dev/janus/site DST=~/dev/1494labs.github.io
+cp "$SRC/index.html" "$DST/"
+for d in family-office-accounting fund-accounting-software \
+         fund-administration-software hedge-fund-accounting \
+         private-equity-fund-accounting notes; do
+  rsync -a --exclude '.DS_Store' "$SRC/$d/" "$DST/$d/"
+done
+rsync -a --exclude '.DS_Store' "$SRC/assets/screens/" "$DST/assets/screens/"
+cd "$DST" && git add -A && git commit        # content first...
+python3 scripts/gen_sitemap.py && git add sitemap.xml && git commit
+git push origin main
+```
+
+Three things deliberately do NOT cross over:
+
+| What | Why |
+|---|---|
+| `privacy/` | exists only in the Pages repo; a blind mirror would delete it |
+| `scripts/gen_sitemap.py` | the sitemap is generated there, from *that* repo's git history, AFTER the content commit - run it before and every `lastmod` is the previous commit's date |
+| `assets/linkedin-*` | brand source files; they are not pages and have no reason to sit on a web server |
+
+Verify with `curl -sI https://1494labs.com/ | grep -i last-modified` - Pages takes
+a minute or two, and Cloudflare sits in front with a 600s TTL.
 
 ## Layout
 
