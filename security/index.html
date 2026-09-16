@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security &middot; 1494 Labs</title>
+<meta name="description" content="What is in place today and what is not: schema-level tenant isolation, an audit trail the application cannot rewrite, MFA, encryption at rest, and a plain statement of what we do not have.">
+<link rel="canonical" href="https://1494labs.com/security/">
+<link rel="stylesheet" href="/assets/notes.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+<meta name="robots" content="noindex, follow">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Security",
+  "url": "https://1494labs.com/security/",
+  "inLanguage": "en",
+  "isPartOf": { "@type": "WebSite", "name": "1494 Labs", "url": "https://1494labs.com/" }
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="top">
+    <a href="/">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="1494 Labs">
+        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+          <path d="M5 9 H27"/><path d="M16 9 V26"/>
+        </g>
+        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+      </svg>
+      <span class="name">1494 Labs</span>
+    </a>
+    <span class="sep">&middot;</span>
+    <span class="sec">Security</span>
+    <span class="spacer"></span>
+    <a class="back" href="/">Home</a>
+  </nav>
+
+  <h1>What is in place, and what is not</h1>
+  <p class="standfirst">Everything on this page can be evidenced. The second half, about what we do not have, is here for the same reason as the first.</p>
+  <p class="byline">Last reviewed 2026-09-16</p>
+
+  <article class="measure">
+
+    <h2>Your data is separated at the database, not by a filter</h2>
+    <p>
+      Every tenant has its own database schema, and every request is routed to
+      it before a query runs. There is no query anywhere that returns another
+      firm's rows if somebody forgets a <code>WHERE</code> clause, because the
+      isolation is not a <code>WHERE</code> clause.
+    </p>
+
+    <h2>The audit trail cannot be rewritten</h2>
+    <p>
+      Authentication events and API access are recorded on a plane the
+      application itself cannot edit or truncate. That is enforced by database
+      triggers rather than by the application agreeing not to, which is the only
+      version of it worth having: an audit log the application can rewrite
+      proves nothing about the application.
+    </p>
+
+    <h2>Signing in</h2>
+    <ul class="keypoints">
+      <li><span class="tick">&#10003;</span><span><b>Time-based one-time-password MFA</b>, with a workspace-level control over whether it is required.</span></li>
+      <li><span class="tick">&#10003;</span><span><b>Throttling that counts failed MFA challenges</b>, not only failed passwords. Counting passwords alone leaves the second factor open to grinding, which is the interesting half to attack.</span></li>
+      <li><span class="tick">&#10003;</span><span><b>Federated identity</b> over OIDC, with a break-glass path that is itself audited.</span></li>
+    </ul>
+
+    <h2>The infrastructure</h2>
+    <div class="tablewrap">
+    <table>
+      <tbody>
+        <tr><td>Database encryption at rest</td><td>Yes</td></tr>
+        <tr><td>Database reachable from the internet</td><td>No</td></tr>
+        <tr><td>Accidental-deletion protection</td><td>Yes</td></tr>
+        <tr><td>Automated backups</td><td>7 days, plus a snapshot taken before every deploy</td></tr>
+        <tr><td>Secrets</td><td>Held in AWS Parameter Store and read at boot. The machine running the application can read them and cannot change them</td></tr>
+        <tr><td>Region</td><td>United States</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>What runs before a release reaches you</h2>
+    <ul class="keypoints">
+      <li><span class="tick">&#10003;</span><span><b>Every commit is scanned for secrets</b>, and the deploy refuses a revision that has not passed that scan. Not a warning, a refusal.</span></li>
+      <li><span class="tick">&#10003;</span><span><b>Dependencies are audited weekly</b> and automatically. The first run found 48 known vulnerabilities; they were remediated the same day.</span></li>
+      <li><span class="tick">&#10003;</span><span><b>Every deploy re-proves the arithmetic.</b> An invariant sweep runs across every live fund afterwards, and it records its own verdict whether anyone is watching or not.</span></li>
+    </ul>
+
+    <h2>No third-party code in the product</h2>
+    <p>
+      The application loads no analytics, no trackers, no advertising and no
+      external fonts. The one exception is a cookieless counter of page
+      requests, which stores nothing on your device and cannot see into a
+      workspace: it records that a page was requested, never what the page
+      showed. Everything that touches data is named on the
+      <a href="/subprocessors/">sub-processors</a> page and in the
+      <a href="/privacy/">privacy notice</a>.
+    </p>
+
+    <h2>What we do not have</h2>
+    <div class="note warn">
+      <span class="tag">Read this part</span>
+      <p>
+        A security page that lists only strengths is a marketing page. These are
+        the things a careful buyer will find out anyway, so they are better
+        heard here.
+      </p>
+    </div>
+    <ul class="keypoints">
+      <li><span class="tick">&#10003;</span><span><b>No SOC 2 report.</b> That is a decision about timing rather than an oversight: the audit is a real cost and it buys nothing until there are customers whose procurement needs it. It is the first thing that changes when there are.</span></li>
+      <li><span class="tick">&#10003;</span><span><b>No third-party penetration test.</b> An internal security audit in August 2026 found one critical and twenty high-severity issues, all closed. That is an internal audit and we will not describe it as anything else.</span></li>
+      <li><span class="tick">&#10003;</span><span><b>Single availability zone.</b> The database is not currently replicated across zones, so a zone failure is downtime rather than a failover. Backups and the pre-deploy snapshot are the recovery path.</span></li>
+      <li><span class="tick">&#10003;</span><span><b>No published uptime figure.</b> There is no measurement period long enough to quote one honestly.</span></li>
+    </ul>
+
+    <h2>Reporting something</h2>
+    <p>
+      If you believe you have found a vulnerability, write to
+      <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>. Tell us what
+      you found and how to reproduce it, and please give us a chance to fix it
+      before publishing. We will tell you what we did and when.
+    </p>
+
+    <ul class="pagelinks">
+      <li><a href="/subprocessors/">Sub-processors</a>, everyone who touches the data</li>
+      <li><a href="/privacy/">The privacy notice</a>, an inventory of what is collected</li>
+    </ul>
+
+  </article>
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -39,6 +39,8 @@ Three things deliberately do NOT cross over:
 | What | Why |
 |---|---|
 | `privacy/` | exists only in the Pages repo; a blind mirror would delete it |
+| `subprocessors/` | same |
+| `security/` | same |
 | `scripts/gen_sitemap.py` | the sitemap is generated there, from *that* repo's git history, AFTER the content commit - run it before and every `lastmod` is the previous commit's date |
 | `assets/linkedin-*` | brand source files; they are not pages and have no reason to sit on a web server |
 
@@ -80,3 +82,21 @@ No webfonts, so the page has zero external requests.
 
 In 1494 Luca Pacioli published the *Summa de arithmetica*, codifying double-entry
 bookkeeping. Everything since is an implementation detail.
+
+
+## Publish with the script, not a hand-typed rsync
+
+`scripts/publish_site.sh` does the mirror. It exists because the exclusions are
+load-bearing and keeping them right by memory already failed once: on
+2026-09-16 `/subprocessors/` was published and the next hand-typed sync would
+have deleted it, silently, because that command's exclude list still said only
+`privacy/` and `scripts/`.
+
+The script computes the risk instead of trusting a list. Anything present in the
+Pages repo, absent from `site/`, and not declared in its `PAGES_ONLY` array
+stops the publish. Adding a Pages-only page is then a deliberate one-line edit
+in two places - that array and the table above - rather than a deletion nobody
+notices.
+
+    scripts/publish_site.sh --dry-run    # what would change
+    scripts/publish_site.sh              # sync, then it tells you the sitemap step
