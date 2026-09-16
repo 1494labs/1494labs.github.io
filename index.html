@@ -514,10 +514,32 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
       Averaging an average is the common mistake, and the columns where that
       applies are declared per column.
     </p>
+    <p class="lead">
+      A saved analysis has an address. The cut a controller builds on screen is
+      shareable with the team and is also a REST endpoint, and that endpoint
+      recomputes the analysis server-side off the live book rather than replaying
+      a stored answer. Built once, read wherever it is needed, and never a
+      second implementation of the same arithmetic.
+    </p>
+
+    <figure class="shot">
+      <img src="/assets/screens/grid-grouped-subtotals.jpg" width="1568" height="553"
+           loading="lazy" decoding="async"
+           alt="A capital activity grid grouped by transaction type. Adjustment, Distribution and Capital Call each show a summed subtotal, and the Capital Call group is expanded to show its ten underlying rows with investor, account, amount and posted status.">
+      <figcaption>
+        <b>Grouped in place, with the rows still underneath.</b>
+        Capital activity grouped by type. The three subtotals foot to the total
+        above them, and the expanded group shows the ten rows that make up
+        $9,300,000. Amount is a flow, so it sums. A rate or a percentage on the
+        same grid would go blank at the group level rather than offer a number
+        that means nothing.
+      </figcaption>
+    </figure>
+
     <p class="lead" style="margin-bottom:0">
-      A saved analysis has an address. The cut a controller builds on screen can
-      be shared with the team, pulled through the API, and read by an agent over
-      MCP, so it is built once and read wherever it is needed.
+      <a href="/notes/which-columns-can-be-added/">Which columns can be added, and
+      which cannot</a> works through the arithmetic, including the $300,000 a year
+      that separates a weighted average from an average of averages.
     </p>
   </section>
 
