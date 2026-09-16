@@ -41,6 +41,7 @@ Three things deliberately do NOT cross over:
 | `privacy/` | exists only in the Pages repo; a blind mirror would delete it |
 | `subprocessors/` | same |
 | `security/` | same |
+| `terms/` | same |
 | `scripts/gen_sitemap.py` | the sitemap is generated there, from *that* repo's git history, AFTER the content commit - run it before and every `lastmod` is the previous commit's date |
 | `assets/linkedin-*` | brand source files; they are not pages and have no reason to sit on a web server |
 
