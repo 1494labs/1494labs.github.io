@@ -96,7 +96,9 @@
   </nav>
 
   <h1>Family office accounting, with the structure drawn from the capital</h1>
-  <p class="standfirst">A family office is not one fund with more asset classes. It is a graph of vehicles that own each other, and the accounting problem is what that graph adds up to.</p>
+  <p class="standfirst">A family office is a graph of vehicles that own each other, and the
+    accounting problem is what that graph adds up to once the intercompany
+    interests are taken out.</p>
   <p class="byline">Solutions &middot; roughly 6 minutes</p>
 
   <article>
@@ -195,20 +197,18 @@
     with. The ledger underneath it is usually the one they are not.
   </p>
   <p>
-    This is the ledger. It is not a proposal to move off a reporting or
-    aggregation platform that is working, and the accounting book is what that
-    platform should be reading from in the first place. Every endpoint here is
-    public under one spec and a script authenticates the same way the
-    application does, so anything that speaks HTTP can read the book or write
-    to it.
+    This is the ledger underneath. An aggregation or reporting platform the
+    family is happy with should be reading from the accounting book rather than
+    being sent an export of it. Every endpoint here is public under one spec,
+    and a script authenticates the same way the application does, so anything
+    that speaks HTTP can read the book or write to it.
   </p>
   <p>
-    What we do not do is publish a list of named integrations. There is no
-    connector catalogue, because we have not built one, and a logo on a page is
-    not an integration. Connecting this to what you run is real work that gets
-    scoped honestly. What the platform owes you is that nothing is hidden
-    behind a private interface, and for systems that will never have an API,
-    58 bulk-load endpoints take the file instead.
+    Custodians, banks, portals, data vendors and the family's own warehouse
+    integrate against that same surface. For systems that will never have an
+    API, 58 bulk-load endpoints take the file instead. Connecting it to what
+    you already run is scoped as its own piece of work, against your actual
+    systems.
   </p>
 
   <h2>Related reading</h2>
