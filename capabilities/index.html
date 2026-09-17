@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What the platform does &middot; 1494 Labs</title>
+<meta name="description" content="A capability matrix with what we do not do on the same page as what we do. Every row marked shipped can be demonstrated.">
+<link rel="canonical" href="https://1494labs.com/capabilities/">
+<link rel="stylesheet" href="/assets/notes.7838f975.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+<style>
+/* The status chip. 'No' is deliberately not an alarm colour: it is a fact
+   about scope, not a failure, and colouring it red would make the honest rows
+   look like the broken ones. */
+.matrix { width: 100%; border-collapse: collapse; }
+.matrix th[scope="row"] { text-align: left; font-weight: 500; padding-right: 1.5rem; }
+.matrix td, .matrix th { padding: .5rem .35rem; border-bottom: 1px solid #e8e4dc; vertical-align: top; }
+.status { display: inline-block; font-size: .82rem; padding: .1rem .5rem; border-radius: 3px; white-space: nowrap; }
+.st-shipped { background: #e3efe6; color: #14532d; }
+.st-progress { background: #e6edf5; color: #1e3a5f; }
+.st-roadmap { background: #f1ece2; color: #5b4a2a; }
+.st-no { background: #efedea; color: #5a5651; }
+.st-unknown { background: #f4f2ef; color: #6b6660; font-style: italic; }
+.note-row td { font-size: .88rem; color: #5a5651; padding-top: 0; padding-bottom: .9rem; border-bottom: 1px solid #e8e4dc; }
+.src { font-size: .78rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="top">
+  <a href="/"><span class="name">1494 Labs</span></a>
+  <span class="sep">&middot;</span>
+  <span class="sec">Comparison</span>
+  <span class="spacer"></span>
+  <a class="back" href="/">Home</a>
+</nav>
+
+<h1>What the platform does, and what it does not</h1>
+<p class="standfirst">28 capabilities, with what we do not do on the same page as what we do. Every row marked shipped can be demonstrated; ask for the one that decides it.</p>
+
+<article>
+    <h2>Fund accounting the market is thin on</h2>
+    <div class="tablewrap">
+    <table class="matrix">
+      <thead><tr><th scope="col">Capability</th><th scope="col">Status</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Equalization, with the series method as a first-class alternative</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr class="note-row"><td colspan="2">Both the equalisation-factor and series approaches, per fund.</td></tr>
+        <tr><th scope="row">High-water marks carried per investor, not per fund</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">The mark survives partial redemption, transfer and restatement</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">Side pockets that split dealing NAV from total NAV</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">Configurable waterfall tiers</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">Carry accrual, clawback and per-principal vesting</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">Class-currency investor NAV</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">Fund-of-funds look-through, on both ownership bases</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr class="note-row"><td colspan="2">Share of the underlying fund needs a manager-reported size and is absent with a stated reason when they do not report one.</td></tr>
+        <tr><th scope="row">Multi-level family-office ownership</th><td><span class="status st-shipped">Shipped</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>The ledger</h2>
+    <div class="tablewrap">
+    <table class="matrix">
+      <thead><tr><th scope="col">Capability</th><th scope="col">Status</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Official and latest-knowledge books on one ledger, with row provenance</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr class="note-row"><td colspan="2">Each row can say how it would read under the other book, and the delta is exact because it differences two real reads.</td></tr>
+        <tr><th scope="row">Multi-asset on one book</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">Closed-end commitments, calls and distributions</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">ILPA call/distribution notices and line-item codes</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">RIC and BDC operations</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">Multi-currency billing with the rate stamped at both ends</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">Frozen trial balance at close, with graded revisions</th><td><span class="status st-shipped">Shipped</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>How you get at it</h2>
+    <div class="tablewrap">
+    <table class="matrix">
+      <thead><tr><th scope="col">Capability</th><th scope="col">Status</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Every UI action available on the public API</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">Saved analyses that recompute server-side and serve as REST</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">Agent access over MCP, as first-class tools</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">AI extraction from statements and LPAs, with mandatory human confirmation</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr class="note-row"><td colspan="2">Nothing AI-derived posts without a person confirming it.</td></tr>
+        <tr><th scope="row">A daily invariant sweep over every live fund, with breaks worked</th><td><span class="status st-shipped">Shipped</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>What we do not do</h2>
+    <div class="tablewrap">
+    <table class="matrix">
+      <thead><tr><th scope="col">Capability</th><th scope="col">Status</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Order and execution management</th><td><span class="status st-no">No</span></td></tr>
+        <tr class="note-row"><td colspan="2">We are the book of record, not the trading stack. There is no order ticket and there will not be one.</td></tr>
+        <tr><th scope="row">Custody, or moving money</th><td><span class="status st-no">No</span></td></tr>
+        <tr class="note-row"><td colspan="2">The platform produces the payment file an operator carries to their banking portal. It holds no rails credentials and initiates no transfers.</td></tr>
+        <tr><th scope="row">Tax return preparation and K-1 filing</th><td><span class="status st-no">No</span></td></tr>
+        <tr class="note-row"><td colspan="2">No K-1 workflow exists anywhere in the product. The book supports a preparer; it does not replace one.</td></tr>
+        <tr><th scope="row">An LP-facing investor portal</th><td><span class="status st-no">No</span></td></tr>
+        <tr class="note-row"><td colspan="2">Statements are produced for an administrator to send. There is no investor login.</td></tr>
+        <tr><th scope="row">Market data and pricing feeds we supply</th><td><span class="status st-no">No</span></td></tr>
+        <tr class="note-row"><td colspan="2">Bring your own provider. We ship the harness that ingests a feed and will not resell data or imply a licence we do not hold.</td></tr>
+        <tr><th scope="row">A third-party security attestation</th><td><span class="status st-roadmap">Roadmap 2027Q2</span></td></tr>
+        <tr class="note-row"><td colspan="2">No SOC 2 report today. It is a timing decision rather than an oversight, and it is the first thing that changes when a customer&#x27;s procurement needs it. Stated in full on the security page.</td></tr>
+        <tr><th scope="row">A native mobile application</th><td><span class="status st-no">No</span></td></tr>
+        <tr class="note-row"><td colspan="2">The web app renders and is navigable at phone width. There is no native app and none is planned.</td></tr>
+      </tbody>
+    </table>
+    </div>
+</article>
+
+<footer class="site">
+  <span>&copy; 2026 1494 Labs</span>
+  <a href="/">Home</a>
+  <a href="/notes/">Notes</a>
+  <a href="/pricing/">Pricing</a>
+  <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+</footer>
+
+</div>
+</body>
+</html>
