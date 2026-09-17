@@ -238,6 +238,11 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
 .matrix th[scope="row"]{text-align:left;font-weight:500;padding:.6rem 1.2rem .6rem 0;border-bottom:1px solid var(--rule)}
 .matrix td{text-align:right;padding:.6rem 0;border-bottom:1px solid var(--rule);font-variant-numeric:tabular-nums;white-space:nowrap}
 .matrix tr:last-child th,.matrix tr:last-child td{border-bottom:none;font-weight:600}
+
+/* A secondary hero action. Two filled buttons give a visitor two equal choices
+   at the moment the page wants them to have one. */
+.btnlink{display:inline-block;padding:.72rem 0;margin-left:1.2rem;color:var(--teal-deep);text-decoration:none;border-bottom:1px solid currentColor}
+.btnlink:hover{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -280,7 +285,7 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     </p>
     <p class="herofoot">
       <a class="btn" href="#contact">Request a demo</a>
-      <a class="btn" href="#example">See a worked example</a>
+      <a class="btnlink" href="#example">See a worked example</a>
     </p>
   </section>
 
@@ -289,9 +294,8 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     <h2>Follow one month from income to investor capital.</h2>
     <p>
       This is a reference fund on our own books, not a customer&rsquo;s. One
-      month of it, from the income statement through the management fee
-      calculation to the ending capital of six investors. Each figure below is
-      the one the next step starts from.
+      month of it, in two steps: what the fund earned after its management fee,
+      then where that landed in six investors&rsquo; capital accounts.
     </p>
 
     <div class="tablewrap">
@@ -299,23 +303,31 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
       <tbody>
         <tr><th scope="row">Net income for the month</th><td>$145,284.59</td></tr>
         <tr><th scope="row">Management fee, through the fee calculation</th><td>&minus;$19,314.66</td></tr>
-        <tr><th scope="row">Net profit and loss allocated to investors</th><td>$125,969.93</td></tr>
+        <tr><th scope="row">Net profit and loss to allocate</th><td>$125,969.93</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="tablewrap">
+    <table class="matrix">
+      <tbody>
         <tr><th scope="row">Opening investor capital</th><td>$23,499,503.07</td></tr>
+        <tr><th scope="row">Net profit and loss allocated</th><td>+$125,969.93</td></tr>
         <tr><th scope="row">Ending investor capital, and the NAV</th><td>$23,625,473.00</td></tr>
       </tbody>
     </table>
     </div>
 
     <figure class="shot">
-      <img src="/assets/screens/allocation-per-investor.b29d2ddf.jpg" width="1485" height="928"
-           loading="lazy" decoding="async" alt="A per-investor allocation run: six investor accounts with opening capital, flows, and a fund total reconciling to ending capital.">
-      <figcaption><b>Six accounts, one run, and a fund total that ties.</b> Opening $23,499,503.07, net profit and loss $125,969.93, ending $23,625,473.00, which is the NAV on the dashboard. Management fees and expenses are attributed per investor, so a fee that reaches NAV reaches the capital account it belongs to.</figcaption>
+      <img src="/assets/screens/allocation-per-investor.1317385d.jpg" width="1568" height="260"
+           loading="lazy" decoding="async"
+           alt="A per-investor allocation grid: six investor accounts with opening capital, net profit and loss, and ending capital. The six ending balances sum to the fund NAV of $23,625,473.00.">
+      <figcaption><b>Six investor accounts reconcile to the fund&rsquo;s ending NAV of $23,625,473.00.</b> Management fees and expenses are attributed to the accounts that bear them, so a fee that reaches NAV reaches the capital account it belongs to.</figcaption>
     </figure>
 
     <p>
       <a href="/fund-accounting-software/">The full walkthrough</a> runs the same
-      period through the trial balance, the statement of changes and the cash
-      blotter.
+      period through the trial balance and the statement of changes.
     </p>
   </section>
 
@@ -345,8 +357,8 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
       </div>
       <div class="cell">
         <h3><a href="/fund-administration-software/">Fund Administrators</a></h3>
-        <p>Many funds on one ledger, a break worklist with ageing, and the
-           per-client reporting your morning actually consists of.</p>
+        <p>Many funds on one ledger, a break worklist with ageing, and
+           per-client statement packs run off the same book.</p>
       </div>
       <div class="cell">
         <h3><a href="/capabilities/">Everything, listed</a></h3>
@@ -358,7 +370,7 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
 
   <section id="why">
     <p class="kicker">Why evaluate it</p>
-    <h2>Three things worth an hour of your time.</h2>
+    <h2>Configure the terms. Trace the result. Check the balances.</h2>
 
     <h3>Terms are configured, not approximated</h3>
     <p>
@@ -377,14 +389,11 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
 
     <h3>The book checks itself each morning</h3>
     <p>
-      Capital accounts against the ledger, allocations against the pool, cash
-      movements against the entries that produced them. Anything that stops
-      tying opens a break naming the fund, the period and the amount. What this
-      does not do is tell you a price was wrong; it establishes that the book is
-      consistent with itself, which is a smaller and more checkable claim.
-      With no customers on the platform yet, it runs against our own reference
-      funds, on the same schedule it would run against yours, with
-      nothing to set up.
+      Each morning the platform checks capital accounts against the ledger,
+      allocations against the pool, and cash movements against the entries that
+      produced them. Differences open a break with the fund, the period and the
+      amount. These checks test internal consistency; they do not validate
+      external prices.
     </p>
   </section>
 
@@ -398,12 +407,13 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
       are quoted. <a href="/pricing/">Full pricing</a>.
     </p>
     <p>
-      We are pre-revenue and say so. There is no SOC 2 report yet, the daily
-      check currently runs against our own books, and the
-      <a href="/capabilities/">capability list</a> marks what is shipped, what is
-      planned and what we will not build. A demo runs on real books, and we can
-      stand up a sandbox for you to work in.
-      <a href="/security/">What is in place, and what is not</a>.
+      We are pre-revenue, with no customer funds on the platform yet, which is
+      why the morning check runs against our own reference books. You can
+      evaluate it on a sandbox seeded with those funds, or we will walk you
+      through one. There is no SOC 2 report yet: the
+      <a href="/security/">security page</a> describes the current controls and
+      their limits, and the <a href="/capabilities/">capability list</a> marks
+      what is shipped, what is planned and what we will not build.
     </p>
   </section>
 
@@ -411,8 +421,8 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
     <p class="kicker">Request a demo</p>
     <h2>Show us the fund that breaks your current system.</h2>
     <p class="lead">
-      Built for fund CFOs, controllers and administrators who would rather their
-      system show its working than store it. Tell us what you run and we will
+      Built for fund CFOs, controllers and administrators. Tell us what you run
+      and we will
       walk you through how it works here, on real books rather than slides. If
       the answer is that we cannot do it yet, you will get that answer too.
     </p>
@@ -449,7 +459,7 @@ footer.site{border-top:1px solid var(--rule);padding:34px 0 56px;margin-top:clam
         <textarea id="setup" name="setup" placeholder="Optional. The more specific the better."></textarea>
         <p class="hint">Spreadsheets, an administrator, a platform you have outgrown. Whatever it is.</p>
       </div>
-      <button class="btn" type="submit">Send it over</button>
+      <button class="btn" type="submit">Request a demo</button>
     </form>
     <p class="cta-note">
       Prefer email? Write directly to
