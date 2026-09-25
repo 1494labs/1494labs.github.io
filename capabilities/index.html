@@ -43,7 +43,7 @@
 </nav>
 
 <h1>What the platform does, and what it does not</h1>
-<p class="standfirst">30 capabilities, with what we do not do on the same page as what we do. Every row marked shipped can be demonstrated; ask for the one that decides it.</p>
+<p class="standfirst">31 capabilities, with what we do not do on the same page as what we do. Every row marked shipped can be demonstrated; ask for the one that decides it.</p>
 
 <article>
     <h2>Fund accounting the market is thin on</h2>
@@ -95,10 +95,12 @@
         <tr class="note-row"><td colspan="2">Nothing AI-derived posts without a person confirming it.</td></tr>
         <tr><th scope="row">A daily sweep that re-proves the arithmetic on every fund on the platform</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr class="note-row"><td colspan="2">Capital accounts against the ledger, allocations against the pool, cash movements against the entries that produced them. With no customers on the platform yet, it runs against our own reference funds - which is what it would do against yours, on the same schedule, with nothing to set up.</td></tr>
-        <tr><th scope="row">Internal breaks: a worklist, ageing, and an accept-with-a-note decision</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">Internal breaks: a worklist, aging, and an accept-with-a-note decision</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr class="note-row"><td colspan="2">A break names the fund, the period and the amount. What the sweep does NOT do is tell you a price was wrong - it proves the book is not lying to itself, which is a smaller claim than checking your numbers against a custodian&#x27;s.</td></tr>
-        <tr><th scope="row">External breaks: ingesting a counterparty file to check cash, positions and NAV against it</th><td><span class="status st-roadmap">Roadmap 2027Q1</span></td></tr>
-        <tr class="note-row"><td colspan="2">The worklist, the ageing and the accept-with-a-note decision are the same for an external break and already exist. What is missing is the ingestion of the bank, custodian or administrator file that raises one. If your cash reconciliation lives in another tool today, it stays there until this ships.</td></tr>
+        <tr><th scope="row">External breaks: cash against an imported bank statement, positions against a custodian&#x27;s file</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr class="note-row"><td colspan="2">A statement&#x27;s lines auto-match the book only when exactly one movement fits; anything else is left for a person, and what is left over raises a break on the same worklist as the internal ones.</td></tr>
+        <tr><th scope="row">External breaks: NAV against an outside administrator&#x27;s file</th><td><span class="status st-roadmap">Roadmap 2027Q1</span></td></tr>
+        <tr class="note-row"><td colspan="2">The worklist, the aging and the accept-with-a-note decision are the same for this break and already exist. What is missing is the ingestion of the administrator&#x27;s file that raises one.</td></tr>
       </tbody>
     </table>
     </div>

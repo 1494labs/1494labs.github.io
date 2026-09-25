@@ -173,20 +173,18 @@
       vendor and to your team. <strong>Internal breaks</strong> are what the
       daily sweep produces: capital accounts against the ledger, allocations
       against the pool, cash movements against the entries that produced them.
-      Those run today, and the screen below is one of them.
       <strong>External breaks</strong> come from a counterparty file, and are
-      the ones your morning actually consists of: cash against the bank,
-      positions against the custodian, NAV against the administrator. The
-      worklist, the ageing and the accept-with-a-note decision are the same for
-      both, and the ingestion is on the build list rather than in the product.
-      If your cash reconciliation lives in another tool today, it stays there
-      until that ships.
+      the ones your morning actually consists of. Cash against the bank runs
+      from an imported statement, and positions against a custodian&rsquo;s
+      file; NAV against an outside administrator is still on the build list.
+      The worklist, the aging and the accept-with-a-note decision are the same
+      for both, and the screens below are a bank statement&rsquo;s.
     </p>
 
     <figure class="shot">
-      <img src="/assets/screens/break-detail.6102fe92.jpg" width="1485" height="928"
+      <img src="/assets/screens/break-detail.79825a87.jpg" width="1568" height="980"
            loading="lazy" decoding="async"
-           alt="A break detail panel showing expected, actual and difference, a note field, and buttons to acknowledge, resolve or accept the difference.">
+           alt="A break detail panel for the operating cash account at 2026-06-30: the bank statement&rsquo;s closing balance of $747,850.00 against the book&rsquo;s $750,000.00, a difference of $2,150.00, a reason field, and buttons to acknowledge, resolve or accept the difference.">
       <figcaption>
         <b>Expected, actual, difference, and a decision with a name on it.</b>
         Resolve and accept are deliberately different: resolved means the
@@ -206,28 +204,28 @@
     </p>
 
     <figure class="shot">
-      <img src="/assets/screens/cash-movements.adf906b5.jpg" width="1568" height="972"
-           loading="lazy" decoding="async" alt="A cash movements blotter with settled movements, each portfolio transaction paired with its GL-derived counterpart.">
+      <img src="/assets/screens/cash-movements.9a4bd52c.jpg" width="1568" height="812"
+           loading="lazy" decoding="async" alt="A cash movements blotter of settled movements: investments into underlying managers, investor subscriptions, and transfers between the fund&rsquo;s own cash accounts, each with its source and counterparty.">
       <figcaption><b>Cash movements, with their sources.</b> Bulk selection and row actions across the grids, because an administrator's day is spent on many rows at once rather than one.</figcaption>
     </figure>
 
     <h2>Related reading</h2>
     <h2>The break worklist</h2>
     <p>
-      A break names the fund, the period and the amount. The worklist, the ageing and the accept-with-a-note decision are the same whether the break came from the daily internal sweep or from a counterparty file.
+      A break names the fund, the period and the amount. The worklist, the aging and the accept-with-a-note decision are the same whether the break came from the daily internal sweep or from a counterparty file.
     </p>
 
 <figure class="shot">
-      <img src="/assets/screens/reconciliation-breaks.3d2aaa97.jpg" width="1485" height="312"
+      <img src="/assets/screens/reconciliation-breaks.343bde19.jpg" width="1568" height="113"
            loading="lazy" decoding="async"
-           alt="A reconciliation break worklist: two open breaks on one fund, each naming the check that found it and a difference of -$250,000.00.">
+           alt="A reconciliation break worklist: two open breaks on the operating cash account, raised by an imported bank statement. The closing balance differs from the book by $2,150.00, and one statement line of -$2,150.00 matches nothing in the book.">
       <figcaption>
         <b>A finding has somewhere to land.</b>
-        Two checks disagreed about the same fund on the same day, each naming
-        itself and the difference it measured. A break ages, gets assigned, and
-        keeps what was decided about it, so next month&rsquo;s break on the same
-        account arrives with last month&rsquo;s reasoning attached. These are
-        <em>internal</em> breaks: the book against itself.
+        An imported bank statement matched every line but one, a $2,150 fee
+        the book never recorded, and raised two breaks: the balance and the
+        unmatched line. A break ages, gets assigned, and keeps what was decided
+        about it, so next month&rsquo;s break on the same account arrives with
+        last month&rsquo;s reasoning attached.
       </figcaption>
     </figure>
 
