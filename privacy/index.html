@@ -48,7 +48,7 @@
 
   <h1>What we collect, and what we deliberately do not</h1>
   <p class="standfirst">There is no cookie banner on this site because there is nothing to consent to. This page is the inventory.</p>
-  <p class="byline">Last reviewed 2026-09-15</p>
+  <p class="byline">Last reviewed 2026-09-25</p>
 
   <article>
 
@@ -89,11 +89,25 @@
   request-forgery token. They exist only for authentication, are scoped to
   the application, and expire with your session. Interface preferences -
   theme, table density - live in your browser's local storage. The
-  application loads no external fonts, no trackers and no advertising code. It
+  application loads no external fonts, no advertising code and nothing
+that follows you to another site. It
   does carry the Cloudflare Web Analytics beacon described above, which counts
   page requests and stores nothing on your device. It cannot see into a
   workspace: it records that a page was requested, never what the page showed,
   and no fund, investor or figure ever reaches it.</p>
+
+    <p>The application also sends product analytics to <strong>PostHog</strong>
+    (United States), so we can see which screens are used and where errors
+    happen. What it sends is narrow and fixed: which screen was opened, recorded
+    as the screen's template - "/funds/{fund}", never the fund itself or anything
+    shown on it - the kind of any error, and a pseudonymous code for you and your
+    workspace, a one-way hash rather than a name or an email address, plus a
+    random identifier for the visit that lives only in the open tab. PostHog
+    also receives your browser type, as every web request carries it. It does not
+    receive your network address: our network edge removes it before anything is
+    forwarded. Nothing is stored on your device - no cookie and no local-storage
+    identifier - and no clicks, keystrokes or screen recordings are captured. No
+    fund, investor or figure ever reaches it.</p>
   <p>For security, the application keeps an immutable record of
   authentication events (sign-ins, failures, credential changes) including
   the network address they came from. That record exists to protect the
@@ -110,8 +124,9 @@
   <h2>Who touches the infrastructure</h2>
   <p>Amazon Web Services hosts the application and its database (United
   States). Cloudflare provides the network edge and DDoS protection. GitHub
-  hosts this website. Formspree handles the enquiry form on the home page, and
-Cloudflare Web Analytics counts page requests. Every one of them, and what
+  hosts this website. Formspree handles the enquiry form on the home page,
+Cloudflare Web Analytics counts page requests, and PostHog receives the
+application's product analytics described above. Every one of them, and what
 reaches it, is listed on the <a href="/subprocessors/">sub-processors</a> page. If a customer enables the
 AI-assisted features,
   documents they choose to process are sent to Anthropic for that purpose

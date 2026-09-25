@@ -47,8 +47,8 @@
   </nav>
 
   <h1>Everyone who touches the data</h1>
-  <p class="standfirst">Six third parties, and two of them only if a customer switches something on. This page names all of them, what reaches each one, and where it runs.</p>
-  <p class="byline">Last reviewed 2026-09-15</p>
+  <p class="standfirst">Seven third parties, and one of them only if a customer switches something on. This page names all of them, what reaches each one, and where it runs.</p>
+  <p class="byline">Last reviewed 2026-09-25</p>
 
   <article class="measure">
 
@@ -70,6 +70,12 @@
           <td>Network edge, TLS termination and denial-of-service protection for all three surfaces, plus the analytics that counts page requests</td>
           <td>Request metadata: network address, the page asked for, timing. Not the contents of a page</td>
           <td>Global edge network</td>
+        </tr>
+        <tr>
+          <td><strong>PostHog</strong></td>
+          <td>Product analytics for the application: which screens are used, and where errors happen</td>
+          <td>The template of the screen opened (never an id or anything shown on it), the kind of any error, a one-way hash of the user and the workspace, and the browser type. Not the network address: our edge removes it first. No fund, investor, figure, name or email</td>
+          <td>United States</td>
         </tr>
       </tbody>
     </table>
