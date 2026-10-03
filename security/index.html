@@ -48,7 +48,7 @@
 
   <h1>What is in place, and what is not</h1>
   <p class="standfirst">Everything on this page can be evidenced. The second half, about what we do not have, is here for the same reason as the first.</p>
-  <p class="byline">Last reviewed 2026-09-16</p>
+  <p class="byline">Last reviewed 2026-10-03</p>
 
   <article class="measure">
 
@@ -83,7 +83,7 @@
         <tr><td>Database encryption at rest</td><td>Yes</td></tr>
         <tr><td>Database reachable from the internet</td><td>No</td></tr>
         <tr><td>Accidental-deletion protection</td><td>Yes</td></tr>
-        <tr><td>Automated backups</td><td>7 days, plus a snapshot taken before every deploy</td></tr>
+        <tr><td>Automated backups</td><td>7 days, a daily locked copy kept 35 days, and a snapshot taken before every deploy</td></tr>
         <tr><td>Secrets</td><td>Held in AWS Parameter Store and read at boot. The machine running the application can read them and cannot change them</td></tr>
         <tr><td>Region</td><td>United States</td></tr>
       </tbody>
@@ -94,16 +94,18 @@
     <ul class="keypoints">
       <li><span class="tick">&#10003;</span><span><b>Every commit is scanned for secrets</b>, and the deploy refuses a revision that has not passed that scan. Not a warning, a refusal.</span></li>
       <li><span class="tick">&#10003;</span><span><b>Dependencies are audited weekly</b> and automatically. The first run found 48 known vulnerabilities; they were remediated the same day.</span></li>
-      <li><span class="tick">&#10003;</span><span><b>Every deploy re-proves the arithmetic.</b> An invariant sweep runs across every live fund afterwards, and it records its own verdict whether anyone is watching or not.</span></li>
+      <li><span class="tick">&#10003;</span><span><b>Every deploy re-proves the arithmetic.</b> An accounting-check sweep runs after every deploy and weekly, across every live fund whenever the accounting engine changed, and it records its own verdict whether anyone is watching or not.</span></li>
     </ul>
 
     <h2>No third-party code in the product</h2>
     <p>
-      The application loads no analytics, no trackers, no advertising and no
-      external fonts. The one exception is a cookieless counter of page
-      requests, which stores nothing on your device and cannot see into a
-      workspace: it records that a page was requested, never what the page
-      showed. Everything that touches data is named on the
+      The application loads no trackers, no advertising and no external
+      fonts. It sends narrow product analytics to PostHog through our own
+      edge: which screen was used, error kinds and one-way hashes, never a
+      figure or a name from your workspace. Your network address is
+      stripped, and nothing is stored on your device. A cookieless counter
+      records that a page was requested, never what the page showed. AI
+      features are off until a workspace administrator turns them on. Everything that touches data is named on the
       <a href="/subprocessors/">sub-processors</a> page and in the
       <a href="/privacy/">privacy notice</a>.
     </p>
