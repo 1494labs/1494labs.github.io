@@ -1,0 +1,139 @@
+name: Cookieless posture check
+
+# #449. The privacy notice's entire cookie-banner argument rests on one
+# factual claim: this site sets no cookies and loads no third party nobody
+# was told about. That claim was wrong once already (Cloudflare Web
+# Analytics and Formspree were both live and undisclosed until the 2026-09-16
+# correction), found only by someone reading the live site by hand. This
+# workflow is the daily version of that same check, against the REAL site,
+# not the repo's source - a tracker a host injects at the edge (as
+# Cloudflare Web Analytics does) never appears in a git diff.
+#
+# Two directions, two severities:
+#   - An UNDISCLOSED third party appears -> FAIL. This is the dangerous
+#     direction: the notice now understates what the site does, which is
+#     the exact gap that triggered the 09-16 correction.
+#   - A DISCLOSED third party (the allowlist below) is no longer detected
+#     -> WARN only, in the step summary. This is the safe direction - the
+#     notice overstates rather than understates - but it still means
+#     /privacy/ is describing something that is no longer true, and that is
+#     worth a human looking at it, not worth blocking CI over.
+#
+# Checked against the LIVE hosts, not localhost or a build preview: the
+# thing being verified is what a visitor's browser actually receives.
+
+on:
+  schedule:
+    - cron: "15 13 * * *" # daily, 13:15 UTC
+  workflow_dispatch: {}
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify no cookies and only disclosed third parties
+        run: |
+          set -u
+
+          # Every path the privacy notice's cookie claim covers, across both
+          # hosts named on that page. Add a path here when a new one ships;
+          # this list does not derive itself from anything, same as the
+          # notice's own footer-link enumeration did not.
+          PRIMARY_PATHS=(
+            "/" "capabilities/" "family-office-accounting/"
+            "fund-accounting-software/" "fund-administration-software/"
+            "hedge-fund-accounting/" "notes/"
+            "notes/a-wrong-number-that-agrees-with-itself/"
+            "notes/abor-and-ibor/"
+            "notes/equalization-and-the-mid-period-subscriber/"
+            "notes/european-vs-american-waterfall/"
+            "notes/high-water-marks-and-partial-redemptions/"
+            "notes/what-an-opening-balance-has-to-carry/"
+            "notes/which-columns-can-be-added/"
+            "privacy/" "private-equity-fund-accounting/"
+            "registered-fund-accounting/" "security/"
+            "subprocessors/" "terms/"
+          )
+
+          # The third parties THIS workflow can verify, by the substring
+          # that would appear in an absolute src/href/action if loaded. Two
+          # things deliberately absent, both covered elsewhere:
+          #   - Cloudflare's own same-origin /cdn-cgi/scripts/* (email
+          #     obfuscation) - a relative path, not a cross-origin
+          #     reference, and not the kind of third party this check is
+          #     for.
+          #   - PostHog - that disclosure describes the APPLICATION
+          #     (app.1494labs.com), a host this workflow does not check;
+          #     it is already gated at the source (frontend/CLAUDE.md:
+          #     importing posthog-js anywhere but lib/analytics.ts is an
+          #     ESLint error) and reviewed in docs/policies/data-egress-review.md.
+          # This page changes first (the notice's own ordering rule) -
+          # update this list in the SAME commit that changes what /privacy/
+          # discloses for 1494labs.com or docs.1494labs.com, in either
+          # direction.
+          DISCLOSED=(
+            "cloudflareinsights.com"
+            "static.cloudflare.com"
+            "formspree.io"
+          )
+
+          FAIL=0
+          WARN_MSG=""
+          SEEN_DISCLOSED=""
+
+          check_host () {
+            local label="$1" base="$2"
+            shift 2
+            local paths=("$@")
+            for path in "${paths[@]}"; do
+              local url="https://${base}/${path}"
+              local headers body
+              headers=$(curl -sI "$url")
+              if echo "$headers" | grep -qi "^set-cookie:"; then
+                echo "::error::$label $url sets a cookie: $(echo "$headers" | grep -i '^set-cookie:')"
+                FAIL=1
+              fi
+              body=$(curl -s "$url")
+              # Only src/href/action on tags that actually LOAD or SEND
+              # something (script, img, iframe, link, form) - never a plain
+              # <a href>, which is a navigation link (e.g. crediting the
+              # docs theme) and sends nothing on its own.
+              while IFS= read -r ref; do
+                [ -z "$ref" ] && continue
+                case "$ref" in
+                  *1494labs.com*) continue ;;
+                esac
+                local known=0
+                for d in "${DISCLOSED[@]}"; do
+                  case "$ref" in
+                    *"$d"*) known=1; SEEN_DISCLOSED="$SEEN_DISCLOSED $d" ;;
+                  esac
+                done
+                if [ "$known" -eq 0 ]; then
+                  echo "::error::$label $url loads an undisclosed third party: $ref"
+                  FAIL=1
+                fi
+              done < <(echo "$body" | grep -oE '<(script|img|iframe|link|form)\b[^>]*>' | grep -oE '(src|href|action)="https?://[^"]*"' | sed -E 's/^[a-z]+="//; s/"$//')
+            done
+          }
+
+          check_host "1494labs.com" "1494labs.com" "${PRIMARY_PATHS[@]}"
+          check_host "docs.1494labs.com" "docs.1494labs.com" ""
+
+          for d in "${DISCLOSED[@]}"; do
+            case "$SEEN_DISCLOSED" in
+              *"$d"*) ;;
+              *) WARN_MSG="$WARN_MSG\n- **$d** is disclosed on /privacy/ but was not detected on any checked page today." ;;
+            esac
+          done
+
+          if [ -n "$WARN_MSG" ]; then
+            {
+              echo "### Cookieless posture: disclosed third parties not detected"
+              echo -e "$WARN_MSG"
+              echo ""
+              echo "Not a failure - the notice overstates rather than understates - but /privacy/ may need correcting if this is no longer true."
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+          exit "$FAIL"
