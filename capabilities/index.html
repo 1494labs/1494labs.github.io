@@ -11,6 +11,46 @@
 <link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <meta name="theme-color" content="#176B75">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://1494labs.com/capabilities/">
+<meta property="og:site_name" content="1494 Labs">
+<meta property="og:title" content="What the platform does">
+<meta property="og:description" content="A capability matrix with what we do not do on the same page as what we do. Every row marked shipped can be demonstrated.">
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What the platform does">
+<meta name="twitter:description" content="A capability matrix with what we do not do on the same page as what we do. Every row marked shipped can be demonstrated.">
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "What the platform does",
+  "description": "A capability matrix with what we do not do on the same page as what we do. Every row marked shipped can be demonstrated.",
+  "url": "https://1494labs.com/capabilities/",
+  "inLanguage": "en",
+  "isPartOf": { "@type": "WebSite", "name": "1494 Labs", "url": "https://1494labs.com/" },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "1494 Labs",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web",
+    "url": "https://1494labs.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "1494 Labs",
+    "url": "https://1494labs.com/",
+    "logo": "https://1494labs.com/assets/icon-512x512.png"
+  }
+}
+</script>
 <style>
 /* The status chip. 'No' is deliberately not an alarm color: it is a fact
    about scope, not a failure, and coloring it red would make the honest rows
@@ -94,12 +134,12 @@
         <tr class="note-row"><td colspan="2">Nothing AI-derived posts without a person confirming it.</td></tr>
         <tr><th scope="row">A daily sweep that re-proves the arithmetic on every fund on the platform</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr class="note-row"><td colspan="2">Capital accounts against the ledger, allocations against the pool, cash movements against the entries that produced them. With no customers on the platform yet, it runs against our own reference funds - which is what it would do against yours, on the same schedule, with nothing to set up.</td></tr>
-        <tr><th scope="row">Internal breaks: a worklist, aging, and an accept-with-a-note decision</th><td><span class="status st-shipped">Shipped</span></td></tr>
-        <tr class="note-row"><td colspan="2">A break names the fund, the period and the amount. What the sweep does NOT do is tell you a price was wrong - it proves the book is not lying to itself, which is a smaller claim than checking your numbers against a custodian&#x27;s.</td></tr>
-        <tr><th scope="row">External breaks: cash against an imported bank statement, positions against a custodian&#x27;s file</th><td><span class="status st-shipped">Shipped</span></td></tr>
-        <tr class="note-row"><td colspan="2">A statement&#x27;s lines auto-match the book only when exactly one movement fits; anything else is left for a person, and what is left over raises a break on the same worklist as the internal ones.</td></tr>
-        <tr><th scope="row">External breaks: NAV against an outside administrator&#x27;s file</th><td><span class="status st-roadmap">Roadmap 2027Q1</span></td></tr>
-        <tr class="note-row"><td colspan="2">The worklist, the aging and the accept-with-a-note decision are the same for this break and already exist. What is missing is the ingestion of the administrator&#x27;s file that raises one.</td></tr>
+        <tr><th scope="row">Internal exceptions: a worklist, aging, and an accept-with-a-note decision</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr class="note-row"><td colspan="2">An exception names the fund, the period and the amount. What the sweep does NOT do is tell you a price was wrong - it proves the book is not lying to itself, which is a smaller claim than checking your numbers against a custodian&#x27;s.</td></tr>
+        <tr><th scope="row">External exceptions: cash against an imported bank statement, positions against a custodian&#x27;s file</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr class="note-row"><td colspan="2">A statement&#x27;s lines auto-match the book only when exactly one movement fits; anything else is left for a person, and what is left over raises an exception on the same worklist as the internal ones.</td></tr>
+        <tr><th scope="row">External exceptions: NAV against an outside administrator&#x27;s file</th><td><span class="status st-roadmap">Roadmap 2027Q1</span></td></tr>
+        <tr class="note-row"><td colspan="2">The worklist, the aging and the accept-with-a-note decision are the same for this exception and already exist. What is missing is the ingestion of the administrator&#x27;s file that raises one.</td></tr>
       </tbody>
     </table>
     </div>
