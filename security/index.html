@@ -48,16 +48,18 @@
 
   <h1>What is in place, and what is not</h1>
   <p class="standfirst">Everything on this page can be evidenced. The second half, about what we do not have, is here for the same reason as the first.</p>
-  <p class="byline">Last reviewed 2026-10-03</p>
+  <p class="byline">Last reviewed 2026-10-18</p>
 
   <article class="measure">
 
     <h2>Your data is separated at the database, not by a filter</h2>
     <p>
-      Every tenant has its own database schema, and every request is routed to
-      it before a query runs. There is no query anywhere that returns another
-      firm's rows if somebody forgets a <code>WHERE</code> clause, because the
-      isolation is not a <code>WHERE</code> clause.
+      Every tenant's books live in their own database schema, and every request
+      is routed to it before a query runs. A book query that forgets a
+      <code>WHERE</code> clause still cannot return another firm's rows, because
+      the isolation of the books is not a <code>WHERE</code> clause. User
+      accounts and the sign-in and access logs are the exception: they sit in a
+      shared schema, with every row tied to its workspace.
     </p>
 
     <h2>The audit trail cannot be rewritten</h2>
@@ -80,6 +82,7 @@
     <div class="tablewrap">
     <table>
       <tbody>
+        <tr><td>Encryption in transit</td><td>TLS between your browser and the service. Cloudflare terminates it at its edge and re-encrypts to our servers. Traffic between our internal containers stays on a private network</td></tr>
         <tr><td>Database encryption at rest</td><td>Yes</td></tr>
         <tr><td>Database reachable from the internet</td><td>No</td></tr>
         <tr><td>Accidental-deletion protection</td><td>Yes</td></tr>
@@ -97,7 +100,7 @@
       <li><span class="tick">&#10003;</span><span><b>Every deploy re-proves the arithmetic.</b> An accounting-check sweep runs after every deploy and weekly, across every live fund whenever the accounting engine changed, and it records its own verdict whether anyone is watching or not.</span></li>
     </ul>
 
-    <h2>No third-party code in the product</h2>
+    <h2>No trackers or advertising in the product</h2>
     <p>
       The application loads no trackers, no advertising and no external
       fonts. It sends narrow product analytics to PostHog through our own
@@ -137,10 +140,11 @@
   </article>
 
   <footer class="site">
-    <span>&copy; 2026 1494 Labs</span>
+    <span>&copy; 2026 1494 Labs Inc., a Delaware corporation, 6 Liberty Square #2721, Boston, MA 02109</span>
     <a href="/">Home</a>
     <a href="/notes/">Notes</a>
     <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
     <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
   </footer>
 

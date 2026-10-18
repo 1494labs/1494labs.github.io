@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sub-processors &middot; 1494 Labs</title>
-<meta name="description" content="Every third party that touches 1494 Labs data, what it does, where it runs, and what reaches it. Seven in total, and one of them only if a customer switches something on.">
+<meta name="description" content="Every third party that touches 1494 Labs data, what it does, where it runs, and what reaches it. Nine in total, and two of them only if a customer switches something on.">
 <link rel="canonical" href="https://1494labs.com/subprocessors/">
 <link rel="stylesheet" href="/assets/notes.7838f975.css">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -47,8 +47,8 @@
   </nav>
 
   <h1>Everyone who touches the data</h1>
-  <p class="standfirst">Seven third parties, and one of them only if a customer switches something on. This page names all of them, what reaches each one, and where it runs.</p>
-  <p class="byline">Last reviewed 2026-10-03</p>
+  <p class="standfirst">Nine third parties, and two of them only if a customer switches something on. This page names all of them, what reaches each one, and where it runs.</p>
+  <p class="byline">Last reviewed 2026-10-18</p>
 
   <article class="measure">
 
@@ -61,14 +61,14 @@
       <tbody>
         <tr>
           <td><strong>Amazon Web Services</strong></td>
-          <td>Runs the application, the database, object storage and the document renderer</td>
+          <td>Runs the application, the database, object storage and the document renderer, and sends outgoing email once delivery is switched on</td>
           <td>Everything in a customer workspace</td>
           <td>United States</td>
         </tr>
         <tr>
           <td><strong>Cloudflare</strong></td>
           <td>Network edge, TLS termination and denial-of-service protection for all three surfaces, plus the analytics that counts page requests</td>
-          <td>Request metadata: network address, the page asked for, timing. Not the contents of a page</td>
+          <td>Everything sent to and from the application, in transit. Cloudflare terminates TLS, so requests and responses pass through its edge unencrypted before being re-encrypted to our servers. Nothing is stored there under our configuration</td>
           <td>Global edge network</td>
         </tr>
         <tr>
@@ -91,17 +91,25 @@
         <tr>
           <td><strong>Anthropic</strong></td>
           <td>The AI-assisted features, which are off unless a workspace administrator turns them on</td>
-          <td>Only what a customer sends through those features: documents and import samples they choose to process, figures they ask about, and support requests. Nothing else from the workspace</td>
+          <td>Only what a customer sends through those features: documents and import samples they choose to process, figures they ask about, support requests, and investor names and identifiers when a feature matches an administrator's report to the fund's accounts. Nothing else from the workspace</td>
+          <td>United States</td>
+        </tr>
+        <tr>
+          <td><strong>OpenAI</strong></td>
+          <td>An alternative provider for the same AI-assisted features, used only if the features are turned on and an OpenAI model is configured for them</td>
+          <td>The same as the Anthropic row, and only in that case</td>
           <td>United States</td>
         </tr>
       </tbody>
     </table>
     </div>
 
-    <h2>Nothing to do with a customer workspace</h2>
+    <h2>No customer workspace content</h2>
     <p>
-      These three carry contact and website data. None of them can reach a
-      workspace, and no fund, investor or figure passes through them.
+      These four carry contact and website data, our source code and
+      operational alerts. None of them can reach a workspace, and no fund,
+      investor or figure passes through them unless someone chooses to email it
+      to us.
     </p>
     <div class="tablewrap">
     <table>
@@ -112,7 +120,7 @@
         <tr>
           <td><strong>Google</strong></td>
           <td>Email for our own addresses</td>
-          <td>Anything anyone sends us by email, including an enquiry once it is forwarded on</td>
+          <td>Anything anyone sends us by email, including an enquiry once it is forwarded on and anything a customer chooses to email us</td>
           <td>United States</td>
         </tr>
         <tr>
@@ -123,8 +131,14 @@
         </tr>
         <tr>
           <td><strong>GitHub</strong></td>
-          <td>Serves this website</td>
-          <td>Static pages and images. No customer data of any kind</td>
+          <td>Serves this website, and holds our source code, build and support escalations</td>
+          <td>Static pages and images, code, and support escalations that carry identifiers and a link back to the ticket, never what a user wrote</td>
+          <td>United States</td>
+        </tr>
+        <tr>
+          <td><strong>Slack</strong></td>
+          <td>Operations alerts: deploys, failed checks and support notifications</td>
+          <td>Identifiers and counts, including a workspace's subdomain. No names, figures or text a user wrote</td>
           <td>United States</td>
         </tr>
       </tbody>
@@ -157,11 +171,12 @@
   </article>
 
   <footer class="site">
-    <span>&copy; 2026 1494 Labs</span>
+    <span>&copy; 2026 1494 Labs Inc., a Delaware corporation, 6 Liberty Square #2721, Boston, MA 02109</span>
     <a href="/">Home</a>
     <a href="/notes/">Notes</a>
     <a href="/privacy/">Privacy</a>
     <a href="/security/">Security</a>
+    <a href="/terms/">Terms</a>
     <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
   </footer>
 

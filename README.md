@@ -34,14 +34,14 @@ python3 scripts/gen_sitemap.py && git add sitemap.xml && git commit
 git push origin main
 ```
 
-Three things deliberately do NOT cross over:
+The legal pages (`privacy/`, `subprocessors/`, `security/`, `terms/`) were added here on
+2026-10-18 (#449) as DRAFTS naming 1494 Labs Inc.; they reach the Pages repo only when the
+owner gives the publish go, and then by an explicit copy of those four directories.
+
+These things deliberately do NOT cross over:
 
 | What | Why |
 |---|---|
-| `privacy/` | exists only in the Pages repo; a blind mirror would delete it |
-| `subprocessors/` | same |
-| `security/` | same |
-| `terms/` | same |
 | `scripts/gen_sitemap.py` | the sitemap is generated there, from *that* repo's git history, AFTER the content commit - run it before and every `lastmod` is the previous commit's date |
 | `assets/linkedin-*` | brand source files; they are not pages and have no reason to sit on a web server |
 

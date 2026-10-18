@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy &middot; 1494 Labs</title>
-<meta name="description" content="What 1494 Labs collects and what it deliberately does not. No cookies, no trackers, no analytics on this site - and exactly three strictly-necessary cookies in the application, all named here.">
+<meta name="description" content="What 1494 Labs collects and what it deliberately does not. No cookies and no trackers on this site, one cookieless page counter, and only strictly-necessary sign-in cookies in the application, all described here.">
 <link rel="canonical" href="https://1494labs.com/privacy/">
 <link rel="stylesheet" href="/assets/notes.7838f975.css">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -48,9 +48,19 @@
 
   <h1>What we collect, and what we deliberately do not</h1>
   <p class="standfirst">There is no cookie banner on this site because there is nothing to consent to. This page is the inventory.</p>
-  <p class="byline">Last reviewed 2026-10-03</p>
+  <p class="byline">Last reviewed 2026-10-18</p>
 
   <article>
+
+  <h2>Who we are</h2>
+  <p>This site, the documentation site and the application are operated by
+  1494 Labs Inc., a Delaware corporation, 6 Liberty Square #2721, Boston, MA 02109. For anything on
+  this page, write to
+  <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>. For the personal
+  data described here we are the controller; for data a customer places in its
+  workspace, the customer is the controller and we process it on its
+  instructions. We are in the United States, and what reaches us is stored and
+  processed there.</p>
 
   <h2>This website</h2>
   <p>1494labs.com sets no cookies. It runs one analytics tool, Cloudflare Web
@@ -83,16 +93,19 @@
 
   <h2>The application</h2>
   <p>app.1494labs.com is the product itself, used under an agreement with
-  the customer whose workspace you sign into. Signing in sets exactly three
+  the customer whose workspace you sign into. Signing in sets three
   cookies, all strictly necessary to keep you signed in and to protect your
   session: a session token, a refresh token, and a cross-site
-  request-forgery token. They exist only for authentication, are scoped to
-  the application, and expire with your session. Interface preferences -
+  request-forgery token. Signing in through your firm's own identity provider
+  sets one more, short-lived cookie that ties the sign-in request to its
+  answer, and removes it when sign-in completes. They exist only for
+  authentication, are scoped to the application, and end when you sign out or
+  when their fixed lifetime runs out. Interface preferences -
   theme, table density - live in your browser's local storage. The
   application loads no external fonts, no advertising code and nothing
 that follows you to another site. It
   does carry the Cloudflare Web Analytics beacon described above, which counts
-  page requests and stores nothing on your device. It cannot see into a
+  page requests and stores nothing on your device. The beacon cannot see into a
   workspace: it records that a page was requested, never what the page showed,
   and no fund, investor or figure ever reaches it.</p>
 
@@ -123,21 +136,38 @@ that follows you to another site. It
 
   <h2>Who touches the infrastructure</h2>
   <p>Amazon Web Services hosts the application and its database (United
-  States). Cloudflare provides the network edge and DDoS protection. GitHub
-  hosts this website. Formspree handles the enquiry form on the home page,
+  States). Cloudflare provides the network edge and DDoS protection, and so
+  carries the application's traffic in transit. GitHub hosts this website. Formspree handles the enquiry form on the home page,
 Cloudflare Web Analytics counts page requests, and PostHog receives the
 application's product analytics described above. Every one of them, and what
 reaches it, is listed on the <a href="/subprocessors/">sub-processors</a> page. If a workspace administrator turns on the
 AI-assisted features, the documents, import samples and support requests
-  sent through them go to Anthropic for that purpose and no other. We do not sell or share personal information with anyone,
-  for anything.</p>
+  sent through them go to Anthropic (or, where one is configured, OpenAI) for
+  that purpose and no other. We do not sell personal information, and we do
+  not share it for advertising. We disclose it only to the providers named on
+  the sub-processors page, to run these services, or where the law requires
+  us to.</p>
+
+  <h2>Why we process it, and for how long</h2>
+  <p>We use what you send us to answer you and, if you ask, to arrange a
+  demonstration: that is a step you have asked us to take, or our legitimate
+  interest in answering business enquiries. We keep enquiry emails for up to
+  two years after our last exchange, unless the enquiry becomes a customer
+  relationship. Server access logs and the
+  authentication record exist for our legitimate interest in keeping the
+  services and the books secure; the access log is kept for 400 days. Page
+  counts and product analytics serve our legitimate interest in knowing which
+  pages and screens are used and where errors happen, and identify no one.</p>
 
   <h2>Your rights</h2>
   <p>If you are in a jurisdiction that grants you rights over your personal
-  data - access, correction, deletion, portability - write to
+  data - access, correction, deletion, portability, objection - write to
   <a href="mailto:hello@1494labs.com">hello@1494labs.com</a> and we will
-  honor them. For data inside a customer's workspace, we act on the
-  instructions of that customer, who is the controller of it.</p>
+  respond as that law requires. If you are in the European Economic Area, the
+  United Kingdom or Switzerland, you may also complain to your data protection
+  authority. For data inside a customer's workspace, we act on the
+  instructions of that customer, who is the controller of it, and we will pass
+  your request to them.</p>
 
   <p class="fine">If our practices change in a way that matters - an
   analytics tool, a new sub-processor - this page changes first, and the
@@ -146,11 +176,12 @@ AI-assisted features, the documents, import samples and support requests
   </article>
 
   <footer class="site">
-    <span>&copy; 2026 1494 Labs</span>
+    <span>&copy; 2026 1494 Labs Inc., a Delaware corporation, 6 Liberty Square #2721, Boston, MA 02109</span>
     <a href="/">Home</a>
     <a href="/notes/">Notes</a>
     <a href="/privacy/">Privacy</a>
     <a href="/security/">Security</a>
+    <a href="/terms/">Terms</a>
     <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
   </footer>
 
