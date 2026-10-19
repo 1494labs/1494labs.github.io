@@ -68,7 +68,7 @@
   "mainEntity": [
     { "@type": "Question", "name": "What does fund accounting software need to do?", "acceptedAnswer": { "@type": "Answer", "text": "At minimum: hold a general ledger, strike a NAV, keep a capital account per investor, allocate income and expense to those accounts, calculate management and incentive fees, and produce financial statements that tie to the ledger. Most of the difficulty is in the last word: producing a statement is easy, producing one that still reconciles to the ledger after a restatement is not." } },
     { "@type": "Question", "name": "What is the difference between ABOR and IBOR?", "acceptedAnswer": { "@type": "Answer", "text": "The accounting book of record is the official set of books, on an accounting basis, respecting period boundaries. The investment book of record is the current position and exposure view, typically on trade date and intraday. Most platforms keep them in separate systems and reconcile overnight. 1494 Labs records each economic event once and treats the two as views over the same journal entries." } },
-    { "@type": "Question", "name": "Does it handle both open-end and closed-end funds?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Funding model is a property of the fund, not a product tier: an open-end fund gets subscriptions, redemptions and high-water marks, a closed-end fund gets commitments, capital calls, drawdowns and a waterfall, and both post to the same ledger." } }
+    { "@type": "Question", "name": "Can funding and liquidity terms vary by fund?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A fund can raise committed capital through calls or take subscriptions against NAV. Redemption dates, notice, lock-ups and gates are configured separately from that funding model. Both flows post to the same ledger." } }
   ]
 }
 </script>
@@ -155,16 +155,17 @@
     <h2>Every vehicle, not a product tier per vehicle</h2>
     <p>
       Pooled funds, funds-of-one, separately managed accounts, trusts, family
-      partnerships, holding companies and asset SPVs. Open-end and closed-end.
-      Unitized and capital-based. Master-feeder structures where the feeder picks
+      partnerships, holding companies and asset SPVs. Committed-capital and
+      subscription-funded. Unitized and capital-based. Master-feeder structures where the feeder picks
       up master profit and loss through a real internal position rather than a
       journal entry somebody types each month.
     </p>
     <p>
-      Funding model is a property of the fund. A closed-end fund gets commitments,
-      calls, drawdowns, recallable distributions and a waterfall; an open-end fund
-      gets subscriptions, redemptions, series and high-water marks. Both post to
-      the same ledger, and a fund that changes shape does not change systems.
+      Funding model and liquidity terms are separate fund settings. A drawdown fund
+      can use commitments, calls, recallable distributions and a waterfall. A
+      subscription-funded fund can take money at each period's struck NAV, while
+      redemption dates, notice, lock-ups and gates set how investors leave. Both
+      post to the same ledger, and a fund that changes shape does not change systems.
     </p>
 
     <h2>The books, and everything that reads them</h2>
@@ -219,8 +220,8 @@
 
     <h2>Built for the vehicle you actually run</h2>
     <ul class="pagelinks">
-      <li><a href="/private-equity-fund-accounting/">Private equity and closed-end funds</a> &middot; commitments, calls, waterfalls, carry</li>
-      <li><a href="/hedge-fund-accounting/">Hedge funds and open-end vehicles</a> &middot; series, equalization, high-water marks</li>
+      <li><a href="/private-equity-fund-accounting/">Private equity and drawdown funds</a> &middot; commitments, calls, waterfalls, carry</li>
+      <li><a href="/hedge-fund-accounting/">Hedge funds and subscription-funded vehicles</a> &middot; series, equalization, high-water marks</li>
       <li><a href="/family-office-accounting/">Family Offices</a> &middot; consolidated net worth across the whole structure</li>
       <li><a href="/fund-administration-software/">Fund Administrators</a> &middot; many clients, one platform</li>
       <li><a href="/notes/a-wrong-number-that-agrees-with-itself/">A wrong number that agrees with itself</a> &middot; what the morning check is for</li>

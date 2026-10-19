@@ -99,16 +99,16 @@
   </nav>
 
   <h1>Private equity fund accounting, waterfall included</h1>
-  <p class="standfirst">The capital account is the deliverable. Everything else in a closed-end fund exists to move it, and most of the errors come from moving it in a spreadsheet.</p>
+  <p class="standfirst">The capital account is the deliverable. In a drawdown fund, calls, distributions and allocations move it, and many errors begin when those movements live in a spreadsheet.</p>
   <p class="byline">Solutions &middot; roughly 7 minutes</p>
 
   <article>
 
     <h2>Commitments are ledger events, not a side table</h2>
     <p>
-      In most closed-end books the capital account lives in a spreadsheet
+      In many drawdown books the capital account lives in a spreadsheet
       alongside the accounting system, because the accounting system was built for
-      open-end funds and does not know what uncalled capital is. That spreadsheet
+      subscriptions and does not know what uncalled capital is. That spreadsheet
       is then the source of truth for the number limited partners care about most.
     </p>
     <p>
@@ -181,15 +181,15 @@
     <h2>The fund knows what kind of fund it is</h2>
     <p>
       Funding model is a property of the vehicle. A drawdown fund's dashboard
-      leads with committed, called and distributed; an open-end fund's leads with
-      subscriptions and redemptions. Neither is a setting somebody has to
-      remember, and a platform that runs both does not need two products to do it.
+      leads with committed, called and distributed; a subscription-funded fund's leads with
+      subscriptions and redemptions. The funding model drives those views, while
+      notice, lock-ups and redemption gates come from the fund's liquidity terms.
     </p>
 
     <figure class="shot">
       <img src="/assets/screens/dashboard-drawdown.d0213926.jpg" width="1568" height="926"
            loading="lazy" decoding="async" alt="A drawdown fund dashboard showing NAV, committed, called, distributed, position value and fees accrued.">
-      <figcaption><b>Committed, called and distributed replace the open-end tiles.</b> Off the fund's own funding model, not a configuration flag.</figcaption>
+      <figcaption><b>Committed, called and distributed reflect the drawdown funding model.</b> The fund's liquidity terms are configured separately.</figcaption>
     </figure>
 
     <figure class="shot">
@@ -238,7 +238,7 @@
       <li><a href="/notes/european-vs-american-waterfall/">European vs American waterfalls, with the numbers worked</a></li>
       <li><a href="/notes/what-an-opening-balance-has-to-carry/">What an opening balance has to carry</a>, for a fund moving systems mid-life</li>
       <li><a href="/fund-accounting-software/">The platform overview</a></li>
-      <li><a href="/fund-administration-software/">For administrators running several closed-end clients</a></li>
+      <li><a href="/fund-administration-software/">For administrators running several drawdown clients</a></li>
     </ul>
 
     <div class="endcta">
