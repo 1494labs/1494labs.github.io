@@ -1,0 +1,213 @@
+/* 1494 Labs · every page but the home page
+   Shared by the notes, the solution pages, capabilities and the legal pages.
+   Tokens, type and the site header come from /DESIGN.md and match the home
+   page's inline styles; change both together. */
+
+@font-face{font-family:"Public Sans";font-style:normal;font-weight:400;font-display:swap;
+  src:url("/assets/fonts/public-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Public Sans";font-style:normal;font-weight:500;font-display:swap;
+  src:url("/assets/fonts/public-sans-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Public Sans";font-style:normal;font-weight:600;font-display:swap;
+  src:url("/assets/fonts/public-sans-latin-600-normal.woff2") format("woff2")}
+
+:root{
+  --ground:#F4F4F2; --sheet:#FFFFFF;
+  --ink:#1A1D21; --ink-2:#3F454D; --muted:#5F666E;
+  --rule:#D9D9D4; --rule-faint:#E8E8E4;
+  --teal:#176B75; --teal-deep:#0F4F57; --teal-tint:#E5F0F1;
+  --claret:#94263C; --amber:#7A5200; --amber-tint:#FBF1DC;
+  --sans:"Public Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --measure:38rem;
+  --gutter:clamp(20px,5vw,40px);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+body{
+  margin:0; background:var(--ground); color:var(--ink-2);
+  font-family:var(--sans); font-size:1rem; line-height:1.55;
+  font-variant-numeric:tabular-nums;
+  -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+::selection{background:var(--teal-tint);color:var(--ink)}
+
+.wrap{max-width:46rem;margin:0 auto;padding:40px var(--gutter) 72px}
+.measure{max-width:var(--measure)}
+
+/* ── site header: the same on every page ──────────────── */
+header.site .bar{
+  max-width:70rem;margin:0 auto;padding:20px var(--gutter);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;
+}
+.lockup{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.lockup svg{width:28px;height:28px;color:var(--teal);flex:none}
+.wordmark{font-size:1.25rem;font-weight:600;letter-spacing:-.01em;line-height:1}
+.sitenav{display:flex;flex-wrap:wrap;gap:4px 24px}
+.sitenav a{
+  font-size:1rem;color:var(--ink-2);text-decoration:none;padding:8px 0;
+  text-underline-offset:6px;text-decoration-thickness:1px;
+}
+.sitenav a:hover,.sitenav a[aria-current="page"]{color:var(--ink);text-decoration-line:underline}
+.sitenav a.demo{color:var(--teal);font-weight:600}
+.sitenav a.demo:hover{color:var(--teal-deep)}
+/* Phone width (#1449): the four links fold behind one Menu button (a native
+   <details>, so it needs no script) and open as a list of 44px rows under the
+   bar. The desktop nav is the same four links; only one of the two shows. */
+.navmenu{display:none}
+@media (max-width:640px){
+  header.site .bar{position:relative;padding-top:12px;padding-bottom:12px}
+  .sitenav{display:none}
+  .navmenu{display:block}
+  .navmenu summary{
+    list-style:none;display:flex;align-items:center;gap:8px;
+    min-height:44px;min-width:44px;padding:0 4px;margin-right:-4px;
+    font-weight:600;color:var(--ink);cursor:pointer;
+    -webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none;touch-action:manipulation;
+  }
+  .navmenu summary::-webkit-details-marker{display:none}
+  .navmenu summary svg{width:20px;height:20px;flex:none}
+  .navmenu summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+  .navmenu nav{
+    position:absolute;left:0;right:0;top:100%;z-index:10;
+    display:flex;flex-direction:column;
+    background:var(--ground);border-bottom:1px solid var(--rule);padding:0 var(--gutter) 8px;
+  }
+  .navmenu nav a{
+    display:flex;align-items:center;min-height:44px;
+    color:var(--ink-2);text-decoration:none;border-top:1px solid var(--rule-faint);
+    touch-action:manipulation;
+  }
+  .navmenu nav a[aria-current="page"]{color:var(--ink);font-weight:600}
+  .navmenu nav a.demo{color:var(--teal);font-weight:600}
+}
+
+/* ── typography ───────────────────────────────────────── */
+h1{
+  font-weight:500;font-size:clamp(1.75rem,5vw,3.5rem);color:var(--ink);
+  line-height:1.05;letter-spacing:-.02em;margin:0 0 24px;text-wrap:balance;
+}
+.standfirst{
+  font-size:1.25rem;line-height:1.5;color:var(--ink-2);margin:0;max-width:var(--measure);
+}
+.byline{font-size:.875rem;color:var(--muted);margin:16px 0 0}
+article{margin-top:40px}
+article > *{max-width:var(--measure)}
+h2{
+  font-weight:600;font-size:clamp(1.25rem,3.4vw,1.75rem);color:var(--ink);
+  line-height:1.2;letter-spacing:-.01em;margin:56px 0 16px;text-wrap:balance;
+}
+h3{font-weight:600;font-size:1.25rem;line-height:1.3;color:var(--ink);margin:32px 0 8px}
+p{margin:0 0 16px}
+strong{font-weight:600;color:var(--ink)}
+em{font-style:italic}
+a{color:var(--teal);text-underline-offset:2px}
+a:hover{color:var(--teal-deep)}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+code{
+  font-family:var(--mono);font-size:.875rem;color:var(--ink);background:var(--sheet);
+  border:1px solid var(--rule-faint);border-radius:2px;padding:1px 4px;
+}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin-bottom:8px}
+li::marker{color:var(--muted)}
+hr{border:0;margin:40px 0}
+
+/* ── tables: worked numbers are the point of these pages ─ */
+.tablewrap{overflow-x:auto;margin:24px 0;background:var(--sheet);border:1px solid var(--rule);max-width:100%}
+table{border-collapse:collapse;width:100%;font-size:.875rem;min-width:24rem;color:var(--ink)}
+caption{
+  caption-side:top;text-align:left;padding:12px 16px 8px;
+  font-size:.875rem;font-weight:600;color:var(--ink);
+}
+th,td{text-align:left;padding:8px 16px;border-bottom:1px solid var(--rule-faint);vertical-align:top}
+tbody tr:last-child td{border-bottom:0}
+thead th{font-size:.875rem;font-weight:400;color:var(--muted);border-bottom:1px solid var(--rule)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+/* A total: one ink rule above the figure, two below. */
+tr.total td{font-weight:600;border-top:1px solid var(--ink)}
+tr.total td.n{border-bottom:3px double var(--ink)}
+.neg{color:var(--claret)}
+
+/* ── callouts ─────────────────────────────────────────── */
+.note{background:var(--sheet);border:1px solid var(--rule);padding:16px 24px;margin:24px 0}
+.note p:last-child{margin-bottom:0}
+.note .tag{display:block;font-weight:600;color:var(--ink);margin-bottom:8px}
+
+/* ── notes index ──────────────────────────────────────── */
+.notelist{list-style:none;margin:40px 0 0;padding:0;max-width:var(--measure)}
+.notelist li{margin:0 0 32px}
+.notelist a{text-decoration:none;color:inherit;display:block}
+.notelist h2{font-size:1.25rem;line-height:1.3;margin:0 0 8px;color:var(--teal)}
+.notelist a:hover h2{color:var(--teal-deep);text-decoration:underline;text-underline-offset:3px}
+.notelist p{color:var(--ink-2);margin:0}
+.fine{font-size:.875rem;color:var(--muted)}
+.endcta + .fine{margin-top:40px}
+
+/* ── end matter ───────────────────────────────────────── */
+.endcta{
+  margin-top:56px;padding:24px;background:var(--sheet);
+  border:1px solid var(--rule);max-width:var(--measure);
+}
+.endcta h2{font-size:1.25rem;line-height:1.3;margin:0 0 8px}
+.endcta p{margin:0 0 16px;color:var(--ink-2)}
+.endcta p:last-child{margin-bottom:0}
+.btn{
+  display:inline-block;font-family:var(--sans);font-size:1rem;font-weight:600;line-height:1.25;
+  background:var(--teal);color:var(--sheet);text-decoration:none;
+  padding:10px 20px;border-radius:2px;
+}
+.btn:hover{background:var(--teal-deep);color:var(--sheet)}
+
+footer.site{
+  margin-top:72px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;
+}
+footer.site span,footer.site a{font-size:.875rem;color:var(--muted)}
+footer.site span{flex-basis:100%}
+footer.site a{text-decoration:none}
+footer.site a:hover{color:var(--ink);text-decoration:underline}
+
+/* ── product screens ────────────────────────────────────── */
+.shot{margin:32px 0 0}
+.shot img{
+  display:block;width:100%;height:auto;
+  border:1px solid var(--rule);background:var(--sheet);
+}
+.shot figcaption{font-size:.875rem;line-height:1.5;color:var(--muted);margin:12px 0 0}
+.shot figcaption b{color:var(--ink);font-weight:600}
+
+/* A figure is a full-width element on a text page: `article > *` clamps to the
+   reading measure, which would squeeze a screenshot into a column. */
+article > .shot{max-width:none}
+
+/* ── solution pages ───────────────────────────────────── */
+/* Same shell as a note, different job: these answer "does it do X for my kind
+   of fund", so they carry a summary list and a closing call rather than a
+   worked argument. */
+.keypoints{list-style:none;margin:32px 0 0;padding:0}
+.keypoints li{
+  display:flex;gap:12px;align-items:baseline;margin:0;
+  padding:8px 0;color:var(--ink-2);
+}
+/* The tick is drawn, not a glyph: the character stays in the markup for text
+   readers and is painted over by the teal mark. */
+.keypoints .tick{
+  flex:none;width:14px;height:14px;align-self:center;overflow:hidden;color:transparent;
+  background:var(--teal);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M2 7.5 5.5 11 12 3.5' fill='none' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E") center/contain no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M2 7.5 5.5 11 12 3.5' fill='none' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E") center/contain no-repeat;
+}
+.pagelinks{list-style:none;margin:16px 0 0;padding:0}
+.pagelinks li{margin-bottom:8px}
+
+/* A screenshot is evidence, and evidence has to be legible. At the reading
+   measure the product's own type renders at about 7px, so on a wide viewport
+   the figure breaks out of the column and centres on it. */
+@media (min-width:1180px){
+  article > .shot{width:58rem;margin-left:50%;transform:translateX(-50%)}
+  article > .shot figcaption{max-width:46rem;margin-left:auto;margin-right:auto}
+}

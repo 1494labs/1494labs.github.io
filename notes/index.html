@@ -6,7 +6,7 @@
 <title>Fund accounting notes · 1494 Labs</title>
 <meta name="description" content="Working notes on fund accounting: ABOR and IBOR, waterfalls, equalization, ILPA reporting and period close. Written for the people who have to make the numbers defensible.">
 <link rel="canonical" href="https://1494labs.com/notes/">
-<link rel="stylesheet" href="/assets/notes.7838f975.css">
+<link rel="stylesheet" href="/assets/notes.d756015c.css">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -45,7 +45,7 @@
     },
     {
       "@type": "Article",
-      "headline": "American vs European waterfall, with the numbers worked",
+      "headline": "European vs American waterfalls, with the numbers worked",
       "url": "https://1494labs.com/notes/european-vs-american-waterfall/",
       "datePublished": "2026-08-24"
     }
@@ -54,24 +54,38 @@
 </script>
 </head>
 <body>
-<div class="wrap">
-
-  <nav class="top">
-    <a href="/">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="1494 Labs">
-        <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
-          <path d="M5 9 H27"/><path d="M16 9 V26"/>
-        </g>
-        <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
-        <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
-        <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
-        <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
-      </svg>
-      <span class="name">1494 Labs</span>
+<header class="site">
+  <div class="bar">
+    <a class="lockup" href="/" aria-label="1494 Labs home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+            <path d="M5 9 H27"/><path d="M16 9 V26"/>
+          </g>
+          <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+          <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        </svg>
+      <span class="wordmark">1494 Labs</span>
     </a>
-    <span class="sep">&middot;</span>
-    <span class="sec">Notes</span>
-  </nav>
+    <nav class="sitenav" aria-label="Site">
+      <a href="/fund-accounting-software/">Platform</a>
+      <a href="/capabilities/">Capabilities</a>
+      <a href="/notes/" aria-current="page">Notes</a>
+      <a class="demo" href="/#contact">Request a demo</a>
+    </nav>
+    <details class="navmenu">
+      <summary><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>Menu</summary>
+      <nav aria-label="Site menu">
+        <a href="/fund-accounting-software/">Platform</a>
+        <a href="/capabilities/">Capabilities</a>
+        <a href="/notes/" aria-current="page">Notes</a>
+        <a class="demo" href="/#contact">Request a demo</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<div class="wrap">
 
   <h1>Notes</h1>
   <p class="standfirst">
@@ -83,7 +97,6 @@
   <ul class="notelist">
     <li>
       <a href="/notes/a-wrong-number-that-agrees-with-itself/">
-        <span class="kicker">Controls</span>
         <h2>A wrong number that agrees with itself</h2>
         <p>
           A break gets investigated because something disagrees. When the
@@ -95,7 +108,6 @@
     </li>
     <li>
       <a href="/notes/abor-and-ibor/">
-        <span class="kicker">Fund Accounting</span>
         <h2>ABOR and IBOR, and why most systems keep them apart</h2>
         <p>
           Two books, two clocks, and a reconciliation nobody wants to own. Where the
@@ -106,8 +118,7 @@
     </li>
     <li>
       <a href="/notes/european-vs-american-waterfall/">
-        <span class="kicker">Private Equity</span>
-        <h2>American vs European waterfall, with the numbers worked</h2>
+        <h2>European vs American waterfalls, with the numbers worked</h2>
         <p>
           The same two deals through both structures. Same fund, same total profit,
           and a six million dollar difference in what the manager is holding when the
@@ -117,7 +128,6 @@
     </li>
     <li>
       <a href="/notes/equalization-and-the-mid-period-subscriber/">
-        <span class="kicker">Hedge Funds</span>
         <h2>Equalization, and what a mid-period subscriber actually owes</h2>
         <p>
           An investor who buys after a drawdown rides the recovery without paying an
@@ -129,7 +139,6 @@
     </li>
     <li>
       <a href="/notes/high-water-marks-and-partial-redemptions/">
-        <span class="kicker">Fees</span>
         <h2>High-water marks and the partial redemption</h2>
         <p>
           Half the money leaves. The loss carried forward against the half that
@@ -140,7 +149,6 @@
     </li>
     <li>
       <a href="/notes/what-an-opening-balance-has-to-carry/">
-        <span class="kicker">Conversion</span>
         <h2>What an opening balance has to carry</h2>
         <p>
           A trial balance says where a fund stands, not enough to compute what
@@ -151,7 +159,6 @@
     </li>
     <li>
       <a href="/notes/which-columns-can-be-added/">
-        <span class="kicker">Reporting</span>
         <h2>Which columns can be added, and which cannot</h2>
         <p>
           A weighted average and an average of averages differ by $300,000 a year on
@@ -171,11 +178,11 @@
     <p><a class="btn" href="/#contact">Request a demo</a></p>
   </div>
 
-  <p class="fine" style="max-width:52rem;margin:2.5rem auto 0;opacity:.75">
+  <p class="fine measure">
     These notes work through mechanics with real numbers, for people who do this
     for a living. They are not accounting, legal, tax or investment advice, and
     fund terms vary in ways that change the answer.
-    <a href="/terms/" style="color:inherit">The detail is here</a>.
+    <a href="/terms/">The detail is here</a>.
   </p>
 
   <footer class="site">
