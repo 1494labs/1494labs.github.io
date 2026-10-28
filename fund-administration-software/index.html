@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fund administration software &middot; 1494 Labs</title>
-<meta name="description" content="Fund administration software: many client funds on one platform, isolated per tenant, with a two-axis period close, reconciliation breaks with a worklist, ILPA-native reporting and an API every screen already runs on.">
+<meta name="description" content="Fund administration software: many client funds on one platform, isolated per tenant, with a two-axis period close, reconciliation exceptions with a worklist, ILPA-native reporting and an API every screen already runs on.">
 <link rel="canonical" href="https://1494labs.com/fund-administration-software/">
 <link rel="stylesheet" href="/assets/notes.88c6de6f.css">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -16,14 +16,14 @@
 <meta property="og:url" content="https://1494labs.com/fund-administration-software/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="Fund administration software">
-<meta property="og:description" content="Many clients on one platform, isolated per tenant, with a real period close, reconciliation breaks and an API every screen already runs on.">
+<meta property="og:description" content="Many clients on one platform, isolated per tenant, with a real period close, reconciliation exceptions and an API every screen already runs on.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Fund administration software">
-<meta name="twitter:description" content="Many clients on one platform, isolated per tenant, with a real period close, reconciliation breaks and an API every screen already runs on.">
+<meta name="twitter:description" content="Many clients on one platform, isolated per tenant, with a real period close, reconciliation exceptions and an API every screen already runs on.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 <meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
 
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Fund administration software",
-  "description": "Fund administration software: many client funds on one platform, isolated per tenant, with a two-axis period close, reconciliation breaks with a worklist, ILPA-native reporting and an API every screen already runs on.",
+  "description": "Fund administration software: many client funds on one platform, isolated per tenant, with a two-axis period close, reconciliation exceptions with a worklist, ILPA-native reporting and an API every screen already runs on.",
   "url": "https://1494labs.com/fund-administration-software/",
   "inLanguage": "en",
   "isPartOf": { "@type": "WebSite", "name": "1494 Labs", "url": "https://1494labs.com/" },
@@ -135,9 +135,11 @@
       <li><span class="tick">&#10003;</span><span>Schema-per-tenant isolation, not a filter on a shared table</span></li>
       <li><span class="tick">&#10003;</span><span>Per-fund fiscal calendars, and a close that seals without freezing the current view</span></li>
       <li><span class="tick">&#10003;</span><span>Two-axis review and close, with a checklist and a controller's dashboard</span></li>
-      <li><span class="tick">&#10003;</span><span>Reconciliation breaks with a worklist, not a report nobody reads</span></li>
+      <li><span class="tick">&#10003;</span><span>Reconciliation exceptions with a worklist, not a report nobody reads</span></li>
       <li><span class="tick">&#10003;</span><span>Bulk CSV loaders for the systems that will never have an API</span></li>
-      <li><span class="tick">&#10003;</span><span>More than 800 endpoints under one OpenAPI spec</span></li>
+      <li><span class="tick">&#10003;</span><span>More than 1,800 API operations under one OpenAPI spec</span></li>
+      <li><span class="tick">&#10003;</span><span>Shadow reconciliation that ties an outside administrator&rsquo;s pack to the book</span></li>
+      <li><span class="tick">&#10003;</span><span>Investor statements laid out from a client&rsquo;s own PDF</span></li>
     </ul>
 
     <h2>A close that actually closes</h2>
@@ -158,41 +160,37 @@
     </p>
 
     <figure class="shot">
-      <img src="/assets/screens/statement-of-changes.67d73569.jpg" width="1568" height="603"
+      <img src="/assets/screens/statement-of-changes.39e06e66.jpg" width="1488" height="374"
            loading="lazy" decoding="async" alt="A Statement of Changes in Partners' Capital, from beginning capital through contributions, net income and fees to ending capital.">
       <figcaption><b>Ending capital ties to the dashboard NAV to the cent.</b> Both figures are reads of the same ledger, so no reconciliation runs between them.</figcaption>
     </figure>
 
     <figure class="shot">
-      <img src="/assets/screens/fee-gross-to-net.99533fe4.jpg" width="1485" height="812"
-           loading="lazy" decoding="async" alt="A gross-to-net fee disclosure with total gross, adjustments and net, and per-account management fee accruals beneath.">
+      <img src="/assets/screens/fee-gross-to-net.a19c17c9.jpg" width="1600" height="1000"
+           loading="lazy" decoding="async" alt="A fee gross-to-net statement: five management fee accruals, each from gross accrual to net fee, totaling $65,934.06 gross and net with no offsets, waivers or rebates.">
       <figcaption><b>Gross to net, per accrual, per client.</b> Each posted fee keeps the locked step sequence it was calculated with - gross, then offsets, waivers and rebates, then net - read back from that snapshot rather than recomputed later against terms that may since have changed.</figcaption>
     </figure>
 
-    <h2>Breaks with somewhere to go, and two kinds of them</h2>
+    <h2>Exceptions with somewhere to go, and two kinds of them</h2>
     <p>
       A reconciliation report that nobody works is a compliance artifact rather
-      than a control. Breaks here are records with a lifecycle: detected,
+      than a control. Exceptions here are records with a lifecycle: detected,
       assigned, explained, resolved, with the detector that found each one named
       and an aged worklist rather than a monthly PDF.
     </p>
     <p>
       Be clear about which kind, because the word means different things to a
-      vendor and to your team. <strong>Internal breaks</strong> are what the
+      vendor and to your team. <strong>Internal exceptions</strong> are what the
       daily sweep produces: capital accounts against the ledger, allocations
       against the pool, cash movements against the entries that produced them.
-      <strong>External breaks</strong> come from a counterparty file, and are
-      the ones your morning actually consists of. Cash against the bank runs
-      from an imported statement, and positions against a custodian&rsquo;s
-      file; NAV against an outside administrator is still on the build list.
-      The worklist, the aging and the accept-with-a-note decision are the same
-      for both, and the screens below are a bank statement&rsquo;s.
+      <strong>External exceptions</strong> come from a counterparty file, and are
+      the ones your morning actually consists of. Cash against the bank runs from an imported statement, positions against a custodian&rsquo;s file, and an outside administrator&rsquo;s pack (fund and class NAV, capital accounts, trial balance, cash, positions and fees, as CSV or XLSX) ties out on the Shadow tab, with each administrator&rsquo;s column layout remembered for next period. The worklist, the aging and the accept-with-a-note decision are the same for all three, and the screens below are a bank statement&rsquo;s.
     </p>
 
     <figure class="shot">
-      <img src="/assets/screens/break-detail.79825a87.jpg" width="1568" height="980"
+      <img src="/assets/screens/break-detail.dc783d42.jpg" width="1600" height="1000"
            loading="lazy" decoding="async"
-           alt="A break detail panel for the operating cash account at 2026-06-30: the bank statement&rsquo;s closing balance of $747,850.00 against the book&rsquo;s $750,000.00, a difference of $2,150.00, a reason field, and buttons to acknowledge, resolve or accept the difference.">
+           alt="An exception detail panel for the operating cash account at 2026-06-30: the bank statement&rsquo;s closing balance of $747,850.00 against the book&rsquo;s $750,000.00, a difference of $2,150.00, a reason field, and buttons to acknowledge, resolve or accept the difference.">
       <figcaption>
         <b>Expected, actual, difference, and a decision with a name on it.</b>
         Resolve and accept are deliberately different: resolved means the
@@ -212,26 +210,25 @@
     </p>
 
     <figure class="shot">
-      <img src="/assets/screens/cash-movements.9a4bd52c.jpg" width="1568" height="812"
+      <img src="/assets/screens/cash-movements.61bcbb09.jpg" width="1486" height="774"
            loading="lazy" decoding="async" alt="A cash movements blotter of settled movements: investments into underlying managers, investor subscriptions, and transfers between the fund&rsquo;s own cash accounts, each with its source and counterparty.">
       <figcaption><b>Cash movements, with their sources.</b> Bulk selection and row actions across the grids, because an administrator's day is spent on many rows at once rather than one.</figcaption>
     </figure>
 
-    <h2>The break worklist</h2>
+    <h2>The exceptions worklist</h2>
     <p>
-      A break names the fund, the period and the amount. The worklist, the aging and the accept-with-a-note decision are the same whether the break came from the daily internal sweep or from a counterparty file.
+      An exception names the fund, the period and the amount. The worklist, the aging and the accept-with-a-note decision are the same whether the exception came from the daily internal sweep or from a counterparty file.
     </p>
 
 <figure class="shot">
-      <img src="/assets/screens/reconciliation-breaks.343bde19.jpg" width="1568" height="113"
+      <img src="/assets/screens/reconciliation-breaks.3b91eb16.jpg" width="1486" height="103"
            loading="lazy" decoding="async"
-           alt="A reconciliation break worklist: two open breaks on the operating cash account, raised by an imported bank statement. The closing balance differs from the book by $2,150.00, and one statement line of -$2,150.00 matches nothing in the book.">
+           alt="The exceptions worklist: two open exceptions on the operating cash account, raised by an imported bank statement. The closing balance differs from the book by $2,150.00, and one statement line of -$2,150.00 matches nothing in the book.">
       <figcaption>
         <b>A finding has somewhere to land.</b>
         An imported bank statement matched every line but one, a $2,150 fee
-        the book never recorded, and raised two breaks: the balance and the
-        unmatched line. A break ages, gets assigned, and keeps what was decided
-        about it, so next month&rsquo;s break on the same account arrives with
+        the book never recorded, and raised two exceptions: the balance and the unmatched line. An exception ages, gets assigned, and keeps what was decided
+        about it, so next month&rsquo;s exception on the same account arrives with
         last month&rsquo;s reasoning attached.
       </figcaption>
     </figure>

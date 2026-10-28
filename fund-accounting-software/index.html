@@ -136,6 +136,8 @@
       <li><span class="tick">&#10003;</span><span>The arithmetic of every fund re-checked every morning</span></li>
       <li><span class="tick">&#10003;</span><span>Financial statements that are reads of the book, not exports from it</span></li>
       <li><span class="tick">&#10003;</span><span>Every screen runs on the same public API you get</span></li>
+      <li><span class="tick">&#10003;</span><span>Every money figure explains itself: its rule, inputs, source transactions, journal entries and change history</span></li>
+      <li><span class="tick">&#10003;</span><span>US GAAP or IFRS per fund, with the fair value hierarchy note and prior-period comparatives</span></li>
     </ul>
 
     <h2>One ledger, two books</h2>
@@ -156,9 +158,9 @@
     </p>
 
     <figure class="shot">
-      <img src="/assets/screens/fund-dashboard.9ea67fa8.jpg" width="1568" height="941"
-           loading="lazy" decoding="async" alt="A fund dashboard showing NAV as of a selected period, position value, fees accrued and operating cash against its floor.">
-      <figcaption><b>NAV as of the period you actually selected.</b> The positions behind it, the fees posted to date, and the cash the fund can spend, with the floor it is measured against.</figcaption>
+      <img src="/assets/screens/fund-dashboard.8d533a4c.jpg" width="1600" height="1000"
+           loading="lazy" decoding="async" alt="The fund overview on Home: NAV from the struck version for the selected period, that period&rsquo;s fees, and position value and operating cash read live, with the floor the cash is measured against.">
+      <figcaption><b>Each figure names its snapshot.</b> NAV is the struck version for the period you selected, fees are that period&rsquo;s, and anything read from the books as they stand now is marked Live, including the cash the fund can spend and the floor it is measured against.</figcaption>
     </figure>
 
     <h2>Every vehicle, not a product tier per vehicle</h2>
@@ -186,14 +188,14 @@
     </p>
 
     <figure class="shot">
-      <img src="/assets/screens/income-statement.096401d5.jpg" width="1568" height="537"
+      <img src="/assets/screens/income-statement.7581fcbf.jpg" width="1488" height="417"
            loading="lazy" decoding="async" alt="An income statement with trading gains, administration fee expense and directors' fees, totalling net income.">
       <figcaption><b>Real operating expenses carrying their GL codes.</b> Expenses post through the income and expense domain, which is also the only place the allocation engine can see them, so a cost that reaches NAV reaches capital accounts too.</figcaption>
     </figure>
 
     <figure class="shot">
-      <img src="/assets/screens/allocation-per-investor.1317385d.jpg" width="1485" height="928"
-           loading="lazy" decoding="async" alt="A per-investor allocation run with each investor's capital roll-forward and a fund total that reconciles.">
+      <img src="/assets/screens/allocation-per-investor.c3091f57.jpg" width="1436" height="235"
+           loading="lazy" decoding="async" alt="A per-investor allocation for the period: six investors by name, each with opening capital, net profit and loss, and ending capital.">
       <figcaption><b>The period's profit and loss, split across investors.</b> Opening $23,499,503.07, net $125,969.93, ending $23,625,473.00 - which is the NAV on the dashboard above. Fees and expenses are attributed per investor rather than netted at the fund and apportioned afterwards.</figcaption>
     </figure>
 
@@ -205,7 +207,7 @@
       high-water mark lost in a redemption. Nobody re-adds a fund by hand each
       month, so they surface at the audit as a restatement.
       So every morning the platform re-computes the figures that are supposed
-      to tie, for each fund it holds, and opens a break naming the fund, the
+      to tie, for each fund it holds, and opens an exception naming the fund, the
       period and the amount where something does not. That check currently runs
       against our own reference funds.
     </p>
@@ -216,15 +218,15 @@
     </p>
 
     <figure class="shot">
-      <img src="/assets/screens/nav-restatement.a7b330be.jpg" width="1568" height="977"
+      <img src="/assets/screens/nav-restatement.f2e59da4.jpg" width="1600" height="1000"
            loading="lazy" decoding="async" alt="A NAV restatement history listing every mutation to a fund's NAV with prior value, new value and delta.">
       <figcaption><b>Every change to a struck NAV keeps its own record.</b> The trail is a property of the ledger rather than a log somebody remembered to keep.</figcaption>
     </figure>
 
     <figure class="shot">
-      <img src="/assets/screens/trial-balance.f180edf1.jpg" width="1485" height="627"
-           loading="lazy" decoding="async" alt="A trial balance of thirteen accounts marked Balanced, with a banner explaining the period is open so the balance is derived live.">
-      <figcaption><b>And the ledger those statements read.</b> Marked <em>balanced</em>, and it states its provenance: this period is open, so the figure is derived now across all periods. Close the period and the trial balance is frozen as an artifact, which is what a statement produced a year later reads from.</figcaption>
+      <img src="/assets/screens/trial-balance.164f78ab.jpg" width="1486" height="556"
+           loading="lazy" decoding="async" alt="A trial balance of thirteen accounts by code and category, with debits and credits each totaling $28,515,992.43 and a cent of rounding shown on its own line.">
+      <figcaption><b>And the ledger those statements read.</b> Debits and credits foot to the same $28,515,992.43, and the cent of rounding is a line of its own rather than absorbed into an account. Close the period and the trial balance is frozen as a revision the database will not let anyone edit, which is what a statement produced a year later reads from.</figcaption>
     </figure>
 
     <h2>Built for the vehicle you actually run</h2>
