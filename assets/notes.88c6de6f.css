@@ -3,21 +3,22 @@
    Tokens, type and the site header come from /DESIGN.md and match the home
    page's inline styles; change both together. */
 
-@font-face{font-family:"Public Sans";font-style:normal;font-weight:400;font-display:swap;
-  src:url("/assets/fonts/public-sans-latin-400-normal.woff2") format("woff2")}
-@font-face{font-family:"Public Sans";font-style:normal;font-weight:500;font-display:swap;
-  src:url("/assets/fonts/public-sans-latin-500-normal.woff2") format("woff2")}
-@font-face{font-family:"Public Sans";font-style:normal;font-weight:600;font-display:swap;
-  src:url("/assets/fonts/public-sans-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Geist Sans";font-style:normal;font-weight:400;font-display:swap;
+  src:url("/assets/fonts/geist-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Geist Sans";font-style:normal;font-weight:500;font-display:swap;
+  src:url("/assets/fonts/geist-sans-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Geist Sans";font-style:normal;font-weight:600;font-display:swap;
+  src:url("/assets/fonts/geist-sans-latin-600-normal.woff2") format("woff2")}
 
 :root{
-  --ground:#F4F4F2; --sheet:#FFFFFF;
-  --ink:#1A1D21; --ink-2:#3F454D; --muted:#5F666E;
-  --rule:#D9D9D4; --rule-faint:#E8E8E4;
-  --teal:#176B75; --teal-deep:#0F4F57; --teal-tint:#E5F0F1;
-  --claret:#94263C; --amber:#7A5200; --amber-tint:#FBF1DC;
-  --sans:"Public Sans",system-ui,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --ground:#F6F7F9; --sheet:#FFFFFF;
+  --ink:#0A0C10; --ink-2:#3A4150; --muted:#5B6372;
+  --rule:#DFE2E8; --rule-faint:#ECEEF2;
+  --accent:#2638F0; --accent-deep:#1A27B8; --accent-tint:#E8EBFF;
+  --tie:#CDF25A;
+  --loss:#C81E3A; --attention:#6D28D9; --attention-tint:#F1EAFD;
+  --sans:"Geist Sans",system-ui,sans-serif;
+  --mono:"Geist Mono",ui-monospace,monospace;
   --measure:38rem;
   --gutter:clamp(20px,5vw,40px);
 }
@@ -34,7 +35,7 @@ body{
   font-variant-numeric:tabular-nums;
   -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
 }
-::selection{background:var(--teal-tint);color:var(--ink)}
+::selection{background:var(--accent-tint);color:var(--ink)}
 
 .wrap{max-width:46rem;margin:0 auto;padding:40px var(--gutter) 72px}
 .measure{max-width:var(--measure)}
@@ -45,7 +46,7 @@ header.site .bar{
   display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;
 }
 .lockup{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
-.lockup svg{width:28px;height:28px;color:var(--teal);flex:none}
+.lockup svg{width:28px;height:28px;color:var(--accent);flex:none}
 .wordmark{font-size:1.25rem;font-weight:600;letter-spacing:-.01em;line-height:1}
 .sitenav{display:flex;flex-wrap:wrap;gap:4px 24px}
 .sitenav a{
@@ -53,8 +54,8 @@ header.site .bar{
   text-underline-offset:6px;text-decoration-thickness:1px;
 }
 .sitenav a:hover,.sitenav a[aria-current="page"]{color:var(--ink);text-decoration-line:underline}
-.sitenav a.demo{color:var(--teal);font-weight:600}
-.sitenav a.demo:hover{color:var(--teal-deep)}
+.sitenav a.demo{color:var(--accent);font-weight:600}
+.sitenav a.demo:hover{color:var(--accent-deep)}
 /* Phone width (#1449): the four links fold behind one Menu button (a native
    <details>, so it needs no script) and open as a list of 44px rows under the
    bar. The desktop nav is the same four links; only one of the two shows. */
@@ -71,7 +72,7 @@ header.site .bar{
   }
   .navmenu summary::-webkit-details-marker{display:none}
   .navmenu summary svg{width:20px;height:20px;flex:none}
-  .navmenu summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+  .navmenu summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .navmenu nav{
     position:absolute;left:0;right:0;top:100%;z-index:10;
     display:flex;flex-direction:column;
@@ -83,7 +84,7 @@ header.site .bar{
     touch-action:manipulation;
   }
   .navmenu nav a[aria-current="page"]{color:var(--ink);font-weight:600}
-  .navmenu nav a.demo{color:var(--teal);font-weight:600}
+  .navmenu nav a.demo{color:var(--accent);font-weight:600}
 }
 
 /* ── typography ───────────────────────────────────────── */
@@ -105,9 +106,9 @@ h3{font-weight:600;font-size:1.25rem;line-height:1.3;color:var(--ink);margin:32p
 p{margin:0 0 16px}
 strong{font-weight:600;color:var(--ink)}
 em{font-style:italic}
-a{color:var(--teal);text-underline-offset:2px}
-a:hover{color:var(--teal-deep)}
-a:focus-visible,.btn:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+a{color:var(--accent);text-underline-offset:2px}
+a:hover{color:var(--accent-deep)}
+a:focus-visible,.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 code{
   font-family:var(--mono);font-size:.875rem;color:var(--ink);background:var(--sheet);
   border:1px solid var(--rule-faint);border-radius:2px;padding:1px 4px;
@@ -131,7 +132,7 @@ td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 /* A total: one ink rule above the figure, two below. */
 tr.total td{font-weight:600;border-top:1px solid var(--ink)}
 tr.total td.n{border-bottom:3px double var(--ink)}
-.neg{color:var(--claret)}
+.neg{color:var(--loss)}
 
 /* ── callouts ─────────────────────────────────────────── */
 .note{background:var(--sheet);border:1px solid var(--rule);padding:16px 24px;margin:24px 0}
@@ -142,8 +143,8 @@ tr.total td.n{border-bottom:3px double var(--ink)}
 .notelist{list-style:none;margin:40px 0 0;padding:0;max-width:var(--measure)}
 .notelist li{margin:0 0 32px}
 .notelist a{text-decoration:none;color:inherit;display:block}
-.notelist h2{font-size:1.25rem;line-height:1.3;margin:0 0 8px;color:var(--teal)}
-.notelist a:hover h2{color:var(--teal-deep);text-decoration:underline;text-underline-offset:3px}
+.notelist h2{font-size:1.25rem;line-height:1.3;margin:0 0 8px;color:var(--accent)}
+.notelist a:hover h2{color:var(--accent-deep);text-decoration:underline;text-underline-offset:3px}
 .notelist p{color:var(--ink-2);margin:0}
 .fine{font-size:.875rem;color:var(--muted)}
 .endcta + .fine{margin-top:40px}
@@ -158,10 +159,10 @@ tr.total td.n{border-bottom:3px double var(--ink)}
 .endcta p:last-child{margin-bottom:0}
 .btn{
   display:inline-block;font-family:var(--sans);font-size:1rem;font-weight:600;line-height:1.25;
-  background:var(--teal);color:var(--sheet);text-decoration:none;
+  background:var(--accent);color:var(--sheet);text-decoration:none;
   padding:10px 20px;border-radius:2px;
 }
-.btn:hover{background:var(--teal-deep);color:var(--sheet)}
+.btn:hover{background:var(--accent-deep);color:var(--sheet)}
 
 footer.site{
   margin-top:72px;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;
@@ -194,10 +195,10 @@ article > .shot{max-width:none}
   padding:8px 0;color:var(--ink-2);
 }
 /* The tick is drawn, not a glyph: the character stays in the markup for text
-   readers and is painted over by the teal mark. */
+   readers and is painted over by the accent mark. */
 .keypoints .tick{
   flex:none;width:14px;height:14px;align-self:center;overflow:hidden;color:transparent;
-  background:var(--teal);
+  background:var(--accent);
   -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M2 7.5 5.5 11 12 3.5' fill='none' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E") center/contain no-repeat;
   mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M2 7.5 5.5 11 12 3.5' fill='none' stroke='%23000' stroke-width='2'/%3E%3C/svg%3E") center/contain no-repeat;
 }
@@ -210,4 +211,13 @@ article > .shot{max-width:none}
 @media (min-width:1180px){
   article > .shot{width:58rem;margin-left:50%;transform:translateX(-50%)}
   article > .shot figcaption{max-width:46rem;margin-left:auto;margin-right:auto}
+}
+
+/* Phone hit areas (#1453). Icons and desktop geometry keep DESIGN.md's sizes;
+   standalone links own their padding. Links inside prose stay inline. */
+@media (max-width:767.98px){
+  .lockup,.sitenav a,.btn,.btnlink,.solutions h3 a,footer.site a{
+    display:inline-flex;align-items:center;min-width:44px;min-height:44px;
+  }
+  .fg input,.fg select{min-height:44px}
 }

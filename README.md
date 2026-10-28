@@ -53,7 +53,7 @@ a minute or two, and Cloudflare sits in front with a 600s TTL.
 ```
 index.html          the home page (styles inline)
 assets/notes.css    the stylesheet for every other page
-assets/fonts/       Public Sans 400/500/600 (OFL)
+assets/fonts/       Geist Sans 400/500/600 (OFL)
 assets/             mark, favicons, og.png
 site.webmanifest    PWA/app icons
 robots.txt          allows all, points at the sitemap
@@ -69,10 +69,10 @@ Visual decisions follow `/DESIGN.md`. Do not add colors, fonts or radii outside 
 The mark is a **T-account**, the glyph of double entry. A ruled head, a center
 stem dividing debit from credit, and two entries of equal weight either side.
 
-Since issue 1442 every page uses DESIGN.md's palette (ground `#F4F4F2`, ink
-`#1A1D21`, teal `#176B75` as the one accent, claret only for a loss) and one
-typeface, Public Sans 400/500/600, self-hosted from `assets/fonts/` with
-tabular figures on. The home page carries its styles inline; every other page
+Every page uses DESIGN.md's direction-A palette (ground `#F6F7F9`, ink
+`#0A0C10`, ultramarine `#2638F0` as the one accent, crimson only for a loss,
+chartreuse `#CDF25A` only behind the tie mark) and one typeface, Geist Sans
+400/500/600, self-hosted from `assets/fonts/` with tabular figures on. The home page carries its styles inline; every other page
 uses `assets/notes.css`. Both declare the same tokens and the same site header
 (mark, wordmark, four links), so change them together. The site has one light
 palette: DESIGN.md defines no dark one.

@@ -59,18 +59,19 @@
 <style>
 /* Tokens, type and the site header follow /DESIGN.md and match
    /assets/notes.css, which every other page uses; change both together. */
-@font-face{font-family:"Public Sans";font-style:normal;font-weight:400;font-display:swap;
-  src:url("/assets/fonts/public-sans-latin-400-normal.woff2") format("woff2")}
-@font-face{font-family:"Public Sans";font-style:normal;font-weight:500;font-display:swap;
-  src:url("/assets/fonts/public-sans-latin-500-normal.woff2") format("woff2")}
-@font-face{font-family:"Public Sans";font-style:normal;font-weight:600;font-display:swap;
-  src:url("/assets/fonts/public-sans-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Geist Sans";font-style:normal;font-weight:400;font-display:swap;
+  src:url("/assets/fonts/geist-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Geist Sans";font-style:normal;font-weight:500;font-display:swap;
+  src:url("/assets/fonts/geist-sans-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:"Geist Sans";font-style:normal;font-weight:600;font-display:swap;
+  src:url("/assets/fonts/geist-sans-latin-600-normal.woff2") format("woff2")}
 :root{
-  --ground:#F4F4F2; --sheet:#FFFFFF;
-  --ink:#1A1D21; --ink-2:#3F454D; --muted:#5F666E;
-  --rule:#D9D9D4; --rule-faint:#E8E8E4;
-  --teal:#176B75; --teal-deep:#0F4F57; --teal-tint:#E5F0F1;
-  --sans:"Public Sans",system-ui,sans-serif;
+  --ground:#F6F7F9; --sheet:#FFFFFF;
+  --ink:#0A0C10; --ink-2:#3A4150; --muted:#5B6372;
+  --rule:#DFE2E8; --rule-faint:#ECEEF2;
+  --accent:#2638F0; --accent-deep:#1A27B8; --accent-tint:#E8EBFF;
+  --tie:#CDF25A;
+  --sans:"Geist Sans",system-ui,sans-serif;
   --measure:38rem;
   --gutter:clamp(20px,5vw,40px);
 }
@@ -83,10 +84,10 @@ body{
   font-variant-numeric:tabular-nums;
   -webkit-font-smoothing:antialiased;
 }
-::selection{background:var(--teal-tint);color:var(--ink)}
+::selection{background:var(--accent-tint);color:var(--ink)}
 .wrap{max-width:70rem;margin:0 auto;padding:0 var(--gutter)}
-a{color:var(--teal);text-underline-offset:2px}
-a:hover{color:var(--teal-deep)}
+a{color:var(--accent);text-underline-offset:2px}
+a:hover{color:var(--accent-deep)}
 
 /* ── site header: the same on every page ──────────────── */
 header.site .bar{
@@ -94,7 +95,7 @@ header.site .bar{
   display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;
 }
 .lockup{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
-.lockup svg{width:28px;height:28px;color:var(--teal);flex:none}
+.lockup svg{width:28px;height:28px;color:var(--accent);flex:none}
 .wordmark{font-size:1.25rem;font-weight:600;letter-spacing:-.01em;line-height:1}
 .sitenav{display:flex;flex-wrap:wrap;gap:4px 24px}
 .sitenav a{
@@ -102,8 +103,8 @@ header.site .bar{
   text-underline-offset:6px;text-decoration-thickness:1px;
 }
 .sitenav a:hover{color:var(--ink);text-decoration-line:underline}
-.sitenav a.demo{color:var(--teal);font-weight:600}
-.sitenav a.demo:hover{color:var(--teal-deep)}
+.sitenav a.demo{color:var(--accent);font-weight:600}
+.sitenav a.demo:hover{color:var(--accent-deep)}
 /* Phone width (#1449): the four links fold behind one Menu button (a native
    <details>, so it needs no script) and open as a list of 44px rows under the
    bar. The desktop nav is the same four links; only one of the two shows. */
@@ -120,7 +121,7 @@ header.site .bar{
   }
   .navmenu summary::-webkit-details-marker{display:none}
   .navmenu summary svg{width:20px;height:20px;flex:none}
-  .navmenu summary:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+  .navmenu summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .navmenu nav{
     position:absolute;left:0;right:0;top:100%;z-index:10;
     display:flex;flex-direction:column;
@@ -132,7 +133,7 @@ header.site .bar{
     touch-action:manipulation;
   }
   .navmenu nav a[aria-current="page"]{color:var(--ink);font-weight:600}
-  .navmenu nav a.demo{color:var(--teal);font-weight:600}
+  .navmenu nav a.demo{color:var(--accent);font-weight:600}
 }
 
 /* ── hero ───────────────────────────────────────────────── */
@@ -166,12 +167,12 @@ p{max-width:var(--measure);margin:0 0 16px}
 
 /* ── cta ────────────────────────────────────────────────── */
 .btn{
-  display:inline-block;background:var(--teal);color:var(--sheet);
+  display:inline-block;background:var(--accent);color:var(--sheet);
   text-decoration:none;font-size:1rem;font-weight:600;line-height:1.25;
-  padding:10px 20px;border-radius:2px;border:1px solid var(--teal);
+  padding:10px 20px;border-radius:2px;border:1px solid var(--accent);
 }
-.btn:hover{background:var(--teal-deep);border-color:var(--teal-deep);color:var(--sheet)}
-.btn:focus-visible,a:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.btn:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:var(--sheet)}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .cta-note{font-size:.875rem;color:var(--muted);margin-top:16px}
 
 /* ── form ───────────────────────────────────────────────── */
@@ -186,7 +187,7 @@ p{max-width:var(--measure);margin:0 0 16px}
 .fg textarea{min-height:88px;resize:vertical}
 .fg textarea::placeholder{color:var(--muted);opacity:1}
 .fg input:focus,.fg select:focus,.fg textarea:focus{
-  outline:2px solid var(--teal);outline-offset:0;border-color:var(--teal);
+  outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent);
 }
 .fg .hint{font-size:.875rem;color:var(--muted);margin:4px 0 0}
 button.btn{cursor:pointer;font-family:inherit}
@@ -231,8 +232,9 @@ footer.site{padding:40px 0 56px}
 .ledgerfig{margin:0 0 24px}
 .ledgerfig figcaption{font-size:.875rem;line-height:1.5;color:var(--muted);margin:12px 0 0;max-width:42rem;text-wrap:pretty}
 .ledgerfig figcaption b{color:var(--ink);font-weight:600}
-/* The check beside the total (DESIGN.md tie-out): a small teal tick, then what it ties to. */
-.ledgerfig .tick svg{display:inline-block;width:14px;height:14px;margin:0 6px -2px 0;color:var(--teal)}
+/* The check beside the total (DESIGN.md tie mark): ink on chartreuse, a tick, then what it ties to. */
+.ledgerfig .tick{background:var(--tie);color:var(--ink);padding:1px 6px;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.ledgerfig .tick svg{display:inline-block;width:14px;height:14px;margin:0 6px -2px 0;color:var(--ink)}
 .ledger{width:100%;border-collapse:collapse;color:var(--ink);font-variant-numeric:tabular-nums}
 .ledger th,.ledger td{padding:8px 0 8px 24px;border-bottom:1px solid var(--rule-faint);white-space:nowrap;text-align:right;font-weight:400}
 .ledger th:first-child{padding-left:0;text-align:left}
@@ -260,15 +262,24 @@ footer.site{padding:40px 0 56px}
 
 /* A secondary hero action. Two filled buttons give a visitor two equal choices
    at the moment the page wants them to have one. */
-.btnlink{font-weight:600;color:var(--teal)}
-.btnlink:hover{color:var(--teal-deep)}
+.btnlink{font-weight:600;color:var(--accent)}
+.btnlink:hover{color:var(--accent-deep)}
 
 /* The honeypot. Off-screen rather than display:none - see the comment on the
    field itself. */
 /* Keyboard users land here first; it shows only when focused. */
-.skip{position:absolute;left:var(--gutter);top:-48px;z-index:20;background:var(--sheet);color:var(--teal);padding:8px 12px;border:1px solid var(--rule);border-radius:2px}
+.skip{position:absolute;left:var(--gutter);top:-48px;z-index:20;background:var(--sheet);color:var(--accent);padding:8px 12px;border:1px solid var(--rule);border-radius:2px}
 .skip:focus{top:8px}
 .hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+
+/* Phone hit areas (#1453). Icons and desktop geometry keep DESIGN.md's sizes;
+   standalone links own their padding. Links inside prose stay inline. */
+@media (max-width:767.98px){
+  .lockup,.sitenav a,.btn,.btnlink,.solutions h3 a,footer.site a{
+    display:inline-flex;align-items:center;min-width:44px;min-height:44px;
+  }
+  .fg input,.fg select{min-height:44px}
+}
 </style>
 </head>
 <body>
