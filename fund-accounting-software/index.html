@@ -66,7 +66,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What does fund accounting software need to do?", "acceptedAnswer": { "@type": "Answer", "text": "At minimum: hold a general ledger, strike a NAV, keep a capital account per investor, allocate income and expense to those accounts, calculate management and incentive fees, and produce financial statements that tie to the ledger. Most of the difficulty is in the last word: producing a statement is easy, producing one that still reconciles to the ledger after a restatement is not." } },
+    { "@type": "Question", "name": "What does fund accounting software need to do?", "acceptedAnswer": { "@type": "Answer", "text": "At minimum: hold a general ledger, calculate a NAV, keep a capital account per investor, allocate income and expense to those accounts, calculate management and incentive fees, and produce financial statements that tie to the ledger. Most of the difficulty is in that last requirement: the statement has to keep reconciling to the ledger after a restatement." } },
     { "@type": "Question", "name": "What is the difference between ABOR and IBOR?", "acceptedAnswer": { "@type": "Answer", "text": "The accounting book of record is the official set of books, on an accounting basis, respecting period boundaries. The investment book of record is the current position and exposure view, typically on trade date and intraday. Most platforms keep them in separate systems and reconcile overnight. 1494 Labs records each economic event once and treats the two as views over the same journal entries." } },
     { "@type": "Question", "name": "Can funding and liquidity terms vary by fund?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. A fund can raise committed capital through calls or take subscriptions against NAV. Redemption dates, notice, lock-ups and gates are configured separately from that funding model. Both flows post to the same ledger." } }
   ]
@@ -108,7 +108,7 @@
 <div class="wrap">
 
   <h1>Fund accounting software that checks its own books</h1>
-  <p class="standfirst">Most systems tell you what the books say. The interesting question is whether anything checks that what they say is true.</p>
+  <p class="standfirst">Most systems report what the books say. This one also re-checks, each morning, that the ledger, the NAV and the capital accounts still agree.</p>
   <p class="byline">Platform overview &middot; roughly 6 minutes</p>
 
   <article>
@@ -124,18 +124,15 @@
     </p>
     <p>
       1494 Labs is built the other way round. One ledger carries the accounting
-      book and the investment book. Capital accounts are derived from postings
-      rather than kept beside them. Ownership is derived from capital rather than
-      asserted alongside it. And each fund's arithmetic is re-checked every morning,
-      so a book that has drifted says so in the period rather than at the audit.
+      book and the investment book. Capital accounts are built from the journal entries. Ownership is derived from the capital accounts. And each fund's arithmetic is re-checked every morning, so a book that has drifted says so in the period it drifted.
     </p>
 
     <ul class="keypoints">
       <li><span class="tick">&#10003;</span><span>One ledger for the accounting book and the investment book</span></li>
       <li><span class="tick">&#10003;</span><span>Capital accounts derived from the ledger, per investor, per period</span></li>
       <li><span class="tick">&#10003;</span><span>The arithmetic of every fund re-checked every morning</span></li>
-      <li><span class="tick">&#10003;</span><span>Financial statements that are reads of the book, not exports from it</span></li>
-      <li><span class="tick">&#10003;</span><span>Every screen runs on the same public API you get</span></li>
+      <li><span class="tick">&#10003;</span><span>Financial statements read directly from the book</span></li>
+      <li><span class="tick">&#10003;</span><span>Every screen uses the same public API you get, so your own systems can do anything a person can</span></li>
       <li><span class="tick">&#10003;</span><span>Every money figure explains itself: its rule, inputs, source transactions, journal entries and change history</span></li>
       <li><span class="tick">&#10003;</span><span>US GAAP or IFRS per fund, with the fair value hierarchy note and prior-period comparatives</span></li>
       <li><span class="tick">&#10003;</span><span>Credit facilities on both sides: the fund's own borrowing lines, and the loans it makes, from term loans to committed lines with commitment fees on the undrawn balance, PIK and default interest</span></li>
@@ -152,31 +149,30 @@
     </p>
     <p>
       Recording each economic event once, and treating trade date and settlement
-      date as lenses over the same journal entries, removes the reconciliation
-      rather than automating it. That is a stronger claim than "our reconciliation
-      is very good", and it is worth being precise about which one a vendor is
-      making. We wrote up the distinction, and how to test it, in
+      date as two views of the same journal entries, removes the reconciliation altogether: there is one set of entries, so there
+      is nothing to reconcile. Ask a vendor which it is offering, one book or a
+      well-automated reconciliation between two. We wrote up the distinction, and how to test it, in
       <a href="/notes/abor-and-ibor/">ABOR and IBOR, and why most systems keep them apart</a>.
     </p>
 
     <figure class="shot">
       <img src="/assets/screens/fund-dashboard.8d533a4c.jpg" width="1600" height="1000"
-           loading="lazy" decoding="async" alt="The fund overview on Home: NAV from the struck version for the selected period, that period&rsquo;s fees, and position value and operating cash read live, with the floor the cash is measured against.">
-      <figcaption><b>Each figure names its snapshot.</b> NAV is the struck version for the period you selected, fees are that period&rsquo;s, and anything read from the books as they stand now is marked Live, including the cash the fund can spend and the floor it is measured against.</figcaption>
+           loading="lazy" decoding="async" alt="The fund overview on Home: the NAV calculated for the selected period, that period's fees, and position value and operating cash read live, with the floor the cash is measured against.">
+      <figcaption><b>Each figure says which point in time it reflects.</b> NAV is the one calculated for the period you selected, fees are that period's, and anything read from the books as they stand now is marked Live, including the cash the fund can spend and the floor it is measured against.</figcaption>
     </figure>
 
-    <h2>Every vehicle, not a product tier per vehicle</h2>
+    <h2>Every vehicle type, in one product</h2>
     <p>
       Pooled funds, funds-of-one, separately managed accounts, trusts, family
       partnerships, holding companies and asset SPVs. Committed-capital and
       subscription-funded. Unitized and capital-based. Master-feeder structures where the feeder picks
-      up master profit and loss through a real internal position rather than a
-      journal entry somebody types each month.
+      up master profit and loss through a real internal position held on the
+      ledger, so nobody types a journal entry for it each month.
     </p>
     <p>
       Funding model and liquidity terms are separate fund settings. A drawdown fund
       can use commitments, calls, recallable distributions and a waterfall. A
-      subscription-funded fund can take money at each period's struck NAV, while
+      subscription-funded fund can take money at each period's final NAV, while
       redemption dates, notice, lock-ups and gates set how investors leave. Both
       post to the same ledger, and a fund that changes shape does not change systems.
     </p>
@@ -185,20 +181,19 @@
     <p>
       An income statement, a balance sheet, a statement of changes in partners'
       capital and a schedule of investments are four questions put to one ledger.
-      Ending capital on one ties to NAV on another because it is the same book read
-      twice, not two reports assembled from two extracts.
+      Ending capital on one ties to NAV on another because both read the same book.
     </p>
 
     <figure class="shot">
       <img src="/assets/screens/income-statement.7581fcbf.jpg" width="1488" height="417"
-           loading="lazy" decoding="async" alt="An income statement with trading gains, administration fee expense and directors' fees, totalling net income.">
-      <figcaption><b>Real operating expenses carrying their GL codes.</b> Expenses post through the income and expense domain, which is also the only place the allocation engine can see them, so a cost that reaches NAV reaches capital accounts too.</figcaption>
+           loading="lazy" decoding="async" alt="An income statement with trading gains, administration fee expense and directors' fees, totaling net income.">
+      <figcaption><b>Real operating expenses carrying their GL codes.</b> Expenses post through the income and expense ledger, which is also the only source the allocation to investors reads, so a cost that reaches NAV reaches capital accounts too.</figcaption>
     </figure>
 
     <figure class="shot">
       <img src="/assets/screens/allocation-per-investor.c3091f57.jpg" width="1436" height="235"
            loading="lazy" decoding="async" alt="A per-investor allocation for the period: six investors by name, each with opening capital, net profit and loss, and ending capital.">
-      <figcaption><b>The period's profit and loss, split across investors.</b> Opening $23,499,503.07, net $125,969.93, ending $23,625,473.00 - which is the NAV on the dashboard above. Fees and expenses are attributed per investor rather than netted at the fund and apportioned afterwards.</figcaption>
+      <figcaption><b>The period's profit and loss, split across investors.</b> Opening $23,499,503.07, net $125,969.93, ending $23,625,473.00 - which is the NAV on the dashboard above. Fees and expenses are attributed per investor, directly to the accounts that bear them.</figcaption>
     </figure>
 
     <h2>The error that survives review</h2>
@@ -215,20 +210,19 @@
     </p>
     <p>
       When a number does change, the change keeps its own record: prior value, new
-      value, delta and cause, per event. A correction is a fact about the book, not
-      an embarrassment to be smoothed over.
+      value, delta and cause, per event. A correction stays on the record as a fact about the book.
     </p>
 
     <figure class="shot">
       <img src="/assets/screens/nav-restatement.f2e59da4.jpg" width="1600" height="1000"
-           loading="lazy" decoding="async" alt="A NAV restatement history listing every mutation to a fund's NAV with prior value, new value and delta.">
-      <figcaption><b>Every change to a struck NAV keeps its own record.</b> The trail is a property of the ledger rather than a log somebody remembered to keep.</figcaption>
+           loading="lazy" decoding="async" alt="A NAV restatement history listing every change to a fund's NAV with prior value, new value and delta.">
+      <figcaption><b>Every change to a calculated NAV keeps its own record.</b> The ledger keeps the trail itself, so nobody has to remember to.</figcaption>
     </figure>
 
     <figure class="shot">
       <img src="/assets/screens/trial-balance.164f78ab.jpg" width="1486" height="556"
            loading="lazy" decoding="async" alt="A trial balance of thirteen accounts by code and category, with debits and credits each totaling $28,515,992.43 and a cent of rounding shown on its own line.">
-      <figcaption><b>And the ledger those statements read.</b> Debits and credits foot to the same $28,515,992.43, and the cent of rounding is a line of its own rather than absorbed into an account. Close the period and the trial balance is frozen as a revision the database will not let anyone edit, which is what a statement produced a year later reads from.</figcaption>
+      <figcaption><b>And the ledger those statements read.</b> Debits and credits foot to the same $28,515,992.43, and the cent of rounding sits on a line of its own. Close the period and the trial balance is locked as a revision the system will not let anyone edit, which is what a statement produced a year later reads from.</figcaption>
     </figure>
 
     <h2>Built for the vehicle you actually run</h2>
@@ -239,15 +233,17 @@
       <li><a href="/fund-administration-software/">Fund Administrators</a> &middot; many clients, one platform</li>
       <li><a href="/notes/a-wrong-number-that-agrees-with-itself/">A wrong number that agrees with itself</a> &middot; what the morning check is for</li>
       <li><a href="/notes/which-columns-can-be-added/">Which columns can be added</a> &middot; subtotals that stay honest under grouping</li>
+      <li><a href="https://docs.1494labs.com/guide/journal-entries-and-the-ledger/">Journal entries and the ledger</a> in the product docs</li>
+      <li><a href="https://docs.1494labs.com/developer/api/">The API reference</a> in the product docs: every screen uses it</li>
     </ul>
 
     <div class="endcta">
       <h2>Show us the fund that breaks your current system</h2>
       <p>
-        Built for the people who have to sign the books, not only read them.
-        Tell us what you run and we will walk you through it on real books
-        rather than slides. If you would rather get your own hands on it, we
-        will stand up a sandbox seeded with reference funds for you to work in.
+        Built for the people who sign the books.
+        Tell us what you run and we will walk you through it in the product,
+        on a running book. If you want to try it yourself, we will stand up a
+        sandbox seeded with reference funds for you to work in.
       </p>
       <p><a class="btn" href="/#contact">Request a demo</a></p>
     </div>

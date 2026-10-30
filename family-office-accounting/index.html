@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Family office accounting software &middot; 1494 Labs</title>
-<meta name="description" content="Family office accounting software: consolidated net worth across trusts, holding companies, partnerships and SPVs, with intercompany interests eliminated and ownership derived from capital accounts rather than typed into a spreadsheet.">
+<meta name="description" content="Family office accounting software: consolidated net worth across trusts, holding companies, partnerships and SPVs, with intercompany interests eliminated and ownership derived from the capital accounts each period.">
 <link rel="canonical" href="https://1494labs.com/family-office-accounting/">
 <link rel="stylesheet" href="/assets/notes.88c6de6f.css">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -16,14 +16,14 @@
 <meta property="og:url" content="https://1494labs.com/family-office-accounting/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="Family office accounting software">
-<meta property="og:description" content="Consolidated net worth across trusts, holdcos, partnerships and SPVs, with ownership derived from capital rather than asserted.">
+<meta property="og:description" content="Consolidated net worth across trusts, holdcos, partnerships and SPVs, with ownership derived from the capital accounts.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Family office accounting software">
-<meta name="twitter:description" content="Consolidated net worth across trusts, holdcos, partnerships and SPVs, with ownership derived from capital rather than asserted.">
+<meta name="twitter:description" content="Consolidated net worth across trusts, holdcos, partnerships and SPVs, with ownership derived from the capital accounts.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 <meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
 
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Family office accounting software",
-  "description": "Family office accounting software: consolidated net worth across trusts, holding companies, partnerships and SPVs, with intercompany interests eliminated and ownership derived from capital accounts rather than typed into a spreadsheet.",
+  "description": "Family office accounting software: consolidated net worth across trusts, holding companies, partnerships and SPVs, with intercompany interests eliminated and ownership derived from the capital accounts each period.",
   "url": "https://1494labs.com/family-office-accounting/",
   "inLanguage": "en",
   "isPartOf": { "@type": "WebSite", "name": "1494 Labs", "url": "https://1494labs.com/" },
@@ -66,9 +66,9 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "How is a family office's net worth calculated across entities?", "acceptedAnswer": { "@type": "Answer", "text": "By walking the ownership graph and weighting each vehicle's assets by effective ownership, then eliminating the interests vehicles hold in each other so nothing is counted twice. 1494 Labs derives the ownership edges from capital accounts rather than taking asserted percentages, so the consolidated figure and the ownership tree cannot disagree." } },
+    { "@type": "Question", "name": "How is a family office's net worth calculated across entities?", "acceptedAnswer": { "@type": "Answer", "text": "By tracing ownership through every layer of the structure and weighting each vehicle's assets by effective ownership, then eliminating the interests vehicles hold in each other so nothing is counted twice. 1494 Labs derives each ownership percentage from capital accounts, so the consolidated figure and the ownership chart cannot disagree." } },
     { "@type": "Question", "name": "What is an intercompany elimination in a family office?", "acceptedAnswer": { "@type": "Answer", "text": "When a trust owns a holding company that owns a partnership, the trust's balance sheet carries an interest in the holding company and the holding company carries an interest in the partnership. Adding them all together double counts the underlying assets. The elimination removes the internal interests so the total is the real assets, once each." } },
-    { "@type": "Question", "name": "Can it handle several generations and several branches?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Multiple top-level vehicles are normal: a family with four generation trusts over one holding company has four apexes and one shared structure below them. The whole-structure view draws that as the graph it is, with each vehicle appearing once and its owners converging on it." } }
+    { "@type": "Question", "name": "Can it handle several generations and several branches?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Multiple top-level vehicles are normal: a family with four generation trusts over one holding company has four top-level owners and one shared structure below them. The whole-structure view draws it that way, with each vehicle appearing once and its owners converging on it." } }
   ]
 }
 </script>
@@ -108,14 +108,14 @@
 <div class="wrap">
 
   <h1>Family office accounting, with the structure drawn from the capital</h1>
-  <p class="standfirst">A family office is a graph of vehicles that own each other, and the
-    accounting problem is what that graph adds up to once the intercompany
+  <p class="standfirst">A family office is a web of vehicles that own each other, and the
+    accounting problem is what that web adds up to once the intercompany
     interests are taken out.</p>
   <p class="byline">Solutions &middot; roughly 6 minutes</p>
 
   <article>
 
-    <h2>The problem is the graph</h2>
+    <h2>The problem is the structure</h2>
     <p>
       Ask a single family office what it is worth and the answer involves a
       diagram. There is a revocable trust from 1998, two more for the second
@@ -132,15 +132,15 @@
     </p>
 
     <ul class="keypoints">
-      <li><span class="tick">&#10003;</span><span>Ownership derived from capital accounts, never asserted alongside them</span></li>
+      <li><span class="tick">&#10003;</span><span>Ownership derived from the capital accounts, period by period</span></li>
       <li><span class="tick">&#10003;</span><span>Intercompany interests eliminated, so nothing is counted twice</span></li>
       <li><span class="tick">&#10003;</span><span>Legal and consolidated views of the same structure</span></li>
       <li><span class="tick">&#10003;</span><span>Trusts, GRATs, partnerships, holding companies and asset SPVs on one platform</span></li>
       <li><span class="tick">&#10003;</span><span>Real assets and digital assets on the same ledger as the funds</span></li>
-      <li><span class="tick">&#10003;</span><span>Net worth and exposure translated into the family&rsquo;s reporting currency</span></li>
+      <li><span class="tick">&#10003;</span><span>Net worth and exposure translated into the family's reporting currency</span></li>
     </ul>
 
-    <h2>Ownership is derived, not typed</h2>
+    <h2>Ownership is derived from capital</h2>
     <p>
       The usual failure here is a spreadsheet of ownership percentages maintained
       beside the accounting. It is correct on the day it is written and wrong the
@@ -149,7 +149,7 @@
       updated.
     </p>
     <p>
-      1494 Labs derives the ownership edges from the capital accounts themselves,
+      1494 Labs derives each ownership percentage from the capital accounts themselves,
       per period. If a trust contributes to the holding company, its share moves
       because its capital moved. The structure diagram and the net worth statement
       are two readings of the same underlying record, so there is no version of
@@ -170,16 +170,14 @@
       wrapped inside the holding company's interest.
     </p>
     <p>
-      The consolidated view removes those internal interests explicitly and shows
-      you the removal rather than hiding it. On a structure like the one above,
+      The consolidated view removes those internal interests explicitly and shows you the removal in its own column. On a structure like the one above,
       more than a billion dollars of intercompany interest is eliminated between
-      the legal totals and the consolidated one. That column is the whole reason
-      the consolidated number can be trusted.
+      the legal totals and the consolidated one. That column is what lets you check the consolidated number.
     </p>
 
     <h2>The structure, from any angle</h2>
     <p>
-      The same graph draws as a top-down org chart, a left-to-right chart, or a
+      The same structure draws as a top-down org chart, a left-to-right chart, or a
       value-weighted flow. From one vehicle downward, when the question is what
       this trust owns; or the entire structure at once, when the question is what
       the family owns. A structure with several tops cannot be drawn from any one
@@ -189,7 +187,7 @@
     <figure class="shot">
       <img src="/assets/screens/structure-graph.60cc35a2.jpg" width="1600" height="1000"
            loading="lazy" decoding="async" alt="The whole ownership structure as an org chart: four trusts, a holding company, a family partnership, six asset vehicles and a co-investment vehicle.">
-      <figcaption><b>Every vehicle once, with its owners converging on it.</b> Ownership is a directed graph, not a tree, so drawing it as a forest of trees would repeat the shared vehicles once per branch.</figcaption>
+      <figcaption><b>Every vehicle once, with its owners converging on it.</b> One vehicle can have several owners, so drawing the structure as separate trees would repeat the shared vehicles once per branch.</figcaption>
     </figure>
 
     <h2>Beyond the marketable book</h2>
@@ -198,8 +196,7 @@
       other tangible assets carry measurement and appraisal histories. Digital
       assets carry custody locations. Both post to the same ledger as the fund
       interests and the public equity, under the same rules and with the same
-      audit trail, which is what makes a single consolidated statement possible
-      at all.
+      audit trail, so one consolidated statement covers all of it.
     </p>
 
     <h2>If you already have a reporting layer</h2>
@@ -207,19 +204,18 @@
     Most family offices we talk to are running two things: something that
     aggregates and reports on the family's wealth, and something else keeping
     the general ledger. The reporting layer is usually the one people are happy
-    with. The ledger underneath it is usually the one they are not.
+    with; the complaints are about the ledger underneath it.
   </p>
   <p>
     This is the ledger underneath. An aggregation or reporting platform the
-    family is happy with should be reading from the accounting book rather than
-    being sent an export of it. Every endpoint here is public under one spec,
-    and a script authenticates the same way the application does, so anything
-    that speaks HTTP can read the book or write to it.
+    family is happy with should read straight from the accounting book. Everything the application does is available through a public, documented
+    API, and a script signs in the same way a person does, so any system your
+    team or vendor already runs can read the book or post to it.
   </p>
   <p>
     Custodians, banks, portals, data vendors and the family's own warehouse
-    integrate against that same surface. For systems that will never have an
-    API, 58 bulk-load endpoints take the file instead. Connecting it to what
+    connect through that same API. For systems that will never have an
+    API, 58 bulk loaders accept a file. Connecting it to what
     you already run is scoped as its own piece of work, against your actual
     systems.
   </p>
@@ -246,15 +242,17 @@
       <li><a href="/fund-accounting-software/">The platform overview</a></li>
       <li><a href="/notes/abor-and-ibor/">ABOR and IBOR, and why most systems keep them apart</a></li>
       <li><a href="/private-equity-fund-accounting/">Private equity fund accounting</a> &middot; for the commitments underneath</li>
+      <li><a href="https://docs.1494labs.com/guide/structures-and-ownership/">Structures and ownership</a> in the product docs</li>
+      <li><a href="https://docs.1494labs.com/guide/portfolio-companies-and-consolidation/">Portfolio companies and consolidation</a> in the product docs</li>
     </ul>
 
     <div class="endcta">
       <h2>Show us the fund that breaks your current system</h2>
       <p>
-        Built for the people who have to sign the books, not only read them.
-        Tell us what you run and we will walk you through it on real books
-        rather than slides. If you would rather get your own hands on it, we
-        will stand up a sandbox seeded with reference funds for you to work in.
+        Built for the people who sign the books.
+        Tell us what you run and we will walk you through it in the product,
+        on a running book. If you want to try it yourself, we will stand up a
+        sandbox seeded with reference funds for you to work in.
       </p>
       <p><a class="btn" href="/#contact">Request a demo</a></p>
     </div>

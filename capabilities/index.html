@@ -108,9 +108,9 @@
     <table class="matrix">
       <thead><tr><th scope="col">Capability</th><th scope="col">Status</th></tr></thead>
       <tbody>
-        <tr><th scope="row"><a href="/notes/equalization-and-the-mid-period-subscriber/">Equalization</a>, with the series method as a first-class alternative</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row"><a href="/notes/equalization-and-the-mid-period-subscriber/">Equalization</a> or series accounting, chosen per fund</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr class="note-row"><td colspan="2">Both the equalization-factor and series approaches, per fund.</td></tr>
-        <tr><th scope="row"><a href="/notes/high-water-marks-and-partial-redemptions/">High-water marks</a> carried per investor, not per fund</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row"><a href="/notes/high-water-marks-and-partial-redemptions/">High-water marks</a> carried per investor</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr><th scope="row">The mark survives partial redemption, transfer and restatement</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr><th scope="row">Side pockets that split dealing NAV from total NAV</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr><th scope="row">Configurable <a href="/notes/european-vs-american-waterfall/">waterfall tiers</a></th><td><span class="status st-shipped">Shipped</span></td></tr>
@@ -128,8 +128,8 @@
     <table class="matrix">
       <thead><tr><th scope="col">Capability</th><th scope="col">Status</th></tr></thead>
       <tbody>
-        <tr><th scope="row">Official and latest-knowledge books on one ledger, with row provenance</th><td><span class="status st-shipped">Shipped</span></td></tr>
-        <tr class="note-row"><td colspan="2">Each row can say how it would read under the other book, and the delta is exact because it differences two real reads.</td></tr>
+        <tr><th scope="row">Official and latest-knowledge books on one ledger, with the source of every line</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr class="note-row"><td colspan="2">Each line can show how it would read under the other book, and the difference is exact because both figures come from the ledger itself.</td></tr>
         <tr><th scope="row">Multi-asset on one book</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr><th scope="row">Drawdown commitments, calls and distributions</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr><th scope="row">ILPA call/distribution notices and line-item codes</th><td><span class="status st-shipped">Shipped</span></td></tr>
@@ -139,7 +139,7 @@
         <tr><th scope="row">Credit facilities on both sides: the fund&#x27;s own borrowing lines and the loans it makes</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr class="note-row"><td colspan="2">Subscription lines and asset-based lines carry a borrowing base, draws, repayments and interest. Loans the fund makes carry their terms, servicing events and cash receipts.</td></tr>
         <tr><th scope="row">Form PF and Form ADV Schedule D answers derived from the book</th><td><span class="status st-shipped">Shipped</span></td></tr>
-        <tr class="note-row"><td colspan="2">Each answer cites the rows it came from, and a missing input shows as a gap, never a zero. Exported for a compliance vendor or prepared for filing.</td></tr>
+        <tr class="note-row"><td colspan="2">Each answer cites the rows it came from, and a missing input shows as an explicit gap. Exported for a compliance vendor or prepared for filing.</td></tr>
       </tbody>
     </table>
     </div>
@@ -149,15 +149,15 @@
     <table class="matrix">
       <thead><tr><th scope="col">Capability</th><th scope="col">Status</th></tr></thead>
       <tbody>
-        <tr><th scope="row">Every UI action available on the public API</th><td><span class="status st-shipped">Shipped</span></td></tr>
-        <tr><th scope="row">Saved analyses that recompute server-side and serve as REST</th><td><span class="status st-shipped">Shipped</span></td></tr>
-        <tr><th scope="row">Agent access over MCP, as first-class tools</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">Everything you can do on screen, available through the public API</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">Saved analyses that refresh on the platform and can be pulled by other systems through the API</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">AI assistants can read the book through MCP, the standard connector for AI tools</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr><th scope="row">AI extraction from statements and LPAs, with mandatory human confirmation</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr class="note-row"><td colspan="2">Nothing AI-derived posts without a person confirming it.</td></tr>
-        <tr><th scope="row">A daily sweep that re-proves the arithmetic on every fund on the platform</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr><th scope="row">A daily check that recomputes the arithmetic on every fund on the platform</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr class="note-row"><td colspan="2">Capital accounts against the ledger, allocations against the pool, cash movements against the entries that produced them. With no customers on the platform yet, it runs against our own reference funds - which is what it would do against yours, on the same schedule, with nothing to set up.</td></tr>
         <tr><th scope="row">Internal exceptions: a worklist, aging, and an accept-with-a-note decision</th><td><span class="status st-shipped">Shipped</span></td></tr>
-        <tr class="note-row"><td colspan="2">An exception names the fund, the period and the amount. What the sweep does NOT do is tell you a price was wrong - it proves the book is not lying to itself, which is a smaller claim than checking your numbers against a custodian&#x27;s.</td></tr>
+        <tr class="note-row"><td colspan="2">An exception names the fund, the period and the amount. The check proves the book agrees with itself. Whether a price was right is a separate question, answered by checking against a custodian&#x27;s numbers.</td></tr>
         <tr><th scope="row">External exceptions: cash against an imported bank statement, positions against a custodian&#x27;s file</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr class="note-row"><td colspan="2">A statement&#x27;s lines auto-match the book only when exactly one movement fits; anything else is left for a person, and what is left over raises an exception on the same worklist as the internal ones.</td></tr>
         <tr><th scope="row">External exceptions: NAV against an outside administrator&#x27;s file</th><td><span class="status st-shipped">Shipped</span></td></tr>
@@ -172,15 +172,15 @@
       <thead><tr><th scope="col">Capability</th><th scope="col">Status</th></tr></thead>
       <tbody>
         <tr><th scope="row">Order and execution management</th><td><span class="status st-no">No</span></td></tr>
-        <tr class="note-row"><td colspan="2">We are the book of record, not the trading stack. There is no order ticket and there will not be one.</td></tr>
+        <tr class="note-row"><td colspan="2">We are the book of record. There is no order ticket and there will not be one.</td></tr>
         <tr><th scope="row">Custody, or moving money</th><td><span class="status st-no">No</span></td></tr>
-        <tr class="note-row"><td colspan="2">The platform produces the payment file an operator carries to their banking portal. It holds no rails credentials and initiates no transfers.</td></tr>
+        <tr class="note-row"><td colspan="2">The platform produces the payment file an operator carries to their banking portal. It holds no credentials for any bank or payment system and initiates no transfers.</td></tr>
         <tr><th scope="row">Tax return preparation and K-1 filing</th><td><span class="status st-no">No</span></td></tr>
-        <tr class="note-row"><td colspan="2">No K-1 workflow exists anywhere in the product. The book supports a preparer; it does not replace one.</td></tr>
+        <tr class="note-row"><td colspan="2">No K-1 workflow exists anywhere in the product. The book supports a tax preparer.</td></tr>
         <tr><th scope="row">An LP-facing investor portal</th><td><span class="status st-no">No</span></td></tr>
         <tr class="note-row"><td colspan="2">Statements are produced for an administrator to send. There is no investor login.</td></tr>
         <tr><th scope="row">Market data and pricing feeds we supply</th><td><span class="status st-no">No</span></td></tr>
-        <tr class="note-row"><td colspan="2">Bring your own provider. We ship the harness that ingests a feed and will not resell data or imply a license we do not hold.</td></tr>
+        <tr class="note-row"><td colspan="2">Bring your own provider. We provide the connection that loads your provider&#x27;s feed and will not resell data or imply a license we do not hold.</td></tr>
         <tr><th scope="row">A third-party security attestation</th><td><span class="status st-roadmap">Roadmap 2027Q2</span></td></tr>
         <tr class="note-row"><td colspan="2">No report today. The security page lists the controls that are in place and the ones that are not.</td></tr>
         <tr><th scope="row">A native mobile application</th><td><span class="status st-no">No</span></td></tr>

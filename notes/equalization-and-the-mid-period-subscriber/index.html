@@ -118,7 +118,7 @@
   <p class="standfirst">
     An investor who subscribes after a drawdown can ride the recovery without
     paying an incentive fee, because the loss being carried forward is somebody
-    else's. This is not an edge case, it is the normal consequence of running one
+    else's. It is the normal consequence of running one
     NAV per share, and there are only two ways out of it.
   </p>
   <p class="byline">Hedge Funds &middot; roughly 6 minutes</p>
@@ -171,8 +171,7 @@
     <div class="note">
       <span class="tag">Who pays</span>
       <p>
-        Nothing in the fund's accounts is out of balance here. The money is not
-        missing, it was never charged. This is why the problem survives audits and
+        Nothing in the fund's accounts is out of balance here. The money was simply never charged. This is why the problem survives audits and
         surfaces years later, usually when a manager finally reconstructs why a
         strong year earned so little.
       </p>
@@ -184,7 +183,7 @@
     </p>
     <p>
       A fund sits at its mark of $100 in January and rises to $120 gross by June.
-      The administrator strikes a 20% accrual of $4 a share, so the published NAV
+      The administrator books a 20% accrual of $4 a share, so the published NAV
       is $116. Investor B subscribes in July at $116. By December the fund has
       given it all back: gross is $100, the accrual reverses in full, and the
       published NAV is $100.
@@ -193,7 +192,7 @@
       A is flat on the year and pays nothing, which is right. B paid $116 and
       holds $100, a loss of $16 a share, on a gross move that was $20 a share. B
       has absorbed $4 a share less than the market delivered, because B captured
-      the reversal of an accrual struck on gains earned between January and June,
+      the reversal of an accrual booked on gains earned between January and June,
       when B was not in the fund. That $4 came out of A's pocket.
     </p>
 
@@ -201,7 +200,7 @@
     <p>
       Give each subscription date its own series of shares, with its own NAV and
       its own high-water mark. In the first example B enters a second series at
-      $80, carrying a mark of $80 rather than $100.
+      $80, carrying a mark of $80. A's mark stays at $100.
     </p>
     <div class="tablewrap">
     <table>
@@ -271,18 +270,15 @@
         equalization credit, depreciation deposit, contingent redemption,
         equalization factor. Two administrators will use the same word for
         different mechanics, and the offering document will sometimes use a third.
-        When comparing two funds, compare the mechanism and the worked example,
-        never the label.
+        When comparing two funds, compare the mechanism and run the same example
+        through each. The label tells you very little.
       </p>
     </div>
 
-    <h2>The problem is an artifact of shares</h2>
+    <h2>The problem comes from issuing shares</h2>
     <p>
-      Everything above is a consequence of issuing units. A fund that allocates
-      profit to capital accounts instead never meets it. Each partner has an
-      account, each account carries its own high-water mark, and profit is
-      allocated to accounts rather than expressed as a price that all of them
-      share. Two partners who joined two years apart have two different marks and
+      Everything above is a consequence of issuing units. A fund that allocates profit to capital accounts never meets it. Each partner has an
+      account, each account carries its own high-water mark, and profit is allocated to each account directly. Two partners who joined two years apart have two different marks and
       nothing has to reconcile them, because there is no single per-unit number
       trying to be correct for both.
     </p>
@@ -325,16 +321,14 @@
     <ul class="pagelinks">
       <li><a href="/notes/high-water-marks-and-partial-redemptions/">High-water marks and the partial redemption</a>, the same mark on the way out</li>
       <li><a href="/hedge-fund-accounting/">Hedge fund accounting</a>, including series and crystallization</li>
+      <li><a href="https://docs.1494labs.com/guide/the-investor-lifecycle/">The investor lifecycle</a> in the product docs: subscriptions, redemptions and transfers as ledger events</li>
     </ul>
 
     <div class="endcta">
       <h2>How we handle it</h2>
       <p>
-        1494 Labs carries the high-water mark per series and per capital account
-        rather than per fund, and supports both models: series accounting with
-        per-period series identity, and equalization on a single NAV. Which one a
-        fund uses is a setting on the fund, because the answer is in its offering
-        document rather than in our architecture.
+        1494 Labs carries the high-water mark per series and per capital account, and supports both models: series accounting with a separate series for each subscription period, and equalization on a single NAV. Which one a
+        fund uses is a setting on the fund, because the answer is in its offering document.
       </p>
       <p><a class="btn" href="/#contact">Get in touch</a></p>
     </div>

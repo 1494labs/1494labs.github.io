@@ -68,7 +68,7 @@
   "mainEntity": [
     { "@type": "Question", "name": "What is series accounting in a hedge fund?", "acceptedAnswer": { "@type": "Answer", "text": "When investors subscribe at different times, a single share class cannot charge incentive fees fairly: a new investor would otherwise pay performance fees on gains that happened before they arrived. Series accounting issues each subscription cohort its own series with its own high-water mark, so each cohort accrues incentive fees against its own performance, and the series consolidate once they have equalized." } },
     { "@type": "Question", "name": "How is a high-water mark maintained through a redemption?", "acceptedAnswer": { "@type": "Answer", "text": "A redemption reduces the balance the mark applies to, but must not reset the mark itself, or an investor could redeem and re-subscribe to erase a loss carryforward. The same applies to transfers and to restatements of a prior period, which is why the morning check confirms that every high-water mark survived all three." } },
-    { "@type": "Question", "name": "Can it run a fund of hedge funds?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Underlying fund positions carry cost basis, unrealized gain and a valuation date per manager, with manager marks and true-ups when an estimate is replaced by a final. Look-through exposure and acquired-fee disclosure are computed through the ownership graph rather than collected by email." } }
+    { "@type": "Question", "name": "Can it run a fund of hedge funds?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Underlying fund positions carry cost basis, unrealized gain and a valuation date per manager, with manager marks and true-ups when an estimate is replaced by a final. Look-through exposure and acquired-fee disclosure are computed through the ownership structure from the positions on the book." } }
   ]
 }
 </script>
@@ -128,7 +128,7 @@
       <li><span class="tick">&#10003;</span><span>Equalization, including the credit and depreciation deposit method</span></li>
       <li><span class="tick">&#10003;</span><span>Incentive fees or incentive allocations, crystallized or accrued</span></li>
       <li><span class="tick">&#10003;</span><span>Side pockets that ring-fence frozen participation and split dealing NAV from total NAV</span></li>
-      <li><span class="tick">&#10003;</span><span>Sleeves as a first-class ledger dimension, not a reporting tag</span></li>
+      <li><span class="tick">&#10003;</span><span>Sleeves carried on the journal entries themselves</span></li>
       <li><span class="tick">&#10003;</span><span>Form PF Sections 1 and 2 derived from positions, financing, investor and risk records, each answer citing its source</span></li>
     </ul>
 
@@ -142,30 +142,28 @@
       twice for the same gain or never pays for it at all.
     </p>
     <p>
-      It is one of the checks the morning sweep runs on every fund it holds:
+      It is one of the checks the morning run makes on every fund it holds:
       each high-water mark must have survived its redemptions, its transfers
-      and any restatement of the period it was measured in. The sweep
-      currently runs against our own reference funds.
+      and any restatement of the period it was measured in. The check currently runs against our own reference funds.
     </p>
 
     <figure class="shot">
       <img src="/assets/screens/fund-dashboard.8d533a4c.jpg" width="1600" height="1000"
-           loading="lazy" decoding="async" alt="The fund overview on Home: NAV from the struck version for the selected period, that period&rsquo;s fees, and position value and operating cash read live, with the floor the cash is measured against.">
-      <figcaption><b>NAV as of the period actually selected.</b> From its struck version, with the fees accrued in that period and the cash the fund can spend against its configured floor.</figcaption>
+           loading="lazy" decoding="async" alt="The fund overview on Home: the NAV calculated for the selected period, that period's fees, and position value and operating cash read live, with the floor the cash is measured against.">
+      <figcaption><b>NAV as of the period actually selected.</b> The NAV calculated for that period, with the fees accrued in it and the cash the fund can spend against its configured floor.</figcaption>
     </figure>
 
     <figure class="shot">
       <img src="/assets/screens/allocation-per-investor.c3091f57.jpg" width="1436" height="235"
            loading="lazy" decoding="async" alt="A per-investor allocation for the period: six investors by name, each with opening capital, net profit and loss, and ending capital.">
-      <figcaption><b>Each investor&rsquo;s roll-forward, by name.</b> Opening, the period&rsquo;s net profit and loss, ending. Shown narrowed to the columns that foot to the NAV; the same grid carries profit and loss by component, fees per investor, and a rate of return with quarter and year to date geometrically linked. A period an investor was not in is marked as a gap, not silently linked through.</figcaption>
+      <figcaption><b>Each investor's roll-forward, by name.</b> Opening, the period's net profit and loss, ending. Shown narrowed to the columns that foot to the NAV; the same table carries profit and loss by component, fees per investor, and a rate of return with quarter and year to date geometrically linked. A period an investor was not in is marked as a gap.</figcaption>
     </figure>
 
-    <h2>A fund of funds is a book, not a list</h2>
+    <h2>A fund of funds, kept as a book</h2>
     <p>
       Underlying fund positions carry a cost basis, an unrealized gain and a
       valuation date per manager. When a manager sends an estimate and later a
-      final, the true-up is a correction with its own record rather than an
-      overwrite, and it is seal-safe: a closed period can be corrected without
+      final, the true-up is a correction with its own record, and a closed period can be corrected without
       breaking what was already reported.
     </p>
 
@@ -185,13 +183,13 @@
 
     <figure class="shot">
       <img src="/assets/screens/cash-movements.61bcbb09.jpg" width="1486" height="774"
-           loading="lazy" decoding="async" alt="A cash movements blotter of settled movements: investments into underlying managers, investor subscriptions, and transfers between the fund&rsquo;s own cash accounts, each with its source and counterparty.">
-      <figcaption><b>Every movement carries its source, counterparty and settlement status.</b> Payments to underlying managers name the manager, subscriptions name the investor, and a transfer between the fund&rsquo;s own accounts is derived from the journal entry that moved it. One cash sub-ledger, reconciled against the bank statement.</figcaption>
+           loading="lazy" decoding="async" alt="A cash movements blotter of settled movements: investments into underlying managers, investor subscriptions, and transfers between the fund's own cash accounts, each with its source and counterparty.">
+      <figcaption><b>Every movement carries its source, counterparty and settlement status.</b> Payments to underlying managers name the manager, subscriptions name the investor, and a transfer between the fund's own accounts is derived from the journal entry that moved it. One cash sub-ledger, reconciled against the bank statement.</figcaption>
     </figure>
 
     <h2>A series is an identity the ledger keeps</h2>
     <p>
-      Series accounting is usually run beside the accounting system, in a workbook that remembers which cohort is which. Here each series has its own inception period and its own mark, and the morning check re-proves them.
+      Series accounting is usually run beside the accounting system, in a workbook that remembers which cohort is which. Here each series has its own inception period and its own mark, and the morning check re-checks them.
     </p>
 
     <figure class="shot">
@@ -203,7 +201,7 @@
 
     <h2>Crystallization, per investor and per event</h2>
     <p>
-      An incentive fee crystallizes when the terms say it does, not at year end by default: a redemption, a period close, a hurdle met. Each crystallization names the account it belongs to and the mark it was measured against.
+      An incentive fee crystallizes on the events the terms name, such as a redemption, a period close or a hurdle met. Each crystallization names the account it belongs to and the mark it was measured against.
     </p>
 
     <figure class="shot">
@@ -220,15 +218,17 @@
       <li><a href="/notes/high-water-marks-and-partial-redemptions/">High-water marks and the partial redemption</a></li>
       <li><a href="/notes/abor-and-ibor/">ABOR and IBOR, and why most systems keep them apart</a></li>
       <li><a href="/fund-administration-software/">For administrators running several hedge fund clients</a></li>
+      <li><a href="https://docs.1494labs.com/guide/fees-from-structure-to-charge/">Fees: from structure to charge</a> in the product docs</li>
+      <li><a href="https://docs.1494labs.com/guide/side-pockets/">Side pockets</a> in the product docs</li>
     </ul>
 
     <div class="endcta">
       <h2>Show us the fund that breaks your current system</h2>
       <p>
-        Built for the people who have to sign the books, not only read them.
-        Tell us what you run and we will walk you through it on real books
-        rather than slides. If you would rather get your own hands on it, we
-        will stand up a sandbox seeded with reference funds for you to work in.
+        Built for the people who sign the books.
+        Tell us what you run and we will walk you through it in the product,
+        on a running book. If you want to try it yourself, we will stand up a
+        sandbox seeded with reference funds for you to work in.
       </p>
       <p><a class="btn" href="/#contact">Request a demo</a></p>
     </div>

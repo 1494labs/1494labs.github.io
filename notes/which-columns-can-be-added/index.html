@@ -117,8 +117,7 @@
   <h1>Which columns can be added, and which cannot</h1>
   <p class="standfirst">
     A subtotal that is wrong looks exactly like a subtotal that is right. Every
-    reporting tool will happily add a column of percentages, and the resulting
-    number is not off by rounding, it is meaningless.
+    reporting tool will happily add a column of percentages, and the resulting number is meaningless.
   </p>
   <p class="byline">Reporting &middot; roughly 5 minutes</p>
 
@@ -126,8 +125,7 @@
 
     <h2>Four classes, three behaviors</h2>
     <p>
-      Whether a column can be aggregated is a property of the column, not of the
-      grid it happens to be in. The same table routinely contains columns from
+      Whether a column can be aggregated is a property of the column itself, whatever grid it sits in. The same table routinely contains columns from
       three of these classes at once.
     </p>
     <div class="tablewrap">
@@ -154,7 +152,7 @@
         <tr>
           <td><strong>Derived statistics</strong></td>
           <td>IRR, time-weighted return, volatility, Sharpe</td>
-          <td colspan="2">Recomputed from the combined series, never combined from the members' own figures</td>
+          <td colspan="2">Recomputed from the combined series</td>
         </tr>
       </tbody>
     </table>
@@ -173,8 +171,7 @@
       <figcaption>
         <b>Grouped in place, with the rows still underneath.</b>
         Subscriptions grouped by investor. The six subtotals foot to the $20,600,000 total above them, and the expanded group shows the three subscriptions that produce $4,800,000. Amount is a flow, so it sums; had a rate or a percentage been
-        on this grid it would have gone blank at the group level rather than
-        offering a number.
+        on this grid it would have gone blank at the group level.
       </figcaption>
     </figure>
 
@@ -203,8 +200,7 @@
     </p>
     <p>
       The same trap sits one level deeper. A weighted average computed at a
-      subtotal must run over the leaf rows beneath it, not over the subtotals
-      below it. Averaging subtotals that are themselves averages compounds the
+      subtotal must run over the individual rows beneath it. Averaging subtotals that are themselves averages compounds the
       error at every level, and a deep grouping tree can be wrong by a great deal
       more than this example.
     </p>
@@ -235,8 +231,8 @@
     </p>
     <p>
       For this to work the grid has to know that the denominator is external to
-      the rows on screen. That is a different kind of object from a column of
-      values, and most reporting layers have nowhere to put it.
+      the rows on screen. That is a different kind of thing from a column of values, and most
+      reporting tools have nowhere to put it.
     </p>
 
     <h2>Balances do not sum across time</h2>
@@ -248,20 +244,18 @@
     </p>
     <p>
       Contributions in the next column over do sum across those same twelve
-      months, correctly, because a flow is a quantity of money that moved. So the
-      rule cannot be applied to the grid, or to the grouping, only to the column.
+      months, correctly, because a flow is a quantity of money that moved. So the rule has to attach to the column itself.
       A balance column under a date grouping should go blank at and above the date
-      level, while the flow column beside it keeps totalling.
+      level, while the flow column beside it keeps totaling.
     </p>
 
     <h2>Statistics have no shortcut</h2>
     <p>
       A group's volatility is the volatility of the group's composite return
-      series. It is not the average of its members' volatilities, and no weighting
-      makes it so, because the members' returns are correlated and the statistic
+      series. Averaging the members' volatilities gets it
+      wrong under any weighting, because the members' returns are correlated and the statistic
       depends on that correlation. The same holds for Sharpe, beta and tracking
-      error. A group's IRR is the IRR of the combined cash flow stream, which
-      requires the streams, not the members' IRRs.
+      error. A group's IRR is the IRR of the combined cash flow stream, so it needs the members' cash flows themselves.
     </p>
     <p>
       So the honest answer at a subtotal is either the recomputed statistic or
@@ -295,7 +289,7 @@
         Group a holdings view by anything and look at the total.</span></li>
       <li><span class="tick">&#10003;</span><span><strong>Does a balance column blank out on a date axis</strong>
         while the flow column beside it keeps summing?</span></li>
-      <li><span class="tick">&#10003;</span><span><strong>What appears when a rollup cannot be computed?</strong>
+      <li><span class="tick">&#10003;</span><span><strong>What appears when a subtotal cannot be computed?</strong>
         A zero is the worst possible answer, because zero is a value.</span></li>
       <li><span class="tick">&#10003;</span><span><strong>What survives an export?</strong>
         Every one of these rules is enforced by the grid. A spreadsheet has no
@@ -307,18 +301,17 @@
       <li><a href="/notes/a-wrong-number-that-agrees-with-itself/">A wrong number that agrees with itself</a>, when the total ties and is still wrong</li>
       <li><a href="/notes/abor-and-ibor/">ABOR and IBOR</a>, two books that group the same positions differently</li>
       <li><a href="/fund-administration-software/">For administrators</a>, many clients on one platform</li>
+      <li><a href="https://docs.1494labs.com/guide/statements-and-reporting/">Statements and reporting</a> in the product docs</li>
       <li><a href="/notes/">All notes</a></li>
     </ul>
 
     <div class="endcta">
       <h2>How we handle it</h2>
       <p>
-        In 1494 Labs the aggregation rule is declared per column rather than
-        inferred, denominators are registered objects that survive grouping, and a
-        subtotal that cannot be computed honestly renders blank with its reason
-        rather than a number. A saved analysis is addressable, so the cut a
-        controller builds on screen is also an API call, rather than an export
-        that leaves the rules behind.
+        In 1494 Labs each column carries its own rule for how it adds up, each
+        percentage keeps its denominator through any grouping, and a subtotal that cannot be computed honestly renders blank with its reason. A saved analysis has its own address, so the cut a controller builds on
+        screen can also be pulled by another system through the API, with the
+        rules still applied.
       </p>
       <p><a class="btn" href="/#contact">Get in touch</a></p>
     </div>

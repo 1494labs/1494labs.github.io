@@ -106,7 +106,7 @@
     <h2>The short version</h2>
     <p>
       The <strong>accounting book of record</strong> is the official set of books. It
-      is what the auditor examines, what the administrator strikes NAV from, and what
+      is what the auditor examines, what the administrator calculates NAV from, and what
       the financial statements are built on. It follows an accounting basis, respects
       period boundaries, and is deliberately conservative about recognizing things
       that have not happened yet.
@@ -118,9 +118,9 @@
       until Wednesday, and the corporate action that has been announced but not paid.
     </p>
     <p>
-      Both are correct. They disagree because they are answering different questions
-      on different clocks, and the disagreement is not a defect. The defect is what
-      most firms have to do about it.
+      Both are correct. They disagree because they answer different questions on different clocks,
+      and that disagreement is expected. The trouble is what most firms have to
+      do about it.
     </p>
 
     <h2>Why they diverge</h2>
@@ -133,7 +133,7 @@
           <tr><th>Dimension</th><th>Accounting book</th><th>Investment book</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>Clock</strong></td><td>Period-bounded, closed and sealed</td><td>Continuous, intraday</td></tr>
+          <tr><td><strong>Clock</strong></td><td>Period-bounded, closed and locked</td><td>Continuous, intraday</td></tr>
           <tr><td><strong>Recognition</strong></td><td>Trade date or settlement date, per policy, applied consistently</td><td>Everything known, including unsettled and pending</td></tr>
           <tr><td><strong>Valuation</strong></td><td>Accounting basis, with a documented pricing hierarchy</td><td>Live or last marks, whatever is freshest</td></tr>
           <tr><td><strong>Audience</strong></td><td>Auditors, administrators, LPs, regulators</td><td>Portfolio managers, risk, trading</td></tr>
@@ -142,31 +142,29 @@
     </div>
 
     <p>
-      A worked example makes it concrete. You buy a position on Monday, settling
-      Wednesday, and the month ends Tuesday.
+      Say you buy a position on Monday, settling Wednesday, and the month ends
+      Tuesday.
     </p>
     <p>
       The investment book shows the position on Monday, because you own the economic
       exposure from the moment the trade is executed. The accounting book shows it on
       Monday too if your policy is trade date, or on Wednesday if it is settlement
-      date, which means the position lands in the following month and the month-end
-      statements do not include it. Neither answer is wrong. They are answers to
-      different questions, and both are defensible under the right policy.
+      date, which means the position falls in the following month and the month-end
+      statements do not include it. Both answers are defensible under the right policy, because they answer
+      different questions.
     </p>
 
     <h2>Why the split became architectural</h2>
     <p>
-      The reason is historical rather than principled, which is what makes it worth
-      questioning.
+      The reason is historical, which is what makes it worth questioning.
     </p>
     <p>
-      Accounting systems were built for periodic close. They were batch-oriented,
-      designed around a monthly cycle, and optimized for producing a defensible
+      Accounting systems were built for periodic close. They ran in batches, were designed around a monthly cycle, and optimized for producing a defensible
       answer slowly. That was the right design when the alternative was paper.
     </p>
     <p>
       Front offices needed something the accounting system could not give them: a
-      position view that was current as of this morning, not as of last month end. So
+      position view current as of this morning. So
       a second system grew up beside the first, fed by the same trade files, keeping
       its own version of the truth.
     </p>
@@ -214,46 +212,44 @@
       the answer is needed today, someone has to adjudicate. That person is usually
       the most senior operations person available, and their judgment is not
       auditable. Over time the organization learns which book to trust for which
-      question, and that knowledge lives in people rather than in the system.
+      question, and that knowledge lives only in people's heads.
     </p>
 
     <h2>The alternative, and what it actually requires</h2>
     <p>
       The alternative is to stop treating them as two books and start treating them
       as <strong>two views of one event stream</strong>. Every economic event is
-      recorded once. Trade date and settlement date become lenses over the same
-      journal entries rather than separate databases. The accounting view applies
+      recorded once. Trade date and settlement date become two views of the same journal entries. The accounting view applies
       period boundaries and recognition policy; the investment view does not. Neither
       holds data the other lacks.
     </p>
     <p>
-      Under that design there is no reconciliation to automate, because there
-      is only one record, because there is nothing to
-      reconcile. That is a categorically different claim from "our reconciliation is
-      very good", and it is worth being precise about which one a vendor is making.
+      Under that design there is only one record, so there is no reconciliation
+      to automate. When a vendor says "our reconciliation is very good", it is
+      describing two books, and you should know which of the two designs you
+      are being shown.
     </p>
-    <p>It is also genuinely harder to build, and it is worth naming why.</p>
+    <p>It is also harder to build, for four reasons.</p>
     <ul>
       <li>
-        <strong>Every event must journalize at one chokepoint.</strong> The moment
-        one path writes positions without writing journal entries, you have two books
+        <strong>Every event must create its journal entry in one place.</strong> The
+        moment any part of the system records a position without a journal entry, you have two books
         again and you will not notice for a month.
       </li>
       <li>
-        <strong>The dimensions have to be rich enough for both audiences.</strong>
+        <strong>The detail on each entry has to be rich enough for both audiences.</strong>
         Entity, fund, class, series, sleeve, currency, counterparty, custodian. If
         the accounting model is thinner than the investment model, the investment
         view has to be rebuilt somewhere else, and you are back where you started.
       </li>
       <li>
-        <strong>Close has to seal without freezing.</strong> A closed period must be
-        immutable for reporting while the current view keeps moving. Getting this
+        <strong>Close has to lock the period without stopping current work.</strong> A
+        closed period must stay fixed for reporting while the current view keeps moving. Getting this
         wrong in the safe direction gives you a system nobody can use intraday.
       </li>
       <li>
-        <strong>The agreement needs continuous proof.</strong> If the two views agree
-        by construction, that property should be checked continuously rather than
-        assumed, because construction arguments fail quietly.
+        <strong>The agreement needs continuous proof.</strong> If the two views are designed to agree, that agreement should still be
+        checked continuously, because designs fail quietly.
       </li>
     </ul>
 
@@ -263,8 +259,8 @@
            alt="A Statement of Changes in Partners' Capital, with beginning capital, contributions, allocations and ending capital.">
       <figcaption>
         <b>What one book looks like from the accounting side.</b>
-        This statement is a read of the same journal entries the position and
-        exposure screens read, which is why its ending capital ties to the fund's
+        This statement comes from the same journal entries the position and
+        exposure screens use, which is why its ending capital ties to the fund's
         NAV to the cent. There is no extract between them to go stale.
       </figcaption>
     </figure>
@@ -285,8 +281,8 @@
         A good answer names a rule. A bad answer names a person.
       </li>
       <li>
-        <strong>Can you strike a NAV as of right now, not as of last close?</strong>
-        Ask to see it done in the demo rather than described.
+        <strong>Can you produce a NAV as of right now?</strong>
+        Ask to see it done in the demo.
       </li>
       <li>
         <strong>What checks that the books are internally consistent, and how often
@@ -301,16 +297,17 @@
         One ledger is not automatically the right answer for every firm. If your
         accounting is genuinely simple and your investment process is genuinely
         complex, or the reverse, two specialized systems and a small reconciliation
-        may cost less than migrating. The argument here is that the split should be a
-        decision you made, not an architecture you inherited because that is how the
-        software was sold in 1998.
+        may cost less than migrating. The argument here is that the split should be a decision you made. Too
+        often it is an architecture inherited because that is how the software
+        was sold in 1998.
       </p>
     </div>
 
     <ul class="pagelinks">
       <li><a href="/notes/what-an-opening-balance-has-to-carry/">What an opening balance has to carry</a>, if you are moving between the two architectures</li>
-      <li><a href="/notes/which-columns-can-be-added/">Which columns can be added, and which cannot</a>, once both books are one grid</li>
+      <li><a href="/notes/which-columns-can-be-added/">Which columns can be added, and which cannot</a>, once both books are one table</li>
       <li><a href="/fund-accounting-software/">What one ledger looks like in practice</a></li>
+      <li><a href="https://docs.1494labs.com/guide/securities-and-positions/">Securities and positions</a> in the product docs: lots, prices and corporate actions</li>
     </ul>
 
     <div class="endcta">
@@ -318,7 +315,7 @@
       <p>
         1494 Labs is built on the second model: the accounting book of record and the
         investment book of record are views over one ledger, and the arithmetic is
-        re-proved every morning rather than assumed.
+        re-checked every morning.
       </p>
       <p><a class="btn" href="/#contact">Get in touch</a></p>
     </div>

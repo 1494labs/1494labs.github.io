@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>What an opening balance has to carry &middot; 1494 Labs</title>
-<meta name="description" content="Moving a fund to a new system mid-life is usually scoped as loading the balances. Balances say where the fund stands; they do not say enough to compute the next period correctly.">
+<meta name="description" content="Moving a fund to a new system mid-life is usually scoped as loading the balances. Balances say where the fund stands. Computing the next period correctly takes more than that.">
 <link rel="canonical" href="https://1494labs.com/notes/what-an-opening-balance-has-to-carry/">
 <link rel="stylesheet" href="/assets/notes.88c6de6f.css">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://1494labs.com/notes/what-an-opening-balance-has-to-carry/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="What an opening balance has to carry">
-<meta property="og:description" content="Moving a fund mid-life is usually scoped as loading the balances. But several engines are stateful, and what they produce next depends on state no trial balance contains.">
+<meta property="og:description" content="Moving a fund mid-life is usually scoped as loading the balances. But several calculations carry history forward, and what they produce next depends on information no trial balance contains.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "What an opening balance has to carry",
-  "description": "Moving a fund to a new system mid-life is usually scoped as loading the balances. Balances say where the fund stands; they do not say enough to compute the next period correctly.",
+  "description": "Moving a fund to a new system mid-life is usually scoped as loading the balances. Balances say where the fund stands. Computing the next period correctly takes more than that.",
   "url": "https://1494labs.com/notes/what-an-opening-balance-has-to-carry/",
   "datePublished": "2026-09-15",
   "dateModified": "2026-09-15",
@@ -117,8 +117,8 @@
   <h1>What an opening balance has to carry</h1>
   <p class="standfirst">
     A trial balance tells you where a fund stands. It does not tell you enough to
-    compute what happens next, because the engines that matter are stateful, and
-    the state they need is not on any document you can request from a custodian.
+    compute what happens next, because the calculations that matter carry history forward, and the history
+    they need is not on any document you can request from a custodian.
   </p>
   <p class="byline">Conversion &middot; roughly 5 minutes</p>
 
@@ -127,8 +127,7 @@
     <h2>Standing still versus carrying on</h2>
     <p>
       A conversion is usually scoped as loading balances: cash, positions,
-      receivables, payables, capital. That work is real and it is not the hard
-      part. Balances describe a fund at rest. The question a new system has to
+      receivables, payables, capital. That work is real, and it is the easy part. Balances describe a fund at rest. The question a new system has to
       answer on its first working day is the other one, which is what happens
       next, and several of the calculations that answer it depend on things that
       already happened.
@@ -146,20 +145,20 @@
         <tr><td>Incentive fee for a mid-period subscriber</td><td>That investor's equalization position</td><td>No</td></tr>
         <tr><td>Realized gain on the next sale</td><td>Cost basis by lot, and the cost-flow convention that picks between them</td><td>No</td></tr>
         <tr><td>An investor's capital account</td><td>Per-investor contributions, distributions and allocated profit to date</td><td>The fund total only</td></tr>
-        <tr><td>Where the next distribution lands</td><td>Distributed to date and carry paid to date, cumulatively</td><td>No</td></tr>
+        <tr><td>Where the next distribution falls</td><td>Distributed to date and carry paid to date, cumulatively</td><td>No</td></tr>
         <tr><td>Uncalled commitment</td><td>Called, plus whatever has been distributed subject to recall</td><td>No</td></tr>
-        <tr><td>The performance record</td><td>The return series and the dates it was struck on</td><td>No</td></tr>
+        <tr><td>The performance record</td><td>The return series and the dates it was calculated on</td><td>No</td></tr>
       </tbody>
     </table>
     </div>
 
-    <h2>The fee engine is the part that gets left behind</h2>
+    <h2>Fee history is the part that gets left behind</h2>
     <p>
       Positions and cash are physical. Somebody can pull a custody statement and
       check them, and if they are wrong it shows up immediately and loudly.
     </p>
     <p>
-      Fee-engine state is different in kind. A high-water mark is a memory of
+      Fee history is different in kind. A high-water mark is a memory of
       something that already happened. There is no counterparty holding a copy, no
       statement to reconcile against, and no external document that records it. It
       exists inside the system being switched off.
@@ -175,8 +174,7 @@
       <span class="tag">Ask early</span>
       <p>
         Whether the outgoing system can export marks, loss carryforwards and
-        equalization positions per investor is worth establishing before a
-        migration date is agreed, not after. If the answer is no, that is a
+        equalization positions per investor is worth establishing before a migration date is agreed. If the answer is no, that is a
         constraint on the whole project, and it is cheaper to discover in a
         meeting than in a fee run.
       </p>
@@ -196,10 +194,9 @@
       the beginning of a waterfall that is already years in.
     </p>
     <p>
-      Uncalled commitment has the same shape. It is not commitment minus called:
-      distributions made subject to recall are added back, and whether a given
-      distribution was recallable is a term in the agreement rather than a
-      property of the cash.
+      Uncalled commitment has the same shape. It is commitment minus called, plus any distributions made subject to
+      recall, and whether a given distribution was recallable is a term in the
+      agreement that the cash movement does not carry.
     </p>
 
     <h2>Two different things called history</h2>
@@ -213,7 +210,7 @@
         <tr><th>&nbsp;</th><th>Reporting-only</th><th>Rebuilt</th></tr>
       </thead>
       <tbody>
-        <tr><td>What arrives</td><td>The results: balances, statements, capital accounts as struck</td><td>The underlying activity, transaction by transaction</td></tr>
+        <tr><td>What arrives</td><td>The results: balances, statements, capital accounts as reported</td><td>The underlying activity, transaction by transaction</td></tr>
         <tr><td>What you can do</td><td>Display it, print it, answer "show me last year"</td><td>Re-run an allocation, restate a period, change an assumption</td></tr>
         <tr><td>What it needs</td><td>The old system's output</td><td>The old system's inputs, in usable form</td></tr>
         <tr><td>Typical cost</td><td>Part of the conversion</td><td>A project of its own, and often not possible</td></tr>
@@ -224,7 +221,7 @@
       Reporting-only is an honest and usually correct answer. The failure is
       buying it while expecting the other one, and then discovering the difference
       during an audit. Pre-conversion periods should be marked as what they are,
-      so that a snapshot cannot be mistaken for a period that would recompute if
+      so that a reporting-only period cannot be mistaken for one that would recompute if
       you asked it to.
     </p>
 
@@ -236,24 +233,22 @@
     </p>
     <ul class="keypoints">
       <li><span class="tick">&#10003;</span><span><strong>The incentive fee, per investor.</strong>
-        Not the fund total. A fund total can be right while two investors are
+        A fund total can be right while two investors are
         wrong in opposite directions, and that is exactly what a missing mark
         looks like.</span></li>
       <li><span class="tick">&#10003;</span><span><strong>One realized sale.</strong>
-        This tests that lots and the cost-flow convention came across, not just
-        the position's market value.</span></li>
+        This tests that lots and the cost-flow convention came across along with the position's market value.</span></li>
       <li><span class="tick">&#10003;</span><span><strong>One distribution, on a closed-end fund.</strong>
         This tests that the fund knows where it stands in its own waterfall.</span></li>
     </ul>
     <p>
-      If that comparison cannot be run because the old system is already gone, the
-      fund was not converted. It was re-keyed, and the first calculation that
+      If that comparison cannot be run because the old system is already gone, the fund was only re-keyed, and the first calculation that
       depends on history will be the one that finds out.
     </p>
 
     <h2>What to ask a vendor</h2>
     <ul class="keypoints">
-      <li><span class="tick">&#10003;</span><span><strong>Is there a conversion date as a first-class concept</strong>,
+      <li><span class="tick">&#10003;</span><span><strong>Is there a conversion date built into the fund record</strong>,
         or does every fund have to start at inception?</span></li>
       <li><span class="tick">&#10003;</span><span><strong>Where does a high-water mark go in?</strong>
         If there is no field for it, it is being reverse-engineered from a
@@ -262,22 +257,21 @@
         or do they present exactly like periods the system computed itself?</span></li>
       <li><span class="tick">&#10003;</span><span><strong>What happens when an error is found in a pre-conversion period?</strong>
         There is a right answer, which is that it is corrected as a restatement
-        with the original preserved, and a wrong one, which is that somebody edits
-        the snapshot.</span></li>
+        with the original preserved, and a wrong one, which is that somebody edits the reported figures.</span></li>
     </ul>
 
     <ul class="pagelinks">
       <li><a href="/notes/high-water-marks-and-partial-redemptions/">High-water marks and the partial redemption</a>, the state most likely to be missing</li>
       <li><a href="/fund-accounting-software/">What the platform does</a>, including conversion-mode onboarding</li>
+      <li><a href="https://docs.1494labs.com/guide/bringing-data-in/">Bringing data in</a> in the product docs: carrying high-water marks through a conversion</li>
     </ul>
 
     <div class="endcta">
       <h2>How we handle it</h2>
       <p>
-        1494 Labs models a conversion date on the fund. Periods before it are born
-        locked and marked pre-conversion, so a snapshot can never be mistaken for a
-        computed period, and the opening position carries fee-engine state rather
-        than balances alone. Converting an existing book is quoted separately from
+        1494 Labs models a conversion date on the fund. Periods before it are locked from the start and marked pre-conversion, so a
+        reporting-only period can never be mistaken for a computed one, and the
+        opening position carries fee history alongside the balances. Converting an existing book is quoted separately from
         the subscription, and it is free for the first five early adopters.
       </p>
       <p><a class="btn" href="/#contact">Get in touch</a></p>

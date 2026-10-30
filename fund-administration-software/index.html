@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fund administration software &middot; 1494 Labs</title>
-<meta name="description" content="Fund administration software: many client funds on one platform, isolated per tenant, with a two-axis period close, reconciliation exceptions with a worklist, ILPA-native reporting and an API every screen already runs on.">
+<meta name="description" content="Fund administration software: many client funds on one platform, each client's data kept separate, with a period close that tracks sign-off apart from locking, reconciliation exceptions with a worklist, ILPA-native reporting and an API every screen already runs on.">
 <link rel="canonical" href="https://1494labs.com/fund-administration-software/">
 <link rel="stylesheet" href="/assets/notes.88c6de6f.css">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -16,14 +16,14 @@
 <meta property="og:url" content="https://1494labs.com/fund-administration-software/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="Fund administration software">
-<meta property="og:description" content="Many clients on one platform, isolated per tenant, with a real period close, reconciliation exceptions and an API every screen already runs on.">
+<meta property="og:description" content="Many clients on one platform, each client's data kept separate, with a real period close, reconciliation exceptions and an API every screen already runs on.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Fund administration software">
-<meta name="twitter:description" content="Many clients on one platform, isolated per tenant, with a real period close, reconciliation exceptions and an API every screen already runs on.">
+<meta name="twitter:description" content="Many clients on one platform, each client's data kept separate, with a real period close, reconciliation exceptions and an API every screen already runs on.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 <meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
 
@@ -32,7 +32,7 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Fund administration software",
-  "description": "Fund administration software: many client funds on one platform, isolated per tenant, with a two-axis period close, reconciliation exceptions with a worklist, ILPA-native reporting and an API every screen already runs on.",
+  "description": "Fund administration software: many client funds on one platform, each client's data kept separate, with a period close that tracks sign-off apart from locking, reconciliation exceptions with a worklist, ILPA-native reporting and an API every screen already runs on.",
   "url": "https://1494labs.com/fund-administration-software/",
   "inLanguage": "en",
   "isPartOf": { "@type": "WebSite", "name": "1494 Labs", "url": "https://1494labs.com/" },
@@ -66,9 +66,9 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "How are client funds kept separate?", "acceptedAnswer": { "@type": "Answer", "text": "Each client is a tenant with its own database schema. Isolation is structural rather than a filter applied at query time, so a missing WHERE clause cannot leak one client's book into another's." } },
-    { "@type": "Question", "name": "Can fee terms differ per fund?", "acceptedAnswer": { "@type": "Answer", "text": "They have to. Fee structures are composable: tiered schedules, modifiers, offsets, most-favoured-nation clauses, expense caps, manager-borne splits and four-way settlement, configured per fund. No two limited partnership agreements agree, so the engine does not assume a house convention." } },
-    { "@type": "Question", "name": "What happens when a closed period needs correcting?", "acceptedAnswer": { "@type": "Answer", "text": "A closed period is sealed and its trial balance frozen as an artifact, so a statement produced today still ties to what was reported then. A correction to a sealed period is a graded, audited revision rather than an in-place edit, and the frozen artifact is what closed-period statements read from." } }
+    { "@type": "Question", "name": "How are client funds kept separate?", "acceptedAnswer": { "@type": "Answer", "text": "Each client's data is kept in its own separate store within the database, so a single faulty query cannot expose one client's book to another." } },
+    { "@type": "Question", "name": "Can fee terms differ per fund?", "acceptedAnswer": { "@type": "Answer", "text": "They have to. Fee structures are built from parts: tiered schedules, modifiers, offsets, most-favored-nation clauses, expense caps, manager-borne splits and four-way settlement, configured per fund. No two limited partnership agreements agree, so the engine does not assume a house convention." } },
+    { "@type": "Question", "name": "What happens when a closed period needs correcting?", "acceptedAnswer": { "@type": "Answer", "text": "A closed period is locked and its trial balance saved as a fixed record, so a statement produced today still ties to what was reported then. A correction to a locked period is a graded, audited revision, and the saved trial balance is what closed-period statements read from." } }
   ]
 }
 </script>
@@ -118,13 +118,13 @@
     <p>
       The administrator's difficulty is variety. One client's management fee is
       charged on committed capital during the investment period and on invested
-      capital after it. Another's is on net asset value with a most-favoured-nation
+      capital after it. Another's is on net asset value with a most-favored-nation
       clause. A third caps organizational expenses and makes the manager bear the
       excess. A platform with a house convention makes all of them somebody's
       manual adjustment.
     </p>
     <p>
-      Fee structures here are composable rather than parameterized: tiered
+      Fee structures here are composed from parts: tiered
       schedules, modifiers, offsets, expense caps and four-way settlement,
       configured per fund. Terms can be read out of the limited partnership
       agreement into a prefilled builder, with the clause attached, and a human
@@ -132,29 +132,27 @@
     </p>
 
     <ul class="keypoints">
-      <li><span class="tick">&#10003;</span><span>Schema-per-tenant isolation, not a filter on a shared table</span></li>
-      <li><span class="tick">&#10003;</span><span>Per-fund fiscal calendars, and a close that seals without freezing the current view</span></li>
-      <li><span class="tick">&#10003;</span><span>Two-axis review and close, with a checklist and a controller's dashboard</span></li>
-      <li><span class="tick">&#10003;</span><span>Reconciliation exceptions with a worklist, not a report nobody reads</span></li>
+      <li><span class="tick">&#10003;</span><span>Each client's data kept in its own separate store</span></li>
+      <li><span class="tick">&#10003;</span><span>Per-fund fiscal calendars, and a close that locks the period while current work carries on</span></li>
+      <li><span class="tick">&#10003;</span><span>Sign-off on the numbers tracked apart from locking the period, with a checklist and a controller's dashboard</span></li>
+      <li><span class="tick">&#10003;</span><span>Reconciliation exceptions on an aged, assigned worklist</span></li>
       <li><span class="tick">&#10003;</span><span>Bulk CSV loaders for the systems that will never have an API</span></li>
-      <li><span class="tick">&#10003;</span><span>More than 1,800 API operations under one OpenAPI spec</span></li>
-      <li><span class="tick">&#10003;</span><span>Shadow reconciliation that ties an outside administrator&rsquo;s pack to the book</span></li>
-      <li><span class="tick">&#10003;</span><span>Investor statements laid out from a client&rsquo;s own PDF</span></li>
+      <li><span class="tick">&#10003;</span><span>More than 1,800 API operations in one published API reference</span></li>
+      <li><span class="tick">&#10003;</span><span>Shadow reconciliation that ties an outside administrator's pack to the book</span></li>
+      <li><span class="tick">&#10003;</span><span>Investor statements laid out from a client's own PDF</span></li>
     </ul>
 
     <h2>A close that actually closes</h2>
     <p>
-      Period close is a state machine, per fund and per period: open, soft closed,
-      hard closed. A hard-closed period freezes writes and its trial balance is
-      captured as an artifact, so a statement produced a year later still ties to
-      what was reported at the time. Guards are not advisory: a fund with negative
-      capital or a pending crystallization is reported and skipped rather than
-      forced through.
+      Period close moves through three stages, per fund and per period: open,
+      soft closed, hard closed. A hard-closed period accepts no new entries and
+      its trial balance is saved as a fixed record, so a statement produced a year later still ties to
+      what was reported at the time. A fund with negative capital or a pending crystallization is left out of
+      the close and listed for review.
     </p>
     <p>
       Corrections stay possible without pretending they did not happen. Anything
-      in an open period is editable; a sealed period takes a graded, audited
-      revision. The distinction matters because the alternative, in practice, is
+      in an open period is editable; a hard-closed period takes a graded, audited revision. The distinction matters because the alternative, in practice, is
       an administrator keeping a private list of what the system says versus what
       is true.
     </p>
@@ -162,35 +160,33 @@
     <figure class="shot">
       <img src="/assets/screens/statement-of-changes.39e06e66.jpg" width="1488" height="374"
            loading="lazy" decoding="async" alt="A Statement of Changes in Partners' Capital, from beginning capital through contributions, net income and fees to ending capital.">
-      <figcaption><b>Ending capital ties to the dashboard NAV to the cent.</b> Both figures are reads of the same ledger, so no reconciliation runs between them.</figcaption>
+      <figcaption><b>Ending capital ties to the dashboard NAV to the cent.</b> Both figures come from the same ledger, so no reconciliation runs between them.</figcaption>
     </figure>
 
     <figure class="shot">
       <img src="/assets/screens/fee-gross-to-net.a19c17c9.jpg" width="1600" height="1000"
            loading="lazy" decoding="async" alt="A fee gross-to-net statement: five management fee accruals, each from gross accrual to net fee, totaling $65,934.06 gross and net with no offsets, waivers or rebates.">
-      <figcaption><b>Gross to net, per accrual, per client.</b> Each posted fee keeps the locked step sequence it was calculated with - gross, then offsets, waivers and rebates, then net - read back from that snapshot rather than recomputed later against terms that may since have changed.</figcaption>
+      <figcaption><b>Gross to net, per accrual, per client.</b> Each posted fee keeps the steps it was calculated with, in order (gross, then offsets, waivers and rebates, then net), saved when it posted, so a later change to the terms does not rewrite it.</figcaption>
     </figure>
 
     <h2>Exceptions with somewhere to go, and two kinds of them</h2>
     <p>
-      A reconciliation report that nobody works is a compliance artifact rather
-      than a control. Exceptions here are records with a lifecycle: detected,
-      assigned, explained, resolved, with the detector that found each one named
-      and an aged worklist rather than a monthly PDF.
+      A reconciliation report is only a control if somebody works it. Each exception
+      moves through stages (detected, assigned, explained, resolved), names the
+      check that found it, and sits on an aged worklist.
     </p>
     <p>
       Be clear about which kind, because the word means different things to a
-      vendor and to your team. <strong>Internal exceptions</strong> are what the
-      daily sweep produces: capital accounts against the ledger, allocations
+      vendor and to your team. <strong>Internal exceptions</strong> are what the daily check produces: capital accounts against the ledger, allocations
       against the pool, cash movements against the entries that produced them.
       <strong>External exceptions</strong> come from a counterparty file, and are
-      the ones your morning actually consists of. Cash against the bank runs from an imported statement, positions against a custodian&rsquo;s file, and an outside administrator&rsquo;s pack (fund and class NAV, capital accounts, trial balance, cash, positions and fees, as CSV or XLSX) ties out on the Shadow tab, with each administrator&rsquo;s column layout remembered for next period. The worklist, the aging and the accept-with-a-note decision are the same for all three, and the screens below are a bank statement&rsquo;s.
+      the ones your morning actually consists of. Cash against the bank runs from an imported statement, positions against a custodian's file, and an outside administrator's pack (fund and class NAV, capital accounts, trial balance, cash, positions and fees, as CSV or XLSX) ties out on the Shadow tab, with each administrator's column layout remembered for next period. The worklist, the aging and the accept-with-a-note decision are the same for all three, and the screens below are a bank statement's.
     </p>
 
     <figure class="shot">
       <img src="/assets/screens/break-detail.dc783d42.jpg" width="1600" height="1000"
            loading="lazy" decoding="async"
-           alt="An exception detail panel for the operating cash account at 2026-06-30: the bank statement&rsquo;s closing balance of $747,850.00 against the book&rsquo;s $750,000.00, a difference of $2,150.00, a reason field, and buttons to acknowledge, resolve or accept the difference.">
+           alt="An exception detail panel for the operating cash account at 2026-06-30: the bank statement's closing balance of $747,850.00 against the book's $750,000.00, a difference of $2,150.00, a reason field, and buttons to acknowledge, resolve or accept the difference.">
       <figcaption>
         <b>Expected, actual, difference, and a decision with a name on it.</b>
         Resolve and accept are deliberately different: resolved means the
@@ -200,24 +196,23 @@
       </figcaption>
     </figure>
 
-    <h2>Every screen runs on the public API</h2>
+    <h2>Every screen uses the public API</h2>
     <p>
       The product's own interface is built on exactly the API a client gets,
-      which is what makes the API complete rather than a subset somebody
-      maintains alongside it. Custodians, banks, portals, data vendors and a client's own
-      warehouse all integrate against the same surface, and the systems that will
-      never have an API get bulk CSV loaders instead.
+      so every operation the interface performs is in the API. Custodians, banks, portals, data vendors and a client's own
+      warehouse all connect through the same API, and the systems that will
+      never have an API get bulk CSV loaders.
     </p>
 
     <figure class="shot">
       <img src="/assets/screens/cash-movements.61bcbb09.jpg" width="1486" height="774"
-           loading="lazy" decoding="async" alt="A cash movements blotter of settled movements: investments into underlying managers, investor subscriptions, and transfers between the fund&rsquo;s own cash accounts, each with its source and counterparty.">
-      <figcaption><b>Cash movements, with their sources.</b> Bulk selection and row actions across the grids, because an administrator's day is spent on many rows at once rather than one.</figcaption>
+           loading="lazy" decoding="async" alt="A cash movements blotter of settled movements: investments into underlying managers, investor subscriptions, and transfers between the fund's own cash accounts, each with its source and counterparty.">
+      <figcaption><b>Cash movements, with their sources.</b> Select many rows and act on them together in every table, because an administrator's day is spent on many rows at once.</figcaption>
     </figure>
 
     <h2>The exceptions worklist</h2>
     <p>
-      An exception names the fund, the period and the amount. The worklist, the aging and the accept-with-a-note decision are the same whether the exception came from the daily internal sweep or from a counterparty file.
+      An exception names the fund, the period and the amount. The worklist, the aging and the accept-with-a-note decision are the same whether the exception came from the daily internal check or from a counterparty file.
     </p>
 
 <figure class="shot">
@@ -225,11 +220,11 @@
            loading="lazy" decoding="async"
            alt="The exceptions worklist: two open exceptions on the operating cash account, raised by an imported bank statement. The closing balance differs from the book by $2,150.00, and one statement line of -$2,150.00 matches nothing in the book.">
       <figcaption>
-        <b>A finding has somewhere to land.</b>
+        <b>A finding has somewhere to go.</b>
         An imported bank statement matched every line but one, a $2,150 fee
         the book never recorded, and raised two exceptions: the balance and the unmatched line. An exception ages, gets assigned, and keeps what was decided
-        about it, so next month&rsquo;s exception on the same account arrives with
-        last month&rsquo;s reasoning attached.
+        about it, so next month's exception on the same account arrives with
+        last month's reasoning attached.
       </figcaption>
     </figure>
 
@@ -241,15 +236,17 @@
       <li><a href="/private-equity-fund-accounting/">Drawdown clients</a></li>
       <li><a href="/hedge-fund-accounting/">Subscription-funded clients</a></li>
       <li><a href="/family-office-accounting/">Family office clients</a></li>
+      <li><a href="https://docs.1494labs.com/guide/closing-a-period/">Closing a period</a> in the product docs</li>
+      <li><a href="https://docs.1494labs.com/guide/cash-and-reconciliation/">Cash and reconciliation</a> in the product docs</li>
     </ul>
 
     <div class="endcta">
       <h2>Show us the fund that breaks your current system</h2>
       <p>
-        Built for the people who have to sign the books, not only read them.
-        Tell us what you run and we will walk you through it on real books
-        rather than slides. If you would rather get your own hands on it, we
-        will stand up a sandbox seeded with reference funds for you to work in.
+        Built for the people who sign the books.
+        Tell us what you run and we will walk you through it in the product,
+        on a running book. If you want to try it yourself, we will stand up a
+        sandbox seeded with reference funds for you to work in.
       </p>
       <p><a class="btn" href="/#contact">Request a demo</a></p>
     </div>

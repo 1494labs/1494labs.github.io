@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://1494labs.com/notes/high-water-marks-and-partial-redemptions/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="High-water marks and the partial redemption">
-<meta property="og:description" content="When an investor redeems half their holding, the loss carried forward has to fall by half too. It usually does not, nothing in the accounts breaks, and the error always favours the investor.">
+<meta property="og:description" content="When an investor redeems half their holding, the loss carried forward has to fall by half too. It usually does not, nothing in the accounts breaks, and the error always favors the investor.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -133,7 +133,7 @@
       manager works back through it for nothing.
     </p>
     <p>
-      The mark therefore belongs to a holder, not to a fund, and it is attached
+      The mark therefore belongs to a holder, and it is attached
       to a quantity of shares. That second half is the part that gets lost: change
       the quantity and the mark has to change with it.
     </p>
@@ -182,9 +182,8 @@
     </div>
     <p>
       Note also the direction. The error never runs the other way. Skipping the
-      proration always shelters profit, which always favours the investor and
-      always costs the manager. An error with a consistent sign accumulates rather
-      than averaging out, and it recurs every time an investor trims a position
+      proration always shelters profit, which always favors the investor and
+      always costs the manager. An error with a consistent sign accumulates period after period, and it recurs every time an investor trims a position
       during a drawdown.
     </p>
 
@@ -208,7 +207,7 @@
     <div class="note warn">
       <span class="tag">The ordering matters</span>
       <p>
-        Crystallize before striking the redemption price, not after. A fee
+        Crystallize before setting the redemption price. A fee
         calculated on a NAV that has already had the redemption taken out of it is
         a fee on the wrong base, and the difference is not rounding.
       </p>
@@ -231,7 +230,7 @@
     <h2>What to check</h2>
     <ul class="keypoints">
       <li><span class="tick">&#10003;</span><span><strong>Is the mark stored as a level or as an amount?</strong>
-        A level per share prorates on its own when the share count changes. An
+        A level per share prorates automatically when the share count changes. An
         amount has to be adjusted explicitly on every partial redemption, and that
         adjustment is what gets forgotten.</span></li>
       <li><span class="tick">&#10003;</span><span><strong>Does a redemption crystallize, or wait for period end?</strong>
@@ -248,14 +247,14 @@
     <ul class="pagelinks">
       <li><a href="/notes/equalization-and-the-mid-period-subscriber/">Equalization, and what a mid-period subscriber actually owes</a>, the same mark on the way in</li>
       <li><a href="/hedge-fund-accounting/">Hedge fund accounting</a>, including crystallization and loss carryforwards</li>
+      <li><a href="https://docs.1494labs.com/guide/fees-from-structure-to-charge/">Fees: from structure to charge</a> in the product docs, from accrual to crystallization</li>
     </ul>
 
     <div class="endcta">
       <h2>How we handle it</h2>
       <p>
         1494 Labs holds the mark per capital account as a level, prorates it on
-        partial redemption, and crystallizes on the redemption rather than at
-        period end. Every change to a mark is an event with a source, so the
+        partial redemption, and crystallizes on the redemption date. Every change to a mark is an event with a source, so the
         history can be read back for any investor on any date.
       </p>
       <p><a class="btn" href="/#contact">Get in touch</a></p>

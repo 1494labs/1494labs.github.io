@@ -66,9 +66,9 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "What is the difference between a European and an American waterfall?", "acceptedAnswer": { "@type": "Answer", "text": "A European, or whole-of-fund, waterfall returns all contributed capital and the preferred return across the entire fund before the general partner takes carry. An American, or deal-by-deal, waterfall tests each realization on its own, so carry can be paid years earlier. The same fund can pay the general partner in year three or year five depending only on which convention the agreement uses." } },
+    { "@type": "Question", "name": "What is the difference between a European and an American waterfall?", "acceptedAnswer": { "@type": "Answer", "text": "A European, or whole-of-fund, waterfall returns all contributed capital and the preferred return across the entire fund before the general partner takes carry. An American, or deal-by-deal, waterfall tests each realization separately, so carry can be paid years earlier. The same fund can pay the general partner in year three or year five depending only on which convention the agreement uses." } },
     { "@type": "Question", "name": "What is GP clawback?", "acceptedAnswer": { "@type": "Answer", "text": "If a deal-by-deal waterfall paid carry early and the fund later underperforms, the general partner may have been paid more than the whole-fund test would allow. A clawback obliges them to return the excess. It is the structural consequence of paying carry before the fund's final result is known." } },
-    { "@type": "Question", "name": "Does it produce ILPA-compliant capital call and distribution notices?", "acceptedAnswer": { "@type": "Answer", "text": "Capital call and distribution notices carry ILPA CC&D component codes, and expense lines carry ILPA line-item codes at the point of posting rather than being reverse-engineered at quarter end. A component breakdown is read off the call rather than reconstructed from it." } }
+    { "@type": "Question", "name": "Does it produce ILPA-compliant capital call and distribution notices?", "acceptedAnswer": { "@type": "Answer", "text": "Capital call and distribution notices carry ILPA CC&D component codes, and expense lines carry ILPA line-item codes from the point of posting, so nothing is reverse-engineered at quarter end. A component breakdown is read straight off the call." } }
   ]
 }
 </script>
@@ -113,7 +113,7 @@
 
   <article>
 
-    <h2>Commitments are ledger events, not a side table</h2>
+    <h2>Commitments are ledger events</h2>
     <p>
       In many drawdown books the capital account lives in a spreadsheet
       alongside the accounting system, because the accounting system was built for
@@ -122,9 +122,8 @@
     </p>
     <p>
       Here, a commitment, a call, a drawdown and a distribution are events on the
-      ledger with their own state. The capital account is derived from them.
-      Uncalled is what is left after the calls that happened, not what somebody
-      remembered to decrement.
+      ledger, each with its own status. The capital account is built from them.
+      Uncalled is what is left after the calls that actually happened.
     </p>
 
     <ul class="keypoints">
@@ -142,10 +141,10 @@
     <figure class="shot">
       <img src="/assets/screens/capital-accounts.4da0f11e.jpg" width="1600" height="551"
            loading="lazy" decoding="async" alt="Capital accounts for a drawdown fund: $46.5m committed, $37.2m called, $9.3m uncalled, with per-LP rows and a stated recycling policy.">
-      <figcaption><b>$46.5m committed, $37.2m called, $9.3m still uncalled.</b> Per limited partner and in total, with recallable capital and the fund's recycling policy stated rather than assumed.</figcaption>
+      <figcaption><b>$46.5m committed, $37.2m called, $9.3m still uncalled.</b> Per limited partner and in total, with recallable capital and the fund's recycling policy shown alongside.</figcaption>
     </figure>
 
-    <h2>Waterfalls as tiers, not as two presets</h2>
+    <h2>Waterfalls as configurable tiers</h2>
     <p>
       Almost every platform offers "European" and "American" as a dropdown. Almost
       no limited partnership agreement is either textbook case. Real agreements
@@ -156,17 +155,16 @@
     <p>
       So a waterfall here is an ordered set of tiers with their own parameters,
       and the two named conventions are just two configurations of it. Carry is
-      held as an accrual subject to its test rather than as settled fact, so a
-      clawback is a figure the ledger already carries. We worked the same
-      fund through both conventions, with the numbers, in
-      <a href="/notes/european-vs-american-waterfall/">European vs American waterfalls</a>.
+      held as an accrual subject to its test, so a clawback is a figure the ledger
+      already carries. <a href="/notes/european-vs-american-waterfall/">American vs European waterfall on the same two deals</a>
+      runs one fund through both conventions, with the numbers.
     </p>
 
     <figure class="shot">
       <img src="/assets/screens/waterfall-worked-example.fac7d6b8.jpg" width="1600" height="1000"
            loading="lazy" decoding="async"
-           alt="The waterfall builder: a named convention set, a tier stack with carry and catch-up rates, and a worked example panel computing preferred accrued of $46,932,807.68 and a catch-up band from hypothetical distributions.">
-      <figcaption><b>The terms, before they are terms.</b> Start from a named convention set rather than six dropdowns, then edit any field; every one is a closed choice with a stated meaning, so there is no expression language to get wrong. The panel on the right runs hypothetical cash through the real distribution engine as you type, which is how you find out what a catch-up rate does before it governs anybody's money. The note under the model set says the platform runs the waterfall fund-level rather than per partner, and is <em>deliberately not called compliant</em>.</figcaption>
+           alt="The waterfall builder: a named set of conventions, a stack of tiers with carry and catch-up rates, and a sample calculation panel computing preferred accrued of $46,932,807.68 and a catch-up band from hypothetical distributions.">
+      <figcaption><b>The terms, before they are terms.</b> Start from a named set of conventions, then edit any field; every field is picked from a fixed list of options with a stated meaning, so there is no formula to get wrong. The panel on the right runs hypothetical cash through the same distribution calculation the fund uses, as you type, which is how you find out what a catch-up rate does before it governs anybody's money. The note under the conventions says the platform runs the waterfall at the fund level, and is <em>deliberately not called compliant</em>.</figcaption>
     </figure>
 
     <figure class="shot">
@@ -180,8 +178,7 @@
     <p>
       A capital call is issued against commitments, noticed to the limited
       partners it draws on, and funded. Each of those is a state the call actually
-      has, and the capital account moves because of the funding rather than
-      alongside it.
+      has, and the capital account moves when, and because, the call is funded.
     </p>
 
     <figure class="shot">
@@ -192,7 +189,7 @@
 
     <h2>The fund knows what kind of fund it is</h2>
     <p>
-      Funding model is a property of the vehicle. A drawdown fund's dashboard
+      Funding model is set on the vehicle. A drawdown fund's dashboard
       leads with committed, called and distributed; a subscription-funded fund's leads with
       subscriptions and redemptions. The funding model drives those views, while
       notice, lock-ups and redemption gates come from the fund's liquidity terms.
@@ -211,12 +208,11 @@
       <figcaption>
         <b>The same fund's balance sheet.</b> Capital contributions of
         $37,200,000.00 is the called figure from the capital accounts above, and
-        the page foots both sides to $41,960,905.72 rather than leaving you to
-        add it up.
+        the page foots both sides to $41,960,905.72.
       </figcaption>
     </figure>
 
-    <h2>ILPA, as the template rather than as a claim</h2>
+    <h2>ILPA, as the template itself</h2>
     <p>
       The ILPA Reporting Template v2.0 is a workbook with fixed rows, and it
       requires every field to be present. That is where most implementations quietly
@@ -226,20 +222,20 @@
     <figure class="shot">
       <img src="/assets/screens/ilpa-capital-account.affebef1.jpg" width="1600" height="1000"
            loading="lazy" decoding="async" alt="The ILPA Capital Account statement with a notes panel explaining which rows cannot be sourced and why.">
-      <figcaption><b>Every unsourceable row carries the note explaining it.</b> Carried interest accrued is zero here because the fund has no active waterfall policy, so no hypothetical liquidation can be run - and the statement says exactly that rather than letting the zero pass as a fact.</figcaption>
+      <figcaption><b>Every unsourceable row carries the note explaining it.</b> Carried interest accrued is zero here because the fund has no active waterfall policy, so no hypothetical liquidation can be run - and the statement says so beside the zero.</figcaption>
     </figure>
 
     <h2>Commitments, drawn down against the ledger</h2>
     <p>
-      A commitment is not a balance; it is a promise the fund draws against. Unfunded is what is left of it, and it has to move every time a call is issued, a transfer splits an interest, or a secondary changes who owes the rest.
+      A commitment is a promise the fund draws against. Unfunded is what is left of it, and it has to move every time a call is issued, a transfer splits an interest, or a secondary changes who owes the rest.
     </p>
 
 <figure class="shot">
         <img src="/assets/screens/commitments.3b5b072a.jpg" width="1486" height="242"
              loading="lazy" decoding="async"
-             alt="Five LP commitments struck at a first close, each ACTIVE, with commitment amounts and dates.">
+             alt="Five LP commitments accepted at a first close, each ACTIVE, with commitment amounts and dates.">
         <figcaption>
-          <b>Commitments.</b> Struck at the close they belong to, and the calls
+          <b>Commitments.</b> Accepted at the close they belong to, and the calls
           that draw against them carry ILPA component codes at the point of
           posting.
         </figcaption>
@@ -247,19 +243,21 @@
 
     <h2>Related reading</h2>
     <ul class="pagelinks">
-      <li><a href="/notes/european-vs-american-waterfall/">European vs American waterfalls, with the numbers worked</a></li>
+      <li><a href="/notes/european-vs-american-waterfall/">American vs European waterfall on the same two deals</a></li>
       <li><a href="/notes/what-an-opening-balance-has-to-carry/">What an opening balance has to carry</a>, for a fund moving systems mid-life</li>
       <li><a href="/fund-accounting-software/">The platform overview</a></li>
       <li><a href="/fund-administration-software/">For administrators running several drawdown clients</a></li>
+      <li><a href="https://docs.1494labs.com/guide/capital-calls-and-distributions/">Capital calls and distributions</a> in the product docs: what happens when carry has to come back</li>
+      <li><a href="https://docs.1494labs.com/guide/gp-economics/">GP economics</a> in the product docs: how carry is split among principals and how it vests</li>
     </ul>
 
     <div class="endcta">
       <h2>Show us the fund that breaks your current system</h2>
       <p>
-        Built for the people who have to sign the books, not only read them.
-        Tell us what you run and we will walk you through it on real books
-        rather than slides. If you would rather get your own hands on it, we
-        will stand up a sandbox seeded with reference funds for you to work in.
+        Built for the people who sign the books.
+        Tell us what you run and we will walk you through it in the product,
+        on a running book. If you want to try it yourself, we will stand up a
+        sandbox seeded with reference funds for you to work in.
       </p>
       <p><a class="btn" href="/#contact">Request a demo</a></p>
     </div>
