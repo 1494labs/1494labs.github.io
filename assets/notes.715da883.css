@@ -221,3 +221,8 @@ article > .shot{max-width:none}
   }
   .fg input,.fg select{min-height:44px}
 }
+
+/* Public reading formats and assistant handoffs. */
+.assistant-links{display:flex;flex-wrap:wrap;gap:8px 24px;margin:40px 0 24px}
+.assistant-links a{display:inline-flex;align-items:center;min-height:44px;padding:8px 12px;border:1px solid var(--rule);border-radius:6px;background:var(--sheet);font-size:.875rem;text-decoration:none}
+.assistant-links a:hover{border-color:var(--accent);background:var(--accent-tint)}

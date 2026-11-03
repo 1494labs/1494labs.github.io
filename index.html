@@ -280,7 +280,11 @@ footer.site{padding:40px 0 56px}
   }
   .fg input,.fg select{min-height:44px}
 }
+.assistant-links{display:flex;flex-wrap:wrap;gap:8px 24px;margin:40px 0 24px}
+.assistant-links a{display:inline-flex;align-items:center;min-height:44px;padding:8px 12px;border:1px solid var(--rule);border-radius:6px;background:var(--sheet);font-size:.875rem;text-decoration:none}
+.assistant-links a:hover{border-color:var(--accent);background:var(--accent-tint)}
 </style>
+<link rel="alternate" type="text/markdown" href="https://1494labs.com/index.md" title="Markdown">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -530,6 +534,12 @@ footer.site{padding:40px 0 56px}
     </p>
   </section>
 </main>
+
+  <!-- assistant-links:start -->
+  <nav class="assistant-links" aria-label="Page formats and assistants">
+    <a href="https://1494labs.com/index.md">Read Markdown</a>
+  </nav>
+  <!-- assistant-links:end -->
 
   <footer class="site">
     <div class="footrow">

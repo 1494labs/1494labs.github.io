@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Management fee offsets: reconcile the fee before and after the credit · 1494 Labs</title>
+
+<link rel="canonical" href="https://1494labs.com/notes/management-fee-offsets/">
+<link rel="stylesheet" href="/assets/notes.715da883.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+
+<meta property="og:type" content="article">
+
+<meta property="og:site_name" content="1494 Labs">
+
+
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta name="twitter:card" content="summary_large_image">
+
+
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+
+
+
+<meta name="description" content="A fee offset is a calculation with a source, a percentage and a period. Keep all three visible, along with any amount carried forward.">
+<meta property="og:title" content="Management fee offsets: reconcile the fee before and after the credit">
+<meta property="og:description" content="A fee offset is a calculation with a source, a percentage and a period. Keep all three visible, along with any amount carried forward.">
+<meta property="og:url" content="https://1494labs.com/notes/management-fee-offsets/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Management fee offsets: reconcile the fee before and after the credit",
+  "description": "A fee offset is a calculation with a source, a percentage and a period. Keep all three visible, along with any amount carried forward.",
+  "url": "https://1494labs.com/notes/management-fee-offsets/",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "1494 Labs"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "1494 Labs"
+  }
+}
+</script>
+<link rel="alternate" type="text/markdown" href="https://1494labs.com/notes/management-fee-offsets.md" title="Markdown">
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <a class="lockup" href="/" aria-label="1494 Labs home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+            <path d="M5 9 H27"/><path d="M16 9 V26"/>
+          </g>
+          <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+          <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        </svg>
+      <span class="wordmark">1494 Labs</span>
+    </a>
+    <nav class="sitenav" aria-label="Site">
+      <a href="/fund-accounting-software/">Platform</a>
+      <a href="/capabilities/">Capabilities</a>
+      <a href="/notes/">Notes</a>
+      <a class="demo" href="/#contact">Request a demo</a>
+    </nav>
+    <details class="navmenu">
+      <summary><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>Menu</summary>
+      <nav aria-label="Site menu">
+        <a href="/fund-accounting-software/">Platform</a>
+        <a href="/capabilities/">Capabilities</a>
+        <a href="/notes/">Notes</a>
+        <a class="demo" href="/#contact">Request a demo</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<div class="wrap">
+<h1>Management fee offsets: reconcile the fee before and after the credit</h1>
+<p class="standfirst">A fee offset is a calculation with a source, a percentage and a period. Keep all three visible, along with any amount carried forward.</p>
+<p class="byline">Fund operations &middot; November 3, 2026</p>
+<article>
+
+<h2>Read the offset terms before calculating</h2>
+<p>Some fund agreements reduce the management fee by specified portfolio-company fees. The offset percentage, eligible fee types, timing and treatment of unused amounts come from the governing agreement and disclosures. Do not assume every receipt qualifies or every investor has the same arrangement.</p>
+<ol>
+<li>Calculate the gross management fee from the agreed base, rate and period.</li>
+<li>List eligible receipts with their dates, source companies and supporting records.</li>
+<li>Apply the contractual offset percentage and any allocation across funds.</li>
+<li>Apply the available credit to the fee, respecting any cap.</li>
+<li>Reconcile the net fee and any unused credit to the ledger and the next period's opening record.</li>
+</ol>
+<h2>A worked quarter</h2>
+<p>Assume the gross quarterly management fee is $250,000, eligible receipts are $80,000 and the agreement provides a 100% offset in that quarter. There are no opening credits or other adjustments.</p>
+<div class="tablewrap"><table><thead><tr><th>Calculation</th><th>Amount</th></tr></thead><tbody><tr><td>Gross management fee</td><td class="n">$250,000</td></tr><tr><td>Eligible receipts × 100%</td><td class="n">$80,000</td></tr><tr><td>Net management fee</td><td class="n">$170,000</td></tr></tbody></table></div>
+<p>If eligible credits were $300,000 instead, a fee capped at zero would consume $250,000. The remaining $50,000 carries forward only if the terms allow it. A negative payable should not appear simply because the spreadsheet subtracts one cell from another.</p>
+<h2>Check the receipt trail as well as the arithmetic</h2>
+<p>The SEC's June 2020 examination risk alert describes failures to apply offsets in accordance with disclosures and failures to track portfolio-company fees. That is a reason to reconcile the eligible-receipt register as well as the net invoice.</p>
+<p>Review credits received by affiliates, timing differences and investor-specific terms against the agreement. Keep the gross fee, applied credit and closing credit balance separately visible so a reviewer can reproduce the result.</p>
+<p>In a software evaluation, bring one ordinary quarter and one quarter where credits exceed the fee. Ask the provider to show the source receipts, the applied amount and the next quarter's opening credit.</p>
+<p>Source: <a href="https://www.sec.gov/files/Private%20Fund%20Risk%20Alert_0.pdf">SEC examination risk alert, June 23, 2020, fees and expenses</a>. The numerical example illustrates assumed contract terms.</p>
+
+</article>
+  <!-- assistant-links:start -->
+  <nav class="assistant-links" aria-label="Page formats and assistants">
+    <a href="https://1494labs.com/notes/management-fee-offsets.md">Read Markdown</a>
+    <a href="https://chatgpt.com/?q=Read+https%3A%2F%2F1494labs.com%2Fnotes%2Fmanagement-fee-offsets.md+and+explain+the+method+with+a+worked+example.+What+should+a+fund+controller+check%3F" target="_blank" rel="noopener noreferrer">Open in ChatGPT</a>
+    <a href="https://claude.ai/new?q=Read+https%3A%2F%2F1494labs.com%2Fnotes%2Fmanagement-fee-offsets.md+and+explain+the+method+with+a+worked+example.+What+should+a+fund+controller+check%3F" target="_blank" rel="noopener noreferrer">Open in Claude</a>
+  </nav>
+  <!-- assistant-links:end -->
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs Inc., a Delaware corporation, 6 Liberty Square #2721, Boston, MA 02109</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/security/">Security</a>
+    <a href="/terms/">Terms</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3da7530d96b14f3f95915c071872f4be"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

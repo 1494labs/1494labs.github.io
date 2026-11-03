@@ -109,14 +109,19 @@ def build() -> str:
         changefreq, priority = HINTS.get(
             path, NOTE_HINT if path.startswith("/notes/") and path != "/notes/" else DEFAULT_HINT
         )
-        lines += [
-            "  <url>",
-            f"    <loc>{ORIGIN}{path}</loc>",
-            f"    <lastmod>{git_last_modified(page)}</lastmod>",
-            f"    <changefreq>{changefreq}</changefreq>",
-            f"    <priority>{priority}</priority>",
-            "  </url>",
-        ]
+        markdown = ROOT / ("index.md" if path == "/" else path.strip("/") + ".md")
+        targets = [(path, page)]
+        if markdown.is_file():
+            targets.append(("/" + markdown.relative_to(ROOT).as_posix(), markdown))
+        for url, source in targets:
+            lines += [
+                "  <url>",
+                f"    <loc>{ORIGIN}{url}</loc>",
+                f"    <lastmod>{git_last_modified(source)}</lastmod>",
+                f"    <changefreq>{changefreq}</changefreq>",
+                f"    <priority>{priority}</priority>",
+                "  </url>",
+            ]
     lines.append("</urlset>")
     return "\n".join(lines) + "\n"
 

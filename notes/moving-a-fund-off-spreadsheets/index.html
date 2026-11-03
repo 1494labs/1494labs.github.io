@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moving a fund off spreadsheets: prove the opening book first · 1494 Labs</title>
+
+<link rel="canonical" href="https://1494labs.com/notes/moving-a-fund-off-spreadsheets/">
+<link rel="stylesheet" href="/assets/notes.715da883.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+
+<meta property="og:type" content="article">
+
+<meta property="og:site_name" content="1494 Labs">
+
+
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta name="twitter:card" content="summary_large_image">
+
+
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+
+
+
+<meta name="description" content="Choose a cutover date, carry the calculation state and run a parallel close. A trial balance alone is not a complete fund conversion.">
+<meta property="og:title" content="Moving a fund off spreadsheets: prove the opening book first">
+<meta property="og:description" content="Choose a cutover date, carry the calculation state and run a parallel close. A trial balance alone is not a complete fund conversion.">
+<meta property="og:url" content="https://1494labs.com/notes/moving-a-fund-off-spreadsheets/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Moving a fund off spreadsheets: prove the opening book first",
+  "description": "Choose a cutover date, carry the calculation state and run a parallel close. A trial balance alone is not a complete fund conversion.",
+  "url": "https://1494labs.com/notes/moving-a-fund-off-spreadsheets/",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "1494 Labs"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "1494 Labs"
+  }
+}
+</script>
+<link rel="alternate" type="text/markdown" href="https://1494labs.com/notes/moving-a-fund-off-spreadsheets.md" title="Markdown">
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <a class="lockup" href="/" aria-label="1494 Labs home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+            <path d="M5 9 H27"/><path d="M16 9 V26"/>
+          </g>
+          <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+          <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        </svg>
+      <span class="wordmark">1494 Labs</span>
+    </a>
+    <nav class="sitenav" aria-label="Site">
+      <a href="/fund-accounting-software/">Platform</a>
+      <a href="/capabilities/">Capabilities</a>
+      <a href="/notes/">Notes</a>
+      <a class="demo" href="/#contact">Request a demo</a>
+    </nav>
+    <details class="navmenu">
+      <summary><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>Menu</summary>
+      <nav aria-label="Site menu">
+        <a href="/fund-accounting-software/">Platform</a>
+        <a href="/capabilities/">Capabilities</a>
+        <a href="/notes/">Notes</a>
+        <a class="demo" href="/#contact">Request a demo</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<div class="wrap">
+<h1>Moving a fund off spreadsheets: prove the opening book first</h1>
+<p class="standfirst">Choose a cutover date, carry the calculation state and run a parallel close. A trial balance alone is not a complete fund conversion.</p>
+<p class="byline">Fund operations &middot; November 3, 2026</p>
+<article>
+
+<h2>Choose one cutover period</h2>
+<p>Start with a period whose ledger, NAV and investor statements have been reconciled. Save those reports and the source workbooks as the conversion evidence. Decide which historical records must remain queryable and which calculations must continue from the opening position.</p>
+<ol>
+<li>Map ledger accounts, investments and investor accounts to the new system.</li>
+<li>Import the opening trial balance and reconcile debits, credits and NAV.</li>
+<li>Reconcile investment quantities, cost and value, then each investor's capital.</li>
+<li>Carry the state behind the next calculation: high-water marks, loss carryforwards, fee credits and side-pocket interests where applicable.</li>
+<li>For private equity, preserve dated contributions and distributions needed for performance and waterfall calculations.</li>
+<li>Run the next period in parallel and investigate differences before accepting the conversion.</li>
+</ol>
+<h2>A conversion that ties but still fails</h2>
+<p>Suppose an investor opens at $900,000 with a $1 million high-water mark. Importing only the $900,000 balance can make the opening ledger and investor statement agree. It does not tell the fee engine that the next $100,000 of recovery is below the existing mark.</p>
+<p>The acceptance test is the next calculation as well as the opening balance. Run a recovery period and compare the fee with the old workbook under the same terms. Keep any differences visible until the controller can explain them.</p>
+<h2>Agree the acceptance evidence</h2>
+<ul><li>Opening ledger balances and NAV reconcile to the approved source.</li><li>Investment and investor subledgers agree with their ledger controls.</li><li>Fees, allocations and distributions reproduce the agreed examples.</li><li>Historical statements remain available, with the cutover boundary clear.</li><li>A reviewer can trace a reported number back to its imported record or new-period entry.</li></ul>
+<p>A workbook can remain useful for independent checks. Give the accounting system responsibility for the accepted book, and document who approves corrections during the parallel period.</p>
+<p>Ask 1494 Labs to demonstrate imports and a close using reference data shaped like your fund. Agree the scope of any mid-life conversion before scheduling it.</p>
+<p><a href="/notes/what-an-opening-balance-has-to-carry/">What an opening balance has to carry</a> covers the calculation state in more detail. <a href="/fund-accounting-software/">See the platform</a> or <a href="/#contact">request a demo</a>.</p>
+
+</article>
+  <!-- assistant-links:start -->
+  <nav class="assistant-links" aria-label="Page formats and assistants">
+    <a href="https://1494labs.com/notes/moving-a-fund-off-spreadsheets.md">Read Markdown</a>
+    <a href="https://chatgpt.com/?q=Read+https%3A%2F%2F1494labs.com%2Fnotes%2Fmoving-a-fund-off-spreadsheets.md+and+explain+the+method+with+a+worked+example.+What+should+a+fund+controller+check%3F" target="_blank" rel="noopener noreferrer">Open in ChatGPT</a>
+    <a href="https://claude.ai/new?q=Read+https%3A%2F%2F1494labs.com%2Fnotes%2Fmoving-a-fund-off-spreadsheets.md+and+explain+the+method+with+a+worked+example.+What+should+a+fund+controller+check%3F" target="_blank" rel="noopener noreferrer">Open in Claude</a>
+  </nav>
+  <!-- assistant-links:end -->
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs Inc., a Delaware corporation, 6 Liberty Square #2721, Boston, MA 02109</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/security/">Security</a>
+    <a href="/terms/">Terms</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3da7530d96b14f3f95915c071872f4be"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

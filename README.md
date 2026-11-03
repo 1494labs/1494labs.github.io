@@ -99,3 +99,25 @@ notices.
 
     scripts/publish_site.sh --dry-run    # what would change
     scripts/publish_site.sh              # sync, then it tells you the sitemap step
+
+## Public Markdown and assistant links (#1791)
+
+After changing any page, run `uv run python scripts/gen_site_docs.py`.
+It writes `/index.md` for the home page and `<page>.md` for other pages
+(for example `/notes/management-fee-offsets.md`), plus `llms.txt` and
+`llms-full.txt`. It also adds reading-format links to every page and assistant
+handoffs to every note. The generated files keep tables, ordered steps and
+absolute source links. Noindex pages get a reading copy but are excluded from
+the discovery files and sitemap. `--check` checks that the output is current.
+
+The publishing script runs the same generator against the destination HTML.
+This includes Pages-only pages and uses the public legal text rather than the
+local drafts. Commit those generated changes with the published content. The
+Pages repository's sitemap generator must include each page's Markdown copy;
+run it after the content commit as usual.
+
+Phase 2's initial new topics are side pockets, management fee offsets and moving
+a fund off spreadsheets, chosen from the issue's candidates pending phase 1's
+baseline. Named comparisons belong only in the public marketing repository,
+with sourced claims and topic selection from that baseline. The initial
+comparisons here cover spreadsheets and the administrator service workflow.

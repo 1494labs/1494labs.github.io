@@ -1,0 +1,2401 @@
+# 1494 Labs
+
+> Fund accounting software for fund CFOs, controllers, family offices and fund administrators.
+
+1494 Labs configures fees, allocations and waterfalls to a fund's agreement, with
+results traceable through the ledger to NAV and investor capital accounts.
+The capability matrix distinguishes shipped capabilities from planned work.
+
+## Demo, sandbox and assistant access
+
+- [Request a demo](https://1494labs.com/#contact): describe your fund and current workflow, or email hello@1494labs.com. Ask for a sandbox seeded with reference funds.
+- [Capabilities](https://1494labs.com/capabilities.md): current product scope and status.
+- MCP: POST /api/v1/mcp on your workspace's application origin. Requires ordinary workspace authentication and respects the user's permissions. Tools read the book and run saved analyses; this is not an anonymous public demo endpoint. Ask hello@1494labs.com about connecting your assistant.
+
+## Pages and worked notes
+
+Source: https://1494labs.com/capabilities/
+
+# What the platform does, and what it does not
+
+34 capabilities, with what we do not do on the same page as what we do. Every row marked shipped can be demonstrated; ask for the one that decides it.
+
+## Fund accounting the market is thin on
+
+| Capability | Status |
+| --- | --- |
+| [Equalization](https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/) or series accounting, chosen per fund | Shipped |
+| Both the equalization-factor and series approaches, per fund. | |
+| [High-water marks](https://1494labs.com/notes/high-water-marks-and-partial-redemptions/) carried per investor | Shipped |
+| The mark survives partial redemption, transfer and restatement | Shipped |
+| Side pockets that split dealing NAV from total NAV | Shipped |
+| Configurable [waterfall tiers](https://1494labs.com/notes/european-vs-american-waterfall/) | Shipped |
+| Carry accrual, clawback and per-principal vesting | Shipped |
+| Class-currency investor NAV | Shipped |
+| Fund-of-funds look-through, on both ownership bases | Shipped |
+| Share of the underlying fund needs a manager-reported size and is absent with a stated reason when they do not report one. | |
+| Multi-level family-office ownership | Shipped |
+
+## The ledger
+
+| Capability | Status |
+| --- | --- |
+| Official and latest-knowledge books on one ledger, with the source of every line | Shipped |
+| Each line can show how it would read under the other book, and the difference is exact because both figures come from the ledger itself. | |
+| Multi-asset on one book | Shipped |
+| Drawdown commitments, calls and distributions | Shipped |
+| ILPA call/distribution notices and line-item codes | Shipped |
+| RIC and BDC operations | Shipped |
+| Multi-currency billing with the rate stamped at both ends | Shipped |
+| Frozen trial balance at close, with graded revisions | Shipped |
+| Credit facilities on both sides: the fund's own borrowing lines and the loans it makes | Shipped |
+| Subscription lines and asset-based lines carry a borrowing base, draws, repayments and interest. Loans the fund makes carry their terms, servicing events and cash receipts. | |
+| Form PF and Form ADV Schedule D answers derived from the book | Shipped |
+| Each answer cites the rows it came from, and a missing input shows as an explicit gap. Exported for a compliance vendor or prepared for filing. | |
+| Form PF inputs the ledger does not hold, entered on review screens and signed | Shipped |
+| Portfolio-company financials, valuation procedures, beneficial owners and related persons are entered on review screens, drafted from the book where it has the answer, and signed. A correction adds a new signature and keeps the earlier one. Beneficial owners come from the investor's KYC record. | |
+
+## How you get at it
+
+| Capability | Status |
+| --- | --- |
+| Everything you can do on screen, available through the public API | Shipped |
+| Saved analyses that refresh on the platform and can be pulled by other systems through the API | Shipped |
+| AI assistants can read the book through MCP, the standard connector for AI tools | Shipped |
+| AI extraction from statements and LPAs, with mandatory human confirmation | Shipped |
+| Nothing AI-derived posts without a person confirming it. | |
+| A daily check that recomputes the arithmetic on every fund on the platform | Shipped |
+| Capital accounts against the ledger, allocations against the pool, cash movements against the entries that produced them. With no customers on the platform yet, it runs against our own reference funds - which is what it would do against yours, on the same schedule, with nothing to set up. | |
+| Internal exceptions: a worklist, aging, and an accept-with-a-note decision | Shipped |
+| An exception names the fund, the period and the amount. The check proves the book agrees with itself. Whether a price was right is a separate question, answered by checking against a custodian's numbers. | |
+| External exceptions: cash against an imported bank statement, positions against a custodian's file | Shipped |
+| A statement's lines auto-match the book only when exactly one movement fits; anything else is left for a person, and what is left over raises an exception on the same worklist as the internal ones. | |
+| External exceptions: NAV against an outside administrator's file | Shipped |
+| The Shadow tab ties an administrator's pack (fund and class NAV, capital accounts, trial balance, cash, positions, fees) to the book from CSV or XLSX, remembers each administrator's column layout, and raises every difference on the same exceptions worklist. | |
+
+## What we do not do
+
+| Capability | Status |
+| --- | --- |
+| Order and execution management | No |
+| We are the book of record. There is no order ticket and there will not be one. | |
+| Custody, or moving money | No |
+| The platform produces the payment file an operator carries to their banking portal. It holds no credentials for any bank or payment system and initiates no transfers. | |
+| Tax return preparation and K-1 filing | No |
+| Private per-fund book-data preparer workpapers are available under reporting (#1702), with unresolved character and tax-input gaps. Final tax allocations, tax-basis capital, withholding and K-1 preparation/filing remain with the preparer. Owner/preparer review is required before a demonstration claim. | |
+| An LP-facing investor portal | No |
+| Statements are produced for an administrator to send. There is no investor login. | |
+| Market data and pricing feeds we supply | No |
+| Bring your own provider. We provide the connection that loads your provider's feed and will not resell data or imply a license we do not hold. | |
+| A third-party security attestation | Roadmap 2027Q2 |
+| No report today. The security page lists the controls that are in place and the ones that are not. | |
+| A native mobile application | No |
+| The web app renders and is navigable at phone width. There is no native app and none is planned. | |
+
+
+---
+
+Source: https://1494labs.com/family-office-accounting/
+
+# Family office accounting, with the structure drawn from the capital
+
+A family office is a web of vehicles that own each other, and the
+accounting problem is what that web adds up to once the intercompany
+interests are taken out.
+
+Solutions · roughly 6 minutes
+
+## The problem is the structure
+
+Ask a single family office what it is worth and the answer involves a
+diagram. There is a revocable trust from 1998, two more for the second
+generation and one for the third. They own a holding company between them.
+The holding company owns a family partnership. The partnership owns an
+alternatives vehicle, a private capital vehicle, a venture vehicle, a real
+estate vehicle, a public markets vehicle and a directs vehicle, and one of
+those owns a co-investment vehicle underneath it.
+
+Every one of those is a real legal entity with its own book. The number the
+family wants is what all of it comes to, from where they sit, without
+counting the same underlying asset twice on its way up.
+
+- ✓Ownership derived from the capital accounts, period by period
+
+- ✓Intercompany interests eliminated, so nothing is counted twice
+
+- ✓Legal and consolidated views of the same structure
+
+- ✓Trusts, GRATs, partnerships, holding companies and asset SPVs on one platform
+
+- ✓Real assets and digital assets on the same ledger as the funds
+
+- ✓Net worth and exposure translated into the family's reporting currency
+
+## Ownership is derived from capital
+
+The usual failure here is a spreadsheet of ownership percentages maintained
+beside the accounting. It is correct on the day it is written and wrong the
+first time somebody contributes capital, because the percentage and the
+capital account are two records of one fact and only one of them gets
+updated.
+
+1494 Labs derives each ownership percentage from the capital accounts themselves,
+per period. If a trust contributes to the holding company, its share moves
+because its capital moved. The structure diagram and the net worth statement
+are two readings of the same underlying record, so there is no version of
+events where the picture disagrees with the number.
+
+![An ownership structure drawn as a flow diagram: four family trusts converging on a holding company of $3.58bn, through a family partnership, out to six asset sleeves and a co-investment vehicle.](https://1494labs.com/assets/screens/structure-flow.49a61406.jpg)
+**Four trusts, one holding company, six sleeves.** Band width is the value passing *through* each vehicle, so a holding company worth $157.5m on its own books and controlling $3.58bn reads as what it is. Nobody typed a percentage.
+
+## What the elimination is for
+
+A holding company's balance sheet shows an interest in the partnership
+beneath it. The partnership's shows its own investments. Add the two
+together and the partnership's assets appear twice, once directly and once
+wrapped inside the holding company's interest.
+
+The consolidated view removes those internal interests explicitly and shows you the removal in its own column. On a structure like the one above,
+more than a billion dollars of intercompany interest is eliminated between
+the legal totals and the consolidated one. That column is what lets you check the consolidated number.
+
+## The structure, from any angle
+
+The same structure draws as a top-down org chart, a left-to-right chart, or a
+value-weighted flow. From one vehicle downward, when the question is what
+this trust owns; or the entire structure at once, when the question is what
+the family owns. A structure with several tops cannot be drawn from any one
+of them, so the whole-structure view draws all of them at once.
+
+![The whole ownership structure as an org chart: four trusts, a holding company, a family partnership, six asset vehicles and a co-investment vehicle.](https://1494labs.com/assets/screens/structure-graph.60cc35a2.jpg)
+**Every vehicle once, with its owners converging on it.** One vehicle can have several owners, so drawing the structure as separate trees would repeat the shared vehicles once per branch.
+
+## Beyond the marketable book
+
+Family offices hold things funds do not. Real property, art, aircraft and
+other tangible assets carry measurement and appraisal histories. Digital
+assets carry custody locations. Both post to the same ledger as the fund
+interests and the public equity, under the same rules and with the same
+audit trail, so one consolidated statement covers all of it.
+
+## If you already have a reporting layer
+
+Most family offices we talk to are running two things: something that
+aggregates and reports on the family's wealth, and something else keeping
+the general ledger. The reporting layer is usually the one people are happy
+with; the complaints are about the ledger underneath it.
+
+This is the ledger underneath. An aggregation or reporting platform the
+family is happy with should read straight from the accounting book. Everything the application does is available through a public, documented
+API, and a script signs in the same way a person does, so any system your
+team or vendor already runs can read the book or post to it.
+
+Custodians, banks, portals, data vendors and the family's own warehouse
+connect through that same API. For systems that will never have an
+API, 58 bulk loaders accept a file. Connecting it to what
+you already run is scoped as its own piece of work, against your actual
+systems.
+
+## Related reading
+
+## What the family actually owns
+
+A family that holds a partnership through a holding company through four trusts owns most of its assets several times over on paper. Getting to a number the family can act on means eliminating the intercompany interests, layer by layer.
+
+![A look-through consolidation showing legal books of $12.01bn against a consolidated $1.50bn, with a per-asset table giving legal owner, asset class, valuation basis, effective ownership, gross value and attributed value.](https://1494labs.com/assets/screens/look-through-consolidation.a6726248.jpg)
+
+**$12.01bn of legal books, $1.50bn of it actually owned.**
+The gap is the same dollar counted at each layer it passes through. Every
+row carries the effective ownership that got it there (40% of $157.5m is $63.0m), computed from the capital accounts, so the
+consolidation and the ownership diagram cannot disagree.
+
+- [The platform overview](https://1494labs.com/fund-accounting-software/)
+
+- [ABOR and IBOR, and why most systems keep them apart](https://1494labs.com/notes/abor-and-ibor/)
+
+- [Private equity fund accounting](https://1494labs.com/private-equity-fund-accounting/) · for the commitments underneath
+
+- [Structures and ownership](https://docs.1494labs.com/guide/structures-and-ownership/) in the product docs
+
+- [Portfolio companies and consolidation](https://docs.1494labs.com/guide/portfolio-companies-and-consolidation/) in the product docs
+
+## Show us the fund that breaks your current system
+
+Built for the people who sign the books.
+Tell us what you run and we will walk you through it in the product,
+on a running book. If you want to try it yourself, we will stand up a
+sandbox seeded with reference funds for you to work in.
+
+[Request a demo](https://1494labs.com/#contact)
+
+
+---
+
+Source: https://1494labs.com/fund-accounting-software/
+
+# Fund accounting software that checks its own books
+
+Most systems report what the books say. This one also re-checks, each morning, that the ledger, the NAV and the capital accounts still agree.
+
+Platform overview · roughly 6 minutes
+
+## The short version
+
+Fund accounting software has one job that cannot be faked: at the end of a
+period, the general ledger, the NAV, and every investor's capital account
+have to agree with each other. Everything else on a feature list is in
+service of that, and most of the pain in this industry comes from systems
+where those three things are maintained separately and reconciled
+afterwards.
+
+1494 Labs is built the other way round. One ledger carries the accounting
+book and the investment book. Capital accounts are built from the journal entries. Ownership is derived from the capital accounts. And each fund's arithmetic is re-checked every morning, so a book that has drifted says so in the period it drifted.
+
+- ✓One ledger for the accounting book and the investment book
+
+- ✓Capital accounts derived from the ledger, per investor, per period
+
+- ✓The arithmetic of every fund re-checked every morning
+
+- ✓Financial statements read directly from the book
+
+- ✓Every screen uses the same public API you get, so your own systems can do anything a person can
+
+- ✓Every money figure explains itself: its rule, inputs, source transactions, journal entries and change history
+
+- ✓US GAAP or IFRS per fund, with the fair value hierarchy note and prior-period comparatives
+
+- ✓Credit facilities on both sides: the fund's own borrowing lines, and the loans it makes, from term loans to committed lines with commitment fees on the undrawn balance, PIK and default interest
+
+- ✓Form PF and Form ADV Schedule D answers with the source rows behind each one, exported for a compliance vendor or prepared for filing
+
+## One ledger, two books
+
+The **accounting book of record** and the **investment
+book of record** answer different questions on different clocks, which
+is why they usually end up in different systems with a reconciliation
+between them. That reconciliation is somebody's job every morning, and it is
+the source of a large share of the operational risk in fund administration.
+
+Recording each economic event once, and treating trade date and settlement
+date as two views of the same journal entries, removes the reconciliation altogether: there is one set of entries, so there
+is nothing to reconcile. Ask a vendor which it is offering, one book or a
+well-automated reconciliation between two. We wrote up the distinction, and how to test it, in
+[ABOR and IBOR, and why most systems keep them apart](https://1494labs.com/notes/abor-and-ibor/).
+
+![The fund overview on Home: the NAV calculated for the selected period, that period's fees, and position value and operating cash read live, with the floor the cash is measured against.](https://1494labs.com/assets/screens/fund-dashboard.8d533a4c.jpg)
+**Each figure says which point in time it reflects.** NAV is the one calculated for the period you selected, fees are that period's, and anything read from the books as they stand now is marked Live, including the cash the fund can spend and the floor it is measured against.
+
+## Every vehicle type, in one product
+
+Pooled funds, funds-of-one, separately managed accounts, trusts, family
+partnerships, holding companies and asset SPVs. Committed-capital and
+subscription-funded. Unitized and capital-based. Master-feeder structures where the feeder picks
+up master profit and loss through a real internal position held on the
+ledger, so nobody types a journal entry for it each month.
+
+Funding model and liquidity terms are separate fund settings. A drawdown fund
+can use commitments, calls, recallable distributions and a waterfall. A
+subscription-funded fund can take money at each period's final NAV, while
+redemption dates, notice, lock-ups and gates set how investors leave. Both
+post to the same ledger, and a fund that changes shape does not change systems.
+
+## The books, and everything that reads them
+
+An income statement, a balance sheet, a statement of changes in partners'
+capital and a schedule of investments are four questions put to one ledger.
+Ending capital on one ties to NAV on another because both read the same book.
+
+![An income statement with trading gains, administration fee expense and directors' fees, totaling net income.](https://1494labs.com/assets/screens/income-statement.7581fcbf.jpg)
+**Real operating expenses carrying their GL codes.** Expenses post through the income and expense ledger, which is also the only source the allocation to investors reads, so a cost that reaches NAV reaches capital accounts too.
+
+![A per-investor allocation for the period: six investors by name, each with opening capital, net profit and loss, and ending capital.](https://1494labs.com/assets/screens/allocation-per-investor.c3091f57.jpg)
+**The period's profit and loss, split across investors.** Opening $23,499,503.07, net $125,969.93, ending $23,625,473.00 - which is the NAV on the dashboard above. Fees and expenses are attributed per investor, directly to the accounts that bear them.
+
+## The error that survives review
+
+A wrong price gets argued about. The errors that survive every review are the
+ones nobody looks for: a capital account that stopped tying to the ledger
+three periods ago, an allocation that no longer sums to the pool, a
+high-water mark lost in a redemption. Nobody re-adds a fund by hand each
+month, so they surface at the audit as a restatement.
+So every morning the platform re-computes the figures that are supposed
+to tie, for each fund it holds, and opens an exception naming the fund, the
+period and the amount where something does not. That check currently runs
+against our own reference funds.
+
+When a number does change, the change keeps its own record: prior value, new
+value, delta and cause, per event. A correction stays on the record as a fact about the book.
+
+![A NAV restatement history listing every change to a fund's NAV with prior value, new value and delta.](https://1494labs.com/assets/screens/nav-restatement.f2e59da4.jpg)
+**Every change to a calculated NAV keeps its own record.** The ledger keeps the trail itself, so nobody has to remember to.
+
+![A trial balance of thirteen accounts by code and category, with debits and credits each totaling $28,515,992.43 and a cent of rounding shown on its own line.](https://1494labs.com/assets/screens/trial-balance.164f78ab.jpg)
+**And the ledger those statements read.** Debits and credits foot to the same $28,515,992.43, and the cent of rounding sits on a line of its own. Close the period and the trial balance is locked as a revision the system will not let anyone edit, which is what a statement produced a year later reads from.
+
+## Built for the vehicle you actually run
+
+- [Private equity and drawdown funds](https://1494labs.com/private-equity-fund-accounting/) · commitments, calls, waterfalls, carry
+
+- [Hedge funds and subscription-funded vehicles](https://1494labs.com/hedge-fund-accounting/) · series, equalization, high-water marks
+
+- [Family Offices](https://1494labs.com/family-office-accounting/) · consolidated net worth across the whole structure
+
+- [Fund Administrators](https://1494labs.com/fund-administration-software/) · many clients, one platform
+
+- [A wrong number that agrees with itself](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/) · what the morning check is for
+
+- [Which columns can be added](https://1494labs.com/notes/which-columns-can-be-added/) · subtotals that stay honest under grouping
+
+- [Journal entries and the ledger](https://docs.1494labs.com/guide/journal-entries-and-the-ledger/) in the product docs
+
+- [The API reference](https://docs.1494labs.com/developer/api/) in the product docs: every screen uses it
+
+## Show us the fund that breaks your current system
+
+Built for the people who sign the books.
+Tell us what you run and we will walk you through it in the product,
+on a running book. If you want to try it yourself, we will stand up a
+sandbox seeded with reference funds for you to work in.
+
+[Request a demo](https://1494labs.com/#contact)
+
+## Compare your current workflow
+
+[1494 Labs vs spreadsheets](https://1494labs.com/fund-accounting-software-vs-spreadsheets/) and [1494 Labs and an outsourced administrator](https://1494labs.com/fund-accounting-software-vs-administrator/): what to test with one completed period.
+
+
+---
+
+Source: https://1494labs.com/fund-accounting-software-vs-administrator/
+
+# 1494 Labs and an outsourced fund administrator
+
+Compare the accounting system with the service relationship, and decide which book and reconciliation your team needs to own.
+
+Updated November 3, 2026
+
+## Separate the service decision from the book
+
+A fund administrator provides people and contracted services. Fund accounting software provides the system in which a team keeps and reviews the book. Scope the work first: who books transactions, calculates NAV, reviews allocations, produces investor reports and approves the close?
+
+1494 Labs is fund accounting software for fund teams and administrators. A software demonstration should prove the accounting workflow; a service evaluation should establish responsibility, staffing, reporting deadlines and review arrangements.
+
+## Three workflows to evaluate
+
+- **An internal book.** Your team runs the ledger and close. Confirm that you have the people and review process for the work you retain.
+
+- **A shadow book.** Your team maintains an independent record and compares it with the administrator's reports. Agree the data exchange, timing and break resolution.
+
+- **An administrator-operated book.** Ask what access, exports and supporting records your team receives, and who approves adjustments.
+
+## Test the handoff with one period
+
+1. List the inputs each party supplies and their delivery dates.
+
+2. Reconcile investment positions, cash and opening investor capital.
+
+3. Compare the fee and allocation calculations under the same agreement terms.
+
+4. Record each difference with its source, owner and resolution.
+
+5. Agree which reports are approved and how corrections reach both teams.
+
+1494 Labs includes shadow reconciliation for comparing an outside administrator's book with your own. Ask to see a break identified and traced to its source. For an administrator evaluating the platform, ask to see the workflow across several client funds.
+
+Bring the proposed division of responsibilities to a [demo](https://1494labs.com/#contact). Review [fund administration workflows](https://1494labs.com/fund-administration-software/) and the [capability matrix](https://1494labs.com/capabilities/) before agreeing the scope.
+
+
+---
+
+Source: https://1494labs.com/fund-accounting-software-vs-spreadsheets/
+
+# 1494 Labs vs spreadsheets for fund accounting
+
+Compare a spreadsheet-based fund close with a ledger that traces fees, allocations and investor balances to their entries.
+
+Updated November 3, 2026
+
+## Compare the work of closing a period
+
+A useful evaluation starts with one completed period from a fund like yours. Reproduce the fee, allocation and investor statement, then change one input and follow its effect through the book.
+
+| Controller's task | Spreadsheet workflow to inspect | 1494 Labs demonstration to request |
+| --- | --- | --- |
+| Update a fund's fee terms | Locate the formulas and copies that depend on the term | Show the configured fee terms and the resulting calculation |
+| Explain an investor balance | Trace workbook references to ledger exports | Trace the capital account to allocations and entries |
+| Check the close | Review reconciliations and exception tabs | Show the checks and investigate an exception |
+| Prepare the next period | Verify copied formulas, opening balances and fee state | Show the next period's opening state and calculation trail |
+
+## Use a worked acceptance test
+
+1. Agree the opening ledger, investor balances and fee state.
+
+2. Run the period with the same dated transactions and terms.
+
+3. Reconcile NAV, fees and every investor's closing balance.
+
+4. Introduce a corrected input and inspect the affected entries and reports.
+
+5. Save the evidence and agree who owns the accepted book.
+
+The objective is a reproducible close. Keep independent spreadsheet checks where they help a reviewer, and make the accounting record and approval process clear.
+
+1494 Labs supports configured fees, allocations and waterfalls with a traceable ledger and recurring checks. The [capability matrix](https://1494labs.com/capabilities/) identifies current scope and planned work. [Read the conversion checklist](https://1494labs.com/notes/moving-a-fund-off-spreadsheets/), then [request a demo](https://1494labs.com/#contact) using reference funds shaped like your own.
+
+
+---
+
+Source: https://1494labs.com/fund-administration-software/
+
+# Fund administration software for people who sign the books
+
+An administrator keeps forty books at once, each with its own agreement,
+its own calendar and its own idea of what a management fee is.
+
+Solutions · roughly 6 minutes
+
+## Forty funds, forty agreements
+
+The administrator's difficulty is variety. One client's management fee is
+charged on committed capital during the investment period and on invested
+capital after it. Another's is on net asset value with a most-favored-nation
+clause. A third caps organizational expenses and makes the manager bear the
+excess. A platform with a house convention makes all of them somebody's
+manual adjustment.
+
+Fee structures here are composed from parts: tiered
+schedules, modifiers, offsets, expense caps and four-way settlement,
+configured per fund. Terms can be read out of the limited partnership
+agreement into a prefilled builder, with the clause attached, and a human
+confirms every one before it becomes a fund term.
+
+- ✓Each client's data kept in its own separate store
+
+- ✓Per-fund fiscal calendars, and a close that locks the period while current work carries on
+
+- ✓Sign-off on the numbers tracked apart from locking the period, with a checklist and a controller's dashboard
+
+- ✓Reconciliation exceptions on an aged, assigned worklist
+
+- ✓Bulk CSV loaders for the systems that will never have an API
+
+- ✓More than 1,800 API operations in one published API reference
+
+- ✓Shadow reconciliation that ties an outside administrator's pack to the book
+
+- ✓Investor statements laid out from a client's own PDF
+
+## A close that actually closes
+
+Period close moves through three stages, per fund and per period: open,
+soft closed, hard closed. A hard-closed period accepts no new entries and
+its trial balance is saved as a fixed record, so a statement produced a year later still ties to
+what was reported at the time. A fund with negative capital or a pending crystallization is left out of
+the close and listed for review.
+
+Corrections stay possible without pretending they did not happen. Anything
+in an open period is editable; a hard-closed period takes a graded, audited revision. The distinction matters because the alternative, in practice, is
+an administrator keeping a private list of what the system says versus what
+is true.
+
+![A Statement of Changes in Partners' Capital, from beginning capital through contributions, net income and fees to ending capital.](https://1494labs.com/assets/screens/statement-of-changes.39e06e66.jpg)
+**Ending capital ties to the dashboard NAV to the cent.** Both figures come from the same ledger, so no reconciliation runs between them.
+
+![A fee gross-to-net statement: five management fee accruals, each from gross accrual to net fee, totaling $65,934.06 gross and net with no offsets, waivers or rebates.](https://1494labs.com/assets/screens/fee-gross-to-net.a19c17c9.jpg)
+**Gross to net, per accrual, per client.** Each posted fee keeps the steps it was calculated with, in order (gross, then offsets, waivers and rebates, then net), saved when it posted, so a later change to the terms does not rewrite it.
+
+## Exceptions with somewhere to go, and two kinds of them
+
+A reconciliation report is only a control if somebody works it. Each exception
+moves through stages (detected, assigned, explained, resolved), names the
+check that found it, and sits on an aged worklist.
+
+Be clear about which kind, because the word means different things to a
+vendor and to your team. **Internal exceptions** are what the daily check produces: capital accounts against the ledger, allocations
+against the pool, cash movements against the entries that produced them.
+**External exceptions** come from a counterparty file, and are
+the ones your morning actually consists of. Cash against the bank runs from an imported statement, positions against a custodian's file, and an outside administrator's pack (fund and class NAV, capital accounts, trial balance, cash, positions and fees, as CSV or XLSX) ties out on the Shadow tab, with each administrator's column layout remembered for next period. The worklist, the aging and the accept-with-a-note decision are the same for all three, and the screens below are a bank statement's.
+
+![An exception detail panel for the operating cash account at 2026-06-30: the bank statement's closing balance of $747,850.00 against the book's $750,000.00, a difference of $2,150.00, a reason field, and buttons to acknowledge, resolve or accept the difference.](https://1494labs.com/assets/screens/break-detail.dc783d42.jpg)
+
+**Expected, actual, difference, and a decision with a name on it.**
+Resolve and accept are deliberately different: resolved means the
+numbers now agree, accepted means they still differ and somebody decided
+that is correct. Accepting requires a note, because "they differ and
+that is fine" is only institutional memory if it says why.
+
+## Every screen uses the public API
+
+The product's own interface is built on exactly the API a client gets,
+so every operation the interface performs is in the API. Custodians, banks, portals, data vendors and a client's own
+warehouse all connect through the same API, and the systems that will
+never have an API get bulk CSV loaders.
+
+![A cash movements blotter of settled movements: investments into underlying managers, investor subscriptions, and transfers between the fund's own cash accounts, each with its source and counterparty.](https://1494labs.com/assets/screens/cash-movements.61bcbb09.jpg)
+**Cash movements, with their sources.** Select many rows and act on them together in every table, because an administrator's day is spent on many rows at once.
+
+## The exceptions worklist
+
+An exception names the fund, the period and the amount. The worklist, the aging and the accept-with-a-note decision are the same whether the exception came from the daily internal check or from a counterparty file.
+
+![The exceptions worklist: two open exceptions on the operating cash account, raised by an imported bank statement. The closing balance differs from the book by $2,150.00, and one statement line of -$2,150.00 matches nothing in the book.](https://1494labs.com/assets/screens/reconciliation-breaks.3b91eb16.jpg)
+
+**A finding has somewhere to go.**
+An imported bank statement matched every line but one, a $2,150 fee
+the book never recorded, and raised two exceptions: the balance and the unmatched line. An exception ages, gets assigned, and keeps what was decided
+about it, so next month's exception on the same account arrives with
+last month's reasoning attached.
+
+## Related reading
+
+- [A wrong number that agrees with itself](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/), the errors a reconciliation cannot see
+
+- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/), when a client fund moves over mid-life
+
+- [The platform overview](https://1494labs.com/fund-accounting-software/)
+
+- [Drawdown clients](https://1494labs.com/private-equity-fund-accounting/)
+
+- [Subscription-funded clients](https://1494labs.com/hedge-fund-accounting/)
+
+- [Family office clients](https://1494labs.com/family-office-accounting/)
+
+- [Closing a period](https://docs.1494labs.com/guide/closing-a-period/) in the product docs
+
+- [Cash and reconciliation](https://docs.1494labs.com/guide/cash-and-reconciliation/) in the product docs
+
+## Show us the fund that breaks your current system
+
+Built for the people who sign the books.
+Tell us what you run and we will walk you through it in the product,
+on a running book. If you want to try it yourself, we will stand up a
+sandbox seeded with reference funds for you to work in.
+
+[Request a demo](https://1494labs.com/#contact)
+
+
+---
+
+Source: https://1494labs.com/hedge-fund-accounting/
+
+# Hedge fund accounting, down to the series
+
+A subscription-funded fund has to treat investors who arrived on different days fairly. Much of that work comes down to the high-water mark.
+
+Solutions · roughly 6 minutes
+
+## Fairness between cohorts
+
+Two investors in the same strategy, one who subscribed in January and one in
+July, should not pay the same incentive fee on the same year. Every mechanism
+a subscription-funded fund uses, series accounting, [equalization](https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/), the equalization
+credit and depreciation deposit, exists to fix that one unfairness, and each
+of them is fiddly enough that it is usually implemented in a spreadsheet.
+
+- ✓Subscriptions, redemptions, transfers and investor-level activity on the ledger
+
+- ✓Series accounting with per-series high-water marks and consolidation
+
+- ✓Equalization, including the credit and depreciation deposit method
+
+- ✓Incentive fees or incentive allocations, crystallized or accrued
+
+- ✓Side pockets that ring-fence frozen participation and split dealing NAV from total NAV
+
+- ✓Sleeves carried on the journal entries themselves
+
+- ✓Form PF Sections 1 and 2 derived from positions, financing, investor and risk records, each answer citing its source
+
+## High-water marks that survive the year
+
+A high-water mark is easy to compute and easy to lose. It has to survive a
+[partial redemption](https://1494labs.com/notes/high-water-marks-and-partial-redemptions/), which reduces the balance it applies to without resetting
+it. It has to survive a transfer between investors. It has to survive a
+restatement of a prior period, when the performance it was measured against
+changes underneath it. Get any of those wrong and an investor either pays
+twice for the same gain or never pays for it at all.
+
+It is one of the checks the morning run makes on every fund it holds:
+each high-water mark must have survived its redemptions, its transfers
+and any restatement of the period it was measured in. The check currently runs against our own reference funds.
+
+![The fund overview on Home: the NAV calculated for the selected period, that period's fees, and position value and operating cash read live, with the floor the cash is measured against.](https://1494labs.com/assets/screens/fund-dashboard.8d533a4c.jpg)
+**NAV as of the period actually selected.** The NAV calculated for that period, with the fees accrued in it and the cash the fund can spend against its configured floor.
+
+![A per-investor allocation for the period: six investors by name, each with opening capital, net profit and loss, and ending capital.](https://1494labs.com/assets/screens/allocation-per-investor.c3091f57.jpg)
+**Each investor's roll-forward, by name.** Opening, the period's net profit and loss, ending. Shown narrowed to the columns that foot to the NAV; the same table carries profit and loss by component, fees per investor, and a rate of return with quarter and year to date geometrically linked. A period an investor was not in is marked as a gap.
+
+## A fund of funds, kept as a book
+
+Underlying fund positions carry a cost basis, an unrealized gain and a
+valuation date per manager. When a manager sends an estimate and later a
+final, the true-up is a correction with its own record, and a closed period can be corrected without
+breaking what was already reported.
+
+![Portfolio holdings for a fund-of-funds: six named underlying managers, each with cost, value, the date it was last valued and a link to its marks.](https://1494labs.com/assets/screens/portfolio-holdings.3916f10a.jpg)
+**Six managers, each at cost and at value.** The date each was last revalued sits on the row, because the age of an input is part of the number.
+
+## The cash underneath
+
+Subscriptions arrive as receivables and become cash when they clear.
+Redemptions leave as payables. Treating them as cash the moment they are
+recorded is how a fund's operating cash goes quietly negative on paper while
+the bank account is fine, and it is a surprisingly common defect.
+
+![A cash movements blotter of settled movements: investments into underlying managers, investor subscriptions, and transfers between the fund's own cash accounts, each with its source and counterparty.](https://1494labs.com/assets/screens/cash-movements.61bcbb09.jpg)
+**Every movement carries its source, counterparty and settlement status.** Payments to underlying managers name the manager, subscriptions name the investor, and a transfer between the fund's own accounts is derived from the journal entry that moved it. One cash sub-ledger, reconciled against the bank statement.
+
+## A series is an identity the ledger keeps
+
+Series accounting is usually run beside the accounting system, in a workbook that remembers which cohort is which. Here each series has its own inception period and its own mark, and the morning check re-checks them.
+
+![Seven series of one share class, one per subscription month from January 2024 to February 2026, each issued at 100.00 in its own inception period, with the January 2024 series marked as the lead.](https://1494labs.com/assets/screens/series.7f98fbc2.jpg)
+**One series per subscription month.** Each is issued at 100.00 in its own inception period and measured against its own high-water mark.
+
+## Crystallization, per investor and per event
+
+An incentive fee crystallizes on the events the terms name, such as a redemption, a period close or a hurdle met. Each crystallization names the account it belongs to and the mark it was measured against.
+
+![Four scheduled incentive crystallizations, two at December 2024 and two at December 2025, each posted with the amount crystallized.](https://1494labs.com/assets/screens/crystallizations.da9bddb9.jpg)
+**Crystallized per series, each December.** After a down 2025, the 2024 series stayed below their high-water marks and paid nothing; the series opened at the lows paid.
+
+## Related reading
+
+- [The platform overview](https://1494labs.com/fund-accounting-software/)
+
+- [Equalization, and what a mid-period subscriber actually owes](https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/)
+
+- [High-water marks and the partial redemption](https://1494labs.com/notes/high-water-marks-and-partial-redemptions/)
+
+- [ABOR and IBOR, and why most systems keep them apart](https://1494labs.com/notes/abor-and-ibor/)
+
+- [For administrators running several hedge fund clients](https://1494labs.com/fund-administration-software/)
+
+- [Fees: from structure to charge](https://docs.1494labs.com/guide/fees-from-structure-to-charge/) in the product docs
+
+- [Side pockets](https://docs.1494labs.com/guide/side-pockets/) in the product docs
+
+## Show us the fund that breaks your current system
+
+Built for the people who sign the books.
+Tell us what you run and we will walk you through it in the product,
+on a running book. If you want to try it yourself, we will stand up a
+sandbox seeded with reference funds for you to work in.
+
+[Request a demo](https://1494labs.com/#contact)
+
+
+---
+
+Source: https://1494labs.com/
+
+# Fund accounting for funds whose terms don't fit a template.
+
+Configure fees, allocations and waterfalls to match each fund's
+agreement, then trace the result through the ledger to NAV and to every
+investor's capital account. A check runs each morning and raises an
+exception where something stops tying.
+
+[Request a demo](https://1494labs.com/#contact)
+[See one month, traced to NAV](https://1494labs.com/#example)
+
+## Follow one month from income to investor capital.
+
+One month of a reference fund, in two steps: what the fund earned after
+its management fee, then where it ended up in six investors' capital accounts.
+
+| Net income for the month | $145,284.59 |
+| --- | --- |
+| Management fee, through the fee calculation | −$19,314.66 |
+| Net profit and loss to allocate | $125,969.93 |
+
+| Opening investor capital | $23,499,503.07 |
+| --- | --- |
+| Net profit and loss allocated | +$125,969.93 |
+| Ending investor capital, and the NAV | $23,625,473.00 |
+
+| Investor account | Opening | Net P&L | Ending |
+| --- | --- | --- | --- |
+| WBE-001-A | $6,284,337.90 | $33,687.42 | $6,318,025.32 |
+| WBE-003-A | $5,459,391.06 | $29,265.26 | $5,488,656.32 |
+| WBE-006-A | $3,774,244.32 | $20,231.97 | $3,794,476.29 |
+| WBE-002-A | $3,420,147.35 | $18,333.82 | $3,438,481.17 |
+| WBE-005-A | $2,519,062.68 | $13,503.53 | $2,532,566.21 |
+| WBE-004-A | $2,042,319.76 | $10,947.93 | $2,053,267.69 |
+| Six accounts | $23,499,503.07 | $125,969.93 | $23,625,473.00 |
+
+**Six investor accounts reconcile to the fund's ending NAV of $23,625,473.00.** Management fees and expenses are attributed to the accounts that bear them, so a fee that reaches NAV reaches the capital account it belongs to.
+
+[The full walkthrough](https://1494labs.com/fund-accounting-software/) runs the same
+period through the trial balance and the statement of changes.
+
+## Start with the kind of book you keep.
+
+- ### [Private equity and drawdown funds](https://1494labs.com/private-equity-fund-accounting/)
+
+Commitments, capital calls, recallable distributions, European and
+American waterfalls, GP carry and clawback, and ILPA-native notices.
+
+- ### [Hedge funds and subscription-funded vehicles](https://1494labs.com/hedge-fund-accounting/)
+
+Series accounting and equalization, per-series high-water marks that
+survive a redemption, incentive fees, side pockets and sleeves.
+
+- ### [Family offices](https://1494labs.com/family-office-accounting/)
+
+Multi-level ownership through trusts and holding companies, with
+intercompany interests eliminated so each asset is counted once.
+
+- ### [Registered funds](https://1494labs.com/registered-fund-accounting/)
+
+§19(a) notices sourced from the book, repurchase offers with
+proration, managed distributions, and BDC asset coverage as a gate.
+
+- ### [Fund administrators](https://1494labs.com/fund-administration-software/)
+
+Many funds on one ledger, an exception worklist with aging, and
+per-client statement packs run off the same book.
+
+- ### [Everything, listed](https://1494labs.com/capabilities/)
+
+Thirty-three capabilities with a status against each, including the six
+things we do not do and are not planning to.
+
+## Configure the terms. Trace the result. Check the balances.
+
+### Terms are configured to the agreement
+
+A [waterfall tier](https://1494labs.com/notes/european-vs-american-waterfall/), an [equalization method](https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/), a
+[high-water mark that prorates on partial redemption](https://1494labs.com/notes/high-water-marks-and-partial-redemptions/): each is set to what the fund's agreement says
+and tested against example distributions before it touches a live period.
+
+### Every balance traces back
+
+A fee on an investor's capital account leads back to the accrual
+that produced it, the schedule that calculated it and the journal entry
+that posted it. You can review an entry and see which balances move before
+you commit it.
+
+### The book checks itself each morning
+
+Each morning the platform checks capital accounts against the ledger,
+allocations against the pool, and cash movements against the entries that
+produced them. Differences open an exception with the fund, the period and the
+amount. These checks test internal consistency; they do not validate
+external prices. [Why the check runs every day](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/).
+
+## Evaluate it on books that already run.
+
+Try the platform on a sandbox seeded with the reference funds, or we
+will walk you through one. The
+[security page](https://1494labs.com/security/) describes the controls in place,
+and the [capability list](https://1494labs.com/capabilities/) marks what is
+shipped, what is planned and what we will not build.
+
+## Show us the fund that breaks your current system.
+
+Built for fund CFOs, controllers and administrators. Tell us what you run
+and we will
+walk you through how it works here, in the product, on a running book. If
+the answer is that we cannot do it yet, you will get that answer too.
+
+Prefer email? Write directly to
+[hello@1494labs.com](mailto:hello@1494labs.com).
+What you send is handled as the [privacy notice](https://1494labs.com/privacy/)
+describes, under the [terms of use](https://1494labs.com/terms/).
+
+
+---
+
+Source: https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/
+
+# A wrong number that agrees with itself
+
+Cash reconciles against the custodian, positions against the administrator.
+Both work by comparison, so both are quiet when a figure is wrong and
+nothing else in the system holds a second copy of it to disagree.
+
+Controls · roughly 6 minutes
+
+## Where comparison controls stop
+
+Most controls in fund accounting are comparisons: cash against the
+custodian, positions against the administrator, the general ledger against
+the sub-ledger. They find a great deal. All of them work the same way,
+which is that they fire when two records of the same thing differ.
+
+A management fee charged on the wrong base has no second record. Nor does
+an allocation that split a period's profit on a stale ownership percentage,
+or a high-water mark that was never reduced when an investor redeemed half
+their holding. In each case the books balance, every statement foots, and
+the investor's capital account is internally consistent. The money was either never charged or charged to the wrong person.
+
+Why this class survives
+
+An audit tests whether the books are consistent, and they are. These
+errors tend to surface years later, when somebody rebuilds a fee from
+first principles and finds it does not come out where it was booked.
+
+## Doing the arithmetic a second time
+
+A figure with no counterparty to check against has to be checked against
+itself: derived again by a different route, from different inputs, and
+compared. We do that to every fund on the platform each morning, before
+anyone signs in.
+
+Some of what is recomputed:
+
+- ✓**Every capital account rolls forward.**
+Opening, plus contributions and withdrawals, plus that account's share of
+profit and loss, equals closing, to the penny, with no tolerance, for every account in every period.
+
+- ✓**Ownership sums to one hundred percent**
+exactly, with the rounding residual placed deliberately.
+
+- ✓**The fees charged to investors add up to the fee the fund paid**,
+side letters and differing rates included. If the parts do not sum to the
+pool, one of the two figures is wrong.
+
+- ✓**Every journal entry balances and the trial balance foots**,
+checked daily.
+
+- ✓**What a position is carried at agrees with the ledger's carrying value**
+through every subscription, redemption and return of capital, so the two
+cannot drift apart between valuations.
+
+A failure opens an exception on the same worklist as a cash exception, carrying the
+fund, the period, and the two figures that should have agreed.
+
+## Every morning
+
+An error found during the close is found under deadline, by the person with
+least appetite for it, when the remaining options are poor. The same error
+found on a Tuesday is an afternoon's work, which is most of the argument for running the checks daily.
+
+They also do not sample. Every fund is recomputed every day, including the
+ones with no activity, because an absence of activity is itself worth
+testing: a fund that has quietly stopped receiving data looks the same as a
+fund having a slow month until the quarter closes.
+
+## Knowing whether a check actually ran
+
+A check that never ran reports nothing. A check that ran and passed also
+reports nothing. On a dashboard the two are indistinguishable, and the more
+conditional a check is, the more often it is the first one.
+
+A rule that applies only to funds with an incentive fee has nothing to
+examine in a book that has none. It stays quiet, and so does a rule that ran
+and found nothing wrong.
+
+The distinction
+
+A check that has never had anything to examine has not passed. Counting
+it alongside the ones that did overstates what the system has actually
+demonstrated.
+
+So the morning run reports what was never exercised as well as what failed,
+naming each check that no fund gave it anything to work on. Some of that is
+expected, and it says so: a rule about converted funds has nothing to
+report on a book containing none. The rest is genuinely untested, and it is listed as untested.
+
+## Leaving a cell empty
+
+The same rule applies in the reports. Where a figure cannot be computed honestly, the cell is empty and carries
+its reason. A subtotal that would be
+meaningless is omitted. A percentage that has lost its denominator does not
+substitute one.
+
+Somebody queries an empty cell. Nobody queries a number that looks
+reasonable, which is how a wrong one ends up in an investor statement.
+
+## What to ask any vendor
+
+- ✓**Which figures are recomputed, and which are stored and read back?**
+A figure computed once and read thereafter has nothing in the system able
+to disagree with it.
+
+- ✓**How often do the checks run, and across how many funds?**
+At period end on a sample, or daily across all of them.
+
+- ✓**Can you show me a check that did not run?**
+If everything passes, ask how the system tells a pass from a check that
+had nothing to examine.
+
+- ✓**Where does a failure go?**
+Ask whether it reaches a log or a worklist with an owner.
+
+- [Which columns can be added, and which cannot](https://1494labs.com/notes/which-columns-can-be-added/), where the empty cell comes from
+
+- [High-water marks and the partial redemption](https://1494labs.com/notes/high-water-marks-and-partial-redemptions/), one error of this kind, in numbers
+
+- [What the platform does](https://1494labs.com/fund-accounting-software/)
+
+- [Cash and reconciliation](https://docs.1494labs.com/guide/cash-and-reconciliation/) in the product docs: how cash is matched against the ledger
+
+## How we handle it
+
+The checks are part of how the platform is built.
+A rule is written as a statement that must hold for every fund, and it
+runs against every fund from then on: daily, and again after every
+release. It reports what was never exercised alongside what failed. The
+most recent run before this note was published covered every fund on the
+platform and came back clean.
+
+[Get in touch](https://1494labs.com/#contact)
+
+
+---
+
+Source: https://1494labs.com/notes/abor-and-ibor/
+
+# ABOR and IBOR, and why most systems keep them apart
+
+Two books, two clocks, and a reconciliation between them that nobody wants to
+own. The split is a historical accident that hardened into an architecture, and
+it is worth understanding before you buy a system that assumes it.
+
+Fund accounting · roughly 6 minutes
+
+## The short version
+
+The **accounting book of record** is the official set of books. It
+is what the auditor examines, what the administrator calculates NAV from, and what
+the financial statements are built on. It follows an accounting basis, respects
+period boundaries, and is deliberately conservative about recognizing things
+that have not happened yet.
+
+The **investment book of record** is the position view the
+investment team works from. It answers a different question: what do we own
+right now, including the trade executed twenty minutes ago that will not settle
+until Wednesday, and the corporate action that has been announced but not paid.
+
+Both are correct. They disagree because they answer different questions on different clocks,
+and that disagreement is expected. The trouble is what most firms have to
+do about it.
+
+## Why they diverge
+
+Four sources of difference account for nearly all of it.
+
+Where the two books part company
+
+| Dimension | Accounting book | Investment book |
+| --- | --- | --- |
+| **Clock** | Period-bounded, closed and locked | Continuous, intraday |
+| **Recognition** | Trade date or settlement date, per policy, applied consistently | Everything known, including unsettled and pending |
+| **Valuation** | Accounting basis, with a documented pricing hierarchy | Live or last marks, whatever is freshest |
+| **Audience** | Auditors, administrators, LPs, regulators | Portfolio managers, risk, trading |
+
+Say you buy a position on Monday, settling Wednesday, and the month ends
+Tuesday.
+
+The investment book shows the position on Monday, because you own the economic
+exposure from the moment the trade is executed. The accounting book shows it on
+Monday too if your policy is trade date, or on Wednesday if it is settlement
+date, which means the position falls in the following month and the month-end
+statements do not include it. Both answers are defensible under the right policy, because they answer
+different questions.
+
+## Why the split became architectural
+
+The reason is historical, which is what makes it worth questioning.
+
+Accounting systems were built for periodic close. They ran in batches, were designed around a monthly cycle, and optimized for producing a defensible
+answer slowly. That was the right design when the alternative was paper.
+
+Front offices needed something the accounting system could not give them: a
+position view current as of this morning. So
+a second system grew up beside the first, fed by the same trade files, keeping
+its own version of the truth.
+
+Once two systems hold overlapping data, a third thing appears whether anyone
+designed it or not: **the reconciliation between them**. And
+because that reconciliation is genuinely hard, an industry grew around it. Several
+vendors now sell the reconciliation itself, which makes the split a source of
+revenue for the people best placed to remove it.
+
+The tell
+
+If a platform sells you a reconciliation module between its own accounting
+and its own position data, you are being sold a bridge between two
+systems that arrived in one invoice.
+
+## What the split actually costs
+
+### A break list that never reaches zero
+
+Every operations team that runs this architecture has a break list, and the
+break list is never empty. Some breaks are real and matter. Most are timing
+differences that will resolve themselves in two days. The expensive part is that
+**a genuine problem sits in that list beside forty that will clear
+themselves**, and people stop reading a list that has cried wolf for
+six months.
+
+### You cannot answer the obvious question
+
+"What is our NAV right now?" is a reasonable question and, in a two-system
+architecture, an unanswerable one. The accounting book knows as of the last
+close. The investment book knows positions but not the accounting treatment.
+Producing a current number means a person assembling it, which means it arrives
+late and carries no assurance.
+
+### Nobody can say which one is right
+
+This is the corrosive one. When the two books disagree by a material amount and
+the answer is needed today, someone has to adjudicate. That person is usually
+the most senior operations person available, and their judgment is not
+auditable. Over time the organization learns which book to trust for which
+question, and that knowledge lives only in people's heads.
+
+## The alternative, and what it actually requires
+
+The alternative is to stop treating them as two books and start treating them
+as **two views of one event stream**. Every economic event is
+recorded once. Trade date and settlement date become two views of the same journal entries. The accounting view applies
+period boundaries and recognition policy; the investment view does not. Neither
+holds data the other lacks.
+
+Under that design there is only one record, so there is no reconciliation
+to automate. When a vendor says "our reconciliation is very good", it is
+describing two books, and you should know which of the two designs you
+are being shown.
+
+It is also harder to build, for four reasons.
+
+- **Every event must create its journal entry in one place.** The
+moment any part of the system records a position without a journal entry, you have two books
+again and you will not notice for a month.
+
+- **The detail on each entry has to be rich enough for both audiences.**
+Entity, fund, class, series, sleeve, currency, counterparty, custodian. If
+the accounting model is thinner than the investment model, the investment
+view has to be rebuilt somewhere else, and you are back where you started.
+
+- **Close has to lock the period without stopping current work.** A
+closed period must stay fixed for reporting while the current view keeps moving. Getting this
+wrong in the safe direction gives you a system nobody can use intraday.
+
+- **The agreement needs continuous proof.** If the two views are designed to agree, that agreement should still be
+checked continuously, because designs fail quietly.
+
+![A Statement of Changes in Partners' Capital, with beginning capital, contributions, allocations and ending capital.](https://1494labs.com/assets/screens/statement-of-changes.39e06e66.jpg)
+
+**What one book looks like from the accounting side.**
+This statement comes from the same journal entries the position and
+exposure screens use, which is why its ending capital ties to the fund's
+NAV to the cent. There is no extract between them to go stale.
+
+## Four questions for a vendor
+
+If you are evaluating platforms, these separate the architectures faster than a
+feature matrix will.
+
+1. **Where does the reconciliation between your accounting and position
+data live?** If there is one, they are two systems. That may still be
+the right purchase, but you should know what you are buying.
+
+2. **When the two disagree, which one is authoritative, and who decides?**
+A good answer names a rule. A bad answer names a person.
+
+3. **Can you produce a NAV as of right now?**
+Ask to see it done in the demo.
+
+4. **What checks that the books are internally consistent, and how often
+does it run?** "Our architecture guarantees it" is an assertion.
+"These checks run every morning and here is today's output" is evidence.
+
+A caveat worth stating
+
+One ledger is not automatically the right answer for every firm. If your
+accounting is genuinely simple and your investment process is genuinely
+complex, or the reverse, two specialized systems and a small reconciliation
+may cost less than migrating. The argument here is that the split should be a decision you made. Too
+often it is an architecture inherited because that is how the software
+was sold in 1998.
+
+- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/), if you are moving between the two architectures
+
+- [Which columns can be added, and which cannot](https://1494labs.com/notes/which-columns-can-be-added/), once both books are one table
+
+- [What one ledger looks like in practice](https://1494labs.com/fund-accounting-software/)
+
+- [Securities and positions](https://docs.1494labs.com/guide/securities-and-positions/) in the product docs: lots, prices and corporate actions
+
+## How we think about this
+
+1494 Labs is built on the second model: the accounting book of record and the
+investment book of record are views over one ledger, and the arithmetic is
+re-checked every morning.
+
+[Get in touch](https://1494labs.com/#contact)
+
+
+---
+
+Source: https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/
+
+# Equalization, and what a mid-period subscriber actually owes
+
+An investor who subscribes after a drawdown can ride the recovery without
+paying an incentive fee, because the loss being carried forward is somebody
+else's. It is the normal consequence of running one
+NAV per share, and there are only two ways out of it.
+
+Hedge Funds · roughly 6 minutes
+
+## The problem in one sentence
+
+An incentive fee is charged on profit above a high-water mark. The mark
+belongs to an investor, because it records what that investor has already
+been charged on. A NAV per share belongs to the fund. Run a fund long
+enough and those two facts collide: two investors holding identical shares
+have different marks, and no single NAV per share can be correct for both.
+
+## The free ride, with the numbers
+
+A fund launches at $100 a share with a 20% incentive fee over a high-water
+mark. Investor A subscribes $1,000,000 and receives 10,000 shares.
+
+Year one is bad. The fund loses 20% and the NAV per share ends at $80. No
+incentive fee is payable, correctly, because the fund is below its mark.
+The mark stays at $100 and the fund carries forward a loss of $20 a share.
+
+In January of year two, Investor B subscribes $800,000 at $80 and receives
+10,000 shares. Year two is good: the manager returns 25% and the NAV per
+share is back to $100.
+
+End of year two, one NAV per share and one fund-level mark
+
+| Investor | Subscribed | Now worth | Gain | Incentive fee paid |
+| --- | --- | --- | --- | --- |
+| A, in at $100 | $1,000,000 | $1,000,000 | $0 | $0 |
+| B, in at $80 | $800,000 | $1,000,000 | $200,000 | $0 |
+
+A is whole and owes nothing, which is right. B has made $200,000 and paid
+nothing, which is not. The fund is exactly at its high-water mark, so at the
+fund level no fee is due, and B's gain is sheltered by a loss B never
+suffered. At 20% the manager has foregone **$40,000**, having
+returned 25% to the investor who did not pay it.
+
+Who pays
+
+Nothing in the fund's accounts is out of balance here. The money was simply never charged. This is why the problem survives audits and
+surfaces years later, usually when a manager finally reconstructs why a
+strong year earned so little.
+
+## The mirror case: a rebate nobody paid for
+
+The same defect runs the other way when an investor buys into an accrual.
+
+A fund sits at its mark of $100 in January and rises to $120 gross by June.
+The administrator books a 20% accrual of $4 a share, so the published NAV
+is $116. Investor B subscribes in July at $116. By December the fund has
+given it all back: gross is $100, the accrual reverses in full, and the
+published NAV is $100.
+
+A is flat on the year and pays nothing, which is right. B paid $116 and
+holds $100, a loss of $16 a share, on a gross move that was $20 a share. B
+has absorbed $4 a share less than the market delivered, because B captured
+the reversal of an accrual booked on gains earned between January and June,
+when B was not in the fund. That $4 came out of A's pocket.
+
+## Series accounting
+
+Give each subscription date its own series of shares, with its own NAV and
+its own high-water mark. In the first example B enters a second series at
+$80, carrying a mark of $80. A's mark stays at $100.
+
+End of year two, under series accounting
+
+| Series | Own mark | NAV before fee | Gain above mark | Fee at 20% |
+| --- | --- | --- | --- | --- |
+| 1, Investor A | $100 | $100 | $0 | $0 |
+| 2, Investor B | $80 | $100 | $200,000 | $40,000 |
+
+Both answers are now right, and neither investor subsidizes the other. The
+cost is that the fund is no longer one book. A fund open for monthly
+subscriptions creates twelve series in its first year, each needing its own
+NAV, its own mark and its own fee calculation every period.
+
+That count is usually managed by consolidating series into a lead series at
+year end, once a series has crystallized and stands at its own mark. Series
+still below their mark cannot be consolidated: they carry a loss
+carryforward the lead series does not, and merging them would hand that
+shelter to everyone. So the series that persist are precisely the ones
+nobody wants to explain, and two investors a month apart will see different
+NAVs per share for what they were sold as the same fund.
+
+## Equalization, on a single NAV
+
+The alternative keeps one NAV per share and corrects each investor
+individually at subscription. Two situations, two corrections, running in
+opposite directions.
+
+What the correction has to undo
+
+| Investor subscribes | Without a correction | The correction |
+| --- | --- | --- |
+| Below the fund's mark, while a loss is carried forward | Rides the recovery without paying, sheltered by someone else's loss | Charged on their own gain as the fund recovers, typically by redeeming shares from them |
+| Above the mark mid-period, into an accrual already in the NAV | Captures a rebate if the accrual reverses, on a fee they never bore | Pays an additional amount alongside the subscription, returned to them to the extent the accrual reverses |
+
+One NAV per share survives, and every investor pays on their own profit
+measured from their own entry. What it costs is that an investor's economics
+no longer live entirely in their share count. A per-investor adjustment
+account has to be carried, applied on the right events and shown on a
+statement, and it moves for reasons the NAV per share does not explain.
+
+Terminology
+
+These mechanisms travel under names that are not used consistently:
+equalization credit, depreciation deposit, contingent redemption,
+equalization factor. Two administrators will use the same word for
+different mechanics, and the offering document will sometimes use a third.
+When comparing two funds, compare the mechanism and run the same example
+through each. The label tells you very little.
+
+## The problem comes from issuing shares
+
+Everything above is a consequence of issuing units. A fund that allocates profit to capital accounts never meets it. Each partner has an
+account, each account carries its own high-water mark, and profit is allocated to each account directly. Two partners who joined two years apart have two different marks and
+nothing has to reconcile them, because there is no single per-unit number
+trying to be correct for both.
+
+That is why a US onshore limited partnership generally has no equalization
+mechanism at all, and why the topic is barely mentioned in partnership
+accounting. The offshore company issuing shares has the opposite
+constraint: it needs one dealing NAV per share, quoted to investors and used
+for subscriptions and redemptions, and that single number is exactly what
+cannot be right for everybody.
+
+The awkward case is the structure that has both. A master-feeder with an
+onshore partnership feeder and an offshore corporate feeder runs
+capital-account mechanics on one side and share mechanics on the other,
+against the same underlying book. The two feeders are not doing the same
+arithmetic, they should not produce the same per-investor answer, and a
+system that models only one of the two will quietly force the other into its
+shape.
+
+## What to check
+
+- ✓**Is the high-water mark held per investor or per fund?**
+One mark for the whole fund is the tell. It cannot be simultaneously
+correct for two investors who entered at different levels, and no amount
+of reporting on top will fix it.
+
+- ✓**What happens on a partial redemption?**
+A mark that is not reduced when half the money leaves shelters the
+remainder against a loss it no longer carries. This has its own
+arithmetic, covered in the note below.
+
+- ✓**Does the statement show the adjustment?**
+An equalization amount buried inside a NAV per share is an amount the
+investor cannot check, and it is the line they will eventually ask about.
+
+- ✓**What happens to the series count at year end?**
+Ask which series consolidate, which cannot, and what the count looks like
+in year three.
+
+- [High-water marks and the partial redemption](https://1494labs.com/notes/high-water-marks-and-partial-redemptions/), the same mark on the way out
+
+- [Hedge fund accounting](https://1494labs.com/hedge-fund-accounting/), including series and crystallization
+
+- [The investor lifecycle](https://docs.1494labs.com/guide/the-investor-lifecycle/) in the product docs: subscriptions, redemptions and transfers as ledger events
+
+## How we handle it
+
+1494 Labs carries the high-water mark per series and per capital account, and supports both models: series accounting with a separate series for each subscription period, and equalization on a single NAV. Which one a
+fund uses is a setting on the fund, because the answer is in its offering document.
+
+[Get in touch](https://1494labs.com/#contact)
+
+
+---
+
+Source: https://1494labs.com/notes/european-vs-american-waterfall/
+
+# American vs European waterfall on the same two deals
+
+The difference is usually explained as "whole-of-fund versus deal-by-deal" and
+then left there. Run the same two deals through both and the consequence shows
+up as a specific number: six million dollars sitting in the wrong pocket.
+
+Private equity · roughly 6 minutes
+
+## The mechanism, briefly
+
+Both structures distribute money through the same four tiers, in the same
+order. What differs is *what the tiers are measured against*.
+
+1. **Return of capital.** Investors get their contributions back.
+
+2. **Preferred return.** Investors receive a hurdle, commonly 8%, before the manager participates in profit.
+
+3. **Catch-up.** The manager receives most or all of the next dollars until it holds its full percentage of profit, typically 20%.
+
+4. **Split.** Everything after that divides at the carry rate, commonly 80/20.
+
+In a **European** waterfall, those tiers are measured across the
+entire fund. No carry is paid until investors have received back
+*all* contributed capital and their preferred return on it.
+
+In an **American** waterfall, the tiers are measured deal by deal.
+A profitable exit can pay carry while other investments are still outstanding,
+and while the fund as a whole has returned nothing.
+
+## The same fund, both ways
+
+Take a fund of $100M in commitments, 20% carry over an 8% preferred return. It
+makes two investments and incurs $20M of fees and expenses across its life.
+
+The fund
+
+| Item | Amount | Timing |
+| --- | --- | --- |
+| Deal A invested | $40M | Year 1 |
+| Deal B invested | $40M | Year 1 |
+| Fees and expenses | $20M | Across the life |
+| Total contributed | $100M | |
+| Deal A exits | $100M | Year 3 |
+| Deal B exits | $20M | Year 5 |
+| Total proceeds | $120M | |
+
+Across the whole fund the arithmetic is simple. Investors put in $100M and
+$120M comes back. **Total profit is $20M, so carry at 20% should be
+$4M.** That figure is not in dispute under either structure. What
+differs is when the manager gets paid, and what happens in between.
+
+Simplification
+
+The preferred return below is shown as a simple, non-compounding figure to
+keep the mechanism visible. Real agreements specify compounding, the base it
+accrues on, and whether it is charged on fees as well as investments. Those choices move the numbers; the shape of the result stays the same.
+
+## American: the manager is paid in year 3
+
+Deal A exits for $100M on $40M invested. Under a deal-by-deal waterfall, the
+tiers run against *that deal*.
+
+Year 3, Deal A proceeds of $100M
+
+| Tier | To investors | To manager |
+| --- | --- | --- |
+| Return of Deal A capital | $40M | $0 |
+| Preferred return on that capital | $10M | $0 |
+| Remaining $50M, split 80/20 | $40M | $10M |
+| Distributed | $90M | $10M |
+
+The manager has now received **$10M of carry**, and on the evidence
+available in year 3 that looks entirely earned. Deal A was excellent.
+
+Then Deal B exits in year 5 for $20M against $40M invested. All $20M goes to
+investors; there is no profit to share. The fund is over.
+
+Final position, American waterfall
+
+| Party | Contributed | Received | Net |
+| --- | --- | --- | --- |
+| Investors | $100M | $110M | $10M |
+| Manager | $0 | $10M | $10M |
+
+The manager took **half** of the fund's $20M profit, on a deal
+structured to pay 20%. Investors are owed $6M back.
+
+## European: the manager is paid in year 5
+
+Same deals, same order, tiers measured across the fund.
+
+Deal A exits for $100M in year 3. Investors have contributed $100M, so the
+entire distribution returns capital. Capital is now repaid in full, but the
+preferred return has not been satisfied and no profit has been recognized.
+**The manager receives nothing.**
+
+Deal B exits for $20M in year 5. Capital is already back, so this is the first
+money available for the later tiers.
+
+Year 5, remaining $20M
+
+| Tier | To investors | To manager |
+| --- | --- | --- |
+| Preferred return | $16M | $0 |
+| Catch-up to 20% of the $20M profit | $0 | $4M |
+| Distributed | $16M | $4M |
+
+Final position, European waterfall
+
+| Party | Contributed | Received | Net |
+| --- | --- | --- | --- |
+| Investors | $100M | $116M | $16M |
+| Manager | $0 | $4M | $4M |
+
+$4M of carry on $20M of profit. Exactly 20%, arrived at without anyone
+needing to give money back.
+
+## The difference in one line
+
+Same deals, same total proceeds
+
+| | American | European |
+| --- | --- | --- |
+| Carry paid | $10M | $4M |
+| Carry earned | $4M | $4M |
+| Owed back | $6M | $0 |
+| First payment | Year 3 | Year 5 |
+
+The manager *earned* $4M under both. The American waterfall moved
+**when it was paid**, and created a $6M
+obligation that has to be honored years later.
+
+## Which brings us to clawback
+
+Every American waterfall carries a clawback provision requiring the manager to
+return excess carry at the end of the fund. On paper this makes the two
+structures equivalent. In practice it is the weakest part of the arrangement,
+for reasons that have nothing to do with anyone's good faith.
+
+- **The money was taxed on receipt.** Carry distributed in year 3
+was income in year 3. Returning the gross amount in year 5 means the manager
+repays money it never fully kept, unless the agreement provides for after-tax
+clawback, which shifts the shortfall to investors.
+
+- **Carry is distributed to individuals.** By year 5 some of those
+people have left, retired, divorced, or died. The obligation may sit with the
+management entity while the money sits with individuals, and collecting it is a governance problem.
+
+- **It arrives at the worst moment.** A clawback is triggered by
+the fund underperforming, which is the same condition under which the manager
+is least able to pay.
+
+The standard mitigations are worth knowing because they are negotiable.
+**Escrow** holds back a percentage of each carry distribution,
+often 20% to 30%, until the fund is wound up. **Interim clawback
+tests** run the whole-fund calculation periodically through the fund's life, so an
+overpayment surfaces in year 4, four years before the final test would find it.
+**Guarantees** from individual principals make the obligation personal to the principals.
+
+The accounting consequence
+
+An American waterfall means every carry figure in your books is provisional
+until the fund closes. A system that records carry as settled fact will report numbers it cannot
+defend later. Carry belongs on the books as an accrual subject to a
+whole-fund test, and interim clawback testing belongs in the ledger with it.
+
+## Most funds are neither, exactly
+
+The two-way split is a teaching device. Real agreements sit on a spectrum, and
+the interesting terms are the ones that move a fund along it.
+
+- **Deal-by-deal with a loss carryforward.** American in timing,
+but realized losses on other investments must be recovered before carry is
+paid. Removes much of the exposure in our example.
+
+- **Deal-by-deal with return of all invested capital first.** Carry waits until every dollar deployed to date has come back, from every
+deal including the ones still held.
+
+- **Whole-of-fund with an early carry release.** European by
+default, but permitting carry once coverage tests are met, such as remaining
+holdings being valued at some multiple of unreturned capital.
+
+- **Catch-up rates that are not 100%.** A 50% or 80% catch-up
+changes the split materially and is easy to miss when reading quickly.
+
+## What to check in the agreement
+
+If you are modeling a fund and want to know which structure you actually have,
+these determine it:
+
+1. Are the tiers measured against the fund or against each investment?
+
+2. Does the preferred return compound, and on what base? Does it accrue on fees as well as capital?
+
+3. Is there a loss carryforward, and does it cover unrealized write-downs or only realized losses?
+
+4. What is the catch-up rate, and is it 100%?
+
+5. Is there an escrow, at what percentage, and when does it release?
+
+6. Is clawback gross or after-tax, and is it guaranteed by individuals?
+
+7. How often is the interim clawback test run?
+
+Those seven answers reconstruct the waterfall. Everything else is detail
+around them.
+
+![A waterfall policy with four tiers - return of capital, accrued preferred, GP catch-up to 20 percent at 100 percent, split 80/20 - a clawback measurement per LP showing no exposure, and a posted distribution of $12,075,209.34: $9,300,000.00 returned as capital and $153,070.79 of GP carry.](https://1494labs.com/assets/screens/distribution-waterfall.446c8f15.jpg)
+**The same seven answers, entered as tiers.** The split below is computed from them, and the GP's clawback exposure is measured beside the policy, per LP by default, so an interim test reads straight off the screen.
+
+- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/), including where a converted fund sits in its own waterfall
+
+- [Private equity fund accounting](https://1494labs.com/private-equity-fund-accounting/), with the waterfall computed on the book
+
+- [Capital calls and distributions](https://docs.1494labs.com/guide/capital-calls-and-distributions/) in the product docs: what happens when carry has to come back
+
+- [GP economics](https://docs.1494labs.com/guide/gp-economics/) in the product docs: how carry is split among principals and how it vests
+
+## How we think about this
+
+1494 Labs models waterfalls as configurable tiers,
+because the agreements we read are rarely either textbook case. Carry is held as an accrual subject to a whole-fund test.
+
+[Get in touch](https://1494labs.com/#contact)
+
+
+---
+
+Source: https://1494labs.com/notes/high-water-marks-and-partial-redemptions/
+
+# High-water marks and the partial redemption
+
+A high-water mark is easy to get right while nothing moves. The mistakes
+happen on the way out: a partial redemption that leaves a stale loss
+carryforward behind, and a full redemption that walks past an accrued fee.
+Neither one breaks anything that would tell you.
+
+Fees · roughly 4 minutes
+
+## The mark is a level, and it belongs to the holder
+
+A high-water mark records the highest value on which an investor has
+already been charged an incentive fee. Above it, profit is new and
+chargeable. Below it, the shortfall is a loss carried forward, and the
+manager works back through it for nothing.
+
+The mark therefore belongs to a holder, and it is attached
+to a quantity of shares. That second half is the part that gets lost: change
+the quantity and the mark has to change with it.
+
+## What a partial redemption has to do
+
+An investor holds 10,000 shares. The mark is $100 a share and the NAV has
+fallen to $80, so $200,000 of loss is carried forward. The investor redeems
+5,000 shares at $80, taking out $400,000, and leaves 5,000 shares behind.
+
+The fund then recovers to $120 a share. Here is the same position under two
+treatments of that carryforward.
+
+5,000 remaining shares, $80 to $120
+
+| | Carryforward left | Gain on the remainder | Chargeable | Fee at 20% |
+| --- | --- | --- | --- | --- |
+| Carryforward left untouched | $200,000 | $200,000 | $0 | $0 |
+| Carryforward released pro rata | $100,000 | $200,000 | $100,000 | $20,000 |
+
+The second line is the right one, and it is easy to prove without reference
+to any carryforward at all. The remaining 5,000 shares went from a mark of
+$100 to a NAV of $120. That is $20 a share of genuinely new profit, $100,000,
+and 20% of it is $20,000.
+
+The first line shelters that profit behind a loss the investor took half of
+out of the fund in cash. Redeeming released half the shares, and the loss
+attached to them left with them.
+
+Why it survives
+
+Nothing fails in the first line. The trial balance foots, the capital
+accounts tie, the NAV is right, and the investor's statement is correct in
+every figure it shows. The fee is simply smaller than it should be, and
+there is no number anywhere that it disagrees with.
+
+Note also the direction. The error never runs the other way. Skipping the
+proration always shelters profit, which always favors the investor and
+always costs the manager. An error with a consistent sign accumulates period after period, and it recurs every time an investor trims a position
+during a drawdown.
+
+## The other direction: redeeming above the mark
+
+The same investor, but the fund is at $120 against a mark of $100 and an
+incentive fee is accruing. On 10,000 shares the accrual attributable to them
+is 20% of $20 a share, or $40,000.
+
+They redeem in full at $120. If the fee is only settled at period end, they
+leave with $1,200,000 and the accrual they generated reverses across the
+investors who stayed. The fee has to **crystallize at the redemption
+date**: $40,000 is charged then, and the investor receives $1,160,000.
+
+On a partial redemption the same thing happens proportionally. Redeem 40% and
+40% of the accrual crystallizes, $16,000, while the remaining 60% keeps its
+mark of $100 and carries on accruing.
+
+The ordering matters
+
+Crystallize before setting the redemption price. A fee
+calculated on a NAV that has already had the redemption taken out of it is
+a fee on the wrong base, and the difference is not rounding.
+
+## Transfers are not redemptions
+
+When shares move between two investors, nothing has been realized and no
+money has left the fund. The mark travels with the shares: the receiving
+holder inherits it at the level the transferring holder carried, along with
+any loss carried forward against them.
+
+Treating a transfer as a redemption and a subscription resets the mark to the
+current NAV. If the shares were underwater that quietly cancels a loss
+carryforward the manager was still working through, and hands the incoming
+holder a fee-free ride on the recovery.
+
+## What to check
+
+- ✓**Is the mark stored as a level or as an amount?**
+A level per share prorates automatically when the share count changes. An
+amount has to be adjusted explicitly on every partial redemption, and that
+adjustment is what gets forgotten.
+
+- ✓**Does a redemption crystallize, or wait for period end?**
+Waiting means a departing investor's fee is paid by the investors who
+stayed.
+
+- ✓**Does a transfer carry the mark?**
+Ask what happens to a loss carryforward when shares change hands.
+
+- ✓**Can you produce the mark's history for one investor?**
+Set at subscription, reduced by each partial redemption, reset by each
+crystallization. If that history cannot be reconstructed, the current
+number cannot be checked by anyone, including an auditor.
+
+- [Equalization, and what a mid-period subscriber actually owes](https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/), the same mark on the way in
+
+- [Hedge fund accounting](https://1494labs.com/hedge-fund-accounting/), including crystallization and loss carryforwards
+
+- [Fees: from structure to charge](https://docs.1494labs.com/guide/fees-from-structure-to-charge/) in the product docs, from accrual to crystallization
+
+## How we handle it
+
+1494 Labs holds the mark per capital account as a level, prorates it on
+partial redemption, and crystallizes on the redemption date. Every change to a mark is an event with a source, so the
+history can be read back for any investor on any date.
+
+[Get in touch](https://1494labs.com/#contact)
+
+
+---
+
+Source: https://1494labs.com/notes/
+
+# Notes
+
+Working notes on the parts of fund accounting that are hard to look up and
+harder to get right. Written for controllers, CFOs and administrators who have
+to make the numbers defensible.
+
+- [## Side pockets: keep the investment and its investors together
+
+A side pocket needs its own participation record. A later subscriber should not silently acquire an interest in an earlier illiquid investment.](https://1494labs.com/notes/side-pockets-and-investor-participation/)
+
+- [## Management fee offsets: reconcile the fee before and after the credit
+
+A fee offset is a calculation with a source, a percentage and a period. Keep all three visible, along with any amount carried forward.](https://1494labs.com/notes/management-fee-offsets/)
+
+- [## Moving a fund off spreadsheets: prove the opening book first
+
+Choose a cutover date, carry the calculation state and run a parallel close. A trial balance alone is not a complete fund conversion.](https://1494labs.com/notes/moving-a-fund-off-spreadsheets/)
+
+- [## A wrong number that agrees with itself
+
+A break gets investigated because something disagrees. When the
+roll-forward foots and the statement ties, nothing raises its hand,
+and the figure can still be wrong. What it takes to catch that, and
+why it runs every morning.](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/)
+
+- [## ABOR and IBOR, and why most systems keep them apart
+
+Two books, two clocks, and a reconciliation nobody wants to own. Where the
+split came from, what it costs, and four questions that separate the
+architectures faster than a feature matrix.](https://1494labs.com/notes/abor-and-ibor/)
+
+- [## American vs European waterfall on the same two deals
+
+The same two deals through both structures. Same fund, same total profit,
+and a six million dollar difference in what the manager is holding when the
+second deal disappoints.](https://1494labs.com/notes/european-vs-american-waterfall/)
+
+- [## Equalization, and what a mid-period subscriber actually owes
+
+An investor who buys after a drawdown rides the recovery without paying an
+incentive fee, because the loss being carried forward is somebody else's.
+Why one NAV per share cannot be right for two investors, and the two ways
+out.](https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/)
+
+- [## High-water marks and the partial redemption
+
+Half the money leaves. The loss carried forward against the half that
+stayed has to fall by half too, and when it does not, nothing in the
+accounts disagrees. The error only ever runs one way.](https://1494labs.com/notes/high-water-marks-and-partial-redemptions/)
+
+- [## What an opening balance has to carry
+
+A trial balance says where a fund stands, which is less than it takes to compute what happens next. A fund converted without its high-water marks reconciles
+perfectly for exactly one period.](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
+
+- [## Which columns can be added, and which cannot
+
+A weighted average and an average of averages differ by $300,000 a year on
+a $100m fund, and both look like a subtotal. Four classes of column, three
+behaviors, and why a blank cell is an answer.](https://1494labs.com/notes/which-columns-can-be-added/)
+
+## 1494 Labs
+
+Fund accounting where the accounting book of record and the investment book of
+record are the same ledger, with the arithmetic re-computed every morning.
+
+[Request a demo](https://1494labs.com/#contact)
+
+These notes work through mechanics with real numbers, for people who do this
+for a living. They are not accounting, legal, tax or investment advice, and
+fund terms vary in ways that change the answer.
+[The detail is here](https://1494labs.com/terms/).
+
+
+---
+
+Source: https://1494labs.com/notes/management-fee-offsets/
+
+# Management fee offsets: reconcile the fee before and after the credit
+
+A fee offset is a calculation with a source, a percentage and a period. Keep all three visible, along with any amount carried forward.
+
+Fund operations · November 3, 2026
+
+## Read the offset terms before calculating
+
+Some fund agreements reduce the management fee by specified portfolio-company fees. The offset percentage, eligible fee types, timing and treatment of unused amounts come from the governing agreement and disclosures. Do not assume every receipt qualifies or every investor has the same arrangement.
+
+1. Calculate the gross management fee from the agreed base, rate and period.
+
+2. List eligible receipts with their dates, source companies and supporting records.
+
+3. Apply the contractual offset percentage and any allocation across funds.
+
+4. Apply the available credit to the fee, respecting any cap.
+
+5. Reconcile the net fee and any unused credit to the ledger and the next period's opening record.
+
+## A worked quarter
+
+Assume the gross quarterly management fee is $250,000, eligible receipts are $80,000 and the agreement provides a 100% offset in that quarter. There are no opening credits or other adjustments.
+
+| Calculation | Amount |
+| --- | --- |
+| Gross management fee | $250,000 |
+| Eligible receipts × 100% | $80,000 |
+| Net management fee | $170,000 |
+
+If eligible credits were $300,000 instead, a fee capped at zero would consume $250,000. The remaining $50,000 carries forward only if the terms allow it. A negative payable should not appear simply because the spreadsheet subtracts one cell from another.
+
+## Check the receipt trail as well as the arithmetic
+
+The SEC's June 2020 examination risk alert describes failures to apply offsets in accordance with disclosures and failures to track portfolio-company fees. That is a reason to reconcile the eligible-receipt register as well as the net invoice.
+
+Review credits received by affiliates, timing differences and investor-specific terms against the agreement. Keep the gross fee, applied credit and closing credit balance separately visible so a reviewer can reproduce the result.
+
+In a software evaluation, bring one ordinary quarter and one quarter where credits exceed the fee. Ask the provider to show the source receipts, the applied amount and the next quarter's opening credit.
+
+Source: [SEC examination risk alert, June 23, 2020, fees and expenses](https://www.sec.gov/files/Private%20Fund%20Risk%20Alert_0.pdf). The numerical example illustrates assumed contract terms.
+
+
+---
+
+Source: https://1494labs.com/notes/moving-a-fund-off-spreadsheets/
+
+# Moving a fund off spreadsheets: prove the opening book first
+
+Choose a cutover date, carry the calculation state and run a parallel close. A trial balance alone is not a complete fund conversion.
+
+Fund operations · November 3, 2026
+
+## Choose one cutover period
+
+Start with a period whose ledger, NAV and investor statements have been reconciled. Save those reports and the source workbooks as the conversion evidence. Decide which historical records must remain queryable and which calculations must continue from the opening position.
+
+1. Map ledger accounts, investments and investor accounts to the new system.
+
+2. Import the opening trial balance and reconcile debits, credits and NAV.
+
+3. Reconcile investment quantities, cost and value, then each investor's capital.
+
+4. Carry the state behind the next calculation: high-water marks, loss carryforwards, fee credits and side-pocket interests where applicable.
+
+5. For private equity, preserve dated contributions and distributions needed for performance and waterfall calculations.
+
+6. Run the next period in parallel and investigate differences before accepting the conversion.
+
+## A conversion that ties but still fails
+
+Suppose an investor opens at $900,000 with a $1 million high-water mark. Importing only the $900,000 balance can make the opening ledger and investor statement agree. It does not tell the fee engine that the next $100,000 of recovery is below the existing mark.
+
+The acceptance test is the next calculation as well as the opening balance. Run a recovery period and compare the fee with the old workbook under the same terms. Keep any differences visible until the controller can explain them.
+
+## Agree the acceptance evidence
+
+- Opening ledger balances and NAV reconcile to the approved source.
+
+- Investment and investor subledgers agree with their ledger controls.
+
+- Fees, allocations and distributions reproduce the agreed examples.
+
+- Historical statements remain available, with the cutover boundary clear.
+
+- A reviewer can trace a reported number back to its imported record or new-period entry.
+
+A workbook can remain useful for independent checks. Give the accounting system responsibility for the accepted book, and document who approves corrections during the parallel period.
+
+Ask 1494 Labs to demonstrate imports and a close using reference data shaped like your fund. Agree the scope of any mid-life conversion before scheduling it.
+
+[What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/) covers the calculation state in more detail. [See the platform](https://1494labs.com/fund-accounting-software/) or [request a demo](https://1494labs.com/#contact).
+
+
+---
+
+Source: https://1494labs.com/notes/side-pockets-and-investor-participation/
+
+# Side pockets: keep the investment and its investors together
+
+A side pocket needs its own participation record. A later subscriber should not silently acquire an interest in an earlier illiquid investment.
+
+Fund operations · November 3, 2026
+
+## Start with who participates
+
+A side pocket separates an investment from the main pool for accounting and investor participation. The fund documents determine who participates, how it is valued and when proceeds can be distributed. A separate security label alone does not preserve those terms.
+
+1. Identify the investment and the effective date of the side pocket.
+
+2. Record the participating investors and their interests on that date.
+
+3. Keep subsequent subscriptions and redemptions in the main pool from changing that participation unless the governing terms require it.
+
+4. Allocate the side pocket's valuation changes, income and expenses to its participants.
+
+5. On realization, reconcile proceeds and remaining balances to those same investors.
+
+## A small example
+
+Assume an investment worth $1 million is placed in a side pocket when investor A owns 60% and investor B owns 40% of the participating capital. Investor C subscribes to the main pool later. Under terms that fix side-pocket participation at designation, C has no interest in this investment.
+
+| Investor | Opening side-pocket interest | Share of a $100,000 gain |
+| --- | --- | --- |
+| A | $600,000 | $60,000 |
+| B | $400,000 | $40,000 |
+| C | $0 | $0 |
+| Total | $1,000,000 | $100,000 |
+
+The example excludes fees and cash flows. Those need their own treatment under the fund's terms; they should not be inferred from the gain allocation.
+
+## What the controller checks
+
+Reconcile the investment's carrying value to the sum of its investor interests. Then check the participation record independently. A total that ties can still allocate money to the wrong investors. Test a subscription after designation, a partial redemption and a realization before relying on the setup.
+
+On conversion, carry the side-pocket participation record with the opening values. Rebuilding interests from today's main-pool percentages can change the economics while leaving total NAV unchanged.
+
+1494 Labs supports hedge funds with side pockets. Ask to see the investor participation and the allocation trail in a demonstration of your fund's terms.
+
+[What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/) explains the other records a conversion needs.
+
+
+---
+
+Source: https://1494labs.com/notes/what-an-opening-balance-has-to-carry/
+
+# What an opening balance has to carry
+
+A trial balance tells you where a fund stands. It does not tell you enough to
+compute what happens next, because the calculations that matter carry history forward, and the history
+they need is not on any document you can request from a custodian.
+
+Conversion · roughly 5 minutes
+
+## Standing still versus carrying on
+
+A conversion is usually scoped as loading balances: cash, positions,
+receivables, payables, capital. That work is real, and it is the easy part. Balances describe a fund at rest. The question a new system has to
+answer on its first working day is the other one, which is what happens
+next, and several of the calculations that answer it depend on things that
+already happened.
+
+## What the next calculation needs
+
+State required to compute the first post-conversion period
+
+| The next thing you compute | What it needs from before the cut | In a trial balance? |
+| --- | --- | --- |
+| Incentive fee | High-water mark and loss carryforward, per investor or series | No |
+| Incentive fee for a mid-period subscriber | That investor's equalization position | No |
+| Realized gain on the next sale | Cost basis by lot, and the cost-flow convention that picks between them | No |
+| An investor's capital account | Per-investor contributions, distributions and allocated profit to date | The fund total only |
+| Where the next distribution falls | Distributed to date and carry paid to date, cumulatively | No |
+| Uncalled commitment | Called, plus whatever has been distributed subject to recall | No |
+| The performance record | The return series and the dates it was calculated on | No |
+
+## Fee history is the part that gets left behind
+
+Positions and cash are physical. Somebody can pull a custody statement and
+check them, and if they are wrong it shows up immediately and loudly.
+
+Fee history is different in kind. A high-water mark is a memory of
+something that already happened. There is no counterparty holding a copy, no
+statement to reconcile against, and no external document that records it. It
+exists inside the system being switched off.
+
+That makes it the most likely thing to be dropped and the least likely to be
+noticed. A fund converted without its marks reconciles perfectly on day one
+and stays perfect until the first incentive calculation, which will be wrong
+by an amount nobody can reconstruct, because the evidence needed to
+reconstruct it was in the system that has since been decommissioned.
+
+Ask early
+
+Whether the outgoing system can export marks, loss carryforwards and
+equalization positions per investor is worth establishing before a migration date is agreed. If the answer is no, that is a
+constraint on the whole project, and it is cheaper to discover in a
+meeting than in a fee run.
+
+## Closed-end funds: the waterfall is path-dependent
+
+For a drawdown fund the tiers are measured cumulatively across the life of
+the fund. What the next distribution pays depends entirely on what has
+already been paid: whether capital is back, whether the preferred return has
+been satisfied, whether the manager is still in catch-up.
+
+A fund converted with a balance sheet and a commitment schedule has no
+position in that sequence at all. It cannot say which tier the next dollar
+belongs to, and the first distribution after the cut will be computed from
+the beginning of a waterfall that is already years in.
+
+Uncalled commitment has the same shape. It is commitment minus called, plus any distributions made subject to
+recall, and whether a given distribution was recallable is a term in the
+agreement that the cash movement does not carry.
+
+## Two different things called history
+
+Prior periods can come across in one of two ways, and they are routinely
+conflated in the same sentence.
+
+| | Reporting-only | Rebuilt |
+| --- | --- | --- |
+| What arrives | The results: balances, statements, capital accounts as reported | The underlying activity, transaction by transaction |
+| What you can do | Display it, print it, answer "show me last year" | Re-run an allocation, restate a period, change an assumption |
+| What it needs | The old system's output | The old system's inputs, in usable form |
+| Typical cost | Part of the conversion | A project of its own, and often not possible |
+
+Reporting-only is an honest and usually correct answer. The failure is
+buying it while expecting the other one, and then discovering the difference
+during an audit. Pre-conversion periods should be marked as what they are,
+so that a reporting-only period cannot be mistaken for one that would recompute if
+you asked it to.
+
+## The test that settles it
+
+Before the old system is switched off, run the first post-conversion period
+on both and compare. Three specific comparisons are worth more than a
+reconciliation of totals:
+
+- ✓**The incentive fee, per investor.**
+A fund total can be right while two investors are
+wrong in opposite directions, and that is exactly what a missing mark
+looks like.
+
+- ✓**One realized sale.**
+This tests that lots and the cost-flow convention came across along with the position's market value.
+
+- ✓**One distribution, on a closed-end fund.**
+This tests that the fund knows where it stands in its own waterfall.
+
+If that comparison cannot be run because the old system is already gone, the fund was only re-keyed, and the first calculation that
+depends on history will be the one that finds out.
+
+## What to ask a vendor
+
+- ✓**Is there a conversion date built into the fund record**,
+or does every fund have to start at inception?
+
+- ✓**Where does a high-water mark go in?**
+If there is no field for it, it is being reverse-engineered from a
+transaction history you do not have.
+
+- ✓**Are pre-conversion periods marked**,
+or do they present exactly like periods the system computed itself?
+
+- ✓**What happens when an error is found in a pre-conversion period?**
+There is a right answer, which is that it is corrected as a restatement
+with the original preserved, and a wrong one, which is that somebody edits the reported figures.
+
+- [High-water marks and the partial redemption](https://1494labs.com/notes/high-water-marks-and-partial-redemptions/), the state most likely to be missing
+
+- [What the platform does](https://1494labs.com/fund-accounting-software/), including conversion-mode onboarding
+
+- [Bringing data in](https://docs.1494labs.com/guide/bringing-data-in/) in the product docs: carrying high-water marks through a conversion
+
+## How we handle it
+
+1494 Labs models a conversion date on the fund. Periods before it are locked from the start and marked pre-conversion, so a
+reporting-only period can never be mistaken for a computed one, and the
+opening position carries fee history alongside the balances. Converting an existing book is quoted separately from
+the subscription, and it is free for the first five early adopters.
+
+[Get in touch](https://1494labs.com/#contact)
+
+
+---
+
+Source: https://1494labs.com/notes/which-columns-can-be-added/
+
+# Which columns can be added, and which cannot
+
+A subtotal that is wrong looks exactly like a subtotal that is right. Every
+reporting tool will happily add a column of percentages, and the resulting number is meaningless.
+
+Reporting · roughly 5 minutes
+
+## Four classes, three behaviors
+
+Whether a column can be aggregated is a property of the column itself, whatever grid it sits in. The same table routinely contains columns from
+three of these classes at once.
+
+| Class | Examples | Across entities, one date | Across dates |
+| --- | --- | --- | --- |
+| **Flows** | Contributions, distributions, fees charged, realized gains | Add | Add |
+| **Point-in-time balances** | NAV, cash, unfunded commitment, position value | Add | **Never** |
+| **Rates and per-unit values** | NAV per share, price, fee rate, ownership percentage | **Never** | **Never** |
+| **Derived statistics** | IRR, time-weighted return, volatility, Sharpe | Recomputed from the combined series | |
+
+A grid of capital accounts will carry contributions, a closing balance and
+an ownership percentage side by side. One of those three sums down the
+page, one sums across entities but not across periods, and one never sums at
+all. A tool that treats a column as a column gets two of them wrong.
+
+![Subscriptions grouped by investor. Six investors each show a summed subtotal that foots to the $20,600,000 total, and one group is expanded to its three subscriptions with date, account, amount and posted status.](https://1494labs.com/assets/screens/grid-grouped-subtotals.314567a9.jpg)
+
+**Grouped in place, with the rows still underneath.**
+Subscriptions grouped by investor. The six subtotals foot to the $20,600,000 total above them, and the expanded group shows the three subscriptions that produce $4,800,000. Amount is a flow, so it sums; had a rate or a percentage been
+on this grid it would have gone blank at the group level.
+
+## An average of averages, in money
+
+A fund has two share classes. Class A holds $80m at a 1.0% management fee;
+Class B holds $20m at 2.0%. What is the fund's management fee rate?
+
+| Method | Rate | Implied annual fee on $100m |
+| --- | --- | --- |
+| Average of the two class rates | 1.50% | $1,500,000 |
+| Weighted by the capital each rate applies to | 1.20% | $1,200,000 |
+
+$300,000 a year, and the wrong figure is the one a grid produces by default,
+because averaging is what a column of percentages invites. The error also
+moves with the mix, so it cannot be spotted as a constant bias: rebalance
+the classes and the gap changes size without anything on screen changing
+appearance.
+
+The same trap sits one level deeper. A weighted average computed at a
+subtotal must run over the individual rows beneath it. Averaging subtotals that are themselves averages compounds the
+error at every level, and a deep grouping tree can be wrong by a great deal
+more than this example.
+
+## The denominator that should not move
+
+A holdings grid shows each position as a percentage of fund NAV. The fund is
+$100m: $60m of equities, $40m of credit. Group the grid by asset class and
+the percentage column has to decide what it is a percentage of.
+
+| | Equities | Credit | Total |
+| --- | --- | --- | --- |
+| Denominator stays fund NAV | 60% | 40% | 100% |
+| Denominator becomes the group | 100% | 100% | 200% |
+
+The second row is what a grid does if the percentage is treated as an
+ordinary computed column, and it is worth noticing that it does not look
+broken. Each group reads 100%, which is a plausible thing for a group to
+read. Only the total gives it away, and totals of percentage columns are
+frequently hidden precisely because they look odd.
+
+For this to work the grid has to know that the denominator is external to
+the rows on screen. That is a different kind of thing from a column of values, and most
+reporting tools have nowhere to put it.
+
+## Balances do not sum across time
+
+Group a capital-account grid by month and the closing balance column will
+offer a total. Twelve monthly NAVs added together is twelve times the
+average NAV, a number with no referent: the fund never held it, and it is
+not a cash flow either.
+
+Contributions in the next column over do sum across those same twelve
+months, correctly, because a flow is a quantity of money that moved. So the rule has to attach to the column itself.
+A balance column under a date grouping should go blank at and above the date
+level, while the flow column beside it keeps totaling.
+
+## Statistics have no shortcut
+
+A group's volatility is the volatility of the group's composite return
+series. Averaging the members' volatilities gets it
+wrong under any weighting, because the members' returns are correlated and the statistic
+depends on that correlation. The same holds for Sharpe, beta and tracking
+error. A group's IRR is the IRR of the combined cash flow stream, so it needs the members' cash flows themselves.
+
+So the honest answer at a subtotal is either the recomputed statistic or
+nothing. If the composite series has not been built, there is no correct
+number available, and any figure in that cell is invented.
+
+## Blank, with a reason, is an answer
+
+The whole argument
+
+An empty cell looks like something failed. A computed cell that should
+have been empty looks like it worked. The second one is the expensive
+mistake, and it is the one that reaches an investor, because nothing about
+it invites a second look.
+
+A cell that cannot be computed honestly should say so, and say why: no
+composite series, denominator not resolvable at this level, not additive
+across dates. That turns a silent wrong answer into a visible limitation,
+which is a thing a controller can work with.
+
+## What to check
+
+- ✓**Can you total a NAV-per-share column?**
+If the tool permits it, someone will do it eventually, and the first time
+it matters will be in front of somebody's investor.
+
+- ✓**Under grouping, does a percentage keep its denominator?**
+Group a holdings view by anything and look at the total.
+
+- ✓**Does a balance column blank out on a date axis**
+while the flow column beside it keeps summing?
+
+- ✓**What appears when a subtotal cannot be computed?**
+A zero is the worst possible answer, because zero is a value.
+
+- ✓**What survives an export?**
+Every one of these rules is enforced by the grid. A spreadsheet has no
+idea which column is which, and will add all of them on request. If the
+analysis only exists after an export, none of this protects it.
+
+- [A wrong number that agrees with itself](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/), when the total ties and is still wrong
+
+- [ABOR and IBOR](https://1494labs.com/notes/abor-and-ibor/), two books that group the same positions differently
+
+- [For administrators](https://1494labs.com/fund-administration-software/), many clients on one platform
+
+- [Statements and reporting](https://docs.1494labs.com/guide/statements-and-reporting/) in the product docs
+
+- [All notes](https://1494labs.com/notes/)
+
+## How we handle it
+
+In 1494 Labs each column carries its own rule for how it adds up, each
+percentage keeps its denominator through any grouping, and a subtotal that cannot be computed honestly renders blank with its reason. A saved analysis has its own address, so the cut a controller builds on
+screen can also be pulled by another system through the API, with the
+rules still applied.
+
+[Get in touch](https://1494labs.com/#contact)
+
+
+---
+
+Source: https://1494labs.com/private-equity-fund-accounting/
+
+# Private equity fund accounting, waterfall included
+
+The capital account is the deliverable. In a drawdown fund, calls, distributions and allocations move it, and many errors begin when those movements live in a spreadsheet.
+
+Solutions · roughly 7 minutes
+
+## Commitments are ledger events
+
+In many drawdown books the capital account lives in a spreadsheet
+alongside the accounting system, because the accounting system was built for
+subscriptions and does not know what uncalled capital is. That spreadsheet
+is then the source of truth for the number limited partners care about most.
+
+Here, a commitment, a call, a drawdown and a distribution are events on the
+ledger, each with its own status. The capital account is built from them.
+Uncalled is what is left after the calls that actually happened.
+
+- ✓Commitments, subsequent closes and equalization on late closers
+
+- ✓Capital calls with purpose, notice and funding state
+
+- ✓Recallable distributions and recycling policy, per fund
+
+- ✓European and American waterfalls as configurable tiers
+
+- ✓GP carry, per-principal vesting, clawback and LP givebacks
+
+- ✓ILPA CC&D component codes on calls and distributions
+
+- ✓Fund performance measured against a total-return benchmark (PME)
+
+- ✓Subscription and asset-based credit lines: the borrowing base with per-LP exclusions, draws, repayments, interest, and returns with and without the facility
+
+- ✓Form PF Section 4 and Form ADV Schedule D answers derived from the book, each citing its source, exported for a compliance vendor or prepared for filing
+
+- ✓What the ledger does not hold, such as portfolio-company financials, valuation procedures and beneficial owners, entered on review screens and signed, with each correction kept beside the original
+
+![Capital accounts for a drawdown fund: $46.5m committed, $37.2m called, $9.3m uncalled, with per-LP rows and a stated recycling policy.](https://1494labs.com/assets/screens/capital-accounts.4da0f11e.jpg)
+**$46.5m committed, $37.2m called, $9.3m still uncalled.** Per limited partner and in total, with recallable capital and the fund's recycling policy shown alongside.
+
+## Waterfalls as configurable tiers
+
+Almost every platform offers "European" and "American" as a dropdown. Almost
+no limited partnership agreement is either textbook case. Real agreements
+have a preferred return with a compounding convention, a catch-up at some
+rate to some target, a split that changes at a hurdle, and a whole-fund test
+that may or may not apply to the catch-up.
+
+So a waterfall here is an ordered set of tiers with their own parameters,
+and the two named conventions are just two configurations of it. Carry is
+held as an accrual subject to its test, so a clawback is a figure the ledger
+already carries. [American vs European waterfall on the same two deals](https://1494labs.com/notes/european-vs-american-waterfall/)
+runs one fund through both conventions, with the numbers.
+
+![The waterfall builder: a named set of conventions, a stack of tiers with carry and catch-up rates, and a sample calculation panel computing preferred accrued of $46,932,807.68 and a catch-up band from hypothetical distributions.](https://1494labs.com/assets/screens/waterfall-worked-example.957ef3d5.jpg)
+**The terms, before they are terms.** Start from a named set of conventions, then edit any field; every field is picked from a fixed list of options with a stated meaning, so there is no formula to get wrong. The panel on the right runs hypothetical cash through the same distribution calculation the fund uses, as you type, which is how you find out what a catch-up rate does before it governs anybody's money. The note under the conventions says the platform runs the waterfall at the fund level, and is *deliberately not called compliant*.
+
+![A waterfall policy with four tiers - return of capital, accrued preferred, GP catch-up to 20 percent at 100 percent, split 80/20 - a clawback measurement per LP showing no exposure, and a posted distribution of $12,075,209.34: $9,300,000.00 returned as capital and $153,070.79 of GP carry.](https://1494labs.com/assets/screens/distribution-waterfall.446c8f15.jpg)
+**The same seven answers, entered as tiers.** Return of capital, accrued preferred, a catch-up to 20% at 100%, then an 80/20 split, marked whole-of-fund and priced against an 8% preferred net of return of capital. Clawback exposure is measured beside the policy, per LP by default, and the posted distribution below shows what the tiers produced: $9,300,000.00 back as capital and $153,070.79 to the GP.
+
+## Calls that move the account
+
+A capital call is issued against commitments, noticed to the limited
+partners it draws on, and funded. Each of those is a state the call actually
+has, and the capital account moves when, and because, the call is funded.
+
+![Eight quarterly capital calls of $4,650,000 each, every one marked FUNDED.](https://1494labs.com/assets/screens/capital-calls.bd5b8c9b.jpg)
+**Eight quarterly calls, each with its purpose and funding state.** The schedule is the audit trail: what was drawn, for what, and whether it arrived.
+
+## The fund knows what kind of fund it is
+
+Funding model is set on the vehicle. A drawdown fund's dashboard
+leads with committed, called and distributed; a subscription-funded fund's leads with
+subscriptions and redemptions. The funding model drives those views, while
+notice, lock-ups and redemption gates come from the fund's liquidity terms.
+
+![A drawdown fund dashboard showing NAV, committed, called, distributed, position value and fees accrued.](https://1494labs.com/assets/screens/dashboard-drawdown.2b87b3c0.jpg)
+**Committed, called and distributed reflect the drawdown funding model.** The fund's liquidity terms are configured separately.
+
+![A balance sheet for a drawdown fund: operating cash, investments in underlying funds, accrued fees payable, capital contributions and allocated members' capital, footing to $41,960,905.72 on both sides.](https://1494labs.com/assets/screens/balance-sheet.063ac02a.jpg)
+
+**The same fund's balance sheet.** Capital contributions of
+$37,200,000.00 is the called figure from the capital accounts above, and
+the page foots both sides to $41,960,905.72.
+
+## ILPA, as the template itself
+
+The ILPA Reporting Template v2.0 is a workbook with fixed rows, and it
+requires every field to be present. That is where most implementations quietly
+mislead: a row the book cannot source is emitted as zero, and a zero is
+indistinguishable from a real nil.
+
+![The ILPA Capital Account statement with a notes panel explaining which rows cannot be sourced and why.](https://1494labs.com/assets/screens/ilpa-capital-account.affebef1.jpg)
+**Every unsourceable row carries the note explaining it.** Carried interest accrued is zero here because the fund has no active waterfall policy, so no hypothetical liquidation can be run - and the statement says so beside the zero.
+
+## Commitments, drawn down against the ledger
+
+A commitment is a promise the fund draws against. Unfunded is what is left of it, and it has to move every time a call is issued, a transfer splits an interest, or a secondary changes who owes the rest.
+
+![Five LP commitments accepted at a first close, each ACTIVE, with commitment amounts and dates.](https://1494labs.com/assets/screens/commitments.3b5b072a.jpg)
+
+**Commitments.** Accepted at the close they belong to, and the calls
+that draw against them carry ILPA component codes at the point of
+posting.
+
+## Related reading
+
+- [American vs European waterfall on the same two deals](https://1494labs.com/notes/european-vs-american-waterfall/)
+
+- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/), for a fund moving systems mid-life
+
+- [The platform overview](https://1494labs.com/fund-accounting-software/)
+
+- [For administrators running several drawdown clients](https://1494labs.com/fund-administration-software/)
+
+- [Capital calls and distributions](https://docs.1494labs.com/guide/capital-calls-and-distributions/) in the product docs: what happens when carry has to come back
+
+- [GP economics](https://docs.1494labs.com/guide/gp-economics/) in the product docs: how carry is split among principals and how it vests
+
+## Show us the fund that breaks your current system
+
+Built for the people who sign the books.
+Tell us what you run and we will walk you through it in the product,
+on a running book. If you want to try it yourself, we will stand up a
+sandbox seeded with reference funds for you to work in.
+
+[Request a demo](https://1494labs.com/#contact)
+
+
+---
+
+Source: https://1494labs.com/registered-fund-accounting/
+
+# The obligations that come with a registered wrapper
+
+An interval fund, a RIC or a BDC is a normal book carrying a second set of duties. The duties run on a clock, and the fund answers for them to shareholders, notice by notice, through the year.
+
+Solutions · roughly 5 minutes
+
+## A second set of duties on the same book
+
+Tell shareholders what a distribution was actually paid out of. Repurchase
+up to a fixed share of the fund on a published schedule. Stay inside a
+coverage ratio. Each of those is computed from the same ledger that
+produces the NAV, on the fund's own tax year and its own calendar.
+
+- ✓§19(a) notices with the source split taken off the book
+
+- ✓Repurchase offers with a frozen queue, a specified NAV and proration
+
+- ✓Managed distribution policies, declared to paid, with per-holder characterization
+
+- ✓The distribution requirement and the excise calendar assessed as the book stands
+
+- ✓BDC asset coverage as a gate, with the two-part incentive fee and the ten-year table
+
+## A notice sourced from the book
+
+When a fund pays out more than it earned, it has to tell shareholders how
+much of the check was return of capital. The number is the payment itself, decomposed. Sourcing it
+from the book is what makes the year-to-date figure add up across every
+notice the fund has sent.
+
+## Repurchase offers on the clock
+
+Board approval, a request deadline that freezes the queue, pricing at a specified NAV, and proration when requests exceed the offer. What
+happens to a residual is the part that varies: it either cancels or
+carries forward to the next offer as a standing claim on the ledger,
+whichever the fund's own terms say. Both outcomes are configurable.
+
+## Managed distributions
+
+A policy in the fund's own vocabulary: a NAV percentage or a fixed
+amount, at a cadence, drawing on sources in a stated order. Behind every
+declaration sits the full sequence from declaration to payment, record-date shares and
+per-holder characterization.
+
+## Qualification and excise
+
+The distribution requirement and the excise calendar are assessed against
+the book as it stands, on the fund's own tax year.
+
+## BDC controls
+
+The asset-coverage ratio works as a gate. Alongside it: a
+two-part incentive fee with an income hurdle, a catch-up and a
+capital-gains part on its own lookback, and the ten-year senior-securities
+table the disclosure asks for.
+
+- [The platform](https://1494labs.com/fund-accounting-software/), end to end
+
+- [Capabilities](https://1494labs.com/capabilities/), including what we do not do
+
+- [A wrong number that agrees with itself](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/), on the daily check
+
+- [Registered funds operations](https://docs.1494labs.com/guide/registered-funds-operations/) in the product docs
+
+- [Repurchase offers](https://docs.1494labs.com/guide/repurchase-offers/) in the product docs
+
+**See how your fund would work in 1494.**
+Tell us the structure you run and the calculation your current process
+handles outside the accounting system. We will walk through it on real
+books, or stand up a sandbox seeded with reference funds for you to
+work in.
+
+[Request a demo](https://1494labs.com/#contact)
