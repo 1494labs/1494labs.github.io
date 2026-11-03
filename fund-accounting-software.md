@@ -129,4 +129,6 @@ sandbox seeded with reference funds for you to work in.
 
 ## Compare your current workflow
 
+[Compare fund accounting platforms](https://1494labs.com/compare/) with a worked close and dated product sources.
+
 [1494 Labs vs spreadsheets](https://1494labs.com/fund-accounting-software-vs-spreadsheets/) and [1494 Labs and an outsourced administrator](https://1494labs.com/fund-accounting-software-vs-administrator/): what to test with one completed period.

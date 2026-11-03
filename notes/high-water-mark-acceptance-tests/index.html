@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>High-water-mark acceptance tests before the first live close · 1494 Labs</title>
+
+
+<link rel="stylesheet" href="/assets/notes.715da883.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+
+<meta property="og:type" content="article">
+
+<meta property="og:site_name" content="1494 Labs">
+
+
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta name="twitter:card" content="summary_large_image">
+
+
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://1494labs.com/notes/high-water-mark-acceptance-tests/">
+<meta name="description" content="Use a recovery, a partial redemption and a gain above the mark to check that the fee engine retained the right investor state.">
+<meta property="og:title" content="High-water-mark acceptance tests before the first live close">
+<meta property="og:description" content="Use a recovery, a partial redemption and a gain above the mark to check that the fee engine retained the right investor state.">
+<meta property="og:url" content="https://1494labs.com/notes/high-water-mark-acceptance-tests/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "High-water-mark acceptance tests before the first live close",
+  "description": "Use a recovery, a partial redemption and a gain above the mark to check that the fee engine retained the right investor state.",
+  "url": "https://1494labs.com/notes/high-water-mark-acceptance-tests/",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "1494 Labs"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "1494 Labs"
+  }
+}
+</script>
+<link rel="alternate" type="text/markdown" href="https://1494labs.com/notes/high-water-mark-acceptance-tests.md" title="Markdown">
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <a class="lockup" href="/" aria-label="1494 Labs home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+            <path d="M5 9 H27"/><path d="M16 9 V26"/>
+          </g>
+          <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+          <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        </svg>
+      <span class="wordmark">1494 Labs</span>
+    </a>
+    <nav class="sitenav" aria-label="Site">
+      <a href="/fund-accounting-software/">Platform</a>
+      <a href="/capabilities/">Capabilities</a>
+      <a href="/notes/">Notes</a>
+      <a class="demo" href="/#contact">Request a demo</a>
+    </nav>
+    <details class="navmenu">
+      <summary><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>Menu</summary>
+      <nav aria-label="Site menu">
+        <a href="/fund-accounting-software/">Platform</a>
+        <a href="/capabilities/">Capabilities</a>
+        <a href="/notes/">Notes</a>
+        <a class="demo" href="/#contact">Request a demo</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<div class="wrap">
+<h1>High-water-mark acceptance tests before the first live close</h1>
+<p class="standfirst">Use a recovery, a partial redemption and a gain above the mark to check that the fee engine retained the right investor state.</p>
+<p class="byline">Fund operations &middot; November 3, 2026</p>
+<article>
+
+<h2>Write down the expected economics first</h2>
+<p>Fix the fee terms, share quantity, gross value convention, high-water mark, crystallization dates and rounding rules before testing. The examples below assume a 20% incentive fee above the investor's existing high-water mark, no hurdle, no other fees and no cash flows except the stated redemption.</p>
+<ol>
+<li><strong>Record the opening state.</strong> Keep the per-share mark and the quantity it belongs to, alongside any total loss carried forward.</li>
+<li><strong>Recover to the mark.</strong> Confirm that a recovery through an existing loss does not create a fee under these terms.</li>
+<li><strong>Redeem part of the holding below the mark.</strong> Check that the state left behind belongs to the remaining shares.</li>
+<li><strong>Recover beyond the mark.</strong> Independently calculate the gain above the mark and the resulting fee.</li>
+<li><strong>Check the posting and investor statement.</strong> Trace the fee from its calculation through the ledger to the investor's ending value.</li>
+</ol>
+<h2>Three checkpoints on the same holding</h2>
+<p>The investor starts with 10,000 shares at $80 and a $100 per-share mark. The opening shortfall is $200,000. It redeems 5,000 shares at $80, leaving 5,000 shares and a $100,000 shortfall.</p>
+<div class="tablewrap"><table><thead><tr><th>Checkpoint</th><th class="n">Remaining shares</th><th class="n">Gross price</th><th class="n">Gain above $100 mark</th><th class="n">Fee at 20%</th></tr></thead><tbody><tr><td>After partial redemption</td><td class="n">5,000</td><td class="n">$80</td><td class="n">$0</td><td class="n">$0</td></tr><tr><td>Recovery to mark</td><td class="n">5,000</td><td class="n">$100</td><td class="n">$0</td><td class="n">$0</td></tr><tr><td>Recovery beyond mark</td><td class="n">5,000</td><td class="n">$120</td><td class="n">$100,000</td><td class="n">$20,000</td></tr></tbody></table></div>
+<p>The final checkpoint follows directly from 5,000 × ($120 − $100) × 20%. Keeping the original $200,000 total shortfall after half the shares leave would shelter too much of the recovery. The per-share mark stays $100 in this example; the total state changes with the quantity.</p>
+<h2>Extend the test to the actual fund terms</h2>
+<p>Add separate cases for new subscriptions, transfers, full redemptions, fee accrual reversals and the fund's own crystallization rules. Record expected results before running the system. Check the imported opening state again whenever a correct total conceals an unexpected investor fee.</p>
+<p>1494 Labs supports investor fee calculations and a traceable ledger. Use these cases to make a <a href="/#contact">demonstration</a> specific. <a href="/notes/high-water-marks-and-partial-redemptions/">High-water marks and partial redemptions</a> explains the mechanism behind the test.</p>
+
+</article>
+  <!-- assistant-links:start -->
+  <nav class="assistant-links" aria-label="Page formats and assistants">
+    <a href="https://1494labs.com/notes/high-water-mark-acceptance-tests.md">Read Markdown</a>
+    <a href="https://chatgpt.com/?q=Read+https%3A%2F%2F1494labs.com%2Fnotes%2Fhigh-water-mark-acceptance-tests.md+and+explain+the+method+with+a+worked+example.+What+should+a+fund+controller+check%3F" target="_blank" rel="noopener noreferrer">Open in ChatGPT</a>
+    <a href="https://claude.ai/new?q=Read+https%3A%2F%2F1494labs.com%2Fnotes%2Fhigh-water-mark-acceptance-tests.md+and+explain+the+method+with+a+worked+example.+What+should+a+fund+controller+check%3F" target="_blank" rel="noopener noreferrer">Open in Claude</a>
+  </nav>
+  <!-- assistant-links:end -->
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs Inc., a Delaware corporation, 6 Liberty Square #2721, Boston, MA 02109</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/security/">Security</a>
+    <a href="/terms/">Terms</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3da7530d96b14f3f95915c071872f4be"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

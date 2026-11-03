@@ -42,6 +42,7 @@ These things deliberately do NOT cross over:
 
 | What | Why |
 |---|---|
+| `compare/`, `compare.md` | named comparison pages live only in the public marketing repository; preserve them on every sync |
 | `scripts/gen_sitemap.py` | the sitemap is generated there, from *that* repo's git history, AFTER the content commit - run it before and every `lastmod` is the previous commit's date |
 | `assets/linkedin-*` | brand source files; they are not pages and have no reason to sit on a web server |
 
@@ -116,8 +117,14 @@ local drafts. Commit those generated changes with the published content. The
 Pages repository's sitemap generator must include each page's Markdown copy;
 run it after the content commit as usual.
 
-Phase 2's initial new topics are side pockets, management fee offsets and moving
-a fund off spreadsheets, chosen from the issue's candidates pending phase 1's
-baseline. Named comparisons belong only in the public marketing repository,
+Phase 2's initial topics were side pockets, management fee offsets and moving
+a fund off spreadsheets. Subsequent topic selection uses the completed baseline
+and is documented below. Named comparisons belong only in the public marketing repository,
 with sourced claims and topic selection from that baseline. The initial
 comparisons here cover spreadsheets and the administrator service workflow.
+
+Baseline-driven additions on November 3, 2026 cover administrator conversion,
+equalization at conversion, and high-water-mark acceptance tests. Selection
+evidence is recorded in docs/research/aeo/2026-11-03-phase2-content-plan.json.
+The public compare/ directory stays outside this source tree and is preserved
+by the publishing script. Post-phase measurement is deferred at the owner’s request.

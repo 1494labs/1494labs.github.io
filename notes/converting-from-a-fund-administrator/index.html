@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Converting from a fund administrator: prove the first close · 1494 Labs</title>
+
+
+<link rel="stylesheet" href="/assets/notes.715da883.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+
+<meta property="og:type" content="article">
+
+<meta property="og:site_name" content="1494 Labs">
+
+
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta name="twitter:card" content="summary_large_image">
+
+
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://1494labs.com/notes/converting-from-a-fund-administrator/">
+<meta name="description" content="Agree the handoff date, reconcile the opening records and reproduce the next fee calculation before accepting the new book.">
+<meta property="og:title" content="Converting from a fund administrator: prove the first close">
+<meta property="og:description" content="Agree the handoff date, reconcile the opening records and reproduce the next fee calculation before accepting the new book.">
+<meta property="og:url" content="https://1494labs.com/notes/converting-from-a-fund-administrator/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Converting from a fund administrator: prove the first close",
+  "description": "Agree the handoff date, reconcile the opening records and reproduce the next fee calculation before accepting the new book.",
+  "url": "https://1494labs.com/notes/converting-from-a-fund-administrator/",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "1494 Labs"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "1494 Labs"
+  }
+}
+</script>
+<link rel="alternate" type="text/markdown" href="https://1494labs.com/notes/converting-from-a-fund-administrator.md" title="Markdown">
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <a class="lockup" href="/" aria-label="1494 Labs home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+            <path d="M5 9 H27"/><path d="M16 9 V26"/>
+          </g>
+          <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+          <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        </svg>
+      <span class="wordmark">1494 Labs</span>
+    </a>
+    <nav class="sitenav" aria-label="Site">
+      <a href="/fund-accounting-software/">Platform</a>
+      <a href="/capabilities/">Capabilities</a>
+      <a href="/notes/">Notes</a>
+      <a class="demo" href="/#contact">Request a demo</a>
+    </nav>
+    <details class="navmenu">
+      <summary><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>Menu</summary>
+      <nav aria-label="Site menu">
+        <a href="/fund-accounting-software/">Platform</a>
+        <a href="/capabilities/">Capabilities</a>
+        <a href="/notes/">Notes</a>
+        <a class="demo" href="/#contact">Request a demo</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<div class="wrap">
+<h1>Converting from a fund administrator: prove the first close</h1>
+<p class="standfirst">Agree the handoff date, reconcile the opening records and reproduce the next fee calculation before accepting the new book.</p>
+<p class="byline">Fund operations &middot; November 3, 2026</p>
+<article>
+
+<h2>Agree what is changing hands</h2>
+<p>Start by naming the accounting record your team will maintain and the services the administrator will continue to provide. Set a cutover date with an approved NAV, ledger and investor statements. Assign an owner to each open reconciliation item and each source file. A data export is an input to the handoff; acceptance requires evidence that the new book works.</p>
+<ol>
+<li><strong>Collect one consistent opening pack.</strong> Take the trial balance, investment positions, cash reconciliations, investor capital and fee schedules at the same approved date. Preserve the original exports.</li>
+<li><strong>Map the records.</strong> Match ledger accounts, investment identifiers, investor accounts and currencies. Resolve duplicate or missing identifiers before loading balances.</li>
+<li><strong>Carry the calculation state.</strong> Include high-water marks, loss carryforwards, equalization balances, side-pocket participation and unused fee credits where applicable. For private equity, preserve dated cash flows needed by the agreed waterfall and performance calculations.</li>
+<li><strong>Reconcile the opening book.</strong> Match the ledger to NAV, positions to investment controls and every investor balance to the approved statements. Record differences individually rather than offsetting unrelated breaks.</li>
+<li><strong>Run a parallel period.</strong> Use the same dated transactions, valuations and agreement terms. Compare fees and allocations before comparing final statements.</li>
+<li><strong>Accept the evidence.</strong> Have the controller approve the opening reconciliation, the parallel-period results and the process for correcting any remaining items.</li>
+</ol>
+<h2>A fee-state acceptance test</h2>
+<p>Assume an investor opens with 5,000 shares at $80 and a high-water mark of $100 per share. Its opening value is $400,000 and its remaining loss below the mark is $100,000. A conversion can load the $400,000 balance correctly while losing that fee state.</p>
+<p>As a test, recover the gross value to $100 per share with no intervening capital activity. Under an agreed high-water-mark-only fee, the recovery should generate no incentive fee. A fee charged on the $100,000 recovery signals that the imported balance and imported fee state need separate investigation.</p>
+<h2>Keep the transition reviewable</h2>
+<p>Save the source pack, mapping, rejected records, approved adjustments and signed reconciliation together. Confirm who can correct the new book, how closed history remains available and how the team will handle a late administrator adjustment.</p>
+<p>1494 Labs supports imports, configured fees and a traceable ledger. Bring a representative opening pack and the next-period acceptance tests to a <a href="/#contact">demo</a>, and agree the conversion scope before setting a live date.</p>
+<p>Related: <a href="/notes/what-an-opening-balance-has-to-carry/">what an opening balance has to carry</a> and <a href="https://docs.1494labs.com/guide/bringing-data-in/">bringing data in</a>.</p>
+
+</article>
+  <!-- assistant-links:start -->
+  <nav class="assistant-links" aria-label="Page formats and assistants">
+    <a href="https://1494labs.com/notes/converting-from-a-fund-administrator.md">Read Markdown</a>
+    <a href="https://chatgpt.com/?q=Read+https%3A%2F%2F1494labs.com%2Fnotes%2Fconverting-from-a-fund-administrator.md+and+explain+the+method+with+a+worked+example.+What+should+a+fund+controller+check%3F" target="_blank" rel="noopener noreferrer">Open in ChatGPT</a>
+    <a href="https://claude.ai/new?q=Read+https%3A%2F%2F1494labs.com%2Fnotes%2Fconverting-from-a-fund-administrator.md+and+explain+the+method+with+a+worked+example.+What+should+a+fund+controller+check%3F" target="_blank" rel="noopener noreferrer">Open in Claude</a>
+  </nav>
+  <!-- assistant-links:end -->
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs Inc., a Delaware corporation, 6 Liberty Square #2721, Boston, MA 02109</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/security/">Security</a>
+    <a href="/terms/">Terms</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3da7530d96b14f3f95915c071872f4be"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

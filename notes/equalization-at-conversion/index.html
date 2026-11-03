@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Equalization at conversion: check each subscriber separately · 1494 Labs</title>
+
+
+<link rel="stylesheet" href="/assets/notes.715da883.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+
+<meta property="og:type" content="article">
+
+<meta property="og:site_name" content="1494 Labs">
+
+
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta name="twitter:card" content="summary_large_image">
+
+
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://1494labs.com/notes/equalization-at-conversion/">
+<meta name="description" content="Two investors can hold the same number of shares and need different fee outcomes. Test the imported records investor by investor.">
+<meta property="og:title" content="Equalization at conversion: check each subscriber separately">
+<meta property="og:description" content="Two investors can hold the same number of shares and need different fee outcomes. Test the imported records investor by investor.">
+<meta property="og:url" content="https://1494labs.com/notes/equalization-at-conversion/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Equalization at conversion: check each subscriber separately",
+  "description": "Two investors can hold the same number of shares and need different fee outcomes. Test the imported records investor by investor.",
+  "url": "https://1494labs.com/notes/equalization-at-conversion/",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "1494 Labs"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "1494 Labs"
+  }
+}
+</script>
+<link rel="alternate" type="text/markdown" href="https://1494labs.com/notes/equalization-at-conversion.md" title="Markdown">
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <a class="lockup" href="/" aria-label="1494 Labs home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+            <path d="M5 9 H27"/><path d="M16 9 V26"/>
+          </g>
+          <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+          <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        </svg>
+      <span class="wordmark">1494 Labs</span>
+    </a>
+    <nav class="sitenav" aria-label="Site">
+      <a href="/fund-accounting-software/">Platform</a>
+      <a href="/capabilities/">Capabilities</a>
+      <a href="/notes/">Notes</a>
+      <a class="demo" href="/#contact">Request a demo</a>
+    </nav>
+    <details class="navmenu">
+      <summary><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>Menu</summary>
+      <nav aria-label="Site menu">
+        <a href="/fund-accounting-software/">Platform</a>
+        <a href="/capabilities/">Capabilities</a>
+        <a href="/notes/">Notes</a>
+        <a class="demo" href="/#contact">Request a demo</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<div class="wrap">
+<h1>Equalization at conversion: check each subscriber separately</h1>
+<p class="standfirst">Two investors can hold the same number of shares and need different fee outcomes. Test the imported records investor by investor.</p>
+<p class="byline">Fund operations &middot; November 3, 2026</p>
+<article>
+
+<h2>Preserve the method as well as the balance</h2>
+<p>Record whether the fund uses series accounting or a single NAV with investor-level equalization adjustments. Preserve the relevant subscription dates, quantities, fee rates, marks, outstanding credits or deficits, and settlement history. Confirm whether each reported balance is before or after accrued fees and equalization adjustments.</p>
+<p>Do not translate a credit into a high-water mark, or merge series, merely because two opening NAV totals agree. The governing terms determine the method and the records needed to continue it.</p>
+<ol>
+<li>Agree the method and crystallization dates with the controller and the outgoing provider.</li>
+<li>Reconcile each investor's quantity, opening value and fee-state record to the source schedule.</li>
+<li>Identify subscribers who entered above the existing mark, below it and at it.</li>
+<li>Run recovery, further-gain and reversal cases under the same agreed assumptions in both books.</li>
+<li>Compare each investor's fee and closing economics, then reconcile the total to the ledger.</li>
+<li>Test a redemption and any pending equalization settlement before accepting the setup.</li>
+</ol>
+<h2>A recovery case that separates the investors</h2>
+<p>Assume a 20% incentive fee on gains above each investor's own mark, no hurdle, no other fees and no intervening capital activity. A subscribed at $100; B subscribed after a decline at $80. Each holds 10,000 shares. The test ends at a gross, pre-incentive-fee value of $100 per share.</p>
+<div class="tablewrap"><table><thead><tr><th>Investor</th><th class="n">Own mark</th><th class="n">Gross test value</th><th class="n">Gain above own mark</th><th class="n">Expected fee</th></tr></thead><tbody><tr><td>A</td><td class="n">$100</td><td class="n">$1,000,000</td><td class="n">$0</td><td class="n">$0</td></tr><tr><td>B</td><td class="n">$80</td><td class="n">$1,000,000</td><td class="n">$200,000</td><td class="n">$40,000</td></tr></tbody></table></div>
+<p>Separate series can carry those marks directly. A single-NAV method needs the appropriate investor adjustments to reach the agreed economics. Compare the resulting investor values and fee allocations; do not require identical journal lines from methods with different mechanics.</p>
+<h2>Investigate a total that ties</h2>
+<p>A fund-level reconciliation does not prove that the fee landed on the correct investors. Trace any difference through the subscription price, imported fee state, adjustment postings and settlement. Retain the original state and the expected test result alongside the conversion evidence.</p>
+<p><a href="/notes/equalization-and-the-mid-period-subscriber/">The mid-period subscriber example</a> explains the underlying problem. Ask to see both supported approaches in a <a href="/#contact">1494 Labs demonstration</a>.</p>
+
+</article>
+  <!-- assistant-links:start -->
+  <nav class="assistant-links" aria-label="Page formats and assistants">
+    <a href="https://1494labs.com/notes/equalization-at-conversion.md">Read Markdown</a>
+    <a href="https://chatgpt.com/?q=Read+https%3A%2F%2F1494labs.com%2Fnotes%2Fequalization-at-conversion.md+and+explain+the+method+with+a+worked+example.+What+should+a+fund+controller+check%3F" target="_blank" rel="noopener noreferrer">Open in ChatGPT</a>
+    <a href="https://claude.ai/new?q=Read+https%3A%2F%2F1494labs.com%2Fnotes%2Fequalization-at-conversion.md+and+explain+the+method+with+a+worked+example.+What+should+a+fund+controller+check%3F" target="_blank" rel="noopener noreferrer">Open in Claude</a>
+  </nav>
+  <!-- assistant-links:end -->
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs Inc., a Delaware corporation, 6 Liberty Square #2721, Boston, MA 02109</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/security/">Security</a>
+    <a href="/terms/">Terms</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3da7530d96b14f3f95915c071872f4be"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

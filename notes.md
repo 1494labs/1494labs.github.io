@@ -6,6 +6,18 @@ Working notes on the parts of fund accounting that are hard to look up and
 harder to get right. Written for controllers, CFOs and administrators who have
 to make the numbers defensible.
 
+- [## Converting from a fund administrator: prove the first close
+
+Agree the handoff date, reconcile the opening records and reproduce the next fee calculation before accepting the new book.](https://1494labs.com/notes/converting-from-a-fund-administrator/)
+
+- [## Equalization at conversion: check each subscriber separately
+
+Two investors can hold the same number of shares and need different fee outcomes. Test the imported records investor by investor.](https://1494labs.com/notes/equalization-at-conversion/)
+
+- [## High-water-mark acceptance tests before the first live close
+
+Use a recovery, a partial redemption and a gain above the mark to check that the fee engine retained the right investor state.](https://1494labs.com/notes/high-water-mark-acceptance-tests/)
+
 - [## Side pockets: keep the investment and its investors together
 
 A side pocket needs its own participation record. A later subscriber should not silently acquire an interest in an earlier illiquid investment.](https://1494labs.com/notes/side-pockets-and-investor-participation/)

@@ -95,6 +95,465 @@ Source: https://1494labs.com/capabilities/
 
 ---
 
+Source: https://1494labs.com/compare/1494-labs-vs-allvue/
+
+# 1494 Labs vs Allvue Fund Accounting
+
+A fund accounting comparison for a private equity team closing the ledger and investor capital accounts together. Use a worked close to test the fit.
+
+Product sources reviewed November 3, 2026
+
+## Start with the accounting workflow
+
+Allvue describes cloud fund accounting for private equity and fund administrators, with a multi-currency general ledger, partnership accounting and financial reporting. Source: [Allvue Fund Accounting product page](https://www.allvuesystems.com/solutions/fund-accounting/), reviewed November 3, 2026.
+
+1494 Labs configures fees, allocations and waterfalls to the fund’s agreement. Investment records and investor capital accounts meet in one ledger, with recurring checks and a trail from a reported balance to its entries. See the [capability matrix](https://1494labs.com/capabilities/) for current product scope.
+
+## What to compare in a demonstration
+
+| Workflow | Allvue Fund Accounting: published description | 1494 Labs: demonstration to request |
+| --- | --- | --- |
+| The accounting record | It describes a multi-currency general ledger and partnership accounting. [Source](https://www.allvuesystems.com/solutions/fund-accounting/) | 1494 Labs keeps investment and investor accounting on one ledger. Trace a capital account to its allocations and entries. |
+| Fees and allocations | Its optional waterfall module models LPA terms and carry calculations. [Source](https://www.allvuesystems.com/solutions/fund-accounting/) | Configure fees and waterfalls to the fund’s agreement, then inspect the calculation and the entries it produces. |
+| Reviewing the result | It describes a financial report library, a flexible report writer and standardized workflows. [Source](https://www.allvuesystems.com/solutions/fund-accounting/) | Trace reported balances to the book and review the recurring checks that raise exceptions when the records stop tying. |
+
+## Prove a private equity close from source to statement
+
+Choose one fund with contributions, expenses and an investment exit. Configure its agreement terms, calculate the allocation and distribution, and trace the investor statement to the ledger. Include a correction in the open period and confirm that the calculation and its entries can be reviewed again.
+
+1. Agree the opening book, governing terms and expected results before the demonstration.
+
+2. Run the same dated transactions and valuations in each evaluation.
+
+3. Compare fees, investor allocations and closing balances, with an explanation for every difference.
+
+4. Ask to follow a reported amount back through its calculation and ledger entries.
+
+Take the expected results away with the calculation evidence. The review should show whether the proposed setup handles your fund’s terms and whether your team can explain the close.
+
+[Request a 1494 Labs demo](https://1494labs.com/#contact) with your fund structure and one close you want to reproduce. You can also read [1494 Labs as an alternative to Allvue](https://1494labs.com/compare/allvue-alternative/) or [browse the comparison guides](https://1494labs.com/compare/).
+
+
+---
+
+Source: https://1494labs.com/compare/1494-labs-vs-fis-investran/
+
+# 1494 Labs vs FIS Private Capital Suite
+
+A fund accounting comparison for a private capital team evaluating fund accounting, carry and investor reporting. Use a worked close to test the fit.
+
+Product sources reviewed November 3, 2026
+
+## Start with the accounting workflow
+
+FIS Private Capital Suite, formerly Investran, is described by FIS as a platform for fund and partnership accounting and automated investor reporting. Source: [FIS Private Capital Suite product page](https://www.fisglobal.com/products/fis-private-capital-suite), reviewed November 3, 2026.
+
+1494 Labs configures fees, allocations and waterfalls to the fund’s agreement. Investment records and investor capital accounts meet in one ledger, with recurring checks and a trail from a reported balance to its entries. See the [capability matrix](https://1494labs.com/capabilities/) for current product scope.
+
+## What to compare in a demonstration
+
+| Workflow | FIS Private Capital Suite: published description | 1494 Labs: demonstration to request |
+| --- | --- | --- |
+| The accounting record | FIS describes automation of fund and partnership accounting. [Source](https://www.fisglobal.com/products/fis-private-capital-suite) | 1494 Labs keeps investment and investor accounting on one ledger. Trace a capital account to its allocations and entries. |
+| Fees and allocations | Its product material describes digital waterfall administration and automated carry calculations. [Source](https://www.fisglobal.com/products/fis-private-capital-suite) | Configure fees and waterfalls to the fund’s agreement, then inspect the calculation and the entries it produces. |
+| Reviewing the result | It describes automated investor reporting and access to portfolio and performance data. [Source](https://www.fisglobal.com/products/fis-private-capital-suite) | Trace reported balances to the book and review the recurring checks that raise exceptions when the records stop tying. |
+
+## Compare waterfall results under the fund’s agreement
+
+Bring two exits with different dates and a later capital call. Specify whether the waterfall is whole-of-fund or deal-by-deal, and agree the preferred-return and catch-up terms. Follow the LP and GP amounts through the calculation and ledger. Add a dated correction and explain the change in the result.
+
+1. Agree the opening book, governing terms and expected results before the demonstration.
+
+2. Run the same dated transactions and valuations in each evaluation.
+
+3. Compare fees, investor allocations and closing balances, with an explanation for every difference.
+
+4. Ask to follow a reported amount back through its calculation and ledger entries.
+
+Take the expected results away with the calculation evidence. The review should show whether the proposed setup handles your fund’s terms and whether your team can explain the close.
+
+[Request a 1494 Labs demo](https://1494labs.com/#contact) with your fund structure and one close you want to reproduce. You can also read [1494 Labs as an alternative to FIS Private Capital Suite / Investran](https://1494labs.com/compare/fis-investran-alternative/) or [browse the comparison guides](https://1494labs.com/compare/).
+
+
+---
+
+Source: https://1494labs.com/compare/1494-labs-vs-fundcount/
+
+# 1494 Labs vs FundCount
+
+A fund accounting comparison for a family office or fund team keeping investment and investor records together. Use a worked close to test the fit.
+
+Product sources reviewed November 3, 2026
+
+## Start with the accounting workflow
+
+FundCount describes partnership and portfolio accounting posted to the same general ledger, including capital accounts, allocations and waterfalls. Source: [FundCount partnership accounting](https://fundcount.com/solutions/partnership-accounting/), reviewed November 3, 2026.
+
+1494 Labs configures fees, allocations and waterfalls to the fund’s agreement. Investment records and investor capital accounts meet in one ledger, with recurring checks and a trail from a reported balance to its entries. See the [capability matrix](https://1494labs.com/capabilities/) for current product scope.
+
+## What to compare in a demonstration
+
+| Workflow | FundCount: published description | 1494 Labs: demonstration to request |
+| --- | --- | --- |
+| The accounting record | Capital activity and partner allocations post to its general ledger. [Source](https://fundcount.com/solutions/partnership-accounting/) | 1494 Labs keeps investment and investor accounting on one ledger. Trace a capital account to its allocations and entries. |
+| Fees and allocations | Its partnership page describes configurable preferred returns, catch-up and carry splits. [Source](https://fundcount.com/solutions/partnership-accounting/) | Configure fees and waterfalls to the fund’s agreement, then inspect the calculation and the entries it produces. |
+| Reviewing the result | It describes on-demand capital statements and partner-level rollforwards. [Source](https://fundcount.com/solutions/partnership-accounting/) | Trace reported balances to the book and review the recurring checks that raise exceptions when the records stop tying. |
+
+## Work through a multi-entity capital movement
+
+Use a parent entity, an investment vehicle and two participating investors. Post an investment valuation, an expense and a distribution. Follow each investor’s share through the ownership structure, then reconcile the entity balances and consolidated view. Change one source amount and review the resulting allocations and entries.
+
+1. Agree the opening book, governing terms and expected results before the demonstration.
+
+2. Run the same dated transactions and valuations in each evaluation.
+
+3. Compare fees, investor allocations and closing balances, with an explanation for every difference.
+
+4. Ask to follow a reported amount back through its calculation and ledger entries.
+
+Take the expected results away with the calculation evidence. The review should show whether the proposed setup handles your fund’s terms and whether your team can explain the close.
+
+[Request a 1494 Labs demo](https://1494labs.com/#contact) with your fund structure and one close you want to reproduce. You can also read [1494 Labs as an alternative to FundCount](https://1494labs.com/compare/fundcount-alternative/) or [browse the comparison guides](https://1494labs.com/compare/).
+
+
+---
+
+Source: https://1494labs.com/compare/1494-labs-vs-lemonedge/
+
+# 1494 Labs vs LemonEdge
+
+A fund accounting comparison for a fund team working through multi-level ownership and allocation rules. Use a worked close to test the fit.
+
+Product sources reviewed November 3, 2026
+
+## Start with the accounting workflow
+
+LemonEdge describes fund accounting for complex private equity structures, with event-based partnership accounting and allocation paths for ownership, carry and waterfalls. Source: [LemonEdge private equity product page](https://www.lemonedge.com/markets/private-equity), reviewed November 3, 2026.
+
+1494 Labs configures fees, allocations and waterfalls to the fund’s agreement. Investment records and investor capital accounts meet in one ledger, with recurring checks and a trail from a reported balance to its entries. See the [capability matrix](https://1494labs.com/capabilities/) for current product scope.
+
+## What to compare in a demonstration
+
+| Workflow | LemonEdge: published description | 1494 Labs: demonstration to request |
+| --- | --- | --- |
+| The accounting record | It describes event-based partnership accounting for multi-entity structures. [Source](https://www.lemonedge.com/markets/private-equity) | 1494 Labs keeps investment and investor accounting on one ledger. Trace a capital account to its allocations and entries. |
+| Fees and allocations | Its allocation paths cover ownership, carry and waterfalls. [Source](https://www.lemonedge.com/markets/private-equity) | Configure fees and waterfalls to the fund’s agreement, then inspect the calculation and the entries it produces. |
+| Reviewing the result | It describes auditable, time-stamped calculations against live data. [Source](https://www.lemonedge.com/markets/private-equity) | Trace reported balances to the book and review the recurring checks that raise exceptions when the records stop tying. |
+
+## Follow an allocation through the ownership structure
+
+Model the actual ownership chain with a feeder and underlying vehicle. Post income and an expense in the underlying book, then follow their allocation to the feeder’s investors. Inspect the ownership basis, currency treatment and ledger entries. Reconcile the combined view to the individual books.
+
+1. Agree the opening book, governing terms and expected results before the demonstration.
+
+2. Run the same dated transactions and valuations in each evaluation.
+
+3. Compare fees, investor allocations and closing balances, with an explanation for every difference.
+
+4. Ask to follow a reported amount back through its calculation and ledger entries.
+
+Take the expected results away with the calculation evidence. The review should show whether the proposed setup handles your fund’s terms and whether your team can explain the close.
+
+[Request a 1494 Labs demo](https://1494labs.com/#contact) with your fund structure and one close you want to reproduce. You can also read [1494 Labs as an alternative to LemonEdge](https://1494labs.com/compare/lemonedge-alternative/) or [browse the comparison guides](https://1494labs.com/compare/).
+
+
+---
+
+Source: https://1494labs.com/compare/1494-labs-vs-ssc-geneva/
+
+# 1494 Labs vs SS&C Geneva
+
+A fund accounting comparison for a hedge fund team reviewing its investment book and investor accounting. Use a worked close to test the fit.
+
+Product sources reviewed November 3, 2026
+
+## Start with the accounting workflow
+
+SS&C Advent describes Geneva as a platform for portfolio and fund management, investor accounting and reporting, and shadow accounting. Source: [SS&C Advent Geneva product page](https://www.advent.com/geneva/), reviewed November 3, 2026.
+
+1494 Labs configures fees, allocations and waterfalls to the fund’s agreement. Investment records and investor capital accounts meet in one ledger, with recurring checks and a trail from a reported balance to its entries. See the [capability matrix](https://1494labs.com/capabilities/) for current product scope.
+
+## What to compare in a demonstration
+
+| Workflow | SS&C Geneva: published description | 1494 Labs: demonstration to request |
+| --- | --- | --- |
+| The accounting record | It describes portfolio and fund management with multi-currency accounting. [Source](https://www.advent.com/geneva/) | 1494 Labs keeps investment and investor accounting on one ledger. Trace a capital account to its allocations and entries. |
+| Investor accounting | Its product page includes investor accounting and reporting. [Source](https://www.advent.com/geneva/) | Configure fees and waterfalls to the fund’s agreement, then inspect the calculation and the entries it produces. |
+| Reviewing the result | It describes shadow accounting, reconciliation and exception-management workflows. [Source](https://www.advent.com/geneva/) | Trace reported balances to the book and review the recurring checks that raise exceptions when the records stop tying. |
+
+## Reconcile the investment book and investor result
+
+Use a representative period with a trade, a valuation change, income and an investor capital movement. Reconcile positions and cash to the ledger, then follow income and expenses into the investor allocation. Compare the book with an independent administrator statement and investigate one deliberate difference.
+
+1. Agree the opening book, governing terms and expected results before the demonstration.
+
+2. Run the same dated transactions and valuations in each evaluation.
+
+3. Compare fees, investor allocations and closing balances, with an explanation for every difference.
+
+4. Ask to follow a reported amount back through its calculation and ledger entries.
+
+Take the expected results away with the calculation evidence. The review should show whether the proposed setup handles your fund’s terms and whether your team can explain the close.
+
+[Request a 1494 Labs demo](https://1494labs.com/#contact) with your fund structure and one close you want to reproduce. You can also read [1494 Labs as an alternative to SS&C Geneva](https://1494labs.com/compare/ssc-geneva-alternative/) or [browse the comparison guides](https://1494labs.com/compare/).
+
+
+---
+
+Source: https://1494labs.com/compare/allvue-alternative/
+
+# An alternative to Allvue: fund accounting with 1494 Labs
+
+Evaluate 1494 Labs for a private equity team closing the ledger and investor capital accounts together, with configured terms, ledger traces and a worked acceptance case.
+
+Product sources reviewed November 3, 2026
+
+## Put your fund’s close at the center of the shortlist
+
+Allvue describes cloud fund accounting for private equity and fund administrators, with a multi-currency general ledger, partnership accounting and financial reporting. Its published scope is described on the [Allvue Fund Accounting product page](https://www.allvuesystems.com/solutions/fund-accounting/), reviewed November 3, 2026.
+
+If you are considering alternatives, start with the work the new book must reproduce: the investment record, the fee terms, each investor’s allocation and the statement the controller approves. 1494 Labs brings those records onto one ledger and runs recurring checks that surface differences.
+
+## Prove a private equity close from source to statement
+
+Choose one fund with contributions, expenses and an investment exit. Configure its agreement terms, calculate the allocation and distribution, and trace the investor statement to the ledger. Include a correction in the open period and confirm that the calculation and its entries can be reviewed again.
+
+## Build a review pack before the demo
+
+- **The opening position:** an agreed ledger, investment positions and investor capital balances.
+
+- **The terms:** the fee rate and base, allocation rules, waterfall provisions and any investor-specific arrangements.
+
+- **The state:** relevant high-water marks, loss carryforwards, equalization balances and side-pocket interests.
+
+- **The activity:** dated transactions and valuations for one representative period.
+
+- **The expected evidence:** reconciled fees, investor allocations, ledger entries and ending balances.
+
+## What to ask 1494 Labs to show
+
+Ask to configure the terms, run the period and trace the output from the investor statement back to its source. Then introduce a correction in an open period and review the changed calculation and entries. Inspect an exception from the checks and the information a controller uses to resolve it.
+
+Use reference data shaped like your fund for the first evaluation. Agree the scope of imports and any mid-life conversion before choosing a cutover date. [The administrator conversion checklist](https://1494labs.com/notes/converting-from-a-fund-administrator/) sets out an acceptance process.
+
+[Request a 1494 Labs demo](https://1494labs.com/#contact), review the [capability matrix](https://1494labs.com/capabilities/), or read the [1494 Labs vs Allvue Fund Accounting comparison](https://1494labs.com/compare/1494-labs-vs-allvue/).
+
+
+---
+
+Source: https://1494labs.com/compare/fis-investran-alternative/
+
+# An alternative to FIS Private Capital Suite / Investran: fund accounting with 1494 Labs
+
+Evaluate 1494 Labs for a private capital team evaluating fund accounting, carry and investor reporting, with configured terms, ledger traces and a worked acceptance case.
+
+Product sources reviewed November 3, 2026
+
+## Put your fund’s close at the center of the shortlist
+
+FIS Private Capital Suite, formerly Investran, is described by FIS as a platform for fund and partnership accounting and automated investor reporting. Its published scope is described on the [FIS Private Capital Suite product page](https://www.fisglobal.com/products/fis-private-capital-suite), reviewed November 3, 2026.
+
+If you are considering alternatives, start with the work the new book must reproduce: the investment record, the fee terms, each investor’s allocation and the statement the controller approves. 1494 Labs brings those records onto one ledger and runs recurring checks that surface differences.
+
+## Compare waterfall results under the fund’s agreement
+
+Bring two exits with different dates and a later capital call. Specify whether the waterfall is whole-of-fund or deal-by-deal, and agree the preferred-return and catch-up terms. Follow the LP and GP amounts through the calculation and ledger. Add a dated correction and explain the change in the result.
+
+## Build a review pack before the demo
+
+- **The opening position:** an agreed ledger, investment positions and investor capital balances.
+
+- **The terms:** the fee rate and base, allocation rules, waterfall provisions and any investor-specific arrangements.
+
+- **The state:** relevant high-water marks, loss carryforwards, equalization balances and side-pocket interests.
+
+- **The activity:** dated transactions and valuations for one representative period.
+
+- **The expected evidence:** reconciled fees, investor allocations, ledger entries and ending balances.
+
+## What to ask 1494 Labs to show
+
+Ask to configure the terms, run the period and trace the output from the investor statement back to its source. Then introduce a correction in an open period and review the changed calculation and entries. Inspect an exception from the checks and the information a controller uses to resolve it.
+
+Use reference data shaped like your fund for the first evaluation. Agree the scope of imports and any mid-life conversion before choosing a cutover date. [The administrator conversion checklist](https://1494labs.com/notes/converting-from-a-fund-administrator/) sets out an acceptance process.
+
+[Request a 1494 Labs demo](https://1494labs.com/#contact), review the [capability matrix](https://1494labs.com/capabilities/), or read the [1494 Labs vs FIS Private Capital Suite comparison](https://1494labs.com/compare/1494-labs-vs-fis-investran/).
+
+
+---
+
+Source: https://1494labs.com/compare/fundcount-alternative/
+
+# An alternative to FundCount: fund accounting with 1494 Labs
+
+Evaluate 1494 Labs for a family office or fund team keeping investment and investor records together, with configured terms, ledger traces and a worked acceptance case.
+
+Product sources reviewed November 3, 2026
+
+## Put your fund’s close at the center of the shortlist
+
+FundCount describes partnership and portfolio accounting posted to the same general ledger, including capital accounts, allocations and waterfalls. Its published scope is described on the [FundCount partnership accounting](https://fundcount.com/solutions/partnership-accounting/), reviewed November 3, 2026.
+
+If you are considering alternatives, start with the work the new book must reproduce: the investment record, the fee terms, each investor’s allocation and the statement the controller approves. 1494 Labs brings those records onto one ledger and runs recurring checks that surface differences.
+
+## Work through a multi-entity capital movement
+
+Use a parent entity, an investment vehicle and two participating investors. Post an investment valuation, an expense and a distribution. Follow each investor’s share through the ownership structure, then reconcile the entity balances and consolidated view. Change one source amount and review the resulting allocations and entries.
+
+## Build a review pack before the demo
+
+- **The opening position:** an agreed ledger, investment positions and investor capital balances.
+
+- **The terms:** the fee rate and base, allocation rules, waterfall provisions and any investor-specific arrangements.
+
+- **The state:** relevant high-water marks, loss carryforwards, equalization balances and side-pocket interests.
+
+- **The activity:** dated transactions and valuations for one representative period.
+
+- **The expected evidence:** reconciled fees, investor allocations, ledger entries and ending balances.
+
+## What to ask 1494 Labs to show
+
+Ask to configure the terms, run the period and trace the output from the investor statement back to its source. Then introduce a correction in an open period and review the changed calculation and entries. Inspect an exception from the checks and the information a controller uses to resolve it.
+
+Use reference data shaped like your fund for the first evaluation. Agree the scope of imports and any mid-life conversion before choosing a cutover date. [The administrator conversion checklist](https://1494labs.com/notes/converting-from-a-fund-administrator/) sets out an acceptance process.
+
+[Request a 1494 Labs demo](https://1494labs.com/#contact), review the [capability matrix](https://1494labs.com/capabilities/), or read the [1494 Labs vs FundCount comparison](https://1494labs.com/compare/1494-labs-vs-fundcount/).
+
+
+---
+
+Source: https://1494labs.com/compare/
+
+# Compare fund accounting software
+
+Compare published product scope, then test the accounting with your own fund terms and a worked close.
+
+Product sources reviewed November 3, 2026
+
+Choose a comparison below to prepare a fund accounting evaluation. Each guide links the other provider’s own public material and records the review date. Bring an agreed opening book and expected results to the demonstration.
+
+## FundCount
+
+[1494 Labs vs FundCount](https://1494labs.com/compare/1494-labs-vs-fundcount/)
+
+[1494 Labs as an alternative to FundCount](https://1494labs.com/compare/fundcount-alternative/)
+
+## Allvue
+
+[1494 Labs vs Allvue Fund Accounting](https://1494labs.com/compare/1494-labs-vs-allvue/)
+
+[1494 Labs as an alternative to Allvue](https://1494labs.com/compare/allvue-alternative/)
+
+## FIS Private Capital Suite / Investran
+
+[1494 Labs vs FIS Private Capital Suite](https://1494labs.com/compare/1494-labs-vs-fis-investran/)
+
+[1494 Labs as an alternative to FIS Private Capital Suite / Investran](https://1494labs.com/compare/fis-investran-alternative/)
+
+## LemonEdge
+
+[1494 Labs vs LemonEdge](https://1494labs.com/compare/1494-labs-vs-lemonedge/)
+
+[1494 Labs as an alternative to LemonEdge](https://1494labs.com/compare/lemonedge-alternative/)
+
+## SS&C Geneva
+
+[1494 Labs vs SS&C Geneva](https://1494labs.com/compare/1494-labs-vs-ssc-geneva/)
+
+[1494 Labs as an alternative to SS&C Geneva](https://1494labs.com/compare/ssc-geneva-alternative/)
+
+## Compare the workflow you have today
+
+[1494 Labs vs spreadsheets](https://1494labs.com/fund-accounting-software-vs-spreadsheets/) and [software and an outsourced administrator](https://1494labs.com/fund-accounting-software-vs-administrator/) cover the book, the service relationship and the handoff between teams.
+
+[Request a demo](https://1494labs.com/#contact) shaped like your fund.
+
+
+---
+
+Source: https://1494labs.com/compare/lemonedge-alternative/
+
+# An alternative to LemonEdge: fund accounting with 1494 Labs
+
+Evaluate 1494 Labs for a fund team working through multi-level ownership and allocation rules, with configured terms, ledger traces and a worked acceptance case.
+
+Product sources reviewed November 3, 2026
+
+## Put your fund’s close at the center of the shortlist
+
+LemonEdge describes fund accounting for complex private equity structures, with event-based partnership accounting and allocation paths for ownership, carry and waterfalls. Its published scope is described on the [LemonEdge private equity product page](https://www.lemonedge.com/markets/private-equity), reviewed November 3, 2026.
+
+If you are considering alternatives, start with the work the new book must reproduce: the investment record, the fee terms, each investor’s allocation and the statement the controller approves. 1494 Labs brings those records onto one ledger and runs recurring checks that surface differences.
+
+## Follow an allocation through the ownership structure
+
+Model the actual ownership chain with a feeder and underlying vehicle. Post income and an expense in the underlying book, then follow their allocation to the feeder’s investors. Inspect the ownership basis, currency treatment and ledger entries. Reconcile the combined view to the individual books.
+
+## Build a review pack before the demo
+
+- **The opening position:** an agreed ledger, investment positions and investor capital balances.
+
+- **The terms:** the fee rate and base, allocation rules, waterfall provisions and any investor-specific arrangements.
+
+- **The state:** relevant high-water marks, loss carryforwards, equalization balances and side-pocket interests.
+
+- **The activity:** dated transactions and valuations for one representative period.
+
+- **The expected evidence:** reconciled fees, investor allocations, ledger entries and ending balances.
+
+## What to ask 1494 Labs to show
+
+Ask to configure the terms, run the period and trace the output from the investor statement back to its source. Then introduce a correction in an open period and review the changed calculation and entries. Inspect an exception from the checks and the information a controller uses to resolve it.
+
+Use reference data shaped like your fund for the first evaluation. Agree the scope of imports and any mid-life conversion before choosing a cutover date. [The administrator conversion checklist](https://1494labs.com/notes/converting-from-a-fund-administrator/) sets out an acceptance process.
+
+[Request a 1494 Labs demo](https://1494labs.com/#contact), review the [capability matrix](https://1494labs.com/capabilities/), or read the [1494 Labs vs LemonEdge comparison](https://1494labs.com/compare/1494-labs-vs-lemonedge/).
+
+
+---
+
+Source: https://1494labs.com/compare/ssc-geneva-alternative/
+
+# An alternative to SS&C Geneva: fund accounting with 1494 Labs
+
+Evaluate 1494 Labs for a hedge fund team reviewing its investment book and investor accounting, with configured terms, ledger traces and a worked acceptance case.
+
+Product sources reviewed November 3, 2026
+
+## Put your fund’s close at the center of the shortlist
+
+SS&C Advent describes Geneva as a platform for portfolio and fund management, investor accounting and reporting, and shadow accounting. Its published scope is described on the [SS&C Advent Geneva product page](https://www.advent.com/geneva/), reviewed November 3, 2026.
+
+If you are considering alternatives, start with the work the new book must reproduce: the investment record, the fee terms, each investor’s allocation and the statement the controller approves. 1494 Labs brings those records onto one ledger and runs recurring checks that surface differences.
+
+## Reconcile the investment book and investor result
+
+Use a representative period with a trade, a valuation change, income and an investor capital movement. Reconcile positions and cash to the ledger, then follow income and expenses into the investor allocation. Compare the book with an independent administrator statement and investigate one deliberate difference.
+
+## Build a review pack before the demo
+
+- **The opening position:** an agreed ledger, investment positions and investor capital balances.
+
+- **The terms:** the fee rate and base, allocation rules, waterfall provisions and any investor-specific arrangements.
+
+- **The state:** relevant high-water marks, loss carryforwards, equalization balances and side-pocket interests.
+
+- **The activity:** dated transactions and valuations for one representative period.
+
+- **The expected evidence:** reconciled fees, investor allocations, ledger entries and ending balances.
+
+## What to ask 1494 Labs to show
+
+Ask to configure the terms, run the period and trace the output from the investor statement back to its source. Then introduce a correction in an open period and review the changed calculation and entries. Inspect an exception from the checks and the information a controller uses to resolve it.
+
+Use reference data shaped like your fund for the first evaluation. Agree the scope of imports and any mid-life conversion before choosing a cutover date. [The administrator conversion checklist](https://1494labs.com/notes/converting-from-a-fund-administrator/) sets out an acceptance process.
+
+[Request a 1494 Labs demo](https://1494labs.com/#contact), review the [capability matrix](https://1494labs.com/capabilities/), or read the [1494 Labs vs SS&C Geneva comparison](https://1494labs.com/compare/1494-labs-vs-ssc-geneva/).
+
+
+---
+
 Source: https://1494labs.com/family-office-accounting/
 
 # Family office accounting, with the structure drawn from the capital
@@ -361,6 +820,8 @@ sandbox seeded with reference funds for you to work in.
 [Request a demo](https://1494labs.com/#contact)
 
 ## Compare your current workflow
+
+[Compare fund accounting platforms](https://1494labs.com/compare/) with a worked close and dated product sources.
 
 [1494 Labs vs spreadsheets](https://1494labs.com/fund-accounting-software-vs-spreadsheets/) and [1494 Labs and an outsourced administrator](https://1494labs.com/fund-accounting-software-vs-administrator/): what to test with one completed period.
 
@@ -1133,6 +1594,47 @@ re-checked every morning.
 
 ---
 
+Source: https://1494labs.com/notes/converting-from-a-fund-administrator/
+
+# Converting from a fund administrator: prove the first close
+
+Agree the handoff date, reconcile the opening records and reproduce the next fee calculation before accepting the new book.
+
+Fund operations · November 3, 2026
+
+## Agree what is changing hands
+
+Start by naming the accounting record your team will maintain and the services the administrator will continue to provide. Set a cutover date with an approved NAV, ledger and investor statements. Assign an owner to each open reconciliation item and each source file. A data export is an input to the handoff; acceptance requires evidence that the new book works.
+
+1. **Collect one consistent opening pack.** Take the trial balance, investment positions, cash reconciliations, investor capital and fee schedules at the same approved date. Preserve the original exports.
+
+2. **Map the records.** Match ledger accounts, investment identifiers, investor accounts and currencies. Resolve duplicate or missing identifiers before loading balances.
+
+3. **Carry the calculation state.** Include high-water marks, loss carryforwards, equalization balances, side-pocket participation and unused fee credits where applicable. For private equity, preserve dated cash flows needed by the agreed waterfall and performance calculations.
+
+4. **Reconcile the opening book.** Match the ledger to NAV, positions to investment controls and every investor balance to the approved statements. Record differences individually rather than offsetting unrelated breaks.
+
+5. **Run a parallel period.** Use the same dated transactions, valuations and agreement terms. Compare fees and allocations before comparing final statements.
+
+6. **Accept the evidence.** Have the controller approve the opening reconciliation, the parallel-period results and the process for correcting any remaining items.
+
+## A fee-state acceptance test
+
+Assume an investor opens with 5,000 shares at $80 and a high-water mark of $100 per share. Its opening value is $400,000 and its remaining loss below the mark is $100,000. A conversion can load the $400,000 balance correctly while losing that fee state.
+
+As a test, recover the gross value to $100 per share with no intervening capital activity. Under an agreed high-water-mark-only fee, the recovery should generate no incentive fee. A fee charged on the $100,000 recovery signals that the imported balance and imported fee state need separate investigation.
+
+## Keep the transition reviewable
+
+Save the source pack, mapping, rejected records, approved adjustments and signed reconciliation together. Confirm who can correct the new book, how closed history remains available and how the team will handle a late administrator adjustment.
+
+1494 Labs supports imports, configured fees and a traceable ledger. Bring a representative opening pack and the next-period acceptance tests to a [demo](https://1494labs.com/#contact), and agree the conversion scope before setting a live date.
+
+Related: [what an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/) and [bringing data in](https://docs.1494labs.com/guide/bringing-data-in/).
+
+
+---
+
 Source: https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/
 
 # Equalization, and what a mid-period subscriber actually owes
@@ -1308,6 +1810,52 @@ in year three.
 fund uses is a setting on the fund, because the answer is in its offering document.
 
 [Get in touch](https://1494labs.com/#contact)
+
+
+---
+
+Source: https://1494labs.com/notes/equalization-at-conversion/
+
+# Equalization at conversion: check each subscriber separately
+
+Two investors can hold the same number of shares and need different fee outcomes. Test the imported records investor by investor.
+
+Fund operations · November 3, 2026
+
+## Preserve the method as well as the balance
+
+Record whether the fund uses series accounting or a single NAV with investor-level equalization adjustments. Preserve the relevant subscription dates, quantities, fee rates, marks, outstanding credits or deficits, and settlement history. Confirm whether each reported balance is before or after accrued fees and equalization adjustments.
+
+Do not translate a credit into a high-water mark, or merge series, merely because two opening NAV totals agree. The governing terms determine the method and the records needed to continue it.
+
+1. Agree the method and crystallization dates with the controller and the outgoing provider.
+
+2. Reconcile each investor's quantity, opening value and fee-state record to the source schedule.
+
+3. Identify subscribers who entered above the existing mark, below it and at it.
+
+4. Run recovery, further-gain and reversal cases under the same agreed assumptions in both books.
+
+5. Compare each investor's fee and closing economics, then reconcile the total to the ledger.
+
+6. Test a redemption and any pending equalization settlement before accepting the setup.
+
+## A recovery case that separates the investors
+
+Assume a 20% incentive fee on gains above each investor's own mark, no hurdle, no other fees and no intervening capital activity. A subscribed at $100; B subscribed after a decline at $80. Each holds 10,000 shares. The test ends at a gross, pre-incentive-fee value of $100 per share.
+
+| Investor | Own mark | Gross test value | Gain above own mark | Expected fee |
+| --- | --- | --- | --- | --- |
+| A | $100 | $1,000,000 | $0 | $0 |
+| B | $80 | $1,000,000 | $200,000 | $40,000 |
+
+Separate series can carry those marks directly. A single-NAV method needs the appropriate investor adjustments to reach the agreed economics. Compare the resulting investor values and fee allocations; do not require identical journal lines from methods with different mechanics.
+
+## Investigate a total that ties
+
+A fund-level reconciliation does not prove that the fee landed on the correct investors. Trace any difference through the subscription price, imported fee state, adjustment postings and settlement. Retain the original state and the expected test result alongside the conversion evidence.
+
+[The mid-period subscriber example](https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/) explains the underlying problem. Ask to see both supported approaches in a [1494 Labs demonstration](https://1494labs.com/#contact).
 
 
 ---
@@ -1542,6 +2090,49 @@ because the agreements we read are rarely either textbook case. Carry is held as
 
 ---
 
+Source: https://1494labs.com/notes/high-water-mark-acceptance-tests/
+
+# High-water-mark acceptance tests before the first live close
+
+Use a recovery, a partial redemption and a gain above the mark to check that the fee engine retained the right investor state.
+
+Fund operations · November 3, 2026
+
+## Write down the expected economics first
+
+Fix the fee terms, share quantity, gross value convention, high-water mark, crystallization dates and rounding rules before testing. The examples below assume a 20% incentive fee above the investor's existing high-water mark, no hurdle, no other fees and no cash flows except the stated redemption.
+
+1. **Record the opening state.** Keep the per-share mark and the quantity it belongs to, alongside any total loss carried forward.
+
+2. **Recover to the mark.** Confirm that a recovery through an existing loss does not create a fee under these terms.
+
+3. **Redeem part of the holding below the mark.** Check that the state left behind belongs to the remaining shares.
+
+4. **Recover beyond the mark.** Independently calculate the gain above the mark and the resulting fee.
+
+5. **Check the posting and investor statement.** Trace the fee from its calculation through the ledger to the investor's ending value.
+
+## Three checkpoints on the same holding
+
+The investor starts with 10,000 shares at $80 and a $100 per-share mark. The opening shortfall is $200,000. It redeems 5,000 shares at $80, leaving 5,000 shares and a $100,000 shortfall.
+
+| Checkpoint | Remaining shares | Gross price | Gain above $100 mark | Fee at 20% |
+| --- | --- | --- | --- | --- |
+| After partial redemption | 5,000 | $80 | $0 | $0 |
+| Recovery to mark | 5,000 | $100 | $0 | $0 |
+| Recovery beyond mark | 5,000 | $120 | $100,000 | $20,000 |
+
+The final checkpoint follows directly from 5,000 × ($120 − $100) × 20%. Keeping the original $200,000 total shortfall after half the shares leave would shelter too much of the recovery. The per-share mark stays $100 in this example; the total state changes with the quantity.
+
+## Extend the test to the actual fund terms
+
+Add separate cases for new subscriptions, transfers, full redemptions, fee accrual reversals and the fund's own crystallization rules. Record expected results before running the system. Check the imported opening state again whenever a correct total conceals an unexpected investor fee.
+
+1494 Labs supports investor fee calculations and a traceable ledger. Use these cases to make a [demonstration](https://1494labs.com/#contact) specific. [High-water marks and partial redemptions](https://1494labs.com/notes/high-water-marks-and-partial-redemptions/) explains the mechanism behind the test.
+
+
+---
+
 Source: https://1494labs.com/notes/high-water-marks-and-partial-redemptions/
 
 # High-water marks and the partial redemption
@@ -1677,6 +2268,18 @@ Source: https://1494labs.com/notes/
 Working notes on the parts of fund accounting that are hard to look up and
 harder to get right. Written for controllers, CFOs and administrators who have
 to make the numbers defensible.
+
+- [## Converting from a fund administrator: prove the first close
+
+Agree the handoff date, reconcile the opening records and reproduce the next fee calculation before accepting the new book.](https://1494labs.com/notes/converting-from-a-fund-administrator/)
+
+- [## Equalization at conversion: check each subscriber separately
+
+Two investors can hold the same number of shares and need different fee outcomes. Test the imported records investor by investor.](https://1494labs.com/notes/equalization-at-conversion/)
+
+- [## High-water-mark acceptance tests before the first live close
+
+Use a recovery, a partial redemption and a gain above the mark to check that the fee engine retained the right investor state.](https://1494labs.com/notes/high-water-mark-acceptance-tests/)
 
 - [## Side pockets: keep the investment and its investors together
 
