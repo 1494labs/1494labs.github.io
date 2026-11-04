@@ -191,6 +191,8 @@ p{max-width:var(--measure);margin:0 0 16px}
 }
 .fg .hint{font-size:.875rem;color:var(--muted);margin:4px 0 0}
 button.btn{cursor:pointer;font-family:inherit}
+.signup details{margin:24px 0}
+.signup summary{cursor:pointer;margin-bottom:16px}
 
 /* ── product screens ────────────────────────────────────── */
 .shot{margin:40px 0 0}
@@ -469,13 +471,18 @@ footer.site{padding:40px 0 56px}
   </section>
 
   <section id="contact" class="cta">
-    <h2>Show us the fund that breaks your current system.</h2>
+    <h2>See a book like yours.</h2>
     <p class="lead">
-      Built for fund CFOs, controllers and administrators. Tell us what you run
-      and we will
-      walk you through how it works here, in the product, on a running book. If
-      the answer is that we cannot do it yet, you will get that answer too.
+      Choose your fund type and leave your email. We will reply with a relevant
+      example and arrange a walkthrough or a sandbox with synthetic reference
+      funds. Access is arranged by our team after your request.
     </p>
+    <p>Explore product examples before requesting access:
+      <a href="/private-equity-fund-accounting/">Private equity</a>,
+      <a href="/hedge-fund-accounting/">hedge funds</a>,
+      <a href="/family-office-accounting/">family offices</a> and
+      <a href="/registered-fund-accounting/">registered funds</a>
+      each have product examples.</p>
 
     <form class="signup" action="https://formspree.io/f/xwlejaqw" method="POST">
       <input type="hidden" name="_subject" value="1494 Labs enquiry">
@@ -499,14 +506,6 @@ footer.site{padding:40px 0 56px}
         <input type="email" id="email" name="email" required autocomplete="email">
       </div>
       <div class="fg">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required autocomplete="name">
-      </div>
-      <div class="fg">
-        <label for="firm">Firm</label>
-        <input type="text" id="firm" name="firm" required autocomplete="organization">
-      </div>
-      <div class="fg">
         <label for="runs">What do you run?</label>
         <select id="runs" name="runs" required>
           <option value="">Select...</option>
@@ -520,15 +519,49 @@ footer.site{padding:40px 0 56px}
         </select>
       </div>
       <div class="fg">
-        <label for="setup">What are you running on today?</label>
-        <textarea id="setup" name="setup" placeholder="Optional. The more specific the better."></textarea>
-        <p class="hint">Spreadsheets, an administrator, a platform you have outgrown. Whatever it is.</p>
+        <label for="request_kind">How would you like to try it?</label>
+        <select id="request_kind" name="request_kind">
+          <option value="walkthrough">Walk me through a reference fund</option>
+          <option value="sandbox">Arrange a sandbox with reference funds</option>
+        </select>
       </div>
-      <button class="btn" type="submit">Request a demo</button>
+      <details>
+        <summary>Add context (optional)</summary>
+        <div class="fg">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="name">
+        </div>
+        <div class="fg">
+          <label for="firm">Firm</label>
+          <input type="text" id="firm" name="firm" autocomplete="organization">
+        </div>
+        <div class="fg">
+          <label for="setup">What are you running on today?</label>
+          <textarea id="setup" name="setup" placeholder="Optional. The more specific the better."></textarea>
+          <p class="hint">Spreadsheets, an administrator, a platform you have outgrown. Whatever it is.</p>
+        </div>
+        <div class="fg">
+          <label for="discovery">How did you find us?</label>
+          <select id="discovery" name="discovery">
+            <option value="">Prefer not to say</option>
+            <option value="assistant">An AI assistant</option>
+            <option value="search">Web search</option>
+            <option value="referral">A colleague</option>
+            <option value="other">Another way</option>
+          </select>
+        </div>
+      </details>
+      <input type="hidden" name="request_id" value="">
+      <input type="hidden" name="request_started_at" value="">
+      <input type="hidden" name="request_submitted_at" value="">
+      <input type="hidden" name="entry_segment" value="direct">
+      <button class="btn" type="submit">Request access</button>
     </form>
     <p class="cta-note">
       Prefer email? Write directly to
       <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>.
+      The form includes a request reference, timestamps and entry fund type to help us
+      measure response times. These are sent only when you submit.
       What you send is handled as the <a href="/privacy/">privacy notice</a>
       describes, under the <a href="/terms/">terms of use</a>.
     </p>
@@ -560,6 +593,7 @@ footer.site{padding:40px 0 56px}
   </footer>
 </div>
 
+<script src="/assets/demo-request.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3da7530d96b14f3f95915c071872f4be"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

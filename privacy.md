@@ -32,12 +32,17 @@ have deliberately chosen a tool that cannot tell us.
 The site is served through Cloudflare, which may inject a small script that
 hides our email address from spam harvesters and, under attack conditions, may
 set a short-lived security cookie of its own; both are protective functions,
-not tracking. The only other scripts on any page are structured-data metadata
-for search engines, which do not execute.
+not tracking. The home page also runs a local form helper. It carries a selected fund
+type into the request and adds a request reference and timestamps when you
+submit. It stores nothing on your device and sends nothing before submission.
+Other pages contain structured-data metadata for search engines.
 
 The enquiry form on the home page posts what you type directly to
 **Formspree**, a form-handling service in the United States,
-which forwards it to us by email. Formspree receives what you enter and the
+which forwards it to us by email. Submitted requests also include the request
+reference, form interaction and submission times, and entry fund type when
+JavaScript is enabled, so we can measure response times. Formspree receives
+these fields, what you enter and the
 network address you send it from. Nothing is sent to them unless you submit
 the form.
 

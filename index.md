@@ -103,14 +103,22 @@ will walk you through one. The
 and the [capability list](https://1494labs.com/capabilities/) marks what is
 shipped, what is planned and what we will not build.
 
-## Show us the fund that breaks your current system.
+## See a book like yours.
 
-Built for fund CFOs, controllers and administrators. Tell us what you run
-and we will
-walk you through how it works here, in the product, on a running book. If
-the answer is that we cannot do it yet, you will get that answer too.
+Choose your fund type and leave your email. We will reply with a relevant
+example and arrange a walkthrough or a sandbox with synthetic reference
+funds. Access is arranged by our team after your request.
+
+Explore product examples before requesting access:
+[Private equity](https://1494labs.com/private-equity-fund-accounting/),
+[hedge funds](https://1494labs.com/hedge-fund-accounting/),
+[family offices](https://1494labs.com/family-office-accounting/) and
+[registered funds](https://1494labs.com/registered-fund-accounting/)
+each have product examples.
 
 Prefer email? Write directly to
 [hello@1494labs.com](mailto:hello@1494labs.com).
+The form includes a request reference, timestamps and entry fund type to help us
+measure response times. These are sent only when you submit.
 What you send is handled as the [privacy notice](https://1494labs.com/privacy/)
 describes, under the [terms of use](https://1494labs.com/terms/).

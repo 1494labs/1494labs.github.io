@@ -72,4 +72,4 @@ handles outside the accounting system. We will walk through it on real
 books, or stand up a sandbox seeded with reference funds for you to
 work in.
 
-[Request a demo](https://1494labs.com/#contact)
+[Request a demo](https://1494labs.com/?segment=registered#contact)
