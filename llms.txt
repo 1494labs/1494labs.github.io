@@ -10,6 +10,7 @@ The capability matrix distinguishes shipped capabilities from planned work.
 
 - [Request a demo](https://1494labs.com/#contact): describe your fund and current workflow, or email hello@1494labs.com. Ask for a sandbox seeded with reference funds.
 - [Capabilities](https://1494labs.com/capabilities.md): current product scope and status.
+- [Connect an assistant](https://1494labs.com/connect-assistant.md): endpoint, authentication, tools and a synthetic example.
 - MCP: POST /api/v1/mcp on your workspace's application origin. Requires ordinary workspace authentication and respects the user's permissions. Tools read the book and run saved analyses; this is not an anonymous public demo endpoint. Ask hello@1494labs.com about connecting your assistant.
 
 ## Pages and worked notes
@@ -26,6 +27,7 @@ The capability matrix distinguishes shipped capabilities from planned work.
 - [Compare fund accounting software](https://1494labs.com/compare.md): Compare published product scope, then test the accounting with your own fund terms and a worked close.
 - [An alternative to LemonEdge: fund accounting with 1494 Labs](https://1494labs.com/compare/lemonedge-alternative.md): Evaluate 1494 Labs for a fund team working through multi-level ownership and allocation rules, with configured terms, ledger traces and a worked acceptance case.
 - [An alternative to SS&C Geneva: fund accounting with 1494 Labs](https://1494labs.com/compare/ssc-geneva-alternative.md): Evaluate 1494 Labs for a hedge fund team reviewing its investment book and investor accounting, with configured terms, ledger traces and a worked acceptance case.
+- [Connect an assistant to your fund accounting workspace](https://1494labs.com/connect-assistant.md): Connect an MCP client to a 1494 Labs workspace: endpoint, authentication, five read-only tools and a synthetic example.
 - [Family office accounting, with the structure drawn from the capital](https://1494labs.com/family-office-accounting.md): Family office accounting software: consolidated net worth across trusts, holding companies, partnerships and SPVs, with intercompany interests eliminated and ownership derived from the capital accounts each period.
 - [Fund accounting software that checks its own books](https://1494labs.com/fund-accounting-software.md): Fund accounting software where the accounting book and the investment book are one ledger. NAV, capital accounts, allocations, fees and statements for every vehicle type, with the arithmetic of every fund re-checked every morning.
 - [1494 Labs and an outsourced fund administrator](https://1494labs.com/fund-accounting-software-vs-administrator.md): Compare the accounting system with the service relationship, and decide which book and reconciliation your team needs to own.

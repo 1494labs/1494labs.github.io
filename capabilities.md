@@ -45,7 +45,7 @@ Source: https://1494labs.com/capabilities/
 | --- | --- |
 | Everything you can do on screen, available through the public API | Shipped |
 | Saved analyses that refresh on the platform and can be pulled by other systems through the API | Shipped |
-| AI assistants can read the book through MCP, the standard connector for AI tools | Shipped |
+| [AI assistants can read the book through MCP](https://1494labs.com/connect-assistant/), the standard connector for AI tools | Shipped |
 | AI extraction from statements and LPAs, with mandatory human confirmation | Shipped |
 | Nothing AI-derived posts without a person confirming it. | |
 | A daily check that recomputes the arithmetic on every fund on the platform | Shipped |

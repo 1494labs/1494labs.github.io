@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connect an assistant to your fund accounting workspace · 1494 Labs</title>
+
+
+<link rel="stylesheet" href="/assets/notes.715da883.css">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<meta name="theme-color" content="#176B75">
+
+<meta property="og:type" content="article">
+
+<meta property="og:site_name" content="1494 Labs">
+
+
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta name="twitter:card" content="summary_large_image">
+
+
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://1494labs.com/connect-assistant/">
+<meta name="description" content="Connect an MCP client to a 1494 Labs workspace: endpoint, authentication, five read-only tools and a synthetic example.">
+<meta property="og:title" content="Connect an assistant to your fund accounting workspace">
+<meta property="og:description" content="Connect an MCP client to a 1494 Labs workspace: endpoint, authentication, five read-only tools and a synthetic example.">
+<meta property="og:url" content="https://1494labs.com/connect-assistant/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Connect an assistant to your fund accounting workspace",
+  "description": "Connect an MCP client to a 1494 Labs workspace: endpoint, authentication, five read-only tools and a synthetic example.",
+  "url": "https://1494labs.com/connect-assistant/",
+  "datePublished": "2026-11-03",
+  "dateModified": "2026-11-03",
+  "author": {
+    "@type": "Organization",
+    "name": "1494 Labs"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "1494 Labs"
+  }
+}
+</script>
+<link rel="alternate" type="text/markdown" href="https://1494labs.com/connect-assistant.md" title="Markdown">
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <a class="lockup" href="/" aria-label="1494 Labs home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+            <path d="M5 9 H27"/><path d="M16 9 V26"/>
+          </g>
+          <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+          <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        </svg>
+      <span class="wordmark">1494 Labs</span>
+    </a>
+    <nav class="sitenav" aria-label="Site">
+      <a href="/fund-accounting-software/">Platform</a>
+      <a href="/capabilities/">Capabilities</a>
+      <a href="/notes/">Notes</a>
+      <a class="demo" href="/#contact">Request a demo</a>
+    </nav>
+    <details class="navmenu">
+      <summary><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>Menu</summary>
+      <nav aria-label="Site menu">
+        <a href="/fund-accounting-software/">Platform</a>
+        <a href="/capabilities/">Capabilities</a>
+        <a href="/notes/">Notes</a>
+        <a class="demo" href="/#contact">Request a demo</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<div class="wrap">
+<h1>Connect an assistant to your fund accounting workspace</h1>
+<p class="standfirst">Ask about funds and saved analyses through MCP, the standard connector for AI tools. Reads use your workspace permissions.</p>
+<p class="byline">Connection guide &middot; November 3, 2026</p>
+<article>
+<h2>What you need</h2>
+<p>An existing 1494 Labs workspace, an administrator who has enabled AI for that workspace, and an MCP client that supports Streamable HTTP with a custom Authorization header. This connection reads workspace data. There is no anonymous demo endpoint.</p>
+<ol>
+<li><strong>Enable workspace AI.</strong> An administrator enables AI under Administration &rsaquo; Workspace &rsaquo; AI &amp; budget. When AI is off, MCP returns HTTP 403 with <code>ai_disabled</code>.</li>
+<li><strong>Create a read-only key.</strong> Under Administration &rsaquo; People &amp; access &rsaquo; API Keys, choose Read-only or the specific read permissions you need. The key remains bound to its workspace and its creator's permissions. Copy the secret when shown and keep it in your client's credential store.</li>
+<li><strong>Set the connection URL.</strong> Use your workspace's application origin followed by <code>/api/v1/mcp</code>. For example, if you sign in at <code>https://your-workspace.example.com</code>, the URL is <code>https://your-workspace.example.com/api/v1/mcp</code>. Replace this illustrative origin with your actual workspace address; the marketing site is not the endpoint.</li>
+<li><strong>Configure authentication.</strong> Set <code>Authorization: Bearer &lt;your-workspace-api-key&gt;</code>. Use the Bearer header for this connection so credentials reach downstream reads. The endpoint also accepts a live session access token. Browser sessions use their access cookie and require the matching <code>X-CSRF-Token</code> on POST requests.</li>
+<li><strong>Connect and discover tools.</strong> Your client initializes the connection and lists tools. Start with <code>list_funds</code>, then discover the reads or saved analyses needed for your question.</li>
+</ol>
+<p>Use a client that lets you supply the header. This endpoint does not provide an OAuth sign-in flow. If your assistant only offers OAuth connections, ask <a href="mailto:hello@1494labs.com">hello@1494labs.com</a> about a compatible setup. Share credentials only through the client's credential settings, never in a conversation.</p>
+<h2>The five tools</h2>
+<div class="tablewrap"><table><thead><tr><th>Tool</th><th>Use it for</th></tr></thead><tbody>
+<tr><td><code>list_funds</code></td><td>Find funds by code or name and resolve their UUIDs. Optional <code>q</code> filters the list; <code>limit</code> controls the page size.</td></tr>
+<tr><td><code>search_api</code></td><td>Find GET endpoints by a phrase such as “trial balance” or “capital account.” Returns paths and parameters, rather than balances.</td></tr>
+<tr><td><code>read_api</code></td><td>Read a discovered <code>/api/v1/</code> path, passing its filters in <code>query</code>. Substitute real IDs for path placeholders and follow the endpoint's pagination when needed.</td></tr>
+<tr><td><code>list_saved_calcs</code></td><td>Find saved analyses. Call without arguments for available grid keys, then pass a <code>grid_key</code> to list analyses on that table. Another user's private analyses are excluded.</td></tr>
+<tr><td><code>run_saved_calc</code></td><td>Recompute an accessible saved analysis from the live book using its <code>calc_id</code>. Optional <code>fund_id</code>, <code>period_id</code> and <code>as_of</code> override its saved context. An empty subtotal with a reason is not zero.</td></tr>
+</tbody></table></div>
+<h2>A first question and answer</h2>
+<p><strong>Question:</strong> “Which fund matches DEMO-PE? Tell me its legal name and currency.”</p>
+<p>The assistant calls <code>list_funds</code> with <code>{"q":"DEMO-PE","limit":10}</code>. Suppose the returned fund has <code>fund_code</code> DEMO-PE, <code>legal_name</code> Example Private Equity Fund LP and <code>base_currency_code</code> USD.</p>
+<p><strong>Illustrative answer:</strong> “DEMO-PE is Example Private Equity Fund LP. Its base currency is USD. Source: the workspace fund record returned by list_funds.” These names and values are synthetic, not a live customer response. If several funds match, the assistant should ask which one you mean.</p>
+<p>For an accounting question, keep that fund's returned <code>id</code>, use <code>search_api</code> to find the relevant read, then call <code>read_api</code> with the fund ID and the endpoint's required period parameters. Ask the assistant to name the fund, period and source, and to say when data is missing.</p>
+<h2>Check the connection directly</h2>
+<p>A compatible client sends JSON-RPC 2.0 messages by HTTP POST with <code>Content-Type: application/json</code> and <code>Accept: application/json, text/event-stream</code>. For example, after setting the URL and Bearer header in its connection settings, it sends:</p>
+<pre class="tablewrap">{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{},"clientInfo":{"name":"workspace-reader","version":"1.0"}}}</pre>
+<p>Read the negotiated protocol version in the response, send <code>notifications/initialized</code> without an ID, then <code>tools/list</code>:</p>
+<pre class="tablewrap">{"jsonrpc":"2.0","id":2,"method":"tools/list"}</pre>
+<p>The initialized notification returns HTTP 202 with no body. Calls return JSON. The server keeps no MCP session and has no server-push stream; a GET to the connection URL returns HTTP 405. Opening the URL in a browser is not a connection test.</p>
+<h2>Access and troubleshooting</h2>
+<ul>
+<li><strong>HTTP 401:</strong> check the key or session token, its expiry and revocation state, and the workspace origin.</li>
+<li><strong>HTTP 403:</strong> check the workspace AI setting and the permissions needed by the requested read. Seeing a tool name does not grant access to its data.</li>
+<li><strong>A tool reports an error:</strong> check the returned reason, fund and period IDs, and the endpoint parameters. Do not turn a failed or truncated read into a financial answer.</li>
+</ul>
+<p>These tools read data and compute saved results. They cannot create journals, post allocations or change fund terms. Revoking or rotating the key ends its use under the workspace's normal key policy. Choose an assistant approved by your organization for the data you intend to read.</p>
+<p><a href="/#contact">Request a demo or sandbox</a> to try this on reference funds. See the <a href="/capabilities/">capability matrix</a> for current product scope.</p>
+</article>
+  <!-- assistant-links:start -->
+  <nav class="assistant-links" aria-label="Page formats and assistants">
+    <a href="https://1494labs.com/connect-assistant.md">Read Markdown</a>
+  </nav>
+  <!-- assistant-links:end -->
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs Inc., a Delaware corporation, 6 Liberty Square #2721, Boston, MA 02109</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/security/">Security</a>
+    <a href="/terms/">Terms</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3da7530d96b14f3f95915c071872f4be"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
