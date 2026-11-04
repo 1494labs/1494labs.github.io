@@ -157,6 +157,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://1494labs.com/connect-assistant/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://1494labs.com/connect-assistant.md</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://1494labs.com/family-office-accounting/</loc>
     <lastmod>2026-11-03</lastmod>
     <changefreq>monthly</changefreq>
