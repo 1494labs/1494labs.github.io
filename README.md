@@ -128,3 +128,18 @@ equalization at conversion, and high-water-mark acceptance tests. Selection
 evidence is recorded in docs/research/aeo/2026-11-03-phase2-content-plan.json.
 The public compare/ directory stays outside this source tree and is preserved
 by the publishing script. Post-phase measurement is deferred at the owner’s request.
+
+## Demo requests (#1791 phase 4)
+
+The home-page form requires email and fund type. Segment pages pass an
+allowlisted `segment` query parameter to preselect fund type. The local helper
+`assets/demo-request.js` adds per-request timestamps and a reference only on
+submission; it uses no storage or additional analytics destination. Requests
+still use the native Formspree POST, including browser validation and honeypot.
+
+The measurement baseline, private fulfillment log fields and remaining owner
+decision are in `docs/research/aeo/2026-11-03-phase4-demo-path.md`. This is arranged
+access to reference funds, not a public self-serve workspace. Keep the public
+privacy notice's form-helper description in step when publishing this change;
+update its existing public text directly rather than replacing it with the local
+legal draft.
