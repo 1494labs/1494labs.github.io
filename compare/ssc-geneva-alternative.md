@@ -6,11 +6,11 @@ Evaluate 1494 Labs for a hedge fund team reviewing its investment book and inves
 
 Product sources reviewed November 3, 2026
 
-## Put your fund’s close at the center of the shortlist
+## Put your fund's close at the center of the shortlist
 
 SS&C Advent describes Geneva as a platform for portfolio and fund management, investor accounting and reporting, and shadow accounting. Its published scope is described on the [SS&C Advent Geneva product page](https://www.advent.com/geneva/), reviewed November 3, 2026.
 
-If you are considering alternatives, start with the work the new book must reproduce: the investment record, the fee terms, each investor’s allocation and the statement the controller approves. 1494 Labs brings those records onto one ledger and runs recurring checks that surface differences.
+If you are considering alternatives, start with the work the new book must reproduce: the investment record, the fee terms, each investor's allocation and the statement the controller approves. 1494 Labs brings those records onto one ledger and runs recurring checks that surface differences.
 
 ## Reconcile the investment book and investor result
 

@@ -6,7 +6,7 @@
 <title>Connect an assistant to your fund accounting workspace · 1494 Labs</title>
 
 
-<link rel="stylesheet" href="/assets/notes.715da883.css">
+<link rel="stylesheet" href="/assets/notes.d2937031.css">
 <link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
 <link rel="icon" href="/assets/favicon.svg?v=1808" sizes="any" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-16x16.png?v=1808" sizes="16x16" type="image/png">
@@ -24,12 +24,12 @@
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta property="og:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 <meta name="twitter:card" content="summary_large_image">
 
 
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
-<meta name="twitter:image:alt" content="1494 Labs. Fund accounting that proves itself.">
+<meta name="twitter:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 
 
 
@@ -115,15 +115,15 @@
 <h2>The five tools</h2>
 <div class="tablewrap"><table><thead><tr><th>Tool</th><th>Use it for</th></tr></thead><tbody>
 <tr><td><code>list_funds</code></td><td>Find funds by code or name and resolve their UUIDs. Optional <code>q</code> filters the list; <code>limit</code> controls the page size.</td></tr>
-<tr><td><code>search_api</code></td><td>Find GET endpoints by a phrase such as “trial balance” or “capital account.” Returns paths and parameters, rather than balances.</td></tr>
+<tr><td><code>search_api</code></td><td>Find GET endpoints by a phrase such as &quot;trial balance&quot; or &quot;capital account.&quot; Returns paths and parameters for a subsequent read.</td></tr>
 <tr><td><code>read_api</code></td><td>Read a discovered <code>/api/v1/</code> path, passing its filters in <code>query</code>. Substitute real IDs for path placeholders and follow the endpoint's pagination when needed.</td></tr>
 <tr><td><code>list_saved_calcs</code></td><td>Find saved analyses. Call without arguments for available grid keys, then pass a <code>grid_key</code> to list analyses on that table. Another user's private analyses are excluded.</td></tr>
 <tr><td><code>run_saved_calc</code></td><td>Recompute an accessible saved analysis from the live book using its <code>calc_id</code>. Optional <code>fund_id</code>, <code>period_id</code> and <code>as_of</code> override its saved context. An empty subtotal with a reason is not zero.</td></tr>
 </tbody></table></div>
 <h2>A first question and answer</h2>
-<p><strong>Question:</strong> “Which fund matches DEMO-PE? Tell me its legal name and currency.”</p>
+<p><strong>Question:</strong> &quot;Which fund matches DEMO-PE? Tell me its legal name and currency.&quot;</p>
 <p>The assistant calls <code>list_funds</code> with <code>{"q":"DEMO-PE","limit":10}</code>. Suppose the returned fund has <code>fund_code</code> DEMO-PE, <code>legal_name</code> Example Private Equity Fund LP and <code>base_currency_code</code> USD.</p>
-<p><strong>Illustrative answer:</strong> “DEMO-PE is Example Private Equity Fund LP. Its base currency is USD. Source: the workspace fund record returned by list_funds.” These names and values are synthetic, not a live customer response. If several funds match, the assistant should ask which one you mean.</p>
+<p><strong>Illustrative answer:</strong> &quot;DEMO-PE is Example Private Equity Fund LP. Its base currency is USD. Source: the workspace fund record returned by list_funds.&quot; These synthetic names and values illustrate the response. If several funds match, the assistant should ask which one you mean.</p>
 <p>For an accounting question, keep that fund's returned <code>id</code>, use <code>search_api</code> to find the relevant read, then call <code>read_api</code> with the fund ID and the endpoint's required period parameters. Ask the assistant to name the fund, period and source, and to say when data is missing.</p>
 <h2>Check the connection directly</h2>
 <p>A compatible client sends JSON-RPC 2.0 messages by HTTP POST with <code>Content-Type: application/json</code> and <code>Accept: application/json, text/event-stream</code>. For example, after setting the URL and Bearer header in its connection settings, it sends:</p>

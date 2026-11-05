@@ -98,8 +98,6 @@ number available, and any figure in that cell is invented.
 
 ## Blank, with a reason, is an answer
 
-The whole argument
-
 An empty cell looks like something failed. A computed cell that should
 have been empty looks like it worked. The second one is the expensive
 mistake, and it is the one that reaches an investor, because nothing about
@@ -147,4 +145,4 @@ percentage keeps its denominator through any grouping, and a subtotal that canno
 screen can also be pulled by another system through the API, with the
 rules still applied.
 
-[Get in touch](https://1494labs.com/#contact)
+[Request a demo](https://1494labs.com/#contact)

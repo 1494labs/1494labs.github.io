@@ -101,10 +101,10 @@ What the correction has to undo
 
 | Investor subscribes | Without a correction | The correction |
 | --- | --- | --- |
-| Below the fund's mark, while a loss is carried forward | Rides the recovery without paying, sheltered by someone else's loss | Charged on their own gain as the fund recovers, typically by redeeming shares from them |
+| Below the fund's mark, while a loss is carried forward | Rides the recovery without paying, sheltered by someone else's loss | Charged on each investor's gain as the fund recovers, typically by redeeming shares from them |
 | Above the mark mid-period, into an accrual already in the NAV | Captures a rebate if the accrual reverses, on a fee they never bore | Pays an additional amount alongside the subscription, returned to them to the extent the accrual reverses |
 
-One NAV per share survives, and every investor pays on their own profit
+One NAV per share survives, and every investor pays on that investor's profit
 measured from their own entry. What it costs is that an investor's economics
 no longer live entirely in their share count. A per-investor adjustment
 account has to be carried, applied on the right events and shown on a
@@ -172,4 +172,4 @@ in year three.
 1494 Labs carries the high-water mark per series and per capital account, and supports both models: series accounting with a separate series for each subscription period, and equalization on a single NAV. Which one a
 fund uses is a setting on the fund, because the answer is in its offering document.
 
-[Get in touch](https://1494labs.com/#contact)
+[Request a demo](https://1494labs.com/#contact)

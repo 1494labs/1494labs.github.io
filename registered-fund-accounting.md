@@ -1,75 +1,53 @@
 Source: https://1494labs.com/registered-fund-accounting/
 
-# The obligations that come with a registered wrapper
+# Registered Fund Accounting
 
-An interval fund, a RIC or a BDC is a normal book carrying a second set of duties. The duties run on a clock, and the fund answers for them to shareholders, notice by notice, through the year.
+For registered fund, RIC and BDC finance teams and their administrators.
 
-Solutions · roughly 5 minutes
+## Accounting Capabilities
 
-## A second set of duties on the same book
+- Managers (GPs): hedge funds, private equity, credit and real estate funds, registered funds, RICs and BDCs. Fund and investor accounting, fees, waterfalls and carry, investor statements and regulatory filings.
 
-Tell shareholders what a distribution was actually paid out of. Repurchase
-up to a fixed share of the fund on a published schedule. Stay inside a
-coverage ratio. Each of those is computed from the same ledger that
-produces the NAV, on the fund's own tax year and its own calendar.
+- Public and private equity, fixed income, loans, credit facilities on both sides, real estate and REITs, derivatives, hedge fund and private fund interests, and digital assets, in any currency.
 
-- ✓§19(a) notices with the source split taken off the book
+- Period close with a frozen trial balance and graded revisions.
 
-- ✓Repurchase offers with a frozen queue, a specified NAV and proration
+- Official and latest-knowledge books on one ledger, with the source of every line.
 
-- ✓Managed distribution policies, declared to paid, with per-holder characterization
+- Cash, positions and NAV reconciled against outside files, with an exceptions worklist.
 
-- ✓The distribution requirement and the excise calendar assessed as the book stands
+- A check that recomputes every fund's arithmetic each morning.
 
-- ✓BDC asset coverage as a gate, with the two-part incentive fee and the ten-year table
+- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
 
-## A notice sourced from the book
+- Saved analyses that refresh on the platform and can be pulled through the API.
 
-When a fund pays out more than it earned, it has to tell shareholders how
-much of the check was return of capital. The number is the payment itself, decomposed. Sourcing it
-from the book is what makes the year-to-date figure add up across every
-notice the fund has sent.
+## Related Notes
 
-## Repurchase offers on the clock
+- [ABOR and IBOR](https://1494labs.com/notes/abor-and-ibor/)
 
-Board approval, a request deadline that freezes the queue, pricing at a specified NAV, and proration when requests exceed the offer. What
-happens to a residual is the part that varies: it either cancels or
-carries forward to the next offer as a standing claim on the ledger,
-whichever the fund's own terms say. Both outcomes are configurable.
+- [Checking the book against outside records](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/)
 
-## Managed distributions
+## Related Accounting Pages
 
-A policy in the fund's own vocabulary: a NAV percentage or a fixed
-amount, at a cadence, drawing on sources in a stated order. Behind every
-declaration sits the full sequence from declaration to payment, record-date shares and
-per-holder characterization.
+- [Fund of Funds Accounting](https://1494labs.com/fund-of-funds-accounting/)
 
-## Qualification and excise
+- [Capital Call and Distribution Software](https://1494labs.com/capital-call-and-distribution-software/)
 
-The distribution requirement and the excise calendar are assessed against
-the book as it stands, on the fund's own tax year.
+- [Liquidity Forecasting and Commitment Pacing](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/)
 
-## BDC controls
+- [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
-The asset-coverage ratio works as a gate. Alongside it: a
-two-part incentive fee with an income hurdle, a catch-up and a
-capital-gains part on its own lookback, and the ten-year senior-securities
-table the disclosure asks for.
+- [Capabilities and Status](https://1494labs.com/capabilities/)
 
-- [The platform](https://1494labs.com/fund-accounting-software/), end to end
+## Questions
 
-- [Capabilities](https://1494labs.com/capabilities/), including what we do not do
+### Which registered funds does 1494 Labs serve?
 
-- [A wrong number that agrees with itself](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/), on the daily check
+Managers (GPs): hedge funds, private equity, credit and real estate funds, registered funds, RICs and BDCs. Fund and investor accounting, fees, waterfalls and carry, investor statements and regulatory filings.
 
-- [Registered funds operations](https://docs.1494labs.com/guide/registered-funds-operations/) in the product docs
+## Request a Demo
 
-- [Repurchase offers](https://docs.1494labs.com/guide/repurchase-offers/) in the product docs
-
-**See how your fund would work in 1494.**
-Tell us the structure you run and the calculation your current process
-handles outside the accounting system. We will walk through it on real
-books, or stand up a sandbox seeded with reference funds for you to
-work in.
+Tell us which funds, structures and accounting terms you need to review.
 
 [Request a demo](https://1494labs.com/?segment=registered#contact)

@@ -121,4 +121,4 @@ number cannot be checked by anyone, including an auditor.
 partial redemption, and crystallizes on the redemption date. Every change to a mark is an event with a source, so the
 history can be read back for any investor on any date.
 
-[Get in touch](https://1494labs.com/#contact)
+[Request a demo](https://1494labs.com/#contact)

@@ -79,7 +79,7 @@ The application also sends product analytics to **PostHog**
 happen. What it sends is narrow and fixed: which screen was opened, recorded
 as the screen's template - "/funds/{fund}", never the fund itself or anything
 shown on it - the kind of any error, and a pseudonymous code for you and your
-workspace, a one-way hash rather than a name or an email address, plus a
+workspace, a one-way hash that excludes names and email addresses, plus a
 random identifier for the visit that lives only in the open tab. PostHog
 also receives your browser type, as every web request carries it. It does not
 receive your network address: our network edge removes it before anything is

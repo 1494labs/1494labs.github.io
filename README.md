@@ -1,37 +1,28 @@
 # 1494labs.com
 
-Marketing site for **1494 Labs**. Fund accounting that proves itself.
+Marketing site for **1494 Labs**. Fund, partnership and portfolio accounting.
 
 Static HTML, no build step.
 
 ## This directory is the SOURCE, not the deploy target
 
-Nothing here reaches 1494labs.com by being pushed to `janus`. The live site is
+Nothing here reaches 1494labs.com by being pushed to the product repository. The live site is
 GitHub Pages serving a **separate public repository**, `1494labs/1494labs.github.io`
 (local clone: `~/dev/1494labs.github.io`), and `CNAME` in *that* repo points the
-apex domain at it. `janus` is private; Pages serves the public mirror.
+apex domain at it. The product repository is private; Pages serves the public mirror.
 
 On 2026-09-15 eight commits of site work - a full copy rewrite, a reordered
 landing page and three new sections - sat here for a day while the live site
 served the build from four days earlier, because this README used to say the
 site was served "from `main` at the repository root" and that reads as true
-when you are standing in `janus`.
+when you are standing in the product repository.
 
-**To publish**, copy the pages and product screenshots into the clone, leave the
-things that live only there alone, and let its own generator write the sitemap:
+**To prepare the mirror**, use the script so every buyer page and generated
+reading copy is included:
 
 ```bash
-SRC=~/dev/janus/site DST=~/dev/1494labs.github.io
-cp "$SRC/index.html" "$DST/"
-for d in family-office-accounting fund-accounting-software \
-         fund-administration-software hedge-fund-accounting \
-         private-equity-fund-accounting notes; do
-  rsync -a --exclude '.DS_Store' "$SRC/$d/" "$DST/$d/"
-done
-rsync -a --exclude '.DS_Store' "$SRC/assets/screens/" "$DST/assets/screens/"
-cd "$DST" && git add -A && git commit        # content first...
-python3 scripts/gen_sitemap.py && git add sitemap.xml && git commit
-git push origin main
+scripts/publish_site.sh --dry-run
+scripts/publish_site.sh
 ```
 
 The legal pages (`privacy/`, `subprocessors/`, `security/`, `terms/`) were added here on
@@ -58,7 +49,7 @@ assets/fonts/       Geist Sans 400/500/600 (OFL)
 assets/             mark, favicons, og.png
 site.webmanifest    PWA/app icons
 robots.txt          allows all, points at the sitemap
-sitemap.xml         one URL for now
+sitemap.xml         all indexable pages and their Markdown copies
 CNAME               1494labs.com
 .nojekyll           skip Jekyll processing
 ```
@@ -143,3 +134,18 @@ access to reference funds, not a public self-serve workspace. Keep the public
 privacy notice's form-helper description in step when publishing this change;
 update its existing public text directly rather than replacing it with the local
 legal draft.
+
+## Buyer positioning review (#1884)
+
+The homepage holds the approved positioning. Its capability groups also feed
+`llms.txt` and `llms-full.txt` through `scripts/gen_site_docs.py`. Buyer pages,
+the glossary and worked notes are linked through the platform and glossary
+directories. The capabilities page remains generated from
+`docs/reference/capability-matrix.json`; edit the data and run
+`uv run python scripts/gen_capability_page.py` before regenerating site docs.
+
+For an unpublished review, set `PAGES_REPO` to an isolated clone on a review
+branch, then run `scripts/publish_site.sh`. Commit content there before running
+its sitemap generator. Push only that review branch and open a draft pull request.
+The Pages source is `main`; merging or pushing to it requires the owner's go.
+Preserve the public legal text, comparison pages and robots configuration.

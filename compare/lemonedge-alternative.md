@@ -6,15 +6,15 @@ Evaluate 1494 Labs for a fund team working through multi-level ownership and all
 
 Product sources reviewed November 3, 2026
 
-## Put your fund’s close at the center of the shortlist
+## Put your fund's close at the center of the shortlist
 
 LemonEdge describes fund accounting for complex private equity structures, with event-based partnership accounting and allocation paths for ownership, carry and waterfalls. Its published scope is described on the [LemonEdge private equity product page](https://www.lemonedge.com/markets/private-equity), reviewed November 3, 2026.
 
-If you are considering alternatives, start with the work the new book must reproduce: the investment record, the fee terms, each investor’s allocation and the statement the controller approves. 1494 Labs brings those records onto one ledger and runs recurring checks that surface differences.
+If you are considering alternatives, start with the work the new book must reproduce: the investment record, the fee terms, each investor's allocation and the statement the controller approves. 1494 Labs brings those records onto one ledger and runs recurring checks that surface differences.
 
 ## Follow an allocation through the ownership structure
 
-Model the actual ownership chain with a feeder and underlying vehicle. Post income and an expense in the underlying book, then follow their allocation to the feeder’s investors. Inspect the ownership basis, currency treatment and ledger entries. Reconcile the combined view to the individual books.
+Model the actual ownership chain with a feeder and underlying vehicle. Post income and an expense in the underlying book, then follow their allocation to the feeder's investors. Inspect the ownership basis, currency treatment and ledger entries. Reconcile the combined view to the individual books.
 
 ## Build a review pack before the demo
 

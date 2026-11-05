@@ -6,15 +6,15 @@ Evaluate 1494 Labs for a family office or fund team keeping investment and inves
 
 Product sources reviewed November 3, 2026
 
-## Put your fund’s close at the center of the shortlist
+## Put your fund's close at the center of the shortlist
 
 FundCount describes partnership and portfolio accounting posted to the same general ledger, including capital accounts, allocations and waterfalls. Its published scope is described on the [FundCount partnership accounting](https://fundcount.com/solutions/partnership-accounting/), reviewed November 3, 2026.
 
-If you are considering alternatives, start with the work the new book must reproduce: the investment record, the fee terms, each investor’s allocation and the statement the controller approves. 1494 Labs brings those records onto one ledger and runs recurring checks that surface differences.
+If you are considering alternatives, start with the work the new book must reproduce: the investment record, the fee terms, each investor's allocation and the statement the controller approves. 1494 Labs brings those records onto one ledger and runs recurring checks that surface differences.
 
 ## Work through a multi-entity capital movement
 
-Use a parent entity, an investment vehicle and two participating investors. Post an investment valuation, an expense and a distribution. Follow each investor’s share through the ownership structure, then reconcile the entity balances and consolidated view. Change one source amount and review the resulting allocations and entries.
+Use a parent entity, an investment vehicle and two participating investors. Post an investment valuation, an expense and a distribution. Follow each investor's share through the ownership structure, then reconcile the entity balances and consolidated view. Change one source amount and review the resulting allocations and entries.
 
 ## Build a review pack before the demo
 

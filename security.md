@@ -6,7 +6,7 @@ Everything on this page can be evidenced. The second half, about what we do not 
 
 Last reviewed 2026-10-18
 
-## Your data is separated at the database, not by a filter
+## Database Separation for Your Data
 
 Every tenant's books live in their own database schema, and every request
 is routed to it before a query runs. A book query that forgets a
@@ -19,15 +19,13 @@ shared schema, with every row tied to its workspace.
 
 Authentication events and API access are recorded on a plane the
 application itself cannot edit or truncate. That is enforced by database
-triggers rather than by the application agreeing not to, which is the only
-version of it worth having: an audit log the application can rewrite
-proves nothing about the application.
+triggers that prevent the application from rewriting the record.
 
 ## Signing in
 
 - ✓**Time-based one-time-password MFA**, with a workspace-level control over whether it is required.
 
-- ✓**Throttling that counts failed MFA challenges**, not only failed passwords. Counting passwords alone leaves the second factor open to grinding, which is the interesting half to attack.
+- ✓**Throttling that counts failed MFA challenges and failed passwords.** Counting passwords alone leaves the second factor open to grinding, which is the interesting half to attack.
 
 - ✓**Federated identity** over OIDC, with a break-glass path that is itself audited.
 
@@ -71,7 +69,7 @@ The current limitations, and what changes each one.
 
 - ✓**No third-party penetration test.** An internal security audit in August 2026 found one critical and twenty high-severity issues, all closed.
 
-- ✓**Single availability zone.** The database is not currently replicated across zones, so a zone failure is downtime rather than a failover. Backups and the pre-deploy snapshot are the recovery path.
+- ✓**Single availability zone.** The database is not currently replicated across zones, so a zone failure is downtime requiring recovery. Backups and the pre-deploy snapshot are the recovery path.
 
 - ✓**No published uptime figure.** There is no measurement period long enough to quote one honestly.
 

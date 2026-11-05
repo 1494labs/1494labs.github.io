@@ -136,4 +136,4 @@ reporting-only period can never be mistaken for a computed one, and the
 opening position carries fee history alongside the balances. Converting an existing book is quoted separately from
 the subscription, and it is free for the first five early adopters.
 
-[Get in touch](https://1494labs.com/#contact)
+[Request a demo](https://1494labs.com/#contact)

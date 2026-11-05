@@ -16,7 +16,7 @@ Start by naming the accounting record your team will maintain and the services t
 
 3. **Carry the calculation state.** Include high-water marks, loss carryforwards, equalization balances, side-pocket participation and unused fee credits where applicable. For private equity, preserve dated cash flows needed by the agreed waterfall and performance calculations.
 
-4. **Reconcile the opening book.** Match the ledger to NAV, positions to investment controls and every investor balance to the approved statements. Record differences individually rather than offsetting unrelated breaks.
+4. **Reconcile the opening book.** Match the ledger to NAV, positions to investment controls and every investor balance to the approved statements. Record each difference separately and keep unrelated breaks visible.
 
 5. **Run a parallel period.** Use the same dated transactions, valuations and agreement terms. Compare fees and allocations before comparing final statements.
 

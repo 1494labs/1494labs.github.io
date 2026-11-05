@@ -42,7 +42,7 @@ professional relationship between us.
 Fund terms vary in ways that change the answer. A note may explain, for
 example, why a high-water mark is commonly prorated on a partial
 redemption, but whether it is in your fund is a question for your
-offering documents, not for us. Where a note works an example, the worked numbers
+offering documents. Where a note works an example, the worked numbers
 are the example. They are not your fund, and you should not act on them
 without checking your own documents and, where it matters, your own
 advisers.
@@ -57,7 +57,7 @@ photographed for this site, and none will be.
 
 ## Prices are quoted with a proposal
 
-We quote prices with a proposal rather than publishing them. Nothing on
+We quote prices in a proposal. Nothing on
 this site is an offer capable of acceptance. A subscription begins with a
 written agreement, provided with that proposal, and that agreement is
 what governs use of the platform.
@@ -79,7 +79,7 @@ you.
 The text, images, design and marks on this site belong to 1494 Labs Inc.
 or its licensors and are protected by copyright and trademark law. Quote
 from the notes and link to them freely, with attribution. If you want to
-reproduce a whole note rather than quote from it, ask; the answer is
+reproduce a whole note, ask; the answer is
 usually yes. No other license is granted by these terms.
 
 Where we link to someone else's site, we do not control it and are not

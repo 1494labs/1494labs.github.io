@@ -8,7 +8,7 @@ it is worth understanding before you buy a system that assumes it.
 
 Fund accounting · roughly 6 minutes
 
-## The short version
+## Accounting and Investment Books
 
 The **accounting book of record** is the official set of books. It
 is what the auditor examines, what the administrator calculates NAV from, and what
@@ -179,4 +179,4 @@ was sold in 1998.
 investment book of record are views over one ledger, and the arithmetic is
 re-checked every morning.
 
-[Get in touch](https://1494labs.com/#contact)
+[Request a demo](https://1494labs.com/#contact)

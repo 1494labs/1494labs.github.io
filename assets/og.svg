@@ -1,16 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#F7F4ED"/>
-  <g transform="translate(96,150)">
-    <g fill="none" stroke="#176B75" stroke-width="4.5" stroke-linecap="square">
-      <path d="M0 10 H44"/><path d="M22 10 V44"/>
-    </g>
-    <rect x="5" y="20" width="11" height="4.6" fill="#176B75"/>
-    <rect x="28" y="20" width="11" height="4.6" fill="#176B75"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">1494 Labs</title>
+  <desc id="desc">Fund, partnership and portfolio accounting for fund managers, allocators and fund administrators.</desc>
+  <style>
+    @font-face{font-family:Geist;src:url('fonts/geist-sans-latin-500-normal.woff2') format('woff2');font-weight:500}
+    @font-face{font-family:Geist;src:url('fonts/geist-sans-latin-400-normal.woff2') format('woff2');font-weight:400}
+    text{font-family:Geist,Arial,sans-serif;fill:#0A0C10;font-weight:500}
+  </style>
+  <rect width="1200" height="630" fill="#F6F7F9"/>
+  <g transform="translate(80,72) scale(1.5)" fill="#2638F0">
+    <path d="M5 9 H27 M16 9 V26" fill="none" stroke="#2638F0" stroke-width="2.4"/>
+    <rect x="7.6" y="14.2" width="5.6" height="2.4"/>
+    <rect x="18.8" y="14.2" width="5.6" height="2.4"/>
+    <rect x="7.6" y="19.4" width="5.6" height="2.4" opacity=".45"/>
+    <rect x="18.8" y="19.4" width="5.6" height="2.4" opacity=".45"/>
   </g>
-  <text x="152" y="186" font-family="Palatino,Georgia,serif" font-size="34" fill="#221F1B">1494</text>
-  <text x="222" y="186" font-family="Helvetica,Arial,sans-serif" font-size="18" letter-spacing="3" fill="#8A8175">LABS</text>
-  <text x="96" y="330" font-family="Palatino,Georgia,serif" font-size="86" fill="#221F1B">Two books.</text>
-  <text x="96" y="430" font-family="Palatino,Georgia,serif" font-size="86" fill="#176B75">One truth.</text>
-  <text x="96" y="510" font-family="Helvetica,Arial,sans-serif" font-size="25" fill="#524B42">Fund accounting that proves itself.</text>
-  <text x="96" y="556" font-family="Helvetica,Arial,sans-serif" font-size="25" fill="#524B42">123 accounting checks on every fund, every week.</text>
+  <text x="144" y="110" font-size="36">1494 Labs</text>
+  <text x="80" y="270" font-size="64" letter-spacing="-1.3">Fund, partnership</text>
+  <text x="80" y="348" font-size="64" letter-spacing="-1.3">and portfolio accounting</text>
+  <text x="80" y="462" font-size="32" font-weight="400">For fund managers, allocators</text>
+  <text x="80" y="506" font-size="32" font-weight="400">and fund administrators.</text>
+  <text x="80" y="578" font-size="22" font-weight="400">1494labs.com</text>
 </svg>

@@ -18,7 +18,7 @@ A side pocket separates an investment from the main pool for accounting and inve
 
 4. Allocate the side pocket's valuation changes, income and expenses to its participants.
 
-5. On realization, reconcile proceeds and remaining balances to those same investors.
+5. At realization, reconcile proceeds and remaining balances to those same investors.
 
 ## A small example
 
@@ -37,7 +37,7 @@ The example excludes fees and cash flows. Those need their own treatment under t
 
 Reconcile the investment's carrying value to the sum of its investor interests. Then check the participation record independently. A total that ties can still allocate money to the wrong investors. Test a subscription after designation, a partial redemption and a realization before relying on the setup.
 
-On conversion, carry the side-pocket participation record with the opening values. Rebuilding interests from today's main-pool percentages can change the economics while leaving total NAV unchanged.
+During conversion, carry the side-pocket participation record with the opening values. Rebuilding interests from today's main-pool percentages can change the economics while leaving total NAV unchanged.
 
 1494 Labs supports hedge funds with side pockets. Ask to see the investor participation and the allocation trail in a demonstration of your fund's terms.
 

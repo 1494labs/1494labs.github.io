@@ -1,134 +1,163 @@
 Source: https://1494labs.com/fund-accounting-software/
 
-# Fund accounting software that checks its own books
+# Fund, Partnership and Investor Accounting
 
-Most systems report what the books say. This one also re-checks, each morning, that the ledger, the NAV and the capital accounts still agree.
+For fund managers, allocators and fund administrators.
 
-Platform overview · roughly 6 minutes
+## Accounting Capabilities
 
-## The short version
+- Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
 
-Fund accounting software has one job that cannot be faked: at the end of a
-period, the general ledger, the NAV, and every investor's capital account
-have to agree with each other. Everything else on a feature list is in
-service of that, and most of the pain in this industry comes from systems
-where those three things are maintained separately and reconciled
-afterwards.
+- Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.
 
-1494 Labs is built the other way round. One ledger carries the accounting
-book and the investment book. Capital accounts are built from the journal entries. Ownership is derived from the capital accounts. And each fund's arithmetic is re-checked every morning, so a book that has drifted says so in the period it drifted.
+- Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.
 
-- ✓One ledger for the accounting book and the investment book
+- Allocations by class, series and sleeve, and investor NAV in the class currency.
 
-- ✓Capital accounts derived from the ledger, per investor, per period
+- Period close with a frozen trial balance and graded revisions.
 
-- ✓The arithmetic of every fund re-checked every morning
+- Official and latest-knowledge books on one ledger, with the source of every line.
 
-- ✓Financial statements read directly from the book
+- Cash, positions and NAV reconciled against outside files, with an exceptions worklist.
 
-- ✓Every screen uses the same public API you get, so your own systems can do anything a person can
+- A check that recomputes every fund's arithmetic each morning.
 
-- ✓Every money figure explains itself: its rule, inputs, source transactions, journal entries and change history
+- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
 
-- ✓US GAAP or IFRS per fund, with the fair value hierarchy note and prior-period comparatives
+- Saved analyses that refresh on the platform and can be pulled through the API.
 
-- ✓Credit facilities on both sides: the fund's own borrowing lines, and the loans it makes, from term loans to committed lines with commitment fees on the undrawn balance, PIK and default interest
+## Related Notes
 
-- ✓Form PF and Form ADV Schedule D answers with the source rows behind each one, exported for a compliance vendor or prepared for filing
+- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
 
-## One ledger, two books
+- [ABOR and IBOR](https://1494labs.com/notes/abor-and-ibor/)
 
-The **accounting book of record** and the **investment
-book of record** answer different questions on different clocks, which
-is why they usually end up in different systems with a reconciliation
-between them. That reconciliation is somebody's job every morning, and it is
-the source of a large share of the operational risk in fund administration.
+- [Management fee offsets](https://1494labs.com/notes/management-fee-offsets/)
 
-Recording each economic event once, and treating trade date and settlement
-date as two views of the same journal entries, removes the reconciliation altogether: there is one set of entries, so there
-is nothing to reconcile. Ask a vendor which it is offering, one book or a
-well-automated reconciliation between two. We wrote up the distinction, and how to test it, in
-[ABOR and IBOR, and why most systems keep them apart](https://1494labs.com/notes/abor-and-ibor/).
+## Related Accounting Pages
+
+- [Fund of Funds Accounting](https://1494labs.com/fund-of-funds-accounting/)
+
+- [Capital Call and Distribution Software](https://1494labs.com/capital-call-and-distribution-software/)
+
+- [Liquidity Forecasting and Commitment Pacing](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/)
+
+- [Fund Accounting Glossary](https://1494labs.com/glossary/)
+
+- [Capabilities and Status](https://1494labs.com/capabilities/)
+
+## Questions
+
+### Which investor transactions can I account for?
+
+Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+
+## Product Screens
 
 ![The fund overview on Home: the NAV calculated for the selected period, that period's fees, and position value and operating cash read live, with the floor the cash is measured against.](https://1494labs.com/assets/screens/fund-dashboard.8d533a4c.jpg)
+
 **Each figure says which point in time it reflects.** NAV is the one calculated for the period you selected, fees are that period's, and anything read from the books as they stand now is marked Live, including the cash the fund can spend and the floor it is measured against.
 
-## Every vehicle type, in one product
-
-Pooled funds, funds-of-one, separately managed accounts, trusts, family
-partnerships, holding companies and asset SPVs. Committed-capital and
-subscription-funded. Unitized and capital-based. Master-feeder structures where the feeder picks
-up master profit and loss through a real internal position held on the
-ledger, so nobody types a journal entry for it each month.
-
-Funding model and liquidity terms are separate fund settings. A drawdown fund
-can use commitments, calls, recallable distributions and a waterfall. A
-subscription-funded fund can take money at each period's final NAV, while
-redemption dates, notice, lock-ups and gates set how investors leave. Both
-post to the same ledger, and a fund that changes shape does not change systems.
-
-## The books, and everything that reads them
-
-An income statement, a balance sheet, a statement of changes in partners'
-capital and a schedule of investments are four questions put to one ledger.
-Ending capital on one ties to NAV on another because both read the same book.
-
 ![An income statement with trading gains, administration fee expense and directors' fees, totaling net income.](https://1494labs.com/assets/screens/income-statement.7581fcbf.jpg)
+
 **Real operating expenses carrying their GL codes.** Expenses post through the income and expense ledger, which is also the only source the allocation to investors reads, so a cost that reaches NAV reaches capital accounts too.
 
 ![A per-investor allocation for the period: six investors by name, each with opening capital, net profit and loss, and ending capital.](https://1494labs.com/assets/screens/allocation-per-investor.c3091f57.jpg)
+
 **The period's profit and loss, split across investors.** Opening $23,499,503.07, net $125,969.93, ending $23,625,473.00 - which is the NAV on the dashboard above. Fees and expenses are attributed per investor, directly to the accounts that bear them.
 
-## The error that survives review
-
-A wrong price gets argued about. The errors that survive every review are the
-ones nobody looks for: a capital account that stopped tying to the ledger
-three periods ago, an allocation that no longer sums to the pool, a
-high-water mark lost in a redemption. Nobody re-adds a fund by hand each
-month, so they surface at the audit as a restatement.
-So every morning the platform re-computes the figures that are supposed
-to tie, for each fund it holds, and opens an exception naming the fund, the
-period and the amount where something does not. That check currently runs
-against our own reference funds.
-
-When a number does change, the change keeps its own record: prior value, new
-value, delta and cause, per event. A correction stays on the record as a fact about the book.
-
 ![A NAV restatement history listing every change to a fund's NAV with prior value, new value and delta.](https://1494labs.com/assets/screens/nav-restatement.f2e59da4.jpg)
+
 **Every change to a calculated NAV keeps its own record.** The ledger keeps the trail itself, so nobody has to remember to.
 
-![A trial balance of thirteen accounts by code and category, with debits and credits each totaling $28,515,992.43 and a cent of rounding shown on its own line.](https://1494labs.com/assets/screens/trial-balance.164f78ab.jpg)
+![A trial balance of thirteen accounts by code and category, with debits and credits each totaling $28,515,992.43 and a cent of rounding shown on a separate line.](https://1494labs.com/assets/screens/trial-balance.164f78ab.jpg)
+
 **And the ledger those statements read.** Debits and credits foot to the same $28,515,992.43, and the cent of rounding sits on a line of its own. Close the period and the trial balance is locked as a revision the system will not let anyone edit, which is what a statement produced a year later reads from.
 
-## Built for the vehicle you actually run
+## Request a Demo
 
-- [Private equity and drawdown funds](https://1494labs.com/private-equity-fund-accounting/) · commitments, calls, waterfalls, carry
+Tell us which funds, structures and accounting terms you need to review.
 
-- [Hedge funds and subscription-funded vehicles](https://1494labs.com/hedge-fund-accounting/) · series, equalization, high-water marks
+[Request a demo](https://1494labs.com/?segment=other#contact)
 
-- [Family Offices](https://1494labs.com/family-office-accounting/) · consolidated net worth across the whole structure
+## Pages and Worked Notes
 
-- [Fund Administrators](https://1494labs.com/fund-administration-software/) · many clients, one platform
+- [Blocker Corporation Accounting](https://1494labs.com/blocker-corporation-accounting/)
 
-- [A wrong number that agrees with itself](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/) · what the morning check is for
+- [What the platform does, and what it does not](https://1494labs.com/capabilities/)
 
-- [Which columns can be added](https://1494labs.com/notes/which-columns-can-be-added/) · subtotals that stay honest under grouping
+- [Capital Call and Distribution Software](https://1494labs.com/capital-call-and-distribution-software/)
 
-- [Journal entries and the ledger](https://docs.1494labs.com/guide/journal-entries-and-the-ledger/) in the product docs
+- [Close, Controls and Reconciliation](https://1494labs.com/close-controls-and-reconciliation/)
 
-- [The API reference](https://docs.1494labs.com/developer/api/) in the product docs: every screen uses it
+- [Connect an assistant to your fund accounting workspace](https://1494labs.com/connect-assistant/)
 
-## Show us the fund that breaks your current system
+- [Endowment and Foundation Investment Accounting](https://1494labs.com/endowment-and-foundation-investment-accounting/)
 
-Built for the people who sign the books.
-Tell us what you run and we will walk you through it in the product,
-on a running book. If you want to try it yourself, we will stand up a
-sandbox seeded with reference funds for you to work in.
+- [Equalization and Series Accounting](https://1494labs.com/equalization-and-series-accounting/)
 
-[Request a demo](https://1494labs.com/#contact)
+- [Family Office Accounting](https://1494labs.com/family-office-accounting/)
 
-## Compare your current workflow
+- [Fund Accounting API and AI](https://1494labs.com/fund-accounting-api-and-ai/)
 
-[Compare fund accounting platforms](https://1494labs.com/compare/) with a worked close and dated product sources.
+- [1494 Labs and an outsourced fund administrator](https://1494labs.com/fund-accounting-software-vs-administrator/)
 
-[1494 Labs vs spreadsheets](https://1494labs.com/fund-accounting-software-vs-spreadsheets/) and [1494 Labs and an outsourced administrator](https://1494labs.com/fund-accounting-software-vs-administrator/): what to test with one completed period.
+- [1494 Labs vs spreadsheets for fund accounting](https://1494labs.com/fund-accounting-software-vs-spreadsheets/)
+
+- [Fund Administration Software](https://1494labs.com/fund-administration-software/)
+
+- [Fund and Investor Reporting](https://1494labs.com/fund-and-investor-reporting/)
+
+- [Fund of Funds Accounting](https://1494labs.com/fund-of-funds-accounting/)
+
+- [Fund Accounting Glossary](https://1494labs.com/glossary/)
+
+- [Hedge Fund Accounting](https://1494labs.com/hedge-fund-accounting/)
+
+- [Holding Company and Family Office Entity Accounting](https://1494labs.com/holding-company-and-family-office-entity-accounting/)
+
+- [Liquidity Forecasting and Commitment Pacing](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/)
+
+- [A wrong number that agrees with itself](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/)
+
+- [ABOR and IBOR, and why most systems keep them apart](https://1494labs.com/notes/abor-and-ibor/)
+
+- [Converting from a fund administrator: prove the first close](https://1494labs.com/notes/converting-from-a-fund-administrator/)
+
+- [Equalization, and what a mid-period subscriber actually owes](https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/)
+
+- [Equalization at conversion: check each subscriber separately](https://1494labs.com/notes/equalization-at-conversion/)
+
+- [American vs European waterfall on the same two deals](https://1494labs.com/notes/european-vs-american-waterfall/)
+
+- [High-water-mark acceptance tests before the first live close](https://1494labs.com/notes/high-water-mark-acceptance-tests/)
+
+- [High-water marks and the partial redemption](https://1494labs.com/notes/high-water-marks-and-partial-redemptions/)
+
+- [Notes](https://1494labs.com/notes/)
+
+- [Management fee offsets: reconcile the fee before and after the credit](https://1494labs.com/notes/management-fee-offsets/)
+
+- [Moving a fund off spreadsheets: prove the opening book first](https://1494labs.com/notes/moving-a-fund-off-spreadsheets/)
+
+- [Side pockets: keep the investment and its investors together](https://1494labs.com/notes/side-pockets-and-investor-participation/)
+
+- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
+
+- [Which columns can be added, and which cannot](https://1494labs.com/notes/which-columns-can-be-added/)
+
+- [Portfolio Accounting Across Asset Classes](https://1494labs.com/portfolio-accounting/)
+
+- [Portfolio Company KPI Collection](https://1494labs.com/portfolio-company-kpi-collection/)
+
+- [Private Equity Fund Accounting](https://1494labs.com/private-equity-fund-accounting/)
+
+- [Registered Fund Accounting](https://1494labs.com/registered-fund-accounting/)
+
+- [Secondaries and Strip Sale Accounting](https://1494labs.com/secondaries-and-strip-sale-accounting/)
+
+- [Secondaries for Fund of Funds](https://1494labs.com/secondaries-for-fund-of-funds/)
+
+- [Side Pocket Accounting](https://1494labs.com/side-pocket-accounting/)
+
+- [Waterfall and Carried Interest Accounting](https://1494labs.com/waterfall-and-carried-interest-accounting/)
