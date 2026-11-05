@@ -4,25 +4,43 @@ Source: https://1494labs.com/secondaries-for-fund-of-funds/
 
 For fund of funds managers and allocators handling continuation vehicles, tenders and LP-interest sales.
 
-## Accounting Capabilities
+## Underlying Portfolio Reporting
 
-- Buy and sell LP interests, single or as a strip sale across many funds in one transaction.
+- Valuations records dated marks for underlying fund interests, portfolio companies and priced instruments. The entry fields follow the asset: fund NAV statements carry an as-of date and source; company marks carry a valuation method and memo.
 
-- Purchase-price adjustments and deferred payments at a discount, with interim flows between the reference date and closing.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-- The day-one gain between price paid and fair value recognized at acquisition, and cost basis kept.
+- Underlying fund positions carry manager-reported marks and performance. Valuations and Look-through show position IRR, TVPI, DPI and RVPI, with support for late manager statements and the resulting restatement of reported values.
 
-- GP-led deals: continuation vehicles and tender offers.
+- Look-through shows the underlying company holdings behind fund investments. It supports as-of views, shared ownership subtrees and CSV export. Company holdings supplied by import become part of the portfolio's underlying exposure view.
 
-- A secondaries portfolio report, and buyer and seller confirmations.
+- Look-through groups underlying company exposure by geography and sector. The classifications come from linked company records, so the exposure view uses the recorded company classifications when presenting the portfolio totals.
 
-- Fund of funds look-through to the underlying holdings, on both ownership bases.
+## Terms
 
-## Related Notes
+GP-led and LP-led secondaries include tender offers and continuation vehicles. Reference-date NAV, purchase price and interim cash flows describe the transaction; underlying manager marks and look-through describe the resulting portfolio.
 
-- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
+## Questions
 
-- [European and American waterfalls](https://1494labs.com/notes/european-vs-american-waterfall/)
+### Can I look through fund investments to the underlying companies?
+
+Yes. Look-through presents company holdings behind underlying funds, including shared ownership subtrees and as-of views. Underlying holdings arrive by CSV import, and the look-through results can be exported as CSV.
+
+### Can I group underlying company exposure by sector and geography?
+
+Yes. Look-through reports sector and geography subtotals using the linked company records. Holdings without a linked company classification display a blank classification, allowing the team to identify those records.
+
+### Can I record late manager marks and underlying-fund performance?
+
+Yes. Underlying fund positions retain manager marks and position performance, including IRR, TVPI, DPI and RVPI. The valuation process supports late quarter statements and restatement of the affected reported values.
+
+### Can I record dated marks for different investment types?
+
+Yes. Valuations supports underlying fund NAV statements, portfolio company valuations and instrument prices. Fund statements record their as-of date and source. Company valuations record the valuation date, method and memo.
+
+### Can an investor statement show flows, fees and ending capital?
+
+Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance.
 
 ## Related Accounting Pages
 
@@ -35,12 +53,6 @@ For fund of funds managers and allocators handling continuation vehicles, tender
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I account for continuation vehicles and tender offers?
-
-Account for GP-led continuation vehicles and tender offers alongside purchases and sales of underlying LP interests.
 
 ## Request a Demo
 

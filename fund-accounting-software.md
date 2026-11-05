@@ -6,25 +6,53 @@ For fund managers, allocators and fund administrators.
 
 ## Accounting Capabilities
 
-- Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+- Create a fund with legal entity, vintage, term, currency, fiscal year
 
-- Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.
+- Share classes or units with different fee terms
 
-- Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.
+- Management fee terms with rate, basis, step-downs, offsets
 
-- Allocations by class, series and sleeve, and investor NAV in the class currency.
+- Carried interest and waterfall terms with hurdle, catch-up, tiers, European or American
 
-- Period close with a frozen trial balance and graded revisions.
+- Chart of accounts per fund, with a default template
 
-- Official and latest-knowledge books on one ledger, with the source of every line.
+- Onboard an investor with unique ID, legal name, tax details, type
 
-- Cash, positions and NAV reconciled against outside files, with an exceptions worklist.
+- Bank account details on the investor record for inbound and outbound cash
 
-- A check that recomputes every fund's arithmetic each morning.
+- Generate call notices per investor with amounts, due date, wire instructions
 
-- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
+- Distribution notices per investor
 
-- Saved analyses that refresh on the platform and can be pulled through the API.
+- Unfunded commitment tracking per investor and per fund
+
+- Mark a position to a valuation with an effective date and a source
+
+- Calculate management fees for a period from the fee terms
+
+- Journal entries posted from every transaction type, traceable to the source transaction
+
+- Period open, close, lock, and reopen with an audit trail
+
+- Close checklist and reviewer sign-off gating lock
+
+- NAV calculation per fund and per share class at period end
+
+- Capital accounts per investor that tie to the general ledger
+
+- Allocation of income, expense, gains across investors by ownership, multi-level up the chain
+
+- Trial balance per fund and period, frozen at close
+
+- Financial statements for one fund and period (income, balance, changes in net assets, cash flow)
+
+- Investor capital account statement (beginning, contributions, distributions, allocated income and expense, fees, ending)
+
+- Report packs by persona, assembled and exportable as one document
+
+- In-product support requests raised from a screen and tracked
+
+- Generate investor statements for all accounts, review, publish and resend
 
 ## Related Notes
 
@@ -33,6 +61,28 @@ For fund managers, allocators and fund administrators.
 - [ABOR and IBOR](https://1494labs.com/notes/abor-and-ibor/)
 
 - [Management fee offsets](https://1494labs.com/notes/management-fee-offsets/)
+
+## Questions
+
+### Can I strike NAV for the fund and its share classes?
+
+Yes. The NAV workflow supports preliminary and final strikes and restatements. Saved NAV versions include share-class lines, and the share register shows the class results for the fund's strike.
+
+### Do investor capital accounts tie to general ledger capital?
+
+Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.
+
+### Can a closed period be reopened with a recorded reason?
+
+Yes. Period Close supports a governed reopen action for users with reopen permission. The reason is recorded with the event, and the period history retains the closing, locking and reopening actions.
+
+### Can an investor statement show flows, fees and ending capital?
+
+Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance.
+
+### Can I review investor statements before publishing a run?
+
+Yes. Statement runs group generation, review and publication. Each account has its own result, allowing the team to inspect a failed item and review the generated statements before publishing the run.
 
 ## Related Accounting Pages
 
@@ -45,12 +95,6 @@ For fund managers, allocators and fund administrators.
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Which investor transactions can I account for?
-
-Record investor subscriptions and redemptions, transfers, commitments, calls, distributions and recallable capital.
 
 ## Product Screens
 
@@ -80,7 +124,7 @@ Tell us which funds, structures and accounting terms you need to review.
 
 [Request a demo](https://1494labs.com/?segment=other#contact)
 
-## Pages and Worked Notes
+## Pages and Notes
 
 - [Blocker Corporation Accounting](https://1494labs.com/blocker-corporation-accounting/)
 

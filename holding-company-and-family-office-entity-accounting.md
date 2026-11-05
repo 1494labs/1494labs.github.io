@@ -6,21 +6,51 @@ For family office finance teams accounting for holding companies, partnerships a
 
 ## Accounting Capabilities
 
-- Master-feeder, alternative investment vehicles (AIVs), SPVs, blockers, co-investments and continuation vehicles.
+- Fund setup records the legal entity, base currency and fiscal year. Closed-end funds also carry vintage, fund term, extension dates and hard cap, so the fund record contains the terms used by the accounting team.
 
-- Holding companies, family partnerships, trusts and GRATs, SMAs and funds of one, and personal accounts, with ownership traced through every layer.
+- Allocations distributes income, expenses and gains through recorded ownership. The allocation screen includes a cascade preview and confirmation for structures with multiple ownership layers, connecting fund results with the investors above them.
 
-- Blocker tax accrued at the entity and carried to each investor behind it.
+- Reporting provides the trial balance for the fund, including the balance frozen at close and its revisions. The frozen balance preserves the ledger totals used for that close and subsequent review.
 
-- Fund of funds look-through to the underlying holdings, on both ownership bases.
+- Fund Statements provides an income statement, balance sheet, statement of changes in net assets and cash-flow statement for one fund and period. The reporting screen uses the selected fund and reporting period.
 
-- Public and private equity, fixed income, loans, credit facilities on both sides, real estate and REITs, derivatives, hedge fund and private fund interests, and digital assets, in any currency.
+- Family Office shows holding companies, family partnerships, trusts, personal accounts and individuals in a household structure. Fund setup records vehicle types, including GRATs, and the structure chart displays the ownership layers.
 
-## Related Notes
+- Trust beneficiary interests are recorded against the trust. The Family Office Net Worth view displays the beneficiary information beside the trust, keeping the beneficiary interest on the recorded trust vehicle.
 
-- [ABOR and IBOR](https://1494labs.com/notes/abor-and-ibor/)
+- The household structure chart traces ownership through entities. Ownership weights come from the capital holdings, and Allocations uses those relationships to carry income through the chain, including structures with shared ownership subtrees.
 
-- [Which columns can be added](https://1494labs.com/notes/which-columns-can-be-added/)
+- Family vehicles can hold private fund interests, portfolio companies and internal fund interests. Underlying Funds and Companies record the private investments, with fund capital activity attached to the holding vehicle's investment record.
+
+- The Family Office Net Worth view groups household value by category, holder and period. It includes movement between periods and supports the household reporting package, giving family finance teams a consolidated value view.
+
+- Family Office includes household performance, principal cash flows, exposure, concentration and book-to-market reconciliation. These views sit with the household records so the team can review value, cash movement and investment exposure for the family.
+
+## Terms
+
+Holdco means holding company. Family partnerships, trusts, GRATs and personal accounts are vehicle types in the household structure. Ownership follows the recorded capital holdings.
+
+## Questions
+
+### Can I represent a household's companies, partnerships and trusts?
+
+Yes. Vehicle setup and the household structure chart support holding companies, partnerships, trusts, personal accounts and individuals. GRAT is a recorded vehicle type. The chart shows the layers represented in the household book.
+
+### Can I display beneficiary interests alongside a trust?
+
+Yes. Beneficiary interests can be recorded against a trust, and the Family Office Net Worth view displays the beneficiary information. The interests are memo records on that trust.
+
+### Can income allocations follow ownership across family entities?
+
+Yes. The structure chart and Allocations use ownership weights derived from capital holdings. Income cascades follow those relationships across the household's entities, including shared ownership subtrees.
+
+### Can I see household net worth by entity and asset category?
+
+Yes. Family Office provides consolidated net worth by category, holder and period, including movement. Household reporting packages can include the net worth results for the family's reporting process.
+
+### Can I prepare the financial statements for one fund and period?
+
+Yes. Fund Statements includes the income statement, balance sheet, statement of changes in net assets and cash-flow statement. These reports use one fund and reporting period for the financial statement set.
 
 ## Related Accounting Pages
 
@@ -33,12 +63,6 @@ For family office finance teams accounting for holding companies, partnerships a
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I trace ownership through family office entities?
-
-Trace ownership across holding companies, family partnerships, trusts, GRATs and other vehicles, through every layer to the investments.
 
 ## Request a Demo
 

@@ -4,25 +4,37 @@ Source: https://1494labs.com/secondaries-and-strip-sale-accounting/
 
 For secondaries managers and administrators buying and selling LP interests.
 
-## Accounting Capabilities
+## LP Interest Valuation and Reporting
 
-- Buy and sell LP interests, single or as a strip sale across many funds in one transaction.
+- Valuations records dated marks for underlying fund interests, portfolio companies and priced instruments. The entry fields follow the asset: fund NAV statements carry an as-of date and source; company marks carry a valuation method and memo.
 
-- Purchase-price adjustments and deferred payments at a discount, with interim flows between the reference date and closing.
+- Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund's capital accounts.
 
-- The day-one gain between price paid and fair value recognized at acquisition, and cost basis kept.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-- GP-led deals: continuation vehicles and tender offers.
+- Underlying fund positions carry manager-reported marks and performance. Valuations and Look-through show position IRR, TVPI, DPI and RVPI, with support for late manager statements and the resulting restatement of reported values.
 
-- Direct secondaries in common stock, valued with waterfall and option-pricing methods.
+## Terms
 
-- A secondaries portfolio report, and buyer and seller confirmations.
+Secondaries buyers use LP stakes or LP interests, reference date, purchase price, NAV discount and deferred consideration. GP-led and LP-led transactions include tenders, continuation vehicles and strip sales.
 
-## Related Notes
+## Questions
 
-- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
+### Can I record late manager marks and underlying-fund performance?
 
-- [European and American waterfalls](https://1494labs.com/notes/european-vs-american-waterfall/)
+Yes. Underlying fund positions retain manager marks and position performance, including IRR, TVPI, DPI and RVPI. The valuation process supports late quarter statements and restatement of the affected reported values.
+
+### Can I record dated marks for different investment types?
+
+Yes. Valuations supports underlying fund NAV statements, portfolio company valuations and instrument prices. Fund statements record their as-of date and source. Company valuations record the valuation date, method and memo.
+
+### Do investor capital accounts tie to general ledger capital?
+
+Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.
+
+### Can an investor statement show flows, fees and ending capital?
+
+Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance.
 
 ## Related Accounting Pages
 
@@ -35,12 +47,6 @@ For secondaries managers and administrators buying and selling LP interests.
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I account for a strip sale across many funds?
-
-Record the purchase or sale of LP interests across several funds as one strip transaction, with the interim flows, price adjustments and deferred payments.
 
 ## Request a Demo
 

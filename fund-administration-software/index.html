@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fund Administration Software · 1494 Labs</title>
-<meta name="description" content="For fund administrators accounting for many funds with different terms. Administrators: many funds with different terms on one platform, and reconciliation against bank, custodian and administrator files.">
+<meta name="description" content="For fund administrators accounting for many funds with different terms. Accounting Capabilities.">
 <link rel="canonical" href="https://1494labs.com/fund-administration-software/">
 <link rel="stylesheet" href="/assets/notes.d2937031.css">
 <link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
@@ -20,36 +20,21 @@
 <meta property="og:url" content="https://1494labs.com/fund-administration-software/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="Fund Administration Software">
-<meta property="og:description" content="For fund administrators accounting for many funds with different terms. Administrators: many funds with different terms on one platform, and reconciliation against bank, custodian and administrator files.">
+<meta property="og:description" content="For fund administrators accounting for many funds with different terms. Accounting Capabilities.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Fund Administration Software">
-<meta name="twitter:description" content="For fund administrators accounting for many funds with different terms. Administrators: many funds with different terms on one platform, and reconciliation against bank, custodian and administrator files.">
+<meta name="twitter:description" content="For fund administrators accounting for many funds with different terms. Accounting Capabilities.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 <meta name="twitter:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 
 
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can an administrator run funds with different terms?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Each fund carries its terms for investor accounting, fees and waterfalls. Administrators can reconcile the books against bank, custodian and administrator files."
-      }
-    }
-  ]
-}
-</script>
+
 <link rel="alternate" type="text/markdown" href="https://1494labs.com/fund-administration-software.md" title="Markdown">
 </head>
 <body class="buyer-page">
@@ -92,32 +77,101 @@
 <h1>Fund Administration Software</h1>
 <p class="standfirst">For fund administrators accounting for many funds with different terms.</p>
 <article>
+<!-- buyer-capabilities:start -->
 <h2>Accounting Capabilities</h2>
 <ul>
-<li>Administrators: many funds with different terms on one platform, and reconciliation against bank, custodian and administrator files.</li>
-<li>Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.</li>
-<li>Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.</li>
-<li>Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.</li>
-<li>Allocations by class, series and sleeve, and investor NAV in the class currency.</li>
-<li>Period close with a frozen trial balance and graded revisions.</li>
-<li>Official and latest-knowledge books on one ledger, with the source of every line.</li>
-<li>Cash, positions and NAV reconciled against outside files, with an exceptions worklist.</li>
-<li>A check that recomputes every fund&#x27;s arithmetic each morning.</li>
-<li>NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.</li>
-<li>Saved analyses that refresh on the platform and can be pulled through the API.</li>
+<li data-use-case="fund-setup.create-fund">Create a fund with legal entity, vintage, term, currency, fiscal year</li>
+<li data-use-case="fund-setup.share-classes-fee-terms">Share classes or units with different fee terms</li>
+<li data-use-case="fund-setup.management-fee-terms">Management fee terms with rate, basis, step-downs, offsets</li>
+<li data-use-case="fund-setup.carry-waterfall-terms">Carried interest and waterfall terms with hurdle, catch-up, tiers, European or American</li>
+<li data-use-case="fund-setup.chart-of-accounts">Chart of accounts per fund, with a default template</li>
+<li data-use-case="investor.onboard-investor">Onboard an investor with unique ID, legal name, tax details, type</li>
+<li data-use-case="investor.bank-account-details">Bank account details on the investor record for inbound and outbound cash</li>
+<li data-use-case="capital-activity.call-notices">Generate call notices per investor with amounts, due date, wire instructions</li>
+<li data-use-case="capital-activity.distribution-notices">Distribution notices per investor</li>
+<li data-use-case="capital-activity.unfunded-tracking">Unfunded commitment tracking per investor and per fund</li>
+<li data-use-case="portfolio.mark-valuation">Mark a position to a valuation with an effective date and a source</li>
+<li data-use-case="fees.management-fee-calc">Calculate management fees for a period from the fee terms</li>
+<li data-use-case="period-close.je-from-every-source">Journal entries posted from every transaction type, traceable to the source transaction</li>
+<li data-use-case="period-close.open-close-lock-reopen">Period open, close, lock, and reopen with an audit trail</li>
+<li data-use-case="period-close.checklist-review-signoff">Close checklist and reviewer sign-off gating lock</li>
+<li data-use-case="period-close.nav-per-fund-class">NAV calculation per fund and per share class at period end</li>
+<li data-use-case="period-close.capital-accounts-tie-gl">Capital accounts per investor that tie to the general ledger</li>
+<li data-use-case="period-close.allocation-up-chain">Allocation of income, expense, gains across investors by ownership, multi-level up the chain</li>
+<li data-use-case="period-close.trial-balance">Trial balance per fund and period, frozen at close</li>
+<li data-use-case="reporting.statements-single-fund-period">Financial statements for one fund and period (income, balance, changes in net assets, cash flow)</li>
+<li data-use-case="reporting.investor-capital-account-statement">Investor capital account statement (beginning, contributions, distributions, allocated income and expense, fees, ending)</li>
+<li data-use-case="reporting.report-packs">Report packs by persona, assembled and exportable as one document</li>
+<li data-use-case="ops.support-tickets">In-product support requests raised from a screen and tracked</li>
+<li data-use-case="portal.statement-run-publish">Generate investor statements for all accounts, review, publish and resend</li>
 </ul>
 <h2>Related Notes</h2>
 <ul class="pagelinks">
-<li>
-<a href="/notes/converting-from-a-fund-administrator/">Converting from a fund administrator</a>
-</li>
-<li>
-<a href="/notes/what-an-opening-balance-has-to-carry/">What an opening balance has to carry</a>
-</li>
-<li>
-<a href="/notes/a-wrong-number-that-agrees-with-itself/">Checking the book against outside records</a>
-</li>
+<li><a href="/notes/converting-from-a-fund-administrator/">Converting from a fund administrator</a></li>
+<li><a href="/notes/what-an-opening-balance-has-to-carry/">What an opening balance has to carry</a></li>
+<li><a href="/notes/a-wrong-number-that-agrees-with-itself/">Checking the book against outside records</a></li>
 </ul>
+<section id="buyer-questions"><h2>Questions</h2>
+<h3>Can investors in one fund have different fee terms?</h3>
+<p>Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.</p>
+<h3>Can a calculated management fee post to the books?</h3>
+<p>Yes. After fee terms are configured, Fees calculates the period accrual and provides posting and reversal actions. The posted accrual records the management fee in the fund&#x27;s accounting books.</p>
+<h3>Can reviewer sign-off gate the period lock?</h3>
+<p>Yes. The close checklist and review events are recorded for the period. Locking checks that the required sign-off is present, and the reviewer&#x27;s action remains in the period history.</p>
+<h3>Can I retrieve the trial balance frozen at close?</h3>
+<p>Yes. Reporting includes frozen trial balances and revisions. The frozen balance keeps the ledger totals frozen at the close, so a reviewer can inspect the recorded close and the revisions attached to it.</p>
+<h3>Can I review investor statements before publishing a run?</h3>
+<p>Yes. Statement runs group generation, review and publication. Each account has its own result, allowing the team to inspect a failed item and review the generated statements before publishing the run.</p>
+</section>
+<script type="application/ld+json" data-buyer-faq>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can investors in one fund have different fee terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a calculated management fee post to the books?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. After fee terms are configured, Fees calculates the period accrual and provides posting and reversal actions. The posted accrual records the management fee in the fund's accounting books."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can reviewer sign-off gate the period lock?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The close checklist and review events are recorded for the period. Locking checks that the required sign-off is present, and the reviewer's action remains in the period history."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I retrieve the trial balance frozen at close?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Reporting includes frozen trial balances and revisions. The frozen balance keeps the ledger totals frozen at the close, so a reviewer can inspect the recorded close and the revisions attached to it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I review investor statements before publishing a run?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Statement runs group generation, review and publication. Each account has its own result, allowing the team to inspect a failed item and review the generated statements before publishing the run."
+      }
+    }
+  ]
+}
+</script>
+<!-- buyer-capabilities:end -->
 <h2>Related Accounting Pages</h2>
 <ul class="pagelinks">
 <li>
@@ -136,9 +190,6 @@
 <a href="/capabilities/">Capabilities and Status</a>
 </li>
 </ul>
-<h2>Questions</h2>
-<h3>Can an administrator run funds with different terms?</h3>
-<p>Each fund carries its terms for investor accounting, fees and waterfalls. Administrators can reconcile the books against bank, custodian and administrator files.</p>
 <h2>Product Screens</h2>
 <figure class="shot">
       <img src="/assets/screens/statement-of-changes.39e06e66.jpg" width="1488" height="374"

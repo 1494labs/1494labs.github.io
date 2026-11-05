@@ -6,19 +6,21 @@ For hedge fund CFOs, controllers and fund administrators.
 
 ## Accounting Capabilities
 
-- Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+- Share classes hold the terms for unitized funds. Fee classes group investors in capital-based funds. The Share Classes and Fee Terms screens record these arrangements for funds whose investors have different fee terms.
 
-- Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.
+- Fee Terms records management fee rates, calculation basis and step-down bands. The Fees screen holds period offset sources. The fee configuration supplies the terms used when the period management fee is calculated.
 
-- Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.
+- The Fees screen calculates period management fees from the fund's saved terms. Accruals can be posted and reversed, giving the period fee a corresponding accounting entry in the fund's books.
 
-- Allocations by class, series and sleeve, and investor NAV in the class currency.
+- NAV records preliminary, final and restated fund values, including share-class lines. The NAV and period-close screens show the fund's strike workflow, with class results available through the share register.
 
-- Gates, lockups and notice periods tracked for every underlying fund.
+- Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund's capital accounts.
 
-- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-- Saved analyses that refresh on the platform and can be pulled through the API.
+- Reporting groups investor statement production into runs. The team generates, reviews and publishes the statements, with failures recorded per account so an individual statement failure is isolated within the run.
+
+- NAV supports share-class and series values, with final period strikes and daily estimates. Daily NAV estimates retain their grade and are superseded by the period close, preserving the distinction between daily and closed values.
 
 ## Related Notes
 
@@ -27,6 +29,28 @@ For hedge fund CFOs, controllers and fund administrators.
 - [High-water marks and partial redemptions](https://1494labs.com/notes/high-water-marks-and-partial-redemptions/)
 
 - [Side pockets and investor participation](https://1494labs.com/notes/side-pockets-and-investor-participation/)
+
+## Questions
+
+### Can investors in one fund have different fee terms?
+
+Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.
+
+### Can a calculated management fee post to the books?
+
+Yes. After fee terms are configured, Fees calculates the period accrual and provides posting and reversal actions. The posted accrual records the management fee in the fund's accounting books.
+
+### Can I keep daily NAV estimates and final class NAV?
+
+Yes. NAV supports daily estimates and final period strikes with share-class and series values. Daily estimates carry an estimate grade and are superseded by the close when final NAV is struck.
+
+### Do investor capital accounts tie to general ledger capital?
+
+Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.
+
+### Can I review investor statements before publishing a run?
+
+Yes. Statement runs group generation, review and publication. Each account has its own result, allowing the team to inspect a failed item and review the generated statements before publishing the run.
 
 ## Related Accounting Pages
 
@@ -39,12 +63,6 @@ For hedge fund CFOs, controllers and fund administrators.
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I choose equalization or series accounting per fund?
-
-Choose either method in the terms for each fund. Investor high-water marks carry through partial redemptions, transfers and restatements.
 
 ## Product Screens
 

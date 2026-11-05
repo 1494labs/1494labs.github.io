@@ -4,27 +4,37 @@ Source: https://1494labs.com/liquidity-forecasting-and-commitment-pacing/
 
 For allocators and fund managers planning commitments, deployment and cash flows.
 
-## Accounting Capabilities
+## Commitments and Recorded Cash Flows
 
-- Cash projection in horizon buckets out past a year, from settled cash: expected proceeds from underlying funds, investor outflows, unfunded commitments and scheduled obligations.
+- Capital Accounts shows unfunded commitments by investor and fund. A fund setting chooses the historical or spot measure, so the reported unfunded amount follows the accounting basis selected for that fund.
 
-- Available liquidity including undrawn credit facilities.
+- Fund Statements provides an income statement, balance sheet, statement of changes in net assets and cash-flow statement for one fund and period. The reporting screen uses the selected fund and reporting period.
 
-- Commitment pacing for fund of funds and allocator programs.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-- Deployment and exit forecasts for drawdown funds, with fees and fund-level debt.
+- Underlying fund positions carry manager-reported marks and performance. Valuations and Look-through show position IRR, TVPI, DPI and RVPI, with support for late manager statements and the resulting restatement of reported values.
 
-- Cash-flow plans for evergreen, real estate and credit books: dealing, property recoveries, loan draws, interest and repayments.
+## Terms
 
-- Scenarios with frozen inputs, each projected amount traced to the records behind it, and past forecasts kept.
+Commitment pacing uses a commitment budget across vintages. Unfunded commitments, expected calls, distributions recycled and available cash describe the funding plan. The accounting coverage listed here supplies unfunded balances and recorded fund reporting.
 
-- Gates, lockups and notice periods tracked for every underlying fund.
+## Questions
 
-## Related Notes
+### Can I see unfunded commitments by investor?
 
-- [Which columns can be added](https://1494labs.com/notes/which-columns-can-be-added/)
+Yes. Capital Accounts reports unfunded commitments per investor and per fund. The fund's setting selects the historical or spot measure used in that view, giving the team a defined basis for the outstanding amount.
 
-- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
+### Can I record late manager marks and underlying-fund performance?
+
+Yes. Underlying fund positions retain manager marks and position performance, including IRR, TVPI, DPI and RVPI. The valuation process supports late quarter statements and restatement of the affected reported values.
+
+### Can I prepare the financial statements for one fund and period?
+
+Yes. Fund Statements includes the income statement, balance sheet, statement of changes in net assets and cash-flow statement. These reports use one fund and reporting period for the financial statement set.
+
+### Can an investor statement show flows, fees and ending capital?
+
+Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance.
 
 ## Related Accounting Pages
 
@@ -35,12 +45,6 @@ For allocators and fund managers planning commitments, deployment and cash flows
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I project cash more than a year ahead?
-
-Start with settled cash and project into horizon buckets beyond a year, including expected underlying-fund proceeds, investor outflows, unfunded commitments and scheduled obligations.
 
 ## Request a Demo
 

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fund Accounting API and AI · 1494 Labs</title>
-<meta name="description" content="For fund managers, allocators and administrators connecting their book to other systems and AI assistants. Everything on screen is also in the public API.">
+<meta name="description" content="For fund managers, allocators and administrators connecting their book to other systems and AI assistants. Accounting Records and Notice Endpoints.">
 <link rel="canonical" href="https://1494labs.com/fund-accounting-api-and-ai/">
 <link rel="stylesheet" href="/assets/notes.d2937031.css">
 <link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
@@ -20,36 +20,21 @@
 <meta property="og:url" content="https://1494labs.com/fund-accounting-api-and-ai/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="Fund Accounting API and AI">
-<meta property="og:description" content="For fund managers, allocators and administrators connecting their book to other systems and AI assistants. Everything on screen is also in the public API.">
+<meta property="og:description" content="For fund managers, allocators and administrators connecting their book to other systems and AI assistants. Accounting Records and Notice Endpoints.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Fund Accounting API and AI">
-<meta name="twitter:description" content="For fund managers, allocators and administrators connecting their book to other systems and AI assistants. Everything on screen is also in the public API.">
+<meta name="twitter:description" content="For fund managers, allocators and administrators connecting their book to other systems and AI assistants. Accounting Records and Notice Endpoints.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 <meta name="twitter:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 
 
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can AI assistants read the accounting book?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Connect an AI assistant through MCP to read the book. The assistant connection guide covers workspace access and permissions."
-      }
-    }
-  ]
-}
-</script>
+
 <link rel="alternate" type="text/markdown" href="https://1494labs.com/fund-accounting-api-and-ai.md" title="Markdown">
 </head>
 <body class="buyer-page">
@@ -92,22 +77,67 @@
 <h1>Fund Accounting API and AI</h1>
 <p class="standfirst">For fund managers, allocators and administrators connecting their book to other systems and AI assistants.</p>
 <article>
-<h2>Accounting Capabilities</h2>
+<!-- buyer-capabilities:start -->
+<h2>Accounting Records and Notice Endpoints</h2>
 <ul>
-<li>Everything on screen is also in the public API.</li>
-<li>AI assistants read the book through MCP.</li>
-<li>AI reads statements and LPAs, and a person confirms each result before it posts.</li>
-<li>Saved analyses that refresh on the platform and can be pulled through the API.</li>
+<li data-use-case="capital-activity.call-notices">Capital call notices are available as PDFs through the API. The notice carries the investor&#x27;s amount, due date and wire instructions from approved bank details, for the accounting team&#x27;s call-notice process.</li>
+<li data-use-case="capital-activity.distribution-notices">Distribution notices are available as PDFs through the API. Each notice belongs to a recorded distribution and provides the investor-facing document for that cash event.</li>
+<li data-use-case="period-close.je-from-every-source">Journal Entries shows the postings created by accounting transactions. Each journal entry retains its source type and source identifier. The entry detail displays the accounting lines and the recorded transaction source.</li>
+<li data-use-case="reporting.investor-capital-account-statement">Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor&#x27;s recorded account and the fund&#x27;s reporting period.</li>
 </ul>
-<h2>Related Notes</h2>
-<ul class="pagelinks">
-<li>
-<a href="/notes/which-columns-can-be-added/">Which columns can be added</a>
-</li>
-<li>
-<a href="/notes/a-wrong-number-that-agrees-with-itself/">Checking the book against outside records</a>
-</li>
-</ul>
+<h2>Terms</h2>
+<p>Public API refers to programmatic access to accounting records. MCP connects AI assistants to tools and data. The accounting endpoints listed here cover notice PDFs, journal sources and investor statements.</p>
+<section id="buyer-questions"><h2>Questions</h2>
+<h3>Can I retrieve a capital call notice through the API?</h3>
+<p>Yes. The capital call notice endpoint returns a PDF with the investor&#x27;s amount, due date and wire instructions. Wire instructions come from approved bank details. The notice is retrieved through the API.</p>
+<h3>Can I retrieve an investor distribution notice?</h3>
+<p>Yes. The distribution notice endpoint returns the PDF for a recorded distribution. It provides the investor-facing notice for that distribution through the API.</p>
+<h3>Can I identify the transaction behind a journal entry?</h3>
+<p>Yes. Each journal entry records a source type and source identifier. Journal Entries displays the posting detail and source label; underlying distribution entries also have a direct link to the source transaction.</p>
+<h3>Can an investor statement show flows, fees and ending capital?</h3>
+<p>Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period&#x27;s movement for the investor account and its closing balance.</p>
+</section>
+<script type="application/ld+json" data-buyer-faq>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I retrieve a capital call notice through the API?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The capital call notice endpoint returns a PDF with the investor's amount, due date and wire instructions. Wire instructions come from approved bank details. The notice is retrieved through the API."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I retrieve an investor distribution notice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The distribution notice endpoint returns the PDF for a recorded distribution. It provides the investor-facing notice for that distribution through the API."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I identify the transaction behind a journal entry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Each journal entry records a source type and source identifier. Journal Entries displays the posting detail and source label; underlying distribution entries also have a direct link to the source transaction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an investor statement show flows, fees and ending capital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance."
+      }
+    }
+  ]
+}
+</script>
+<!-- buyer-capabilities:end -->
 <h2>Related Accounting Pages</h2>
 <ul class="pagelinks">
 <li>
@@ -129,9 +159,6 @@
 <a href="/capabilities/">Capabilities and Status</a>
 </li>
 </ul>
-<h2>Questions</h2>
-<h3>Can AI assistants read the accounting book?</h3>
-<p>Connect an AI assistant through MCP to read the book. The assistant connection guide covers workspace access and permissions.</p>
 <div class="endcta">
 <h2>Request a Demo</h2>
 <p>Tell us which funds, structures and accounting terms you need to review.</p>

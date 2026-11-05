@@ -6,27 +6,53 @@ For fund administrators accounting for many funds with different terms.
 
 ## Accounting Capabilities
 
-- Administrators: many funds with different terms on one platform, and reconciliation against bank, custodian and administrator files.
+- Create a fund with legal entity, vintage, term, currency, fiscal year
 
-- Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+- Share classes or units with different fee terms
 
-- Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.
+- Management fee terms with rate, basis, step-downs, offsets
 
-- Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.
+- Carried interest and waterfall terms with hurdle, catch-up, tiers, European or American
 
-- Allocations by class, series and sleeve, and investor NAV in the class currency.
+- Chart of accounts per fund, with a default template
 
-- Period close with a frozen trial balance and graded revisions.
+- Onboard an investor with unique ID, legal name, tax details, type
 
-- Official and latest-knowledge books on one ledger, with the source of every line.
+- Bank account details on the investor record for inbound and outbound cash
 
-- Cash, positions and NAV reconciled against outside files, with an exceptions worklist.
+- Generate call notices per investor with amounts, due date, wire instructions
 
-- A check that recomputes every fund's arithmetic each morning.
+- Distribution notices per investor
 
-- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
+- Unfunded commitment tracking per investor and per fund
 
-- Saved analyses that refresh on the platform and can be pulled through the API.
+- Mark a position to a valuation with an effective date and a source
+
+- Calculate management fees for a period from the fee terms
+
+- Journal entries posted from every transaction type, traceable to the source transaction
+
+- Period open, close, lock, and reopen with an audit trail
+
+- Close checklist and reviewer sign-off gating lock
+
+- NAV calculation per fund and per share class at period end
+
+- Capital accounts per investor that tie to the general ledger
+
+- Allocation of income, expense, gains across investors by ownership, multi-level up the chain
+
+- Trial balance per fund and period, frozen at close
+
+- Financial statements for one fund and period (income, balance, changes in net assets, cash flow)
+
+- Investor capital account statement (beginning, contributions, distributions, allocated income and expense, fees, ending)
+
+- Report packs by persona, assembled and exportable as one document
+
+- In-product support requests raised from a screen and tracked
+
+- Generate investor statements for all accounts, review, publish and resend
 
 ## Related Notes
 
@@ -35,6 +61,28 @@ For fund administrators accounting for many funds with different terms.
 - [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
 
 - [Checking the book against outside records](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/)
+
+## Questions
+
+### Can investors in one fund have different fee terms?
+
+Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.
+
+### Can a calculated management fee post to the books?
+
+Yes. After fee terms are configured, Fees calculates the period accrual and provides posting and reversal actions. The posted accrual records the management fee in the fund's accounting books.
+
+### Can reviewer sign-off gate the period lock?
+
+Yes. The close checklist and review events are recorded for the period. Locking checks that the required sign-off is present, and the reviewer's action remains in the period history.
+
+### Can I retrieve the trial balance frozen at close?
+
+Yes. Reporting includes frozen trial balances and revisions. The frozen balance keeps the ledger totals frozen at the close, so a reviewer can inspect the recorded close and the revisions attached to it.
+
+### Can I review investor statements before publishing a run?
+
+Yes. Statement runs group generation, review and publication. Each account has its own result, allowing the team to inspect a failed item and review the generated statements before publishing the run.
 
 ## Related Accounting Pages
 
@@ -47,12 +95,6 @@ For fund administrators accounting for many funds with different terms.
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can an administrator run funds with different terms?
-
-Each fund carries its terms for investor accounting, fees and waterfalls. Administrators can reconcile the books against bank, custodian and administrator files.
 
 ## Product Screens
 

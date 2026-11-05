@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Equalization and Series Accounting · 1494 Labs</title>
-<meta name="description" content="For hedge fund managers and administrators with investors entering at different dates. Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.">
+<meta name="description" content="For hedge fund managers and administrators with investors entering at different dates. Class Records, NAV and Fees.">
 <link rel="canonical" href="https://1494labs.com/equalization-and-series-accounting/">
 <link rel="stylesheet" href="/assets/notes.d2937031.css">
 <link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
@@ -20,36 +20,21 @@
 <meta property="og:url" content="https://1494labs.com/equalization-and-series-accounting/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="Equalization and Series Accounting">
-<meta property="og:description" content="For hedge fund managers and administrators with investors entering at different dates. Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.">
+<meta property="og:description" content="For hedge fund managers and administrators with investors entering at different dates. Class Records, NAV and Fees.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Equalization and Series Accounting">
-<meta name="twitter:description" content="For hedge fund managers and administrators with investors entering at different dates. Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.">
+<meta name="twitter:description" content="For hedge fund managers and administrators with investors entering at different dates. Class Records, NAV and Fees.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 <meta name="twitter:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 
 
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can I carry investor high-water marks through transfers and redemptions?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The investor's high-water mark carries through partial redemptions, transfers and restatements under the fund's selected method."
-      }
-    }
-  ]
-}
-</script>
+
 <link rel="alternate" type="text/markdown" href="https://1494labs.com/equalization-and-series-accounting.md" title="Markdown">
 </head>
 <body class="buyer-page">
@@ -92,21 +77,72 @@
 <h1>Equalization and Series Accounting</h1>
 <p class="standfirst">For hedge fund managers and administrators with investors entering at different dates.</p>
 <article>
-<h2>Accounting Capabilities</h2>
+<!-- buyer-capabilities:start -->
+<h2>Class Records, NAV and Fees</h2>
 <ul>
-<li>Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.</li>
-<li>Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.</li>
-<li>Allocations by class, series and sleeve, and investor NAV in the class currency.</li>
+<li data-use-case="fund-setup.share-classes-fee-terms">Share classes hold the terms for unitized funds. Fee classes group investors in capital-based funds. The Share Classes and Fee Terms screens record these arrangements for funds whose investors have different fee terms.</li>
+<li data-use-case="fees.management-fee-calc">The Fees screen calculates period management fees from the fund&#x27;s saved terms. Accruals can be posted and reversed, giving the period fee a corresponding accounting entry in the fund&#x27;s books.</li>
+<li data-use-case="reporting.investor-capital-account-statement">Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor&#x27;s recorded account and the fund&#x27;s reporting period.</li>
+<li data-use-case="hedge.nav-per-class-series">NAV supports share-class and series values, with final period strikes and daily estimates. Daily NAV estimates retain their grade and are superseded by the period close, preserving the distinction between daily and closed values.</li>
 </ul>
+<h2>Terms</h2>
+<p>Equalization and series accounting are performance-fee terms for investors entering at different dates. Buyers also use high-water mark, hurdle, crystallization, equalization credit and series roll-up.</p>
 <h2>Related Notes</h2>
 <ul class="pagelinks">
-<li>
-<a href="/notes/equalization-and-the-mid-period-subscriber/">Equalization and the mid-period subscriber</a>
-</li>
-<li>
-<a href="/notes/high-water-marks-and-partial-redemptions/">High-water marks and partial redemptions</a>
-</li>
+<li><a href="/notes/equalization-and-the-mid-period-subscriber/">Equalization and the mid-period subscriber</a></li>
+<li><a href="/notes/high-water-marks-and-partial-redemptions/">High-water marks and partial redemptions</a></li>
 </ul>
+<section id="buyer-questions"><h2>Questions</h2>
+<h3>Can I keep daily NAV estimates and final class NAV?</h3>
+<p>Yes. NAV supports daily estimates and final period strikes with share-class and series values. Daily estimates carry an estimate grade and are superseded by the close when final NAV is struck.</p>
+<h3>Can investors in one fund have different fee terms?</h3>
+<p>Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.</p>
+<h3>Can a calculated management fee post to the books?</h3>
+<p>Yes. After fee terms are configured, Fees calculates the period accrual and provides posting and reversal actions. The posted accrual records the management fee in the fund&#x27;s accounting books.</p>
+<h3>Can an investor statement show flows, fees and ending capital?</h3>
+<p>Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period&#x27;s movement for the investor account and its closing balance.</p>
+</section>
+<script type="application/ld+json" data-buyer-faq>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I keep daily NAV estimates and final class NAV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. NAV supports daily estimates and final period strikes with share-class and series values. Daily estimates carry an estimate grade and are superseded by the close when final NAV is struck."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can investors in one fund have different fee terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a calculated management fee post to the books?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. After fee terms are configured, Fees calculates the period accrual and provides posting and reversal actions. The posted accrual records the management fee in the fund's accounting books."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an investor statement show flows, fees and ending capital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance."
+      }
+    }
+  ]
+}
+</script>
+<!-- buyer-capabilities:end -->
 <h2>Related Accounting Pages</h2>
 <ul class="pagelinks">
 <li>
@@ -125,9 +161,6 @@
 <a href="/capabilities/">Capabilities and Status</a>
 </li>
 </ul>
-<h2>Questions</h2>
-<h3>Can I carry investor high-water marks through transfers and redemptions?</h3>
-<p>The investor&#x27;s high-water mark carries through partial redemptions, transfers and restatements under the fund&#x27;s selected method.</p>
 <div class="endcta">
 <h2>Request a Demo</h2>
 <p>Tell us which funds, structures and accounting terms you need to review.</p>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hedge Fund Accounting · 1494 Labs</title>
-<meta name="description" content="For hedge fund CFOs, controllers and fund administrators. Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.">
+<meta name="description" content="For hedge fund CFOs, controllers and fund administrators. Accounting Capabilities.">
 <link rel="canonical" href="https://1494labs.com/hedge-fund-accounting/">
 <link rel="stylesheet" href="/assets/notes.d2937031.css">
 <link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
@@ -20,36 +20,21 @@
 <meta property="og:url" content="https://1494labs.com/hedge-fund-accounting/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="Hedge Fund Accounting">
-<meta property="og:description" content="For hedge fund CFOs, controllers and fund administrators. Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.">
+<meta property="og:description" content="For hedge fund CFOs, controllers and fund administrators. Accounting Capabilities.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Hedge Fund Accounting">
-<meta name="twitter:description" content="For hedge fund CFOs, controllers and fund administrators. Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.">
+<meta name="twitter:description" content="For hedge fund CFOs, controllers and fund administrators. Accounting Capabilities.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 <meta name="twitter:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 
 
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can I choose equalization or series accounting per fund?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Choose either method in the terms for each fund. Investor high-water marks carry through partial redemptions, transfers and restatements."
-      }
-    }
-  ]
-}
-</script>
+
 <link rel="alternate" type="text/markdown" href="https://1494labs.com/hedge-fund-accounting.md" title="Markdown">
 </head>
 <body class="buyer-page">
@@ -92,28 +77,85 @@
 <h1>Hedge Fund Accounting</h1>
 <p class="standfirst">For hedge fund CFOs, controllers and fund administrators.</p>
 <article>
+<!-- buyer-capabilities:start -->
 <h2>Accounting Capabilities</h2>
 <ul>
-<li>Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.</li>
-<li>Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.</li>
-<li>Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.</li>
-<li>Allocations by class, series and sleeve, and investor NAV in the class currency.</li>
-<li>Gates, lockups and notice periods tracked for every underlying fund.</li>
-<li>NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.</li>
-<li>Saved analyses that refresh on the platform and can be pulled through the API.</li>
+<li data-use-case="fund-setup.share-classes-fee-terms">Share classes hold the terms for unitized funds. Fee classes group investors in capital-based funds. The Share Classes and Fee Terms screens record these arrangements for funds whose investors have different fee terms.</li>
+<li data-use-case="fund-setup.management-fee-terms">Fee Terms records management fee rates, calculation basis and step-down bands. The Fees screen holds period offset sources. The fee configuration supplies the terms used when the period management fee is calculated.</li>
+<li data-use-case="fees.management-fee-calc">The Fees screen calculates period management fees from the fund&#x27;s saved terms. Accruals can be posted and reversed, giving the period fee a corresponding accounting entry in the fund&#x27;s books.</li>
+<li data-use-case="period-close.nav-per-fund-class">NAV records preliminary, final and restated fund values, including share-class lines. The NAV and period-close screens show the fund&#x27;s strike workflow, with class results available through the share register.</li>
+<li data-use-case="period-close.capital-accounts-tie-gl">Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund&#x27;s capital accounts.</li>
+<li data-use-case="reporting.investor-capital-account-statement">Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor&#x27;s recorded account and the fund&#x27;s reporting period.</li>
+<li data-use-case="portal.statement-run-publish">Reporting groups investor statement production into runs. The team generates, reviews and publishes the statements, with failures recorded per account so an individual statement failure is isolated within the run.</li>
+<li data-use-case="hedge.nav-per-class-series">NAV supports share-class and series values, with final period strikes and daily estimates. Daily NAV estimates retain their grade and are superseded by the period close, preserving the distinction between daily and closed values.</li>
 </ul>
 <h2>Related Notes</h2>
 <ul class="pagelinks">
-<li>
-<a href="/notes/equalization-and-the-mid-period-subscriber/">Equalization and the mid-period subscriber</a>
-</li>
-<li>
-<a href="/notes/high-water-marks-and-partial-redemptions/">High-water marks and partial redemptions</a>
-</li>
-<li>
-<a href="/notes/side-pockets-and-investor-participation/">Side pockets and investor participation</a>
-</li>
+<li><a href="/notes/equalization-and-the-mid-period-subscriber/">Equalization and the mid-period subscriber</a></li>
+<li><a href="/notes/high-water-marks-and-partial-redemptions/">High-water marks and partial redemptions</a></li>
+<li><a href="/notes/side-pockets-and-investor-participation/">Side pockets and investor participation</a></li>
 </ul>
+<section id="buyer-questions"><h2>Questions</h2>
+<h3>Can investors in one fund have different fee terms?</h3>
+<p>Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.</p>
+<h3>Can a calculated management fee post to the books?</h3>
+<p>Yes. After fee terms are configured, Fees calculates the period accrual and provides posting and reversal actions. The posted accrual records the management fee in the fund&#x27;s accounting books.</p>
+<h3>Can I keep daily NAV estimates and final class NAV?</h3>
+<p>Yes. NAV supports daily estimates and final period strikes with share-class and series values. Daily estimates carry an estimate grade and are superseded by the close when final NAV is struck.</p>
+<h3>Do investor capital accounts tie to general ledger capital?</h3>
+<p>Yes. The accounting checks compare investor capital balances with the fund&#x27;s general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.</p>
+<h3>Can I review investor statements before publishing a run?</h3>
+<p>Yes. Statement runs group generation, review and publication. Each account has its own result, allowing the team to inspect a failed item and review the generated statements before publishing the run.</p>
+</section>
+<script type="application/ld+json" data-buyer-faq>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can investors in one fund have different fee terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a calculated management fee post to the books?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. After fee terms are configured, Fees calculates the period accrual and provides posting and reversal actions. The posted accrual records the management fee in the fund's accounting books."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I keep daily NAV estimates and final class NAV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. NAV supports daily estimates and final period strikes with share-class and series values. Daily estimates carry an estimate grade and are superseded by the close when final NAV is struck."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do investor capital accounts tie to general ledger capital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I review investor statements before publishing a run?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Statement runs group generation, review and publication. Each account has its own result, allowing the team to inspect a failed item and review the generated statements before publishing the run."
+      }
+    }
+  ]
+}
+</script>
+<!-- buyer-capabilities:end -->
 <h2>Related Accounting Pages</h2>
 <ul class="pagelinks">
 <li>
@@ -132,9 +174,6 @@
 <a href="/capabilities/">Capabilities and Status</a>
 </li>
 </ul>
-<h2>Questions</h2>
-<h3>Can I choose equalization or series accounting per fund?</h3>
-<p>Choose either method in the terms for each fund. Investor high-water marks carry through partial redemptions, transfers and restatements.</p>
 <h2>Product Screens</h2>
 <figure class="shot">
       <img src="/assets/screens/fund-dashboard.8d533a4c.jpg" width="1600" height="1000"

@@ -135,15 +135,45 @@ For fund managers, allocators and administrators accounting for investors throug
 
 ## Accounting Capabilities
 
-- Master-feeder, alternative investment vehicles (AIVs), SPVs, blockers, co-investments and continuation vehicles.
+- Blocker setup records the corporation, its underlying fund or AIV investment and the investors behind it. Federal and state tax rates are configured per blocker. Period tax accrual posts an entity-level expense and tax payable; configured deferred tax covers unrealized gains.
 
-- Blocker tax accrued at the entity and carried to each investor behind it.
+- Fund setup provides a Blocker vehicle type, federal and state tax-rate fields, and a choice to accrue deferred tax on unrealized gains. The blocker's fund page shows its period accrual and tax payable.
 
-## Related Notes
+- The underlying fund allocates the blocker's share before corporate tax. Investors behind the blocker receive their ownership share after the entity's tax expense. A direct LP and a blocker LP can therefore have the same gross allocation and different net amounts.
 
-- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
+- Investor statements show both gross allocation and blocker tax. The current-tax expense and payable are posted in the blocker's ledger, and configured deferred tax is carried as a separate accrual.
 
-- [ABOR and IBOR](https://1494labs.com/notes/abor-and-ibor/)
+- Ownership and exposure reports follow the corporation's investment through the underlying fund or alternative investment vehicle to the holdings. The investors behind the blocker remain part of that ownership chain.
+
+## Terms
+
+Blocker and corporate feeder describe the corporation through which US tax-exempt and non-US investors invest. UBTI means unrelated business taxable income; ECI means effectively connected income. Entity-level tax and deferred tax are recorded on the corporation's books.
+
+## Questions
+
+### Does the product account for blocker corporations?
+
+Yes. A blocker is a separate vehicle with its own configured federal and state rates. Period tax accrual posts expense and tax payable on the blocker's books. Deferred tax on unrealized gains is accrued when configured.
+
+### Can investors behind a blocker see gross allocation and tax?
+
+Yes. The blocker's capital account in the underlying fund carries the pre-tax allocation. Each investor behind the corporation carries a share net of blocker tax. Investor statements show the gross allocation and the blocker tax.
+
+### Can I configure federal, state and deferred tax per blocker?
+
+Yes. Federal and state rates are set for each blocker, and deferred tax is enabled per blocker. The accrual records current tax on allocated taxable income and remeasures configured deferred tax on unrealized gains.
+
+### Can ownership reports look through the blocker to holdings?
+
+Yes. The blocker participates in the ownership chain. Look-through and exposure reports trace the investors' ownership through the corporation and the underlying fund or AIV to the recorded holdings.
+
+### Does this include corporate tax return preparation?
+
+No. The blocker accounting scope covers configured-rate accruals, tax payables, deferred tax and the investor allocation. Corporate tax returns, including Form 1120 and K-1 preparation, and additional withholding regimes are outside this scope.
+
+### Can I see the tax accrual and payable in the product?
+
+Yes. The blocker's fund page provides the period tax accrual and payable view. The accrual action posts the tax expense and payable on the blocker's books, with current and configured deferred amounts recorded for the selected period.
 
 ## Related Accounting Pages
 
@@ -156,12 +186,6 @@ For fund managers, allocators and administrators accounting for investors throug
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Does 1494 Labs handle blocker corporations?
-
-Accrue tax in the blocker corporation and carry each investor's share through the structure.
 
 ## Request a Demo
 
@@ -271,17 +295,43 @@ For fund managers, allocators and administrators tracking investor commitments a
 
 ## Accounting Capabilities
 
-- Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+- Investor bank details have a change-and-approval workflow. Account details are masked in the investor screen; revealing them requires permission. Approved details supply the bank information used in notices.
 
-- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
+- Capital call notices are available as PDFs through the API. The notice carries the investor's amount, due date and wire instructions from approved bank details, for the accounting team's call-notice process.
 
-- Commitment pacing for fund of funds and allocator programs.
+- Distribution notices are available as PDFs through the API. Each notice belongs to a recorded distribution and provides the investor-facing document for that cash event.
 
-## Related Notes
+- Capital Accounts shows unfunded commitments by investor and fund. A fund setting chooses the historical or spot measure, so the reported unfunded amount follows the accounting basis selected for that fund.
 
-- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
+- Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund's capital accounts.
 
-- [European and American waterfalls](https://1494labs.com/notes/european-vs-american-waterfall/)
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
+
+## Terms
+
+Commitment budget, called capital and unfunded commitment describe an investor's funding position. Recallable capital and distributions recycled describe returned amounts that the fund terms permit to be called again.
+
+## Questions
+
+### Can I retrieve a capital call notice through the API?
+
+Yes. The capital call notice endpoint returns a PDF with the investor's amount, due date and wire instructions. Wire instructions come from approved bank details. The notice is retrieved through the API.
+
+### Can I retrieve an investor distribution notice?
+
+Yes. The distribution notice endpoint returns the PDF for a recorded distribution. It provides the investor-facing notice for that distribution through the API.
+
+### Can I see unfunded commitments by investor?
+
+Yes. Capital Accounts reports unfunded commitments per investor and per fund. The fund's setting selects the historical or spot measure used in that view, giving the team a defined basis for the outstanding amount.
+
+### Are changes to investor bank details approved?
+
+Yes. Bank-detail changes require a second person's approval. The investor screen masks the stored details, and revealing them requires a separate permission. Notices use the approved bank details.
+
+### Do investor capital accounts tie to general ledger capital?
+
+Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.
 
 ## Related Accounting Pages
 
@@ -292,12 +342,6 @@ For fund managers, allocators and administrators tracking investor commitments a
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I track recallable capital alongside calls and distributions?
-
-Keep recallable capital with the investor's commitments, calls and distribution records, and prepare ILPA notices from the book.
 
 ## Request a Demo
 
@@ -314,15 +358,21 @@ Source: https://1494labs.com/close-controls-and-reconciliation/
 
 For controllers and administrators closing funds and reviewing reconciliation exceptions.
 
-## Accounting Capabilities
+## Period Close and Ledger Controls
 
-- Period close with a frozen trial balance and graded revisions.
+- Journal Entries shows the postings created by accounting transactions. Each journal entry retains its source type and source identifier. The entry detail displays the accounting lines and the recorded transaction source.
 
-- Official and latest-knowledge books on one ledger, with the source of every line.
+- Period Close records period opening, closing and locking events. Reopening requires permission and a recorded reason. The period's event history keeps the actions recorded for a revised close.
 
-- Cash, positions and NAV reconciled against outside files, with an exceptions worklist.
+- Period Close includes a checklist and reviewer sign-off. A period lock requires the configured sign-off, so the recorded review forms part of the close process before the books are locked.
 
-- A check that recomputes every fund's arithmetic each morning.
+- NAV records preliminary, final and restated fund values, including share-class lines. The NAV and period-close screens show the fund's strike workflow, with class results available through the share register.
+
+- Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund's capital accounts.
+
+- Allocations distributes income, expenses and gains through recorded ownership. The allocation screen includes a cascade preview and confirmation for structures with multiple ownership layers, connecting fund results with the investors above them.
+
+- Reporting provides the trial balance for the fund, including the balance frozen at close and its revisions. The frozen balance preserves the ledger totals used for that close and subsequent review.
 
 ## Related Notes
 
@@ -331,6 +381,28 @@ For controllers and administrators closing funds and reviewing reconciliation ex
 - [ABOR and IBOR](https://1494labs.com/notes/abor-and-ibor/)
 
 - [Converting from a fund administrator](https://1494labs.com/notes/converting-from-a-fund-administrator/)
+
+## Questions
+
+### Can I identify the transaction behind a journal entry?
+
+Yes. Each journal entry records a source type and source identifier. Journal Entries displays the posting detail and source label; underlying distribution entries also have a direct link to the source transaction.
+
+### Can a closed period be reopened with a recorded reason?
+
+Yes. Period Close supports a governed reopen action for users with reopen permission. The reason is recorded with the event, and the period history retains the closing, locking and reopening actions.
+
+### Can reviewer sign-off gate the period lock?
+
+Yes. The close checklist and review events are recorded for the period. Locking checks that the required sign-off is present, and the reviewer's action remains in the period history.
+
+### Do investor capital accounts tie to general ledger capital?
+
+Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.
+
+### Can I retrieve the trial balance frozen at close?
+
+Yes. Reporting includes frozen trial balances and revisions. The frozen balance keeps the ledger totals frozen at the close, so a reviewer can inspect the recorded close and the revisions attached to it.
 
 ## Related Accounting Pages
 
@@ -343,12 +415,6 @@ For controllers and administrators closing funds and reviewing reconciliation ex
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I reconcile NAV, cash and positions against outside files?
-
-Compare cash, positions and NAV with outside files, then review differences in the exceptions worklist.
 
 ## Request a Demo
 
@@ -901,25 +967,51 @@ For endowment and foundation investment teams and their administrators.
 
 ## Accounting Capabilities
 
-- Allocators (LPs): fund of funds, family offices, endowments, foundations and other institutional investors. Commitments, calls and distributions across every underlying fund, look-through to the holdings, and performance by vintage, strategy and manager.
+- Capital Accounts shows unfunded commitments by investor and fund. A fund setting chooses the historical or spot measure, so the reported unfunded amount follows the accounting basis selected for that fund.
 
-- Fund of funds look-through to the underlying holdings, on both ownership bases.
+- Valuations records dated marks for underlying fund interests, portfolio companies and priced instruments. The entry fields follow the asset: fund NAV statements carry an as-of date and source; company marks carry a valuation method and memo.
 
-- Cash projection in horizon buckets out past a year, from settled cash: expected proceeds from underlying funds, investor outflows, unfunded commitments and scheduled obligations.
+- Fund Statements provides an income statement, balance sheet, statement of changes in net assets and cash-flow statement for one fund and period. The reporting screen uses the selected fund and reporting period.
 
-- Available liquidity including undrawn credit facilities.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-- Commitment pacing for fund of funds and allocator programs.
+- Reporting includes report packs organized by audience. A pack runs for its fund and period and can be exported as PDF or CSV, collecting the selected reports for the intended recipient.
 
-- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
+- Underlying fund positions carry manager-reported marks and performance. Valuations and Look-through show position IRR, TVPI, DPI and RVPI, with support for late manager statements and the resulting restatement of reported values.
 
-- Saved analyses that refresh on the platform and can be pulled through the API.
+- Look-through shows the underlying company holdings behind fund investments. It supports as-of views, shared ownership subtrees and CSV export. Company holdings supplied by import become part of the portfolio's underlying exposure view.
+
+- Look-through groups underlying company exposure by geography and sector. The classifications come from linked company records, so the exposure view uses the recorded company classifications when presenting the portfolio totals.
+
+## Terms
+
+Allocator books include fund of funds, endowments and foundations. Underlying fund interests carry manager marks; look-through presents the companies and their recorded sector and geography classifications.
 
 ## Related Notes
 
 - [Which columns can be added](https://1494labs.com/notes/which-columns-can-be-added/)
 
-- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
+## Questions
+
+### Can I look through fund investments to the underlying companies?
+
+Yes. Look-through presents company holdings behind underlying funds, including shared ownership subtrees and as-of views. Underlying holdings arrive by CSV import, and the look-through results can be exported as CSV.
+
+### Can I group underlying company exposure by sector and geography?
+
+Yes. Look-through reports sector and geography subtotals using the linked company records. Holdings without a linked company classification display a blank classification, allowing the team to identify those records.
+
+### Can I record late manager marks and underlying-fund performance?
+
+Yes. Underlying fund positions retain manager marks and position performance, including IRR, TVPI, DPI and RVPI. The valuation process supports late quarter statements and restatement of the affected reported values.
+
+### Can I see unfunded commitments by investor?
+
+Yes. Capital Accounts reports unfunded commitments per investor and per fund. The fund's setting selects the historical or spot measure used in that view, giving the team a defined basis for the outstanding amount.
+
+### Can I assemble a report pack for a particular audience?
+
+Yes. Report packs are organized by audience and run for a specified fund and period. Pack results can be exported as PDF or CSV for the recipient's reporting process.
 
 ## Related Accounting Pages
 
@@ -932,12 +1024,6 @@ For endowment and foundation investment teams and their administrators.
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I plan commitments across an allocator program?
-
-Use commitment pacing for the allocator program and project cash from underlying funds alongside investor outflows and unfunded commitments.
 
 ## Request a Demo
 
@@ -954,19 +1040,43 @@ Source: https://1494labs.com/equalization-and-series-accounting/
 
 For hedge fund managers and administrators with investors entering at different dates.
 
-## Accounting Capabilities
+## Class Records, NAV and Fees
 
-- Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+- Share classes hold the terms for unitized funds. Fee classes group investors in capital-based funds. The Share Classes and Fee Terms screens record these arrangements for funds whose investors have different fee terms.
 
-- Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.
+- The Fees screen calculates period management fees from the fund's saved terms. Accruals can be posted and reversed, giving the period fee a corresponding accounting entry in the fund's books.
 
-- Allocations by class, series and sleeve, and investor NAV in the class currency.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
+
+- NAV supports share-class and series values, with final period strikes and daily estimates. Daily NAV estimates retain their grade and are superseded by the period close, preserving the distinction between daily and closed values.
+
+## Terms
+
+Equalization and series accounting are performance-fee terms for investors entering at different dates. Buyers also use high-water mark, hurdle, crystallization, equalization credit and series roll-up.
 
 ## Related Notes
 
 - [Equalization and the mid-period subscriber](https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/)
 
 - [High-water marks and partial redemptions](https://1494labs.com/notes/high-water-marks-and-partial-redemptions/)
+
+## Questions
+
+### Can I keep daily NAV estimates and final class NAV?
+
+Yes. NAV supports daily estimates and final period strikes with share-class and series values. Daily estimates carry an estimate grade and are superseded by the close when final NAV is struck.
+
+### Can investors in one fund have different fee terms?
+
+Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.
+
+### Can a calculated management fee post to the books?
+
+Yes. After fee terms are configured, Fees calculates the period accrual and provides posting and reversal actions. The posted accrual records the management fee in the fund's accounting books.
+
+### Can an investor statement show flows, fees and ending capital?
+
+Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance.
 
 ## Related Accounting Pages
 
@@ -979,12 +1089,6 @@ For hedge fund managers and administrators with investors entering at different 
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I carry investor high-water marks through transfers and redemptions?
-
-The investor's high-water mark carries through partial redemptions, transfers and restatements under the fund's selected method.
 
 ## Request a Demo
 
@@ -1003,25 +1107,53 @@ For family office controllers and principals accounting for investments across e
 
 ## Accounting Capabilities
 
-- Allocators (LPs): fund of funds, family offices, endowments, foundations and other institutional investors. Commitments, calls and distributions across every underlying fund, look-through to the holdings, and performance by vintage, strategy and manager.
+- Valuations records dated marks for underlying fund interests, portfolio companies and priced instruments. The entry fields follow the asset: fund NAV statements carry an as-of date and source; company marks carry a valuation method and memo.
 
-- Holding companies, family partnerships, trusts and GRATs, SMAs and funds of one, and personal accounts, with ownership traced through every layer.
+- Allocations distributes income, expenses and gains through recorded ownership. The allocation screen includes a cascade preview and confirmation for structures with multiple ownership layers, connecting fund results with the investors above them.
 
-- Blocker tax accrued at the entity and carried to each investor behind it.
+- Fund Statements provides an income statement, balance sheet, statement of changes in net assets and cash-flow statement for one fund and period. The reporting screen uses the selected fund and reporting period.
 
-- Fund of funds look-through to the underlying holdings, on both ownership bases.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-- Public and private equity, fixed income, loans, credit facilities on both sides, real estate and REITs, derivatives, hedge fund and private fund interests, and digital assets, in any currency.
+- Reporting includes report packs organized by audience. A pack runs for its fund and period and can be exported as PDF or CSV, collecting the selected reports for the intended recipient.
 
-- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
+- Family Office shows holding companies, family partnerships, trusts, personal accounts and individuals in a household structure. Fund setup records vehicle types, including GRATs, and the structure chart displays the ownership layers.
 
-- Saved analyses that refresh on the platform and can be pulled through the API.
+- Trust beneficiary interests are recorded against the trust. The Family Office Net Worth view displays the beneficiary information beside the trust, keeping the beneficiary interest on the recorded trust vehicle.
+
+- The household structure chart traces ownership through entities. Ownership weights come from the capital holdings, and Allocations uses those relationships to carry income through the chain, including structures with shared ownership subtrees.
+
+- Family vehicles can hold private fund interests, portfolio companies and internal fund interests. Underlying Funds and Companies record the private investments, with fund capital activity attached to the holding vehicle's investment record.
+
+- The Family Office Net Worth view groups household value by category, holder and period. It includes movement between periods and supports the household reporting package, giving family finance teams a consolidated value view.
+
+- Family Office includes household performance, principal cash flows, exposure, concentration and book-to-market reconciliation. These views sit with the household records so the team can review value, cash movement and investment exposure for the family.
 
 ## Related Notes
 
-- [ABOR and IBOR](https://1494labs.com/notes/abor-and-ibor/)
-
 - [Which columns can be added](https://1494labs.com/notes/which-columns-can-be-added/)
+
+## Questions
+
+### Can I represent a household's companies, partnerships and trusts?
+
+Yes. Vehicle setup and the household structure chart support holding companies, partnerships, trusts, personal accounts and individuals. GRAT is a recorded vehicle type. The chart shows the layers represented in the household book.
+
+### Can income allocations follow ownership across family entities?
+
+Yes. The structure chart and Allocations use ownership weights derived from capital holdings. Income cascades follow those relationships across the household's entities, including shared ownership subtrees.
+
+### Can a family partnership hold private fund interests and companies?
+
+Yes. Family vehicles use the underlying-fund and company investment records for private holdings. The same asset-side capital activity records calls and distributions on the family vehicle's underlying fund investments.
+
+### Can I see household net worth by entity and asset category?
+
+Yes. Family Office provides consolidated net worth by category, holder and period, including movement. Household reporting packages can include the net worth results for the family's reporting process.
+
+### Can I review household performance and principal cash flows?
+
+Yes. Family Office includes performance series, principal cash flows, exposure, concentration and book-to-market reconciliation. The views use the household's recorded holdings and activity to present the family's investment and cash position.
 
 ## Related Accounting Pages
 
@@ -1034,12 +1166,6 @@ For family office controllers and principals accounting for investments across e
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I trace ownership through trusts and holding companies?
-
-Follow ownership through holding companies, partnerships, trusts and GRATs to the investments beneath them.
 
 ## Product Screens
 
@@ -1073,21 +1199,37 @@ Source: https://1494labs.com/fund-accounting-api-and-ai/
 
 For fund managers, allocators and administrators connecting their book to other systems and AI assistants.
 
-## Accounting Capabilities
+## Accounting Records and Notice Endpoints
 
-- Everything on screen is also in the public API.
+- Capital call notices are available as PDFs through the API. The notice carries the investor's amount, due date and wire instructions from approved bank details, for the accounting team's call-notice process.
 
-- AI assistants read the book through MCP.
+- Distribution notices are available as PDFs through the API. Each notice belongs to a recorded distribution and provides the investor-facing document for that cash event.
 
-- AI reads statements and LPAs, and a person confirms each result before it posts.
+- Journal Entries shows the postings created by accounting transactions. Each journal entry retains its source type and source identifier. The entry detail displays the accounting lines and the recorded transaction source.
 
-- Saved analyses that refresh on the platform and can be pulled through the API.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-## Related Notes
+## Terms
 
-- [Which columns can be added](https://1494labs.com/notes/which-columns-can-be-added/)
+Public API refers to programmatic access to accounting records. MCP connects AI assistants to tools and data. The accounting endpoints listed here cover notice PDFs, journal sources and investor statements.
 
-- [Checking the book against outside records](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/)
+## Questions
+
+### Can I retrieve a capital call notice through the API?
+
+Yes. The capital call notice endpoint returns a PDF with the investor's amount, due date and wire instructions. Wire instructions come from approved bank details. The notice is retrieved through the API.
+
+### Can I retrieve an investor distribution notice?
+
+Yes. The distribution notice endpoint returns the PDF for a recorded distribution. It provides the investor-facing notice for that distribution through the API.
+
+### Can I identify the transaction behind a journal entry?
+
+Yes. Each journal entry records a source type and source identifier. Journal Entries displays the posting detail and source label; underlying distribution entries also have a direct link to the source transaction.
+
+### Can an investor statement show flows, fees and ending capital?
+
+Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance.
 
 ## Related Accounting Pages
 
@@ -1102,12 +1244,6 @@ For fund managers, allocators and administrators connecting their book to other 
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can AI assistants read the accounting book?
-
-Connect an AI assistant through MCP to read the book. The assistant connection guide covers workspace access and permissions.
 
 ## Request a Demo
 
@@ -1126,25 +1262,53 @@ For fund managers, allocators and fund administrators.
 
 ## Accounting Capabilities
 
-- Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+- Create a fund with legal entity, vintage, term, currency, fiscal year
 
-- Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.
+- Share classes or units with different fee terms
 
-- Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.
+- Management fee terms with rate, basis, step-downs, offsets
 
-- Allocations by class, series and sleeve, and investor NAV in the class currency.
+- Carried interest and waterfall terms with hurdle, catch-up, tiers, European or American
 
-- Period close with a frozen trial balance and graded revisions.
+- Chart of accounts per fund, with a default template
 
-- Official and latest-knowledge books on one ledger, with the source of every line.
+- Onboard an investor with unique ID, legal name, tax details, type
 
-- Cash, positions and NAV reconciled against outside files, with an exceptions worklist.
+- Bank account details on the investor record for inbound and outbound cash
 
-- A check that recomputes every fund's arithmetic each morning.
+- Generate call notices per investor with amounts, due date, wire instructions
 
-- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
+- Distribution notices per investor
 
-- Saved analyses that refresh on the platform and can be pulled through the API.
+- Unfunded commitment tracking per investor and per fund
+
+- Mark a position to a valuation with an effective date and a source
+
+- Calculate management fees for a period from the fee terms
+
+- Journal entries posted from every transaction type, traceable to the source transaction
+
+- Period open, close, lock, and reopen with an audit trail
+
+- Close checklist and reviewer sign-off gating lock
+
+- NAV calculation per fund and per share class at period end
+
+- Capital accounts per investor that tie to the general ledger
+
+- Allocation of income, expense, gains across investors by ownership, multi-level up the chain
+
+- Trial balance per fund and period, frozen at close
+
+- Financial statements for one fund and period (income, balance, changes in net assets, cash flow)
+
+- Investor capital account statement (beginning, contributions, distributions, allocated income and expense, fees, ending)
+
+- Report packs by persona, assembled and exportable as one document
+
+- In-product support requests raised from a screen and tracked
+
+- Generate investor statements for all accounts, review, publish and resend
 
 ## Related Notes
 
@@ -1153,6 +1317,28 @@ For fund managers, allocators and fund administrators.
 - [ABOR and IBOR](https://1494labs.com/notes/abor-and-ibor/)
 
 - [Management fee offsets](https://1494labs.com/notes/management-fee-offsets/)
+
+## Questions
+
+### Can I strike NAV for the fund and its share classes?
+
+Yes. The NAV workflow supports preliminary and final strikes and restatements. Saved NAV versions include share-class lines, and the share register shows the class results for the fund's strike.
+
+### Do investor capital accounts tie to general ledger capital?
+
+Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.
+
+### Can a closed period be reopened with a recorded reason?
+
+Yes. Period Close supports a governed reopen action for users with reopen permission. The reason is recorded with the event, and the period history retains the closing, locking and reopening actions.
+
+### Can an investor statement show flows, fees and ending capital?
+
+Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance.
+
+### Can I review investor statements before publishing a run?
+
+Yes. Statement runs group generation, review and publication. Each account has its own result, allowing the team to inspect a failed item and review the generated statements before publishing the run.
 
 ## Related Accounting Pages
 
@@ -1165,12 +1351,6 @@ For fund managers, allocators and fund administrators.
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Which investor transactions can I account for?
-
-Record investor subscriptions and redemptions, transfers, commitments, calls, distributions and recallable capital.
 
 ## Product Screens
 
@@ -1200,7 +1380,7 @@ Tell us which funds, structures and accounting terms you need to review.
 
 [Request a demo](https://1494labs.com/?segment=other#contact)
 
-## Pages and Worked Notes
+## Pages and Notes
 
 - [Blocker Corporation Accounting](https://1494labs.com/blocker-corporation-accounting/)
 
@@ -1372,27 +1552,53 @@ For fund administrators accounting for many funds with different terms.
 
 ## Accounting Capabilities
 
-- Administrators: many funds with different terms on one platform, and reconciliation against bank, custodian and administrator files.
+- Create a fund with legal entity, vintage, term, currency, fiscal year
 
-- Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+- Share classes or units with different fee terms
 
-- Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.
+- Management fee terms with rate, basis, step-downs, offsets
 
-- Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.
+- Carried interest and waterfall terms with hurdle, catch-up, tiers, European or American
 
-- Allocations by class, series and sleeve, and investor NAV in the class currency.
+- Chart of accounts per fund, with a default template
 
-- Period close with a frozen trial balance and graded revisions.
+- Onboard an investor with unique ID, legal name, tax details, type
 
-- Official and latest-knowledge books on one ledger, with the source of every line.
+- Bank account details on the investor record for inbound and outbound cash
 
-- Cash, positions and NAV reconciled against outside files, with an exceptions worklist.
+- Generate call notices per investor with amounts, due date, wire instructions
 
-- A check that recomputes every fund's arithmetic each morning.
+- Distribution notices per investor
 
-- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
+- Unfunded commitment tracking per investor and per fund
 
-- Saved analyses that refresh on the platform and can be pulled through the API.
+- Mark a position to a valuation with an effective date and a source
+
+- Calculate management fees for a period from the fee terms
+
+- Journal entries posted from every transaction type, traceable to the source transaction
+
+- Period open, close, lock, and reopen with an audit trail
+
+- Close checklist and reviewer sign-off gating lock
+
+- NAV calculation per fund and per share class at period end
+
+- Capital accounts per investor that tie to the general ledger
+
+- Allocation of income, expense, gains across investors by ownership, multi-level up the chain
+
+- Trial balance per fund and period, frozen at close
+
+- Financial statements for one fund and period (income, balance, changes in net assets, cash flow)
+
+- Investor capital account statement (beginning, contributions, distributions, allocated income and expense, fees, ending)
+
+- Report packs by persona, assembled and exportable as one document
+
+- In-product support requests raised from a screen and tracked
+
+- Generate investor statements for all accounts, review, publish and resend
 
 ## Related Notes
 
@@ -1401,6 +1607,28 @@ For fund administrators accounting for many funds with different terms.
 - [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
 
 - [Checking the book against outside records](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/)
+
+## Questions
+
+### Can investors in one fund have different fee terms?
+
+Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.
+
+### Can a calculated management fee post to the books?
+
+Yes. After fee terms are configured, Fees calculates the period accrual and provides posting and reversal actions. The posted accrual records the management fee in the fund's accounting books.
+
+### Can reviewer sign-off gate the period lock?
+
+Yes. The close checklist and review events are recorded for the period. Locking checks that the required sign-off is present, and the reviewer's action remains in the period history.
+
+### Can I retrieve the trial balance frozen at close?
+
+Yes. Reporting includes frozen trial balances and revisions. The frozen balance keeps the ledger totals frozen at the close, so a reviewer can inspect the recorded close and the revisions attached to it.
+
+### Can I review investor statements before publishing a run?
+
+Yes. Statement runs group generation, review and publication. Each account has its own result, allowing the team to inspect a failed item and review the generated statements before publishing the run.
 
 ## Related Accounting Pages
 
@@ -1413,12 +1641,6 @@ For fund administrators accounting for many funds with different terms.
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can an administrator run funds with different terms?
-
-Each fund carries its terms for investor accounting, fees and waterfalls. Administrators can reconcile the books against bank, custodian and administrator files.
 
 ## Product Screens
 
@@ -1467,17 +1689,47 @@ For fund managers, allocators and administrators preparing NAV and investor repo
 
 ## Accounting Capabilities
 
-- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
+- NAV records preliminary, final and restated fund values, including share-class lines. The NAV and period-close screens show the fund's strike workflow, with class results available through the share register.
 
-- Saved analyses that refresh on the platform and can be pulled through the API.
+- Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund's capital accounts.
 
-- Allocations by class, series and sleeve, and investor NAV in the class currency.
+- Reporting provides the trial balance for the fund, including the balance frozen at close and its revisions. The frozen balance preserves the ledger totals used for that close and subsequent review.
+
+- Fund Statements provides an income statement, balance sheet, statement of changes in net assets and cash-flow statement for one fund and period. The reporting screen uses the selected fund and reporting period.
+
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
+
+- Reporting includes report packs organized by audience. A pack runs for its fund and period and can be exported as PDF or CSV, collecting the selected reports for the intended recipient.
+
+- Reporting groups investor statement production into runs. The team generates, reviews and publishes the statements, with failures recorded per account so an individual statement failure is isolated within the run.
 
 ## Related Notes
 
 - [Which columns can be added](https://1494labs.com/notes/which-columns-can-be-added/)
 
 - [ABOR and IBOR](https://1494labs.com/notes/abor-and-ibor/)
+
+## Questions
+
+### Can I prepare the financial statements for one fund and period?
+
+Yes. Fund Statements includes the income statement, balance sheet, statement of changes in net assets and cash-flow statement. These reports use one fund and reporting period for the financial statement set.
+
+### Can an investor statement show flows, fees and ending capital?
+
+Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance.
+
+### Can I assemble a report pack for a particular audience?
+
+Yes. Report packs are organized by audience and run for a specified fund and period. Pack results can be exported as PDF or CSV for the recipient's reporting process.
+
+### Can I strike NAV for the fund and its share classes?
+
+Yes. The NAV workflow supports preliminary and final strikes and restatements. Saved NAV versions include share-class lines, and the share register shows the class results for the fund's strike.
+
+### Can I review investor statements before publishing a run?
+
+Yes. Statement runs group generation, review and publication. Each account has its own result, allowing the team to inspect a failed item and review the generated statements before publishing the run.
 
 ## Related Accounting Pages
 
@@ -1490,12 +1742,6 @@ For fund managers, allocators and administrators preparing NAV and investor repo
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Which fund and investor reports are available?
-
-Prepare NAV, capital account statements, ILPA notices, performance reports and Form PF and Form ADV answers from the accounting book.
 
 ## Request a Demo
 
@@ -1514,29 +1760,49 @@ For fund of funds managers, allocators and their administrators.
 
 ## Accounting Capabilities
 
-- Allocators (LPs): fund of funds, family offices, endowments, foundations and other institutional investors. Commitments, calls and distributions across every underlying fund, look-through to the holdings, and performance by vintage, strategy and manager.
+- Capital Accounts shows unfunded commitments by investor and fund. A fund setting chooses the historical or spot measure, so the reported unfunded amount follows the accounting basis selected for that fund.
 
-- Fund of funds look-through to the underlying holdings, on both ownership bases.
+- Valuations records dated marks for underlying fund interests, portfolio companies and priced instruments. The entry fields follow the asset: fund NAV statements carry an as-of date and source; company marks carry a valuation method and memo.
 
-- Cash projection in horizon buckets out past a year, from settled cash: expected proceeds from underlying funds, investor outflows, unfunded commitments and scheduled obligations.
+- The Fees screen calculates period management fees from the fund's saved terms. Accruals can be posted and reversed, giving the period fee a corresponding accounting entry in the fund's books.
 
-- Available liquidity including undrawn credit facilities.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-- Commitment pacing for fund of funds and allocator programs.
+- Underlying fund positions carry manager-reported marks and performance. Valuations and Look-through show position IRR, TVPI, DPI and RVPI, with support for late manager statements and the resulting restatement of reported values.
 
-- Scenarios with frozen inputs, each projected amount traced to the records behind it, and past forecasts kept.
+- Look-through shows the underlying company holdings behind fund investments. It supports as-of views, shared ownership subtrees and CSV export. Company holdings supplied by import become part of the portfolio's underlying exposure view.
 
-- Gates, lockups and notice periods tracked for every underlying fund.
+- Look-through groups underlying company exposure by geography and sector. The classifications come from linked company records, so the exposure view uses the recorded company classifications when presenting the portfolio totals.
 
-- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
+## Terms
 
-- Saved analyses that refresh on the platform and can be pulled through the API.
+LP interests and private fund interests are investments in underlying funds. Manager-reported NAV, paid-in capital, distributions and residual value supply the vocabulary for IRR, TVPI, DPI and RVPI.
 
 ## Related Notes
 
-- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
-
 - [Which columns can be added](https://1494labs.com/notes/which-columns-can-be-added/)
+
+## Questions
+
+### Can I record late manager marks and underlying-fund performance?
+
+Yes. Underlying fund positions retain manager marks and position performance, including IRR, TVPI, DPI and RVPI. The valuation process supports late quarter statements and restatement of the affected reported values.
+
+### Can I look through fund investments to the underlying companies?
+
+Yes. Look-through presents company holdings behind underlying funds, including shared ownership subtrees and as-of views. Underlying holdings arrive by CSV import, and the look-through results can be exported as CSV.
+
+### Can I group underlying company exposure by sector and geography?
+
+Yes. Look-through reports sector and geography subtotals using the linked company records. Holdings without a linked company classification display a blank classification, allowing the team to identify those records.
+
+### Can I see unfunded commitments by investor?
+
+Yes. Capital Accounts reports unfunded commitments per investor and per fund. The fund's setting selects the historical or spot measure used in that view, giving the team a defined basis for the outstanding amount.
+
+### Can an investor statement show flows, fees and ending capital?
+
+Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance.
 
 ## Related Accounting Pages
 
@@ -1547,12 +1813,6 @@ For fund of funds managers, allocators and their administrators.
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I look through underlying funds to their holdings?
-
-View the underlying holdings on both ownership bases, alongside commitments, calls and distributions for the fund interests.
 
 ## Request a Demo
 
@@ -1776,19 +2036,21 @@ For hedge fund CFOs, controllers and fund administrators.
 
 ## Accounting Capabilities
 
-- Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+- Share classes hold the terms for unitized funds. Fee classes group investors in capital-based funds. The Share Classes and Fee Terms screens record these arrangements for funds whose investors have different fee terms.
 
-- Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.
+- Fee Terms records management fee rates, calculation basis and step-down bands. The Fees screen holds period offset sources. The fee configuration supplies the terms used when the period management fee is calculated.
 
-- Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.
+- The Fees screen calculates period management fees from the fund's saved terms. Accruals can be posted and reversed, giving the period fee a corresponding accounting entry in the fund's books.
 
-- Allocations by class, series and sleeve, and investor NAV in the class currency.
+- NAV records preliminary, final and restated fund values, including share-class lines. The NAV and period-close screens show the fund's strike workflow, with class results available through the share register.
 
-- Gates, lockups and notice periods tracked for every underlying fund.
+- Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund's capital accounts.
 
-- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-- Saved analyses that refresh on the platform and can be pulled through the API.
+- Reporting groups investor statement production into runs. The team generates, reviews and publishes the statements, with failures recorded per account so an individual statement failure is isolated within the run.
+
+- NAV supports share-class and series values, with final period strikes and daily estimates. Daily NAV estimates retain their grade and are superseded by the period close, preserving the distinction between daily and closed values.
 
 ## Related Notes
 
@@ -1797,6 +2059,28 @@ For hedge fund CFOs, controllers and fund administrators.
 - [High-water marks and partial redemptions](https://1494labs.com/notes/high-water-marks-and-partial-redemptions/)
 
 - [Side pockets and investor participation](https://1494labs.com/notes/side-pockets-and-investor-participation/)
+
+## Questions
+
+### Can investors in one fund have different fee terms?
+
+Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.
+
+### Can a calculated management fee post to the books?
+
+Yes. After fee terms are configured, Fees calculates the period accrual and provides posting and reversal actions. The posted accrual records the management fee in the fund's accounting books.
+
+### Can I keep daily NAV estimates and final class NAV?
+
+Yes. NAV supports daily estimates and final period strikes with share-class and series values. Daily estimates carry an estimate grade and are superseded by the close when final NAV is struck.
+
+### Do investor capital accounts tie to general ledger capital?
+
+Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.
+
+### Can I review investor statements before publishing a run?
+
+Yes. Statement runs group generation, review and publication. Each account has its own result, allowing the team to inspect a failed item and review the generated statements before publishing the run.
 
 ## Related Accounting Pages
 
@@ -1809,12 +2093,6 @@ For hedge fund CFOs, controllers and fund administrators.
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I choose equalization or series accounting per fund?
-
-Choose either method in the terms for each fund. Investor high-water marks carry through partial redemptions, transfers and restatements.
 
 ## Product Screens
 
@@ -1859,21 +2137,51 @@ For family office finance teams accounting for holding companies, partnerships a
 
 ## Accounting Capabilities
 
-- Master-feeder, alternative investment vehicles (AIVs), SPVs, blockers, co-investments and continuation vehicles.
+- Fund setup records the legal entity, base currency and fiscal year. Closed-end funds also carry vintage, fund term, extension dates and hard cap, so the fund record contains the terms used by the accounting team.
 
-- Holding companies, family partnerships, trusts and GRATs, SMAs and funds of one, and personal accounts, with ownership traced through every layer.
+- Allocations distributes income, expenses and gains through recorded ownership. The allocation screen includes a cascade preview and confirmation for structures with multiple ownership layers, connecting fund results with the investors above them.
 
-- Blocker tax accrued at the entity and carried to each investor behind it.
+- Reporting provides the trial balance for the fund, including the balance frozen at close and its revisions. The frozen balance preserves the ledger totals used for that close and subsequent review.
 
-- Fund of funds look-through to the underlying holdings, on both ownership bases.
+- Fund Statements provides an income statement, balance sheet, statement of changes in net assets and cash-flow statement for one fund and period. The reporting screen uses the selected fund and reporting period.
 
-- Public and private equity, fixed income, loans, credit facilities on both sides, real estate and REITs, derivatives, hedge fund and private fund interests, and digital assets, in any currency.
+- Family Office shows holding companies, family partnerships, trusts, personal accounts and individuals in a household structure. Fund setup records vehicle types, including GRATs, and the structure chart displays the ownership layers.
 
-## Related Notes
+- Trust beneficiary interests are recorded against the trust. The Family Office Net Worth view displays the beneficiary information beside the trust, keeping the beneficiary interest on the recorded trust vehicle.
 
-- [ABOR and IBOR](https://1494labs.com/notes/abor-and-ibor/)
+- The household structure chart traces ownership through entities. Ownership weights come from the capital holdings, and Allocations uses those relationships to carry income through the chain, including structures with shared ownership subtrees.
 
-- [Which columns can be added](https://1494labs.com/notes/which-columns-can-be-added/)
+- Family vehicles can hold private fund interests, portfolio companies and internal fund interests. Underlying Funds and Companies record the private investments, with fund capital activity attached to the holding vehicle's investment record.
+
+- The Family Office Net Worth view groups household value by category, holder and period. It includes movement between periods and supports the household reporting package, giving family finance teams a consolidated value view.
+
+- Family Office includes household performance, principal cash flows, exposure, concentration and book-to-market reconciliation. These views sit with the household records so the team can review value, cash movement and investment exposure for the family.
+
+## Terms
+
+Holdco means holding company. Family partnerships, trusts, GRATs and personal accounts are vehicle types in the household structure. Ownership follows the recorded capital holdings.
+
+## Questions
+
+### Can I represent a household's companies, partnerships and trusts?
+
+Yes. Vehicle setup and the household structure chart support holding companies, partnerships, trusts, personal accounts and individuals. GRAT is a recorded vehicle type. The chart shows the layers represented in the household book.
+
+### Can I display beneficiary interests alongside a trust?
+
+Yes. Beneficiary interests can be recorded against a trust, and the Family Office Net Worth view displays the beneficiary information. The interests are memo records on that trust.
+
+### Can income allocations follow ownership across family entities?
+
+Yes. The structure chart and Allocations use ownership weights derived from capital holdings. Income cascades follow those relationships across the household's entities, including shared ownership subtrees.
+
+### Can I see household net worth by entity and asset category?
+
+Yes. Family Office provides consolidated net worth by category, holder and period, including movement. Household reporting packages can include the net worth results for the family's reporting process.
+
+### Can I prepare the financial statements for one fund and period?
+
+Yes. Fund Statements includes the income statement, balance sheet, statement of changes in net assets and cash-flow statement. These reports use one fund and reporting period for the financial statement set.
 
 ## Related Accounting Pages
 
@@ -1886,12 +2194,6 @@ For family office finance teams accounting for holding companies, partnerships a
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I trace ownership through family office entities?
-
-Trace ownership across holding companies, family partnerships, trusts, GRATs and other vehicles, through every layer to the investments.
 
 ## Request a Demo
 
@@ -2128,27 +2430,37 @@ Source: https://1494labs.com/liquidity-forecasting-and-commitment-pacing/
 
 For allocators and fund managers planning commitments, deployment and cash flows.
 
-## Accounting Capabilities
+## Commitments and Recorded Cash Flows
 
-- Cash projection in horizon buckets out past a year, from settled cash: expected proceeds from underlying funds, investor outflows, unfunded commitments and scheduled obligations.
+- Capital Accounts shows unfunded commitments by investor and fund. A fund setting chooses the historical or spot measure, so the reported unfunded amount follows the accounting basis selected for that fund.
 
-- Available liquidity including undrawn credit facilities.
+- Fund Statements provides an income statement, balance sheet, statement of changes in net assets and cash-flow statement for one fund and period. The reporting screen uses the selected fund and reporting period.
 
-- Commitment pacing for fund of funds and allocator programs.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-- Deployment and exit forecasts for drawdown funds, with fees and fund-level debt.
+- Underlying fund positions carry manager-reported marks and performance. Valuations and Look-through show position IRR, TVPI, DPI and RVPI, with support for late manager statements and the resulting restatement of reported values.
 
-- Cash-flow plans for evergreen, real estate and credit books: dealing, property recoveries, loan draws, interest and repayments.
+## Terms
 
-- Scenarios with frozen inputs, each projected amount traced to the records behind it, and past forecasts kept.
+Commitment pacing uses a commitment budget across vintages. Unfunded commitments, expected calls, distributions recycled and available cash describe the funding plan. The accounting coverage listed here supplies unfunded balances and recorded fund reporting.
 
-- Gates, lockups and notice periods tracked for every underlying fund.
+## Questions
 
-## Related Notes
+### Can I see unfunded commitments by investor?
 
-- [Which columns can be added](https://1494labs.com/notes/which-columns-can-be-added/)
+Yes. Capital Accounts reports unfunded commitments per investor and per fund. The fund's setting selects the historical or spot measure used in that view, giving the team a defined basis for the outstanding amount.
 
-- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
+### Can I record late manager marks and underlying-fund performance?
+
+Yes. Underlying fund positions retain manager marks and position performance, including IRR, TVPI, DPI and RVPI. The valuation process supports late quarter statements and restatement of the affected reported values.
+
+### Can I prepare the financial statements for one fund and period?
+
+Yes. Fund Statements includes the income statement, balance sheet, statement of changes in net assets and cash-flow statement. These reports use one fund and reporting period for the financial statement set.
+
+### Can an investor statement show flows, fees and ending capital?
+
+Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance.
 
 ## Related Accounting Pages
 
@@ -2159,12 +2471,6 @@ For allocators and fund managers planning commitments, deployment and cash flows
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I project cash more than a year ahead?
-
-Start with settled cash and project into horizon buckets beyond a year, including expected underlying-fund proceeds, investor outflows, unfunded commitments and scheduled obligations.
 
 ## Request a Demo
 
@@ -3706,19 +4012,49 @@ For fund managers, allocators and administrators accounting for multi-asset port
 
 ## Accounting Capabilities
 
-- Public and private equity, fixed income, loans, credit facilities on both sides, real estate and REITs, derivatives, hedge fund and private fund interests, and digital assets, in any currency.
+- Valuations records dated marks for underlying fund interests, portfolio companies and priced instruments. The entry fields follow the asset: fund NAV statements carry an as-of date and source; company marks carry a valuation method and memo.
 
-- Cap tables with financing rounds, tenders, vesting and exit waterfalls.
+- Fund Statements provides an income statement, balance sheet, statement of changes in net assets and cash-flow statement for one fund and period. The reporting screen uses the selected fund and reporting period.
 
-- Company financials and KPIs in fund reporting, with missing companies flagged.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-- Fund of funds look-through to the underlying holdings, on both ownership bases.
+- Reporting includes report packs organized by audience. A pack runs for its fund and period and can be exported as PDF or CSV, collecting the selected reports for the intended recipient.
+
+- The company Exit screen calculates whole-holding exit proceeds through liquidation preferences, participation and caps. The calculation uses the company's capital structure to allocate the exit value across the security classes.
+
+- The company valuation screen records a dated mark up or down. The company's valuation method and memo stay with the mark, giving quarter-end company valuation records a date and stated calculation approach.
+
+- Underlying fund positions carry manager-reported marks and performance. Valuations and Look-through show position IRR, TVPI, DPI and RVPI, with support for late manager statements and the resulting restatement of reported values.
+
+- Look-through shows the underlying company holdings behind fund investments. It supports as-of views, shared ownership subtrees and CSV export. Company holdings supplied by import become part of the portfolio's underlying exposure view.
 
 ## Related Notes
 
 - [ABOR and IBOR](https://1494labs.com/notes/abor-and-ibor/)
 
 - [Which columns can be added](https://1494labs.com/notes/which-columns-can-be-added/)
+
+## Questions
+
+### Can I record dated marks for different investment types?
+
+Yes. Valuations supports underlying fund NAV statements, portfolio company valuations and instrument prices. Fund statements record their as-of date and source. Company valuations record the valuation date, method and memo.
+
+### Can a company exit calculation include liquidation preferences?
+
+Yes. Company exit waterfalls calculate proceeds using liquidation preferences, participation and caps. The supported exit action covers the whole holding and allocates the exit value across the company's security classes.
+
+### Can I record late manager marks and underlying-fund performance?
+
+Yes. Underlying fund positions retain manager marks and position performance, including IRR, TVPI, DPI and RVPI. The valuation process supports late quarter statements and restatement of the affected reported values.
+
+### Can I look through fund investments to the underlying companies?
+
+Yes. Look-through presents company holdings behind underlying funds, including shared ownership subtrees and as-of views. Underlying holdings arrive by CSV import, and the look-through results can be exported as CSV.
+
+### Can I prepare the financial statements for one fund and period?
+
+Yes. Fund Statements includes the income statement, balance sheet, statement of changes in net assets and cash-flow statement. These reports use one fund and reporting period for the financial statement set.
 
 ## Related Accounting Pages
 
@@ -3731,12 +4067,6 @@ For fund managers, allocators and administrators accounting for multi-asset port
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Which asset classes can I account for?
-
-Account for public and private equity, fixed income, loans, credit facilities, real estate, REITs, derivatives, fund interests and digital assets in any currency.
 
 ## Request a Demo
 
@@ -3753,23 +4083,37 @@ Source: https://1494labs.com/portfolio-company-kpi-collection/
 
 For private equity and venture finance teams collecting company financials and reporting valuations.
 
-## Accounting Capabilities
+## Company Valuation and Fund Reporting
 
-- Financials and KPIs collected from each company by upload or a secure submission link: revenue, EBITDA, net debt and the metrics you define, checked on the way in.
+- Valuations records dated marks for underlying fund interests, portfolio companies and priced instruments. The entry fields follow the asset: fund NAV statements carry an as-of date and source; company marks carry a valuation method and memo.
 
-- Every submission and correction kept with its reporting date, currency, source and submitter.
+- Fund Statements provides an income statement, balance sheet, statement of changes in net assets and cash-flow statement for one fund and period. The reporting screen uses the selected fund and reporting period.
 
-- Collected figures shown beside each valuation mark, and the submission used recorded with it.
+- The company Exit screen calculates whole-holding exit proceeds through liquidation preferences, participation and caps. The calculation uses the company's capital structure to allocate the exit value across the security classes.
 
-- Cap tables with financing rounds, tenders, vesting and exit waterfalls.
+- The company valuation screen records a dated mark up or down. The company's valuation method and memo stay with the mark, giving quarter-end company valuation records a date and stated calculation approach.
 
-- Company financials and KPIs in fund reporting, with missing companies flagged.
+## Terms
 
-## Related Notes
+Portfolio company financials and KPIs include revenue, EBITDA, net debt and company-defined metrics. These terms describe company reporting inputs. The capabilities listed here cover company valuation and fund financial statements.
 
-- [Which columns can be added](https://1494labs.com/notes/which-columns-can-be-added/)
+## Questions
 
-- [Checking the book against outside records](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/)
+### Can I record a quarter-end portfolio company valuation?
+
+Yes. The company valuation screen records a valuation date, method and memo with the mark. It supports company marks up or down for the reporting date being recorded.
+
+### Can I record dated marks for different investment types?
+
+Yes. Valuations supports underlying fund NAV statements, portfolio company valuations and instrument prices. Fund statements record their as-of date and source. Company valuations record the valuation date, method and memo.
+
+### Can a company exit calculation include liquidation preferences?
+
+Yes. Company exit waterfalls calculate proceeds using liquidation preferences, participation and caps. The supported exit action covers the whole holding and allocates the exit value across the company's security classes.
+
+### Can I prepare the financial statements for one fund and period?
+
+Yes. Fund Statements includes the income statement, balance sheet, statement of changes in net assets and cash-flow statement. These reports use one fund and reporting period for the financial statement set.
 
 ## Related Accounting Pages
 
@@ -3782,12 +4126,6 @@ For private equity and venture finance teams collecting company financials and r
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can a portfolio company submit its financials through a secure link?
-
-A company can upload its figures or use a secure submission link. Each submission keeps its reporting date, currency, source and submitter.
 
 ## Request a Demo
 
@@ -3806,27 +4144,25 @@ For private equity managers and administrators running drawdown funds.
 
 ## Accounting Capabilities
 
-- Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+- Fund setup records the legal entity, base currency and fiscal year. Closed-end funds also carry vintage, fund term, extension dates and hard cap, so the fund record contains the terms used by the accounting team.
 
-- Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.
+- Waterfall setup records the hurdle, catch-up and distribution tiers for European or American carry arrangements. A policy preview shows the configured waterfall before it is used for the fund.
 
-- Financials and KPIs collected from each company by upload or a secure submission link: revenue, EBITDA, net debt and the metrics you define, checked on the way in.
+- Capital call notices are available as PDFs through the API. The notice carries the investor's amount, due date and wire instructions from approved bank details, for the accounting team's call-notice process.
 
-- Every submission and correction kept with its reporting date, currency, source and submitter.
+- Distribution notices are available as PDFs through the API. Each notice belongs to a recorded distribution and provides the investor-facing document for that cash event.
 
-- Collected figures shown beside each valuation mark, and the submission used recorded with it.
+- Capital Accounts shows unfunded commitments by investor and fund. A fund setting chooses the historical or spot measure, so the reported unfunded amount follows the accounting basis selected for that fund.
 
-- Cap tables with financing rounds, tenders, vesting and exit waterfalls.
+- The Fees screen calculates period management fees from the fund's saved terms. Accruals can be posted and reversed, giving the period fee a corresponding accounting entry in the fund's books.
 
-- Company financials and KPIs in fund reporting, with missing companies flagged.
+- Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund's capital accounts.
 
-- Commitment pacing for fund of funds and allocator programs.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-- Deployment and exit forecasts for drawdown funds, with fees and fund-level debt.
+- The company Exit screen calculates whole-holding exit proceeds through liquidation preferences, participation and caps. The calculation uses the company's capital structure to allocate the exit value across the security classes.
 
-- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
-
-- Saved analyses that refresh on the platform and can be pulled through the API.
+- The company valuation screen records a dated mark up or down. The company's valuation method and memo stay with the mark, giving quarter-end company valuation records a date and stated calculation approach.
 
 ## Related Notes
 
@@ -3834,7 +4170,27 @@ For private equity managers and administrators running drawdown funds.
 
 - [Management fee offsets](https://1494labs.com/notes/management-fee-offsets/)
 
-- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
+## Questions
+
+### Can I record a closed-end fund's vintage and term?
+
+Yes. Fund setup includes vintage, investment term, extension dates and hard cap for closed-end funds, alongside the legal entity, currency and fiscal year. These fields belong to the fund record.
+
+### Can I configure European and American waterfall terms?
+
+Yes. Waterfall setup supports European and American policies, with hurdle, catch-up and tier terms. The policy preview calculates the configured distribution sequence so the finance team can review the terms.
+
+### Can a company exit calculation include liquidation preferences?
+
+Yes. Company exit waterfalls calculate proceeds using liquidation preferences, participation and caps. The supported exit action covers the whole holding and allocates the exit value across the company's security classes.
+
+### Can I record a quarter-end portfolio company valuation?
+
+Yes. The company valuation screen records a valuation date, method and memo with the mark. It supports company marks up or down for the reporting date being recorded.
+
+### Can I see unfunded commitments by investor?
+
+Yes. Capital Accounts reports unfunded commitments per investor and per fund. The fund's setting selects the historical or spot measure used in that view, giving the team a defined basis for the outstanding amount.
 
 ## Related Accounting Pages
 
@@ -3847,12 +4203,6 @@ For private equity managers and administrators running drawdown funds.
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I collect portfolio-company financials and KPIs?
-
-Collect revenue, EBITDA, net debt and your defined metrics by upload or secure submission link. Reporting flags companies with missing submissions.
 
 ## Product Screens
 
@@ -3909,27 +4259,57 @@ For registered fund, RIC and BDC finance teams and their administrators.
 
 ## Accounting Capabilities
 
-- Managers (GPs): hedge funds, private equity, credit and real estate funds, registered funds, RICs and BDCs. Fund and investor accounting, fees, waterfalls and carry, investor statements and regulatory filings.
+- Fund setup records the legal entity, base currency and fiscal year. Closed-end funds also carry vintage, fund term, extension dates and hard cap, so the fund record contains the terms used by the accounting team.
 
-- Public and private equity, fixed income, loans, credit facilities on both sides, real estate and REITs, derivatives, hedge fund and private fund interests, and digital assets, in any currency.
+- Share classes hold the terms for unitized funds. Fee classes group investors in capital-based funds. The Share Classes and Fee Terms screens record these arrangements for funds whose investors have different fee terms.
 
-- Period close with a frozen trial balance and graded revisions.
+- Journal Entries shows the postings created by accounting transactions. Each journal entry retains its source type and source identifier. The entry detail displays the accounting lines and the recorded transaction source.
 
-- Official and latest-knowledge books on one ledger, with the source of every line.
+- Period Close records period opening, closing and locking events. Reopening requires permission and a recorded reason. The period's event history keeps the actions recorded for a revised close.
 
-- Cash, positions and NAV reconciled against outside files, with an exceptions worklist.
+- Period Close includes a checklist and reviewer sign-off. A period lock requires the configured sign-off, so the recorded review forms part of the close process before the books are locked.
 
-- A check that recomputes every fund's arithmetic each morning.
+- NAV records preliminary, final and restated fund values, including share-class lines. The NAV and period-close screens show the fund's strike workflow, with class results available through the share register.
 
-- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
+- Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund's capital accounts.
 
-- Saved analyses that refresh on the platform and can be pulled through the API.
+- Allocations distributes income, expenses and gains through recorded ownership. The allocation screen includes a cascade preview and confirmation for structures with multiple ownership layers, connecting fund results with the investors above them.
+
+- Reporting provides the trial balance for the fund, including the balance frozen at close and its revisions. The frozen balance preserves the ledger totals used for that close and subsequent review.
+
+- Fund Statements provides an income statement, balance sheet, statement of changes in net assets and cash-flow statement for one fund and period. The reporting screen uses the selected fund and reporting period.
+
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
+
+- Reporting includes report packs organized by audience. A pack runs for its fund and period and can be exported as PDF or CSV, collecting the selected reports for the intended recipient.
 
 ## Related Notes
 
 - [ABOR and IBOR](https://1494labs.com/notes/abor-and-ibor/)
 
 - [Checking the book against outside records](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/)
+
+## Questions
+
+### Can investors in one fund have different fee terms?
+
+Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.
+
+### Can I strike NAV for the fund and its share classes?
+
+Yes. The NAV workflow supports preliminary and final strikes and restatements. Saved NAV versions include share-class lines, and the share register shows the class results for the fund's strike.
+
+### Can reviewer sign-off gate the period lock?
+
+Yes. The close checklist and review events are recorded for the period. Locking checks that the required sign-off is present, and the reviewer's action remains in the period history.
+
+### Can I retrieve the trial balance frozen at close?
+
+Yes. Reporting includes frozen trial balances and revisions. The frozen balance keeps the ledger totals frozen at the close, so a reviewer can inspect the recorded close and the revisions attached to it.
+
+### Can I prepare the financial statements for one fund and period?
+
+Yes. Fund Statements includes the income statement, balance sheet, statement of changes in net assets and cash-flow statement. These reports use one fund and reporting period for the financial statement set.
 
 ## Related Accounting Pages
 
@@ -3942,12 +4322,6 @@ For registered fund, RIC and BDC finance teams and their administrators.
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Which registered funds does 1494 Labs serve?
-
-The platform serves registered funds, including RICs and BDCs, for fund and investor accounting, statements and regulatory filings.
 
 ## Request a Demo
 
@@ -3964,25 +4338,37 @@ Source: https://1494labs.com/secondaries-and-strip-sale-accounting/
 
 For secondaries managers and administrators buying and selling LP interests.
 
-## Accounting Capabilities
+## LP Interest Valuation and Reporting
 
-- Buy and sell LP interests, single or as a strip sale across many funds in one transaction.
+- Valuations records dated marks for underlying fund interests, portfolio companies and priced instruments. The entry fields follow the asset: fund NAV statements carry an as-of date and source; company marks carry a valuation method and memo.
 
-- Purchase-price adjustments and deferred payments at a discount, with interim flows between the reference date and closing.
+- Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund's capital accounts.
 
-- The day-one gain between price paid and fair value recognized at acquisition, and cost basis kept.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-- GP-led deals: continuation vehicles and tender offers.
+- Underlying fund positions carry manager-reported marks and performance. Valuations and Look-through show position IRR, TVPI, DPI and RVPI, with support for late manager statements and the resulting restatement of reported values.
 
-- Direct secondaries in common stock, valued with waterfall and option-pricing methods.
+## Terms
 
-- A secondaries portfolio report, and buyer and seller confirmations.
+Secondaries buyers use LP stakes or LP interests, reference date, purchase price, NAV discount and deferred consideration. GP-led and LP-led transactions include tenders, continuation vehicles and strip sales.
 
-## Related Notes
+## Questions
 
-- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
+### Can I record late manager marks and underlying-fund performance?
 
-- [European and American waterfalls](https://1494labs.com/notes/european-vs-american-waterfall/)
+Yes. Underlying fund positions retain manager marks and position performance, including IRR, TVPI, DPI and RVPI. The valuation process supports late quarter statements and restatement of the affected reported values.
+
+### Can I record dated marks for different investment types?
+
+Yes. Valuations supports underlying fund NAV statements, portfolio company valuations and instrument prices. Fund statements record their as-of date and source. Company valuations record the valuation date, method and memo.
+
+### Do investor capital accounts tie to general ledger capital?
+
+Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.
+
+### Can an investor statement show flows, fees and ending capital?
+
+Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance.
 
 ## Related Accounting Pages
 
@@ -3995,12 +4381,6 @@ For secondaries managers and administrators buying and selling LP interests.
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I account for a strip sale across many funds?
-
-Record the purchase or sale of LP interests across several funds as one strip transaction, with the interim flows, price adjustments and deferred payments.
 
 ## Request a Demo
 
@@ -4017,25 +4397,43 @@ Source: https://1494labs.com/secondaries-for-fund-of-funds/
 
 For fund of funds managers and allocators handling continuation vehicles, tenders and LP-interest sales.
 
-## Accounting Capabilities
+## Underlying Portfolio Reporting
 
-- Buy and sell LP interests, single or as a strip sale across many funds in one transaction.
+- Valuations records dated marks for underlying fund interests, portfolio companies and priced instruments. The entry fields follow the asset: fund NAV statements carry an as-of date and source; company marks carry a valuation method and memo.
 
-- Purchase-price adjustments and deferred payments at a discount, with interim flows between the reference date and closing.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-- The day-one gain between price paid and fair value recognized at acquisition, and cost basis kept.
+- Underlying fund positions carry manager-reported marks and performance. Valuations and Look-through show position IRR, TVPI, DPI and RVPI, with support for late manager statements and the resulting restatement of reported values.
 
-- GP-led deals: continuation vehicles and tender offers.
+- Look-through shows the underlying company holdings behind fund investments. It supports as-of views, shared ownership subtrees and CSV export. Company holdings supplied by import become part of the portfolio's underlying exposure view.
 
-- A secondaries portfolio report, and buyer and seller confirmations.
+- Look-through groups underlying company exposure by geography and sector. The classifications come from linked company records, so the exposure view uses the recorded company classifications when presenting the portfolio totals.
 
-- Fund of funds look-through to the underlying holdings, on both ownership bases.
+## Terms
 
-## Related Notes
+GP-led and LP-led secondaries include tender offers and continuation vehicles. Reference-date NAV, purchase price and interim cash flows describe the transaction; underlying manager marks and look-through describe the resulting portfolio.
 
-- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
+## Questions
 
-- [European and American waterfalls](https://1494labs.com/notes/european-vs-american-waterfall/)
+### Can I look through fund investments to the underlying companies?
+
+Yes. Look-through presents company holdings behind underlying funds, including shared ownership subtrees and as-of views. Underlying holdings arrive by CSV import, and the look-through results can be exported as CSV.
+
+### Can I group underlying company exposure by sector and geography?
+
+Yes. Look-through reports sector and geography subtotals using the linked company records. Holdings without a linked company classification display a blank classification, allowing the team to identify those records.
+
+### Can I record late manager marks and underlying-fund performance?
+
+Yes. Underlying fund positions retain manager marks and position performance, including IRR, TVPI, DPI and RVPI. The valuation process supports late quarter statements and restatement of the affected reported values.
+
+### Can I record dated marks for different investment types?
+
+Yes. Valuations supports underlying fund NAV statements, portfolio company valuations and instrument prices. Fund statements record their as-of date and source. Company valuations record the valuation date, method and memo.
+
+### Can an investor statement show flows, fees and ending capital?
+
+Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance.
 
 ## Related Accounting Pages
 
@@ -4048,12 +4446,6 @@ For fund of funds managers and allocators handling continuation vehicles, tender
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I account for continuation vehicles and tender offers?
-
-Account for GP-led continuation vehicles and tender offers alongside purchases and sales of underlying LP interests.
 
 ## Request a Demo
 
@@ -4070,19 +4462,41 @@ Source: https://1494labs.com/side-pocket-accounting/
 
 For hedge fund managers and administrators accounting for side-pocket participation.
 
-## Accounting Capabilities
+## Class NAV and Investor Accounting
 
-- Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.
+- Share classes hold the terms for unitized funds. Fee classes group investors in capital-based funds. The Share Classes and Fee Terms screens record these arrangements for funds whose investors have different fee terms.
 
-- Side pockets that split dealing NAV from total NAV.
+- NAV records preliminary, final and restated fund values, including share-class lines. The NAV and period-close screens show the fund's strike workflow, with class results available through the share register.
+
+- Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund's capital accounts.
+
+- NAV supports share-class and series values, with final period strikes and daily estimates. Daily NAV estimates retain their grade and are superseded by the period close, preserving the distinction between daily and closed values.
+
+## Terms
+
+Side pockets are also called illiquid or designated investments and special situations. SP shares or classes describe participation. Dealing NAV is the value used for subscriptions and redemptions.
 
 ## Related Notes
 
 - [Side pockets and investor participation](https://1494labs.com/notes/side-pockets-and-investor-participation/)
 
-- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
+## Questions
 
-- [High-water marks and partial redemptions](https://1494labs.com/notes/high-water-marks-and-partial-redemptions/)
+### Can I keep daily NAV estimates and final class NAV?
+
+Yes. NAV supports daily estimates and final period strikes with share-class and series values. Daily estimates carry an estimate grade and are superseded by the close when final NAV is struck.
+
+### Can investors in one fund have different fee terms?
+
+Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.
+
+### Can I strike NAV for the fund and its share classes?
+
+Yes. The NAV workflow supports preliminary and final strikes and restatements. Saved NAV versions include share-class lines, and the share register shows the class results for the fund's strike.
+
+### Do investor capital accounts tie to general ledger capital?
+
+Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.
 
 ## Related Accounting Pages
 
@@ -4095,12 +4509,6 @@ For hedge fund managers and administrators accounting for side-pocket participat
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I separate dealing NAV from total NAV for side pockets?
-
-Keep the side pocket in total NAV while separating it from the NAV used for dealing.
 
 ## Request a Demo
 
@@ -4117,19 +4525,41 @@ Source: https://1494labs.com/waterfall-and-carried-interest-accounting/
 
 For private equity managers and administrators calculating distributions and carry.
 
-## Accounting Capabilities
+## Waterfall Terms and Allocations
 
-- Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.
+- Waterfall setup records the hurdle, catch-up and distribution tiers for European or American carry arrangements. A policy preview shows the configured waterfall before it is used for the fund.
 
-- Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+- Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund's capital accounts.
+
+- Allocations distributes income, expenses and gains through recorded ownership. The allocation screen includes a cascade preview and confirmation for structures with multiple ownership layers, connecting fund results with the investors above them.
+
+- The company Exit screen calculates whole-holding exit proceeds through liquidation preferences, participation and caps. The calculation uses the company's capital structure to allocate the exit value across the security classes.
+
+## Terms
+
+Carried interest, preferred return, hurdle, catch-up and distribution tiers describe fund waterfall terms. European and American policies are available in waterfall setup. Company exit waterfalls use liquidation preferences, participation and caps.
 
 ## Related Notes
 
 - [European and American waterfalls](https://1494labs.com/notes/european-vs-american-waterfall/)
 
-- [Management fee offsets](https://1494labs.com/notes/management-fee-offsets/)
+## Questions
 
-- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
+### Can I configure European and American waterfall terms?
+
+Yes. Waterfall setup supports European and American policies, with hurdle, catch-up and tier terms. The policy preview calculates the configured distribution sequence so the finance team can review the terms.
+
+### Can allocations follow several ownership layers?
+
+Yes. Allocations supports period allocations and ownership cascades. The cascade dialog provides a preview and confirmation, and income, expenses and gains follow the recorded ownership chain to the participating investors.
+
+### Do investor capital accounts tie to general ledger capital?
+
+Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.
+
+### Can a company exit calculation include liquidation preferences?
+
+Yes. Company exit waterfalls calculate proceeds using liquidation preferences, participation and caps. The supported exit action covers the whole holding and allocates the exit value across the company's security classes.
 
 ## Related Accounting Pages
 
@@ -4142,12 +4572,6 @@ For private equity managers and administrators calculating distributions and car
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I account for carry, clawback and vesting?
-
-The fund's fee and waterfall terms cover carried interest, clawback and vesting, alongside management and incentive fees and offsets.
 
 ## Request a Demo
 

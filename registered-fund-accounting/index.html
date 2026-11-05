@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Registered Fund Accounting · 1494 Labs</title>
-<meta name="description" content="For registered fund, RIC and BDC finance teams and their administrators. Managers (GPs): hedge funds, private equity, credit and real estate funds, registered funds, RICs and BDCs. Fund and investor accounting, fees, waterfalls and carry, investor statements and regulatory filings.">
+<meta name="description" content="For registered fund, RIC and BDC finance teams and their administrators. Accounting Capabilities.">
 <link rel="canonical" href="https://1494labs.com/registered-fund-accounting/">
 <link rel="stylesheet" href="/assets/notes.d2937031.css">
 <link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
@@ -20,36 +20,21 @@
 <meta property="og:url" content="https://1494labs.com/registered-fund-accounting/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="Registered Fund Accounting">
-<meta property="og:description" content="For registered fund, RIC and BDC finance teams and their administrators. Managers (GPs): hedge funds, private equity, credit and real estate funds, registered funds, RICs and BDCs. Fund and investor accounting, fees, waterfalls and carry, investor statements and regulatory filings.">
+<meta property="og:description" content="For registered fund, RIC and BDC finance teams and their administrators. Accounting Capabilities.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Registered Fund Accounting">
-<meta name="twitter:description" content="For registered fund, RIC and BDC finance teams and their administrators. Managers (GPs): hedge funds, private equity, credit and real estate funds, registered funds, RICs and BDCs. Fund and investor accounting, fees, waterfalls and carry, investor statements and regulatory filings.">
+<meta name="twitter:description" content="For registered fund, RIC and BDC finance teams and their administrators. Accounting Capabilities.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 <meta name="twitter:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 
 
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Which registered funds does 1494 Labs serve?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The platform serves registered funds, including RICs and BDCs, for fund and investor accounting, statements and regulatory filings."
-      }
-    }
-  ]
-}
-</script>
+
 <link rel="alternate" type="text/markdown" href="https://1494labs.com/registered-fund-accounting.md" title="Markdown">
 </head>
 <body class="buyer-page">
@@ -92,26 +77,88 @@
 <h1>Registered Fund Accounting</h1>
 <p class="standfirst">For registered fund, RIC and BDC finance teams and their administrators.</p>
 <article>
+<!-- buyer-capabilities:start -->
 <h2>Accounting Capabilities</h2>
 <ul>
-<li>Managers (GPs): hedge funds, private equity, credit and real estate funds, registered funds, RICs and BDCs. Fund and investor accounting, fees, waterfalls and carry, investor statements and regulatory filings.</li>
-<li>Public and private equity, fixed income, loans, credit facilities on both sides, real estate and REITs, derivatives, hedge fund and private fund interests, and digital assets, in any currency.</li>
-<li>Period close with a frozen trial balance and graded revisions.</li>
-<li>Official and latest-knowledge books on one ledger, with the source of every line.</li>
-<li>Cash, positions and NAV reconciled against outside files, with an exceptions worklist.</li>
-<li>A check that recomputes every fund&#x27;s arithmetic each morning.</li>
-<li>NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.</li>
-<li>Saved analyses that refresh on the platform and can be pulled through the API.</li>
+<li data-use-case="fund-setup.create-fund">Fund setup records the legal entity, base currency and fiscal year. Closed-end funds also carry vintage, fund term, extension dates and hard cap, so the fund record contains the terms used by the accounting team.</li>
+<li data-use-case="fund-setup.share-classes-fee-terms">Share classes hold the terms for unitized funds. Fee classes group investors in capital-based funds. The Share Classes and Fee Terms screens record these arrangements for funds whose investors have different fee terms.</li>
+<li data-use-case="period-close.je-from-every-source">Journal Entries shows the postings created by accounting transactions. Each journal entry retains its source type and source identifier. The entry detail displays the accounting lines and the recorded transaction source.</li>
+<li data-use-case="period-close.open-close-lock-reopen">Period Close records period opening, closing and locking events. Reopening requires permission and a recorded reason. The period&#x27;s event history keeps the actions recorded for a revised close.</li>
+<li data-use-case="period-close.checklist-review-signoff">Period Close includes a checklist and reviewer sign-off. A period lock requires the configured sign-off, so the recorded review forms part of the close process before the books are locked.</li>
+<li data-use-case="period-close.nav-per-fund-class">NAV records preliminary, final and restated fund values, including share-class lines. The NAV and period-close screens show the fund&#x27;s strike workflow, with class results available through the share register.</li>
+<li data-use-case="period-close.capital-accounts-tie-gl">Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund&#x27;s capital accounts.</li>
+<li data-use-case="period-close.allocation-up-chain">Allocations distributes income, expenses and gains through recorded ownership. The allocation screen includes a cascade preview and confirmation for structures with multiple ownership layers, connecting fund results with the investors above them.</li>
+<li data-use-case="period-close.trial-balance">Reporting provides the trial balance for the fund, including the balance frozen at close and its revisions. The frozen balance preserves the ledger totals used for that close and subsequent review.</li>
+<li data-use-case="reporting.statements-single-fund-period">Fund Statements provides an income statement, balance sheet, statement of changes in net assets and cash-flow statement for one fund and period. The reporting screen uses the selected fund and reporting period.</li>
+<li data-use-case="reporting.investor-capital-account-statement">Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor&#x27;s recorded account and the fund&#x27;s reporting period.</li>
+<li data-use-case="reporting.report-packs">Reporting includes report packs organized by audience. A pack runs for its fund and period and can be exported as PDF or CSV, collecting the selected reports for the intended recipient.</li>
 </ul>
 <h2>Related Notes</h2>
 <ul class="pagelinks">
-<li>
-<a href="/notes/abor-and-ibor/">ABOR and IBOR</a>
-</li>
-<li>
-<a href="/notes/a-wrong-number-that-agrees-with-itself/">Checking the book against outside records</a>
-</li>
+<li><a href="/notes/abor-and-ibor/">ABOR and IBOR</a></li>
+<li><a href="/notes/a-wrong-number-that-agrees-with-itself/">Checking the book against outside records</a></li>
 </ul>
+<section id="buyer-questions"><h2>Questions</h2>
+<h3>Can investors in one fund have different fee terms?</h3>
+<p>Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.</p>
+<h3>Can I strike NAV for the fund and its share classes?</h3>
+<p>Yes. The NAV workflow supports preliminary and final strikes and restatements. Saved NAV versions include share-class lines, and the share register shows the class results for the fund&#x27;s strike.</p>
+<h3>Can reviewer sign-off gate the period lock?</h3>
+<p>Yes. The close checklist and review events are recorded for the period. Locking checks that the required sign-off is present, and the reviewer&#x27;s action remains in the period history.</p>
+<h3>Can I retrieve the trial balance frozen at close?</h3>
+<p>Yes. Reporting includes frozen trial balances and revisions. The frozen balance keeps the ledger totals frozen at the close, so a reviewer can inspect the recorded close and the revisions attached to it.</p>
+<h3>Can I prepare the financial statements for one fund and period?</h3>
+<p>Yes. Fund Statements includes the income statement, balance sheet, statement of changes in net assets and cash-flow statement. These reports use one fund and reporting period for the financial statement set.</p>
+</section>
+<script type="application/ld+json" data-buyer-faq>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can investors in one fund have different fee terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I strike NAV for the fund and its share classes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The NAV workflow supports preliminary and final strikes and restatements. Saved NAV versions include share-class lines, and the share register shows the class results for the fund's strike."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can reviewer sign-off gate the period lock?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The close checklist and review events are recorded for the period. Locking checks that the required sign-off is present, and the reviewer's action remains in the period history."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I retrieve the trial balance frozen at close?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Reporting includes frozen trial balances and revisions. The frozen balance keeps the ledger totals frozen at the close, so a reviewer can inspect the recorded close and the revisions attached to it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I prepare the financial statements for one fund and period?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Fund Statements includes the income statement, balance sheet, statement of changes in net assets and cash-flow statement. These reports use one fund and reporting period for the financial statement set."
+      }
+    }
+  ]
+}
+</script>
+<!-- buyer-capabilities:end -->
 <h2>Related Accounting Pages</h2>
 <ul class="pagelinks">
 <li>
@@ -130,9 +177,6 @@
 <a href="/capabilities/">Capabilities and Status</a>
 </li>
 </ul>
-<h2>Questions</h2>
-<h3>Which registered funds does 1494 Labs serve?</h3>
-<p>The platform serves registered funds, including RICs and BDCs, for fund and investor accounting, statements and regulatory filings.</p>
 <div class="endcta">
 <h2>Request a Demo</h2>
 <p>Tell us which funds, structures and accounting terms you need to review.</p>

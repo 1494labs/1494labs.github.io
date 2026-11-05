@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Side Pocket Accounting · 1494 Labs</title>
-<meta name="description" content="For hedge fund managers and administrators accounting for side-pocket participation. Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.">
+<meta name="description" content="For hedge fund managers and administrators accounting for side-pocket participation. Class NAV and Investor Accounting.">
 <link rel="canonical" href="https://1494labs.com/side-pocket-accounting/">
 <link rel="stylesheet" href="/assets/notes.d2937031.css">
 <link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
@@ -20,36 +20,21 @@
 <meta property="og:url" content="https://1494labs.com/side-pocket-accounting/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="Side Pocket Accounting">
-<meta property="og:description" content="For hedge fund managers and administrators accounting for side-pocket participation. Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.">
+<meta property="og:description" content="For hedge fund managers and administrators accounting for side-pocket participation. Class NAV and Investor Accounting.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Side Pocket Accounting">
-<meta name="twitter:description" content="For hedge fund managers and administrators accounting for side-pocket participation. Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.">
+<meta name="twitter:description" content="For hedge fund managers and administrators accounting for side-pocket participation. Class NAV and Investor Accounting.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 <meta name="twitter:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 
 
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can I separate dealing NAV from total NAV for side pockets?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Keep the side pocket in total NAV while separating it from the NAV used for dealing."
-      }
-    }
-  ]
-}
-</script>
+
 <link rel="alternate" type="text/markdown" href="https://1494labs.com/side-pocket-accounting.md" title="Markdown">
 </head>
 <body class="buyer-page">
@@ -92,23 +77,71 @@
 <h1>Side Pocket Accounting</h1>
 <p class="standfirst">For hedge fund managers and administrators accounting for side-pocket participation.</p>
 <article>
-<h2>Accounting Capabilities</h2>
+<!-- buyer-capabilities:start -->
+<h2>Class NAV and Investor Accounting</h2>
 <ul>
-<li>Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.</li>
-<li>Side pockets that split dealing NAV from total NAV.</li>
+<li data-use-case="fund-setup.share-classes-fee-terms">Share classes hold the terms for unitized funds. Fee classes group investors in capital-based funds. The Share Classes and Fee Terms screens record these arrangements for funds whose investors have different fee terms.</li>
+<li data-use-case="period-close.nav-per-fund-class">NAV records preliminary, final and restated fund values, including share-class lines. The NAV and period-close screens show the fund&#x27;s strike workflow, with class results available through the share register.</li>
+<li data-use-case="period-close.capital-accounts-tie-gl">Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund&#x27;s capital accounts.</li>
+<li data-use-case="hedge.nav-per-class-series">NAV supports share-class and series values, with final period strikes and daily estimates. Daily NAV estimates retain their grade and are superseded by the period close, preserving the distinction between daily and closed values.</li>
 </ul>
+<h2>Terms</h2>
+<p>Side pockets are also called illiquid or designated investments and special situations. SP shares or classes describe participation. Dealing NAV is the value used for subscriptions and redemptions.</p>
 <h2>Related Notes</h2>
 <ul class="pagelinks">
-<li>
-<a href="/notes/side-pockets-and-investor-participation/">Side pockets and investor participation</a>
-</li>
-<li>
-<a href="/notes/what-an-opening-balance-has-to-carry/">What an opening balance has to carry</a>
-</li>
-<li>
-<a href="/notes/high-water-marks-and-partial-redemptions/">High-water marks and partial redemptions</a>
-</li>
+<li><a href="/notes/side-pockets-and-investor-participation/">Side pockets and investor participation</a></li>
 </ul>
+<section id="buyer-questions"><h2>Questions</h2>
+<h3>Can I keep daily NAV estimates and final class NAV?</h3>
+<p>Yes. NAV supports daily estimates and final period strikes with share-class and series values. Daily estimates carry an estimate grade and are superseded by the close when final NAV is struck.</p>
+<h3>Can investors in one fund have different fee terms?</h3>
+<p>Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.</p>
+<h3>Can I strike NAV for the fund and its share classes?</h3>
+<p>Yes. The NAV workflow supports preliminary and final strikes and restatements. Saved NAV versions include share-class lines, and the share register shows the class results for the fund&#x27;s strike.</p>
+<h3>Do investor capital accounts tie to general ledger capital?</h3>
+<p>Yes. The accounting checks compare investor capital balances with the fund&#x27;s general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.</p>
+</section>
+<script type="application/ld+json" data-buyer-faq>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I keep daily NAV estimates and final class NAV?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. NAV supports daily estimates and final period strikes with share-class and series values. Daily estimates carry an estimate grade and are superseded by the close when final NAV is struck."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can investors in one fund have different fee terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I strike NAV for the fund and its share classes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The NAV workflow supports preliminary and final strikes and restatements. Saved NAV versions include share-class lines, and the share register shows the class results for the fund's strike."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do investor capital accounts tie to general ledger capital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book."
+      }
+    }
+  ]
+}
+</script>
+<!-- buyer-capabilities:end -->
 <h2>Related Accounting Pages</h2>
 <ul class="pagelinks">
 <li>
@@ -127,9 +160,6 @@
 <a href="/capabilities/">Capabilities and Status</a>
 </li>
 </ul>
-<h2>Questions</h2>
-<h3>Can I separate dealing NAV from total NAV for side pockets?</h3>
-<p>Keep the side pocket in total NAV while separating it from the NAV used for dealing.</p>
 <div class="endcta">
 <h2>Request a Demo</h2>
 <p>Tell us which funds, structures and accounting terms you need to review.</p>

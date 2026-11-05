@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Liquidity Forecasting and Commitment Pacing · 1494 Labs</title>
-<meta name="description" content="For allocators and fund managers planning commitments, deployment and cash flows. Cash projection in horizon buckets out past a year, from settled cash: expected proceeds from underlying funds, investor outflows, unfunded commitments and scheduled obligations.">
+<meta name="description" content="For allocators and fund managers planning commitments, deployment and cash flows. Commitments and Recorded Cash Flows.">
 <link rel="canonical" href="https://1494labs.com/liquidity-forecasting-and-commitment-pacing/">
 <link rel="stylesheet" href="/assets/notes.d2937031.css">
 <link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
@@ -20,36 +20,21 @@
 <meta property="og:url" content="https://1494labs.com/liquidity-forecasting-and-commitment-pacing/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="Liquidity Forecasting and Commitment Pacing">
-<meta property="og:description" content="For allocators and fund managers planning commitments, deployment and cash flows. Cash projection in horizon buckets out past a year, from settled cash: expected proceeds from underlying funds, investor outflows, unfunded commitments and scheduled obligations.">
+<meta property="og:description" content="For allocators and fund managers planning commitments, deployment and cash flows. Commitments and Recorded Cash Flows.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Liquidity Forecasting and Commitment Pacing">
-<meta name="twitter:description" content="For allocators and fund managers planning commitments, deployment and cash flows. Cash projection in horizon buckets out past a year, from settled cash: expected proceeds from underlying funds, investor outflows, unfunded commitments and scheduled obligations.">
+<meta name="twitter:description" content="For allocators and fund managers planning commitments, deployment and cash flows. Commitments and Recorded Cash Flows.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 <meta name="twitter:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 
 
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can I project cash more than a year ahead?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Start with settled cash and project into horizon buckets beyond a year, including expected underlying-fund proceeds, investor outflows, unfunded commitments and scheduled obligations."
-      }
-    }
-  ]
-}
-</script>
+
 <link rel="alternate" type="text/markdown" href="https://1494labs.com/liquidity-forecasting-and-commitment-pacing.md" title="Markdown">
 </head>
 <body class="buyer-page">
@@ -92,25 +77,67 @@
 <h1>Liquidity Forecasting and Commitment Pacing</h1>
 <p class="standfirst">For allocators and fund managers planning commitments, deployment and cash flows.</p>
 <article>
-<h2>Accounting Capabilities</h2>
+<!-- buyer-capabilities:start -->
+<h2>Commitments and Recorded Cash Flows</h2>
 <ul>
-<li>Cash projection in horizon buckets out past a year, from settled cash: expected proceeds from underlying funds, investor outflows, unfunded commitments and scheduled obligations.</li>
-<li>Available liquidity including undrawn credit facilities.</li>
-<li>Commitment pacing for fund of funds and allocator programs.</li>
-<li>Deployment and exit forecasts for drawdown funds, with fees and fund-level debt.</li>
-<li>Cash-flow plans for evergreen, real estate and credit books: dealing, property recoveries, loan draws, interest and repayments.</li>
-<li>Scenarios with frozen inputs, each projected amount traced to the records behind it, and past forecasts kept.</li>
-<li>Gates, lockups and notice periods tracked for every underlying fund.</li>
+<li data-use-case="capital-activity.unfunded-tracking">Capital Accounts shows unfunded commitments by investor and fund. A fund setting chooses the historical or spot measure, so the reported unfunded amount follows the accounting basis selected for that fund.</li>
+<li data-use-case="reporting.statements-single-fund-period">Fund Statements provides an income statement, balance sheet, statement of changes in net assets and cash-flow statement for one fund and period. The reporting screen uses the selected fund and reporting period.</li>
+<li data-use-case="reporting.investor-capital-account-statement">Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor&#x27;s recorded account and the fund&#x27;s reporting period.</li>
+<li data-use-case="fof.underlying-marks-performance">Underlying fund positions carry manager-reported marks and performance. Valuations and Look-through show position IRR, TVPI, DPI and RVPI, with support for late manager statements and the resulting restatement of reported values.</li>
 </ul>
-<h2>Related Notes</h2>
-<ul class="pagelinks">
-<li>
-<a href="/notes/which-columns-can-be-added/">Which columns can be added</a>
-</li>
-<li>
-<a href="/notes/what-an-opening-balance-has-to-carry/">What an opening balance has to carry</a>
-</li>
-</ul>
+<h2>Terms</h2>
+<p>Commitment pacing uses a commitment budget across vintages. Unfunded commitments, expected calls, distributions recycled and available cash describe the funding plan. The accounting coverage listed here supplies unfunded balances and recorded fund reporting.</p>
+<section id="buyer-questions"><h2>Questions</h2>
+<h3>Can I see unfunded commitments by investor?</h3>
+<p>Yes. Capital Accounts reports unfunded commitments per investor and per fund. The fund&#x27;s setting selects the historical or spot measure used in that view, giving the team a defined basis for the outstanding amount.</p>
+<h3>Can I record late manager marks and underlying-fund performance?</h3>
+<p>Yes. Underlying fund positions retain manager marks and position performance, including IRR, TVPI, DPI and RVPI. The valuation process supports late quarter statements and restatement of the affected reported values.</p>
+<h3>Can I prepare the financial statements for one fund and period?</h3>
+<p>Yes. Fund Statements includes the income statement, balance sheet, statement of changes in net assets and cash-flow statement. These reports use one fund and reporting period for the financial statement set.</p>
+<h3>Can an investor statement show flows, fees and ending capital?</h3>
+<p>Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period&#x27;s movement for the investor account and its closing balance.</p>
+</section>
+<script type="application/ld+json" data-buyer-faq>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I see unfunded commitments by investor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Capital Accounts reports unfunded commitments per investor and per fund. The fund's setting selects the historical or spot measure used in that view, giving the team a defined basis for the outstanding amount."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I record late manager marks and underlying-fund performance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Underlying fund positions retain manager marks and position performance, including IRR, TVPI, DPI and RVPI. The valuation process supports late quarter statements and restatement of the affected reported values."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I prepare the financial statements for one fund and period?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Fund Statements includes the income statement, balance sheet, statement of changes in net assets and cash-flow statement. These reports use one fund and reporting period for the financial statement set."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an investor statement show flows, fees and ending capital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance."
+      }
+    }
+  ]
+}
+</script>
+<!-- buyer-capabilities:end -->
 <h2>Related Accounting Pages</h2>
 <ul class="pagelinks">
 <li>
@@ -126,9 +153,6 @@
 <a href="/capabilities/">Capabilities and Status</a>
 </li>
 </ul>
-<h2>Questions</h2>
-<h3>Can I project cash more than a year ahead?</h3>
-<p>Start with settled cash and project into horizon buckets beyond a year, including expected underlying-fund proceeds, investor outflows, unfunded commitments and scheduled obligations.</p>
 <div class="endcta">
 <h2>Request a Demo</h2>
 <p>Tell us which funds, structures and accounting terms you need to review.</p>

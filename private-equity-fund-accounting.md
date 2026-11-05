@@ -6,27 +6,25 @@ For private equity managers and administrators running drawdown funds.
 
 ## Accounting Capabilities
 
-- Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+- Fund setup records the legal entity, base currency and fiscal year. Closed-end funds also carry vintage, fund term, extension dates and hard cap, so the fund record contains the terms used by the accounting team.
 
-- Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.
+- Waterfall setup records the hurdle, catch-up and distribution tiers for European or American carry arrangements. A policy preview shows the configured waterfall before it is used for the fund.
 
-- Financials and KPIs collected from each company by upload or a secure submission link: revenue, EBITDA, net debt and the metrics you define, checked on the way in.
+- Capital call notices are available as PDFs through the API. The notice carries the investor's amount, due date and wire instructions from approved bank details, for the accounting team's call-notice process.
 
-- Every submission and correction kept with its reporting date, currency, source and submitter.
+- Distribution notices are available as PDFs through the API. Each notice belongs to a recorded distribution and provides the investor-facing document for that cash event.
 
-- Collected figures shown beside each valuation mark, and the submission used recorded with it.
+- Capital Accounts shows unfunded commitments by investor and fund. A fund setting chooses the historical or spot measure, so the reported unfunded amount follows the accounting basis selected for that fund.
 
-- Cap tables with financing rounds, tenders, vesting and exit waterfalls.
+- The Fees screen calculates period management fees from the fund's saved terms. Accruals can be posted and reversed, giving the period fee a corresponding accounting entry in the fund's books.
 
-- Company financials and KPIs in fund reporting, with missing companies flagged.
+- Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund's capital accounts.
 
-- Commitment pacing for fund of funds and allocator programs.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-- Deployment and exit forecasts for drawdown funds, with fees and fund-level debt.
+- The company Exit screen calculates whole-holding exit proceeds through liquidation preferences, participation and caps. The calculation uses the company's capital structure to allocate the exit value across the security classes.
 
-- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
-
-- Saved analyses that refresh on the platform and can be pulled through the API.
+- The company valuation screen records a dated mark up or down. The company's valuation method and memo stay with the mark, giving quarter-end company valuation records a date and stated calculation approach.
 
 ## Related Notes
 
@@ -34,7 +32,27 @@ For private equity managers and administrators running drawdown funds.
 
 - [Management fee offsets](https://1494labs.com/notes/management-fee-offsets/)
 
-- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
+## Questions
+
+### Can I record a closed-end fund's vintage and term?
+
+Yes. Fund setup includes vintage, investment term, extension dates and hard cap for closed-end funds, alongside the legal entity, currency and fiscal year. These fields belong to the fund record.
+
+### Can I configure European and American waterfall terms?
+
+Yes. Waterfall setup supports European and American policies, with hurdle, catch-up and tier terms. The policy preview calculates the configured distribution sequence so the finance team can review the terms.
+
+### Can a company exit calculation include liquidation preferences?
+
+Yes. Company exit waterfalls calculate proceeds using liquidation preferences, participation and caps. The supported exit action covers the whole holding and allocates the exit value across the company's security classes.
+
+### Can I record a quarter-end portfolio company valuation?
+
+Yes. The company valuation screen records a valuation date, method and memo with the mark. It supports company marks up or down for the reporting date being recorded.
+
+### Can I see unfunded commitments by investor?
+
+Yes. Capital Accounts reports unfunded commitments per investor and per fund. The fund's setting selects the historical or spot measure used in that view, giving the team a defined basis for the outstanding amount.
 
 ## Related Accounting Pages
 
@@ -47,12 +65,6 @@ For private equity managers and administrators running drawdown funds.
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can I collect portfolio-company financials and KPIs?
-
-Collect revenue, EBITDA, net debt and your defined metrics by upload or secure submission link. Reporting flags companies with missing submissions.
 
 ## Product Screens
 

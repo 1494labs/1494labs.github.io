@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Capital Call and Distribution Software · 1494 Labs</title>
-<meta name="description" content="For fund managers, allocators and administrators tracking investor commitments and cash flows. Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.">
+<meta name="description" content="For fund managers, allocators and administrators tracking investor commitments and cash flows. Accounting Capabilities.">
 <link rel="canonical" href="https://1494labs.com/capital-call-and-distribution-software/">
 <link rel="stylesheet" href="/assets/notes.d2937031.css">
 <link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
@@ -20,36 +20,21 @@
 <meta property="og:url" content="https://1494labs.com/capital-call-and-distribution-software/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="Capital Call and Distribution Software">
-<meta property="og:description" content="For fund managers, allocators and administrators tracking investor commitments and cash flows. Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.">
+<meta property="og:description" content="For fund managers, allocators and administrators tracking investor commitments and cash flows. Accounting Capabilities.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Capital Call and Distribution Software">
-<meta name="twitter:description" content="For fund managers, allocators and administrators tracking investor commitments and cash flows. Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.">
+<meta name="twitter:description" content="For fund managers, allocators and administrators tracking investor commitments and cash flows. Accounting Capabilities.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 <meta name="twitter:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 
 
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can I track recallable capital alongside calls and distributions?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Keep recallable capital with the investor's commitments, calls and distribution records, and prepare ILPA notices from the book."
-      }
-    }
-  ]
-}
-</script>
+
 <link rel="alternate" type="text/markdown" href="https://1494labs.com/capital-call-and-distribution-software.md" title="Markdown">
 </head>
 <body class="buyer-page">
@@ -92,21 +77,79 @@
 <h1>Capital Call and Distribution Software</h1>
 <p class="standfirst">For fund managers, allocators and administrators tracking investor commitments and cash flows.</p>
 <article>
+<!-- buyer-capabilities:start -->
 <h2>Accounting Capabilities</h2>
 <ul>
-<li>Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.</li>
-<li>NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.</li>
-<li>Commitment pacing for fund of funds and allocator programs.</li>
+<li data-use-case="investor.bank-account-details">Investor bank details have a change-and-approval workflow. Account details are masked in the investor screen; revealing them requires permission. Approved details supply the bank information used in notices.</li>
+<li data-use-case="capital-activity.call-notices">Capital call notices are available as PDFs through the API. The notice carries the investor&#x27;s amount, due date and wire instructions from approved bank details, for the accounting team&#x27;s call-notice process.</li>
+<li data-use-case="capital-activity.distribution-notices">Distribution notices are available as PDFs through the API. Each notice belongs to a recorded distribution and provides the investor-facing document for that cash event.</li>
+<li data-use-case="capital-activity.unfunded-tracking">Capital Accounts shows unfunded commitments by investor and fund. A fund setting chooses the historical or spot measure, so the reported unfunded amount follows the accounting basis selected for that fund.</li>
+<li data-use-case="period-close.capital-accounts-tie-gl">Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund&#x27;s capital accounts.</li>
+<li data-use-case="reporting.investor-capital-account-statement">Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor&#x27;s recorded account and the fund&#x27;s reporting period.</li>
 </ul>
-<h2>Related Notes</h2>
-<ul class="pagelinks">
-<li>
-<a href="/notes/what-an-opening-balance-has-to-carry/">What an opening balance has to carry</a>
-</li>
-<li>
-<a href="/notes/european-vs-american-waterfall/">European and American waterfalls</a>
-</li>
-</ul>
+<h2>Terms</h2>
+<p>Commitment budget, called capital and unfunded commitment describe an investor&#x27;s funding position. Recallable capital and distributions recycled describe returned amounts that the fund terms permit to be called again.</p>
+<section id="buyer-questions"><h2>Questions</h2>
+<h3>Can I retrieve a capital call notice through the API?</h3>
+<p>Yes. The capital call notice endpoint returns a PDF with the investor&#x27;s amount, due date and wire instructions. Wire instructions come from approved bank details. The notice is retrieved through the API.</p>
+<h3>Can I retrieve an investor distribution notice?</h3>
+<p>Yes. The distribution notice endpoint returns the PDF for a recorded distribution. It provides the investor-facing notice for that distribution through the API.</p>
+<h3>Can I see unfunded commitments by investor?</h3>
+<p>Yes. Capital Accounts reports unfunded commitments per investor and per fund. The fund&#x27;s setting selects the historical or spot measure used in that view, giving the team a defined basis for the outstanding amount.</p>
+<h3>Are changes to investor bank details approved?</h3>
+<p>Yes. Bank-detail changes require a second person&#x27;s approval. The investor screen masks the stored details, and revealing them requires a separate permission. Notices use the approved bank details.</p>
+<h3>Do investor capital accounts tie to general ledger capital?</h3>
+<p>Yes. The accounting checks compare investor capital balances with the fund&#x27;s general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.</p>
+</section>
+<script type="application/ld+json" data-buyer-faq>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I retrieve a capital call notice through the API?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The capital call notice endpoint returns a PDF with the investor's amount, due date and wire instructions. Wire instructions come from approved bank details. The notice is retrieved through the API."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I retrieve an investor distribution notice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The distribution notice endpoint returns the PDF for a recorded distribution. It provides the investor-facing notice for that distribution through the API."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I see unfunded commitments by investor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Capital Accounts reports unfunded commitments per investor and per fund. The fund's setting selects the historical or spot measure used in that view, giving the team a defined basis for the outstanding amount."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are changes to investor bank details approved?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Bank-detail changes require a second person's approval. The investor screen masks the stored details, and revealing them requires a separate permission. Notices use the approved bank details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do investor capital accounts tie to general ledger capital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book."
+      }
+    }
+  ]
+}
+</script>
+<!-- buyer-capabilities:end -->
 <h2>Related Accounting Pages</h2>
 <ul class="pagelinks">
 <li>
@@ -122,9 +165,6 @@
 <a href="/capabilities/">Capabilities and Status</a>
 </li>
 </ul>
-<h2>Questions</h2>
-<h3>Can I track recallable capital alongside calls and distributions?</h3>
-<p>Keep recallable capital with the investor&#x27;s commitments, calls and distribution records, and prepare ILPA notices from the book.</p>
 <div class="endcta">
 <h2>Request a Demo</h2>
 <p>Tell us which funds, structures and accounting terms you need to review.</p>

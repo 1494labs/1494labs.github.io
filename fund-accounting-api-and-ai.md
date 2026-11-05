@@ -4,21 +4,37 @@ Source: https://1494labs.com/fund-accounting-api-and-ai/
 
 For fund managers, allocators and administrators connecting their book to other systems and AI assistants.
 
-## Accounting Capabilities
+## Accounting Records and Notice Endpoints
 
-- Everything on screen is also in the public API.
+- Capital call notices are available as PDFs through the API. The notice carries the investor's amount, due date and wire instructions from approved bank details, for the accounting team's call-notice process.
 
-- AI assistants read the book through MCP.
+- Distribution notices are available as PDFs through the API. Each notice belongs to a recorded distribution and provides the investor-facing document for that cash event.
 
-- AI reads statements and LPAs, and a person confirms each result before it posts.
+- Journal Entries shows the postings created by accounting transactions. Each journal entry retains its source type and source identifier. The entry detail displays the accounting lines and the recorded transaction source.
 
-- Saved analyses that refresh on the platform and can be pulled through the API.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-## Related Notes
+## Terms
 
-- [Which columns can be added](https://1494labs.com/notes/which-columns-can-be-added/)
+Public API refers to programmatic access to accounting records. MCP connects AI assistants to tools and data. The accounting endpoints listed here cover notice PDFs, journal sources and investor statements.
 
-- [Checking the book against outside records](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/)
+## Questions
+
+### Can I retrieve a capital call notice through the API?
+
+Yes. The capital call notice endpoint returns a PDF with the investor's amount, due date and wire instructions. Wire instructions come from approved bank details. The notice is retrieved through the API.
+
+### Can I retrieve an investor distribution notice?
+
+Yes. The distribution notice endpoint returns the PDF for a recorded distribution. It provides the investor-facing notice for that distribution through the API.
+
+### Can I identify the transaction behind a journal entry?
+
+Yes. Each journal entry records a source type and source identifier. Journal Entries displays the posting detail and source label; underlying distribution entries also have a direct link to the source transaction.
+
+### Can an investor statement show flows, fees and ending capital?
+
+Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance.
 
 ## Related Accounting Pages
 
@@ -33,12 +49,6 @@ For fund managers, allocators and administrators connecting their book to other 
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Questions
-
-### Can AI assistants read the accounting book?
-
-Connect an AI assistant through MCP to read the book. The assistant connection guide covers workspace access and permissions.
 
 ## Request a Demo
 

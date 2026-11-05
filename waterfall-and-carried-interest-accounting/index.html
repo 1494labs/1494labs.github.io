@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Waterfall and Carried Interest Accounting · 1494 Labs</title>
-<meta name="description" content="For private equity managers and administrators calculating distributions and carry. Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.">
+<meta name="description" content="For private equity managers and administrators calculating distributions and carry. Waterfall Terms and Allocations.">
 <link rel="canonical" href="https://1494labs.com/waterfall-and-carried-interest-accounting/">
 <link rel="stylesheet" href="/assets/notes.d2937031.css">
 <link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
@@ -20,36 +20,21 @@
 <meta property="og:url" content="https://1494labs.com/waterfall-and-carried-interest-accounting/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="Waterfall and Carried Interest Accounting">
-<meta property="og:description" content="For private equity managers and administrators calculating distributions and carry. Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.">
+<meta property="og:description" content="For private equity managers and administrators calculating distributions and carry. Waterfall Terms and Allocations.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Waterfall and Carried Interest Accounting">
-<meta name="twitter:description" content="For private equity managers and administrators calculating distributions and carry. Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.">
+<meta name="twitter:description" content="For private equity managers and administrators calculating distributions and carry. Waterfall Terms and Allocations.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 <meta name="twitter:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 
 
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can I account for carry, clawback and vesting?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The fund's fee and waterfall terms cover carried interest, clawback and vesting, alongside management and incentive fees and offsets."
-      }
-    }
-  ]
-}
-</script>
+
 <link rel="alternate" type="text/markdown" href="https://1494labs.com/waterfall-and-carried-interest-accounting.md" title="Markdown">
 </head>
 <body class="buyer-page">
@@ -92,23 +77,71 @@
 <h1>Waterfall and Carried Interest Accounting</h1>
 <p class="standfirst">For private equity managers and administrators calculating distributions and carry.</p>
 <article>
-<h2>Accounting Capabilities</h2>
+<!-- buyer-capabilities:start -->
+<h2>Waterfall Terms and Allocations</h2>
 <ul>
-<li>Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.</li>
-<li>Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.</li>
+<li data-use-case="fund-setup.carry-waterfall-terms">Waterfall setup records the hurdle, catch-up and distribution tiers for European or American carry arrangements. A policy preview shows the configured waterfall before it is used for the fund.</li>
+<li data-use-case="period-close.capital-accounts-tie-gl">Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund&#x27;s capital accounts.</li>
+<li data-use-case="period-close.allocation-up-chain">Allocations distributes income, expenses and gains through recorded ownership. The allocation screen includes a cascade preview and confirmation for structures with multiple ownership layers, connecting fund results with the investors above them.</li>
+<li data-use-case="venture.exit-waterfall-preferences">The company Exit screen calculates whole-holding exit proceeds through liquidation preferences, participation and caps. The calculation uses the company&#x27;s capital structure to allocate the exit value across the security classes.</li>
 </ul>
+<h2>Terms</h2>
+<p>Carried interest, preferred return, hurdle, catch-up and distribution tiers describe fund waterfall terms. European and American policies are available in waterfall setup. Company exit waterfalls use liquidation preferences, participation and caps.</p>
 <h2>Related Notes</h2>
 <ul class="pagelinks">
-<li>
-<a href="/notes/european-vs-american-waterfall/">European and American waterfalls</a>
-</li>
-<li>
-<a href="/notes/management-fee-offsets/">Management fee offsets</a>
-</li>
-<li>
-<a href="/notes/what-an-opening-balance-has-to-carry/">What an opening balance has to carry</a>
-</li>
+<li><a href="/notes/european-vs-american-waterfall/">European and American waterfalls</a></li>
 </ul>
+<section id="buyer-questions"><h2>Questions</h2>
+<h3>Can I configure European and American waterfall terms?</h3>
+<p>Yes. Waterfall setup supports European and American policies, with hurdle, catch-up and tier terms. The policy preview calculates the configured distribution sequence so the finance team can review the terms.</p>
+<h3>Can allocations follow several ownership layers?</h3>
+<p>Yes. Allocations supports period allocations and ownership cascades. The cascade dialog provides a preview and confirmation, and income, expenses and gains follow the recorded ownership chain to the participating investors.</p>
+<h3>Do investor capital accounts tie to general ledger capital?</h3>
+<p>Yes. The accounting checks compare investor capital balances with the fund&#x27;s general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.</p>
+<h3>Can a company exit calculation include liquidation preferences?</h3>
+<p>Yes. Company exit waterfalls calculate proceeds using liquidation preferences, participation and caps. The supported exit action covers the whole holding and allocates the exit value across the company&#x27;s security classes.</p>
+</section>
+<script type="application/ld+json" data-buyer-faq>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I configure European and American waterfall terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Waterfall setup supports European and American policies, with hurdle, catch-up and tier terms. The policy preview calculates the configured distribution sequence so the finance team can review the terms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can allocations follow several ownership layers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Allocations supports period allocations and ownership cascades. The cascade dialog provides a preview and confirmation, and income, expenses and gains follow the recorded ownership chain to the participating investors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do investor capital accounts tie to general ledger capital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a company exit calculation include liquidation preferences?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Company exit waterfalls calculate proceeds using liquidation preferences, participation and caps. The supported exit action covers the whole holding and allocates the exit value across the company's security classes."
+      }
+    }
+  ]
+}
+</script>
+<!-- buyer-capabilities:end -->
 <h2>Related Accounting Pages</h2>
 <ul class="pagelinks">
 <li>
@@ -127,9 +160,6 @@
 <a href="/capabilities/">Capabilities and Status</a>
 </li>
 </ul>
-<h2>Questions</h2>
-<h3>Can I account for carry, clawback and vesting?</h3>
-<p>The fund&#x27;s fee and waterfall terms cover carried interest, clawback and vesting, alongside management and incentive fees and offsets.</p>
 <div class="endcta">
 <h2>Request a Demo</h2>
 <p>Tell us which funds, structures and accounting terms you need to review.</p>

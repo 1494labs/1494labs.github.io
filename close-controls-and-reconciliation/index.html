@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Close, Controls and Reconciliation · 1494 Labs</title>
-<meta name="description" content="For controllers and administrators closing funds and reviewing reconciliation exceptions. Period close with a frozen trial balance and graded revisions.">
+<meta name="description" content="For controllers and administrators closing funds and reviewing reconciliation exceptions. Period Close and Ledger Controls.">
 <link rel="canonical" href="https://1494labs.com/close-controls-and-reconciliation/">
 <link rel="stylesheet" href="/assets/notes.d2937031.css">
 <link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
@@ -20,36 +20,21 @@
 <meta property="og:url" content="https://1494labs.com/close-controls-and-reconciliation/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="Close, Controls and Reconciliation">
-<meta property="og:description" content="For controllers and administrators closing funds and reviewing reconciliation exceptions. Period close with a frozen trial balance and graded revisions.">
+<meta property="og:description" content="For controllers and administrators closing funds and reviewing reconciliation exceptions. Period Close and Ledger Controls.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Close, Controls and Reconciliation">
-<meta name="twitter:description" content="For controllers and administrators closing funds and reviewing reconciliation exceptions. Period close with a frozen trial balance and graded revisions.">
+<meta name="twitter:description" content="For controllers and administrators closing funds and reviewing reconciliation exceptions. Period Close and Ledger Controls.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 <meta name="twitter:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 
 
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can I reconcile NAV, cash and positions against outside files?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Compare cash, positions and NAV with outside files, then review differences in the exceptions worklist."
-      }
-    }
-  ]
-}
-</script>
+
 <link rel="alternate" type="text/markdown" href="https://1494labs.com/close-controls-and-reconciliation.md" title="Markdown">
 </head>
 <body class="buyer-page">
@@ -92,25 +77,84 @@
 <h1>Close, Controls and Reconciliation</h1>
 <p class="standfirst">For controllers and administrators closing funds and reviewing reconciliation exceptions.</p>
 <article>
-<h2>Accounting Capabilities</h2>
+<!-- buyer-capabilities:start -->
+<h2>Period Close and Ledger Controls</h2>
 <ul>
-<li>Period close with a frozen trial balance and graded revisions.</li>
-<li>Official and latest-knowledge books on one ledger, with the source of every line.</li>
-<li>Cash, positions and NAV reconciled against outside files, with an exceptions worklist.</li>
-<li>A check that recomputes every fund&#x27;s arithmetic each morning.</li>
+<li data-use-case="period-close.je-from-every-source">Journal Entries shows the postings created by accounting transactions. Each journal entry retains its source type and source identifier. The entry detail displays the accounting lines and the recorded transaction source.</li>
+<li data-use-case="period-close.open-close-lock-reopen">Period Close records period opening, closing and locking events. Reopening requires permission and a recorded reason. The period&#x27;s event history keeps the actions recorded for a revised close.</li>
+<li data-use-case="period-close.checklist-review-signoff">Period Close includes a checklist and reviewer sign-off. A period lock requires the configured sign-off, so the recorded review forms part of the close process before the books are locked.</li>
+<li data-use-case="period-close.nav-per-fund-class">NAV records preliminary, final and restated fund values, including share-class lines. The NAV and period-close screens show the fund&#x27;s strike workflow, with class results available through the share register.</li>
+<li data-use-case="period-close.capital-accounts-tie-gl">Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund&#x27;s capital accounts.</li>
+<li data-use-case="period-close.allocation-up-chain">Allocations distributes income, expenses and gains through recorded ownership. The allocation screen includes a cascade preview and confirmation for structures with multiple ownership layers, connecting fund results with the investors above them.</li>
+<li data-use-case="period-close.trial-balance">Reporting provides the trial balance for the fund, including the balance frozen at close and its revisions. The frozen balance preserves the ledger totals used for that close and subsequent review.</li>
 </ul>
 <h2>Related Notes</h2>
 <ul class="pagelinks">
-<li>
-<a href="/notes/a-wrong-number-that-agrees-with-itself/">Checking the book against outside records</a>
-</li>
-<li>
-<a href="/notes/abor-and-ibor/">ABOR and IBOR</a>
-</li>
-<li>
-<a href="/notes/converting-from-a-fund-administrator/">Converting from a fund administrator</a>
-</li>
+<li><a href="/notes/a-wrong-number-that-agrees-with-itself/">Checking the book against outside records</a></li>
+<li><a href="/notes/abor-and-ibor/">ABOR and IBOR</a></li>
+<li><a href="/notes/converting-from-a-fund-administrator/">Converting from a fund administrator</a></li>
 </ul>
+<section id="buyer-questions"><h2>Questions</h2>
+<h3>Can I identify the transaction behind a journal entry?</h3>
+<p>Yes. Each journal entry records a source type and source identifier. Journal Entries displays the posting detail and source label; underlying distribution entries also have a direct link to the source transaction.</p>
+<h3>Can a closed period be reopened with a recorded reason?</h3>
+<p>Yes. Period Close supports a governed reopen action for users with reopen permission. The reason is recorded with the event, and the period history retains the closing, locking and reopening actions.</p>
+<h3>Can reviewer sign-off gate the period lock?</h3>
+<p>Yes. The close checklist and review events are recorded for the period. Locking checks that the required sign-off is present, and the reviewer&#x27;s action remains in the period history.</p>
+<h3>Do investor capital accounts tie to general ledger capital?</h3>
+<p>Yes. The accounting checks compare investor capital balances with the fund&#x27;s general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.</p>
+<h3>Can I retrieve the trial balance frozen at close?</h3>
+<p>Yes. Reporting includes frozen trial balances and revisions. The frozen balance keeps the ledger totals frozen at the close, so a reviewer can inspect the recorded close and the revisions attached to it.</p>
+</section>
+<script type="application/ld+json" data-buyer-faq>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I identify the transaction behind a journal entry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Each journal entry records a source type and source identifier. Journal Entries displays the posting detail and source label; underlying distribution entries also have a direct link to the source transaction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a closed period be reopened with a recorded reason?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Period Close supports a governed reopen action for users with reopen permission. The reason is recorded with the event, and the period history retains the closing, locking and reopening actions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can reviewer sign-off gate the period lock?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The close checklist and review events are recorded for the period. Locking checks that the required sign-off is present, and the reviewer's action remains in the period history."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do investor capital accounts tie to general ledger capital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I retrieve the trial balance frozen at close?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Reporting includes frozen trial balances and revisions. The frozen balance keeps the ledger totals frozen at the close, so a reviewer can inspect the recorded close and the revisions attached to it."
+      }
+    }
+  ]
+}
+</script>
+<!-- buyer-capabilities:end -->
 <h2>Related Accounting Pages</h2>
 <ul class="pagelinks">
 <li>
@@ -129,9 +173,6 @@
 <a href="/capabilities/">Capabilities and Status</a>
 </li>
 </ul>
-<h2>Questions</h2>
-<h3>Can I reconcile NAV, cash and positions against outside files?</h3>
-<p>Compare cash, positions and NAV with outside files, then review differences in the exceptions worklist.</p>
 <div class="endcta">
 <h2>Request a Demo</h2>
 <p>Tell us which funds, structures and accounting terms you need to review.</p>
