@@ -1859,9 +1859,13 @@ For family office finance teams accounting for holding companies, partnerships a
 
 ## Accounting Capabilities
 
+- Master-feeder, alternative investment vehicles (AIVs), SPVs, blockers, co-investments and continuation vehicles.
+
 - Holding companies, family partnerships, trusts and GRATs, SMAs and funds of one, and personal accounts, with ownership traced through every layer.
 
 - Blocker tax accrued at the entity and carried to each investor behind it.
+
+- Fund of funds look-through to the underlying holdings, on both ownership bases.
 
 - Public and private equity, fixed income, loans, credit facilities on both sides, real estate and REITs, derivatives, hedge fund and private fund interests, and digital assets, in any currency.
 
