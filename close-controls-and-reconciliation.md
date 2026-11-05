@@ -38,7 +38,7 @@ For controllers and administrators closing funds and reviewing reconciliation ex
 
 ### Can I reconcile NAV, cash and positions against outside files?
 
-Cash, positions and NAV reconciled against outside files, with an exceptions worklist.
+Compare cash, positions and NAV with outside files, then review differences in the exceptions worklist.
 
 ## Request a Demo
 

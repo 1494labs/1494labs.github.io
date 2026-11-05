@@ -32,7 +32,7 @@ For fund managers, allocators and administrators accounting for investors throug
 
 ### Does 1494 Labs handle blocker corporations?
 
-Blocker tax accrued at the entity and carried to each investor behind it.
+Accrue tax in the blocker corporation and carry each investor's share through the structure.
 
 ## Request a Demo
 

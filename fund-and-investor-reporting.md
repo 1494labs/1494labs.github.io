@@ -34,7 +34,7 @@ For fund managers, allocators and administrators preparing NAV and investor repo
 
 ### Which fund and investor reports are available?
 
-NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
+Prepare NAV, capital account statements, ILPA notices, performance reports and Form PF and Form ADV answers from the accounting book.
 
 ## Request a Demo
 

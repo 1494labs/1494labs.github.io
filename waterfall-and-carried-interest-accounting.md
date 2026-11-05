@@ -34,7 +34,7 @@ For private equity managers and administrators calculating distributions and car
 
 ### Can I account for carry, clawback and vesting?
 
-Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.
+The fund's fee and waterfall terms cover carried interest, clawback and vesting, alongside management and incentive fees and offsets.
 
 ## Request a Demo
 

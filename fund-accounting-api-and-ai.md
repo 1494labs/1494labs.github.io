@@ -38,7 +38,7 @@ For fund managers, allocators and administrators connecting their book to other 
 
 ### Can AI assistants read the accounting book?
 
-AI assistants read the book through MCP.
+Connect an AI assistant through MCP to read the book. The assistant connection guide covers workspace access and permissions.
 
 ## Request a Demo
 

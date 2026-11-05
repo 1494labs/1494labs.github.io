@@ -42,7 +42,7 @@ For endowment and foundation investment teams and their administrators.
 
 ### Can I plan commitments across an allocator program?
 
-Commitment pacing for fund of funds and allocator programs.
+Use commitment pacing for the allocator program and project cash from underlying funds alongside investor outflows and unfunded commitments.
 
 ## Request a Demo
 

@@ -40,7 +40,7 @@ For secondaries managers and administrators buying and selling LP interests.
 
 ### Can I account for a strip sale across many funds?
 
-Buy and sell LP interests, single or as a strip sale across many funds in one transaction.
+Record the purchase or sale of LP interests across several funds as one strip transaction, with the interim flows, price adjustments and deferred payments.
 
 ## Request a Demo
 

@@ -52,7 +52,7 @@ For private equity managers and administrators running drawdown funds.
 
 ### Can I collect portfolio-company financials and KPIs?
 
-Financials and KPIs collected from each company by upload or a secure submission link: revenue, EBITDA, net debt and the metrics you define, checked on the way in.
+Collect revenue, EBITDA, net debt and your defined metrics by upload or secure submission link. Reporting flags companies with missing submissions.
 
 ## Product Screens
 

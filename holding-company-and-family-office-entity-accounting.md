@@ -38,7 +38,7 @@ For family office finance teams accounting for holding companies, partnerships a
 
 ### Can I trace ownership through family office entities?
 
-Holding companies, family partnerships, trusts and GRATs, SMAs and funds of one, and personal accounts, with ownership traced through every layer.
+Trace ownership across holding companies, family partnerships, trusts, GRATs and other vehicles, through every layer to the investments.
 
 ## Request a Demo
 

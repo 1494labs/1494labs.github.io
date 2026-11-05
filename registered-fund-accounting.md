@@ -44,7 +44,7 @@ For registered fund, RIC and BDC finance teams and their administrators.
 
 ### Which registered funds does 1494 Labs serve?
 
-Managers (GPs): hedge funds, private equity, credit and real estate funds, registered funds, RICs and BDCs. Fund and investor accounting, fees, waterfalls and carry, investor statements and regulatory filings.
+The platform serves registered funds, including RICs and BDCs, for fund and investor accounting, statements and regulatory filings.
 
 ## Request a Demo
 

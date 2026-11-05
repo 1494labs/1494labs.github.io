@@ -36,7 +36,7 @@ For fund managers, allocators and administrators accounting for multi-asset port
 
 ### Which asset classes can I account for?
 
-Public and private equity, fixed income, loans, credit facilities on both sides, real estate and REITs, derivatives, hedge fund and private fund interests, and digital assets, in any currency.
+Account for public and private equity, fixed income, loans, credit facilities, real estate, REITs, derivatives, fund interests and digital assets in any currency.
 
 ## Request a Demo
 

@@ -40,7 +40,7 @@ For fund of funds managers and allocators handling continuation vehicles, tender
 
 ### Can I account for continuation vehicles and tender offers?
 
-GP-led deals: continuation vehicles and tender offers.
+Account for GP-led continuation vehicles and tender offers alongside purchases and sales of underlying LP interests.
 
 ## Request a Demo
 

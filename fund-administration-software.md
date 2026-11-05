@@ -52,7 +52,7 @@ For fund administrators accounting for many funds with different terms.
 
 ### Can an administrator run funds with different terms?
 
-Administrators: many funds with different terms on one platform, and reconciliation against bank, custodian and administrator files.
+Each fund carries its terms for investor accounting, fees and waterfalls. Administrators can reconcile the books against bank, custodian and administrator files.
 
 ## Product Screens
 

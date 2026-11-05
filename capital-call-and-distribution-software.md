@@ -32,7 +32,7 @@ For fund managers, allocators and administrators tracking investor commitments a
 
 ### Can I track recallable capital alongside calls and distributions?
 
-Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+Keep recallable capital with the investor's commitments, calls and distribution records, and prepare ILPA notices from the book.
 
 ## Request a Demo
 

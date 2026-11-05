@@ -40,7 +40,7 @@ For allocators and fund managers planning commitments, deployment and cash flows
 
 ### Can I project cash more than a year ahead?
 
-Cash projection in horizon buckets out past a year, from settled cash: expected proceeds from underlying funds, investor outflows, unfunded commitments and scheduled obligations.
+Start with settled cash and project into horizon buckets beyond a year, including expected underlying-fund proceeds, investor outflows, unfunded commitments and scheduled obligations.
 
 ## Request a Demo
 

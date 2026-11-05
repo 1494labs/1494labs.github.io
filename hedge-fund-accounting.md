@@ -44,7 +44,7 @@ For hedge fund CFOs, controllers and fund administrators.
 
 ### Can I choose equalization or series accounting per fund?
 
-Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.
+Choose either method in the terms for each fund. Investor high-water marks carry through partial redemptions, transfers and restatements.
 
 ## Product Screens
 

@@ -38,7 +38,7 @@ For private equity and venture finance teams collecting company financials and r
 
 ### Can a portfolio company submit its financials through a secure link?
 
-Financials and KPIs collected from each company by upload or a secure submission link: revenue, EBITDA, net debt and the metrics you define, checked on the way in.
+A company can upload its figures or use a secure submission link. Each submission keeps its reporting date, currency, source and submitter.
 
 ## Request a Demo
 

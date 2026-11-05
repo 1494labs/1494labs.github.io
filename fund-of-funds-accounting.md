@@ -44,7 +44,7 @@ For fund of funds managers, allocators and their administrators.
 
 ### Can I look through underlying funds to their holdings?
 
-Fund of funds look-through to the underlying holdings, on both ownership bases.
+View the underlying holdings on both ownership bases, alongside commitments, calls and distributions for the fund interests.
 
 ## Request a Demo
 

@@ -34,7 +34,7 @@ For hedge fund managers and administrators with investors entering at different 
 
 ### Can I carry investor high-water marks through transfers and redemptions?
 
-Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.
+The investor's high-water mark carries through partial redemptions, transfers and restatements under the fund's selected method.
 
 ## Request a Demo
 

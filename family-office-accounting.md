@@ -42,7 +42,7 @@ For family office controllers and principals accounting for investments across e
 
 ### Can I trace ownership through trusts and holding companies?
 
-Holding companies, family partnerships, trusts and GRATs, SMAs and funds of one, and personal accounts, with ownership traced through every layer.
+Follow ownership through holding companies, partnerships, trusts and GRATs to the investments beneath them.
 
 ## Product Screens
 

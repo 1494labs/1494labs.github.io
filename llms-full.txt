@@ -161,7 +161,7 @@ For fund managers, allocators and administrators accounting for investors throug
 
 ### Does 1494 Labs handle blocker corporations?
 
-Blocker tax accrued at the entity and carried to each investor behind it.
+Accrue tax in the blocker corporation and carry each investor's share through the structure.
 
 ## Request a Demo
 
@@ -297,7 +297,7 @@ For fund managers, allocators and administrators tracking investor commitments a
 
 ### Can I track recallable capital alongside calls and distributions?
 
-Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+Keep recallable capital with the investor's commitments, calls and distribution records, and prepare ILPA notices from the book.
 
 ## Request a Demo
 
@@ -348,7 +348,7 @@ For controllers and administrators closing funds and reviewing reconciliation ex
 
 ### Can I reconcile NAV, cash and positions against outside files?
 
-Cash, positions and NAV reconciled against outside files, with an exceptions worklist.
+Compare cash, positions and NAV with outside files, then review differences in the exceptions worklist.
 
 ## Request a Demo
 
@@ -937,7 +937,7 @@ For endowment and foundation investment teams and their administrators.
 
 ### Can I plan commitments across an allocator program?
 
-Commitment pacing for fund of funds and allocator programs.
+Use commitment pacing for the allocator program and project cash from underlying funds alongside investor outflows and unfunded commitments.
 
 ## Request a Demo
 
@@ -984,7 +984,7 @@ For hedge fund managers and administrators with investors entering at different 
 
 ### Can I carry investor high-water marks through transfers and redemptions?
 
-Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.
+The investor's high-water mark carries through partial redemptions, transfers and restatements under the fund's selected method.
 
 ## Request a Demo
 
@@ -1039,7 +1039,7 @@ For family office controllers and principals accounting for investments across e
 
 ### Can I trace ownership through trusts and holding companies?
 
-Holding companies, family partnerships, trusts and GRATs, SMAs and funds of one, and personal accounts, with ownership traced through every layer.
+Follow ownership through holding companies, partnerships, trusts and GRATs to the investments beneath them.
 
 ## Product Screens
 
@@ -1107,7 +1107,7 @@ For fund managers, allocators and administrators connecting their book to other 
 
 ### Can AI assistants read the accounting book?
 
-AI assistants read the book through MCP.
+Connect an AI assistant through MCP to read the book. The assistant connection guide covers workspace access and permissions.
 
 ## Request a Demo
 
@@ -1170,7 +1170,7 @@ For fund managers, allocators and fund administrators.
 
 ### Which investor transactions can I account for?
 
-Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+Record investor subscriptions and redemptions, transfers, commitments, calls, distributions and recallable capital.
 
 ## Product Screens
 
@@ -1418,7 +1418,7 @@ For fund administrators accounting for many funds with different terms.
 
 ### Can an administrator run funds with different terms?
 
-Administrators: many funds with different terms on one platform, and reconciliation against bank, custodian and administrator files.
+Each fund carries its terms for investor accounting, fees and waterfalls. Administrators can reconcile the books against bank, custodian and administrator files.
 
 ## Product Screens
 
@@ -1495,7 +1495,7 @@ For fund managers, allocators and administrators preparing NAV and investor repo
 
 ### Which fund and investor reports are available?
 
-NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
+Prepare NAV, capital account statements, ILPA notices, performance reports and Form PF and Form ADV answers from the accounting book.
 
 ## Request a Demo
 
@@ -1552,7 +1552,7 @@ For fund of funds managers, allocators and their administrators.
 
 ### Can I look through underlying funds to their holdings?
 
-Fund of funds look-through to the underlying holdings, on both ownership bases.
+View the underlying holdings on both ownership bases, alongside commitments, calls and distributions for the fund interests.
 
 ## Request a Demo
 
@@ -1814,7 +1814,7 @@ For hedge fund CFOs, controllers and fund administrators.
 
 ### Can I choose equalization or series accounting per fund?
 
-Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.
+Choose either method in the terms for each fund. Investor high-water marks carry through partial redemptions, transfers and restatements.
 
 ## Product Screens
 
@@ -1891,7 +1891,7 @@ For family office finance teams accounting for holding companies, partnerships a
 
 ### Can I trace ownership through family office entities?
 
-Holding companies, family partnerships, trusts and GRATs, SMAs and funds of one, and personal accounts, with ownership traced through every layer.
+Trace ownership across holding companies, family partnerships, trusts, GRATs and other vehicles, through every layer to the investments.
 
 ## Request a Demo
 
@@ -2164,7 +2164,7 @@ For allocators and fund managers planning commitments, deployment and cash flows
 
 ### Can I project cash more than a year ahead?
 
-Cash projection in horizon buckets out past a year, from settled cash: expected proceeds from underlying funds, investor outflows, unfunded commitments and scheduled obligations.
+Start with settled cash and project into horizon buckets beyond a year, including expected underlying-fund proceeds, investor outflows, unfunded commitments and scheduled obligations.
 
 ## Request a Demo
 
@@ -3736,7 +3736,7 @@ For fund managers, allocators and administrators accounting for multi-asset port
 
 ### Which asset classes can I account for?
 
-Public and private equity, fixed income, loans, credit facilities on both sides, real estate and REITs, derivatives, hedge fund and private fund interests, and digital assets, in any currency.
+Account for public and private equity, fixed income, loans, credit facilities, real estate, REITs, derivatives, fund interests and digital assets in any currency.
 
 ## Request a Demo
 
@@ -3787,7 +3787,7 @@ For private equity and venture finance teams collecting company financials and r
 
 ### Can a portfolio company submit its financials through a secure link?
 
-Financials and KPIs collected from each company by upload or a secure submission link: revenue, EBITDA, net debt and the metrics you define, checked on the way in.
+A company can upload its figures or use a secure submission link. Each submission keeps its reporting date, currency, source and submitter.
 
 ## Request a Demo
 
@@ -3852,7 +3852,7 @@ For private equity managers and administrators running drawdown funds.
 
 ### Can I collect portfolio-company financials and KPIs?
 
-Financials and KPIs collected from each company by upload or a secure submission link: revenue, EBITDA, net debt and the metrics you define, checked on the way in.
+Collect revenue, EBITDA, net debt and your defined metrics by upload or secure submission link. Reporting flags companies with missing submissions.
 
 ## Product Screens
 
@@ -3947,7 +3947,7 @@ For registered fund, RIC and BDC finance teams and their administrators.
 
 ### Which registered funds does 1494 Labs serve?
 
-Managers (GPs): hedge funds, private equity, credit and real estate funds, registered funds, RICs and BDCs. Fund and investor accounting, fees, waterfalls and carry, investor statements and regulatory filings.
+The platform serves registered funds, including RICs and BDCs, for fund and investor accounting, statements and regulatory filings.
 
 ## Request a Demo
 
@@ -4000,7 +4000,7 @@ For secondaries managers and administrators buying and selling LP interests.
 
 ### Can I account for a strip sale across many funds?
 
-Buy and sell LP interests, single or as a strip sale across many funds in one transaction.
+Record the purchase or sale of LP interests across several funds as one strip transaction, with the interim flows, price adjustments and deferred payments.
 
 ## Request a Demo
 
@@ -4053,7 +4053,7 @@ For fund of funds managers and allocators handling continuation vehicles, tender
 
 ### Can I account for continuation vehicles and tender offers?
 
-GP-led deals: continuation vehicles and tender offers.
+Account for GP-led continuation vehicles and tender offers alongside purchases and sales of underlying LP interests.
 
 ## Request a Demo
 
@@ -4100,7 +4100,7 @@ For hedge fund managers and administrators accounting for side-pocket participat
 
 ### Can I separate dealing NAV from total NAV for side pockets?
 
-Side pockets that split dealing NAV from total NAV.
+Keep the side pocket in total NAV while separating it from the NAV used for dealing.
 
 ## Request a Demo
 
@@ -4147,7 +4147,7 @@ For private equity managers and administrators calculating distributions and car
 
 ### Can I account for carry, clawback and vesting?
 
-Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.
+The fund's fee and waterfall terms cover carried interest, clawback and vesting, alongside management and incentive fees and offsets.
 
 ## Request a Demo
 

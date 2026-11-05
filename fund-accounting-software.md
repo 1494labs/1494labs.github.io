@@ -50,7 +50,7 @@ For fund managers, allocators and fund administrators.
 
 ### Which investor transactions can I account for?
 
-Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+Record investor subscriptions and redemptions, transfers, commitments, calls, distributions and recallable capital.
 
 ## Product Screens
 
