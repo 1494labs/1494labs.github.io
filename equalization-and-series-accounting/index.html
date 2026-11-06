@@ -78,7 +78,12 @@
 <p class="standfirst">For hedge fund managers and administrators with investors entering at different dates.</p>
 <article>
 <!-- buyer-capabilities:start -->
-<h2>Class Records, NAV and Fees</h2>
+<h2>Equalization, Series and High-Water Marks</h2>
+<ul>
+<li data-reviewed-use-case="hedge.equalization-series">Equalization factor or series accounting is chosen per fund. Equalization records the adjustment linked to an investor&#x27;s subscription. Series accounting keeps subscription cohorts and their performance-fee history, with series consolidation and a preview of the consolidation amounts.</li>
+<li data-reviewed-use-case="hedge.hwm-hurdle-incentive-fee">High-water marks are carried per investor and per series. A partial redemption preserves the continuing investor&#x27;s fee history; transfers carry the relevant mark and loss history. The incentive-fee calculation uses the configured hurdle and high-water mark.</li>
+</ul>
+<h2>Supporting Accounting</h2>
 <ul>
 <li data-use-case="fund-setup.share-classes-fee-terms">Share classes hold the terms for unitized funds. Fee classes group investors in capital-based funds. The Share Classes and Fee Terms screens record these arrangements for funds whose investors have different fee terms.</li>
 <li data-use-case="fees.management-fee-calc">The Fees screen calculates period management fees from the fund&#x27;s saved terms. Accruals can be posted and reversed, giving the period fee a corresponding accounting entry in the fund&#x27;s books.</li>
@@ -93,20 +98,38 @@
 <li><a href="/notes/high-water-marks-and-partial-redemptions/">High-water marks and partial redemptions</a></li>
 </ul>
 <section id="buyer-questions"><h2>Questions</h2>
+<h3>Can I choose equalization or series accounting per fund?</h3>
+<p>Yes. Fund terms select the performance-fee approach. Equalization records subscription-linked adjustments, including credits or deposits under the selected terms. Series accounting keeps cohorts with their own fee history and supports consolidation with a preview.</p>
+<h3>Does a partial redemption preserve the investor&#x27;s high-water mark?</h3>
+<p>Yes. The continuing holding retains its high-water-mark history after a partial redemption. Transfer records carry the relevant marks and loss history. Incentive-fee and crystallization records use the investor&#x27;s configured hurdle and fee terms.</p>
 <h3>Can I keep daily NAV estimates and final class NAV?</h3>
 <p>Yes. NAV supports daily estimates and final period strikes with share-class and series values. Daily estimates carry an estimate grade and are superseded by the close when final NAV is struck.</p>
 <h3>Can investors in one fund have different fee terms?</h3>
 <p>Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.</p>
-<h3>Can a calculated management fee post to the books?</h3>
-<p>Yes. After fee terms are configured, Fees calculates the period accrual and provides posting and reversal actions. The posted accrual records the management fee in the fund&#x27;s accounting books.</p>
-<h3>Can an investor statement show flows, fees and ending capital?</h3>
-<p>Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period&#x27;s movement for the investor account and its closing balance.</p>
+<h3>Can I inspect the adjustment for a mid-period subscriber?</h3>
+<p>Yes. Equalization records link the adjustment to the subscription and retain the entry values used in its calculation. Adjustment detail shows the recorded credit or deposit. Series funds retain the subscription cohort and its performance-fee history.</p>
 </section>
 <script type="application/ld+json" data-buyer-faq>
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I choose equalization or series accounting per fund?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Fund terms select the performance-fee approach. Equalization records subscription-linked adjustments, including credits or deposits under the selected terms. Series accounting keeps cohorts with their own fee history and supports consolidation with a preview."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does a partial redemption preserve the investor's high-water mark?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The continuing holding retains its high-water-mark history after a partial redemption. Transfer records carry the relevant marks and loss history. Incentive-fee and crystallization records use the investor's configured hurdle and fee terms."
+      }
+    },
     {
       "@type": "Question",
       "name": "Can I keep daily NAV estimates and final class NAV?",
@@ -125,18 +148,10 @@
     },
     {
       "@type": "Question",
-      "name": "Can a calculated management fee post to the books?",
+      "name": "Can I inspect the adjustment for a mid-period subscriber?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. After fee terms are configured, Fees calculates the period accrual and provides posting and reversal actions. The posted accrual records the management fee in the fund's accounting books."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can an investor statement show flows, fees and ending capital?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance."
+        "text": "Yes. Equalization records link the adjustment to the subscription and retain the entry values used in its calculation. Adjustment detail shows the recorded credit or deposit. Series funds retain the subscription cohort and its performance-fee history."
       }
     }
   ]

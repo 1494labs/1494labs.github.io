@@ -4,7 +4,13 @@ Source: https://1494labs.com/equalization-and-series-accounting/
 
 For hedge fund managers and administrators with investors entering at different dates.
 
-## Class Records, NAV and Fees
+## Equalization, Series and High-Water Marks
+
+- Equalization factor or series accounting is chosen per fund. Equalization records the adjustment linked to an investor's subscription. Series accounting keeps subscription cohorts and their performance-fee history, with series consolidation and a preview of the consolidation amounts.
+
+- High-water marks are carried per investor and per series. A partial redemption preserves the continuing investor's fee history; transfers carry the relevant mark and loss history. The incentive-fee calculation uses the configured hurdle and high-water mark.
+
+## Supporting Accounting
 
 - Share classes hold the terms for unitized funds. Fee classes group investors in capital-based funds. The Share Classes and Fee Terms screens record these arrangements for funds whose investors have different fee terms.
 
@@ -26,6 +32,14 @@ Equalization and series accounting are performance-fee terms for investors enter
 
 ## Questions
 
+### Can I choose equalization or series accounting per fund?
+
+Yes. Fund terms select the performance-fee approach. Equalization records subscription-linked adjustments, including credits or deposits under the selected terms. Series accounting keeps cohorts with their own fee history and supports consolidation with a preview.
+
+### Does a partial redemption preserve the investor's high-water mark?
+
+Yes. The continuing holding retains its high-water-mark history after a partial redemption. Transfer records carry the relevant marks and loss history. Incentive-fee and crystallization records use the investor's configured hurdle and fee terms.
+
 ### Can I keep daily NAV estimates and final class NAV?
 
 Yes. NAV supports daily estimates and final period strikes with share-class and series values. Daily estimates carry an estimate grade and are superseded by the close when final NAV is struck.
@@ -34,13 +48,9 @@ Yes. NAV supports daily estimates and final period strikes with share-class and 
 
 Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.
 
-### Can a calculated management fee post to the books?
+### Can I inspect the adjustment for a mid-period subscriber?
 
-Yes. After fee terms are configured, Fees calculates the period accrual and provides posting and reversal actions. The posted accrual records the management fee in the fund's accounting books.
-
-### Can an investor statement show flows, fees and ending capital?
-
-Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance.
+Yes. Equalization records link the adjustment to the subscription and retain the entry values used in its calculation. Adjustment detail shows the recorded credit or deposit. Series funds retain the subscription cohort and its performance-fee history.
 
 ## Related Accounting Pages
 

@@ -78,7 +78,14 @@
 <p class="standfirst">For private equity managers and administrators calculating distributions and carry.</p>
 <article>
 <!-- buyer-capabilities:start -->
-<h2>Waterfall Terms and Allocations</h2>
+<h2>Waterfalls, Carry and Clawback</h2>
+<ul>
+<li data-reviewed-use-case="fees.carry-calc-allocation">The distribution waterfall applies the fund&#x27;s hurdle, catch-up and tiers, with European or American terms. Distribution preview shows the proposed GP and LP amounts. Posting records the distribution, and principal carry allocation uses the posted GP carry amount.</li>
+<li data-reviewed-use-case="fees.accrued-vs-crystallized-carry">Carry reporting distinguishes accrued carry from amounts already paid to the GP. Closed-end fund reporting calculates accrued carry from a hypothetical liquidation at the reporting-date NAV. Incentive fees also have accrual, crystallization and settlement records under the configured fund terms.</li>
+<li data-reviewed-use-case="fees.clawback">Clawback measurement compares the GP&#x27;s received carry with its entitlement under the fund&#x27;s terms. The clawback test records excess carry, interest, escrow applied and prior repayments, and settlement records the GP&#x27;s repayment for the investors.</li>
+<li data-reviewed-use-case="fees.carry-vesting-principals">Carry Vesting records the GP&#x27;s principals, their carry shares and vesting terms. Principal allocations use the vested fraction at the distribution date. Leaver events retain the effective date and treatment used in subsequent allocations and the vesting report.</li>
+</ul>
+<h2>Supporting Accounting</h2>
 <ul>
 <li data-use-case="fund-setup.carry-waterfall-terms">Waterfall setup records the hurdle, catch-up and distribution tiers for European or American carry arrangements. A policy preview shows the configured waterfall before it is used for the fund.</li>
 <li data-use-case="period-close.capital-accounts-tie-gl">Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund&#x27;s capital accounts.</li>
@@ -92,20 +99,56 @@
 <li><a href="/notes/european-vs-american-waterfall/">European and American waterfalls</a></li>
 </ul>
 <section id="buyer-questions"><h2>Questions</h2>
+<h3>Can I preview and post a distribution waterfall?</h3>
+<p>Yes. Distribution preview applies the fund&#x27;s configured waterfall tiers to the proposed amount. The calculation shows the GP and LP allocations, including preferred return, catch-up and carry. Posting records the distribution in the books.</p>
+<h3>Can I report accrued carry at the reporting date?</h3>
+<p>Yes. Closed-end fund reporting calculates the GP&#x27;s hypothetical-liquidation entitlement at the reporting-date NAV and deducts GP carry already received, with a floor of zero. This accrued-carry amount appears in reporting; it is a report calculation.</p>
+<h3>Can I measure a clawback and record repayment?</h3>
+<p>Yes. Clawback measurement and tests calculate the obligation under the configured fund terms, including escrow and prior repayments. Settlement records the GP&#x27;s repayment. The final-liquidation workflow can run the fund&#x27;s configured clawback test.</p>
+<h3>Can a carry plan include vesting and leaver treatment?</h3>
+<p>Yes. Carry plans record principals, carry shares, vesting schedules and leaver treatment. Allocating a posted distribution uses the vested fraction for that date. The vesting report shows the principal-level results.</p>
 <h3>Can I configure European and American waterfall terms?</h3>
 <p>Yes. Waterfall setup supports European and American policies, with hurdle, catch-up and tier terms. The policy preview calculates the configured distribution sequence so the finance team can review the terms.</p>
 <h3>Can allocations follow several ownership layers?</h3>
 <p>Yes. Allocations supports period allocations and ownership cascades. The cascade dialog provides a preview and confirmation, and income, expenses and gains follow the recorded ownership chain to the participating investors.</p>
-<h3>Do investor capital accounts tie to general ledger capital?</h3>
-<p>Yes. The accounting checks compare investor capital balances with the fund&#x27;s general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.</p>
-<h3>Can a company exit calculation include liquidation preferences?</h3>
-<p>Yes. Company exit waterfalls calculate proceeds using liquidation preferences, participation and caps. The supported exit action covers the whole holding and allocates the exit value across the company&#x27;s security classes.</p>
 </section>
 <script type="application/ld+json" data-buyer-faq>
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I preview and post a distribution waterfall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Distribution preview applies the fund's configured waterfall tiers to the proposed amount. The calculation shows the GP and LP allocations, including preferred return, catch-up and carry. Posting records the distribution in the books."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I report accrued carry at the reporting date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Closed-end fund reporting calculates the GP's hypothetical-liquidation entitlement at the reporting-date NAV and deducts GP carry already received, with a floor of zero. This accrued-carry amount appears in reporting; it is a report calculation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I measure a clawback and record repayment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Clawback measurement and tests calculate the obligation under the configured fund terms, including escrow and prior repayments. Settlement records the GP's repayment. The final-liquidation workflow can run the fund's configured clawback test."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a carry plan include vesting and leaver treatment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Carry plans record principals, carry shares, vesting schedules and leaver treatment. Allocating a posted distribution uses the vested fraction for that date. The vesting report shows the principal-level results."
+      }
+    },
     {
       "@type": "Question",
       "name": "Can I configure European and American waterfall terms?",
@@ -120,22 +163,6 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes. Allocations supports period allocations and ownership cascades. The cascade dialog provides a preview and confirmation, and income, expenses and gains follow the recorded ownership chain to the participating investors."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do investor capital accounts tie to general ledger capital?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can a company exit calculation include liquidation preferences?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Company exit waterfalls calculate proceeds using liquidation preferences, participation and caps. The supported exit action covers the whole holding and allocates the exit value across the company's security classes."
       }
     }
   ]

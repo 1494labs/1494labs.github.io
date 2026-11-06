@@ -4,7 +4,17 @@ Source: https://1494labs.com/portfolio-company-kpi-collection/
 
 For private equity and venture finance teams collecting company financials and reporting valuations.
 
-## Company Valuation and Fund Reporting
+## Company Financials and KPIs
+
+- Company Financials & KPIs provides templates for revenue, EBITDA, net debt and custom KPIs. The team can upload a completed template or create a secure submission link for the company. Accepted figures appear beside the company valuation mark, with the submission used recorded.
+
+- The template includes the reporting date and all required metrics. Upload checks cover the expected columns, missing fields, valid dates, duplicate dates and finite numeric values. Revenue, EBITDA and net debt use the company's currency; custom KPIs retain their agreed units.
+
+- Each submission and correction retains its date, currency, source and submitter. The collection history preserves earlier evidence. Operator review accepts or rejects an external submission with a recorded reason.
+
+- The valuation screen shows the collected figures beside the mark and records the financial submission selected for that valuation. Fund report sections include company financials and KPIs and flag companies with missing reports.
+
+## Supporting Accounting
 
 - Valuations records dated marks for underlying fund interests, portfolio companies and priced instruments. The entry fields follow the asset: fund NAV statements carry an as-of date and source; company marks carry a valuation method and memo.
 
@@ -16,25 +26,29 @@ For private equity and venture finance teams collecting company financials and r
 
 ## Terms
 
-Portfolio company financials and KPIs include revenue, EBITDA, net debt and company-defined metrics. These terms describe company reporting inputs. The capabilities listed here cover company valuation and fund financial statements.
+Company financials include revenue, EBITDA and net debt. KPIs are the additional operating measures defined in each company template. Reporting dates and company currency stay with the submitted figures.
 
 ## Questions
 
-### Can I record a quarter-end portfolio company valuation?
+### Can a company submit its financials through a secure link?
 
-Yes. The company valuation screen records a valuation date, method and memo with the mark. It supports company marks up or down for the reporting date being recorded.
+Yes. An operator creates a company-specific submission link. The company downloads its collection template and uploads the completed figures. External submissions wait for operator acceptance before they become reporting or valuation evidence.
 
-### Can I record dated marks for different investment types?
+### Can I define the KPIs each company reports?
 
-Yes. Valuations supports underlying fund NAV statements, portfolio company valuations and instrument prices. Fund statements record their as-of date and source. Company valuations record the valuation date, method and memo.
+Yes. The company template contains revenue, EBITDA and net debt plus the custom metrics the team defines. The downloaded template includes the required reporting-date column and metric fields. Custom KPIs use the agreed units.
 
-### Can a company exit calculation include liquidation preferences?
+### Are dates and numbers checked when a file is uploaded?
 
-Yes. Company exit waterfalls calculate proceeds using liquidation preferences, participation and caps. The supported exit action covers the whole holding and allocates the exit value across the company's security classes.
+Yes. Upload validation checks template columns, required fields, reporting dates, duplicate dates and numeric values. It rejects invalid or non-finite numbers. Currency and the reporting date remain with the accepted figures.
 
-### Can I prepare the financial statements for one fund and period?
+### Can I see the figures used beside a valuation mark?
 
-Yes. Fund Statements includes the income statement, balance sheet, statement of changes in net assets and cash-flow statement. These reports use one fund and reporting period for the financial statement set.
+Yes. The company valuation screen presents the collected financial figures beside the mark and records the submission selected as evidence. Submission history retains earlier uploads and corrections with their reporting date, source and submitter.
+
+### Can fund reporting identify missing company financials?
+
+Yes. The company financials section in fund reporting includes collected company metrics and identifies companies with missing reports. External submissions become available as evidence after an operator accepts them.
 
 ## Related Accounting Pages
 

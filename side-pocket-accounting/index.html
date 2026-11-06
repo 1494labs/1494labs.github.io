@@ -78,7 +78,13 @@
 <p class="standfirst">For hedge fund managers and administrators accounting for side-pocket participation.</p>
 <article>
 <!-- buyer-capabilities:start -->
-<h2>Class NAV and Investor Accounting</h2>
+<h2>Side Pockets and Dealing NAV</h2>
+<ul>
+<li data-reviewed-use-case="hedge.side-pockets">Side pockets keep designated illiquid investments in total NAV and exclude each participating investor&#x27;s pocket value from dealing NAV. The Side Pockets screen creates the pocket, previews and posts a carve-out, records investor participation and handles liquidation.</li>
+<li data-reviewed-use-case="hedge.side-pockets">The carve-out transfers the selected holding into the pocket and freezes the participating investors and their shares. Later subscriptions do not join that existing pocket. Pocket income and gains follow the recorded participants.</li>
+<li data-reviewed-use-case="hedge.side-pockets">Carve-out and liquidation previews show the proposed amounts before posting. A carve-out leaves total NAV unchanged. Liquidation records the disposal and distributions to the pocket&#x27;s participants; the final liquidation closes the pocket.</li>
+</ul>
+<h2>Supporting Accounting</h2>
 <ul>
 <li data-use-case="fund-setup.share-classes-fee-terms">Share classes hold the terms for unitized funds. Fee classes group investors in capital-based funds. The Share Classes and Fee Terms screens record these arrangements for funds whose investors have different fee terms.</li>
 <li data-use-case="period-close.nav-per-fund-class">NAV records preliminary, final and restated fund values, including share-class lines. The NAV and period-close screens show the fund&#x27;s strike workflow, with class results available through the share register.</li>
@@ -92,20 +98,30 @@
 <li><a href="/notes/side-pockets-and-investor-participation/">Side pockets and investor participation</a></li>
 </ul>
 <section id="buyer-questions"><h2>Questions</h2>
+<h3>Does dealing NAV exclude the side pocket?</h3>
+<p>Yes. Total NAV includes the pocket&#x27;s assets. Dealing NAV subtracts the investor&#x27;s share of the pocket, using the participation recorded when the investment was carved out. The NAV records carry total NAV, side-pocket value and dealing NAV.</p>
 <h3>Can I keep daily NAV estimates and final class NAV?</h3>
 <p>Yes. NAV supports daily estimates and final period strikes with share-class and series values. Daily estimates carry an estimate grade and are superseded by the close when final NAV is struck.</p>
 <h3>Can investors in one fund have different fee terms?</h3>
 <p>Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.</p>
-<h3>Can I strike NAV for the fund and its share classes?</h3>
-<p>Yes. The NAV workflow supports preliminary and final strikes and restatements. Saved NAV versions include share-class lines, and the share register shows the class results for the fund&#x27;s strike.</p>
-<h3>Do investor capital accounts tie to general ledger capital?</h3>
-<p>Yes. The accounting checks compare investor capital balances with the fund&#x27;s general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.</p>
+<h3>Do investors who subscribe later join an existing pocket?</h3>
+<p>No. An existing pocket uses the participation recorded at its carve-out. Its income, gains and distributions follow those participants. A later subscription into the fund does not add that investor to the pocket.</p>
+<h3>Can I preview a carve-out or liquidation before it posts?</h3>
+<p>Yes. Side Pockets provides previews for the selected carve-out and liquidation. Posting records the movement or disposal and the participant amounts. The carve-out preserves total NAV, and final liquidation pays the participants and closes the pocket.</p>
 </section>
 <script type="application/ld+json" data-buyer-faq>
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does dealing NAV exclude the side pocket?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Total NAV includes the pocket's assets. Dealing NAV subtracts the investor's share of the pocket, using the participation recorded when the investment was carved out. The NAV records carry total NAV, side-pocket value and dealing NAV."
+      }
+    },
     {
       "@type": "Question",
       "name": "Can I keep daily NAV estimates and final class NAV?",
@@ -124,18 +140,18 @@
     },
     {
       "@type": "Question",
-      "name": "Can I strike NAV for the fund and its share classes?",
+      "name": "Do investors who subscribe later join an existing pocket?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. The NAV workflow supports preliminary and final strikes and restatements. Saved NAV versions include share-class lines, and the share register shows the class results for the fund's strike."
+        "text": "No. An existing pocket uses the participation recorded at its carve-out. Its income, gains and distributions follow those participants. A later subscription into the fund does not add that investor to the pocket."
       }
     },
     {
       "@type": "Question",
-      "name": "Do investor capital accounts tie to general ledger capital?",
+      "name": "Can I preview a carve-out or liquidation before it posts?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book."
+        "text": "Yes. Side Pockets provides previews for the selected carve-out and liquidation. Posting records the movement or disposal and the participant amounts. The carve-out preserves total NAV, and final liquidation pays the participants and closes the pocket."
       }
     }
   ]

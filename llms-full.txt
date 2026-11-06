@@ -1040,7 +1040,13 @@ Source: https://1494labs.com/equalization-and-series-accounting/
 
 For hedge fund managers and administrators with investors entering at different dates.
 
-## Class Records, NAV and Fees
+## Equalization, Series and High-Water Marks
+
+- Equalization factor or series accounting is chosen per fund. Equalization records the adjustment linked to an investor's subscription. Series accounting keeps subscription cohorts and their performance-fee history, with series consolidation and a preview of the consolidation amounts.
+
+- High-water marks are carried per investor and per series. A partial redemption preserves the continuing investor's fee history; transfers carry the relevant mark and loss history. The incentive-fee calculation uses the configured hurdle and high-water mark.
+
+## Supporting Accounting
 
 - Share classes hold the terms for unitized funds. Fee classes group investors in capital-based funds. The Share Classes and Fee Terms screens record these arrangements for funds whose investors have different fee terms.
 
@@ -1062,6 +1068,14 @@ Equalization and series accounting are performance-fee terms for investors enter
 
 ## Questions
 
+### Can I choose equalization or series accounting per fund?
+
+Yes. Fund terms select the performance-fee approach. Equalization records subscription-linked adjustments, including credits or deposits under the selected terms. Series accounting keeps cohorts with their own fee history and supports consolidation with a preview.
+
+### Does a partial redemption preserve the investor's high-water mark?
+
+Yes. The continuing holding retains its high-water-mark history after a partial redemption. Transfer records carry the relevant marks and loss history. Incentive-fee and crystallization records use the investor's configured hurdle and fee terms.
+
 ### Can I keep daily NAV estimates and final class NAV?
 
 Yes. NAV supports daily estimates and final period strikes with share-class and series values. Daily estimates carry an estimate grade and are superseded by the close when final NAV is struck.
@@ -1070,13 +1084,9 @@ Yes. NAV supports daily estimates and final period strikes with share-class and 
 
 Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.
 
-### Can a calculated management fee post to the books?
+### Can I inspect the adjustment for a mid-period subscriber?
 
-Yes. After fee terms are configured, Fees calculates the period accrual and provides posting and reversal actions. The posted accrual records the management fee in the fund's accounting books.
-
-### Can an investor statement show flows, fees and ending capital?
-
-Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance.
+Yes. Equalization records link the adjustment to the subscription and retain the entry values used in its calculation. Adjustment detail shows the recorded credit or deposit. Series funds retain the subscription cohort and its performance-fee history.
 
 ## Related Accounting Pages
 
@@ -4083,7 +4093,17 @@ Source: https://1494labs.com/portfolio-company-kpi-collection/
 
 For private equity and venture finance teams collecting company financials and reporting valuations.
 
-## Company Valuation and Fund Reporting
+## Company Financials and KPIs
+
+- Company Financials & KPIs provides templates for revenue, EBITDA, net debt and custom KPIs. The team can upload a completed template or create a secure submission link for the company. Accepted figures appear beside the company valuation mark, with the submission used recorded.
+
+- The template includes the reporting date and all required metrics. Upload checks cover the expected columns, missing fields, valid dates, duplicate dates and finite numeric values. Revenue, EBITDA and net debt use the company's currency; custom KPIs retain their agreed units.
+
+- Each submission and correction retains its date, currency, source and submitter. The collection history preserves earlier evidence. Operator review accepts or rejects an external submission with a recorded reason.
+
+- The valuation screen shows the collected figures beside the mark and records the financial submission selected for that valuation. Fund report sections include company financials and KPIs and flag companies with missing reports.
+
+## Supporting Accounting
 
 - Valuations records dated marks for underlying fund interests, portfolio companies and priced instruments. The entry fields follow the asset: fund NAV statements carry an as-of date and source; company marks carry a valuation method and memo.
 
@@ -4095,25 +4115,29 @@ For private equity and venture finance teams collecting company financials and r
 
 ## Terms
 
-Portfolio company financials and KPIs include revenue, EBITDA, net debt and company-defined metrics. These terms describe company reporting inputs. The capabilities listed here cover company valuation and fund financial statements.
+Company financials include revenue, EBITDA and net debt. KPIs are the additional operating measures defined in each company template. Reporting dates and company currency stay with the submitted figures.
 
 ## Questions
 
-### Can I record a quarter-end portfolio company valuation?
+### Can a company submit its financials through a secure link?
 
-Yes. The company valuation screen records a valuation date, method and memo with the mark. It supports company marks up or down for the reporting date being recorded.
+Yes. An operator creates a company-specific submission link. The company downloads its collection template and uploads the completed figures. External submissions wait for operator acceptance before they become reporting or valuation evidence.
 
-### Can I record dated marks for different investment types?
+### Can I define the KPIs each company reports?
 
-Yes. Valuations supports underlying fund NAV statements, portfolio company valuations and instrument prices. Fund statements record their as-of date and source. Company valuations record the valuation date, method and memo.
+Yes. The company template contains revenue, EBITDA and net debt plus the custom metrics the team defines. The downloaded template includes the required reporting-date column and metric fields. Custom KPIs use the agreed units.
 
-### Can a company exit calculation include liquidation preferences?
+### Are dates and numbers checked when a file is uploaded?
 
-Yes. Company exit waterfalls calculate proceeds using liquidation preferences, participation and caps. The supported exit action covers the whole holding and allocates the exit value across the company's security classes.
+Yes. Upload validation checks template columns, required fields, reporting dates, duplicate dates and numeric values. It rejects invalid or non-finite numbers. Currency and the reporting date remain with the accepted figures.
 
-### Can I prepare the financial statements for one fund and period?
+### Can I see the figures used beside a valuation mark?
 
-Yes. Fund Statements includes the income statement, balance sheet, statement of changes in net assets and cash-flow statement. These reports use one fund and reporting period for the financial statement set.
+Yes. The company valuation screen presents the collected financial figures beside the mark and records the submission selected as evidence. Submission history retains earlier uploads and corrections with their reporting date, source and submitter.
+
+### Can fund reporting identify missing company financials?
+
+Yes. The company financials section in fund reporting includes collected company metrics and identifies companies with missing reports. External submissions become available as evidence after an operator accepts them.
 
 ## Related Accounting Pages
 
@@ -4462,7 +4486,15 @@ Source: https://1494labs.com/side-pocket-accounting/
 
 For hedge fund managers and administrators accounting for side-pocket participation.
 
-## Class NAV and Investor Accounting
+## Side Pockets and Dealing NAV
+
+- Side pockets keep designated illiquid investments in total NAV and exclude each participating investor's pocket value from dealing NAV. The Side Pockets screen creates the pocket, previews and posts a carve-out, records investor participation and handles liquidation.
+
+- The carve-out transfers the selected holding into the pocket and freezes the participating investors and their shares. Later subscriptions do not join that existing pocket. Pocket income and gains follow the recorded participants.
+
+- Carve-out and liquidation previews show the proposed amounts before posting. A carve-out leaves total NAV unchanged. Liquidation records the disposal and distributions to the pocket's participants; the final liquidation closes the pocket.
+
+## Supporting Accounting
 
 - Share classes hold the terms for unitized funds. Fee classes group investors in capital-based funds. The Share Classes and Fee Terms screens record these arrangements for funds whose investors have different fee terms.
 
@@ -4482,6 +4514,10 @@ Side pockets are also called illiquid or designated investments and special situ
 
 ## Questions
 
+### Does dealing NAV exclude the side pocket?
+
+Yes. Total NAV includes the pocket's assets. Dealing NAV subtracts the investor's share of the pocket, using the participation recorded when the investment was carved out. The NAV records carry total NAV, side-pocket value and dealing NAV.
+
 ### Can I keep daily NAV estimates and final class NAV?
 
 Yes. NAV supports daily estimates and final period strikes with share-class and series values. Daily estimates carry an estimate grade and are superseded by the close when final NAV is struck.
@@ -4490,13 +4526,13 @@ Yes. NAV supports daily estimates and final period strikes with share-class and 
 
 Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.
 
-### Can I strike NAV for the fund and its share classes?
+### Do investors who subscribe later join an existing pocket?
 
-Yes. The NAV workflow supports preliminary and final strikes and restatements. Saved NAV versions include share-class lines, and the share register shows the class results for the fund's strike.
+No. An existing pocket uses the participation recorded at its carve-out. Its income, gains and distributions follow those participants. A later subscription into the fund does not add that investor to the pocket.
 
-### Do investor capital accounts tie to general ledger capital?
+### Can I preview a carve-out or liquidation before it posts?
 
-Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.
+Yes. Side Pockets provides previews for the selected carve-out and liquidation. Posting records the movement or disposal and the participant amounts. The carve-out preserves total NAV, and final liquidation pays the participants and closes the pocket.
 
 ## Related Accounting Pages
 
@@ -4525,7 +4561,17 @@ Source: https://1494labs.com/waterfall-and-carried-interest-accounting/
 
 For private equity managers and administrators calculating distributions and carry.
 
-## Waterfall Terms and Allocations
+## Waterfalls, Carry and Clawback
+
+- The distribution waterfall applies the fund's hurdle, catch-up and tiers, with European or American terms. Distribution preview shows the proposed GP and LP amounts. Posting records the distribution, and principal carry allocation uses the posted GP carry amount.
+
+- Carry reporting distinguishes accrued carry from amounts already paid to the GP. Closed-end fund reporting calculates accrued carry from a hypothetical liquidation at the reporting-date NAV. Incentive fees also have accrual, crystallization and settlement records under the configured fund terms.
+
+- Clawback measurement compares the GP's received carry with its entitlement under the fund's terms. The clawback test records excess carry, interest, escrow applied and prior repayments, and settlement records the GP's repayment for the investors.
+
+- Carry Vesting records the GP's principals, their carry shares and vesting terms. Principal allocations use the vested fraction at the distribution date. Leaver events retain the effective date and treatment used in subsequent allocations and the vesting report.
+
+## Supporting Accounting
 
 - Waterfall setup records the hurdle, catch-up and distribution tiers for European or American carry arrangements. A policy preview shows the configured waterfall before it is used for the fund.
 
@@ -4545,6 +4591,22 @@ Carried interest, preferred return, hurdle, catch-up and distribution tiers desc
 
 ## Questions
 
+### Can I preview and post a distribution waterfall?
+
+Yes. Distribution preview applies the fund's configured waterfall tiers to the proposed amount. The calculation shows the GP and LP allocations, including preferred return, catch-up and carry. Posting records the distribution in the books.
+
+### Can I report accrued carry at the reporting date?
+
+Yes. Closed-end fund reporting calculates the GP's hypothetical-liquidation entitlement at the reporting-date NAV and deducts GP carry already received, with a floor of zero. This accrued-carry amount appears in reporting; it is a report calculation.
+
+### Can I measure a clawback and record repayment?
+
+Yes. Clawback measurement and tests calculate the obligation under the configured fund terms, including escrow and prior repayments. Settlement records the GP's repayment. The final-liquidation workflow can run the fund's configured clawback test.
+
+### Can a carry plan include vesting and leaver treatment?
+
+Yes. Carry plans record principals, carry shares, vesting schedules and leaver treatment. Allocating a posted distribution uses the vested fraction for that date. The vesting report shows the principal-level results.
+
 ### Can I configure European and American waterfall terms?
 
 Yes. Waterfall setup supports European and American policies, with hurdle, catch-up and tier terms. The policy preview calculates the configured distribution sequence so the finance team can review the terms.
@@ -4552,14 +4614,6 @@ Yes. Waterfall setup supports European and American policies, with hurdle, catch
 ### Can allocations follow several ownership layers?
 
 Yes. Allocations supports period allocations and ownership cascades. The cascade dialog provides a preview and confirmation, and income, expenses and gains follow the recorded ownership chain to the participating investors.
-
-### Do investor capital accounts tie to general ledger capital?
-
-Yes. The accounting checks compare investor capital balances with the fund's general ledger capital. Capital Accounts displays the investor balances. The tie is an accounting invariant checked across the book.
-
-### Can a company exit calculation include liquidation preferences?
-
-Yes. Company exit waterfalls calculate proceeds using liquidation preferences, participation and caps. The supported exit action covers the whole holding and allocates the exit value across the company's security classes.
 
 ## Related Accounting Pages
 
