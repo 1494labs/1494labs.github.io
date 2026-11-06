@@ -40,7 +40,7 @@ to us.
 **Spaceship** is the domain registrar and holds DNS records.
 It sees no personal data.
 
-**Market data providers** are read from, not sent to. When a
+**Market data providers** supply data to the application. When a
 fund tracks an index, the platform fetches a published series. Nothing about
 a customer, a fund or an investor leaves in that request.
 
@@ -48,7 +48,7 @@ a customer, a fund or an investor leaves in that request.
 
 If a sub-processor is added or replaced, this page changes first and the
 date above moves. Customers with an agreement in place are told before the
-change takes effect, not after.
+change takes effect.
 
 - [The privacy notice](https://1494labs.com/privacy/), which is the inventory of what is collected
 

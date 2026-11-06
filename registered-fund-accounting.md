@@ -1,75 +1,77 @@
 Source: https://1494labs.com/registered-fund-accounting/
 
-# The obligations that come with a registered wrapper
+# Registered Fund Accounting
 
-An interval fund, a RIC or a BDC is a normal book carrying a second set of duties. The duties run on a clock, and the fund answers for them to shareholders, notice by notice, through the year.
+For registered fund, RIC and BDC finance teams and their administrators.
 
-Solutions · roughly 5 minutes
+## Accounting Capabilities
 
-## A second set of duties on the same book
+- Fund setup records the legal entity, base currency and fiscal year. Closed-end funds also carry vintage, fund term, extension dates and hard cap, so the fund record contains the terms used by the accounting team.
 
-Tell shareholders what a distribution was actually paid out of. Repurchase
-up to a fixed share of the fund on a published schedule. Stay inside a
-coverage ratio. Each of those is computed from the same ledger that
-produces the NAV, on the fund's own tax year and its own calendar.
+- Share classes hold the terms for unitized funds. Fee classes group investors in capital-based funds. The Share Classes and Fee Terms screens record these arrangements for funds whose investors have different fee terms.
 
-- ✓§19(a) notices with the source split taken off the book
+- Journal Entries shows the postings created by accounting transactions. Each journal entry retains its source type and source identifier. The entry detail displays the accounting lines and the recorded transaction source.
 
-- ✓Repurchase offers with a frozen queue, a specified NAV and proration
+- Period Close records period opening, closing and locking events. Reopening requires permission and a recorded reason. The period's event history keeps the actions recorded for a revised close.
 
-- ✓Managed distribution policies, declared to paid, with per-holder characterization
+- Period Close includes a checklist and reviewer sign-off. A period lock requires the configured sign-off, so the recorded review forms part of the close process before the books are locked.
 
-- ✓The distribution requirement and the excise calendar assessed as the book stands
+- NAV records preliminary, final and restated fund values, including share-class lines. The NAV and period-close screens show the fund's strike workflow, with class results available through the share register.
 
-- ✓BDC asset coverage as a gate, with the two-part incentive fee and the ten-year table
+- Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund's capital accounts.
 
-## A notice sourced from the book
+- Allocations distributes income, expenses and gains through recorded ownership. The allocation screen includes a cascade preview and confirmation for structures with multiple ownership layers, connecting fund results with the investors above them.
 
-When a fund pays out more than it earned, it has to tell shareholders how
-much of the check was return of capital. The number is the payment itself, decomposed. Sourcing it
-from the book is what makes the year-to-date figure add up across every
-notice the fund has sent.
+- Reporting provides the trial balance for the fund, including the balance frozen at close and its revisions. The frozen balance preserves the ledger totals used for that close and subsequent review.
 
-## Repurchase offers on the clock
+- Fund Statements provides an income statement, balance sheet, statement of changes in net assets and cash-flow statement for one fund and period. The reporting screen uses the selected fund and reporting period.
 
-Board approval, a request deadline that freezes the queue, pricing at a specified NAV, and proration when requests exceed the offer. What
-happens to a residual is the part that varies: it either cancels or
-carries forward to the next offer as a standing claim on the ledger,
-whichever the fund's own terms say. Both outcomes are configurable.
+- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
-## Managed distributions
+- Reporting includes report packs organized by audience. A pack runs for its fund and period and can be exported as PDF or CSV, collecting the selected reports for the intended recipient.
 
-A policy in the fund's own vocabulary: a NAV percentage or a fixed
-amount, at a cadence, drawing on sources in a stated order. Behind every
-declaration sits the full sequence from declaration to payment, record-date shares and
-per-holder characterization.
+## Related Notes
 
-## Qualification and excise
+- [ABOR and IBOR](https://1494labs.com/notes/abor-and-ibor/)
 
-The distribution requirement and the excise calendar are assessed against
-the book as it stands, on the fund's own tax year.
+- [Checking the book against outside records](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/)
 
-## BDC controls
+## Questions
 
-The asset-coverage ratio works as a gate. Alongside it: a
-two-part incentive fee with an income hurdle, a catch-up and a
-capital-gains part on its own lookback, and the ten-year senior-securities
-table the disclosure asks for.
+### Can investors in one fund have different fee terms?
 
-- [The platform](https://1494labs.com/fund-accounting-software/), end to end
+Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.
 
-- [Capabilities](https://1494labs.com/capabilities/), including what we do not do
+### Can I strike NAV for the fund and its share classes?
 
-- [A wrong number that agrees with itself](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/), on the daily check
+Yes. The NAV workflow supports preliminary and final strikes and restatements. Saved NAV versions include share-class lines, and the share register shows the class results for the fund's strike.
 
-- [Registered funds operations](https://docs.1494labs.com/guide/registered-funds-operations/) in the product docs
+### Can reviewer sign-off gate the period lock?
 
-- [Repurchase offers](https://docs.1494labs.com/guide/repurchase-offers/) in the product docs
+Yes. The close checklist and review events are recorded for the period. Locking checks that the required sign-off is present, and the reviewer's action remains in the period history.
 
-**See how your fund would work in 1494.**
-Tell us the structure you run and the calculation your current process
-handles outside the accounting system. We will walk through it on real
-books, or stand up a sandbox seeded with reference funds for you to
-work in.
+### Can I retrieve the trial balance frozen at close?
+
+Yes. Reporting includes frozen trial balances and revisions. The frozen balance keeps the ledger totals frozen at the close, so a reviewer can inspect the recorded close and the revisions attached to it.
+
+### Can I prepare the financial statements for one fund and period?
+
+Yes. Fund Statements includes the income statement, balance sheet, statement of changes in net assets and cash-flow statement. These reports use one fund and reporting period for the financial statement set.
+
+## Related Accounting Pages
+
+- [Fund of Funds Accounting](https://1494labs.com/fund-of-funds-accounting/)
+
+- [Capital Call and Distribution Software](https://1494labs.com/capital-call-and-distribution-software/)
+
+- [Liquidity Forecasting and Commitment Pacing](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/)
+
+- [Fund Accounting Glossary](https://1494labs.com/glossary/)
+
+- [Capabilities and Status](https://1494labs.com/capabilities/)
+
+## Request a Demo
+
+Tell us which funds, structures and accounting terms you need to review.
 
 [Request a demo](https://1494labs.com/?segment=registered#contact)

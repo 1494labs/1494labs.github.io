@@ -6,7 +6,7 @@
 <title>Security &middot; 1494 Labs</title>
 <meta name="description" content="What is in place today and what is not: schema-level tenant isolation, an audit trail the application cannot rewrite, MFA, encryption at rest, and a plain statement of what we do not have.">
 <link rel="canonical" href="https://1494labs.com/security/">
-<link rel="stylesheet" href="/assets/notes.715da883.css">
+<link rel="stylesheet" href="/assets/notes.d2937031.css">
 <link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
 <link rel="icon" href="/assets/favicon.svg?v=1808" sizes="any" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-16x16.png?v=1808" sizes="16x16" type="image/png">
@@ -70,7 +70,7 @@
 
   <article class="measure">
 
-    <h2>Your data is separated at the database, not by a filter</h2>
+    <h2>Database Separation for Your Data</h2>
     <p>
       Every tenant's books live in their own database schema, and every request
       is routed to it before a query runs. A book query that forgets a
@@ -84,15 +84,13 @@
     <p>
       Authentication events and API access are recorded on a plane the
       application itself cannot edit or truncate. That is enforced by database
-      triggers rather than by the application agreeing not to, which is the only
-      version of it worth having: an audit log the application can rewrite
-      proves nothing about the application.
+      triggers that prevent the application from rewriting the record.
     </p>
 
     <h2>Signing in</h2>
     <ul class="keypoints">
       <li><span class="tick">&#10003;</span><span><b>Time-based one-time-password MFA</b>, with a workspace-level control over whether it is required.</span></li>
-      <li><span class="tick">&#10003;</span><span><b>Throttling that counts failed MFA challenges</b>, not only failed passwords. Counting passwords alone leaves the second factor open to grinding, which is the interesting half to attack.</span></li>
+      <li><span class="tick">&#10003;</span><span><b>Throttling that counts failed MFA challenges and failed passwords.</b> Counting passwords alone leaves the second factor open to grinding, which is the interesting half to attack.</span></li>
       <li><span class="tick">&#10003;</span><span><b>Federated identity</b> over OIDC, with a break-glass path that is itself audited.</span></li>
     </ul>
 
@@ -139,7 +137,7 @@
     <ul class="keypoints">
       <li><span class="tick">&#10003;</span><span><b>No SOC 2 report.</b> Planned for when a customer's procurement requires one.</span></li>
       <li><span class="tick">&#10003;</span><span><b>No third-party penetration test.</b> An internal security audit in August 2026 found one critical and twenty high-severity issues, all closed.</span></li>
-      <li><span class="tick">&#10003;</span><span><b>Single availability zone.</b> The database is not currently replicated across zones, so a zone failure is downtime rather than a failover. Backups and the pre-deploy snapshot are the recovery path.</span></li>
+      <li><span class="tick">&#10003;</span><span><b>Single availability zone.</b> The database is not currently replicated across zones, so a zone failure is downtime requiring recovery. Backups and the pre-deploy snapshot are the recovery path.</span></li>
       <li><span class="tick">&#10003;</span><span><b>No published uptime figure.</b> There is no measurement period long enough to quote one honestly.</span></li>
     </ul>
 

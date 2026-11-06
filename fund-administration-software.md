@@ -1,73 +1,110 @@
 Source: https://1494labs.com/fund-administration-software/
 
-# Fund administration software for people who sign the books
+# Fund Administration Software
 
-An administrator keeps forty books at once, each with its own agreement,
-its own calendar and its own idea of what a management fee is.
+For fund administrators accounting for many funds with different terms.
 
-Solutions · roughly 6 minutes
+## Accounting Capabilities
 
-## Forty funds, forty agreements
+- Create a fund with legal entity, vintage, term, currency, fiscal year
 
-The administrator's difficulty is variety. One client's management fee is
-charged on committed capital during the investment period and on invested
-capital after it. Another's is on net asset value with a most-favored-nation
-clause. A third caps organizational expenses and makes the manager bear the
-excess. A platform with a house convention makes all of them somebody's
-manual adjustment.
+- Share classes or units with different fee terms
 
-Fee structures here are composed from parts: tiered
-schedules, modifiers, offsets, expense caps and four-way settlement,
-configured per fund. Terms can be read out of the limited partnership
-agreement into a prefilled builder, with the clause attached, and a human
-confirms every one before it becomes a fund term.
+- Management fee terms with rate, basis, step-downs, offsets
 
-- ✓Each client's data kept in its own separate store
+- Carried interest and waterfall terms with hurdle, catch-up, tiers, European or American
 
-- ✓Per-fund fiscal calendars, and a close that locks the period while current work carries on
+- Chart of accounts per fund, with a default template
 
-- ✓Sign-off on the numbers tracked apart from locking the period, with a checklist and a controller's dashboard
+- Onboard an investor with unique ID, legal name, tax details, type
 
-- ✓Reconciliation exceptions on an aged, assigned worklist
+- Bank account details on the investor record for inbound and outbound cash
 
-- ✓Bulk CSV loaders for the systems that will never have an API
+- Generate call notices per investor with amounts, due date, wire instructions
 
-- ✓More than 1,800 API operations in one published API reference
+- Distribution notices per investor
 
-- ✓Shadow reconciliation that ties an outside administrator's pack to the book
+- Unfunded commitment tracking per investor and per fund
 
-- ✓Investor statements laid out from a client's own PDF
+- Mark a position to a valuation with an effective date and a source
 
-## A close that actually closes
+- Calculate management fees for a period from the fee terms
 
-Period close moves through three stages, per fund and per period: open,
-soft closed, hard closed. A hard-closed period accepts no new entries and
-its trial balance is saved as a fixed record, so a statement produced a year later still ties to
-what was reported at the time. A fund with negative capital or a pending crystallization is left out of
-the close and listed for review.
+- Journal entries posted from every transaction type, traceable to the source transaction
 
-Corrections stay possible without pretending they did not happen. Anything
-in an open period is editable; a hard-closed period takes a graded, audited revision. The distinction matters because the alternative, in practice, is
-an administrator keeping a private list of what the system says versus what
-is true.
+- Period open, close, lock, and reopen with an audit trail
+
+- Close checklist and reviewer sign-off gating lock
+
+- NAV calculation per fund and per share class at period end
+
+- Capital accounts per investor that tie to the general ledger
+
+- Allocation of income, expense, gains across investors by ownership, multi-level up the chain
+
+- Trial balance per fund and period, frozen at close
+
+- Financial statements for one fund and period (income, balance, changes in net assets, cash flow)
+
+- Investor capital account statement (beginning, contributions, distributions, allocated income and expense, fees, ending)
+
+- Report packs by persona, assembled and exportable as one document
+
+- In-product support requests raised from a screen and tracked
+
+- Generate investor statements for all accounts, review, publish and resend
+
+## Related Notes
+
+- [Converting from a fund administrator](https://1494labs.com/notes/converting-from-a-fund-administrator/)
+
+- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/)
+
+- [Checking the book against outside records](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/)
+
+## Questions
+
+### Can investors in one fund have different fee terms?
+
+Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.
+
+### Can a calculated management fee post to the books?
+
+Yes. After fee terms are configured, Fees calculates the period accrual and provides posting and reversal actions. The posted accrual records the management fee in the fund's accounting books.
+
+### Can reviewer sign-off gate the period lock?
+
+Yes. The close checklist and review events are recorded for the period. Locking checks that the required sign-off is present, and the reviewer's action remains in the period history.
+
+### Can I retrieve the trial balance frozen at close?
+
+Yes. Reporting includes frozen trial balances and revisions. The frozen balance keeps the ledger totals frozen at the close, so a reviewer can inspect the recorded close and the revisions attached to it.
+
+### Can I review investor statements before publishing a run?
+
+Yes. Statement runs group generation, review and publication. Each account has its own result, allowing the team to inspect a failed item and review the generated statements before publishing the run.
+
+## Related Accounting Pages
+
+- [Fund of Funds Accounting](https://1494labs.com/fund-of-funds-accounting/)
+
+- [Capital Call and Distribution Software](https://1494labs.com/capital-call-and-distribution-software/)
+
+- [Liquidity Forecasting and Commitment Pacing](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/)
+
+- [Fund Accounting Glossary](https://1494labs.com/glossary/)
+
+- [Capabilities and Status](https://1494labs.com/capabilities/)
+
+## Product Screens
 
 ![A Statement of Changes in Partners' Capital, from beginning capital through contributions, net income and fees to ending capital.](https://1494labs.com/assets/screens/statement-of-changes.39e06e66.jpg)
+
 **Ending capital ties to the dashboard NAV to the cent.** Both figures come from the same ledger, so no reconciliation runs between them.
 
 ![A fee gross-to-net statement: five management fee accruals, each from gross accrual to net fee, totaling $65,934.06 gross and net with no offsets, waivers or rebates.](https://1494labs.com/assets/screens/fee-gross-to-net.a19c17c9.jpg)
+
 **Gross to net, per accrual, per client.** Each posted fee keeps the steps it was calculated with, in order (gross, then offsets, waivers and rebates, then net), saved when it posted, so a later change to the terms does not rewrite it.
-
-## Exceptions with somewhere to go, and two kinds of them
-
-A reconciliation report is only a control if somebody works it. Each exception
-moves through stages (detected, assigned, explained, resolved), names the
-check that found it, and sits on an aged worklist.
-
-Be clear about which kind, because the word means different things to a
-vendor and to your team. **Internal exceptions** are what the daily check produces: capital accounts against the ledger, allocations
-against the pool, cash movements against the entries that produced them.
-**External exceptions** come from a counterparty file, and are
-the ones your morning actually consists of. Cash against the bank runs from an imported statement, positions against a custodian's file, and an outside administrator's pack (fund and class NAV, capital accounts, trial balance, cash, positions and fees, as CSV or XLSX) ties out on the Shadow tab, with each administrator's column layout remembered for next period. The worklist, the aging and the accept-with-a-note decision are the same for all three, and the screens below are a bank statement's.
 
 ![An exception detail panel for the operating cash account at 2026-06-30: the bank statement's closing balance of $747,850.00 against the book's $750,000.00, a difference of $2,150.00, a reason field, and buttons to acknowledge, resolve or accept the difference.](https://1494labs.com/assets/screens/break-detail.dc783d42.jpg)
 
@@ -77,19 +114,9 @@ numbers now agree, accepted means they still differ and somebody decided
 that is correct. Accepting requires a note, because "they differ and
 that is fine" is only institutional memory if it says why.
 
-## Every screen uses the public API
-
-The product's own interface is built on exactly the API a client gets,
-so every operation the interface performs is in the API. Custodians, banks, portals, data vendors and a client's own
-warehouse all connect through the same API, and the systems that will
-never have an API get bulk CSV loaders.
-
 ![A cash movements blotter of settled movements: investments into underlying managers, investor subscriptions, and transfers between the fund's own cash accounts, each with its source and counterparty.](https://1494labs.com/assets/screens/cash-movements.61bcbb09.jpg)
+
 **Cash movements, with their sources.** Select many rows and act on them together in every table, because an administrator's day is spent on many rows at once.
-
-## The exceptions worklist
-
-An exception names the fund, the period and the amount. The worklist, the aging and the accept-with-a-note decision are the same whether the exception came from the daily internal check or from a counterparty file.
 
 ![The exceptions worklist: two open exceptions on the operating cash account, raised by an imported bank statement. The closing balance differs from the book by $2,150.00, and one statement line of -$2,150.00 matches nothing in the book.](https://1494labs.com/assets/screens/reconciliation-breaks.3b91eb16.jpg)
 
@@ -99,29 +126,8 @@ the book never recorded, and raised two exceptions: the balance and the unmatche
 about it, so next month's exception on the same account arrives with
 last month's reasoning attached.
 
-## Related reading
+## Request a Demo
 
-- [A wrong number that agrees with itself](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/), the errors a reconciliation cannot see
-
-- [What an opening balance has to carry](https://1494labs.com/notes/what-an-opening-balance-has-to-carry/), when a client fund moves over mid-life
-
-- [The platform overview](https://1494labs.com/fund-accounting-software/)
-
-- [Drawdown clients](https://1494labs.com/private-equity-fund-accounting/)
-
-- [Subscription-funded clients](https://1494labs.com/hedge-fund-accounting/)
-
-- [Family office clients](https://1494labs.com/family-office-accounting/)
-
-- [Closing a period](https://docs.1494labs.com/guide/closing-a-period/) in the product docs
-
-- [Cash and reconciliation](https://docs.1494labs.com/guide/cash-and-reconciliation/) in the product docs
-
-## Show us the fund that breaks your current system
-
-Built for the people who sign the books.
-Tell us what you run and we will walk you through it in the product,
-on a running book. If you want to try it yourself, we will stand up a
-sandbox seeded with reference funds for you to work in.
+Tell us which funds, structures and accounting terms you need to review.
 
 [Request a demo](https://1494labs.com/?segment=administrator#contact)

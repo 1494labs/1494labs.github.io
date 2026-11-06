@@ -6,11 +6,11 @@ Evaluate 1494 Labs for a private equity team closing the ledger and investor cap
 
 Product sources reviewed November 3, 2026
 
-## Put your fund’s close at the center of the shortlist
+## Put your fund's close at the center of the shortlist
 
 Allvue describes cloud fund accounting for private equity and fund administrators, with a multi-currency general ledger, partnership accounting and financial reporting. Its published scope is described on the [Allvue Fund Accounting product page](https://www.allvuesystems.com/solutions/fund-accounting/), reviewed November 3, 2026.
 
-If you are considering alternatives, start with the work the new book must reproduce: the investment record, the fee terms, each investor’s allocation and the statement the controller approves. 1494 Labs brings those records onto one ledger and runs recurring checks that surface differences.
+If you are considering alternatives, start with the work the new book must reproduce: the investment record, the fee terms, each investor's allocation and the statement the controller approves. 1494 Labs brings those records onto one ledger and runs recurring checks that surface differences.
 
 ## Prove a private equity close from source to statement
 

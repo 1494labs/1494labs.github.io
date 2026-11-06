@@ -223,4 +223,4 @@ around them.
 1494 Labs models waterfalls as configurable tiers,
 because the agreements we read are rarely either textbook case. Carry is held as an accrual subject to a whole-fund test.
 
-[Get in touch](https://1494labs.com/#contact)
+[Request a demo](https://1494labs.com/#contact)

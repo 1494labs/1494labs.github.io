@@ -132,4 +132,4 @@ release. It reports what was never exercised alongside what failed. The
 most recent run before this note was published covered every fund on the
 platform and came back clean.
 
-[Get in touch](https://1494labs.com/#contact)
+[Request a demo](https://1494labs.com/#contact)

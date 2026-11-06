@@ -27,18 +27,18 @@ Use a client that lets you supply the header. This endpoint does not provide an 
 | Tool | Use it for |
 | --- | --- |
 | `list_funds` | Find funds by code or name and resolve their UUIDs. Optional `q` filters the list; `limit` controls the page size. |
-| `search_api` | Find GET endpoints by a phrase such as “trial balance” or “capital account.” Returns paths and parameters, rather than balances. |
+| `search_api` | Find GET endpoints by a phrase such as "trial balance" or "capital account." Returns paths and parameters for a subsequent read. |
 | `read_api` | Read a discovered `/api/v1/` path, passing its filters in `query`. Substitute real IDs for path placeholders and follow the endpoint's pagination when needed. |
 | `list_saved_calcs` | Find saved analyses. Call without arguments for available grid keys, then pass a `grid_key` to list analyses on that table. Another user's private analyses are excluded. |
 | `run_saved_calc` | Recompute an accessible saved analysis from the live book using its `calc_id`. Optional `fund_id`, `period_id` and `as_of` override its saved context. An empty subtotal with a reason is not zero. |
 
 ## A first question and answer
 
-**Question:** “Which fund matches DEMO-PE? Tell me its legal name and currency.”
+**Question:** "Which fund matches DEMO-PE? Tell me its legal name and currency."
 
 The assistant calls `list_funds` with `{"q":"DEMO-PE","limit":10}`. Suppose the returned fund has `fund_code` DEMO-PE, `legal_name` Example Private Equity Fund LP and `base_currency_code` USD.
 
-**Illustrative answer:** “DEMO-PE is Example Private Equity Fund LP. Its base currency is USD. Source: the workspace fund record returned by list_funds.” These names and values are synthetic, not a live customer response. If several funds match, the assistant should ask which one you mean.
+**Illustrative answer:** "DEMO-PE is Example Private Equity Fund LP. Its base currency is USD. Source: the workspace fund record returned by list_funds." These synthetic names and values illustrate the response. If several funds match, the assistant should ask which one you mean.
 
 For an accounting question, keep that fund's returned `id`, use `search_api` to find the relevant read, then call `read_api` with the fund ID and the endpoint's required period parameters. Ask the assistant to name the fund, period and source, and to say when data is missing.
 

@@ -1,10 +1,10 @@
 Source: https://1494labs.com/capabilities/
 
-# What the platform does, and what it does not
+# Fund Accounting Capabilities
 
-34 capabilities, with what we do not do on the same page as what we do. Every row marked shipped can be demonstrated; ask for the one that decides it.
+39 capabilities for fund managers, allocators and fund administrators, with current status and accounting scope.
 
-## Fund accounting the market is thin on
+## Partnership and Investor Accounting
 
 | Capability | Status |
 | --- | --- |
@@ -39,17 +39,29 @@ Source: https://1494labs.com/capabilities/
 | Form PF inputs the ledger does not hold, entered on review screens and signed | Shipped |
 | Portfolio-company financials, valuation procedures, beneficial owners and related persons are entered on review screens, drafted from the book where it has the answer, and signed. A correction adds a new signature and keeps the earlier one. Beneficial owners come from the investor's KYC record. | |
 
+## Structures, Portfolio Companies and Forecasting
+
+| Capability | Status |
+| --- | --- |
+| Blocker tax accrued at the entity and carried to each investor behind it | In progress |
+| Secondaries and strip sale accounting | Shipped |
+| Portfolio-company financials and KPI collection | Shipped |
+| Liquidity projection and available undrawn credit | Shipped |
+| Commitment pacing and cash-flow forecasts | Shipped |
+
 ## How you get at it
 
 | Capability | Status |
 | --- | --- |
+| An LP-facing investor portal | Shipped |
+| Investors sign in to view and download documents made available to them. | |
 | Everything you can do on screen, available through the public API | Shipped |
 | Saved analyses that refresh on the platform and can be pulled by other systems through the API | Shipped |
 | [AI assistants can read the book through MCP](https://1494labs.com/connect-assistant/), the standard connector for AI tools | Shipped |
 | AI extraction from statements and LPAs, with mandatory human confirmation | Shipped |
 | Nothing AI-derived posts without a person confirming it. | |
 | A daily check that recomputes the arithmetic on every fund on the platform | Shipped |
-| Capital accounts against the ledger, allocations against the pool, cash movements against the entries that produced them. With no customers on the platform yet, it runs against our own reference funds - which is what it would do against yours, on the same schedule, with nothing to set up. | |
+| Capital accounts against the ledger, allocations against the pool, cash movements against the entries that produced them. | |
 | Internal exceptions: a worklist, aging, and an accept-with-a-note decision | Shipped |
 | An exception names the fund, the period and the amount. The check proves the book agrees with itself. Whether a price was right is a separate question, answered by checking against a custodian's numbers. | |
 | External exceptions: cash against an imported bank statement, positions against a custodian's file | Shipped |
@@ -67,8 +79,6 @@ Source: https://1494labs.com/capabilities/
 | The platform produces the payment file an operator carries to their banking portal. It holds no credentials for any bank or payment system and initiates no transfers. | |
 | Tax return preparation and K-1 filing | No |
 | Private per-fund book-data preparer workpapers are available under reporting (#1702), with unresolved character and tax-input gaps. Final tax allocations, tax-basis capital, withholding and K-1 preparation/filing remain with the preparer. Owner/preparer review is required before a demonstration claim. | |
-| An LP-facing investor portal | No |
-| Statements are produced for an administrator to send. There is no investor login. | |
 | Market data and pricing feeds we supply | No |
 | Bring your own provider. We provide the connection that loads your provider's feed and will not resell data or imply a license we do not hold. | |
 | A third-party security attestation | Roadmap 2027Q2 |

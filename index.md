@@ -1,14 +1,170 @@
 Source: https://1494labs.com/
 
-# Fund accounting for funds whose terms don't fit a template.
+# Fund, partnership and portfolio accounting for fund managers, allocators and fund administrators.
 
-Configure fees, allocations and waterfalls to match each fund's
-agreement, then trace the result through the ledger to NAV and to every
-investor's capital account. A check runs each morning and raises an
-exception where something stops tying.
+[Request a demo](https://1494labs.com/#contact)[See one month, traced to NAV](https://1494labs.com/#example)
 
-[Request a demo](https://1494labs.com/#contact)
-[See one month, traced to NAV](https://1494labs.com/#example)
+## [Who it is for](https://1494labs.com/fund-accounting-software/)
+
+- Managers (GPs): hedge funds, private equity, credit and real estate funds, registered funds, RICs and BDCs. Fund and investor accounting, fees, waterfalls and carry, investor statements and regulatory filings.
+
+- Allocators (LPs): fund of funds, family offices, endowments, foundations and other institutional investors. Commitments, calls and distributions across every underlying fund, look-through to the holdings, and performance by vintage, strategy and manager.
+
+- Administrators: many funds with different terms on one platform, and reconciliation against bank, custodian and administrator files.
+
+- [Fund, Partnership and Investor Accounting](https://1494labs.com/fund-accounting-software/)
+
+- [Hedge Fund Accounting](https://1494labs.com/hedge-fund-accounting/)
+
+- [Private Equity Fund Accounting](https://1494labs.com/private-equity-fund-accounting/)
+
+- [Registered Fund Accounting](https://1494labs.com/registered-fund-accounting/)
+
+- [Family Office Accounting](https://1494labs.com/family-office-accounting/)
+
+- [Fund Administration Software](https://1494labs.com/fund-administration-software/)
+
+- [Fund of Funds Accounting](https://1494labs.com/fund-of-funds-accounting/)
+
+- [Endowment and Foundation Investment Accounting](https://1494labs.com/endowment-and-foundation-investment-accounting/)
+
+## [Partnership and investor accounting](https://1494labs.com/fund-accounting-software/)
+
+- Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
+
+- Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.
+
+- Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.
+
+- Allocations by class, series and sleeve, and investor NAV in the class currency.
+
+## [Complex structures](https://1494labs.com/holding-company-and-family-office-entity-accounting/)
+
+- Master-feeder, alternative investment vehicles (AIVs), SPVs, blockers, co-investments and continuation vehicles.
+
+- Holding companies, family partnerships, trusts and GRATs, SMAs and funds of one, and personal accounts, with ownership traced through every layer.
+
+- Blocker tax accrued at the entity and carried to each investor behind it.
+
+- Fund of funds look-through to the underlying holdings, on both ownership bases.
+
+## [Portfolio accounting across asset classes](https://1494labs.com/portfolio-accounting/)
+
+- Public and private equity, fixed income, loans, credit facilities on both sides, real estate and REITs, derivatives, hedge fund and private fund interests, and digital assets, in any currency.
+
+## [Portfolio companies](https://1494labs.com/portfolio-company-kpi-collection/)
+
+- Financials and KPIs collected from each company by upload or a secure submission link: revenue, EBITDA, net debt and the metrics you define, checked on the way in.
+
+- Every submission and correction kept with its reporting date, currency, source and submitter.
+
+- Collected figures shown beside each valuation mark, and the submission used recorded with it.
+
+- Cap tables with financing rounds, tenders, vesting and exit waterfalls.
+
+- Company financials and KPIs in fund reporting, with missing companies flagged.
+
+## [Secondaries](https://1494labs.com/secondaries-and-strip-sale-accounting/)
+
+- Buy and sell LP interests, single or as a strip sale across many funds in one transaction.
+
+- Purchase-price adjustments and deferred payments at a discount, with interim flows between the reference date and closing.
+
+- The day-one gain between price paid and fair value recognized at acquisition, and cost basis kept.
+
+- GP-led deals: continuation vehicles and tender offers.
+
+- Direct secondaries in common stock, valued with waterfall and option-pricing methods.
+
+- A secondaries portfolio report, and buyer and seller confirmations.
+
+## [Liquidity and forecasting](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/)
+
+- Cash projection in horizon buckets out past a year, from settled cash: expected proceeds from underlying funds, investor outflows, unfunded commitments and scheduled obligations.
+
+- Available liquidity including undrawn credit facilities.
+
+- Commitment pacing for fund of funds and allocator programs.
+
+- Deployment and exit forecasts for drawdown funds, with fees and fund-level debt.
+
+- Cash-flow plans for evergreen, real estate and credit books: dealing, property recoveries, loan draws, interest and repayments.
+
+- Scenarios with frozen inputs, each projected amount traced to the records behind it, and past forecasts kept.
+
+- Gates, lockups and notice periods tracked for every underlying fund.
+
+## [Close, controls and reconciliation](https://1494labs.com/close-controls-and-reconciliation/)
+
+- Period close with a frozen trial balance and graded revisions.
+
+- Official and latest-knowledge books on one ledger, with the source of every line.
+
+- Cash, positions and NAV reconciled against outside files, with an exceptions worklist.
+
+- A check that recomputes every fund's arithmetic each morning.
+
+## [Reporting](https://1494labs.com/fund-and-investor-reporting/)
+
+- NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
+
+- Saved analyses that refresh on the platform and can be pulled through the API.
+
+## [API and AI](https://1494labs.com/fund-accounting-api-and-ai/)
+
+- Everything on screen is also in the public API.
+
+- AI assistants read the book through MCP.
+
+- AI reads statements and LPAs, and a person confirms each result before it posts.
+
+## Accounting Pages
+
+- [Fund, Partnership and Investor Accounting](https://1494labs.com/fund-accounting-software/)
+
+- [Hedge Fund Accounting](https://1494labs.com/hedge-fund-accounting/)
+
+- [Private Equity Fund Accounting](https://1494labs.com/private-equity-fund-accounting/)
+
+- [Registered Fund Accounting](https://1494labs.com/registered-fund-accounting/)
+
+- [Family Office Accounting](https://1494labs.com/family-office-accounting/)
+
+- [Fund Administration Software](https://1494labs.com/fund-administration-software/)
+
+- [Fund of Funds Accounting](https://1494labs.com/fund-of-funds-accounting/)
+
+- [Secondaries and Strip Sale Accounting](https://1494labs.com/secondaries-and-strip-sale-accounting/)
+
+- [Blocker Corporation Accounting](https://1494labs.com/blocker-corporation-accounting/)
+
+- [Side Pocket Accounting](https://1494labs.com/side-pocket-accounting/)
+
+- [Equalization and Series Accounting](https://1494labs.com/equalization-and-series-accounting/)
+
+- [Waterfall and Carried Interest Accounting](https://1494labs.com/waterfall-and-carried-interest-accounting/)
+
+- [Capital Call and Distribution Software](https://1494labs.com/capital-call-and-distribution-software/)
+
+- [Portfolio Company KPI Collection](https://1494labs.com/portfolio-company-kpi-collection/)
+
+- [Liquidity Forecasting and Commitment Pacing](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/)
+
+- [Holding Company and Family Office Entity Accounting](https://1494labs.com/holding-company-and-family-office-entity-accounting/)
+
+- [Endowment and Foundation Investment Accounting](https://1494labs.com/endowment-and-foundation-investment-accounting/)
+
+- [Secondaries for Fund of Funds](https://1494labs.com/secondaries-for-fund-of-funds/)
+
+- [Portfolio Accounting Across Asset Classes](https://1494labs.com/portfolio-accounting/)
+
+- [Close, Controls and Reconciliation](https://1494labs.com/close-controls-and-reconciliation/)
+
+- [Fund and Investor Reporting](https://1494labs.com/fund-and-investor-reporting/)
+
+- [Fund Accounting API and AI](https://1494labs.com/fund-accounting-api-and-ai/)
+
+- [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 ## Follow one month from income to investor capital.
 
@@ -37,73 +193,9 @@ its management fee, then where it ended up in six investors' capital accounts.
 
 **Six investor accounts reconcile to the fund's ending NAV of $23,625,473.00.** Management fees and expenses are attributed to the accounts that bear them, so a fee that reaches NAV reaches the capital account it belongs to.
 
-[The full walkthrough](https://1494labs.com/fund-accounting-software/) runs the same
-period through the trial balance and the statement of changes.
+[Fund accounting and reporting](https://1494labs.com/fund-accounting-software/) includes trial balance and statement examples.
 
-## Start with the kind of book you keep.
-
-- ### [Private equity and drawdown funds](https://1494labs.com/private-equity-fund-accounting/)
-
-Commitments, capital calls, recallable distributions, European and
-American waterfalls, GP carry and clawback, and ILPA-native notices.
-
-- ### [Hedge funds and subscription-funded vehicles](https://1494labs.com/hedge-fund-accounting/)
-
-Series accounting and equalization, per-series high-water marks that
-survive a redemption, incentive fees, side pockets and sleeves.
-
-- ### [Family offices](https://1494labs.com/family-office-accounting/)
-
-Multi-level ownership through trusts and holding companies, with
-intercompany interests eliminated so each asset is counted once.
-
-- ### [Registered funds](https://1494labs.com/registered-fund-accounting/)
-
-§19(a) notices sourced from the book, repurchase offers with
-proration, managed distributions, and BDC asset coverage as a gate.
-
-- ### [Fund administrators](https://1494labs.com/fund-administration-software/)
-
-Many funds on one ledger, an exception worklist with aging, and
-per-client statement packs run off the same book.
-
-- ### [Everything, listed](https://1494labs.com/capabilities/)
-
-Thirty-three capabilities with a status against each, including the six
-things we do not do and are not planning to.
-
-## Configure the terms. Trace the result. Check the balances.
-
-### Terms are configured to the agreement
-
-A [waterfall tier](https://1494labs.com/notes/european-vs-american-waterfall/), an [equalization method](https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/), a
-[high-water mark that prorates on partial redemption](https://1494labs.com/notes/high-water-marks-and-partial-redemptions/): each is set to what the fund's agreement says
-and tested against example distributions before it touches a live period.
-
-### Every balance traces back
-
-A fee on an investor's capital account leads back to the accrual
-that produced it, the schedule that calculated it and the journal entry
-that posted it. You can review an entry and see which balances move before
-you commit it.
-
-### The book checks itself each morning
-
-Each morning the platform checks capital accounts against the ledger,
-allocations against the pool, and cash movements against the entries that
-produced them. Differences open an exception with the fund, the period and the
-amount. These checks test internal consistency; they do not validate
-external prices. [Why the check runs every day](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/).
-
-## Evaluate it on books that already run.
-
-Try the platform on a sandbox seeded with the reference funds, or we
-will walk you through one. The
-[security page](https://1494labs.com/security/) describes the controls in place,
-and the [capability list](https://1494labs.com/capabilities/) marks what is
-shipped, what is planned and what we will not build.
-
-## See a book like yours.
+## Request a Demo
 
 Choose your fund type and leave your email. We will reply with a relevant
 example and arrange a walkthrough or a sandbox with synthetic reference

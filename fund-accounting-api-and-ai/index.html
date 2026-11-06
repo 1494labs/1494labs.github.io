@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fund Accounting API and AI · 1494 Labs</title>
+<meta name="description" content="For fund managers, allocators and administrators connecting their book to other systems and AI assistants. Accounting Records and Notice Endpoints.">
+<link rel="canonical" href="https://1494labs.com/fund-accounting-api-and-ai/">
+<link rel="stylesheet" href="/assets/notes.d2937031.css">
+<link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/assets/favicon.svg?v=1808" sizes="any" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-16x16.png?v=1808" sizes="16x16" type="image/png">
+<link rel="icon" href="/assets/favicon-32x32.png?v=1808" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/favicon-48x48.png?v=1808" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=1808" sizes="180x180">
+<link rel="manifest" href="/site.webmanifest?v=1808">
+<meta name="theme-color" content="#2438EA">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://1494labs.com/fund-accounting-api-and-ai/">
+<meta property="og:site_name" content="1494 Labs">
+<meta property="og:title" content="Fund Accounting API and AI">
+<meta property="og:description" content="For fund managers, allocators and administrators connecting their book to other systems and AI assistants. Accounting Records and Notice Endpoints.">
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fund Accounting API and AI">
+<meta name="twitter:description" content="For fund managers, allocators and administrators connecting their book to other systems and AI assistants. Accounting Records and Notice Endpoints.">
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
+
+
+
+
+
+<link rel="alternate" type="text/markdown" href="https://1494labs.com/fund-accounting-api-and-ai.md" title="Markdown">
+</head>
+<body class="buyer-page">
+<header class="site">
+  <div class="bar">
+    <a class="lockup" href="/" aria-label="1494 Labs home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+            <path d="M5 9 H27"/>
+<path d="M16 9 V26"/>
+          </g>
+          <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+          <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        </svg>
+      <span class="wordmark">1494 Labs</span>
+    </a>
+    <nav class="sitenav" aria-label="Site">
+      <a href="/fund-accounting-software/">Platform</a>
+      <a href="/capabilities/">Capabilities</a>
+      <a href="/notes/">Notes</a>
+      <a class="demo" href="/?segment=other#contact">Request a demo</a>
+    </nav>
+    <details class="navmenu">
+      <summary>
+<svg viewBox="0 0 20 20" aria-hidden="true">
+<path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="1.6" fill="none"/>
+</svg>Menu</summary>
+      <nav aria-label="Site menu">
+        <a href="/fund-accounting-software/">Platform</a>
+        <a href="/capabilities/">Capabilities</a>
+        <a href="/notes/">Notes</a>
+        <a class="demo" href="/?segment=other#contact">Request a demo</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<main class="wrap" id="main">
+<h1>Fund Accounting API and AI</h1>
+<p class="standfirst">For fund managers, allocators and administrators connecting their book to other systems and AI assistants.</p>
+<article>
+<!-- buyer-capabilities:start -->
+<h2>Accounting Records and Notice Endpoints</h2>
+<ul>
+<li data-use-case="capital-activity.call-notices">Capital call notices are available as PDFs through the API. The notice carries the investor&#x27;s amount, due date and wire instructions from approved bank details, for the accounting team&#x27;s call-notice process.</li>
+<li data-use-case="capital-activity.distribution-notices">Distribution notices are available as PDFs through the API. Each notice belongs to a recorded distribution and provides the investor-facing document for that cash event.</li>
+<li data-use-case="period-close.je-from-every-source">Journal Entries shows the postings created by accounting transactions. Each journal entry retains its source type and source identifier. The entry detail displays the accounting lines and the recorded transaction source.</li>
+<li data-use-case="reporting.investor-capital-account-statement">Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor&#x27;s recorded account and the fund&#x27;s reporting period.</li>
+</ul>
+<h2>Terms</h2>
+<p>Public API refers to programmatic access to accounting records. MCP connects AI assistants to tools and data. The accounting endpoints listed here cover notice PDFs, journal sources and investor statements.</p>
+<section id="buyer-questions"><h2>Questions</h2>
+<h3>Can I retrieve a capital call notice through the API?</h3>
+<p>Yes. The capital call notice endpoint returns a PDF with the investor&#x27;s amount, due date and wire instructions. Wire instructions come from approved bank details. The notice is retrieved through the API.</p>
+<h3>Can I retrieve an investor distribution notice?</h3>
+<p>Yes. The distribution notice endpoint returns the PDF for a recorded distribution. It provides the investor-facing notice for that distribution through the API.</p>
+<h3>Can I identify the transaction behind a journal entry?</h3>
+<p>Yes. Each journal entry records a source type and source identifier. Journal Entries displays the posting detail and source label; underlying distribution entries also have a direct link to the source transaction.</p>
+<h3>Can an investor statement show flows, fees and ending capital?</h3>
+<p>Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period&#x27;s movement for the investor account and its closing balance.</p>
+</section>
+<script type="application/ld+json" data-buyer-faq>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I retrieve a capital call notice through the API?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The capital call notice endpoint returns a PDF with the investor's amount, due date and wire instructions. Wire instructions come from approved bank details. The notice is retrieved through the API."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I retrieve an investor distribution notice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The distribution notice endpoint returns the PDF for a recorded distribution. It provides the investor-facing notice for that distribution through the API."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I identify the transaction behind a journal entry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Each journal entry records a source type and source identifier. Journal Entries displays the posting detail and source label; underlying distribution entries also have a direct link to the source transaction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can an investor statement show flows, fees and ending capital?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance."
+      }
+    }
+  ]
+}
+</script>
+<!-- buyer-capabilities:end -->
+<h2>Related Accounting Pages</h2>
+<ul class="pagelinks">
+<li>
+<a href="/connect-assistant/">Connect an assistant</a>
+</li>
+<li>
+<a href="/fund-of-funds-accounting/">Fund of Funds Accounting</a>
+</li>
+<li>
+<a href="/capital-call-and-distribution-software/">Capital Call and Distribution Software</a>
+</li>
+<li>
+<a href="/liquidity-forecasting-and-commitment-pacing/">Liquidity Forecasting and Commitment Pacing</a>
+</li>
+<li>
+<a href="/glossary/">Fund Accounting Glossary</a>
+</li>
+<li>
+<a href="/capabilities/">Capabilities and Status</a>
+</li>
+</ul>
+<div class="endcta">
+<h2>Request a Demo</h2>
+<p>Tell us which funds, structures and accounting terms you need to review.</p>
+<a class="btn" href="/?segment=other#contact">Request a demo</a>
+</div>
+</article>
+</main>
+<div class="wrap">
+<!-- assistant-links:start -->
+  <nav class="assistant-links" aria-label="Page formats and assistants">
+    <a href="https://1494labs.com/fund-accounting-api-and-ai.md">Read Markdown</a>
+  </nav>
+  <!-- assistant-links:end -->
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs Inc., a Delaware corporation, 6 Liberty Square #2721, Boston, MA 02109</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+  <a href="/glossary/">Glossary</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/security/">Security</a>
+    <a href="/terms/">Terms</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3da7530d96b14f3f95915c071872f4be"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

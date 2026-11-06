@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waterfall and Carried Interest Accounting · 1494 Labs</title>
+<meta name="description" content="For private equity managers and administrators calculating distributions and carry. Waterfall Terms and Allocations.">
+<link rel="canonical" href="https://1494labs.com/waterfall-and-carried-interest-accounting/">
+<link rel="stylesheet" href="/assets/notes.d2937031.css">
+<link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/assets/favicon.svg?v=1808" sizes="any" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-16x16.png?v=1808" sizes="16x16" type="image/png">
+<link rel="icon" href="/assets/favicon-32x32.png?v=1808" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/favicon-48x48.png?v=1808" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=1808" sizes="180x180">
+<link rel="manifest" href="/site.webmanifest?v=1808">
+<meta name="theme-color" content="#2438EA">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://1494labs.com/waterfall-and-carried-interest-accounting/">
+<meta property="og:site_name" content="1494 Labs">
+<meta property="og:title" content="Waterfall and Carried Interest Accounting">
+<meta property="og:description" content="For private equity managers and administrators calculating distributions and carry. Waterfall Terms and Allocations.">
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Waterfall and Carried Interest Accounting">
+<meta name="twitter:description" content="For private equity managers and administrators calculating distributions and carry. Waterfall Terms and Allocations.">
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
+
+
+
+
+
+<link rel="alternate" type="text/markdown" href="https://1494labs.com/waterfall-and-carried-interest-accounting.md" title="Markdown">
+</head>
+<body class="buyer-page">
+<header class="site">
+  <div class="bar">
+    <a class="lockup" href="/" aria-label="1494 Labs home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+            <path d="M5 9 H27"/>
+<path d="M16 9 V26"/>
+          </g>
+          <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+          <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        </svg>
+      <span class="wordmark">1494 Labs</span>
+    </a>
+    <nav class="sitenav" aria-label="Site">
+      <a href="/fund-accounting-software/">Platform</a>
+      <a href="/capabilities/">Capabilities</a>
+      <a href="/notes/">Notes</a>
+      <a class="demo" href="/?segment=pevc#contact">Request a demo</a>
+    </nav>
+    <details class="navmenu">
+      <summary>
+<svg viewBox="0 0 20 20" aria-hidden="true">
+<path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="1.6" fill="none"/>
+</svg>Menu</summary>
+      <nav aria-label="Site menu">
+        <a href="/fund-accounting-software/">Platform</a>
+        <a href="/capabilities/">Capabilities</a>
+        <a href="/notes/">Notes</a>
+        <a class="demo" href="/?segment=pevc#contact">Request a demo</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<main class="wrap" id="main">
+<h1>Waterfall and Carried Interest Accounting</h1>
+<p class="standfirst">For private equity managers and administrators calculating distributions and carry.</p>
+<article>
+<!-- buyer-capabilities:start -->
+<h2>Waterfalls, Carry and Clawback</h2>
+<ul>
+<li data-reviewed-use-case="fees.carry-calc-allocation">The distribution waterfall applies the fund&#x27;s hurdle, catch-up and tiers, with European or American terms. Distribution preview shows the proposed GP and LP amounts. Posting records the distribution, and principal carry allocation uses the posted GP carry amount.</li>
+<li data-reviewed-use-case="fees.accrued-vs-crystallized-carry">Carry reporting distinguishes accrued carry from amounts already paid to the GP. Closed-end fund reporting calculates accrued carry from a hypothetical liquidation at the reporting-date NAV. Incentive fees also have accrual, crystallization and settlement records under the configured fund terms.</li>
+<li data-reviewed-use-case="fees.clawback">Clawback measurement compares the GP&#x27;s received carry with its entitlement under the fund&#x27;s terms. The clawback test records excess carry, interest, escrow applied and prior repayments, and settlement records the GP&#x27;s repayment for the investors.</li>
+<li data-reviewed-use-case="fees.carry-vesting-principals">Carry Vesting records the GP&#x27;s principals, their carry shares and vesting terms. Principal allocations use the vested fraction at the distribution date. Leaver events retain the effective date and treatment used in subsequent allocations and the vesting report.</li>
+</ul>
+<h2>Supporting Accounting</h2>
+<ul>
+<li data-use-case="fund-setup.carry-waterfall-terms">Waterfall setup records the hurdle, catch-up and distribution tiers for European or American carry arrangements. A policy preview shows the configured waterfall before it is used for the fund.</li>
+<li data-use-case="period-close.capital-accounts-tie-gl">Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund&#x27;s capital accounts.</li>
+<li data-use-case="period-close.allocation-up-chain">Allocations distributes income, expenses and gains through recorded ownership. The allocation screen includes a cascade preview and confirmation for structures with multiple ownership layers, connecting fund results with the investors above them.</li>
+<li data-use-case="venture.exit-waterfall-preferences">The company Exit screen calculates whole-holding exit proceeds through liquidation preferences, participation and caps. The calculation uses the company&#x27;s capital structure to allocate the exit value across the security classes.</li>
+</ul>
+<h2>Terms</h2>
+<p>Carried interest, preferred return, hurdle, catch-up and distribution tiers describe fund waterfall terms. European and American policies are available in waterfall setup. Company exit waterfalls use liquidation preferences, participation and caps.</p>
+<h2>Related Notes</h2>
+<ul class="pagelinks">
+<li><a href="/notes/european-vs-american-waterfall/">European and American waterfalls</a></li>
+</ul>
+<section id="buyer-questions"><h2>Questions</h2>
+<h3>Can I preview and post a distribution waterfall?</h3>
+<p>Yes. Distribution preview applies the fund&#x27;s configured waterfall tiers to the proposed amount. The calculation shows the GP and LP allocations, including preferred return, catch-up and carry. Posting records the distribution in the books.</p>
+<h3>Can I report accrued carry at the reporting date?</h3>
+<p>Yes. Closed-end fund reporting calculates the GP&#x27;s hypothetical-liquidation entitlement at the reporting-date NAV and deducts GP carry already received, with a floor of zero. This accrued-carry amount appears in reporting; it is a report calculation.</p>
+<h3>Can I measure a clawback and record repayment?</h3>
+<p>Yes. Clawback measurement and tests calculate the obligation under the configured fund terms, including escrow and prior repayments. Settlement records the GP&#x27;s repayment. The final-liquidation workflow can run the fund&#x27;s configured clawback test.</p>
+<h3>Can a carry plan include vesting and leaver treatment?</h3>
+<p>Yes. Carry plans record principals, carry shares, vesting schedules and leaver treatment. Allocating a posted distribution uses the vested fraction for that date. The vesting report shows the principal-level results.</p>
+<h3>Can I configure European and American waterfall terms?</h3>
+<p>Yes. Waterfall setup supports European and American policies, with hurdle, catch-up and tier terms. The policy preview calculates the configured distribution sequence so the finance team can review the terms.</p>
+<h3>Can allocations follow several ownership layers?</h3>
+<p>Yes. Allocations supports period allocations and ownership cascades. The cascade dialog provides a preview and confirmation, and income, expenses and gains follow the recorded ownership chain to the participating investors.</p>
+</section>
+<script type="application/ld+json" data-buyer-faq>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I preview and post a distribution waterfall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Distribution preview applies the fund's configured waterfall tiers to the proposed amount. The calculation shows the GP and LP allocations, including preferred return, catch-up and carry. Posting records the distribution in the books."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I report accrued carry at the reporting date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Closed-end fund reporting calculates the GP's hypothetical-liquidation entitlement at the reporting-date NAV and deducts GP carry already received, with a floor of zero. This accrued-carry amount appears in reporting; it is a report calculation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I measure a clawback and record repayment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Clawback measurement and tests calculate the obligation under the configured fund terms, including escrow and prior repayments. Settlement records the GP's repayment. The final-liquidation workflow can run the fund's configured clawback test."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a carry plan include vesting and leaver treatment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Carry plans record principals, carry shares, vesting schedules and leaver treatment. Allocating a posted distribution uses the vested fraction for that date. The vesting report shows the principal-level results."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I configure European and American waterfall terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Waterfall setup supports European and American policies, with hurdle, catch-up and tier terms. The policy preview calculates the configured distribution sequence so the finance team can review the terms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can allocations follow several ownership layers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Allocations supports period allocations and ownership cascades. The cascade dialog provides a preview and confirmation, and income, expenses and gains follow the recorded ownership chain to the participating investors."
+      }
+    }
+  ]
+}
+</script>
+<!-- buyer-capabilities:end -->
+<h2>Related Accounting Pages</h2>
+<ul class="pagelinks">
+<li>
+<a href="/fund-of-funds-accounting/">Fund of Funds Accounting</a>
+</li>
+<li>
+<a href="/capital-call-and-distribution-software/">Capital Call and Distribution Software</a>
+</li>
+<li>
+<a href="/liquidity-forecasting-and-commitment-pacing/">Liquidity Forecasting and Commitment Pacing</a>
+</li>
+<li>
+<a href="/glossary/">Fund Accounting Glossary</a>
+</li>
+<li>
+<a href="/capabilities/">Capabilities and Status</a>
+</li>
+</ul>
+<div class="endcta">
+<h2>Request a Demo</h2>
+<p>Tell us which funds, structures and accounting terms you need to review.</p>
+<a class="btn" href="/?segment=pevc#contact">Request a demo</a>
+</div>
+</article>
+</main>
+<div class="wrap">
+<!-- assistant-links:start -->
+  <nav class="assistant-links" aria-label="Page formats and assistants">
+    <a href="https://1494labs.com/waterfall-and-carried-interest-accounting.md">Read Markdown</a>
+  </nav>
+  <!-- assistant-links:end -->
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs Inc., a Delaware corporation, 6 Liberty Square #2721, Boston, MA 02109</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+  <a href="/glossary/">Glossary</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/security/">Security</a>
+    <a href="/terms/">Terms</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3da7530d96b14f3f95915c071872f4be"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

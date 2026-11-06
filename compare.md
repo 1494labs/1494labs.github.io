@@ -6,7 +6,7 @@ Compare published product scope, then test the accounting with your own fund ter
 
 Product sources reviewed November 3, 2026
 
-Choose a comparison below to prepare a fund accounting evaluation. Each guide links the other provider’s own public material and records the review date. Bring an agreed opening book and expected results to the demonstration.
+Choose a comparison below to prepare a fund accounting evaluation. Each guide links the other provider's own public material and records the review date. Bring an agreed opening book and expected results to the demonstration.
 
 ## FundCount
 

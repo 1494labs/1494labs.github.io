@@ -60,6 +60,7 @@ header.site .bar{
    <details>, so it needs no script) and open as a list of 44px rows under the
    bar. The desktop nav is the same four links; only one of the two shows. */
 .navmenu{display:none}
+.navmenu:not([open]) nav{display:none}
 @media (max-width:640px){
   header.site .bar{position:relative;padding-top:12px;padding-bottom:12px}
   .sitenav{display:none}
@@ -226,3 +227,7 @@ article > .shot{max-width:none}
 .assistant-links{display:flex;flex-wrap:wrap;gap:8px 24px;margin:40px 0 24px}
 .assistant-links a{display:inline-flex;align-items:center;min-height:44px;padding:8px 12px;border:1px solid var(--rule);border-radius:6px;background:var(--sheet);font-size:.875rem;text-decoration:none}
 .assistant-links a:hover{border-color:var(--accent);background:var(--accent-tint)}
+
+/* Buyer search pages use the established reading column and shared footer. */
+.buyer-page .wrap + .wrap{padding-top:0}
+.buyer-page .wrap + .wrap footer.site{margin-top:40px}

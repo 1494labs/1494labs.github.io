@@ -37,6 +37,6 @@ Separate series can carry those marks directly. A single-NAV method needs the ap
 
 ## Investigate a total that ties
 
-A fund-level reconciliation does not prove that the fee landed on the correct investors. Trace any difference through the subscription price, imported fee state, adjustment postings and settlement. Retain the original state and the expected test result alongside the conversion evidence.
+A fund-level reconciliation does not prove that the fee was charged to the correct investors. Trace any difference through the subscription price, imported fee state, adjustment postings and settlement. Retain the original state and the expected test result alongside the conversion evidence.
 
 [The mid-period subscriber example](https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/) explains the underlying problem. Ask to see both supported approaches in a [1494 Labs demonstration](https://1494labs.com/#contact).
