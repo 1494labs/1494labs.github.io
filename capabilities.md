@@ -99,3 +99,7 @@ Source: https://1494labs.com/capabilities/
 - [Investment accounting for endowments and foundations](https://1494labs.com/endowment-foundation-accounting/)
 
 - [Registered fund accounting software](https://1494labs.com/registered-fund-accounting/)
+
+- [Real estate fund accounting software](https://1494labs.com/real-estate-fund-accounting/)
+
+- [REIT accounting software](https://1494labs.com/reit-accounting-software/)

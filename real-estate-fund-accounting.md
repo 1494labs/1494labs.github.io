@@ -1,0 +1,82 @@
+Source: https://1494labs.com/real-estate-fund-accounting/
+
+# Real estate fund accounting, down to the lease
+
+A real estate fund has two sets of numbers that have to agree. The fund's ledger, where investors' capital and the promote live. And the properties underneath it, where rent is billed, leases are amended and operating expenses come in. When the second set sits in a property system and is re-keyed into the first, the gap between them is where the close slows down.
+
+Real estate · roughly 6 minutes
+
+## Leases and the rent roll
+
+A lease records the tenant, the unit and its area, the term, and a base rent schedule with its escalations: fixed steps, steps indexed to inflation with a floor and a cap, and percentage rent over a sales breakpoint. Free-rent periods, security deposits and options sit on the lease too. Renewal, termination and purchase options are recorded as data and are accounted for only when someone exercises them, because whether an option is reasonably certain is a judgment the lease cannot make for you.
+
+The rent roll can be produced as of any date, for one property or the whole fund. Each row carries the monthly and annualized base rent, rent per unit of area, months remaining, the deposit actually held and the straight-line receivable booked so far. Rent per area is blank, never zero, when the lease records no area.
+
+## Straight-line rent, calculated from the lease
+
+Under ASC 842, a lessor with free months and escalations recognizes rent on a straight-line basis, and the difference between rent recognized and rent billed builds up as a receivable. Here the schedule is calculated from the lease's terms, and the rent invoice and the journal entries follow from it, so the receivable always ties to the leases that produced it. Change a term and the affected periods restate; a period that is already closed does not move.
+
+The reference fund holds an office lease of 12,000 square feet. It has three months of free rent, then 50,000 a month, stepping to 52,500 and then 55,000 on each anniversary. The total rent over the term is 1,740,000, recognized evenly over the 1,095 days of the lease.
+
+One lease at 2026-06-30, after 18 monthly runs
+
+| Item | Amount |
+| --- | --- |
+| Rent billed | 712,500.00 |
+| Rent recognized, straight-line | 818,356.16 |
+| Straight-line receivable | 105,856.16 |
+
+The recognized figure is 1,740,000 times 515 elapsed days over 1,095, and the billed figure is what the free months and steps put on the invoices. The difference is the receivable, and it unwinds to zero by the end of the term.
+
+Lease changes follow the standard. A modification takes effect from its date: the accrued receivable reduces the successor lease's payments, so it unwinds to zero by the new end date. When a lease ends early, the periods from the termination date restate. In the reference fund a lease ended on 20 March 2026: March's invoice was reissued for 20 days, 19,354.84, and the remaining receivable of 12,641.05 was written off against that lease. A tenant allowance and a leasing commission are amortized over the remaining term, the allowance against rental income and the commission to leasing cost. Improvements the landlord owns are depreciated over the shorter of their useful life and the remaining term.
+
+## Each property keeps its own books
+
+The property is a dimension on the journal lines, not a second ledger. Rent, recoveries, depreciation, mortgage interest and operating expenses all post to the property they belong to, and each building has an income statement and a balance sheet that read straight from the fund's ledger. The property figures, the fund-level lines that belong to no property and any other holdings add up to the fund's income statement over the same dates.
+
+Two properties, one fund, 2025-01 to 2026-06
+
+| Property | Rental revenue | Recoveries | Operating expenses | NOI |
+| --- | --- | --- | --- | --- |
+| Office, 30,000 sq ft, mortgaged | 1,107,711.00 | 4,153.80 | 150,000.00 | 961,864.80 |
+| Retail, 10,000 sq ft, unlevered | 648,122.74 | 0.00 | 57,000.00 | 591,122.74 |
+
+Fund administration costs of 1,500 a month are attached to no building, so they stay at fund level and appear in neither NOI.
+
+## Recoveries and the annual true-up
+
+Common area maintenance, real estate tax and insurance are recovered through pools. A tenant's share can be its area over the building's, or a fixed percentage, with a base year or an expense stop where the lease has one. Monthly estimates are billed on the rent invoice. At year end the actual expense is read from the property's books and the reconciliation produces either an invoice for what the tenant owes or a credit for what the fund owes back, once per lease and year.
+
+## NOI and the metrics investors ask for
+
+NOI follows the usual definition, operating revenue less operating expenses, and is read from the same ledger as everything else. Physical occupancy is leased area over rentable area as of a date. Economic occupancy is billed fixed rent over gross potential fixed rent for a period. Weighted average lease term is shown by rent and by area, and rent per area comes with them. The areas and rents behind each ratio are carried beside it. A group total adds the facts first and divides afterward, so an occupancy figure for ten buildings is never an average of ten percentages. A ratio with nothing to divide by shows blank, with the reason.
+
+## Valuation basis is a choice per fund
+
+A fund elects how it carries its real property. On cost, which is the default, each building is carried at cost less depreciation, and appraisals are recorded as disclosure only. On fair value, the ASC 946 election for investment companies, there is no depreciation: the building is carried at its appraised value and the change runs through unrealized gain or loss. An appraisal records its approach (income capitalization, discounted cash flow or sales comparison) and the NOI it used. It is entered as preliminary and approved by a second person before it moves a value.
+
+When a building is sold, the realized gain is net proceeds less carrying value. On a cost fund the quarter's depreciation runs first.
+
+## The debt and the promote
+
+A mortgage facility is tied to its property, so its draws, repayments and interest post to that building. Debt service coverage, loan-to-value and debt yield are derived per loan and per property from the facility's accruals, the property's NOI and its latest approved appraisal. With no approved appraisal, loan-to-value is blank rather than computed on book value. Covenant tests record a breach on the reconciliation worklist and block nothing. The promote runs through the [distribution waterfall](https://1494labs.com/distribution-waterfall-software/), deal by deal or whole-fund as the agreement says.
+
+## What it doesn't do
+
+Leases are held in the fund's base currency. Covenant tests inform; they do not stop a posting. Tax returns and K-1s stay with your tax preparer.
+
+## Related reading
+
+- [Distribution waterfall software](https://1494labs.com/distribution-waterfall-software/)
+
+- [REIT accounting software](https://1494labs.com/reit-accounting-software/), for a REIT that holds these properties
+
+- [Private equity fund accounting](https://1494labs.com/private-equity-fund-accounting/)
+
+- [Capabilities and status](https://1494labs.com/capabilities/)
+
+## Show us the portfolio
+
+Tell us how many properties you hold and where the leases live today. We will walk you through a fund in the product, or stand up a sandbox with a reference real estate fund for you to work in.
+
+[Request a demo](https://1494labs.com/?segment=other#contact)

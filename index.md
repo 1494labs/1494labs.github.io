@@ -205,7 +205,9 @@ Explore product examples before requesting access:
 [Private equity](https://1494labs.com/private-equity-fund-accounting/),
 [hedge funds](https://1494labs.com/hedge-fund-accounting/),
 [family offices](https://1494labs.com/family-office-accounting/) and
-[registered funds](https://1494labs.com/registered-fund-accounting/)
+[registered funds](https://1494labs.com/registered-fund-accounting/),
+[real estate funds](https://1494labs.com/real-estate-fund-accounting/) and
+[REITs](https://1494labs.com/reit-accounting-software/)
 each have product examples.
 
 Prefer email? Write directly to
