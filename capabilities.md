@@ -78,7 +78,7 @@ Source: https://1494labs.com/capabilities/
 | Custody, or moving money | No |
 | The platform produces the payment file an operator carries to their banking portal. It holds no credentials for any bank or payment system and initiates no transfers. | |
 | Tax return preparation and K-1 filing | No |
-| Private per-fund book-data preparer workpapers are available under reporting (#1702), with unresolved character and tax-input gaps. Final tax allocations, tax-basis capital, withholding and K-1 preparation/filing remain with the preparer. Owner/preparer review is required before a demonstration claim. | |
+| We produce per-fund book-basis workpapers for your tax preparer. Tax allocations, tax-basis capital accounts, withholding, and K-1 preparation and filing stay with the preparer. | |
 | Market data and pricing feeds we supply | No |
 | Bring your own provider. We provide the connection that loads your provider's feed and will not resell data or imply a license we do not hold. | |
 | A third-party security attestation | Roadmap 2027Q2 |
