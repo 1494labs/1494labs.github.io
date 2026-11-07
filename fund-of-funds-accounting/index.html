@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fund of Funds Accounting · 1494 Labs</title>
-<meta name="description" content="For fund of funds managers, allocators and their administrators. Accounting Capabilities.">
+<title>Fund of funds accounting software · 1494 Labs</title>
+<meta name="description" content="Fund of funds accounting software with look-through to the companies underneath, manager marks that carry their date, and late statements booked as corrections.">
 <link rel="canonical" href="https://1494labs.com/fund-of-funds-accounting/">
 <link rel="stylesheet" href="/assets/notes.d2937031.css">
 <link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
@@ -19,15 +19,15 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://1494labs.com/fund-of-funds-accounting/">
 <meta property="og:site_name" content="1494 Labs">
-<meta property="og:title" content="Fund of Funds Accounting">
-<meta property="og:description" content="For fund of funds managers, allocators and their administrators. Accounting Capabilities.">
+<meta property="og:title" content="Fund of funds accounting software">
+<meta property="og:description" content="Fund of funds accounting software with look-through to the companies underneath, manager marks that carry their date, and late statements booked as corrections.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Fund of Funds Accounting">
-<meta name="twitter:description" content="For fund of funds managers, allocators and their administrators. Accounting Capabilities.">
+<meta name="twitter:title" content="Fund of funds accounting software">
+<meta name="twitter:description" content="Fund of funds accounting software with look-through to the companies underneath, manager marks that carry their date, and late statements booked as corrections.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 <meta name="twitter:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 
@@ -74,105 +74,39 @@
   </div>
 </header>
 <main class="wrap" id="main">
-<h1>Fund of Funds Accounting</h1>
-<p class="standfirst">For fund of funds managers, allocators and their administrators.</p>
+<h1>Fund of funds accounting, from the manager's statement to the company underneath</h1>
+<p class="standfirst">A fund of funds keeps its books on numbers someone else produces. Each underlying manager reports when it chooses, in whatever format it uses, and sometimes revises what it sent last quarter. The accounting has to hold those numbers with their dates attached, take corrections without breaking what was already reported, and still answer the question investors ask most: what do we actually own?</p>
+<p class="byline">Fund of funds · roughly 5 minutes</p>
 <article>
-<!-- buyer-capabilities:start -->
-<h2>Accounting Capabilities</h2>
-<ul>
-<li data-use-case="capital-activity.unfunded-tracking">Capital Accounts shows unfunded commitments by investor and fund. A fund setting chooses the historical or spot measure, so the reported unfunded amount follows the accounting basis selected for that fund.</li>
-<li data-use-case="portfolio.mark-valuation">Valuations records dated marks for underlying fund interests, portfolio companies and priced instruments. The entry fields follow the asset: fund NAV statements carry an as-of date and source; company marks carry a valuation method and memo.</li>
-<li data-use-case="fees.management-fee-calc">The Fees screen calculates period management fees from the fund&#x27;s saved terms. Accruals can be posted and reversed, giving the period fee a corresponding accounting entry in the fund&#x27;s books.</li>
-<li data-use-case="reporting.investor-capital-account-statement">Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor&#x27;s recorded account and the fund&#x27;s reporting period.</li>
-<li data-use-case="fof.underlying-marks-performance">Underlying fund positions carry manager-reported marks and performance. Valuations and Look-through show position IRR, TVPI, DPI and RVPI, with support for late manager statements and the resulting restatement of reported values.</li>
-<li data-use-case="fof.look-through-holdings">Look-through shows the underlying company holdings behind fund investments. It supports as-of views, shared ownership subtrees and CSV export. Company holdings supplied by import become part of the portfolio&#x27;s underlying exposure view.</li>
-<li data-use-case="fof.exposure-geography-sector">Look-through groups underlying company exposure by geography and sector. The classifications come from linked company records, so the exposure view uses the recorded company classifications when presenting the portfolio totals.</li>
-</ul>
-<h2>Terms</h2>
-<p>LP interests and private fund interests are investments in underlying funds. Manager-reported NAV, paid-in capital, distributions and residual value supply the vocabulary for IRR, TVPI, DPI and RVPI.</p>
-<h2>Related Notes</h2>
+<h2>Every mark carries its date</h2>
+<p>Each underlying fund position carries a cost basis, an unrealized gain and the date it was last valued. A manager's NAV statement is recorded with its as-of date and its source. When the quarter closes and one manager hasn't reported, the position shows the date of the mark it is still carried at.</p>
+<figure class="shot">
+      <img src="/assets/screens/portfolio-holdings.3916f10a.jpg" width="1486" height="283"
+           loading="lazy" decoding="async" alt="Portfolio holdings for a fund of funds: six named underlying managers, each with cost, value, the date it was last valued and a link to its marks.">
+      <figcaption>
+<b>Six managers, each at cost and at value.</b> The date each was last revalued sits on the row, because the age of an input is part of the number.</figcaption>
+    </figure>
+<h2>Late statements are corrections</h2>
+<p>Managers often send an estimate and then a final. The true-up is recorded as a correction with its own record, and a closed period can be corrected without disturbing what was already reported for it. Position performance (IRR, TVPI, DPI and RVPI) restates with the corrected mark.</p>
+<h2>Looking through to the companies</h2>
+<p>Underlying holdings come in by CSV import from the managers' reports. Look-through then shows the companies behind each fund interest, grouped by sector and geography, as of any date you choose. Where two of your managers hold the same company, it appears once with both paths into it.</p>
+<p>Your share of an underlying fund's holdings needs the fund's total size, which only the manager can report. When a manager doesn't report it, that share is left out and the view states why. A guessed percentage would be worse than a stated gap. Holdings without a linked company classification show a blank classification, so you can find and fix them.</p>
+<p>Look-through runs on both ownership bases, and the results export as CSV.</p>
+<h2>Commitments and the cash they will need</h2>
+<p>Unfunded commitments are shown by investor and by underlying fund. A fund-level setting chooses whether unfunded is measured at historical or spot rates, so the figure follows the basis the fund reports on. <a href="/liquidity-forecasting-and-commitment-pacing/">Commitment pacing and liquidity forecasting</a> projects the calls those commitments will make against cash and undrawn credit.</p>
+<h2>Your own investors</h2>
+<p>The fund of funds has investors of its own. Management fees are calculated from the fund's saved terms and posted as accruals that can be reversed. Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. If the fund draws capital from its own LPs, calls and distributions follow the same <a href="/capital-call-and-distribution-software/">capital call and distribution</a> workflow as any drawdown fund.</p>
+<h2>Related reading</h2>
 <ul class="pagelinks">
-<li><a href="/notes/which-columns-can-be-added/">Which columns can be added</a></li>
-</ul>
-<section id="buyer-questions"><h2>Questions</h2>
-<h3>Can I record late manager marks and underlying-fund performance?</h3>
-<p>Yes. Underlying fund positions retain manager marks and position performance, including IRR, TVPI, DPI and RVPI. The valuation process supports late quarter statements and restatement of the affected reported values.</p>
-<h3>Can I look through fund investments to the underlying companies?</h3>
-<p>Yes. Look-through presents company holdings behind underlying funds, including shared ownership subtrees and as-of views. Underlying holdings arrive by CSV import, and the look-through results can be exported as CSV.</p>
-<h3>Can I group underlying company exposure by sector and geography?</h3>
-<p>Yes. Look-through reports sector and geography subtotals using the linked company records. Holdings without a linked company classification display a blank classification, allowing the team to identify those records.</p>
-<h3>Can I see unfunded commitments by investor?</h3>
-<p>Yes. Capital Accounts reports unfunded commitments per investor and per fund. The fund&#x27;s setting selects the historical or spot measure used in that view, giving the team a defined basis for the outstanding amount.</p>
-<h3>Can an investor statement show flows, fees and ending capital?</h3>
-<p>Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period&#x27;s movement for the investor account and its closing balance.</p>
-</section>
-<script type="application/ld+json" data-buyer-faq>
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can I record late manager marks and underlying-fund performance?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Underlying fund positions retain manager marks and position performance, including IRR, TVPI, DPI and RVPI. The valuation process supports late quarter statements and restatement of the affected reported values."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I look through fund investments to the underlying companies?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Look-through presents company holdings behind underlying funds, including shared ownership subtrees and as-of views. Underlying holdings arrive by CSV import, and the look-through results can be exported as CSV."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I group underlying company exposure by sector and geography?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Look-through reports sector and geography subtotals using the linked company records. Holdings without a linked company classification display a blank classification, allowing the team to identify those records."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I see unfunded commitments by investor?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Capital Accounts reports unfunded commitments per investor and per fund. The fund's setting selects the historical or spot measure used in that view, giving the team a defined basis for the outstanding amount."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can an investor statement show flows, fees and ending capital?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance."
-      }
-    }
-  ]
-}
-</script>
-<!-- buyer-capabilities:end -->
-<h2>Related Accounting Pages</h2>
-<ul class="pagelinks">
-<li>
-<a href="/capital-call-and-distribution-software/">Capital Call and Distribution Software</a>
-</li>
-<li>
-<a href="/liquidity-forecasting-and-commitment-pacing/">Liquidity Forecasting and Commitment Pacing</a>
-</li>
-<li>
-<a href="/glossary/">Fund Accounting Glossary</a>
-</li>
-<li>
-<a href="/capabilities/">Capabilities and Status</a>
-</li>
+<li><a href="/family-office-accounting/">Family office accounting</a>, for families with large private fund programs</li>
+<li><a href="/endowment-foundation-accounting/">Endowment and foundation investment accounting</a></li>
+<li><a href="/liquidity-forecasting-and-commitment-pacing/">Liquidity forecasting and commitment pacing</a></li>
+<li><a href="/capital-call-and-distribution-software/">Capital calls and distributions</a></li>
+<li><a href="/capabilities/">Capabilities and status</a></li>
 </ul>
 <div class="endcta">
-<h2>Request a Demo</h2>
-<p>Tell us which funds, structures and accounting terms you need to review.</p>
+<h2>Show us the managers you are chasing</h2>
+<p>Tell us how many managers you hold and how their statements reach you. We will walk you through a quarter in the product, or stand up a sandbox with a reference fund of funds for you to work in.</p>
 <a class="btn" href="/?segment=fof#contact">Request a demo</a>
 </div>
 </article>

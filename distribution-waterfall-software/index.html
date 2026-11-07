@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Distribution waterfall and carried interest software · 1494 Labs</title>
+<meta name="description" content="Distribution waterfall software for private equity. Tiers configured from the LPA, carry held as an accrual under a whole-fund test, and clawback exposure measured per LP.">
+<link rel="canonical" href="https://1494labs.com/distribution-waterfall-software/">
+<link rel="stylesheet" href="/assets/notes.d2937031.css">
+<link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/assets/favicon.svg?v=1808" sizes="any" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-16x16.png?v=1808" sizes="16x16" type="image/png">
+<link rel="icon" href="/assets/favicon-32x32.png?v=1808" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/favicon-48x48.png?v=1808" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=1808" sizes="180x180">
+<link rel="manifest" href="/site.webmanifest?v=1808">
+<meta name="theme-color" content="#2438EA">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://1494labs.com/distribution-waterfall-software/">
+<meta property="og:site_name" content="1494 Labs">
+<meta property="og:title" content="Distribution waterfall and carried interest software">
+<meta property="og:description" content="Distribution waterfall software for private equity. Tiers configured from the LPA, carry held as an accrual under a whole-fund test, and clawback exposure measured per LP.">
+<meta property="og:image" content="https://1494labs.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Distribution waterfall and carried interest software">
+<meta name="twitter:description" content="Distribution waterfall software for private equity. Tiers configured from the LPA, carry held as an accrual under a whole-fund test, and clawback exposure measured per LP.">
+<meta name="twitter:image" content="https://1494labs.com/assets/og.png">
+<meta name="twitter:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
+
+
+
+
+
+<link rel="alternate" type="text/markdown" href="https://1494labs.com/distribution-waterfall-software.md" title="Markdown">
+</head>
+<body class="buyer-page">
+<header class="site">
+  <div class="bar">
+    <a class="lockup" href="/" aria-label="1494 Labs home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+            <path d="M5 9 H27"/>
+<path d="M16 9 V26"/>
+          </g>
+          <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+          <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        </svg>
+      <span class="wordmark">1494 Labs</span>
+    </a>
+    <nav class="sitenav" aria-label="Site">
+      <a href="/fund-accounting-software/">Platform</a>
+      <a href="/capabilities/">Capabilities</a>
+      <a href="/notes/">Notes</a>
+      <a class="demo" href="/?segment=pevc#contact">Request a demo</a>
+    </nav>
+    <details class="navmenu">
+      <summary>
+<svg viewBox="0 0 20 20" aria-hidden="true">
+<path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="1.6" fill="none"/>
+</svg>Menu</summary>
+      <nav aria-label="Site menu">
+        <a href="/fund-accounting-software/">Platform</a>
+        <a href="/capabilities/">Capabilities</a>
+        <a href="/notes/">Notes</a>
+        <a class="demo" href="/?segment=pevc#contact">Request a demo</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<main class="wrap" id="main">
+<h1>Distribution waterfalls configured from the agreement</h1>
+<p class="standfirst">The waterfall decides how every distribution splits between limited partners and the GP. It is also where fund accounting most often moves into a spreadsheet, because the system's version of the waterfall is a dropdown and the agreement's version is four pages of defined terms.</p>
+<p class="byline">Private equity · roughly 6 minutes</p>
+<article>
+<h2>Seven answers define a waterfall</h2>
+<p>Most waterfall settings offer "European" and "American" and stop there. The agreements we read are usually somewhere in between. These seven questions reconstruct almost any of them:</p>
+<ol>
+<li>Are the tiers measured against the fund or against each investment?</li>
+<li>Does the preferred return compound, and on what base? Does it accrue on fees as well as capital?</li>
+<li>Is there a loss carryforward, and does it cover unrealized write-downs or only realized losses?</li>
+<li>What is the catch-up rate, and is it 100%?</li>
+<li>Is there an escrow, at what percentage, and when does it release?</li>
+<li>Is clawback gross or after-tax, and is it guaranteed by individuals?</li>
+<li>How often is the interim clawback test run?</li>
+</ol>
+<p>A waterfall here is an ordered set of tiers, each with its own parameters, and the answers go straight into them. The two named conventions are starting configurations you then edit. Every field is chosen from a fixed list of options with a stated meaning, so there is no formula to get wrong.</p>
+<h2>Test the terms before they govern money</h2>
+<p>The builder has a sample calculation beside it. Type in hypothetical distributions and it runs them through the same calculation the fund will use, as you edit. It's the quickest way to find out what an 80% catch-up does to the GP's share before it applies to anybody's money.</p>
+<figure class="shot">
+      <img src="/assets/screens/waterfall-worked-example.957ef3d5.jpg" width="1600" height="1000"
+           loading="lazy" decoding="async" alt="The waterfall builder: a named set of conventions, a stack of tiers with carry and catch-up rates, and a sample calculation panel computing preferred accrued of $46,932,807.68 and a catch-up band from hypothetical distributions.">
+      <figcaption>
+<b>The terms, tested before they are terms.</b> The panel computes accrued preferred and the catch-up band from hypothetical cash, using the policy as it currently stands.</figcaption>
+    </figure>
+<h2>One distribution, through four tiers</h2>
+<p>The reference fund's policy has four tiers: return of capital, accrued preferred at 8% net of returned capital, a GP catch-up to 20% at a 100% rate, then an 80/20 split, measured whole-of-fund.</p>
+<p>A distribution of $12,075,209.34 runs through it. $9,300,000.00 goes back to the limited partners as capital, and $153,070.79 goes to the GP as carry. Each limited partner's share posts to their capital account, and the distribution carries ILPA component codes from the moment it is posted.</p>
+<figure class="shot">
+      <img src="/assets/screens/distribution-waterfall.446c8f15.jpg" width="1600" height="742"
+           loading="lazy" decoding="async" alt="A waterfall policy with four tiers, a clawback measurement per LP showing no exposure, and a posted distribution of $12,075,209.34: $9,300,000.00 returned as capital and $153,070.79 of GP carry.">
+      <figcaption>
+<b>The posted distribution, with clawback exposure beside the policy.</b> Exposure is measured per LP by default.</figcaption>
+    </figure>
+<h2>Carry stays provisional until the fund proves it</h2>
+<p>Carry paid early can turn out to be overpaid. On the same two deals, an American waterfall can pay a GP $10m of carry in year 3 that the fund, measured whole, only ever earned $4m of. <a href="/notes/european-vs-american-waterfall/">That example is worked through in full here</a>.</p>
+<p>So carry is held as an accrual subject to the whole-fund test, and clawback exposure is a figure the ledger already carries. An interim clawback test reads straight off the screen at any period end, which means an overpayment shows up in the year it happens.</p>
+<h2>Who the carry belongs to</h2>
+<p>Once carry reaches the GP, it is split among the principals, and each principal's share vests per principal. LP givebacks are recorded alongside clawback. <a href="https://docs.1494labs.com/guide/gp-economics/">GP economics in the product docs</a> covers how the split and the vesting work.</p>
+<h2>What it doesn't do</h2>
+<p>The platform runs the waterfall at the fund level and doesn't call any configuration "compliant" with your agreement. Your LPA is the authority, and the configuration is your reading of it. Tax allocations of carry, and the K-1s that report them, stay with your tax preparer.</p>
+<h2>Related reading</h2>
+<ul class="pagelinks">
+<li><a href="/notes/european-vs-american-waterfall/">American vs European waterfall on the same two deals</a></li>
+<li><a href="/private-equity-fund-accounting/">Private equity fund accounting</a></li>
+<li><a href="/capital-call-and-distribution-software/">Capital calls and distributions</a></li>
+<li><a href="/notes/what-an-opening-balance-has-to-carry/">What an opening balance has to carry</a>, for a fund moving systems partway through its waterfall</li>
+<li><a href="https://docs.1494labs.com/guide/gp-economics/">GP economics</a> in the product docs</li>
+</ul>
+<div class="endcta">
+<h2>Show us the waterfall that breaks your current system</h2>
+<p>Send us the distribution section of the agreement. We will configure it in front of you and run your last distribution through it, or stand up a sandbox with reference funds for you to try it yourself.</p>
+<a class="btn" href="/?segment=pevc#contact">Request a demo</a>
+</div>
+</article>
+</main>
+<div class="wrap">
+<!-- assistant-links:start -->
+  <nav class="assistant-links" aria-label="Page formats and assistants">
+    <a href="https://1494labs.com/distribution-waterfall-software.md">Read Markdown</a>
+  </nav>
+  <!-- assistant-links:end -->
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs Inc., a Delaware corporation, 6 Liberty Square #2721, Boston, MA 02109</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+  <a href="/glossary/">Glossary</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/security/">Security</a>
+    <a href="/terms/">Terms</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3da7530d96b14f3f95915c071872f4be"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

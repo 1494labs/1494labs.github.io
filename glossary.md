@@ -130,7 +130,7 @@ A capital call or distribution notice using the applicable ILPA reporting format
 
 - [Connect an assistant to your fund accounting workspace](https://1494labs.com/connect-assistant/)
 
-- [Endowment and Foundation Investment Accounting](https://1494labs.com/endowment-and-foundation-investment-accounting/)
+- [Investment Accounting for Endowments and Foundations](https://1494labs.com/endowment-foundation-accounting/)
 
 - [Equalization and Series Accounting](https://1494labs.com/equalization-and-series-accounting/)
 

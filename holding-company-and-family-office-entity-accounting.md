@@ -60,6 +60,8 @@ Yes. Fund Statements includes the income statement, balance sheet, statement of 
 
 - [Liquidity Forecasting and Commitment Pacing](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/)
 
+- [Look-through Consolidation for Family Offices](https://1494labs.com/family-office-consolidation/)
+
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)

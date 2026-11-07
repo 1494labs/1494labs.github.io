@@ -50,6 +50,8 @@ Yes. The accounting checks compare investor capital balances with the fund's gen
 
 - [Liquidity Forecasting and Commitment Pacing](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/)
 
+- [Distribution Waterfall Software](https://1494labs.com/distribution-waterfall-software/)
+
 - [Fund Accounting Glossary](https://1494labs.com/glossary/)
 
 - [Capabilities and Status](https://1494labs.com/capabilities/)

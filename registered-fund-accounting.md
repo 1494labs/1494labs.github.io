@@ -1,77 +1,55 @@
 Source: https://1494labs.com/registered-fund-accounting/
 
-# Registered Fund Accounting
+# Registered fund accounting, from NAV strike to §19(a) notice
 
-For registered fund, RIC and BDC finance teams and their administrators.
+A registered fund answers to the SEC as well as its investors, and most of what it publishes has to be traceable to the book. A §19(a) notice has to say how much of a distribution came from income and how much was a return of capital. A repurchase offer has to prorate fairly when it is oversubscribed. A BDC has to know its asset coverage before it borrows or declares.
 
-## Accounting Capabilities
+Registered funds · roughly 5 minutes
 
-- Fund setup records the legal entity, base currency and fiscal year. Closed-end funds also carry vintage, fund term, extension dates and hard cap, so the fund record contains the terms used by the accounting team.
+## NAV, struck by class
 
-- Share classes hold the terms for unitized funds. Fee classes group investors in capital-based funds. The Share Classes and Fee Terms screens record these arrangements for funds whose investors have different fee terms.
+NAV is recorded as preliminary, final or restated, with a line for each share class. The share register shows the class results for each strike. Unitized funds hold their terms in share classes, and capital-based funds group investors with different fee terms into fee classes.
 
-- Journal Entries shows the postings created by accounting transactions. Each journal entry retains its source type and source identifier. The entry detail displays the accounting lines and the recorded transaction source.
+## A close you can show an examiner
 
-- Period Close records period opening, closing and locking events. Reopening requires permission and a recorded reason. The period's event history keeps the actions recorded for a revised close.
+Period close has a checklist and reviewer sign-off, and the period can't lock until the configured sign-off is recorded. Reopening a closed period needs permission and a recorded reason, and the period keeps its history of events. The trial balance is frozen at close, and any later revision is kept beside the frozen version, so a reviewer can see what the books said at close and what changed after.
 
-- Period Close includes a checklist and reviewer sign-off. A period lock requires the configured sign-off, so the recorded review forms part of the close process before the books are locked.
+![A fund trial balance by account with debit, credit and net columns, totaling $28,515,992.43 on each side with a net of $0.00.](https://1494labs.com/assets/screens/trial-balance.164f78ab.jpg)
 
-- NAV records preliminary, final and restated fund values, including share-class lines. The NAV and period-close screens show the fund's strike workflow, with class results available through the share register.
+**One fund's trial balance, tied.** Debits equal credits at the close, and the frozen balance stays beside any later revision.
 
-- Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund's capital accounts.
+## Distributions and the notices that describe them
 
-- Allocations distributes income, expenses and gains through recorded ownership. The allocation screen includes a cascade preview and confirmation for structures with multiple ownership layers, connecting fund results with the investors above them.
+§19(a) notices are sourced from the book, so the split between net investment income, capital gains and return of capital comes from the same ledger as the distribution itself. Managed distribution programs run on the same records.
 
-- Reporting provides the trial balance for the fund, including the balance frozen at close and its revisions. The frozen balance preserves the ledger totals used for that close and subsequent review.
+## Repurchase offers
 
-- Fund Statements provides an income statement, balance sheet, statement of changes in net assets and cash-flow statement for one fund and period. The reporting screen uses the selected fund and reporting period.
+Repurchase offers are recorded with their terms, and an oversubscribed offer is prorated across tendering shareholders.
 
-- Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
+## BDC asset coverage
 
-- Reporting includes report packs organized by audience. A pack runs for its fund and period and can be exported as PDF or CSV, collecting the selected reports for the intended recipient.
+For a BDC, asset coverage is calculated from the book and applied as a gate, so the coverage test is part of the workflow instead of a separate spreadsheet check.
 
-## Related Notes
+## Reporting
 
-- [ABOR and IBOR](https://1494labs.com/notes/abor-and-ibor/)
+The income statement, balance sheet, statement of changes in net assets and cash-flow statement are produced for one fund and period. Report packs are organized by audience and export to PDF or CSV. Every figure traces back through the journal entry that posted it to the transaction that created it.
+
+![A statement of changes for one fund and period: beginning capital, contributions, redemptions, distributions, net income and fees rolling to ending capital of $23,625,473.00.](https://1494labs.com/assets/screens/statement-of-changes.39e06e66.jpg)
+
+**Beginning to ending, line by line.** The statement for one fund and period, from the same ledger as the rest.
+
+## Related reading
+
+- [ABOR and IBOR, and why most systems keep them apart](https://1494labs.com/notes/abor-and-ibor/)
 
 - [Checking the book against outside records](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself/)
 
-## Questions
+- [Fund administration software](https://1494labs.com/fund-administration-software/), for administrators running several registered funds
 
-### Can investors in one fund have different fee terms?
+- [Capabilities and status](https://1494labs.com/capabilities/)
 
-Yes. Unitized funds use share classes, and capital-based funds use fee classes. The Share Classes and Fee Terms screens record these groups and their terms within the fund.
+## Show us the fund
 
-### Can I strike NAV for the fund and its share classes?
-
-Yes. The NAV workflow supports preliminary and final strikes and restatements. Saved NAV versions include share-class lines, and the share register shows the class results for the fund's strike.
-
-### Can reviewer sign-off gate the period lock?
-
-Yes. The close checklist and review events are recorded for the period. Locking checks that the required sign-off is present, and the reviewer's action remains in the period history.
-
-### Can I retrieve the trial balance frozen at close?
-
-Yes. Reporting includes frozen trial balances and revisions. The frozen balance keeps the ledger totals frozen at the close, so a reviewer can inspect the recorded close and the revisions attached to it.
-
-### Can I prepare the financial statements for one fund and period?
-
-Yes. Fund Statements includes the income statement, balance sheet, statement of changes in net assets and cash-flow statement. These reports use one fund and reporting period for the financial statement set.
-
-## Related Accounting Pages
-
-- [Fund of Funds Accounting](https://1494labs.com/fund-of-funds-accounting/)
-
-- [Capital Call and Distribution Software](https://1494labs.com/capital-call-and-distribution-software/)
-
-- [Liquidity Forecasting and Commitment Pacing](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/)
-
-- [Fund Accounting Glossary](https://1494labs.com/glossary/)
-
-- [Capabilities and Status](https://1494labs.com/capabilities/)
-
-## Request a Demo
-
-Tell us which funds, structures and accounting terms you need to review.
+Tell us what you run, whether a RIC, a BDC or an interval fund, and we will walk you through a close in the product.
 
 [Request a demo](https://1494labs.com/?segment=registered#contact)

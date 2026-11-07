@@ -26,7 +26,7 @@ Source: https://1494labs.com/
 
 - [Fund of Funds Accounting](https://1494labs.com/fund-of-funds-accounting/)
 
-- [Endowment and Foundation Investment Accounting](https://1494labs.com/endowment-and-foundation-investment-accounting/)
+- [Investment Accounting for Endowments and Foundations](https://1494labs.com/endowment-foundation-accounting/)
 
 ## [Partnership and investor accounting](https://1494labs.com/fund-accounting-software/)
 
@@ -152,7 +152,7 @@ Source: https://1494labs.com/
 
 - [Holding Company and Family Office Entity Accounting](https://1494labs.com/holding-company-and-family-office-entity-accounting/)
 
-- [Endowment and Foundation Investment Accounting](https://1494labs.com/endowment-and-foundation-investment-accounting/)
+- [Investment Accounting for Endowments and Foundations](https://1494labs.com/endowment-foundation-accounting/)
 
 - [Secondaries for Fund of Funds](https://1494labs.com/secondaries-for-fund-of-funds/)
 
