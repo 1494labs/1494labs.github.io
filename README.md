@@ -44,7 +44,7 @@ a minute or two, and Cloudflare sits in front with a 600s TTL.
 ```
 index.html          the home page (styles inline)
 assets/notes.css    the stylesheet for every other page
-assets/fonts/       Geist Sans 400/500/600 (OFL)
+assets/fonts/       Newsreader 400/500, Inter 400/500/600, EB Garamond (ledger motif only), all OFL; Geist stays for the brand lockup sources
 assets/             mark, favicons, og.png
 site.webmanifest    PWA/app icons
 robots.txt          allows all, points at the sitemap
@@ -60,13 +60,14 @@ Visual decisions follow `/DESIGN.md`. Do not add colors, fonts or radii outside 
 The mark is a **T-account**, the glyph of double entry. A ruled head, a center
 stem dividing debit from credit, and two entries of equal weight either side.
 
-Every page uses DESIGN.md's direction-A palette (ground `#F6F7F9`, ink
-`#0A0C10`, ultramarine `#2638F0` as the one accent, crimson only for a loss,
-chartreuse `#CDF25A` only behind the tie mark) and one typeface, Geist Sans
-400/500/600, self-hosted from `assets/fonts/` with tabular figures on. The home page carries its styles inline; every other page
-uses `assets/notes.css`. Both declare the same tokens and the same site header
-(mark, wordmark, four links), so change them together. The site has one light
-palette: DESIGN.md defines no dark one.
+The site's design language is set by `assets/notes.css` (owner decision, 2026-11-08, hero concept 1):
+ground `#F5F6F8`, ink `#0E1A2B`, secondary text `#3B4657` / `#4A5568`, rules `#D9DDE3`, one accent
+`#2338D9` (hover `#16259A`); Newsreader for display, Inter for body, tabular figures throughout,
+EB Garamond only for the 1494 ledger page in the home hero. The type scale (`--step-*`) and spacing
+rhythm (`--space-*`) are defined once there. The home page links `notes.css` and adds only its own
+block (hero, tiles, trace, capability rows, form, footer). This supersedes the Geist palette in
+`/DESIGN.md` for the marketing site; the app keeps `/DESIGN.md`. One dark section per page at most
+(the reference-month trace on the home page).
 
 ## The name
 

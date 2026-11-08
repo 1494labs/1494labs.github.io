@@ -1,32 +1,10 @@
 # 1494 Labs
 
-# Fund, partnership and portfolio accounting for fund managers, allocators and fund administrators.
+# Double-entry has been around since 1494, and fund accounting still runs on spreadsheets.
 
-## [Who it is for](https://1494labs.com/fund-accounting-software/)
+## What the ledger covers.
 
-- Managers (GPs): hedge funds, private equity, credit and real estate funds, registered funds, RICs and BDCs. Fund and investor accounting, fees, waterfalls and carry, investor statements and regulatory filings.
-
-- Allocators (LPs): fund of funds, family offices, endowments, foundations and other institutional investors. Commitments, calls and distributions across every underlying fund, look-through to the holdings, and performance by vintage, strategy and manager.
-
-- Administrators: many funds with different terms on one platform, and reconciliation against bank, custodian and administrator files.
-
-- [Fund, Partnership and Investor Accounting](https://1494labs.com/fund-accounting-software/)
-
-- [Hedge Fund Accounting](https://1494labs.com/hedge-fund-accounting/)
-
-- [Private Equity Fund Accounting](https://1494labs.com/private-equity-fund-accounting/)
-
-- [Registered Fund Accounting](https://1494labs.com/registered-fund-accounting/)
-
-- [Family Office Accounting](https://1494labs.com/family-office-accounting/)
-
-- [Fund Administration Software](https://1494labs.com/fund-administration-software/)
-
-- [Fund of Funds Accounting](https://1494labs.com/fund-of-funds-accounting/)
-
-- [Investment Accounting for Endowments and Foundations](https://1494labs.com/endowment-foundation-accounting/)
-
-## [Partnership and investor accounting](https://1494labs.com/fund-accounting-software/)
+### [Partnership and investor accounting](https://1494labs.com/fund-accounting-software/)
 
 - Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.
 
@@ -36,7 +14,9 @@
 
 - Allocations by class, series and sleeve, and investor NAV in the class currency.
 
-## [Complex structures](https://1494labs.com/holding-company-and-family-office-entity-accounting/)
+![Series table, one series per subscription month](https://1494labs.com/assets/screens/series.7f98fbc2.jpg)**One series per subscription month.** Each is issued at 100.00 in its own inception period and measured against its own high-water mark.
+
+### [Complex structures](https://1494labs.com/holding-company-and-family-office-entity-accounting/)
 
 - Master-feeder, alternative investment vehicles (AIVs), SPVs, blockers, co-investments and continuation vehicles.
 
@@ -46,11 +26,15 @@
 
 - Fund of funds look-through to the underlying holdings, on both ownership bases.
 
-## [Portfolio accounting across asset classes](https://1494labs.com/portfolio-accounting/)
+![Ownership graph of a family structure](https://1494labs.com/assets/screens/structure-graph.60cc35a2.jpg)**Every vehicle once, with its owners converging on it.** A vehicle with several owners appears once, where a set of separate trees would repeat it on every branch.
+
+### [Portfolio accounting across asset classes](https://1494labs.com/portfolio-accounting/)
 
 - Public and private equity, fixed income, loans, credit facilities on both sides, real estate and REITs, derivatives, hedge fund and private fund interests, and digital assets, in any currency.
 
-## [Portfolio companies](https://1494labs.com/portfolio-company-kpi-collection/)
+![Holdings table with each manager at cost and at value](https://1494labs.com/assets/screens/portfolio-holdings.3916f10a.jpg)**Six managers, each at cost and at value.** The date each was last revalued sits on the row, because the age of an input is part of the number.
+
+### [Portfolio companies](https://1494labs.com/portfolio-company-kpi-collection/)
 
 - Financials and KPIs collected from each company by upload or a secure submission link: revenue, EBITDA, net debt and the metrics you define, checked on the way in.
 
@@ -62,7 +46,7 @@
 
 - Company financials and KPIs in fund reporting, with missing companies flagged.
 
-## [Secondaries](https://1494labs.com/secondaries-and-strip-sale-accounting/)
+### [Secondaries](https://1494labs.com/secondaries-and-strip-sale-accounting/)
 
 - Buy and sell LP interests, single or as a strip sale across many funds in one transaction.
 
@@ -76,7 +60,7 @@
 
 - A secondaries portfolio report, and buyer and seller confirmations.
 
-## [Liquidity and forecasting](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/)
+### [Liquidity and forecasting](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/)
 
 - Cash projection in horizon buckets out past a year, from settled cash: expected proceeds from underlying funds, investor outflows, unfunded commitments and scheduled obligations.
 
@@ -92,23 +76,27 @@
 
 - Gates, lockups and notice periods tracked for every underlying fund.
 
-## [Close, controls and reconciliation](https://1494labs.com/close-controls-and-reconciliation/)
+### [Close, controls and reconciliation](https://1494labs.com/close-controls-and-reconciliation/)
 
-- Period close with a frozen trial balance and graded revisions.
+- The trial balance is frozen at close, and later changes are kept beside it with their reason.
 
-- Official and latest-knowledge books on one ledger, with the source of every line.
+- The book as reported at close and the book with everything known since, on one ledger, with the source of every line.
 
 - Cash, positions and NAV reconciled against outside files, with an exceptions worklist.
 
 - A check that recomputes every fund's arithmetic each morning.
 
-## [Reporting](https://1494labs.com/fund-and-investor-reporting/)
+![Reconciliation break with expected, actual and difference](https://1494labs.com/assets/screens/break-detail.dc783d42.jpg)**Expected, actual, difference, and a decision with a name on it.** Resolved means the numbers now agree. Accepted means they still differ and somebody decided that is correct, with a note.
+
+### [Reporting](https://1494labs.com/fund-and-investor-reporting/)
 
 - NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.
 
 - Saved analyses that refresh on the platform and can be pulled through the API.
 
-## [API and AI](https://1494labs.com/fund-accounting-api-and-ai/)
+![ILPA capital account statement](https://1494labs.com/assets/screens/ilpa-capital-account.affebef1.jpg)**Every unsourceable row carries the note explaining it.** Carried interest accrued is zero in this example because the fund has no active waterfall policy, and the statement says so beside the zero.
+
+### [API and AI](https://1494labs.com/fund-accounting-api-and-ai/)
 
 - Everything on screen is also in the public API.
 
@@ -158,7 +146,7 @@ The capability matrix lists product scope and status.
 - [Fund Accounting Glossary](https://1494labs.com/glossary.md): Definitions of fund accounting terms, with related accounting pages and worked notes.
 - [Hedge Fund Accounting](https://1494labs.com/hedge-fund-accounting.md): Hedge fund accounting for CFOs, controllers and administrators: share classes and fee terms, management fee accruals, NAV by class and series, and investor capital statements.
 - [Holding Company and Family Office Entity Accounting](https://1494labs.com/holding-company-and-family-office-entity-accounting.md): Entity accounting for family office finance teams: holding companies, family partnerships and trusts, with income allocated through recorded ownership.
-- [Fund, partnership and portfolio accounting for fund managers, allocators and fund administrators.](https://1494labs.com/index.md): Fund, partnership and portfolio accounting for fund managers, allocators and fund administrators.
+- [Double-entry has been around since 1494, and fund accounting still runs on spreadsheets.](https://1494labs.com/index.md): Fund, partnership and portfolio accounting for fund managers, allocators and fund administrators.
 - [Liquidity Forecasting and Commitment Pacing](https://1494labs.com/liquidity-forecasting-and-commitment-pacing.md): Liquidity forecasting and commitment pacing for allocators and fund managers: commitments, expected calls and recorded cash flows.
 - [A wrong number that agrees with itself](https://1494labs.com/notes/a-wrong-number-that-agrees-with-itself.md): Comparison controls only fire when two things disagree, which leaves a whole class of error uncaught: the roll-forward foots, the statement ties, and the figure is wrong. What it takes to find those, and why it runs every morning.
 - [ABOR and IBOR, and why most systems keep them apart](https://1494labs.com/notes/abor-and-ibor.md): The accounting book of record and the investment book of record answer different questions, on different clocks. Why they usually live in separate systems, what that costs, and how to test a vendor's claim to have merged them.

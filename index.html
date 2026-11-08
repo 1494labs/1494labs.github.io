@@ -99,246 +99,191 @@
 }
 </script>
 
+<link rel="stylesheet" href="/assets/notes.2593f699.css">
 <style>
-/* Tokens, type and the site header follow /DESIGN.md and match
-   /assets/notes.css, which every other page uses; change both together. */
-@font-face{font-family:"Geist Sans";font-style:normal;font-weight:400;font-display:swap;
-  src:url("/assets/fonts/geist-sans-latin-400-normal.woff2") format("woff2")}
-@font-face{font-family:"Geist Sans";font-style:normal;font-weight:500;font-display:swap;
-  src:url("/assets/fonts/geist-sans-latin-500-normal.woff2") format("woff2")}
-@font-face{font-family:"Geist Sans";font-style:normal;font-weight:600;font-display:swap;
-  src:url("/assets/fonts/geist-sans-latin-600-normal.woff2") format("woff2")}
-:root{
-  --ground:#F6F7F9; --sheet:#FFFFFF;
-  --ink:#0A0C10; --ink-2:#3A4150; --muted:#5B6372;
-  --rule:#DFE2E8; --rule-faint:#ECEEF2;
-  --accent:#2638F0; --accent-deep:#1A27B8; --accent-tint:#E8EBFF;
-  --tie:#CDF25A;
-  --sans:"Geist Sans",system-ui,sans-serif;
-  --measure:38rem;
-  --gutter:clamp(20px,5vw,40px);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
-body{
-  margin:0;background:var(--ground);color:var(--ink-2);
-  font-family:var(--sans);font-size:1rem;line-height:1.55;
-  font-variant-numeric:tabular-nums;
-  -webkit-font-smoothing:antialiased;
-}
-::selection{background:var(--accent-tint);color:var(--ink)}
-.wrap{max-width:70rem;margin:0 auto;padding:0 var(--gutter)}
-a{color:var(--accent);text-underline-offset:2px}
-a:hover{color:var(--accent-deep)}
+/* Home page only. Tokens, type scale, header, buttons, screenshots and tables
+   come from /assets/notes.css; this block holds what only the home page has. */
+.home{max-width:none;padding:0}
+.in{max-width:90rem;margin:0 auto;padding:0 var(--hg)}
+:root{--hg:clamp(16px,5.5vw,80px)}
+@media (max-width:480px){:root{--hg:16px}}
+header.site .bar{max-width:90rem;padding-left:var(--hg);padding-right:var(--hg)}
+.home section{padding:0}
+.band{padding:var(--space-6) 0}
+@media (max-width:720px){.band{padding:var(--space-5) 0}}
+.home h2{margin:0 0 var(--space-2);max-width:24ch}
+.lede{font-size:var(--step-1);line-height:1.5;color:var(--ink-2);max-width:40rem;margin:0 0 var(--space-4)}
 
-/* ── site header: the same on every page ──────────────── */
-header.site .bar{
-  max-width:70rem;margin:0 auto;padding:20px var(--gutter);
-  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;
+/* hero */
+.hero{overflow:hidden;padding:var(--space-3) 0 var(--space-6)}
+.herogrid{display:grid;gap:var(--space-5);align-items:center}
+.eyebrow{font-size:.8125rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 28px;max-width:none}
+.hero h1{font-size:clamp(2.125rem,5.6vw,3.75rem);line-height:1.04;max-width:14em;margin:0 0 28px;text-wrap:pretty}
+.hero .sub{font-size:1.1875rem;line-height:1.55;color:var(--ink-2);max-width:31.25rem;margin:0 0 28px}
+.herofoot{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;margin:0;max-width:none}
+.btnlink{font-weight:500;color:var(--accent);padding:12px 0}
+.btnlink:hover{color:var(--accent-deep)}
+.vis{position:relative;display:flex;flex-direction:column;gap:24px}
+.page{
+  background:#EFE6D2;border:1px solid #D8CBAE;box-shadow:0 30px 60px rgba(14,26,43,.18);
+  transform:rotate(-2deg);padding:clamp(24px,4vw,34px) clamp(22px,5vw,44px);
+  font-family:"EB Garamond",Georgia,serif;color:#3A2A18;
+  display:flex;flex-direction:column;gap:10px;font-variant-numeric:lining-nums tabular-nums;
 }
-.lockup{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
-.lockup svg{width:28px;height:28px;color:var(--accent);flex:none}
-.wordmark{font-size:1.25rem;font-weight:600;letter-spacing:-.01em;line-height:1}
-.sitenav{display:flex;flex-wrap:wrap;gap:4px 24px}
-.sitenav a{
-  font-size:1rem;color:var(--ink-2);text-decoration:none;padding:8px 0;
-  text-underline-offset:6px;text-decoration-thickness:1px;
+.page .t{text-align:center;font-size:.9375rem;letter-spacing:.2em;text-transform:uppercase}
+.page .d{text-align:center;font-style:italic;font-size:1.25rem}
+.page hr{border:0;height:1px;background:#B9A57E;margin:0}
+.page .rows{display:grid;grid-template-columns:1fr 3.2em 2.4em 2.4em;gap:2px 10px;font-size:1.0625rem;line-height:1.3}
+.page .rows .n{text-align:right}
+.page .rows .h{font-size:.9375rem;color:#5A4A2E;font-style:italic}
+.page .per{font-style:italic;grid-column:1/-1}
+.page .a{grid-column:1}
+.page .foot{font-style:italic;font-size:1rem;color:#5A4A2E;margin:0;max-width:none}
+.card{
+  background:#fff;border:1px solid var(--rule);box-shadow:0 30px 70px rgba(14,26,43,.18);
+  padding:24px 28px;display:flex;flex-direction:column;gap:12px;font-variant-numeric:tabular-nums;
 }
-.sitenav a:hover{color:var(--ink);text-decoration-line:underline}
-.sitenav a.demo{color:var(--accent);font-weight:600}
-.sitenav a.demo:hover{color:var(--accent-deep)}
-/* Phone width (#1449): the four links fold behind one Menu button (a native
-   <details>, so it needs no script) and open as a list of 44px rows under the
-   bar. The desktop nav is the same four links; only one of the two shows. */
-.navmenu{display:none}
-.navmenu:not([open]) nav{display:none}
-@media (max-width:640px){
-  header.site .bar{position:relative;padding-top:12px;padding-bottom:12px}
-  .sitenav{display:none}
-  .navmenu{display:block}
-  .navmenu summary{
-    list-style:none;display:flex;align-items:center;gap:8px;
-    min-height:44px;min-width:44px;padding:0 4px;margin-right:-4px;
-    font-weight:600;color:var(--ink);cursor:pointer;
-    -webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none;touch-action:manipulation;
-  }
-  .navmenu summary::-webkit-details-marker{display:none}
-  .navmenu summary svg{width:20px;height:20px;flex:none}
-  .navmenu summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .navmenu nav{
-    position:absolute;left:0;right:0;top:100%;z-index:10;
-    display:flex;flex-direction:column;
-    background:var(--ground);border-bottom:1px solid var(--rule);padding:0 var(--gutter) 8px;
-  }
-  .navmenu nav a{
-    display:flex;align-items:center;min-height:44px;
-    color:var(--ink-2);text-decoration:none;border-top:1px solid var(--rule-faint);
-    touch-action:manipulation;
-  }
-  .navmenu nav a[aria-current="page"]{color:var(--ink);font-weight:600}
-  .navmenu nav a.demo{color:var(--accent);font-weight:600}
+.card .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.card .lab{font-size:.8125rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.card .tie{font-size:.8125rem;font-weight:500;color:var(--accent)}
+.card dl{display:grid;grid-template-columns:1fr auto;gap:10px 16px;margin:0;font-size:.9375rem}
+.card dt{color:var(--ink-2)}
+.card dd{margin:0;text-align:right;color:var(--ink)}
+.card hr{border:0;height:1px;background:var(--rule);margin:0}
+.card .end{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.card .end b{font-weight:600;font-size:.9375rem;color:var(--ink)}
+.card .end span{font-family:var(--display);font-size:2rem;color:var(--ink)}
+.card .fn{font-size:.8125rem;color:var(--muted);margin:0;max-width:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.arrow{display:none}
+@media (min-width:1100px){
+  .herogrid{grid-template-columns:minmax(0,35rem) minmax(0,1fr);gap:clamp(32px,4.4vw,64px)}
+  .vis{display:block;height:730px;max-width:656px}
+  .page{position:absolute;left:0;top:0;width:min(470px,72%);height:620px}
+  .card{position:absolute;right:0;bottom:0;width:min(430px,68%)}
+  .arrow{display:block;position:absolute;left:min(110px,17%);top:470px;width:130px;height:80px;overflow:visible;z-index:2}
+}
+@media (max-width:1099.98px){.hero .sub{max-width:36rem}.vis{max-width:34rem}.page{width:92%;margin:0 auto;transform:rotate(-1.5deg)}}
+@media (prefers-reduced-motion:no-preference){
+  .page{animation:pagein .5s ease-out both}
+  .card{animation:cardin .6s cubic-bezier(.2,.7,.2,1) .45s both}
+  .arrow path{stroke-dasharray:5 6;animation:arrowin .3s ease-out 1s both}
+}
+@keyframes pagein{from{opacity:0;transform:translateY(12px) rotate(-2deg)}}
+@keyframes cardin{from{opacity:0;transform:translate(48px,28px)}}
+@keyframes arrowin{from{opacity:0}}
+
+/* segment tiles */
+.tiles{list-style:none;margin:var(--space-4) 0 0;padding:0;display:grid;gap:24px;grid-template-columns:1fr}
+@media (min-width:640px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1100px){.tiles{grid-template-columns:repeat(4,1fr)}}
+.tile{position:relative;margin:0;background:var(--sheet);border:1px solid var(--rule);box-shadow:var(--shadow);display:flex;flex-direction:column}
+.tile:hover{border-color:var(--accent)}
+.tile:focus-within{outline:2px solid var(--accent);outline-offset:3px}
+.tile .fig{aspect-ratio:3/2;overflow:hidden;border-bottom:1px solid var(--rule);background:var(--rule-faint)}
+.tile .fig img{display:block;width:100%;height:100%;object-fit:cover;object-position:left top}
+.tile .fig.type{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:0 24px;font-family:var(--display);font-size:1.5rem;color:var(--ink);background:var(--accent-tint)}
+.tile .fig.type span{display:block}
+.tile .fig.type small{font-family:var(--sans);font-size:.875rem;color:var(--muted)}
+.tile .txt{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.tile h3{margin:0;font-size:1.375rem;line-height:1.2}
+.tile h3 a{color:var(--ink);text-decoration:none}
+.tile h3 a::after{content:"";position:absolute;inset:0}
+.tile h3 a:hover{color:var(--accent)}
+.tile h3 a:focus-visible{outline:none}
+.tile p{margin:0;font-size:.9375rem;line-height:1.5;color:var(--ink-2);max-width:none}
+
+/* trace: the one dark section */
+.dark{background:var(--dark);color:var(--on-dark-2)}
+.dark h2{color:var(--on-dark)}
+.dark .lede{color:var(--on-dark-2)}
+.dark a{color:#fff}
+.dark a:hover{color:var(--on-dark-2)}
+.tracegrid{display:grid;gap:var(--space-4);align-items:start}
+@media (min-width:1000px){.tracegrid{grid-template-columns:minmax(0,26rem) minmax(0,1fr);gap:var(--space-5)}}
+.dark .tablewrap{background:transparent;border:0;box-shadow:none;margin:0;max-width:none;overflow-x:auto}
+.dark .ledger{min-width:0;font-size:1rem;color:var(--on-dark)}
+.dark .ledger th,.dark .ledger td{border-bottom-color:#26344A;font-weight:400}
+.dark .ledger thead th{color:var(--on-dark-2);font-size:.875rem;border-bottom-color:#3B4A63}
+.dark .ledger tfoot td,.dark .ledger tfoot th{border-top:1px solid var(--on-dark-2);border-bottom:3px double var(--on-dark-2);font-weight:600;color:#fff}
+.dark .ledger tfoot th{padding-left:0}
+.ledgerfig{margin:0}
+.ledgerfig figcaption{font-size:.9375rem;line-height:1.5;color:var(--on-dark-2);margin:16px 0 0;max-width:42rem}
+.ledgerfig figcaption b{color:#fff;font-weight:500;display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.ledgerfig .tick svg{width:16px;height:16px;color:#fff;flex:none}
+.dark ul{margin:var(--space-3) 0 0}
+.dark li::marker{color:var(--on-dark-2)}
+@media (max-width:560px){
+  .dark .ledger thead tr,.dark .ledger tbody tr,.dark .ledger tfoot tr{display:grid;grid-template-columns:36% 28% 36%}
+  .dark .ledger th,.dark .ledger td{padding:0 0 8px;border:none;font-size:.875rem}
+  .dark .ledger th:first-child{grid-column:1/-1;padding:8px 0 2px;font-size:1rem}
+  .dark .ledger thead th:first-child{font-size:.875rem}
+  .dark .ledger thead tr{border-bottom:1px solid #3B4A63}
+  .dark .ledger tbody tr{border-bottom:1px solid #26344A}
+  .dark .ledger tbody tr:last-child{border-bottom:none}
+  .dark .ledger tfoot tr{grid-template-columns:1fr;border-top:1px solid var(--on-dark-2);border-bottom:3px double var(--on-dark-2);margin-top:4px}
+  .dark .ledger tfoot td,.dark .ledger tfoot th{border:none}
+  .dark .ledger tfoot td{display:flex;justify-content:space-between;gap:16px;padding:0 0 4px}
+  .dark .ledger tfoot td::before{font-weight:400;color:var(--on-dark-2)}
+  .dark .ledger tfoot td:nth-of-type(1)::before{content:"Opening"}
+  .dark .ledger tfoot td:nth-of-type(2)::before{content:"Net P&L"}
+  .dark .ledger tfoot td:nth-of-type(3)::before{content:"Ending"}
 }
 
-/* ── hero ───────────────────────────────────────────────── */
-.hero{padding:clamp(56px,9vw,112px) 0 72px}
-h1{
-  font-weight:500;color:var(--ink);
-  font-size:clamp(1.75rem,5.4vw,3.5rem);line-height:1.05;letter-spacing:-.02em;
-  margin:0 0 24px;text-wrap:balance;max-width:20em;
+/* capability groups */
+.cap{display:grid;gap:var(--space-3) var(--space-5);padding:var(--space-5) 0;border-top:1px solid var(--rule);align-items:start}
+.cap:first-of-type{border-top:0;padding-top:var(--space-4)}
+@media (min-width:900px){
+  .cap.has-shot{grid-template-columns:minmax(0,5fr) minmax(0,6fr)}
+  .cap.has-shot.flip{grid-template-columns:minmax(0,6fr) minmax(0,5fr)}
+  .cap.has-shot.flip .shot{order:-1}
+  .cap:not(.has-shot) ul{columns:2;column-gap:var(--space-5)}
 }
-.standfirst{font-size:1.25rem;line-height:1.5;color:var(--ink-2);max-width:var(--measure);margin:0}
-.herofoot{margin:32px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px}
+.cap h3{margin:0 0 var(--space-2);font-size:var(--step-2);font-weight:400;line-height:1.2}
+.cap h3 a{color:var(--ink);text-decoration:none}
+.cap h3 a:hover{color:var(--accent)}
+.cap ul{margin:0;padding-left:20px}
+.cap li{margin-bottom:10px;max-width:38rem;break-inside:avoid}
+.cap .shot{margin:0}
+.cap .shot figcaption{max-width:none}
 
-/* ── sections ───────────────────────────────────────────── */
-section{padding:0 0 72px}
-h2{
-  font-weight:600;color:var(--ink);
-  font-size:clamp(1.25rem,3.4vw,1.75rem);line-height:1.2;letter-spacing:-.01em;
-  margin:0 0 16px;text-wrap:balance;max-width:26ch;
-}
-h3{font-weight:600;font-size:1.25rem;line-height:1.3;color:var(--ink);margin:32px 0 8px}
-p{max-width:var(--measure);margin:0 0 16px}
-.lead{font-size:1.25rem;line-height:1.5;color:var(--ink-2)}
+.trust{background:var(--sheet);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.trustlist{list-style:none;margin:var(--space-4) 0 0;padding:0;display:grid;gap:var(--space-4)}
+@media (min-width:900px){.trustlist{grid-template-columns:repeat(3,1fr);gap:var(--space-5)}}
+.trustlist li{margin:0}
+.trustlist h3{margin:0 0 8px;font-size:var(--step-1)}
+.trustlist p{margin:0;max-width:30rem}
 
-/* ── solutions: a list with headings ────────────────────── */
-.solutions{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:32px 56px}
-@media (min-width:720px){.solutions{grid-template-columns:1fr 1fr}}
-.solutions h3{margin:0 0 8px}
-.solutions h3 a{text-decoration:none}
-.solutions h3 a:hover{text-decoration:underline;text-underline-offset:4px}
-.solutions p{margin:0;max-width:34rem}
-
-/* ── cta ────────────────────────────────────────────────── */
-.btn{
-  display:inline-block;background:var(--accent);color:var(--sheet);
-  text-decoration:none;font-size:1rem;font-weight:600;line-height:1.25;
-  padding:10px 20px;border-radius:2px;border:1px solid var(--accent);
-}
-.btn:hover{background:var(--accent-deep);border-color:var(--accent-deep);color:var(--sheet)}
-.btn:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+/* form + footer */
+.demo .signup{max-width:31rem}
 .cta-note{font-size:.875rem;color:var(--muted);margin-top:16px}
-
-/* ── form ───────────────────────────────────────────────── */
-.signup{margin-top:24px;max-width:31rem}
 .fg{margin-bottom:16px}
 .fg label{display:block;font-size:.875rem;color:var(--ink);margin-bottom:4px;font-weight:600}
-.fg input,.fg select,.fg textarea{
-  width:100%;font:inherit;font-size:1rem;color:var(--ink);
-  background:var(--sheet);border:1px solid var(--rule);border-radius:2px;
-  padding:8px 12px;min-height:40px;
-}
+.fg input,.fg select,.fg textarea{width:100%;font:inherit;font-size:1rem;color:var(--ink);background:var(--sheet);border:1px solid var(--rule);border-radius:0;padding:8px 12px;min-height:44px}
 .fg textarea{min-height:88px;resize:vertical}
 .fg textarea::placeholder{color:var(--muted);opacity:1}
-.fg input:focus,.fg select:focus,.fg textarea:focus{
-  outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent);
-}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
 .fg .hint{font-size:.875rem;color:var(--muted);margin:4px 0 0}
-button.btn{cursor:pointer;font-family:inherit}
+button.btn{cursor:pointer;border:0}
 .signup details{margin:24px 0}
 .signup summary{cursor:pointer;margin-bottom:16px}
-
-/* ── product screens ────────────────────────────────────── */
-.shot{margin:40px 0 0}
-.shot img{
-  display:block;width:100%;height:auto;
-  border:1px solid var(--rule);background:var(--sheet);
-}
-.shot figcaption{
-  font-size:.875rem;line-height:1.5;color:var(--muted);
-  margin:12px 0 0;max-width:none;
-}
-.shot figcaption b{color:var(--ink);font-weight:600}
-
-/* ── footer ─────────────────────────────────────────────── */
-footer.site{padding:40px 0 56px}
-.footrow{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline}
-.footrow span{flex-basis:100%}
-.footrow,.footrow a{font-size:.875rem;color:var(--muted)}
-.footrow a{text-decoration:none}
-.footrow a:hover{color:var(--ink);text-decoration:underline}
-
-/* The one worked-example table. Tabular figures so each number lines up with
-   the one the next step starts from, and the tie-out rule above each result:
-   one ink line above, two below. */
-.tablewrap{overflow-x:auto;margin:24px 0;max-width:40rem}
-.matrix{width:100%;border-collapse:collapse;color:var(--ink)}
-.matrix th[scope="row"]{text-align:left;font-weight:400;padding:8px 24px 8px 0;border-bottom:1px solid var(--rule-faint)}
-.matrix td{text-align:right;padding:8px 0;border-bottom:1px solid var(--rule-faint);font-variant-numeric:tabular-nums;white-space:nowrap}
-.matrix tr:last-child th,.matrix tr:last-child td{border-bottom:none;font-weight:600}
-.matrix tr:last-child td{border-top:1px solid var(--ink)}
-.matrix tr.total td{border-bottom:3px double var(--ink)}
-
-/* The six investor accounts (#1449): real HTML, so a phone reads the figures the
-   screenshot it replaced shrank to 350 by 60px. Same rules as the summary rows
-   above; header in small muted sentence case with one rule under it; the total
-   carries the tie-out (one ink line above, two below). Below 560px each account
-   takes two lines, its code over its three figures, so nothing scrolls sideways. */
-.tablewrap.wide{max-width:47.5rem}
-.ledgerfig{margin:0 0 24px}
-.ledgerfig figcaption{font-size:.875rem;line-height:1.5;color:var(--muted);margin:12px 0 0;max-width:42rem;text-wrap:pretty}
-.ledgerfig figcaption b{color:var(--ink);font-weight:600}
-/* The check beside the total (DESIGN.md tie mark): ink on chartreuse, a tick, then what it ties to. */
-.ledgerfig .tick{background:var(--tie);color:var(--ink);padding:1px 6px;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-.ledgerfig .tick svg{display:inline-block;width:14px;height:14px;margin:0 6px -2px 0;color:var(--ink)}
-.ledger{width:100%;border-collapse:collapse;color:var(--ink);font-variant-numeric:tabular-nums}
-.ledger th,.ledger td{padding:8px 0 8px 24px;border-bottom:1px solid var(--rule-faint);white-space:nowrap;text-align:right;font-weight:400}
-.ledger th:first-child{padding-left:0;text-align:left}
-.ledger thead th{font-size:.875rem;color:var(--muted);border-bottom-color:var(--rule)}
-.ledger tbody tr:last-child th,.ledger tbody tr:last-child td{border-bottom:none}
-.ledger tfoot th,.ledger tfoot td{font-weight:600;border-bottom:none}
-.ledger tfoot td{border-top:1px solid var(--ink);border-bottom:3px double var(--ink)}
-@media (max-width:560px){
-  .ledger thead tr,.ledger tbody tr,.ledger tfoot tr{display:grid;grid-template-columns:36% 28% 36%}
-  .ledger th,.ledger td{padding:0 0 8px;border:none;font-size:.875rem}
-  .ledger th:first-child{grid-column:1 / -1;padding:8px 0 2px;font-size:1rem}
-  .ledger thead th:first-child{font-size:.875rem}
-  .ledger thead tr{border-bottom:1px solid var(--rule)}
-  .ledger tbody tr{border-bottom:1px solid var(--rule-faint)}
-  .ledger tbody tr:last-child{border-bottom:none}
-  /* The totals are wider than a third of a phone each, so they stack, labeled,
-     between the tie-out rules: one ink line above, two below. */
-  .ledger tfoot tr{grid-template-columns:1fr;border-top:1px solid var(--ink);border-bottom:3px double var(--ink);margin-top:4px}
-  .ledger tfoot td{display:flex;justify-content:space-between;gap:16px;border:none;padding:0 0 4px}
-  .ledger tfoot td::before{font-weight:400;color:var(--muted)}
-  .ledger tfoot td:nth-of-type(1)::before{content:"Opening"}
-  .ledger tfoot td:nth-of-type(2)::before{content:"Net P&L"}
-  .ledger tfoot td:nth-of-type(3)::before{content:"Ending"}
-}
-
-/* A secondary hero action. Two filled buttons give a visitor two equal choices
-   at the moment the page wants them to have one. */
-.btnlink{font-weight:600;color:var(--accent)}
-.btnlink:hover{color:var(--accent-deep)}
-
-/* The honeypot. Off-screen; see the explanation below for avoiding display:none - see the comment on the
-   field itself. */
-/* Keyboard users land here first; it shows only when focused. */
-.skip{position:absolute;left:var(--gutter);top:-48px;z-index:20;background:var(--sheet);color:var(--accent);padding:8px 12px;border:1px solid var(--rule);border-radius:2px}
-.skip:focus{top:8px}
 .hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-
-/* Phone hit areas (#1453). Icons and desktop geometry keep DESIGN.md's sizes;
-   standalone links own their padding. Links inside prose stay inline. */
-@media (max-width:767.98px){
-  .lockup,.sitenav a,.btn,.btnlink,.solutions h3 a,footer.site a{
-    display:inline-flex;align-items:center;min-width:44px;min-height:44px;
-  }
-  .fg input,.fg select{min-height:44px}
-}
-.assistant-links{display:flex;flex-wrap:wrap;gap:8px 24px;margin:40px 0 24px}
-.assistant-links a{display:inline-flex;align-items:center;min-height:44px;padding:8px 12px;border:1px solid var(--rule);border-radius:6px;background:var(--sheet);font-size:.875rem;text-decoration:none}
-.assistant-links a:hover{border-color:var(--accent);background:var(--accent-tint)}
-/* The owner-approved positioning sentence is kept whole at reading size. */
-.hero h1{font-size:clamp(1.75rem,3.8vw,2.5rem);line-height:1.2;max-width:none}
-#buyer-positioning section{max-width:46rem;margin-inline:auto}
-main > section:not(.hero){max-width:46rem;margin-inline:auto}
-#buyer-positioning h2{max-width:none}
-@media(min-width:900px){main > section > .pagelinks{columns:2;column-gap:40px}main > section > .pagelinks li{break-inside:avoid}}
-#buyer-positioning li{margin-bottom:12px}
-#buyer-positioning h2 a{color:var(--ink)}
-.pagelinks{padding-left:22px}
-.pagelinks li{margin-bottom:10px}
+.skip{position:absolute;left:var(--gutter);top:-48px;z-index:20;background:var(--sheet);color:var(--accent);padding:8px 12px;border:1px solid var(--rule)}
+.skip:focus{top:8px}
+.home footer.site{display:block;margin:0;padding:var(--space-5) 0 var(--space-4);border-top:1px solid var(--rule)}
+.footcols{display:grid;gap:var(--space-4);grid-template-columns:1fr}
+@media (min-width:720px){.footcols{grid-template-columns:repeat(3,1fr)}}
+.footcols h2{font-family:var(--sans);font-size:.875rem;font-weight:600;margin:0 0 12px;max-width:none;color:var(--ink)}
+.footcols ul{list-style:none;margin:0;padding:0}
+.footcols li{margin:0}
+.footcols a{display:inline-block;padding:6px 0;font-size:.875rem;color:var(--muted);text-decoration:none}
+.footcols a:hover{color:var(--ink);text-decoration:underline}
+.footrow{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;margin-top:var(--space-4);padding-top:var(--space-3);border-top:1px solid var(--rule)}
+.footrow span{flex-basis:100%;font-size:.875rem;color:var(--muted)}
+.footrow a{font-size:.875rem;color:var(--muted);text-decoration:none;padding:6px 0}
+.footrow a:hover{color:var(--ink);text-decoration:underline}
+.assistant-links{margin:40px 0 0}
+@media (max-width:767.98px){.btnlink,.footcols a,.footrow a{display:inline-flex;align-items:center;min-height:44px}}
 </style>
 <link rel="alternate" type="text/markdown" href="https://1494labs.com/index.md" title="Markdown">
 </head>
@@ -377,247 +322,279 @@ main > section:not(.hero){max-width:46rem;margin-inline:auto}
   </div>
 </header>
 
-<div class="wrap">
+<div class="wrap home">
 <main id="main">
 
-<section class="hero"><h1>Fund, partnership and portfolio accounting for fund managers, allocators and fund administrators.</h1><p class="herofoot"><a class="btn" href="#contact">Request a demo</a><a class="btnlink" href="#example">See one month, traced to NAV</a></p></section>
-<div id="buyer-positioning"><section><h2><a href="/fund-accounting-software/">Who it is for</a></h2><ul>
-<li>Managers (GPs): hedge funds, private equity, credit and real estate funds, registered funds, RICs and BDCs. Fund and investor accounting, fees, waterfalls and carry, investor statements and regulatory filings.</li>
-<li>Allocators (LPs): fund of funds, family offices, endowments, foundations and other institutional investors. Commitments, calls and distributions across every underlying fund, look-through to the holdings, and performance by vintage, strategy and manager.</li>
-<li>Administrators: many funds with different terms on one platform, and reconciliation against bank, custodian and administrator files.</li>
-</ul><ul class="pagelinks"><li><a href="/fund-accounting-software/">Fund, Partnership and Investor Accounting</a></li><li><a href="/hedge-fund-accounting/">Hedge Fund Accounting</a></li><li><a href="/private-equity-fund-accounting/">Private Equity Fund Accounting</a></li><li><a href="/registered-fund-accounting/">Registered Fund Accounting</a></li><li><a href="/family-office-accounting/">Family Office Accounting</a></li><li><a href="/fund-administration-software/">Fund Administration Software</a></li><li><a href="/fund-of-funds-accounting/">Fund of Funds Accounting</a></li><li><a href="/endowment-foundation-accounting/">Investment Accounting for Endowments and Foundations</a></li></ul></section>
-<section><h2><a href="/fund-accounting-software/">Partnership and investor accounting</a></h2><ul>
-<li>Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.</li>
-<li>Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.</li>
-<li>Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.</li>
-<li>Allocations by class, series and sleeve, and investor NAV in the class currency.</li>
-</ul></section>
-<section><h2><a href="/holding-company-and-family-office-entity-accounting/">Complex structures</a></h2><ul>
-<li>Master-feeder, alternative investment vehicles (AIVs), SPVs, blockers, co-investments and continuation vehicles.</li>
-<li>Holding companies, family partnerships, trusts and GRATs, SMAs and funds of one, and personal accounts, with ownership traced through every layer.</li>
-<li>Blocker tax accrued at the entity and carried to each investor behind it.</li>
-<li>Fund of funds look-through to the underlying holdings, on both ownership bases.</li>
-</ul></section>
-<section><h2><a href="/portfolio-accounting/">Portfolio accounting across asset classes</a></h2><ul>
-<li>Public and private equity, fixed income, loans, credit facilities on both sides, real estate and REITs, derivatives, hedge fund and private fund interests, and digital assets, in any currency.</li>
-</ul></section>
-<section><h2><a href="/portfolio-company-kpi-collection/">Portfolio companies</a></h2><ul>
-<li>Financials and KPIs collected from each company by upload or a secure submission link: revenue, EBITDA, net debt and the metrics you define, checked on the way in.</li>
-<li>Every submission and correction kept with its reporting date, currency, source and submitter.</li>
-<li>Collected figures shown beside each valuation mark, and the submission used recorded with it.</li>
-<li>Cap tables with financing rounds, tenders, vesting and exit waterfalls.</li>
-<li>Company financials and KPIs in fund reporting, with missing companies flagged.</li>
-</ul></section>
-<section><h2><a href="/secondaries-and-strip-sale-accounting/">Secondaries</a></h2><ul>
-<li>Buy and sell LP interests, single or as a strip sale across many funds in one transaction.</li>
-<li>Purchase-price adjustments and deferred payments at a discount, with interim flows between the reference date and closing.</li>
-<li>The day-one gain between price paid and fair value recognized at acquisition, and cost basis kept.</li>
-<li>GP-led deals: continuation vehicles and tender offers.</li>
-<li>Direct secondaries in common stock, valued with waterfall and option-pricing methods.</li>
-<li>A secondaries portfolio report, and buyer and seller confirmations.</li>
-</ul></section>
-<section><h2><a href="/liquidity-forecasting-and-commitment-pacing/">Liquidity and forecasting</a></h2><ul>
-<li>Cash projection in horizon buckets out past a year, from settled cash: expected proceeds from underlying funds, investor outflows, unfunded commitments and scheduled obligations.</li>
-<li>Available liquidity including undrawn credit facilities.</li>
-<li>Commitment pacing for fund of funds and allocator programs.</li>
-<li>Deployment and exit forecasts for drawdown funds, with fees and fund-level debt.</li>
-<li>Cash-flow plans for evergreen, real estate and credit books: dealing, property recoveries, loan draws, interest and repayments.</li>
-<li>Scenarios with frozen inputs, each projected amount traced to the records behind it, and past forecasts kept.</li>
-<li>Gates, lockups and notice periods tracked for every underlying fund.</li>
-</ul></section>
-<section><h2><a href="/close-controls-and-reconciliation/">Close, controls and reconciliation</a></h2><ul>
-<li>Period close with a frozen trial balance and graded revisions.</li>
-<li>Official and latest-knowledge books on one ledger, with the source of every line.</li>
-<li>Cash, positions and NAV reconciled against outside files, with an exceptions worklist.</li>
-<li>A check that recomputes every fund&#x27;s arithmetic each morning.</li>
-</ul></section>
-<section><h2><a href="/fund-and-investor-reporting/">Reporting</a></h2><ul>
-<li>NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.</li>
-<li>Saved analyses that refresh on the platform and can be pulled through the API.</li>
-</ul></section>
-<section><h2><a href="/fund-accounting-api-and-ai/">API and AI</a></h2><ul>
-<li>Everything on screen is also in the public API.</li>
-<li>AI assistants read the book through MCP.</li>
-<li>AI reads statements and LPAs, and a person confirms each result before it posts.</li>
-</ul></section>
-</div><section><h2>Accounting Pages</h2><ul class="pagelinks"><li><a href="/fund-accounting-software/">Fund, Partnership and Investor Accounting</a></li><li><a href="/hedge-fund-accounting/">Hedge Fund Accounting</a></li><li><a href="/private-equity-fund-accounting/">Private Equity Fund Accounting</a></li><li><a href="/registered-fund-accounting/">Registered Fund Accounting</a></li><li><a href="/family-office-accounting/">Family Office Accounting</a></li><li><a href="/fund-administration-software/">Fund Administration Software</a></li><li><a href="/fund-of-funds-accounting/">Fund of Funds Accounting</a></li><li><a href="/secondaries-and-strip-sale-accounting/">Secondaries and Strip Sale Accounting</a></li><li><a href="/blocker-corporation-accounting/">Blocker Corporation Accounting</a></li><li><a href="/side-pocket-accounting/">Side Pocket Accounting</a></li><li><a href="/equalization-and-series-accounting/">Equalization and Series Accounting</a></li><li><a href="/waterfall-and-carried-interest-accounting/">Waterfall and Carried Interest Accounting</a></li><li><a href="/capital-call-and-distribution-software/">Capital Call and Distribution Software</a></li><li><a href="/portfolio-company-kpi-collection/">Portfolio Company KPI Collection</a></li><li><a href="/liquidity-forecasting-and-commitment-pacing/">Liquidity Forecasting and Commitment Pacing</a></li><li><a href="/holding-company-and-family-office-entity-accounting/">Holding Company and Family Office Entity Accounting</a></li><li><a href="/endowment-foundation-accounting/">Investment Accounting for Endowments and Foundations</a></li><li><a href="/secondaries-for-fund-of-funds/">Secondaries for Fund of Funds</a></li><li><a href="/portfolio-accounting/">Portfolio Accounting Across Asset Classes</a></li><li><a href="/close-controls-and-reconciliation/">Close, Controls and Reconciliation</a></li><li><a href="/fund-and-investor-reporting/">Fund and Investor Reporting</a></li><li><a href="/fund-accounting-api-and-ai/">Fund Accounting API and AI</a></li><li><a href="/glossary/">Fund Accounting Glossary</a></li></ul></section>
-  <section id="example">
-    <h2>Follow one month from income to investor capital.</h2>
-    <p>
-      One month of a reference fund, in two steps: what the fund earned after
-      its management fee, then where it ended up in six investors' capital accounts.
-    </p>
-
-    <div class="tablewrap">
-    <table class="matrix">
-      <tbody>
-        <tr><th scope="row">Net income for the month</th><td>$145,284.59</td></tr>
-        <tr><th scope="row">Management fee, through the fee calculation</th><td>&minus;$19,314.66</td></tr>
-        <tr><th scope="row">Net profit and loss to allocate</th><td>$125,969.93</td></tr>
-      </tbody>
-    </table>
-    </div>
-
-    <div class="tablewrap">
-    <table class="matrix">
-      <tbody>
-        <tr><th scope="row">Opening investor capital</th><td>$23,499,503.07</td></tr>
-        <tr><th scope="row">Net profit and loss allocated</th><td>+$125,969.93</td></tr>
-        <tr class="total"><th scope="row">Ending investor capital, and the NAV</th><td>$23,625,473.00</td></tr>
-      </tbody>
-    </table>
-    </div>
-
-    <figure class="ledgerfig">
-      <div class="tablewrap wide">
-      <table class="ledger">
-        <thead>
-          <tr><th scope="col">Investor account</th><th scope="col">Opening</th><th scope="col">Net P&amp;L</th><th scope="col">Ending</th></tr>
-        </thead>
-        <tbody>
-          <tr><th scope="row">WBE-001-A</th><td>$6,284,337.90</td><td>$33,687.42</td><td>$6,318,025.32</td></tr>
-          <tr><th scope="row">WBE-003-A</th><td>$5,459,391.06</td><td>$29,265.26</td><td>$5,488,656.32</td></tr>
-          <tr><th scope="row">WBE-006-A</th><td>$3,774,244.32</td><td>$20,231.97</td><td>$3,794,476.29</td></tr>
-          <tr><th scope="row">WBE-002-A</th><td>$3,420,147.35</td><td>$18,333.82</td><td>$3,438,481.17</td></tr>
-          <tr><th scope="row">WBE-005-A</th><td>$2,519,062.68</td><td>$13,503.53</td><td>$2,532,566.21</td></tr>
-          <tr><th scope="row">WBE-004-A</th><td>$2,042,319.76</td><td>$10,947.93</td><td>$2,053,267.69</td></tr>
-        </tbody>
-        <tfoot>
-          <tr><th scope="row">Six accounts</th><td>$23,499,503.07</td><td>$125,969.93</td><td>$23,625,473.00</td></tr>
-        </tfoot>
-      </table>
+<section class="hero" aria-labelledby="hero-h"><div class="in"><div class="herogrid">
+  <div>
+    <p class="eyebrow">Venice, 1494 · Summa de arithmetica</p>
+    <h1 id="hero-h">Double-entry has been around since 1494, and fund accounting still runs on spreadsheets.</h1>
+    <p class="sub">Fund accounting software that keeps the waterfall, the look-through and every investor's capital account inside one double-entry ledger, with every figure traced back to the entry that made it.</p>
+    <p class="herofoot"><a class="btn" href="#contact">Request a demo</a><a class="btnlink" href="#example">See one month, traced to NAV</a></p>
+  </div>
+  <div class="vis">
+    <div class="page" aria-hidden="true">
+      <div class="t">Quaderno · MCCCCLXXXXIIII</div>
+      <div class="d">Iesus · a dì 8 novembre</div>
+      <hr>
+      <div class="rows">
+        <span class="h"></span><span class="h n">lire</span><span class="h n">s.</span><span class="h n">d.</span>
+        <span class="per">Per cassa</span>
+        <span class="a">A capitale</span><span class="n">1200</span><span class="n">0</span><span class="n">0</span>
+        <span class="per">Per panni di lana</span>
+        <span class="a">A mercanti, a credito</span><span class="n">316</span><span class="n">13</span><span class="n">4</span>
+        <span class="per">Per spese di bottega</span>
+        <span class="a">A cassa</span><span class="n">42</span><span class="n">6</span><span class="n">8</span>
+        <span class="per">Per utile e danno</span>
+        <span class="a">A capitale dei compagni</span><span class="n">87</span><span class="n">10</span><span class="n">0</span>
       </div>
-      <figcaption><b class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>Six investor accounts reconcile to the fund's ending NAV of $23,625,473.00.</b> Management fees and expenses are attributed to the accounts that bear them, so a fee that reaches NAV reaches the capital account it belongs to.</figcaption>
-    </figure>
+      <hr>
+      <p class="foot">Per is the debtor, A the creditor. Every entry twice.</p>
+    </div>
+    <div class="card">
+      <div class="top"><span class="lab">Reference fund · one month</span><span class="tie">Ties to NAV</span></div>
+      <dl>
+        <dt>Net income for the month</dt><dd>$145,284.59</dd>
+        <dt>Management fee</dt><dd>&minus;$19,314.66</dd>
+        <dt>Net P&amp;L to allocate</dt><dd>$125,969.93</dd>
+        <dt>Opening investor capital</dt><dd>$23,499,503.07</dd>
+      </dl>
+      <hr>
+      <div class="end"><b>Ending capital, and the NAV</b><span>$23,625,473.00</span></div>
+      <p class="fn">Six investor accounts, each debit with its credit.</p>
+    </div>
+    <svg class="arrow" viewBox="0 0 120 80" aria-hidden="true"><path d="M4 8 C 50 8, 70 40, 112 70" fill="none" stroke="#2338D9" stroke-width="2" stroke-dasharray="5 6"/><path d="M100 70 L112 70 L106 59" fill="none" stroke="#2338D9" stroke-width="2"/></svg>
+  </div>
+</div></div></section>
 
-    <p>
-      <a href="/fund-accounting-software/">Fund accounting and reporting</a> includes trial balance and statement examples.
-    </p>
-  </section>
+<section class="band" id="who" aria-labelledby="who-h"><div class="in">
+  <h2 id="who-h">Start from the kind of fund you run.</h2>
+  <ul class="tiles">
+    <li class="tile"><div class="fig"><img src="/assets/screens/series.7f98fbc2.jpg" alt="Series table with one series per subscription month" width="1486" height="600" loading="lazy"></div><div class="txt"><h3><a href="/hedge-fund-accounting/">Hedge funds</a></h3><p>Share classes, series and fee terms that still tie to the NAV you report.</p></div></li>
+    <li class="tile"><div class="fig"><img src="/assets/screens/capital-calls.bd5b8c9b.jpg" alt="Schedule of quarterly capital calls with purpose and funding state" width="1486" height="600" loading="lazy"></div><div class="txt"><h3><a href="/private-equity-fund-accounting/">Private equity and venture</a></h3><p>Capital calls, waterfalls and company marks without the workbook.</p></div></li>
+    <li class="tile"><div class="fig"><img src="/assets/screens/structure-graph.60cc35a2.jpg" alt="Ownership graph showing each vehicle once" width="1486" height="600" loading="lazy"></div><div class="txt"><h3><a href="/family-office-accounting/">Family offices</a></h3><p>Trusts, holding companies and partnerships, with every asset counted once.</p></div></li>
+    <li class="tile"><div class="fig"><img src="/assets/screens/portfolio-holdings.3916f10a.jpg" alt="Holdings table with each manager at cost and at value" width="1486" height="600" loading="lazy"></div><div class="txt"><h3><a href="/fund-of-funds-accounting/">Funds of funds and allocators</a></h3><p>Look-through to the companies underneath, and manager marks that carry their date.</p></div></li>
+    <li class="tile"><div class="fig"><img src="/assets/screens/look-through-consolidation.a6726248.jpg" alt="Look-through consolidation of legal and effective ownership" width="1486" height="600" loading="lazy"></div><div class="txt"><h3><a href="/endowment-foundation-accounting/">Endowments and foundations</a></h3><p>Private fund commitments, dated marks and pacing on one book.</p></div></li>
+    <li class="tile"><div class="fig"><img src="/assets/screens/statement-of-changes.39e06e66.jpg" alt="Statement of changes in net assets" width="1486" height="600" loading="lazy"></div><div class="txt"><h3><a href="/registered-fund-accounting/">Registered funds</a></h3><p>NAV by share class, 19(a) notices and BDC asset coverage from the book.</p></div></li>
+    <li class="tile"><div class="fig type" aria-hidden="true"><span>Rent roll · NOI · FFO</span><small>Property level and fund level</small></div><div class="txt"><h3><a href="/real-estate-fund-accounting/">Real estate funds and REITs</a></h3><p>Leases, rent roll and property books, with REIT qualification tests tracked from the book.</p></div></li>
+    <li class="tile"><div class="fig"><img src="/assets/screens/break-detail.dc783d42.jpg" alt="Reconciliation break with expected, actual and difference" width="1486" height="600" loading="lazy"></div><div class="txt"><h3><a href="/fund-administration-software/">Fund administrators</a></h3><p>Many funds with different terms, close sign-off and statement runs on one platform.</p></div></li>
+  </ul>
+</div></section>
 
-  <section id="contact" class="cta">
-    <h2>Request a Demo</h2>
+<section class="band dark" id="example" aria-labelledby="ex-h"><div class="in"><div class="tracegrid">
+  <div>
+    <h2 id="ex-h">Follow one month from income to investor capital.</h2>
+    <p class="lede">Management fee first, then what is left goes to the investors. In this reference fund each account takes the share of the profit that matches its share of opening capital.</p>
+    <p><a href="/fund-accounting-software/">Fund accounting and reporting</a> includes trial balance and statement examples.</p>
+  </div>
+  <figure class="ledgerfig">
+    <div class="tablewrap">
+    <table class="ledger">
+      <caption class="sr">Opening capital, net profit and loss, and ending capital for six investor accounts</caption>
+      <thead>
+        <tr><th scope="col">Investor account</th><th scope="col">Opening</th><th scope="col">Net P&amp;L</th><th scope="col">Ending</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">WBE-001-A</th><td>$6,284,337.90</td><td>$33,687.42</td><td>$6,318,025.32</td></tr>
+        <tr><th scope="row">WBE-003-A</th><td>$5,459,391.06</td><td>$29,265.26</td><td>$5,488,656.32</td></tr>
+        <tr><th scope="row">WBE-006-A</th><td>$3,774,244.32</td><td>$20,231.97</td><td>$3,794,476.29</td></tr>
+        <tr><th scope="row">WBE-002-A</th><td>$3,420,147.35</td><td>$18,333.82</td><td>$3,438,481.17</td></tr>
+        <tr><th scope="row">WBE-005-A</th><td>$2,519,062.68</td><td>$13,503.53</td><td>$2,532,566.21</td></tr>
+        <tr><th scope="row">WBE-004-A</th><td>$2,042,319.76</td><td>$10,947.93</td><td>$2,053,267.69</td></tr>
+      </tbody>
+      <tfoot>
+        <tr><th scope="row">Six accounts</th><td>$23,499,503.07</td><td>$125,969.93</td><td>$23,625,473.00</td></tr>
+      </tfoot>
+    </table>
+    </div>
+    <figcaption><b class="tick"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"/></svg>Ties to NAV</b> The six investor accounts reconcile to the fund's ending NAV of $23,625,473.00.</figcaption>
+  </figure>
+</div></div></section>
+
+<section class="band" id="capabilities" aria-labelledby="cap-h"><div class="in" id="buyer-positioning">
+  <h2 id="cap-h">What the ledger covers.</h2>
+  <div class="cap has-shot">
+    <div><h3><a href="/fund-accounting-software/">Partnership and investor accounting</a></h3><ul><li>Subscriptions, redemptions, transfers, calls, commitments, distributions and recallable capital.</li><li>Equalization or series accounting, chosen per fund. High-water marks carried per investor through partial redemptions, transfers and restatements.</li><li>Management and incentive fees, offsets, waterfalls with carry, clawback and vesting, and side pockets.</li><li>Allocations by class, series and sleeve, and investor NAV in the class currency.</li></ul></div>
+    <figure class="shot"><img src="/assets/screens/series.7f98fbc2.jpg" alt="Series table, one series per subscription month" width="1600" height="600" loading="lazy"><figcaption><b>One series per subscription month.</b> Each is issued at 100.00 in its own inception period and measured against its own high-water mark.</figcaption></figure>
+  </div>
+  <div class="cap has-shot flip">
+    <div><h3><a href="/holding-company-and-family-office-entity-accounting/">Complex structures</a></h3><ul><li>Master-feeder, alternative investment vehicles (AIVs), SPVs, blockers, co-investments and continuation vehicles.</li><li>Holding companies, family partnerships, trusts and GRATs, SMAs and funds of one, and personal accounts, with ownership traced through every layer.</li><li>Blocker tax accrued at the entity and carried to each investor behind it.</li><li>Fund of funds look-through to the underlying holdings, on both ownership bases.</li></ul></div>
+    <figure class="shot"><img src="/assets/screens/structure-graph.60cc35a2.jpg" alt="Ownership graph of a family structure" width="1600" height="600" loading="lazy"><figcaption><b>Every vehicle once, with its owners converging on it.</b> A vehicle with several owners appears once, where a set of separate trees would repeat it on every branch.</figcaption></figure>
+  </div>
+  <div class="cap has-shot">
+    <div><h3><a href="/portfolio-accounting/">Portfolio accounting across asset classes</a></h3><ul><li>Public and private equity, fixed income, loans, credit facilities on both sides, real estate and REITs, derivatives, hedge fund and private fund interests, and digital assets, in any currency.</li></ul></div>
+    <figure class="shot"><img src="/assets/screens/portfolio-holdings.3916f10a.jpg" alt="Holdings table with each manager at cost and at value" width="1600" height="600" loading="lazy"><figcaption><b>Six managers, each at cost and at value.</b> The date each was last revalued sits on the row, because the age of an input is part of the number.</figcaption></figure>
+  </div>
+  <div class="cap">
+    <div><h3><a href="/portfolio-company-kpi-collection/">Portfolio companies</a></h3><ul><li>Financials and KPIs collected from each company by upload or a secure submission link: revenue, EBITDA, net debt and the metrics you define, checked on the way in.</li><li>Every submission and correction kept with its reporting date, currency, source and submitter.</li><li>Collected figures shown beside each valuation mark, and the submission used recorded with it.</li><li>Cap tables with financing rounds, tenders, vesting and exit waterfalls.</li><li>Company financials and KPIs in fund reporting, with missing companies flagged.</li></ul></div>
+  </div>
+  <div class="cap">
+    <div><h3><a href="/secondaries-and-strip-sale-accounting/">Secondaries</a></h3><ul><li>Buy and sell LP interests, single or as a strip sale across many funds in one transaction.</li><li>Purchase-price adjustments and deferred payments at a discount, with interim flows between the reference date and closing.</li><li>The day-one gain between price paid and fair value recognized at acquisition, and cost basis kept.</li><li>GP-led deals: continuation vehicles and tender offers.</li><li>Direct secondaries in common stock, valued with waterfall and option-pricing methods.</li><li>A secondaries portfolio report, and buyer and seller confirmations.</li></ul></div>
+  </div>
+  <div class="cap">
+    <div><h3><a href="/liquidity-forecasting-and-commitment-pacing/">Liquidity and forecasting</a></h3><ul><li>Cash projection in horizon buckets out past a year, from settled cash: expected proceeds from underlying funds, investor outflows, unfunded commitments and scheduled obligations.</li><li>Available liquidity including undrawn credit facilities.</li><li>Commitment pacing for fund of funds and allocator programs.</li><li>Deployment and exit forecasts for drawdown funds, with fees and fund-level debt.</li><li>Cash-flow plans for evergreen, real estate and credit books: dealing, property recoveries, loan draws, interest and repayments.</li><li>Scenarios with frozen inputs, each projected amount traced to the records behind it, and past forecasts kept.</li><li>Gates, lockups and notice periods tracked for every underlying fund.</li></ul></div>
+  </div>
+  <div class="cap has-shot flip">
+    <div><h3><a href="/close-controls-and-reconciliation/">Close, controls and reconciliation</a></h3><ul><li>The trial balance is frozen at close, and later changes are kept beside it with their reason.</li><li>The book as reported at close and the book with everything known since, on one ledger, with the source of every line.</li><li>Cash, positions and NAV reconciled against outside files, with an exceptions worklist.</li><li>A check that recomputes every fund&#x27;s arithmetic each morning.</li></ul></div>
+    <figure class="shot"><img src="/assets/screens/break-detail.dc783d42.jpg" alt="Reconciliation break with expected, actual and difference" width="1600" height="600" loading="lazy"><figcaption><b>Expected, actual, difference, and a decision with a name on it.</b> Resolved means the numbers now agree. Accepted means they still differ and somebody decided that is correct, with a note.</figcaption></figure>
+  </div>
+  <div class="cap has-shot">
+    <div><h3><a href="/fund-and-investor-reporting/">Reporting</a></h3><ul><li>NAV, capital account statements, ILPA notices, performance, and Form PF and Form ADV answers from the same book.</li><li>Saved analyses that refresh on the platform and can be pulled through the API.</li></ul></div>
+    <figure class="shot"><img src="/assets/screens/ilpa-capital-account.affebef1.jpg" alt="ILPA capital account statement" width="1600" height="600" loading="lazy"><figcaption><b>Every unsourceable row carries the note explaining it.</b> Carried interest accrued is zero in this example because the fund has no active waterfall policy, and the statement says so beside the zero.</figcaption></figure>
+  </div>
+  <div class="cap">
+    <div><h3><a href="/fund-accounting-api-and-ai/">API and AI</a></h3><ul><li>Everything on screen is also in the public API.</li><li>AI assistants read the book through MCP.</li><li>AI reads statements and LPAs, and a person confirms each result before it posts.</li></ul></div>
+  </div>
+</div></section>
+
+<section class="band trust" aria-labelledby="trust-h"><div class="in">
+  <h2 id="trust-h">How to check our work.</h2>
+  <ul class="trustlist">
+    <li><h3>Shipped status</h3><p>The <a href="/capabilities/">capabilities page</a> lists each capability and whether it can be demonstrated today.</p></li>
+    <li><h3>Security</h3><p>A pilot security answer pack is available on request, covering hosting, encryption, access control, audit trail, backups, incident response and subprocessors. Controls are mapped to SOC 2. Read the <a href="/security/">security page</a> or <a href="mailto:hello@1494labs.com?subject=Security%20answer%20pack">ask for the pack</a>.</p></li>
+    <li><h3>Checked every morning</h3><p>A scheduled check recomputes every fund's arithmetic each morning.</p></li>
+  </ul>
+</div></section>
+
+<section id="contact" class="band demo" aria-labelledby="demo-h"><div class="in">
+  <h2 id="demo-h">Request a Demo</h2>
     <p class="lead">
-      Choose your fund type and leave your email. We will reply with a relevant
-      example and arrange a walkthrough or a sandbox with synthetic reference
-      funds. Access is arranged by our team after your request.
-    </p>
-    <p>Explore product examples before requesting access:
-      <a href="/private-equity-fund-accounting/">Private equity</a>,
-      <a href="/hedge-fund-accounting/">hedge funds</a>,
-      <a href="/family-office-accounting/">family offices</a> and
-      <a href="/registered-fund-accounting/">registered funds</a>,
-      <a href="/real-estate-fund-accounting/">real estate funds</a> and
-      <a href="/reit-accounting-software/">REITs</a>
-      each have product examples.</p>
+    Choose your fund type and leave your email. We will reply with a relevant
+    example and arrange a walkthrough or a sandbox with synthetic reference
+    funds. Access is arranged by our team after your request.
+  </p>
+  <form class="signup" action="https://formspree.io/f/xwlejaqw" method="POST">
+    <input type="hidden" name="_subject" value="1494 Labs enquiry">
+    <!-- Honeypot (#446-adjacent, added 2026-09-17 after a header-injection
+         probe hit the endpoint). Formspree discards any submission where
+         _gotcha is filled, and a person never sees this field.
 
-    <form class="signup" action="https://formspree.io/f/xwlejaqw" method="POST">
-      <input type="hidden" name="_subject" value="1494 Labs enquiry">
-      <!-- Honeypot (#446-adjacent, added 2026-09-17 after a header-injection
-           probe hit the endpoint). Formspree discards any submission where
-           _gotcha is filled, and a person never sees this field.
+         Positioned OFF-SCREEN: a bot
+         worth defending against skips fields it can see are hidden, and
+         off-screen text is still "visible" to one that parses the DOM.
 
-           Positioned OFF-SCREEN: a bot
-           worth defending against skips fields it can see are hidden, and
-           off-screen text is still "visible" to one that parses the DOM.
-
-           aria-hidden and tabindex=-1 keep it away from anyone using a screen
-           reader or the keyboard, who must never be asked to fill it. No
-           `required`, for the same reason - the field exists to stay empty. -->
-      <div class="hp" aria-hidden="true">
-        <label for="_gotcha">Leave this field empty</label>
-        <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+         aria-hidden and tabindex=-1 keep it away from anyone using a screen
+         reader or the keyboard, who must never be asked to fill it. No
+         `required`, for the same reason - the field exists to stay empty. -->
+    <div class="hp" aria-hidden="true">
+      <label for="_gotcha">Leave this field empty</label>
+      <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+    </div>
+    <div class="fg">
+      <label for="email">Work email</label>
+      <input type="email" id="email" name="email" required autocomplete="email">
+    </div>
+    <div class="fg">
+      <label for="runs">What do you run?</label>
+      <select id="runs" name="runs" required>
+        <option value="">Select...</option>
+        <option value="hedge">Hedge fund or multi-strategy</option>
+        <option value="pevc">Private equity or venture</option>
+        <option value="fof">Fund of funds</option>
+        <option value="family-office">Family office</option>
+        <option value="administrator">Fund administrator</option>
+        <option value="registered">Registered fund (RIC or BDC)</option>
+        <option value="other">Something else</option>
+      </select>
+    </div>
+    <div class="fg">
+      <label for="request_kind">How would you like to try it?</label>
+      <select id="request_kind" name="request_kind">
+        <option value="walkthrough">Walk me through a reference fund</option>
+        <option value="sandbox">Arrange a sandbox with reference funds</option>
+      </select>
+    </div>
+    <details>
+      <summary>Add context (optional)</summary>
+      <div class="fg">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" autocomplete="name">
       </div>
       <div class="fg">
-        <label for="email">Work email</label>
-        <input type="email" id="email" name="email" required autocomplete="email">
+        <label for="firm">Firm</label>
+        <input type="text" id="firm" name="firm" autocomplete="organization">
       </div>
       <div class="fg">
-        <label for="runs">What do you run?</label>
-        <select id="runs" name="runs" required>
-          <option value="">Select...</option>
-          <option value="hedge">Hedge fund or multi-strategy</option>
-          <option value="pevc">Private equity or venture</option>
-          <option value="fof">Fund of funds</option>
-          <option value="family-office">Family office</option>
-          <option value="administrator">Fund administrator</option>
-          <option value="registered">Registered fund (RIC or BDC)</option>
-          <option value="other">Something else</option>
+        <label for="setup">What are you running on today?</label>
+        <textarea id="setup" name="setup" placeholder="Optional. The more specific the better."></textarea>
+        <p class="hint">Spreadsheets, an administrator, a platform you have outgrown. Whatever it is.</p>
+      </div>
+      <div class="fg">
+        <label for="discovery">How did you find us?</label>
+        <select id="discovery" name="discovery">
+          <option value="">Prefer not to say</option>
+          <option value="assistant">An AI assistant</option>
+          <option value="search">Web search</option>
+          <option value="referral">A colleague</option>
+          <option value="other">Another way</option>
         </select>
       </div>
-      <div class="fg">
-        <label for="request_kind">How would you like to try it?</label>
-        <select id="request_kind" name="request_kind">
-          <option value="walkthrough">Walk me through a reference fund</option>
-          <option value="sandbox">Arrange a sandbox with reference funds</option>
-        </select>
-      </div>
-      <details>
-        <summary>Add context (optional)</summary>
-        <div class="fg">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" autocomplete="name">
-        </div>
-        <div class="fg">
-          <label for="firm">Firm</label>
-          <input type="text" id="firm" name="firm" autocomplete="organization">
-        </div>
-        <div class="fg">
-          <label for="setup">What are you running on today?</label>
-          <textarea id="setup" name="setup" placeholder="Optional. The more specific the better."></textarea>
-          <p class="hint">Spreadsheets, an administrator, a platform you have outgrown. Whatever it is.</p>
-        </div>
-        <div class="fg">
-          <label for="discovery">How did you find us?</label>
-          <select id="discovery" name="discovery">
-            <option value="">Prefer not to say</option>
-            <option value="assistant">An AI assistant</option>
-            <option value="search">Web search</option>
-            <option value="referral">A colleague</option>
-            <option value="other">Another way</option>
-          </select>
-        </div>
-      </details>
-      <input type="hidden" name="request_id" value="">
-      <input type="hidden" name="request_started_at" value="">
-      <input type="hidden" name="request_submitted_at" value="">
-      <input type="hidden" name="entry_segment" value="direct">
-      <button class="btn" type="submit">Request access</button>
-    </form>
-    <p class="cta-note">
-      Prefer email? Write directly to
-      <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>.
-      The form includes a request reference, timestamps and entry fund type to help us
-      measure response times. These are sent only when you submit.
-      What you send is handled as the <a href="/privacy/">privacy notice</a>
-      describes, under the <a href="/terms/">terms of use</a>.
-    </p>
-  </section>
+    </details>
+    <input type="hidden" name="request_id" value="">
+    <input type="hidden" name="request_started_at" value="">
+    <input type="hidden" name="request_submitted_at" value="">
+    <input type="hidden" name="entry_segment" value="direct">
+    <button class="btn" type="submit">Request access</button>
+  </form>
+  <p class="cta-note">
+    Prefer email? Write directly to
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>.
+    What you send is handled as the <a href="/privacy/">privacy notice</a>
+    describes, under the <a href="/terms/">terms of use</a>.
+  </p>
+  </div></section>
 </main>
 
-  <!-- assistant-links:start -->
+<!-- assistant-links:start -->
   <nav class="assistant-links" aria-label="Page formats and assistants">
     <a href="https://1494labs.com/index.md">Read Markdown</a>
   </nav>
   <!-- assistant-links:end -->
 
-  <footer class="site">
-    <div class="footrow">
-      <span>&copy; 2026 1494 Labs Inc., a Delaware corporation, 6 Liberty Square #2721, Boston, MA 02109</span>
-      <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
-      <a href="/fund-accounting-software/">Platform</a>
-      <a href="/private-equity-fund-accounting/">Private Equity</a>
-      <a href="/hedge-fund-accounting/">Hedge Funds</a>
-      <a href="/family-office-accounting/">Family Offices</a>
-      <a href="/fund-administration-software/">Administrators</a>
-      <a href="/capabilities/">Capabilities</a>
-      <a href="/registered-fund-accounting/">Registered Funds</a>
-      <a href="/notes/">Notes</a>
-      <a href="/privacy/">Privacy</a>
-      <a href="/security/">Security</a>
-      <a href="/terms/">Terms</a>
-    </div>
-  </footer>
+  <footer class="site"><div class="in">
+  <div class="footcols">
+    <div><h2>By kind of fund</h2><ul>
+      <li><a href="/hedge-fund-accounting/">Hedge Fund Accounting</a></li>
+      <li><a href="/private-equity-fund-accounting/">Private Equity Fund Accounting</a></li>
+      <li><a href="/family-office-accounting/">Family Office Accounting</a></li>
+      <li><a href="/fund-of-funds-accounting/">Fund of Funds Accounting</a></li>
+      <li><a href="/endowment-foundation-accounting/">Investment Accounting for Endowments and Foundations</a></li>
+      <li><a href="/registered-fund-accounting/">Registered Fund Accounting</a></li>
+      <li><a href="/real-estate-fund-accounting/">Real Estate Fund Accounting</a></li>
+      <li><a href="/reit-accounting-software/">REIT Accounting Software</a></li>
+      <li><a href="/fund-administration-software/">Fund Administration Software</a></li>
+    </ul></div>
+    <div><h2>Partnership and structures</h2><ul>
+      <li><a href="/fund-accounting-software/">Fund, Partnership and Investor Accounting</a></li>
+      <li><a href="/equalization-and-series-accounting/">Equalization and Series Accounting</a></li>
+      <li><a href="/side-pocket-accounting/">Side Pocket Accounting</a></li>
+      <li><a href="/waterfall-and-carried-interest-accounting/">Waterfall and Carried Interest Accounting</a></li>
+      <li><a href="/capital-call-and-distribution-software/">Capital Call and Distribution Software</a></li>
+      <li><a href="/blocker-corporation-accounting/">Blocker Corporation Accounting</a></li>
+      <li><a href="/holding-company-and-family-office-entity-accounting/">Holding Company and Family Office Entity Accounting</a></li>
+      <li><a href="/secondaries-and-strip-sale-accounting/">Secondaries and Strip Sale Accounting</a></li>
+      <li><a href="/secondaries-for-fund-of-funds/">Secondaries for Fund of Funds</a></li>
+    </ul></div>
+    <div><h2>Portfolio, close and reporting</h2><ul>
+      <li><a href="/portfolio-accounting/">Portfolio Accounting Across Asset Classes</a></li>
+      <li><a href="/portfolio-company-kpi-collection/">Portfolio Company KPI Collection</a></li>
+      <li><a href="/liquidity-forecasting-and-commitment-pacing/">Liquidity Forecasting and Commitment Pacing</a></li>
+      <li><a href="/close-controls-and-reconciliation/">Close, Controls and Reconciliation</a></li>
+      <li><a href="/fund-and-investor-reporting/">Fund and Investor Reporting</a></li>
+      <li><a href="/fund-accounting-api-and-ai/">Fund Accounting API and AI</a></li>
+      <li><a href="/capabilities/">Capabilities</a></li>
+      <li><a href="/glossary/">Fund Accounting Glossary</a></li>
+      <li><a href="/notes/">Notes</a></li>
+    </ul></div>
+  </div>
+  <div class="footrow">
+    <span>&copy; 2026 1494 Labs Inc., a Delaware corporation, 6 Liberty Square #2721, Boston, MA 02109</span>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/security/">Security</a>
+    <a href="/terms/">Terms</a>
+  </div>
+</div></footer>
 </div>
 
 <script src="/assets/demo-request.js" defer></script>

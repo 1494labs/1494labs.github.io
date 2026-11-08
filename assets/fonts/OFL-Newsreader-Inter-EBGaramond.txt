@@ -1,0 +1,5 @@
+Newsreader (Production Type), Inter (The Inter Project Authors) and EB Garamond
+(Georg Duffner, Octavio Pardo) are distributed under the SIL Open Font License,
+Version 1.1: https://openfontlicense.org. Files are the latin subsets from the
+Fontsource packages (@fontsource/newsreader, @fontsource/inter,
+@fontsource/eb-garamond, 5.2.5).
