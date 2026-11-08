@@ -89,7 +89,7 @@
         value: fmt(p.open),
         steps: [
           step(1, 'Closing capital at last month’s frozen close', fmt(p.open)),
-          step(2, 'Share of the fund’s opening capital', pct(p.share))
+          step(2, 'Percentage ownership of the fund’s opening capital', pct(p.share))
         ]
       };
     }
@@ -99,7 +99,7 @@
         label: p.id + ' · net P&L allocated',
         value: fmt(p.pnl),
         steps: [
-          step(1, 'Share of opening capital', pct(p.share)),
+          step(1, 'Percentage ownership of opening capital', pct(p.share)),
           step(2, 'Share of net income for the month', fmt(p.inc)),
           step(3, 'Share of the management fee', fmt(-p.fee)),
           step(4, 'Allocation entry posted to this account', fmt(p.pnl))
