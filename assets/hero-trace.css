@@ -131,3 +131,8 @@ table.st{min-width:0;width:100%;border-collapse:collapse;table-layout:fixed;marg
 @media (max-width:860px){
   .lockup .ldiv,.lockup .ldesc{display:none}
 }
+
+/* /v5/: the trace panel takes the right column, with a larger value and a product footer (#2146). */
+.tpanel--tall{flex:1}
+.tpanel--tall .val{font-size:clamp(2rem,3.4vw,2.5rem)}
+.tpanel .pfoot{margin:auto 0 0;padding-top:12px;border-top:1px solid #2C3A52;font-size:.8125rem;color:var(--on-dark-2,#A9B3C2);max-width:none}

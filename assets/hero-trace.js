@@ -140,7 +140,8 @@
     var stepsEl = host.querySelector('[data-steps]');
     var noteEl = host.querySelector('[data-note]');
     var sendEl = host.querySelector('[data-send]');
-    if (!tbody || !tfoot || !askEl || !panel || !labelEl || !valueEl || !stepsEl || !noteEl || !sendEl) return;
+    // The audit request and auditor button are optional: /v5/ (#2146) has neither.
+    if (!tbody || !tfoot || !panel || !labelEl || !valueEl || !stepsEl) return;
 
     var state = { pick: 'nav', sent: false };
     var figs = [];  // { pick, btn, row }
@@ -191,7 +192,7 @@
         f.btn.setAttribute('aria-pressed', f.pick === state.pick ? 'true' : 'false');
         if (f.row) f.row.classList.toggle('is-sel', f.account === selAccount);
       });
-      askEl.textContent = 'Please provide support for ' + t.ask + '.';
+      if (askEl) askEl.textContent = 'Please provide support for ' + t.ask + '.';
       labelEl.textContent = t.label;
       valueEl.textContent = t.value;
       stepsEl.textContent = '';
@@ -202,8 +203,8 @@
         li.appendChild(el('span', 'a', s.amt));
         stepsEl.appendChild(li);
       });
-      sendEl.textContent = state.sent ? 'Link copied' : 'Copy link for the auditor';
-      noteEl.textContent = state.sent ? SENT_NOTE : IDLE_NOTE;
+      if (sendEl) sendEl.textContent = state.sent ? 'Link copied' : 'Copy link for the auditor';
+      if (noteEl) noteEl.textContent = state.sent ? SENT_NOTE : IDLE_NOTE;
     }
 
     function choose(pick) {
@@ -217,10 +218,12 @@
     }
 
     // No link is built or copied: no shareable auditor link exists yet.
-    sendEl.addEventListener('click', function () {
-      state.sent = true;
-      render();
-    });
+    if (sendEl) {
+      sendEl.addEventListener('click', function () {
+        state.sent = true;
+        render();
+      });
+    }
 
     render();
   }

@@ -153,9 +153,9 @@ its sitemap generator. Push only that review branch and open a draft pull reques
 The Pages source is `main`; merging or pushing to it requires the owner's go.
 Preserve the public legal text, comparison pages and robots configuration.
 
-## Unlisted homepage previews (/v2/, /v3/, /v4/)
+## Unlisted homepage previews (/v2/ to /v5/)
 
-`site/v2/`, `site/v3/` and `site/v4/` are full copies of `index.html` with only the hero swapped
+`site/v2/` to `site/v5/` are full copies of `index.html` with only the hero swapped
 (pick any number, send its support to your auditor; `/v3/` adds the 1494 ledger page behind
 the statement). They are generated, not hand-edited: `scripts/gen_site_previews.py` rewrites
 both from `index.html` (run it after any home page edit; `--check` reports stale).
