@@ -1,6 +1,6 @@
 # 1494 Labs
 
-# Double-entry has been around since 1494, and fund accounting still runs on spreadsheets.
+# Run your fund's books in one system, and stop rebuilding them in spreadsheets.
 
 ## What the ledger covers.
 
@@ -2281,40 +2281,33 @@ Tell us which funds, structures and accounting terms you need to review.
 
 Source: https://1494labs.com/
 
-Venice, 1494 · Summa de arithmetica
+Fund accounting software for managers, allocators and administrators
 
-# Double-entry has been around since 1494, and fund accounting still runs on spreadsheets.
+# Run your fund's books in one system, and stop rebuilding them in spreadsheets.
 
-Fund accounting software that keeps the waterfall, the look-through and every investor's capital account inside one double-entry ledger, with every figure traced back to the entry that made it.
+Capital accounts, fees, waterfalls and look-through are calculated inside the ledger, so the numbers your investors receive are the numbers on your books. Click any figure below to see where it came from.
 
-[Request a demo](https://1494labs.com/#contact)[See one month, traced to NAV](https://1494labs.com/#example)
+[Request a demo](https://1494labs.com/#contact)[See the full month](https://1494labs.com/#example)
 
 Quaderno · MCCCCLXXXXIIII
 
-Iesus · a dì 8 novembre
-
-lires.d.
 Per cassa
 A capitale120000
-Per panni di lana
-A mercanti, a credito316134
-Per spese di bottega
-A cassa4268
-Per utile e danno
-A capitale dei compagni87100
 
-Per is the debtor, A the creditor. Every entry twice.
+**Capital account statement · reference fund**One month · USD
 
-Reference fund · one monthTies to NAV
+Opening capital, net profit and loss, and ending capital for six investor accounts. Each figure opens its support.
 
-Net income for the month$145,284.59
-Management fee−$19,314.66
-Net P&L to allocate$125,969.93
-Opening investor capital$23,499,503.07
+| Investor account | Opening | Net P&L | Ending |
+| --- | --- | --- | --- |
 
-**Ending capital, and the NAV**$23,625,473.00
+Turn on JavaScript to open the figures. The same table is further down this page.
 
-Six investor accounts, each debit with its credit.
+Every entry twice, as in 1494. The six accounts sum to the NAV to the cent.
+
+Where this number came from
+
+Each step opens to its journal entries in the product.
 
 ## Start from the kind of fund you run.
 
@@ -2467,6 +2460,10 @@ A pilot security answer pack is available on request, covering hosting, encrypti
 - ### Checked every morning
 
 A scheduled check recomputes every fund's arithmetic each morning.
+
+- ### For your auditors
+
+Any figure can be handed to your auditors with the entries behind it.
 
 ## Request a Demo
 

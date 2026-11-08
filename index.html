@@ -296,6 +296,7 @@ button.btn{cursor:pointer;border:0}
 .footrow a:hover{color:var(--ink);text-decoration:underline}
 @media (max-width:767.98px){.btnlink,.footcols a,.footrow a{display:inline-flex;align-items:center;min-height:44px}}
 </style>
+<link rel="stylesheet" href="/assets/hero-trace.7335184d.css">
 <link rel="alternate" type="text/markdown" href="https://1494labs.com/index.md" title="Markdown">
 </head>
 <body>
@@ -314,6 +315,7 @@ button.btn{cursor:pointer;border:0}
           <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
         </svg>
       <span class="wordmark">1494 Labs</span>
+      <span class="ldiv" aria-hidden="true"></span><span class="ldesc">Fund, partnership and portfolio accounting</span>
     </a>
     <nav class="sitenav" aria-label="Site">
       <a href="/fund-accounting-software/">Platform</a>
@@ -336,47 +338,50 @@ button.btn{cursor:pointer;border:0}
 <div class="wrap home">
 <main id="main">
 
-<section class="hero" aria-labelledby="hero-h"><div class="in"><div class="herogrid">
-  <div>
-    <p class="eyebrow">Venice, 1494 · Summa de arithmetica</p>
-    <h1 id="hero-h">Double-entry has been around since 1494, and fund accounting still runs on spreadsheets.</h1>
-    <p class="sub">Fund accounting software that keeps the waterfall, the look-through and every investor's capital account inside one double-entry ledger, with every figure traced back to the entry that made it.</p>
-    <p class="herofoot"><a class="btn" href="#contact">Request a demo</a><a class="btnlink" href="#example">See one month, traced to NAV</a></p>
+<section class="thero thero--ledger" aria-labelledby="hero-h" data-hero-trace data-ledger="1"><div class="in">
+  <div class="thead">
+    <div>
+      <p class="eyebrow eyebrow--cat">Fund accounting software for managers, allocators and administrators</p>
+      <h1 id="hero-h">Run your fund's books in one system, and stop rebuilding them in spreadsheets.</h1>
+    </div>
+    <div>
+      <p class="sub">Capital accounts, fees, waterfalls and look-through are calculated inside the ledger, so the numbers your investors receive are the numbers on your books. Click any figure below to see where it came from.</p>
+      <p class="herofoot"><a class="btn" href="#contact">Request a demo</a><a class="btnlink" href="#example">See the full month</a></p>
+    </div>
   </div>
-  <div class="vis">
-    <div class="page" aria-hidden="true">
-      <div class="t">Quaderno · MCCCCLXXXXIIII</div>
-      <div class="d">Iesus · a dì 8 novembre</div>
-      <hr>
-      <div class="rows">
-        <span class="h"></span><span class="h n">lire</span><span class="h n">s.</span><span class="h n">d.</span>
-        <span class="per">Per cassa</span>
-        <span class="a">A capitale</span><span class="n">1200</span><span class="n">0</span><span class="n">0</span>
-        <span class="per">Per panni di lana</span>
-        <span class="a">A mercanti, a credito</span><span class="n">316</span><span class="n">13</span><span class="n">4</span>
-        <span class="per">Per spese di bottega</span>
-        <span class="a">A cassa</span><span class="n">42</span><span class="n">6</span><span class="n">8</span>
-        <span class="per">Per utile e danno</span>
-        <span class="a">A capitale dei compagni</span><span class="n">87</span><span class="n">10</span><span class="n">0</span>
+  <div class="tbody">
+    <div class="tstate">
+      <div class="page lcorner" aria-hidden="true">
+        <div class="t">Quaderno · MCCCCLXXXXIIII</div>
+        <div class="rows">
+          <span class="per">Per cassa</span>
+          <span class="a">A capitale</span><span class="n">1200</span><span class="n">0</span><span class="n">0</span>
+        </div>
       </div>
-      <hr>
-      <p class="foot">Per is the debtor, A the creditor. Every entry twice.</p>
+      <div class="tcard">
+        <div class="ttl"><b>Capital account statement · reference fund</b><span>One month · USD</span></div>
+        <table class="st">
+          <caption class="sr">Opening capital, net profit and loss, and ending capital for six investor accounts. Each figure opens its support.</caption>
+          <thead><tr><th scope="col">Investor account</th><th scope="col">Opening</th><th scope="col">Net P&amp;L</th><th scope="col">Ending</th></tr></thead>
+          <tbody data-rows></tbody>
+          <tfoot data-totals></tfoot>
+        </table>
+        <noscript><p class="tnote">Turn on JavaScript to open the figures. The same table is further down this page.</p></noscript>
+        <p class="tnote">Every entry twice, as in 1494. The six accounts sum to the NAV to the cent.</p>
+      </div>
     </div>
-    <div class="card">
-      <div class="top"><span class="lab">Reference fund · one month</span><span class="tie">Ties to NAV</span></div>
-      <dl>
-        <dt>Net income for the month</dt><dd>$145,284.59</dd>
-        <dt>Management fee</dt><dd>&minus;$19,314.66</dd>
-        <dt>Net P&amp;L to allocate</dt><dd>$125,969.93</dd>
-        <dt>Opening investor capital</dt><dd>$23,499,503.07</dd>
-      </dl>
-      <hr>
-      <div class="end"><b>Ending capital, and the NAV</b><span>$23,625,473.00</span></div>
-      <p class="fn">Six investor accounts, each debit with its credit.</p>
+    <div class="tright">
+      <div class="tpanel tpanel--tall" data-panel>
+        <p class="kick">Where this number came from</p>
+        <div class="live" aria-live="polite">
+          <div class="head"><span class="lab" data-label></span><span class="val" data-value></span></div>
+          <ol data-steps></ol>
+        </div>
+        <p class="pfoot">Each step opens to its journal entries in the product.</p>
+      </div>
     </div>
-    <svg class="arrow" viewBox="0 0 120 80" aria-hidden="true"><path d="M4 8 C 50 8, 70 40, 112 70" fill="none" stroke="#2338D9" stroke-width="2" stroke-dasharray="5 6"/><path d="M100 70 L112 70 L106 59" fill="none" stroke="#2338D9" stroke-width="2"/></svg>
   </div>
-</div></div></section>
+</div></section>
 
 <section class="band" id="who" aria-labelledby="who-h"><div class="in">
   <h2 id="who-h">Start from the kind of fund you run.</h2>
@@ -458,6 +463,7 @@ button.btn{cursor:pointer;border:0}
     <li><h3>Shipped status</h3><p>The <a href="/capabilities/">capabilities page</a> lists each capability and whether it can be demonstrated today.</p></li>
     <li><h3>Security</h3><p>A pilot security answer pack is available on request, covering hosting, encryption, access control, audit trail, backups, incident response and subprocessors. Controls are mapped to SOC 2. Read the <a href="/security/">security page</a> or <a href="mailto:hello@1494labs.com?subject=Security%20answer%20pack">ask for the pack</a>.</p></li>
     <li><h3>Checked every morning</h3><p>A scheduled check recomputes every fund's arithmetic each morning.</p></li>
+    <li><h3>For your auditors</h3><p>Any figure can be handed to your auditors with the entries behind it.</p></li>
   </ul>
 </div></section>
 
@@ -597,6 +603,7 @@ button.btn{cursor:pointer;border:0}
 </div></footer>
 </div>
 
+<script src="/assets/hero-trace.86af02c3.js" defer></script>
 <script src="/assets/demo-request.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3da7530d96b14f3f95915c071872f4be"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
