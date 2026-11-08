@@ -5,7 +5,7 @@
    Static on purpose: the reference-fund figures are embedded, nothing is fetched.
    The same six accounts, as to the cent, as the table further down the home page.
    Each account's income is its share of opening capital, and its fee is that income
-   minus its net P&L, so every trace foots. site/assets/hero-trace.test.mjs asserts it. */
+   minus its net P&L, so every trace foots. tests/site/hero-trace.test.mjs asserts it. */
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory();
   else root.HeroTrace = factory();

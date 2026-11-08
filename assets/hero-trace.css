@@ -122,3 +122,12 @@ table.st{min-width:0;width:100%;border-collapse:collapse;table-layout:fixed;marg
 }
 @keyframes lin{from{opacity:0;transform:translateY(10px) rotate(-3.5deg)}}
 @keyframes csettle{from{opacity:0;transform:translate(26px,20px)}}
+
+/* /v4/: the category up front (#2145). A descriptor in the nav lockup and the eyebrow as the category. */
+.lockup .ldiv{width:1px;height:20px;background:#C3C9D3;margin:0 4px;flex:none}
+.lockup .ldesc{font-family:var(--sans,Inter,system-ui,sans-serif);font-size:14px;color:#3B4657;line-height:1.2;white-space:nowrap}
+.thero .eyebrow--cat{color:var(--accent,#2338D9);font-weight:600;letter-spacing:0;text-transform:none;font-size:15px}
+/* On phones the descriptor would wrap the nav, so it hides; the category eyebrow carries it. */
+@media (max-width:860px){
+  .lockup .ldiv,.lockup .ldesc{display:none}
+}

@@ -153,9 +153,9 @@ its sitemap generator. Push only that review branch and open a draft pull reques
 The Pages source is `main`; merging or pushing to it requires the owner's go.
 Preserve the public legal text, comparison pages and robots configuration.
 
-## Unlisted homepage previews (/v2/, /v3/)
+## Unlisted homepage previews (/v2/, /v3/, /v4/)
 
-`site/v2/` and `site/v3/` are full copies of `index.html` with only the hero swapped
+`site/v2/`, `site/v3/` and `site/v4/` are full copies of `index.html` with only the hero swapped
 (pick any number, send its support to your auditor; `/v3/` adds the 1494 ledger page behind
 the statement). They are generated, not hand-edited: `scripts/gen_site_previews.py` rewrites
 both from `index.html` (run it after any home page edit; `--check` reports stale).
@@ -163,4 +163,4 @@ The hero is one component (`assets/hero-trace.css`, `assets/hero-trace.js`) with
 a flag. Both pages are `noindex, nofollow`, carry the home page canonical, and nothing links
 to them; `gen_site_docs.py` skips them, so they are not in the sitemap or the llms files.
 `scripts/publish_site.sh` mirrors them like any other directory. Guards:
-`tests/unit/test_site_previews.py` and `assets/hero-trace.test.mjs` (every trace foots to the cent).
+`tests/unit/test_site_previews.py` and `tests/site/hero-trace.test.mjs` (every trace foots to the cent).
