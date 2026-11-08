@@ -98,9 +98,9 @@ Yes. Capital Accounts reports unfunded commitments per investor and per fund. Th
 $37,200,000.00 is the called figure from the capital accounts above, and
 the page foots both sides to $41,960,905.72.
 
-![The ILPA Capital Account statement with a notes panel explaining which rows cannot be sourced and why.](https://1494labs.com/assets/screens/ilpa-capital-account.affebef1.jpg)
+![The ILPA Capital Account statement lines for each investor account: beginning NAV, contributions and distributions.](https://1494labs.com/assets/screens/ilpa-capital-account.211b6f9c.jpg)
 
-**Every unsourceable row carries the note explaining it.** Carried interest accrued is zero here because the fund has no active waterfall policy, so no hypothetical liquidation can be run - and the statement says so beside the zero.
+**Statement lines for every investor account.** Beginning NAV, contributions and distributions on the ILPA template's own rows, with a check that all statements foot.
 
 ![Five LP commitments accepted at a first close, each ACTIVE, with commitment amounts and dates.](https://1494labs.com/assets/screens/commitments.3b5b072a.jpg)
 

@@ -34,48 +34,6 @@
 
 ![Holdings table with each manager at cost and at value](https://1494labs.com/assets/screens/portfolio-holdings.3916f10a.jpg)**Six managers, each at cost and at value.** The date each was last revalued sits on the row, because the age of an input is part of the number.
 
-### [Portfolio companies](https://1494labs.com/portfolio-company-kpi-collection/)
-
-- Financials and KPIs collected from each company by upload or a secure submission link: revenue, EBITDA, net debt and the metrics you define, checked on the way in.
-
-- Every submission and correction kept with its reporting date, currency, source and submitter.
-
-- Collected figures shown beside each valuation mark, and the submission used recorded with it.
-
-- Cap tables with financing rounds, tenders, vesting and exit waterfalls.
-
-- Company financials and KPIs in fund reporting, with missing companies flagged.
-
-### [Secondaries](https://1494labs.com/secondaries-and-strip-sale-accounting/)
-
-- Buy and sell LP interests, single or as a strip sale across many funds in one transaction.
-
-- Purchase-price adjustments and deferred payments at a discount, with interim flows between the reference date and closing.
-
-- The day-one gain between price paid and fair value recognized at acquisition, and cost basis kept.
-
-- GP-led deals: continuation vehicles and tender offers.
-
-- Direct secondaries in common stock, valued with waterfall and option-pricing methods.
-
-- A secondaries portfolio report, and buyer and seller confirmations.
-
-### [Liquidity and forecasting](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/)
-
-- Cash projection in horizon buckets out past a year, from settled cash: expected proceeds from underlying funds, investor outflows, unfunded commitments and scheduled obligations.
-
-- Available liquidity including undrawn credit facilities.
-
-- Commitment pacing for fund of funds and allocator programs.
-
-- Deployment and exit forecasts for drawdown funds, with fees and fund-level debt.
-
-- Cash-flow plans for evergreen, real estate and credit books: dealing, property recoveries, loan draws, interest and repayments.
-
-- Scenarios with frozen inputs, each projected amount traced to the records behind it, and past forecasts kept.
-
-- Gates, lockups and notice periods tracked for every underlying fund.
-
 ### [Close, controls and reconciliation](https://1494labs.com/close-controls-and-reconciliation/)
 
 - The trial balance is frozen at close, and later changes are kept beside it with their reason.
@@ -94,15 +52,23 @@
 
 - Saved analyses that refresh on the platform and can be pulled through the API.
 
-![ILPA capital account statement](https://1494labs.com/assets/screens/ilpa-capital-account.affebef1.jpg)**Every unsourceable row carries the note explaining it.** Carried interest accrued is zero in this example because the fund has no active waterfall policy, and the statement says so beside the zero.
+![ILPA capital account statement lines for each investor account: beginning NAV, contributions and distributions](https://1494labs.com/assets/screens/ilpa-capital-account.211b6f9c.jpg)**Statement lines for every investor account.** Beginning NAV, contributions and distributions on the ILPA template's own rows, with a check that all statements foot.
 
-### [API and AI](https://1494labs.com/fund-accounting-api-and-ai/)
+- ### [Portfolio companies](https://1494labs.com/portfolio-company-kpi-collection/)
 
-- Everything on screen is also in the public API.
+Financials and KPIs collected from each company by upload or a secure submission link, with every submission and correction kept.
 
-- AI assistants read the book through MCP.
+- ### [Secondaries](https://1494labs.com/secondaries-and-strip-sale-accounting/)
 
-- AI reads statements and LPAs, and a person confirms each result before it posts.
+Buy and sell LP interests, single or as a strip sale across many funds, with price adjustments and deferred payments.
+
+- ### [Liquidity and forecasting](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/)
+
+Cash projection in horizon buckets from settled cash, available liquidity and commitment pacing.
+
+- ### [API and AI](https://1494labs.com/fund-accounting-api-and-ai/)
+
+Everything on screen is also in the public API, and AI assistants read the book through MCP.
 
 The capability matrix lists product scope and status.
 
@@ -2352,37 +2318,37 @@ Six investor accounts, each debit with its credit.
 
 ## Start from the kind of fund you run.
 
-- ![Series table with one series per subscription month](https://1494labs.com/assets/screens/series.7f98fbc2.jpg)
+- Series · High-water marksPer investor, per class
 
 ### [Hedge funds](https://1494labs.com/hedge-fund-accounting/)
 
 Share classes, series and fee terms that still tie to the NAV you report.
 
-- ![Schedule of quarterly capital calls with purpose and funding state](https://1494labs.com/assets/screens/capital-calls.bd5b8c9b.jpg)
+- Calls · Waterfalls · MarksFund level and company level
 
 ### [Private equity and venture](https://1494labs.com/private-equity-fund-accounting/)
 
 Capital calls, waterfalls and company marks without the workbook.
 
-- ![Ownership graph showing each vehicle once](https://1494labs.com/assets/screens/structure-graph.60cc35a2.jpg)
+- Trusts · PartnershipsEvery asset counted once
 
 ### [Family offices](https://1494labs.com/family-office-accounting/)
 
 Trusts, holding companies and partnerships, with every asset counted once.
 
-- ![Holdings table with each manager at cost and at value](https://1494labs.com/assets/screens/portfolio-holdings.3916f10a.jpg)
+- Look-through · MarksEach mark carries its date
 
 ### [Funds of funds and allocators](https://1494labs.com/fund-of-funds-accounting/)
 
 Look-through to the companies underneath, and manager marks that carry their date.
 
-- ![Look-through consolidation of legal and effective ownership](https://1494labs.com/assets/screens/look-through-consolidation.a6726248.jpg)
+- Commitments · PacingPrivate funds on one book
 
 ### [Endowments and foundations](https://1494labs.com/endowment-foundation-accounting/)
 
 Private fund commitments, dated marks and pacing on one book.
 
-- ![Statement of changes in net assets](https://1494labs.com/assets/screens/statement-of-changes.39e06e66.jpg)
+- NAV · Asset coverageBy share class
 
 ### [Registered funds](https://1494labs.com/registered-fund-accounting/)
 
@@ -2394,7 +2360,7 @@ NAV by share class, 19(a) notices and BDC asset coverage from the book.
 
 Leases, rent roll and property books, with REIT qualification tests tracked from the book.
 
-- ![Reconciliation break with expected, actual and difference](https://1494labs.com/assets/screens/break-detail.dc783d42.jpg)
+- Many funds · One platformClose sign-off and statement runs
 
 ### [Fund administrators](https://1494labs.com/fund-administration-software/)
 
@@ -2452,48 +2418,6 @@ Opening capital, net profit and loss, and ending capital for six investor accoun
 
 ![Holdings table with each manager at cost and at value](https://1494labs.com/assets/screens/portfolio-holdings.3916f10a.jpg)**Six managers, each at cost and at value.** The date each was last revalued sits on the row, because the age of an input is part of the number.
 
-### [Portfolio companies](https://1494labs.com/portfolio-company-kpi-collection/)
-
-- Financials and KPIs collected from each company by upload or a secure submission link: revenue, EBITDA, net debt and the metrics you define, checked on the way in.
-
-- Every submission and correction kept with its reporting date, currency, source and submitter.
-
-- Collected figures shown beside each valuation mark, and the submission used recorded with it.
-
-- Cap tables with financing rounds, tenders, vesting and exit waterfalls.
-
-- Company financials and KPIs in fund reporting, with missing companies flagged.
-
-### [Secondaries](https://1494labs.com/secondaries-and-strip-sale-accounting/)
-
-- Buy and sell LP interests, single or as a strip sale across many funds in one transaction.
-
-- Purchase-price adjustments and deferred payments at a discount, with interim flows between the reference date and closing.
-
-- The day-one gain between price paid and fair value recognized at acquisition, and cost basis kept.
-
-- GP-led deals: continuation vehicles and tender offers.
-
-- Direct secondaries in common stock, valued with waterfall and option-pricing methods.
-
-- A secondaries portfolio report, and buyer and seller confirmations.
-
-### [Liquidity and forecasting](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/)
-
-- Cash projection in horizon buckets out past a year, from settled cash: expected proceeds from underlying funds, investor outflows, unfunded commitments and scheduled obligations.
-
-- Available liquidity including undrawn credit facilities.
-
-- Commitment pacing for fund of funds and allocator programs.
-
-- Deployment and exit forecasts for drawdown funds, with fees and fund-level debt.
-
-- Cash-flow plans for evergreen, real estate and credit books: dealing, property recoveries, loan draws, interest and repayments.
-
-- Scenarios with frozen inputs, each projected amount traced to the records behind it, and past forecasts kept.
-
-- Gates, lockups and notice periods tracked for every underlying fund.
-
 ### [Close, controls and reconciliation](https://1494labs.com/close-controls-and-reconciliation/)
 
 - The trial balance is frozen at close, and later changes are kept beside it with their reason.
@@ -2512,15 +2436,23 @@ Opening capital, net profit and loss, and ending capital for six investor accoun
 
 - Saved analyses that refresh on the platform and can be pulled through the API.
 
-![ILPA capital account statement](https://1494labs.com/assets/screens/ilpa-capital-account.affebef1.jpg)**Every unsourceable row carries the note explaining it.** Carried interest accrued is zero in this example because the fund has no active waterfall policy, and the statement says so beside the zero.
+![ILPA capital account statement lines for each investor account: beginning NAV, contributions and distributions](https://1494labs.com/assets/screens/ilpa-capital-account.211b6f9c.jpg)**Statement lines for every investor account.** Beginning NAV, contributions and distributions on the ILPA template's own rows, with a check that all statements foot.
 
-### [API and AI](https://1494labs.com/fund-accounting-api-and-ai/)
+- ### [Portfolio companies](https://1494labs.com/portfolio-company-kpi-collection/)
 
-- Everything on screen is also in the public API.
+Financials and KPIs collected from each company by upload or a secure submission link, with every submission and correction kept.
 
-- AI assistants read the book through MCP.
+- ### [Secondaries](https://1494labs.com/secondaries-and-strip-sale-accounting/)
 
-- AI reads statements and LPAs, and a person confirms each result before it posts.
+Buy and sell LP interests, single or as a strip sale across many funds, with price adjustments and deferred payments.
+
+- ### [Liquidity and forecasting](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/)
+
+Cash projection in horizon buckets from settled cash, available liquidity and commitment pacing.
+
+- ### [API and AI](https://1494labs.com/fund-accounting-api-and-ai/)
+
+Everything on screen is also in the public API, and AI assistants read the book through MCP.
 
 ## How to check our work.
 
@@ -4376,9 +4308,9 @@ Yes. Capital Accounts reports unfunded commitments per investor and per fund. Th
 $37,200,000.00 is the called figure from the capital accounts above, and
 the page foots both sides to $41,960,905.72.
 
-![The ILPA Capital Account statement with a notes panel explaining which rows cannot be sourced and why.](https://1494labs.com/assets/screens/ilpa-capital-account.affebef1.jpg)
+![The ILPA Capital Account statement lines for each investor account: beginning NAV, contributions and distributions.](https://1494labs.com/assets/screens/ilpa-capital-account.211b6f9c.jpg)
 
-**Every unsourceable row carries the note explaining it.** Carried interest accrued is zero here because the fund has no active waterfall policy, so no hypothetical liquidation can be run - and the statement says so beside the zero.
+**Statement lines for every investor account.** Beginning NAV, contributions and distributions on the ILPA template's own rows, with a check that all statements foot.
 
 ![Five LP commitments accepted at a first close, each ACTIVE, with commitment amounts and dates.](https://1494labs.com/assets/screens/commitments.3b5b072a.jpg)
 
