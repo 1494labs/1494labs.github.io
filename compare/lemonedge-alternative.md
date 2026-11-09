@@ -2,7 +2,7 @@ Source: https://1494labs.com/compare/lemonedge-alternative/
 
 # An alternative to LemonEdge: fund accounting with 1494 Labs
 
-Evaluate 1494 Labs for a fund team working through multi-level ownership and allocation rules, with configured terms, ledger traces and a worked acceptance case.
+Evaluate 1494 Labs for a fund team working through multi-level ownership and allocation rules, with ledger traces and a worked acceptance case.
 
 Product sources reviewed November 3, 2026
 

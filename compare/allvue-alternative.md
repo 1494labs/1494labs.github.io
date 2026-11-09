@@ -2,7 +2,7 @@ Source: https://1494labs.com/compare/allvue-alternative/
 
 # An alternative to Allvue: fund accounting with 1494 Labs
 
-Evaluate 1494 Labs for a private equity team closing the ledger and investor capital accounts together, with configured terms, ledger traces and a worked acceptance case.
+Evaluate 1494 Labs for a private equity team closing the ledger and investor capital accounts together, with ledger traces and a worked acceptance case.
 
 Product sources reviewed November 3, 2026
 

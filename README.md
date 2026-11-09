@@ -33,7 +33,7 @@ These things deliberately do NOT cross over:
 
 | What | Why |
 |---|---|
-| `scripts/gen_sitemap.py` | the sitemap is generated there, from *that* repo's git history, AFTER the content commit - run it before and every `lastmod` is the previous commit's date |
+| `scripts/gen_sitemap.py` | the sitemap is generated there, from *that* repo's git history, AFTER the content commit - run it before and every `lastmod` is the previous commit's date. `scripts/publish_site.sh --finish` runs it and refuses on a dirty Pages tree |
 | `assets/linkedin-*` | brand source files; they are not pages and have no reason to sit on a web server |
 
 Verify with `curl -sI https://1494labs.com/ | grep -i last-modified` - Pages takes

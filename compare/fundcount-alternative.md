@@ -2,7 +2,7 @@ Source: https://1494labs.com/compare/fundcount-alternative/
 
 # An alternative to FundCount: fund accounting with 1494 Labs
 
-Evaluate 1494 Labs for a family office or fund team keeping investment and investor records together, with configured terms, ledger traces and a worked acceptance case.
+Evaluate 1494 Labs for a family office or fund team keeping investment and investor records together, with ledger traces and a worked acceptance case.
 
 Product sources reviewed November 3, 2026
 

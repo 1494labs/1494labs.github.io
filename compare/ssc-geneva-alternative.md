@@ -2,7 +2,7 @@ Source: https://1494labs.com/compare/ssc-geneva-alternative/
 
 # An alternative to SS&C Geneva: fund accounting with 1494 Labs
 
-Evaluate 1494 Labs for a hedge fund team reviewing its investment book and investor accounting, with configured terms, ledger traces and a worked acceptance case.
+Evaluate 1494 Labs for a hedge fund team reviewing its investment book and investor accounting, with ledger traces and a worked acceptance case.
 
 Product sources reviewed November 3, 2026
 

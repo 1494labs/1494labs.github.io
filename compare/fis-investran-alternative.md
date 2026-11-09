@@ -2,7 +2,7 @@ Source: https://1494labs.com/compare/fis-investran-alternative/
 
 # An alternative to FIS Private Capital Suite / Investran: fund accounting with 1494 Labs
 
-Evaluate 1494 Labs for a private capital team evaluating fund accounting, carry and investor reporting, with configured terms, ledger traces and a worked acceptance case.
+Evaluate 1494 Labs for a private capital team weighing fund accounting, carry and investor reporting, with ledger traces and a worked acceptance case.
 
 Product sources reviewed November 3, 2026
 

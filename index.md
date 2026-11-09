@@ -48,11 +48,11 @@ Capital calls, waterfalls and company marks without the workbook.
 
 Trusts, holding companies and partnerships, with every asset counted once.
 
-- Look-through · MarksEach mark carries its date
+- Hedge · Private equity · VentureEach mark carries its date
 
 ### [Funds of funds and allocators](https://1494labs.com/fund-of-funds-accounting/)
 
-Look-through to the companies underneath, and manager marks that carry their date.
+Subscriptions, redemptions and gates for hedge fund managers, and commitments and calls for private funds, with look-through to what sits underneath.
 
 - Commitments · PacingPrivate funds on one book
 

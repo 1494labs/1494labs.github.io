@@ -200,6 +200,8 @@ footer.site a:hover{color:var(--ink);text-decoration:underline}
 
 /* ── product screens ────────────────────────────────────── */
 .shot{margin:32px 0 0}
+/* Text after a screenshot needs air, or it reads as part of the caption (#2150). */
+.shot + p,.shot + h2,.shot + h3{margin-top:28px}
 .shot img{
   display:block;width:100%;height:auto;
   border:1px solid var(--rule);background:var(--sheet);box-shadow:var(--shadow);

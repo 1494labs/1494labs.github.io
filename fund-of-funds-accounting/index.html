@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fund of funds accounting software · 1494 Labs</title>
-<meta name="description" content="Fund of funds accounting software with look-through to the companies underneath, manager marks that carry their date, and late statements booked as corrections.">
+<meta name="description" content="Fund of funds accounting for hedge, private equity and venture programs: subscriptions, redemptions, gates, commitments, calls, dated marks, look-through.">
 <link rel="canonical" href="https://1494labs.com/fund-of-funds-accounting/">
-<link rel="stylesheet" href="/assets/notes.909a2723.css">
+<link rel="stylesheet" href="/assets/notes.9fbc0da1.css">
 <link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
 <link rel="icon" href="/assets/favicon.svg?v=1808" sizes="any" type="image/svg+xml">
 <link rel="icon" href="/assets/favicon-16x16.png?v=1808" sizes="16x16" type="image/png">
@@ -20,14 +20,14 @@
 <meta property="og:url" content="https://1494labs.com/fund-of-funds-accounting/">
 <meta property="og:site_name" content="1494 Labs">
 <meta property="og:title" content="Fund of funds accounting software">
-<meta property="og:description" content="Fund of funds accounting software with look-through to the companies underneath, manager marks that carry their date, and late statements booked as corrections.">
+<meta property="og:description" content="Fund of funds accounting for hedge, private equity and venture programs: subscriptions, redemptions, gates, commitments, calls, dated marks, look-through.">
 <meta property="og:image" content="https://1494labs.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Fund of funds accounting software">
-<meta name="twitter:description" content="Fund of funds accounting software with look-through to the companies underneath, manager marks that carry their date, and late statements booked as corrections.">
+<meta name="twitter:description" content="Fund of funds accounting for hedge, private equity and venture programs: subscriptions, redemptions, gates, commitments, calls, dated marks, look-through.">
 <meta name="twitter:image" content="https://1494labs.com/assets/og.png">
 <meta name="twitter:image:alt" content="1494 Labs. Fund, partnership and portfolio accounting.">
 
@@ -35,6 +35,26 @@
 
 
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "1494 Labs",
+      "item": "https://1494labs.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Fund of funds accounting software",
+      "item": "https://1494labs.com/fund-of-funds-accounting/"
+    }
+  ]
+}
+</script>
 <link rel="alternate" type="text/markdown" href="https://1494labs.com/fund-of-funds-accounting.md" title="Markdown">
 </head>
 <body class="buyer-page">
@@ -74,39 +94,44 @@
   </div>
 </header>
 <main class="wrap" id="main">
-<h1>Fund of funds accounting, from the manager's statement to the company underneath</h1>
-<p class="standfirst">A fund of funds keeps its books on numbers someone else produces. Each underlying manager reports when it chooses, in whatever format it uses, and sometimes revises what it sent last quarter. The accounting has to hold those numbers with their dates attached, take corrections without breaking what was already reported, and still answer the question investors ask most: what do we actually own?</p>
-<p class="byline">Fund of funds · roughly 5 minutes</p>
+<h1>Fund of funds accounting for hedge, private equity and venture programs</h1>
+<p class="standfirst">A fund of hedge funds and a fund of private equity funds do the same job with different paperwork. One subscribes and redeems on a calendar and waits on gates and holdbacks. The other commits capital, answers calls and receives distributions for ten years. Many programs hold both. The book has to follow each underlying fund's terms, keep every manager's number with its date, and still tell your own investors what they own.</p>
+<p class="byline">Fund of funds · roughly 6 minutes</p>
 <article>
+<h2>Hedge fund managers underneath</h2>
+<p>Subscriptions into each underlying hedge fund post cash and cost together. Notice periods, lockups and gates are kept for every manager, by fund and by share class, so the liquidity of each position is on the record.</p>
+<p>A redemption starts with the notice date, which is checked against the manager's notice period. If the manager gates the request, the accepted amount is recorded beside the requested one. The first receipt arrives with a holdback retained, and the holdback stays as a receivable until it is released against the manager's final NAV statement. Cash received and the receivable together equal the accepted proceeds, and the cost relieved and the realized gain tie to them.</p>
+<p>A manager's side pocket is registered as its own underlying fund under the parent. A position moves into it by transfer, keeping its cost and holding period, with no cash and no gain recognized.</p>
+<h2>Private equity and venture managers underneath</h2>
+<p>For drawdown funds, the book holds the commitment to each manager and records every capital call and distribution against it. A distribution marked recallable restores the unfunded commitment. Unfunded commitments are shown by underlying fund and by your own investor, measured at historical or spot rates by a fund-level setting.</p>
+<p><a href="/liquidity-forecasting-and-commitment-pacing/">Commitment pacing and liquidity forecasting</a> projects the calls those commitments will make against cash and undrawn credit. Buying or selling LP interests, single or as a strip across many funds, is covered under <a href="/secondaries-for-fund-of-funds/">secondaries for funds of funds</a>.</p>
 <h2>Every mark carries its date</h2>
-<p>Each underlying fund position carries a cost basis, an unrealized gain and the date it was last valued. A manager's NAV statement is recorded with its as-of date and its source. When the quarter closes and one manager hasn't reported, the position shows the date of the mark it is still carried at.</p>
+<p>Each underlying position carries its cost, its unrealized gain and the date it was last valued. A manager's NAV statement is recorded with its as-of date and its source. When the period closes and one manager hasn't reported, the position shows the date of the mark it is still carried at.</p>
 <figure class="shot">
       <img src="/assets/screens/portfolio-holdings.3916f10a.jpg" width="1486" height="283"
            loading="lazy" decoding="async" alt="Portfolio holdings for a fund of funds: six named underlying managers, each with cost, value, the date it was last valued and a link to its marks.">
       <figcaption>
 <b>Six managers, each at cost and at value.</b> The date each was last revalued sits on the row, because the age of an input is part of the number.</figcaption>
     </figure>
-<h2>Late statements are corrections</h2>
-<p>Managers often send an estimate and then a final. The true-up is recorded as a correction with its own record, and a closed period can be corrected without disturbing what was already reported for it. Position performance (IRR, TVPI, DPI and RVPI) restates with the corrected mark.</p>
+<p>Hedge fund managers often send an estimate and then a final, and private fund managers revise last quarter's statement. Either way, the true-up is booked as a correction with its own record, so a closed period can be corrected without disturbing what was already reported for it. Performance restates with the corrected mark: IRR, TVPI, DPI and RVPI.</p>
 <h2>Looking through to the companies</h2>
-<p>Underlying holdings come in by CSV import from the managers' reports. Look-through then shows the companies behind each fund interest, grouped by sector and geography, as of any date you choose. Where two of your managers hold the same company, it appears once with both paths into it.</p>
-<p>Your share of an underlying fund's holdings needs the fund's total size, which only the manager can report. When a manager doesn't report it, that share is left out and the view states why. A guessed percentage would be worse than a stated gap. Holdings without a linked company classification show a blank classification, so you can find and fix them.</p>
-<p>Look-through runs on both ownership bases, and the results export as CSV.</p>
-<h2>Commitments and the cash they will need</h2>
-<p>Unfunded commitments are shown by investor and by underlying fund. A fund-level setting chooses whether unfunded is measured at historical or spot rates, so the figure follows the basis the fund reports on. <a href="/liquidity-forecasting-and-commitment-pacing/">Commitment pacing and liquidity forecasting</a> projects the calls those commitments will make against cash and undrawn credit.</p>
+<p>Underlying holdings come in by CSV import from the managers' reports. Look-through then shows the positions behind each fund interest, grouped by sector and geography, as of any date you choose. Where two of your managers hold the same company, it appears once with both paths into it.</p>
+<p>Your share of an underlying fund's holdings needs the fund's total size, which only the manager can report. When a manager doesn't report it, that share is left out and the view states why. Look-through runs on both ownership bases, and the results export as CSV.</p>
 <h2>Your own investors</h2>
-<p>The fund of funds has investors of its own. Management fees are calculated from the fund's saved terms and posted as accruals that can be reversed. Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. If the fund draws capital from its own LPs, calls and distributions follow the same <a href="/capital-call-and-distribution-software/">capital call and distribution</a> workflow as any drawdown fund.</p>
+<p>The fund of funds has investors of its own, on whichever model it runs. An open-ended fund of hedge funds takes subscriptions and pays redemptions against its own liquidity terms: a calendar built from its subscription and redemption terms, with notice periods, lockups and gates. A cash clearing rule can hold back part of a redemption payment until a set date, or until you release it. A fund of private equity or venture funds calls capital from its LPs and distributes through the same <a href="/capital-call-and-distribution-software/">capital call and distribution</a> workflow as any drawdown fund.</p>
+<p>Management fees are calculated from the fund's saved terms and posted as accruals. Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. For a fund of hedge funds, the statement also breaks each investor's exposure down by underlying fund at the same reporting date, with the ownership basis stated and any unresolved look-through disclosed.</p>
 <h2>Related reading</h2>
 <ul class="pagelinks">
-<li><a href="/family-office-accounting/">Family office accounting</a>, for families with large private fund programs</li>
-<li><a href="/endowment-foundation-accounting/">Endowment and foundation investment accounting</a></li>
+<li><a href="/secondaries-for-fund-of-funds/">Secondaries for funds of funds</a></li>
 <li><a href="/liquidity-forecasting-and-commitment-pacing/">Liquidity forecasting and commitment pacing</a></li>
-<li><a href="/capital-call-and-distribution-software/">Capital calls and distributions</a></li>
+<li><a href="/side-pocket-accounting/">Side pocket accounting</a></li>
+<li><a href="/endowment-foundation-accounting/">Endowment and foundation investment accounting</a></li>
+<li><a href="/family-office-accounting/">Family office accounting</a>, for families with large private fund programs</li>
 <li><a href="/capabilities/">Capabilities and status</a></li>
 </ul>
 <div class="endcta">
-<h2>Show us the managers you are chasing</h2>
-<p>Tell us how many managers you hold and how their statements reach you. We will walk you through a quarter in the product, or stand up a sandbox with a reference fund of funds for you to work in.</p>
+<h2>Show us the managers you hold</h2>
+<p>Tell us how many managers you hold, which are hedge funds and which are drawdown funds, and how their statements reach you. We will walk you through a period in the product, or stand up a sandbox with a reference fund of funds for you to work in.</p>
 <a class="btn" href="/?segment=fof#contact">Request a demo</a>
 </div>
 </article>
