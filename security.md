@@ -6,7 +6,7 @@ Everything on this page can be evidenced, including where we are on independent 
 
 Last reviewed 2026-11-10
 
-## Database Separation for Your Data
+## Your books in their own database schema
 
 Every tenant's books live in their own database schema, and every request
 is routed to it before a query runs. A book query that forgets a
@@ -15,7 +15,7 @@ the isolation of the books is not a `WHERE` clause. User
 accounts and the sign-in and access logs are the exception: they sit in a
 shared schema, with every row tied to its workspace.
 
-## The audit trail cannot be rewritten
+## An append-only audit trail
 
 Authentication events and API access are recorded on a plane the
 application itself cannot edit or truncate. That is enforced by database
@@ -48,10 +48,9 @@ triggers that prevent the application from rewriting the record.
 
 - ✓**Every deploy re-proves the arithmetic.** An accounting-check sweep runs after every deploy and weekly, across every live fund whenever the accounting engine changed, and it records its own verdict whether anyone is watching or not.
 
-## No trackers or advertising in the product
+## Privacy in the product
 
-The application loads no trackers, no advertising and no external
-fonts. It sends narrow product analytics to PostHog through our own
+The application loads only its own code and fonts: there are no trackers, advertising or external fonts. It sends narrow product analytics to PostHog through our own
 edge: which screen was used, error kinds and one-way hashes, never a
 figure or a name from your workspace. Your network address is
 stripped, and nothing is stored on your device. A cookieless

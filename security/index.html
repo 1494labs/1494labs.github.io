@@ -70,7 +70,7 @@
 
   <article class="measure">
 
-    <h2>Database Separation for Your Data</h2>
+    <h2>Your books in their own database schema</h2>
     <p>
       Every tenant's books live in their own database schema, and every request
       is routed to it before a query runs. A book query that forgets a
@@ -80,7 +80,7 @@
       shared schema, with every row tied to its workspace.
     </p>
 
-    <h2>The audit trail cannot be rewritten</h2>
+    <h2>An append-only audit trail</h2>
     <p>
       Authentication events and API access are recorded on a plane the
       application itself cannot edit or truncate. That is enforced by database
@@ -116,10 +116,9 @@
       <li><span class="tick">&#10003;</span><span><b>Every deploy re-proves the arithmetic.</b> An accounting-check sweep runs after every deploy and weekly, across every live fund whenever the accounting engine changed, and it records its own verdict whether anyone is watching or not.</span></li>
     </ul>
 
-    <h2>No trackers or advertising in the product</h2>
+    <h2>Privacy in the product</h2>
     <p>
-      The application loads no trackers, no advertising and no external
-      fonts. It sends narrow product analytics to PostHog through our own
+      The application loads only its own code and fonts: there are no trackers, advertising or external fonts. It sends narrow product analytics to PostHog through our own
       edge: which screen was used, error kinds and one-way hashes, never a
       figure or a name from your workspace. Your network address is
       stripped, and nothing is stored on your device. A cookieless
