@@ -1,8 +1,8 @@
 Source: https://1494labs.com/security/
 
-# What is in place, and what is not
+# How we protect your data
 
-Everything on this page can be evidenced. The assurance roadmap at the end is here for the same reason as the rest.
+Everything on this page can be evidenced, including where we are on independent assurance.
 
 Last reviewed 2026-11-10
 

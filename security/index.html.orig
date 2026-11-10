@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security &middot; 1494 Labs</title>
+<meta name="description" content="What is in place today and what is not: schema-level tenant isolation, an audit trail the application cannot rewrite, MFA, encryption at rest, and where we are on independent assurance.">
+<link rel="canonical" href="https://1494labs.com/security/">
+<link rel="stylesheet" href="/assets/notes.9fbc0da1.css">
+<link rel="icon" href="/assets/favicon.ico?v=1808" sizes="16x16 32x32 48x48">
+<link rel="icon" href="/assets/favicon.svg?v=1808" sizes="any" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-16x16.png?v=1808" sizes="16x16" type="image/png">
+<link rel="icon" href="/assets/favicon-32x32.png?v=1808" sizes="32x32" type="image/png">
+<link rel="icon" href="/assets/favicon-48x48.png?v=1808" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=1808" sizes="180x180">
+<link rel="manifest" href="/site.webmanifest?v=1808">
+<meta name="theme-color" content="#2438EA">
+<meta name="robots" content="noindex, follow">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Security",
+  "url": "https://1494labs.com/security/",
+  "inLanguage": "en",
+  "isPartOf": { "@type": "WebSite", "name": "1494 Labs", "url": "https://1494labs.com/" }
+}
+</script>
+<link rel="alternate" type="text/markdown" href="https://1494labs.com/security.md" title="Markdown">
+</head>
+<body>
+<header class="site">
+  <div class="bar">
+    <a class="lockup" href="/" aria-label="1494 Labs home">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <g fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="square">
+            <path d="M5 9 H27"/><path d="M16 9 V26"/>
+          </g>
+          <rect x="7.6" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="18.8" y="14.2" width="5.6" height="2.4" fill="currentColor"/>
+          <rect x="7.6" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+          <rect x="18.8" y="19.4" width="5.6" height="2.4" fill="currentColor" opacity=".45"/>
+        </svg>
+      <span class="wordmark">1494 Labs</span>
+    </a>
+    <nav class="sitenav" aria-label="Site">
+      <a href="/fund-accounting-software/">Platform</a>
+      <a href="/capabilities/">Capabilities</a>
+      <a href="/notes/">Notes</a>
+      <a class="demo" href="/#contact">Request a demo</a>
+    </nav>
+    <details class="navmenu">
+      <summary><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5h14M3 10h14M3 14.5h14" stroke="currentColor" stroke-width="1.6" fill="none"/></svg>Menu</summary>
+      <nav aria-label="Site menu">
+        <a href="/fund-accounting-software/">Platform</a>
+        <a href="/capabilities/">Capabilities</a>
+        <a href="/notes/">Notes</a>
+        <a class="demo" href="/#contact">Request a demo</a>
+      </nav>
+    </details>
+  </div>
+</header>
+<div class="wrap">
+
+
+  <h1>What is in place, and what is not</h1>
+  <p class="standfirst">Everything on this page can be evidenced. The assurance roadmap at the end is here for the same reason as the rest.</p>
+  <p class="byline">Last reviewed 2026-11-10</p>
+
+  <article class="measure">
+
+    <h2>Database Separation for Your Data</h2>
+    <p>
+      Every tenant's books live in their own database schema, and every request
+      is routed to it before a query runs. A book query that forgets a
+      <code>WHERE</code> clause still cannot return another firm's rows, because
+      the isolation of the books is not a <code>WHERE</code> clause. User
+      accounts and the sign-in and access logs are the exception: they sit in a
+      shared schema, with every row tied to its workspace.
+    </p>
+
+    <h2>The audit trail cannot be rewritten</h2>
+    <p>
+      Authentication events and API access are recorded on a plane the
+      application itself cannot edit or truncate. That is enforced by database
+      triggers that prevent the application from rewriting the record.
+    </p>
+
+    <h2>Signing in</h2>
+    <ul class="keypoints">
+      <li><span class="tick">&#10003;</span><span><b>Time-based one-time-password MFA</b>, with a workspace-level control over whether it is required.</span></li>
+      <li><span class="tick">&#10003;</span><span><b>Throttling that counts failed MFA challenges and failed passwords.</b> Counting passwords alone leaves the second factor open to grinding, which is the interesting half to attack.</span></li>
+      <li><span class="tick">&#10003;</span><span><b>Federated identity</b> over OIDC, with a break-glass path that is itself audited.</span></li>
+    </ul>
+
+    <h2>The infrastructure</h2>
+    <div class="tablewrap">
+    <table>
+      <tbody>
+        <tr><td>Encryption in transit</td><td>TLS between your browser and the service. Cloudflare terminates it at its edge and re-encrypts to our servers. Traffic between our internal containers stays on a private network</td></tr>
+        <tr><td>Database encryption at rest</td><td>Yes</td></tr>
+        <tr><td>Database reachable from the internet</td><td>No</td></tr>
+        <tr><td>Accidental-deletion protection</td><td>Yes</td></tr>
+        <tr><td>Automated backups</td><td>7 days, a daily locked copy kept 35 days, and a snapshot taken before every deploy</td></tr>
+        <tr><td>Secrets</td><td>Held in AWS Parameter Store and read at boot. The machine running the application can read them and cannot change them</td></tr>
+        <tr><td>Region</td><td>United States</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>What runs before a release reaches you</h2>
+    <ul class="keypoints">
+      <li><span class="tick">&#10003;</span><span><b>Every commit is scanned for secrets</b>, and the deploy refuses a revision that has not passed that scan. Not a warning, a refusal.</span></li>
+      <li><span class="tick">&#10003;</span><span><b>Dependencies are audited weekly</b> and automatically. The first run found 48 known vulnerabilities; they were remediated the same day.</span></li>
+      <li><span class="tick">&#10003;</span><span><b>Every deploy re-proves the arithmetic.</b> An accounting-check sweep runs after every deploy and weekly, across every live fund whenever the accounting engine changed, and it records its own verdict whether anyone is watching or not.</span></li>
+    </ul>
+
+    <h2>No trackers or advertising in the product</h2>
+    <p>
+      The application loads no trackers, no advertising and no external
+      fonts. It sends narrow product analytics to PostHog through our own
+      edge: which screen was used, error kinds and one-way hashes, never a
+      figure or a name from your workspace. Your network address is
+      stripped, and nothing is stored on your device. A cookieless
+      counter on our marketing website records that a page was requested; it
+      does not run in the application. AI
+      features are off until a workspace administrator turns them on. Everything that touches data is named on the
+      <a href="/subprocessors/">sub-processors</a> page and in the
+      <a href="/privacy/">privacy notice</a>.
+    </p>
+
+    <h2>Assurance roadmap</h2>
+    <p>
+      Where we are today on independent assurance, and what comes next.
+    </p>
+    <ul>
+      <li><b>SOC 2.</b> Our controls are built to the SOC 2 criteria. A SOC 2 Type I audit is on the roadmap for Q1 2027, followed by Type II.</li>
+      <li><b>Penetration testing.</b> We run internal security reviews and weekly dependency audits. An independent third-party penetration test is on the roadmap for Q1 2027.</li>
+      <li><b>High availability.</b> Production tenants run with database replication across multiple availability zones. Backups are kept for 35 days, with a snapshot taken before every deploy.</li>
+    </ul>
+
+    <h2>Reporting something</h2>
+    <p>
+      If you believe you have found a vulnerability, write to
+      <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>. Tell us what
+      you found and how to reproduce it, and please give us a chance to fix it
+      before publishing. We will tell you what we did and when.
+    </p>
+
+    <ul class="pagelinks">
+      <li><a href="/subprocessors/">Sub-processors</a>, everyone who touches the data</li>
+      <li><a href="/privacy/">The privacy notice</a>, an inventory of what is collected</li>
+    </ul>
+
+  </article>
+
+  <!-- assistant-links:start -->
+  <nav class="assistant-links" aria-label="Page formats and assistants">
+    <a href="https://1494labs.com/security.md">Read Markdown</a>
+  </nav>
+  <!-- assistant-links:end -->
+
+  <footer class="site">
+    <span>&copy; 2026 1494 Labs Inc., a Delaware corporation, 6 Liberty Square #2721, Boston, MA 02109</span>
+    <a href="/">Home</a>
+    <a href="/notes/">Notes</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+    <a href="mailto:hello@1494labs.com">hello@1494labs.com</a>
+  </footer>
+
+</div>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3da7530d96b14f3f95915c071872f4be"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
