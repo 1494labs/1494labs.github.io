@@ -27,7 +27,7 @@ triggers that prevent the application from rewriting the record.
 
 - ✓**Throttling that counts failed MFA challenges and failed passwords.** Counting passwords alone leaves the second factor open to grinding, which is the interesting half to attack.
 
-- ✓**Federated identity** over OIDC, with a break-glass path that is itself audited.
+- ✓**Federated identity** over SAML 2.0 and OIDC, with a break-glass path that is itself audited.
 
 ## The infrastructure
 
