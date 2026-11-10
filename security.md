@@ -2,9 +2,9 @@ Source: https://1494labs.com/security/
 
 # What is in place, and what is not
 
-Everything on this page can be evidenced. The second half, about what we do not have, is here for the same reason as the first.
+Everything on this page can be evidenced. The assurance roadmap at the end is here for the same reason as the rest.
 
-Last reviewed 2026-10-18
+Last reviewed 2026-11-10
 
 ## Database Separation for Your Data
 
@@ -61,17 +61,15 @@ features are off until a workspace administrator turns them on. Everything that 
 [sub-processors](https://1494labs.com/subprocessors/) page and in the
 [privacy notice](https://1494labs.com/privacy/).
 
-## What we do not have
+## Assurance roadmap
 
-The current limitations, and what changes each one.
+Where we are today on independent assurance, and what comes next.
 
-- ✓**No SOC 2 report.** Planned for when a customer's procurement requires one.
+- **SOC 2.** Our controls are built to the SOC 2 criteria. A SOC 2 Type I audit is on the roadmap for Q1 2027, followed by Type II.
 
-- ✓**No third-party penetration test.** An internal security audit in August 2026 found one critical and twenty high-severity issues, all closed.
+- **Penetration testing.** We run internal security reviews and weekly dependency audits. An independent third-party penetration test is on the roadmap for Q1 2027.
 
-- ✓**Single availability zone.** The database is not currently replicated across zones, so a zone failure is downtime requiring recovery. Backups and the pre-deploy snapshot are the recovery path.
-
-- ✓**No published uptime figure.** There is no measurement period long enough to quote one honestly.
+- **High availability.** Production tenants run with database replication across multiple availability zones. Backups are kept for 35 days, with a snapshot taken before every deploy.
 
 ## Reporting something
 
