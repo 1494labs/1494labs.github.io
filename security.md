@@ -70,6 +70,8 @@ Where we are today on independent assurance, and what comes next.
 
 - **High availability.** Production tenants run with database replication across multiple availability zones. Backups are kept for 35 days, with a snapshot taken before every deploy.
 
+- **Single sign-on.** Sign in through your own identity provider over SAML 2.0 or OIDC, with roles mapped from your directory groups and the option to require SSO for everyone on your domain.
+
 ## Reporting something
 
 If you believe you have found a vulnerability, write to
