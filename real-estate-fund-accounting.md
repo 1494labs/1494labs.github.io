@@ -61,10 +61,6 @@ When a building is sold, the realized gain is net proceeds less carrying value. 
 
 A mortgage facility is tied to its property, so its draws, repayments and interest post to that building. Debt service coverage, loan-to-value and debt yield are derived per loan and per property from the facility's accruals, the property's NOI and its latest approved appraisal. With no approved appraisal, loan-to-value is blank rather than computed on book value. Covenant tests record a breach on the reconciliation worklist and block nothing. The promote runs through the [distribution waterfall](https://1494labs.com/distribution-waterfall-software/), deal by deal or whole-fund as the agreement says.
 
-## What it doesn't do
-
-Leases are held in the fund's base currency. Covenant tests inform; they do not stop a posting. Tax returns and K-1s stay with your tax preparer.
-
 ## Related reading
 
 - [Distribution waterfall software](https://1494labs.com/distribution-waterfall-software/)

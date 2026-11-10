@@ -44,10 +44,6 @@ Net worth by asset category, by holder and by period, with the movement between 
 
 Report packs are organized by audience, so a pack for the principals and a pack for the trustees can run off the same book for the same period. Each exports to PDF or CSV.
 
-## What we don't do
-
-We keep the books. We don't hold custody or move money: the platform produces the payment file, and someone on your team takes it to the bank. Tax returns and K-1s stay with your preparer. Market data comes from your own provider, loaded through a connection we maintain.
-
 ## Related reading
 
 - [Look-through consolidation for family offices](https://1494labs.com/family-office-consolidation/)

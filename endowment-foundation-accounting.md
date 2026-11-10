@@ -30,10 +30,6 @@ Look-through shows the companies underneath your fund interests, grouped by sect
 
 Unfunded commitments are shown by fund, and the liquidity projection sets expected calls against cash and available undrawn credit. [Commitment pacing and liquidity forecasting](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/) covers the forecast.
 
-## What we don't do
-
-We keep the investment pool's books: the pool, every endowed fund's share of it, including its net asset class (with or without donor restrictions) and its spending-policy payouts. Your institution's general ledger stays in its ERP, fed by mapped entries. We don't hold custody or move money, and market data comes from your own provider.
-
 ## Related reading
 
 - [Fund of funds accounting](https://1494labs.com/fund-of-funds-accounting/)

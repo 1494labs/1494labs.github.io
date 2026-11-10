@@ -91,10 +91,6 @@ Reference REIT, first quarter 2025
 
 The REIT's properties use the same lease, rent roll and property-level accounting as any [real estate fund](https://1494labs.com/real-estate-fund-accounting/), including NOI, occupancy and weighted average lease term.
 
-## What we don't do
-
-We keep the books and track the tests. Tax returns, and the preparation and filing of Forms 1099-DIV with taxpayer identification numbers, stay with your preparer and transfer agent. The product computes the per-holder character and files nothing. Qualification decisions stay with your tax advisers. The 100-holder count rests on the investors the book holds, so a REIT whose beneficial owners sit behind nominees will need to supply them.
-
 ## Related reading
 
 - [Real estate fund accounting](https://1494labs.com/real-estate-fund-accounting/)
