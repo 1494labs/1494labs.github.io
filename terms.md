@@ -159,4 +159,4 @@ Questions about these terms go to
 
 - [Sub-processors](https://1494labs.com/subprocessors/), everyone who touches the data
 
-- [Security](https://1494labs.com/security/), what is in place and what is not
+- [Security](https://1494labs.com/security/), how we protect your data

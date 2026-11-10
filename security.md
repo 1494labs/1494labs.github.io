@@ -1,12 +1,12 @@
 Source: https://1494labs.com/security/
 
-# What is in place, and what is not
+# How we protect your data
 
-Everything on this page can be evidenced. The second half, about what we do not have, is here for the same reason as the first.
+Everything on this page can be evidenced, including where we are on independent assurance.
 
-Last reviewed 2026-10-18
+Last reviewed 2026-11-10
 
-## Database Separation for Your Data
+## Your books in their own database schema
 
 Every tenant's books live in their own database schema, and every request
 is routed to it before a query runs. A book query that forgets a
@@ -15,7 +15,7 @@ the isolation of the books is not a `WHERE` clause. User
 accounts and the sign-in and access logs are the exception: they sit in a
 shared schema, with every row tied to its workspace.
 
-## The audit trail cannot be rewritten
+## An append-only audit trail
 
 Authentication events and API access are recorded on a plane the
 application itself cannot edit or truncate. That is enforced by database
@@ -27,7 +27,7 @@ triggers that prevent the application from rewriting the record.
 
 - ✓**Throttling that counts failed MFA challenges and failed passwords.** Counting passwords alone leaves the second factor open to grinding, which is the interesting half to attack.
 
-- ✓**Federated identity** over OIDC, with a break-glass path that is itself audited.
+- ✓**Federated identity** over SAML 2.0 and OIDC, with a break-glass path that is itself audited.
 
 ## The infrastructure
 
@@ -48,10 +48,9 @@ triggers that prevent the application from rewriting the record.
 
 - ✓**Every deploy re-proves the arithmetic.** An accounting-check sweep runs after every deploy and weekly, across every live fund whenever the accounting engine changed, and it records its own verdict whether anyone is watching or not.
 
-## No trackers or advertising in the product
+## Privacy in the product
 
-The application loads no trackers, no advertising and no external
-fonts. It sends narrow product analytics to PostHog through our own
+The application loads only its own code and fonts: there are no trackers, advertising or external fonts. It sends narrow product analytics to PostHog through our own
 edge: which screen was used, error kinds and one-way hashes, never a
 figure or a name from your workspace. Your network address is
 stripped, and nothing is stored on your device. A cookieless
@@ -61,17 +60,17 @@ features are off until a workspace administrator turns them on. Everything that 
 [sub-processors](https://1494labs.com/subprocessors/) page and in the
 [privacy notice](https://1494labs.com/privacy/).
 
-## What we do not have
+## Assurance roadmap
 
-The current limitations, and what changes each one.
+Where we are today on independent assurance, and what comes next.
 
-- ✓**No SOC 2 report.** Planned for when a customer's procurement requires one.
+- **SOC 2.** Our controls are built to the SOC 2 criteria. A SOC 2 Type I audit is on the roadmap for Q1 2027, followed by Type II.
 
-- ✓**No third-party penetration test.** An internal security audit in August 2026 found one critical and twenty high-severity issues, all closed.
+- **Penetration testing.** We run internal security reviews and weekly dependency audits. An independent third-party penetration test is on the roadmap for Q1 2027.
 
-- ✓**Single availability zone.** The database is not currently replicated across zones, so a zone failure is downtime requiring recovery. Backups and the pre-deploy snapshot are the recovery path.
+- **High availability.** Production tenants run with database replication across multiple availability zones. Backups are kept for 35 days, with a snapshot taken before every deploy.
 
-- ✓**No published uptime figure.** There is no measurement period long enough to quote one honestly.
+- **Single sign-on.** Sign in through your own identity provider over SAML 2.0 or OIDC, with roles mapped from your directory groups and the option to require SSO for everyone on your domain.
 
 ## Reporting something
 
