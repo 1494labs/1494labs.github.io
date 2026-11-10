@@ -121,10 +121,6 @@ Yes. Federal and state rates are set for each blocker, and deferred tax is enabl
 
 Yes. The blocker participates in the ownership chain. Look-through and exposure reports trace the investors' ownership through the corporation and the underlying fund or AIV to the recorded holdings.
 
-### Does this include corporate tax return preparation?
-
-No. The blocker accounting scope covers configured-rate accruals, tax payables, deferred tax and the investor allocation. Corporate tax returns, including Form 1120 and K-1 preparation, and additional withholding regimes are outside this scope.
-
 ### Can I see the tax accrual and payable in the product?
 
 Yes. The blocker's fund page provides the period tax accrual and payable view. The accrual action posts the tax expense and payable on the blocker's books, with current and configured deferred amounts recorded for the selected period.
@@ -154,7 +150,7 @@ Source: https://1494labs.com/capabilities/
 
 # Fund Accounting Capabilities
 
-39 capabilities for fund managers, allocators and fund administrators, with current status and accounting scope.
+33 capabilities for fund managers, allocators and fund administrators, with current status and accounting scope.
 
 ## Partnership and Investor Accounting
 
@@ -220,23 +216,6 @@ Source: https://1494labs.com/capabilities/
 | A statement's lines auto-match the book only when exactly one movement fits; anything else is left for a person, and what is left over raises an exception on the same worklist as the internal ones. | |
 | External exceptions: NAV against an outside administrator's file | Shipped |
 | The Shadow tab ties an administrator's pack (fund and class NAV, capital accounts, trial balance, cash, positions, fees) to the book from CSV or XLSX, remembers each administrator's column layout, and raises every difference on the same exceptions worklist. | |
-
-## What we do not do
-
-| Capability | Status |
-| --- | --- |
-| Order and execution management | No |
-| We are the book of record. There is no order ticket and there will not be one. | |
-| Custody, or moving money | No |
-| The platform produces the payment file an operator carries to their banking portal. It holds no credentials for any bank or payment system and initiates no transfers. | |
-| Tax return preparation and K-1 filing | No |
-| We produce per-fund book-basis workpapers for your tax preparer. Tax allocations, tax-basis capital accounts, withholding, and K-1 preparation and filing stay with the preparer. | |
-| Market data and pricing feeds we supply | No |
-| Bring your own provider. We provide the connection that loads your provider's feed and will not resell data or imply a license we do not hold. | |
-| A third-party security attestation | Roadmap 2027Q2 |
-| No report today. The security page lists the controls that are in place and the ones that are not. | |
-| A native mobile application | No |
-| The web app renders and is navigable at phone width. There is no native app and none is planned. | |
 
 ## Related Accounting Pages
 
@@ -880,7 +859,7 @@ An existing 1494 Labs workspace, an administrator who has enabled AI for that wo
 
 5. **Connect and discover tools.** Your client initializes the connection and lists tools. Start with `list_funds`, then discover the reads or saved analyses needed for your question.
 
-Use a client that lets you supply the header. This endpoint does not provide an OAuth sign-in flow. If your assistant only offers OAuth connections, ask [hello@1494labs.com](mailto:hello@1494labs.com) about a compatible setup. Share credentials only through the client's credential settings, never in a conversation.
+Use a client that lets you supply the header. If your assistant only offers OAuth connections, ask [hello@1494labs.com](mailto:hello@1494labs.com) about a compatible setup. Share credentials only through the client's credential settings, never in a conversation.
 
 ## The five tools
 
@@ -989,10 +968,6 @@ So carry is held as an accrual subject to the whole-fund test, and clawback expo
 
 Once carry reaches the GP, it is split among the principals, and each principal's share vests per principal. LP givebacks are recorded alongside clawback. [GP economics in the product docs](https://docs.1494labs.com/guide/gp-economics/) covers how the split and the vesting work.
 
-## What it doesn't do
-
-The platform runs the waterfall at the fund level and doesn't call any configuration "compliant" with your agreement. Your LPA is the authority, and the configuration is your reading of it. Tax allocations of carry, and the K-1s that report them, stay with your tax preparer.
-
 ## Related reading
 
 - [American vs European waterfall on the same two deals](https://1494labs.com/notes/european-vs-american-waterfall/)
@@ -1045,10 +1020,6 @@ Look-through shows the companies underneath your fund interests, grouped by sect
 ## Pacing the commitments
 
 Unfunded commitments are shown by fund, and the liquidity projection sets expected calls against cash and available undrawn credit. [Commitment pacing and liquidity forecasting](https://1494labs.com/liquidity-forecasting-and-commitment-pacing/) covers the forecast.
-
-## What we don't do
-
-We keep the investment pool's books: the pool, every endowed fund's share of it, including its net asset class (with or without donor restrictions) and its spending-policy payouts. Your institution's general ledger stays in its ERP, fed by mapped entries. We don't hold custody or move money, and market data comes from your own provider.
 
 ## Related reading
 
@@ -1189,10 +1160,6 @@ A family with a large private fund program usually needs two more things: a view
 Net worth by asset category, by holder and by period, with the movement between periods. Household performance, principal cash flows, exposure and concentration, and a reconciliation of book value to market value.
 
 Report packs are organized by audience, so a pack for the principals and a pack for the trustees can run off the same book for the same period. Each exports to PDF or CSV.
-
-## What we don't do
-
-We keep the books. We don't hold custody or move money: the platform produces the payment file, and someone on your team takes it to the bank. Tax returns and K-1s stay with your preparer. Market data comes from your own provider, loaded through a connection we maintain.
 
 ## Related reading
 
@@ -4397,10 +4364,6 @@ When a building is sold, the realized gain is net proceeds less carrying value. 
 
 A mortgage facility is tied to its property, so its draws, repayments and interest post to that building. Debt service coverage, loan-to-value and debt yield are derived per loan and per property from the facility's accruals, the property's NOI and its latest approved appraisal. With no approved appraisal, loan-to-value is blank rather than computed on book value. Covenant tests record a breach on the reconciliation worklist and block nothing. The promote runs through the [distribution waterfall](https://1494labs.com/distribution-waterfall-software/), deal by deal or whole-fund as the agreement says.
 
-## What it doesn't do
-
-Leases are held in the fund's base currency. Covenant tests inform; they do not stop a posting. Tax returns and K-1s stay with your tax preparer.
-
 ## Related reading
 
 - [Distribution waterfall software](https://1494labs.com/distribution-waterfall-software/)
@@ -4571,10 +4534,6 @@ Reference REIT, first quarter 2025
 ## Properties underneath
 
 The REIT's properties use the same lease, rent roll and property-level accounting as any [real estate fund](https://1494labs.com/real-estate-fund-accounting/), including NOI, occupancy and weighted average lease term.
-
-## What we don't do
-
-We keep the books and track the tests. Tax returns, and the preparation and filing of Forms 1099-DIV with taxpayer identification numbers, stay with your preparer and transfer agent. The product computes the per-holder character and files nothing. Qualification decisions stay with your tax advisers. The 100-holder count rests on the investors the book holds, so a REIT whose beneficial owners sit behind nominees will need to supply them.
 
 ## Related reading
 

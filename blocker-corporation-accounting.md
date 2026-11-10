@@ -38,10 +38,6 @@ Yes. Federal and state rates are set for each blocker, and deferred tax is enabl
 
 Yes. The blocker participates in the ownership chain. Look-through and exposure reports trace the investors' ownership through the corporation and the underlying fund or AIV to the recorded holdings.
 
-### Does this include corporate tax return preparation?
-
-No. The blocker accounting scope covers configured-rate accruals, tax payables, deferred tax and the investor allocation. Corporate tax returns, including Form 1120 and K-1 preparation, and additional withholding regimes are outside this scope.
-
 ### Can I see the tax accrual and payable in the product?
 
 Yes. The blocker's fund page provides the period tax accrual and payable view. The accrual action posts the tax expense and payable on the blocker's books, with current and configured deferred amounts recorded for the selected period.

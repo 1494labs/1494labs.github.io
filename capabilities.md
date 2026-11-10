@@ -2,7 +2,7 @@ Source: https://1494labs.com/capabilities/
 
 # Fund Accounting Capabilities
 
-39 capabilities for fund managers, allocators and fund administrators, with current status and accounting scope.
+33 capabilities for fund managers, allocators and fund administrators, with current status and accounting scope.
 
 ## Partnership and Investor Accounting
 
@@ -68,23 +68,6 @@ Source: https://1494labs.com/capabilities/
 | A statement's lines auto-match the book only when exactly one movement fits; anything else is left for a person, and what is left over raises an exception on the same worklist as the internal ones. | |
 | External exceptions: NAV against an outside administrator's file | Shipped |
 | The Shadow tab ties an administrator's pack (fund and class NAV, capital accounts, trial balance, cash, positions, fees) to the book from CSV or XLSX, remembers each administrator's column layout, and raises every difference on the same exceptions worklist. | |
-
-## What we do not do
-
-| Capability | Status |
-| --- | --- |
-| Order and execution management | No |
-| We are the book of record. There is no order ticket and there will not be one. | |
-| Custody, or moving money | No |
-| The platform produces the payment file an operator carries to their banking portal. It holds no credentials for any bank or payment system and initiates no transfers. | |
-| Tax return preparation and K-1 filing | No |
-| We produce per-fund book-basis workpapers for your tax preparer. Tax allocations, tax-basis capital accounts, withholding, and K-1 preparation and filing stay with the preparer. | |
-| Market data and pricing feeds we supply | No |
-| Bring your own provider. We provide the connection that loads your provider's feed and will not resell data or imply a license we do not hold. | |
-| A third-party security attestation | Roadmap 2027Q2 |
-| No report today. The security page lists the controls that are in place and the ones that are not. | |
-| A native mobile application | No |
-| The web app renders and is navigable at phone width. There is no native app and none is planned. | |
 
 ## Related Accounting Pages
 

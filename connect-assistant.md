@@ -20,7 +20,7 @@ An existing 1494 Labs workspace, an administrator who has enabled AI for that wo
 
 5. **Connect and discover tools.** Your client initializes the connection and lists tools. Start with `list_funds`, then discover the reads or saved analyses needed for your question.
 
-Use a client that lets you supply the header. This endpoint does not provide an OAuth sign-in flow. If your assistant only offers OAuth connections, ask [hello@1494labs.com](mailto:hello@1494labs.com) about a compatible setup. Share credentials only through the client's credential settings, never in a conversation.
+Use a client that lets you supply the header. If your assistant only offers OAuth connections, ask [hello@1494labs.com](mailto:hello@1494labs.com) about a compatible setup. Share credentials only through the client's credential settings, never in a conversation.
 
 ## The five tools
 

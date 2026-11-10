@@ -54,10 +54,6 @@ So carry is held as an accrual subject to the whole-fund test, and clawback expo
 
 Once carry reaches the GP, it is split among the principals, and each principal's share vests per principal. LP givebacks are recorded alongside clawback. [GP economics in the product docs](https://docs.1494labs.com/guide/gp-economics/) covers how the split and the vesting work.
 
-## What it doesn't do
-
-The platform runs the waterfall at the fund level and doesn't call any configuration "compliant" with your agreement. Your LPA is the authority, and the configuration is your reading of it. Tax allocations of carry, and the K-1s that report them, stay with your tax preparer.
-
 ## Related reading
 
 - [American vs European waterfall on the same two deals](https://1494labs.com/notes/european-vs-american-waterfall/)
