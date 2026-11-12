@@ -2,9 +2,9 @@ Source: https://1494labs.com/security/
 
 # How we protect your data
 
-Everything on this page can be evidenced, including where we are on independent assurance.
+What follows describes what runs today. Where something is planned rather than built, we say so, including on our independent assurance.
 
-Last reviewed 2026-11-10
+Last reviewed 2026-11-12
 
 ## Your books in their own database schema
 
@@ -36,8 +36,8 @@ triggers that prevent the application from rewriting the record.
 | Database encryption at rest | Yes |
 | Database reachable from the internet | No |
 | Accidental-deletion protection | Yes |
-| Automated backups | 7 days, a daily locked copy kept 35 days, and a snapshot taken before every deploy |
-| Secrets | Held in AWS Parameter Store and read at boot. The machine running the application can read them and cannot change them |
+| Automated backups | 7 days of point-in-time recovery, a daily copy kept 35 days under a vault lock in governance mode (same account and region), and a snapshot taken before every deploy |
+| Secrets | Held in AWS Parameter Store and read at boot. The application cannot write them, with one exception: it can store a customer's own data-feed credential on a single granted path, and cannot read that credential back or delete it |
 | Region | United States |
 
 ## What runs before a release reaches you
@@ -64,11 +64,11 @@ features are off until a workspace administrator turns them on. Everything that 
 
 Where we are today on independent assurance, and what comes next.
 
-- **SOC 2.** Our controls are built to the SOC 2 criteria. A SOC 2 Type I audit is on the roadmap for Q1 2027, followed by Type II.
+- **SOC 2.** Our controls are built to the SOC 2 criteria. We are not certified and no auditor is engaged yet. We target a Type I audit in Q1 2027, followed by Type II.
 
-- **Penetration testing.** We run internal security reviews and weekly dependency audits. An independent third-party penetration test is on the roadmap for Q1 2027.
+- **Penetration testing.** We run internal security reviews and weekly dependency audits. No independent third-party penetration test has been run yet; we target one in Q1 2027.
 
-- **High availability.** Production tenants run with database replication across multiple availability zones. Backups are kept for 35 days, with a snapshot taken before every deploy.
+- **High availability.** Production runs in a single availability zone today, with backups kept for 35 days and a snapshot taken before every deploy. Running the database across zones is planned before the first production tenant goes live.
 
 - **Single sign-on.** Sign in through your own identity provider over SAML 2.0 or OIDC, with roles mapped from your directory groups and the option to require SSO for everyone on your domain.
 
