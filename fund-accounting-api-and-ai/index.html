@@ -111,8 +111,16 @@
 <li data-use-case="period-close.je-from-every-source">Journal Entries shows the postings created by accounting transactions. Each journal entry retains its source type and source identifier. The entry detail displays the accounting lines and the recorded transaction source.</li>
 <li data-use-case="reporting.investor-capital-account-statement">Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor&#x27;s recorded account and the fund&#x27;s reporting period.</li>
 </ul>
+<h2>AI Document Reading</h2>
+<ul>
+<li>Fund documents read into records for review. Capital calls, distribution and redemption notices, capital account statements, vendor invoices, custodian statements, valuation memos, property appraisals, and contribution and commitment letters. Every amount and date carries a quote from the document, checked against the document&#x27;s own text.</li>
+<li>Fee, waterfall and carry terms read from LPAs and side letters. Each term is quoted from the agreement; you settle conflicts between documents and apply each term yourself.</li>
+<li>Your spreadsheets and exports mapped to the book&#x27;s fields. A value is accepted only when it matches a code the fund already uses; anything else waits for your decision.</li>
+<li>Suggested explanations for reconciliation differences. A suggestion that refers to a row it was not shown is held back and cannot be approved.</li>
+<li>Documents by email. Forward documents to your workspace&#x27;s own address; mail from a sender you have not approved is held for you; attachments go through the same reading and review.</li>
+</ul>
 <h2>Terms</h2>
-<p>Public API refers to programmatic access to accounting records. MCP connects AI assistants to tools and data. The accounting endpoints listed here cover notice PDFs, journal sources and investor statements.</p>
+<p>Public API refers to programmatic access to accounting records. MCP connects AI assistants to tools and data. The accounting endpoints listed here cover notice PDFs, journal sources and investor statements. AI document reading turns a PDF, photo or spreadsheet into records staged for review.</p>
 <section id="buyer-questions"><h2>Questions</h2>
 <h3>Can I retrieve a capital call notice through the API?</h3>
 <p>Yes. The capital call notice endpoint returns a PDF with the investor&#x27;s amount, due date and wire instructions. Wire instructions come from approved bank details. The notice is retrieved through the API.</p>
@@ -122,6 +130,10 @@
 <p>Yes. Each journal entry records a source type and source identifier. Journal Entries displays the posting detail and source label; underlying distribution entries also have a direct link to the source transaction.</p>
 <h3>Can an investor statement show flows, fees and ending capital?</h3>
 <p>Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period&#x27;s movement for the investor account and its closing balance.</p>
+<h3>Does AI post to the ledger?</h3>
+<p>No. Records are staged and a person accepts them before they post; AI is off until an administrator turns it on.</p>
+<h3>Which documents can it read?</h3>
+<p>Capital calls, distribution and redemption notices, capital account statements, vendor invoices, custodian statements, valuation memos, property appraisals, and contribution and commitment letters. K-1s and quarterly reports are read and kept with the document only.</p>
 </section>
 <script type="application/ld+json" data-buyer-faq>
 {
@@ -158,6 +170,22 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does AI post to the ledger?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Records are staged and a person accepts them before they post; AI is off until an administrator turns it on."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which documents can it read?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Capital calls, distribution and redemption notices, capital account statements, vendor invoices, custodian statements, valuation memos, property appraisals, and contribution and commitment letters. K-1s and quarterly reports are read and kept with the document only."
       }
     }
   ]

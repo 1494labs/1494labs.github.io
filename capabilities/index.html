@@ -105,7 +105,7 @@
 <div class="wrap">
 
 <h1>Fund Accounting Capabilities</h1>
-<p class="standfirst">33 capabilities for fund managers, allocators and fund administrators, with current status and accounting scope.</p>
+<p class="standfirst">38 capabilities for fund managers, allocators and fund administrators, with current status and accounting scope.</p>
 
 <article>
     <h2>Partnership and Investor Accounting</h2>
@@ -175,8 +175,19 @@
         <tr><th scope="row">Everything you can do on screen, available through the public API</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr><th scope="row">Saved analyses that refresh on the platform and can be pulled by other systems through the API</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr><th scope="row"><a href="/connect-assistant/">AI assistants can read the book through MCP</a>, the standard connector for AI tools</th><td><span class="status st-shipped">Shipped</span></td></tr>
-        <tr><th scope="row">AI extraction from statements and LPAs, with mandatory human confirmation</th><td><span class="status st-shipped">Shipped</span></td></tr>
-        <tr class="note-row"><td colspan="2">Nothing AI-derived posts without a person confirming it.</td></tr>
+        <tr><th scope="row">Fund documents read into records for review</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr class="note-row"><td colspan="2">Capital calls, distribution and redemption notices, capital account statements, vendor invoices, custodian statements, valuation memos, property appraisals, and contribution and commitment letters. Every amount and date carries a quote from the document, checked against the document&#x27;s own text.</td></tr>
+        <tr class="note-row"><td colspan="2">Nothing AI-derived posts without a person confirming it. AI is off until your administrator turns it on, and you can use your own model provider key.</td></tr>
+        <tr><th scope="row">Fee, waterfall and carry terms read from LPAs and side letters</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr class="note-row"><td colspan="2">Each term is quoted from the agreement; you settle conflicts between documents and apply each term yourself.</td></tr>
+        <tr><th scope="row">Your spreadsheets and exports mapped to the book&#x27;s fields</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr class="note-row"><td colspan="2">A value is accepted only when it matches a code the fund already uses; anything else waits for your decision.</td></tr>
+        <tr><th scope="row">Suggested explanations for reconciliation differences</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr class="note-row"><td colspan="2">A suggestion that refers to a row it was not shown is held back and cannot be approved.</td></tr>
+        <tr><th scope="row">Documents by email</th><td><span class="status st-shipped">Shipped</span></td></tr>
+        <tr class="note-row"><td colspan="2">Forward documents to your workspace&#x27;s own address; mail from a sender you have not approved is held for you; attachments go through the same reading and review.</td></tr>
+        <tr><th scope="row">K-1s and manager quarterly reports</th><td><span class="status st-progress">In progress</span></td></tr>
+        <tr class="note-row"><td colspan="2">Read and kept with the document today; they do not yet create records.</td></tr>
         <tr><th scope="row">A daily check that recomputes the arithmetic on every fund on the platform</th><td><span class="status st-shipped">Shipped</span></td></tr>
         <tr class="note-row"><td colspan="2">Capital accounts against the ledger, allocations against the pool, cash movements against the entries that produced them.</td></tr>
         <tr><th scope="row">Internal exceptions: a worklist, aging, and an accept-with-a-note decision</th><td><span class="status st-shipped">Shipped</span></td></tr>

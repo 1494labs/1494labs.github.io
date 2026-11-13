@@ -2,7 +2,7 @@ Source: https://1494labs.com/capabilities/
 
 # Fund Accounting Capabilities
 
-33 capabilities for fund managers, allocators and fund administrators, with current status and accounting scope.
+38 capabilities for fund managers, allocators and fund administrators, with current status and accounting scope.
 
 ## Partnership and Investor Accounting
 
@@ -58,8 +58,19 @@ Source: https://1494labs.com/capabilities/
 | Everything you can do on screen, available through the public API | Shipped |
 | Saved analyses that refresh on the platform and can be pulled by other systems through the API | Shipped |
 | [AI assistants can read the book through MCP](https://1494labs.com/connect-assistant/), the standard connector for AI tools | Shipped |
-| AI extraction from statements and LPAs, with mandatory human confirmation | Shipped |
-| Nothing AI-derived posts without a person confirming it. | |
+| Fund documents read into records for review | Shipped |
+| Capital calls, distribution and redemption notices, capital account statements, vendor invoices, custodian statements, valuation memos, property appraisals, and contribution and commitment letters. Every amount and date carries a quote from the document, checked against the document's own text. | |
+| Nothing AI-derived posts without a person confirming it. AI is off until your administrator turns it on, and you can use your own model provider key. | |
+| Fee, waterfall and carry terms read from LPAs and side letters | Shipped |
+| Each term is quoted from the agreement; you settle conflicts between documents and apply each term yourself. | |
+| Your spreadsheets and exports mapped to the book's fields | Shipped |
+| A value is accepted only when it matches a code the fund already uses; anything else waits for your decision. | |
+| Suggested explanations for reconciliation differences | Shipped |
+| A suggestion that refers to a row it was not shown is held back and cannot be approved. | |
+| Documents by email | Shipped |
+| Forward documents to your workspace's own address; mail from a sender you have not approved is held for you; attachments go through the same reading and review. | |
+| K-1s and manager quarterly reports | In progress |
+| Read and kept with the document today; they do not yet create records. | |
 | A daily check that recomputes the arithmetic on every fund on the platform | Shipped |
 | Capital accounts against the ledger, allocations against the pool, cash movements against the entries that produced them. | |
 | Internal exceptions: a worklist, aging, and an accept-with-a-note decision | Shipped |

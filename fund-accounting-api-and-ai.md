@@ -14,9 +14,21 @@ For fund managers, allocators and administrators connecting their book to other 
 
 - Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
 
+## AI Document Reading
+
+- Fund documents read into records for review. Capital calls, distribution and redemption notices, capital account statements, vendor invoices, custodian statements, valuation memos, property appraisals, and contribution and commitment letters. Every amount and date carries a quote from the document, checked against the document's own text.
+
+- Fee, waterfall and carry terms read from LPAs and side letters. Each term is quoted from the agreement; you settle conflicts between documents and apply each term yourself.
+
+- Your spreadsheets and exports mapped to the book's fields. A value is accepted only when it matches a code the fund already uses; anything else waits for your decision.
+
+- Suggested explanations for reconciliation differences. A suggestion that refers to a row it was not shown is held back and cannot be approved.
+
+- Documents by email. Forward documents to your workspace's own address; mail from a sender you have not approved is held for you; attachments go through the same reading and review.
+
 ## Terms
 
-Public API refers to programmatic access to accounting records. MCP connects AI assistants to tools and data. The accounting endpoints listed here cover notice PDFs, journal sources and investor statements.
+Public API refers to programmatic access to accounting records. MCP connects AI assistants to tools and data. The accounting endpoints listed here cover notice PDFs, journal sources and investor statements. AI document reading turns a PDF, photo or spreadsheet into records staged for review.
 
 ## Questions
 
@@ -35,6 +47,14 @@ Yes. Each journal entry records a source type and source identifier. Journal Ent
 ### Can an investor statement show flows, fees and ending capital?
 
 Yes. The capital account statement includes opening capital, contributions, distributions, allocated income and expense, fees and ending capital. It records the period's movement for the investor account and its closing balance.
+
+### Does AI post to the ledger?
+
+No. Records are staged and a person accepts them before they post; AI is off until an administrator turns it on.
+
+### Which documents can it read?
+
+Capital calls, distribution and redemption notices, capital account statements, vendor invoices, custodian statements, valuation memos, property appraisals, and contribution and commitment letters. K-1s and quarterly reports are read and kept with the document only.
 
 ## Related Accounting Pages
 

@@ -150,6 +150,10 @@ Opening capital, net profit and loss, and ending capital for six investor accoun
 
 ![ILPA capital account statement lines for each investor account: beginning NAV, contributions and distributions](https://1494labs.com/assets/screens/ilpa-capital-account.211b6f9c.jpg)**Statement lines for every investor account.** Beginning NAV, contributions and distributions on the ILPA template's own rows, with a check that all statements foot.
 
+### [Getting your documents and data in](https://1494labs.com/fund-accounting-api-and-ai/)
+
+Fund documents are read into records for review, fee and carry terms are read from LPAs and side letters, and spreadsheets and exports are mapped to the book's fields. Forward documents to your workspace's own address for the same reading and review.
+
 - ### [Portfolio companies](https://1494labs.com/portfolio-company-kpi-collection/)
 
 Financials and KPIs collected from each company by upload or a secure submission link, with every submission and correction kept.
