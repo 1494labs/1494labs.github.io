@@ -36,7 +36,7 @@ triggers that prevent the application from rewriting the record.
 | Database encryption at rest | Yes |
 | Database reachable from the internet | No |
 | Accidental-deletion protection | Yes |
-| Automated backups | 7 days of point-in-time recovery, a daily copy kept 35 days under a vault lock in governance mode (same account and region), and a snapshot taken before every deploy |
+| Automated backups | 7 days of point-in-time recovery, a daily copy kept 35 days under a vault lock in governance mode (same account and region), and a snapshot taken before every deploy that changes the database |
 | Secrets | Held in AWS Parameter Store and read at boot. The application cannot write them, with one exception: it can store a customer's own data-feed credential on a single granted path, and cannot read that credential back or delete it |
 | Region | United States |
 
@@ -68,7 +68,7 @@ Where we are today on independent assurance, and what comes next.
 
 - **Penetration testing.** We run internal security reviews and weekly dependency audits. No independent third-party penetration test has been run yet; we target one in Q1 2027.
 
-- **High availability.** Production runs in a single availability zone today, with backups kept for 35 days and a snapshot taken before every deploy. Running the database across zones is planned before the first production tenant goes live.
+- **High availability.** The database runs in two availability zones, with a standby kept in step for automatic failover. The application server runs in one zone today. Automated backups with point-in-time recovery are kept, a daily locked copy is kept for 35 days, and a snapshot is taken before every deploy that changes the database.
 
 - **Single sign-on.** Sign in through your own identity provider over SAML 2.0 or OIDC, with roles mapped from your directory groups and the option to require SSO for everyone on your domain.
 

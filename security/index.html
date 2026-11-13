@@ -101,7 +101,7 @@
         <tr><td>Database encryption at rest</td><td>Yes</td></tr>
         <tr><td>Database reachable from the internet</td><td>No</td></tr>
         <tr><td>Accidental-deletion protection</td><td>Yes</td></tr>
-        <tr><td>Automated backups</td><td>7 days of point-in-time recovery, a daily copy kept 35 days under a vault lock in governance mode (same account and region), and a snapshot taken before every deploy</td></tr>
+        <tr><td>Automated backups</td><td>7 days of point-in-time recovery, a daily copy kept 35 days under a vault lock in governance mode (same account and region), and a snapshot taken before every deploy that changes the database</td></tr>
         <tr><td>Secrets</td><td>Held in AWS Parameter Store and read at boot. The application cannot write them, with one exception: it can store a customer's own data-feed credential on a single granted path, and cannot read that credential back or delete it</td></tr>
         <tr><td>Region</td><td>United States</td></tr>
       </tbody>
@@ -135,7 +135,7 @@
     <ul>
       <li><b>SOC 2.</b> Our controls are built to the SOC 2 criteria. We are not certified and no auditor is engaged yet. We target a Type I audit in Q1 2027, followed by Type II.</li>
       <li><b>Penetration testing.</b> We run internal security reviews and weekly dependency audits. No independent third-party penetration test has been run yet; we target one in Q1 2027.</li>
-      <li><b>High availability.</b> Production runs in a single availability zone today, with backups kept for 35 days and a snapshot taken before every deploy. Running the database across zones is planned before the first production tenant goes live.</li>
+      <li><b>High availability.</b> The database runs in two availability zones, with a standby kept in step for automatic failover. The application server runs in one zone today. Automated backups with point-in-time recovery are kept, a daily locked copy is kept for 35 days, and a snapshot is taken before every deploy that changes the database.</li>
       <li><b>Single sign-on.</b> Sign in through your own identity provider over SAML 2.0 or OIDC, with roles mapped from your directory groups and the option to require SSO for everyone on your domain.</li>
     </ul>
 
@@ -173,4 +173,3 @@
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3da7530d96b14f3f95915c071872f4be"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
-
