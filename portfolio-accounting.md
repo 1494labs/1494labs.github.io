@@ -14,6 +14,14 @@ For fund managers, allocators and administrators accounting for multi-asset port
 
 - Reporting includes report packs organized by audience. A pack runs for its fund and period and can be exported as PDF or CSV, collecting the selected reports for the intended recipient.
 
+- Company Financials & KPIs provides templates for revenue, EBITDA, net debt and custom KPIs. The team can upload a completed template or create a secure submission link for the company. Accepted figures appear beside the company valuation mark, with the submission used recorded.
+
+- The template includes the reporting date and all required metrics. Upload checks cover the expected columns, missing fields, valid dates, duplicate dates and finite numeric values. Revenue, EBITDA and net debt use the company's currency; custom KPIs retain their agreed units.
+
+- Each submission and correction retains its date, currency, source and submitter. The collection history preserves earlier evidence. Operator review accepts or rejects an external submission with a recorded reason.
+
+- The valuation screen shows the collected figures beside the mark and records the financial submission selected for that valuation. Fund report sections include company financials and KPIs and flag companies with missing reports.
+
 - The company Exit screen calculates whole-holding exit proceeds through liquidation preferences, participation and caps. The calculation uses the company's capital structure to allocate the exit value across the security classes.
 
 - The company valuation screen records a dated mark up or down. The company's valuation method and memo stay with the mark, giving quarter-end company valuation records a date and stated calculation approach.

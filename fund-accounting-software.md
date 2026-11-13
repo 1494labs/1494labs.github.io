@@ -30,6 +30,8 @@ For fund managers, allocators and fund administrators.
 
 - Calculate management fees for a period from the fee terms
 
+- GP clawback: measurement, escrow, interim tests and settlement
+
 - Journal entries posted from every transaction type, traceable to the source transaction
 
 - Period open, close, lock, and reopen with an audit trail

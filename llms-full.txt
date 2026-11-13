@@ -1375,6 +1375,8 @@ For fund managers, allocators and fund administrators.
 
 - Calculate management fees for a period from the fee terms
 
+- GP clawback: measurement, escrow, interim tests and settlement
+
 - Journal entries posted from every transaction type, traceable to the source transaction
 
 - Period open, close, lock, and reopen with an audit trail
@@ -1664,6 +1666,8 @@ For fund administrators accounting for many funds with different terms.
 - Mark a position to a valuation with an effective date and a source
 
 - Calculate management fees for a period from the fee terms
+
+- GP clawback: measurement, escrow, interim tests and settlement
 
 - Journal entries posted from every transaction type, traceable to the source transaction
 
@@ -2136,6 +2140,16 @@ For hedge fund CFOs, controllers and fund administrators.
 - Reporting groups investor statement production into runs. The team generates, reviews and publishes the statements, with failures recorded per account so an individual statement failure is isolated within the run.
 
 - NAV supports share-class and series values, with final period strikes and daily estimates. Daily NAV estimates retain their grade and are superseded by the period close, preserving the distinction between daily and closed values.
+
+- Equalization factor or series accounting is chosen per fund. Equalization records the adjustment linked to an investor's subscription. Series accounting keeps subscription cohorts and their performance-fee history, with series consolidation and a preview of the consolidation amounts.
+
+- High-water marks are carried per investor and per series. A partial redemption preserves the continuing investor's fee history; transfers carry the relevant mark and loss history. The incentive-fee calculation uses the configured hurdle and high-water mark.
+
+- Side pockets keep designated illiquid investments in total NAV and exclude each participating investor's pocket value from dealing NAV. The Side Pockets screen creates the pocket, previews and posts a carve-out, records investor participation and handles liquidation.
+
+- The carve-out transfers the selected holding into the pocket and freezes the participating investors and their shares. Later subscriptions do not join that existing pocket. Pocket income and gains follow the recorded participants.
+
+- Carve-out and liquidation previews show the proposed amounts before posting. A carve-out leaves total NAV unchanged. Liquidation records the disposal and distributions to the pocket's participants; the final liquidation closes the pocket.
 
 ## Related Notes
 
@@ -4091,6 +4105,14 @@ For fund managers, allocators and administrators accounting for multi-asset port
 
 - Reporting includes report packs organized by audience. A pack runs for its fund and period and can be exported as PDF or CSV, collecting the selected reports for the intended recipient.
 
+- Company Financials & KPIs provides templates for revenue, EBITDA, net debt and custom KPIs. The team can upload a completed template or create a secure submission link for the company. Accepted figures appear beside the company valuation mark, with the submission used recorded.
+
+- The template includes the reporting date and all required metrics. Upload checks cover the expected columns, missing fields, valid dates, duplicate dates and finite numeric values. Revenue, EBITDA and net debt use the company's currency; custom KPIs retain their agreed units.
+
+- Each submission and correction retains its date, currency, source and submitter. The collection history preserves earlier evidence. Operator review accepts or rejects an external submission with a recorded reason.
+
+- The valuation screen shows the collected figures beside the mark and records the financial submission selected for that valuation. Fund report sections include company financials and KPIs and flag companies with missing reports.
+
 - The company Exit screen calculates whole-holding exit proceeds through liquidation preferences, participation and caps. The calculation uses the company's capital structure to allocate the exit value across the security classes.
 
 - The company valuation screen records a dated mark up or down. The company's valuation method and memo stay with the mark, giving quarter-end company valuation records a date and stated calculation approach.
@@ -4244,6 +4266,14 @@ For private equity managers and administrators running drawdown funds.
 - Capital Accounts shows investor balances for the selected fund. Accounting checks compare investor capital snapshots with general ledger capital, giving the investor balances a defined tie to the fund's capital accounts.
 
 - Investor statements show opening capital, contributions, distributions, allocated income and expenses, fees and ending capital. The statement draws these amounts from the investor's recorded account and the fund's reporting period.
+
+- Company Financials & KPIs provides templates for revenue, EBITDA, net debt and custom KPIs. The team can upload a completed template or create a secure submission link for the company. Accepted figures appear beside the company valuation mark, with the submission used recorded.
+
+- The template includes the reporting date and all required metrics. Upload checks cover the expected columns, missing fields, valid dates, duplicate dates and finite numeric values. Revenue, EBITDA and net debt use the company's currency; custom KPIs retain their agreed units.
+
+- Each submission and correction retains its date, currency, source and submitter. The collection history preserves earlier evidence. Operator review accepts or rejects an external submission with a recorded reason.
+
+- The valuation screen shows the collected figures beside the mark and records the financial submission selected for that valuation. Fund report sections include company financials and KPIs and flag companies with missing reports.
 
 - The company Exit screen calculates whole-holding exit proceeds through liquidation preferences, participation and caps. The calculation uses the company's capital structure to allocate the exit value across the security classes.
 

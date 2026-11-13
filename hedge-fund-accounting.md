@@ -22,6 +22,16 @@ For hedge fund CFOs, controllers and fund administrators.
 
 - NAV supports share-class and series values, with final period strikes and daily estimates. Daily NAV estimates retain their grade and are superseded by the period close, preserving the distinction between daily and closed values.
 
+- Equalization factor or series accounting is chosen per fund. Equalization records the adjustment linked to an investor's subscription. Series accounting keeps subscription cohorts and their performance-fee history, with series consolidation and a preview of the consolidation amounts.
+
+- High-water marks are carried per investor and per series. A partial redemption preserves the continuing investor's fee history; transfers carry the relevant mark and loss history. The incentive-fee calculation uses the configured hurdle and high-water mark.
+
+- Side pockets keep designated illiquid investments in total NAV and exclude each participating investor's pocket value from dealing NAV. The Side Pockets screen creates the pocket, previews and posts a carve-out, records investor participation and handles liquidation.
+
+- The carve-out transfers the selected holding into the pocket and freezes the participating investors and their shares. Later subscriptions do not join that existing pocket. Pocket income and gains follow the recorded participants.
+
+- Carve-out and liquidation previews show the proposed amounts before posting. A carve-out leaves total NAV unchanged. Liquidation records the disposal and distributions to the pocket's participants; the final liquidation closes the pocket.
+
 ## Related Notes
 
 - [Equalization and the mid-period subscriber](https://1494labs.com/notes/equalization-and-the-mid-period-subscriber/)
