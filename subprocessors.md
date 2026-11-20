@@ -4,14 +4,14 @@ Source: https://1494labs.com/subprocessors/
 
 Nine third parties, and two of them only if a customer switches something on. This page names all of them, what reaches each one, and where it runs.
 
-Last reviewed 2026-10-18
+Last reviewed 2026-11-20
 
 ## Processing customer workspace data
 
 | Provider | What it does | What reaches it | Where |
 | --- | --- | --- | --- |
 | **Amazon Web Services** | Runs the application, the database, object storage and the document renderer, and sends outgoing email once delivery is switched on | Everything in a customer workspace | United States |
-| **Cloudflare** | Network edge, TLS termination and denial-of-service protection for all three surfaces, plus Web Analytics, which counts page requests on the marketing site (1494labs.com) only | Everything sent to and from the application, in transit. Cloudflare terminates TLS, so requests and responses pass through its edge unencrypted before being re-encrypted to our servers. Nothing is stored there under our configuration | Global edge network |
+| **Cloudflare** | Network edge, TLS termination and denial-of-service protection for all three surfaces | Everything sent to and from the application, in transit. Cloudflare terminates TLS, so requests and responses pass through its edge unencrypted before being re-encrypted to our servers. Nothing is stored there under our configuration | Global edge network |
 | **PostHog** | Product analytics for the application: which screens are used, and where errors happen | The template of the screen opened (never an id or anything shown on it), the kind of any error, a one-way hash of the user and the workspace, and the browser type. Not the network address: our edge removes it first. No fund, investor, figure, name or email | United States |
 
 ## Only when a customer turns it on

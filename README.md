@@ -47,8 +47,8 @@ assets/notes.css    the stylesheet for every other page
 assets/fonts/       Newsreader 400/500, Inter 400/500/600, EB Garamond (ledger motif only), all OFL; Geist stays for the brand lockup sources
 assets/             mark, favicons, og.png
 site.webmanifest    PWA/app icons
-robots.txt          allows all, points at the sitemap
-sitemap.xml         all indexable pages and their Markdown copies
+robots.txt          search crawlers skip the .md twins; AI crawlers keep everything
+sitemap.xml         indexable HTML pages only, never a Markdown copy
 CNAME               1494labs.com
 .nojekyll           skip Jekyll processing
 ```
@@ -105,8 +105,50 @@ the discovery files and sitemap. `--check` checks that the output is current.
 The publishing script runs the same generator against the destination HTML.
 This includes Pages-only pages and uses the public legal text rather than the
 local drafts. Commit those generated changes with the published content. The
-Pages repository's sitemap generator must include each page's Markdown copy;
-run it after the content commit as usual.
+Pages repository's sitemap generator must list the HTML pages only - never a
+Markdown copy (#2736); run it after the content commit as usual.
+
+### Search engines and the `.md` twins (#2736)
+
+The twins exist for AI assistants and agents, not for search results. On a
+young domain Google was spending the crawl budget on them - more than half of
+Search Console's "Discovered, currently not indexed" list was `.md` URLs - so:
+
+- `robots.txt` names the search crawlers and disallows `/*.md$` for them. Each
+  named group repeats `Allow: /` because a crawler follows only its most
+  specific matching group. AI crawlers (GPTBot, ClaudeBot, PerplexityBot,
+  OAI-SearchBot) are deliberately NOT named: they match the open `*` group.
+  `tests/unit/scripts/test_site_crawl_policy.py` pins both halves.
+- Neither sitemap lists a `.md` URL. The sitemap asks a search engine to fetch
+  pages; the reading copies now do not belong in that list in either repo.
+  The live one is written by the Pages repo's `scripts/gen_sitemap.py`, which
+  this repo cannot edit, so `scripts/publish_site.sh --finish` refuses (exit 6)
+  a sitemap it produces with `.md` entries and names the two lines to delete.
+- The visible `Read Markdown` link carries `rel="nofollow"` (the generator adds
+  it; the home page's footer link is hand-written). The `<link rel="alternate">`
+  heads stay: they are how an assistant finds the twin.
+
+GitHub Pages cannot set response headers, so an `X-Robots-Tag: noindex` on
+`.md` responses is not available on 1494labs.com; the robots.txt group is the
+mechanism there. (docs.1494labs.com serves no `.md` twins at all, so it needs
+nothing.)
+
+### No internal link may point at nothing (#2828)
+
+Cloudflare reported about a fifth of crawler requests answered 404. Most of
+those are probes for secret files, but a dead link of our own is the part we can
+remove, and one had shipped: guide chapters linked the application's screens.
+
+`uv run python scripts/check_site_links.py` reads every page, `.md` twin,
+`llms.txt`, `llms-full.txt` and `sitemap.xml` here and fails on a link that names
+a page or file the site does not publish. Two allowances are how the published
+tree differs from this one, and tests pin both: the Pages-only directories (the
+same list `scripts/publish_site.sh` declares) and fingerprinted asset names,
+which `scripts/fingerprint_assets.py` rewrites at publish. The Cloudflare
+email-protection link is never in this tree - it exists only at the edge, in
+place of the contact address, and its 404 is a zone setting, not a page to fix.
+`tests/unit/scripts/test_check_site_links_2828.py` runs the check, and
+`scripts/prepush_check.py` runs it when `site/` changes.
 
 Phase 2's initial topics were side pockets, management fee offsets and moving
 a fund off spreadsheets. Subsequent topic selection uses the completed baseline

@@ -1,3 +1,30 @@
+# robots.txt for 1494labs.com (GitHub Pages; Cloudflare sits in front and
+# cannot add response headers here, so this file and the sitemap are the whole
+# control surface).
+#
+# The `.md` reading copies exist for AI assistants and agents, not for search
+# results. Search Console's "Discovered, currently not indexed" list was more
+# than half `.md` URLs: Googlebot was spending a young domain's crawl budget on
+# twins it never indexes while real pages waited. So every search crawler named
+# below is told not to fetch them.
+#
+# A crawler follows ONLY the most specific group that matches it, so each named
+# search engine repeats `Allow: /` for everything else. AI crawlers - GPTBot,
+# ClaudeBot, PerplexityBot, OAI-SearchBot among them - are deliberately NOT
+# named: they match the `*` group and keep full access to the twins.
+#
+# The `.md` files and the `<link rel="alternate">` heads stay exactly as they
+# are; only the search engines are pointed away from them.
+
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: DuckDuckBot
+User-agent: YandexBot
+User-agent: Baiduspider
+User-agent: Applebot
+Disallow: /*.md$
+Allow: /
+
 User-agent: *
 Allow: /
 

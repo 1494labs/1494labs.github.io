@@ -4,7 +4,7 @@ Source: https://1494labs.com/privacy/
 
 There is no cookie banner on this site because there is nothing to consent to. This page is the inventory.
 
-Last reviewed 2026-10-18
+Last reviewed 2026-11-20
 
 ## Who we are
 
@@ -19,15 +19,10 @@ processed there.
 
 ## This website
 
-1494labs.com sets no cookies. It runs one analytics tool, Cloudflare Web
-Analytics, which is the reason this section changed on the date above. It
+1494labs.com sets no cookies. It runs no analytics and loads no third-party scripts. It
 stores nothing on your device: no cookie, no local storage, no fingerprint,
 and no identifier that would let us recognize you on a second visit or follow
-you to another site. What it records is a count: which page was requested,
-which site referred it, the country the request came from, and how long the
-page took to load. We can tell that forty people read a note and that most of
-them arrived from LinkedIn. We cannot tell that you were one of them, and we
-have deliberately chosen a tool that cannot tell us.
+you to another site.
 
 The site is served through Cloudflare, which may inject a small script that
 hides our email address from spam harvesters and, under attack conditions, may
@@ -49,8 +44,7 @@ the form.
 ## The documentation site
 
 docs.1494labs.com sets no cookies. It carries no analytics
-beacon; the Cloudflare Web Analytics counter described above runs on
-1494labs.com only. If you switch its
+beacon. If you switch its
 color theme, that preference is stored in your own browser's local storage and
 never leaves it. The feedback form sends exactly what you type to us, along
 with the page you sent it from, and nothing else.
@@ -69,10 +63,7 @@ when their fixed lifetime runs out. Interface preferences -
 theme, table density - live in your browser's local storage. The
 application loads no external fonts, no advertising code and nothing
 that follows you to another site. It
-carries no analytics beacon from the network edge. The Cloudflare Web
-Analytics counter described above runs on this website only, installed by us,
-and stores nothing on your device. It never runs inside the application, so
-no page, fund, investor or figure from a workspace ever reaches it.
+carries no analytics beacon from the network edge.
 
 The application also sends product analytics to **PostHog**
 (United States), so we can see which screens are used and where errors
@@ -106,7 +97,7 @@ only to run the service.
 Amazon Web Services hosts the application and its database (United
 States). Cloudflare provides the network edge and DDoS protection, and so
 carries the application's traffic in transit. GitHub hosts this website. Formspree handles the enquiry form on the home page,
-Cloudflare Web Analytics counts page requests on this website only, and PostHog receives the
+and PostHog receives the
 application's product analytics described above. Every one of them, and what
 reaches it, is listed on the [sub-processors](https://1494labs.com/subprocessors/) page. If a workspace administrator turns on the
 AI-assisted features, the documents, import samples and support requests
@@ -124,8 +115,8 @@ interest in answering business enquiries. We keep enquiry emails for up to
 two years after our last exchange, unless the enquiry becomes a customer
 relationship. Server access logs and the
 authentication record exist for our legitimate interest in keeping the
-services and the books secure; the access log is kept for 400 days. Page
-counts and product analytics serve our legitimate interest in knowing which
+services and the books secure; the access log is kept for 400 days. Product
+analytics serve our legitimate interest in knowing which
 pages and screens are used and where errors happen, and identify no one.
 
 ## Your rights

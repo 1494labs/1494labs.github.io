@@ -55,19 +55,7 @@
   }
 }
 </script>
-<style>
-/* The status reads as plain text: shipped, planned and "no" are facts about
-   scope, not states waiting on anyone, so none of them takes a chip (DESIGN.md,
-   status by meaning). 'No' is deliberately not an alarm color. */
-.matrix { width: 100%; border-collapse: collapse; }
-.matrix th[scope="row"] { text-align: left; font-weight: 500; padding-right: 1.5rem; }
-.matrix td, .matrix th { padding: 8px 16px; border-bottom: 1px solid var(--rule-faint); vertical-align: top; }
-.status { font-size: .875rem; white-space: nowrap; color: var(--muted); }
-.st-shipped { color: var(--ink); font-weight: 600; }
-.st-unknown { font-style: italic; }
-.note-row td { font-size: .875rem; color: var(--muted); padding-top: 0; padding-bottom: 16px; }
-.src { font-size: .875rem; }
-</style>
+<link rel="stylesheet" href="/assets/capabilities.css">
 <link rel="alternate" type="text/markdown" href="https://1494labs.com/capabilities.md" title="Markdown">
 </head>
 <body>
@@ -215,7 +203,7 @@
 
 <!-- assistant-links:start -->
   <nav class="assistant-links" aria-label="Page formats and assistants">
-    <a href="https://1494labs.com/capabilities.md">Read Markdown</a>
+    <a href="https://1494labs.com/capabilities.md" rel="nofollow">Read Markdown</a>
   </nav>
   <!-- assistant-links:end -->
 
@@ -231,6 +219,5 @@
 </footer>
 
 </div>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3da7530d96b14f3f95915c071872f4be"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
