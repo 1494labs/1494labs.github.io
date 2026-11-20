@@ -109,10 +109,7 @@ def build() -> str:
         changefreq, priority = HINTS.get(
             path, NOTE_HINT if path.startswith("/notes/") and path != "/notes/" else DEFAULT_HINT
         )
-        markdown = ROOT / ("index.md" if path == "/" else path.strip("/") + ".md")
         targets = [(path, page)]
-        if markdown.is_file():
-            targets.append(("/" + markdown.relative_to(ROOT).as_posix(), markdown))
         for url, source in targets:
             lines += [
                 "  <url>",
